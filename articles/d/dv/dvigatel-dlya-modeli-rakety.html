@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Двигатель для модели ракеты: Выбор, сборка и запуск своими руками — ЛодкаМастер</title>
+    <meta name="description" content="Как собрать двигатель для модели ракеты? Подробный гид по топливу, чертежам, безопасности и запуску самодельных ракет.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/d/dv/dvigatel-dlya-modeli-rakety.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Двигатель для модели ракеты: Выбор, сборка и запуск своими руками">
+    <meta property="og:description" content="Как собрать двигатель для модели ракеты? Подробный гид по топливу, чертежам, безопасности и запуску самодельных ракет.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/sdelaj-sam/">Сделай сам</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Двигатель для модели ракеты: Выбор, сборка и запуск своими руками</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Двигатель для модели ракеты: Полное руководство по созданию и запуску</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принципы-работы-твердотопливного-ракетного-двигателя">Принципы работы твердотопливного ракетного двигателя</a></li><li><a href="#выбор-топлива-карамель-или-черный-порох">Выбор топлива: Карамель или Черный порох?</a></li><li><a href="#материалы-и-инструменты-для-сборки-двигателя">Материалы и инструменты для сборки двигателя</a></li><li><a href="#изготовление-сопла-и-формовка-топлива">Изготовление сопла и формовка топлива</a></li><li><a href="#расчет-тяги-и-баллистические-характеристики">Расчет тяги и баллистические характеристики</a></li><li><a href="#техника-безопасности-и-подготовка-к-запуску">Техника безопасности и подготовка к запуску</a></li><li><a href="#частые-ошибки-новичков">Частые ошибки новичков</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Создание собственной модели ракеты — это захватывающий процесс, который объединяет в себе физику, химию и инженерное искусство. Сердцем любого летательного аппарата является силовая установка, и именно <strong>двигатель для модели ракеты</strong> определяет высоту подъема, скорость полета и успех всего эксперимента. В отличие от игрушечных наборов, самостоятельная сборка реактивного двигателя требует глубокого понимания процессов горения и термодинамики.</p>
+
+<p>Многие новички ошибочно полагают, что достаточно просто смешать селитру с сахаром и поместить смесь в трубку. Однако именно качество изготовления <em>шашки топлива</em>, точность расчетов геометрии канала и выбор материалов корпуса превращают кучку порошка в эффективный реактивный движитель. Ошибки на этапе проектирования могут привести не только к провалу запуска, но и к серьезным травмам.</p>
+
+<p>В этой статье мы детально разберем все аспекты создания ракетных двигателей: от выбора топлива до финального расчета тяги. Вы узнаете, какие материалы лучше всего подходят для сопла, как правильно прессовать топливо и почему <mark>критическое сечение</mark> играет решающую роль в стабильности горения. Готовьтесь погрузиться в мир высоких скоростей и реактивной тяги.</p>
+
+<h2 id="принципы-работы-твердотопливного-ракетного-двигателя">Принципы работы твердотопливного ракетного двигателя</h2>
+
+<p>Основой любого твердотопливного двигателя является камера сгорания, где происходит быстрое окисление горючего вещества. В отличие от жидкостных аналогов, здесь топливо и окислитель находятся в твердом состоянии, часто в виде спрессованной смеси. Ключевым параметром является <strong>время горения</strong>, которое должно быть строго регламентировано для достижения максимальной эффективности.</p>
+
+<p>Процесс начинается с воспламенения поверхности топлива. Образующиеся газы под высоким давлением устремляются к единственному выходу — <em>соплу</em>. Именно форма и размер выходного отверстия определяют скорость истечения газов и, как следствие, создаваемую тягу. Если сопло будет слишком узким, давление внутри корпуса может превысить предел прочности материала, что приведет к взрыву.</p>
+
+<p>Важнейшим элементом является геометрия топливного заряда. Чаще всего используется цилиндрический канал по центру шашки, который обеспечивает постоянство площади горения. Существуют и более сложные профили, например, звездообразные, позволяющие регулировать тягу в разные моменты полета, но для начинающих лучше ограничиться классической цилиндрической формой.</p>
+
+<ul>
+<li>🚀 Камера сгорания должна выдерживать давление до 60 атмосфер без деформации.</li>
+<li>🔥 Температура газов при горении карамельного топлива достигает 1600-1700 градусов Цельсия.</li>
+<li>⚙️ Сопло ускоряет поток газов, преобразуя тепловую энергию в кинетическую.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не используйте материалы с низкой температурой плавления для корпуса двигателя, так как тепловая нагрузка может разрушить конструкцию задолго до окончания горения.</p>
+</blockquote>
+
+<details class="faq-item"><summary>Почему давление так важно?</summary><div class="faq-answer"><p>Внутреннее давление в двигателе напрямую зависит от площади горения топлива и размера критического сечения сопла. Если площадь горения слишком велика, а выход газа ограничен, давление растет экспоненциально, что может привести к разрушению корпуса.</p></div></details>
+
+<h2 id="выбор-топлива-карамель-или-черный-порох">Выбор топлива: Карамель или Черный порох?</h2>
+
+<p>Для любительского ракетостроения наиболее доступными и безопасными в обращении являются два типа топлива: смесь калиевой селитры с сахаром (каррамель) и черный порох. <strong>Карамельное топливо</strong> (KNSU) является золотым стандартом для новичков благодаря своей дешевизне и предсказуемым характеристикам горения.</p>
+
+<p>Черный порох, состоящий из селитры, серы и угля, горит значительно быстрее и создает больше дыма. Его часто используют для двигателей малой длительности работы или в качестве вышибного заряда для раскрытия парашюта. Однако изготовление черного пороха в домашних условиях требует строгого соблюдения пропорций и техники безопасности из-за высокой чувствительности к искре.</p>
+
+<p>Современные энтузиасты также экспериментируют с добавлением оксидов металлов для изменения цвета пламени или скорости горения. Например, добавление <em>оксида железа</em> может катализировать реакцию, делая горение более интенсивным. Однако любые добавки требуют пересчета баллистических характеристик двигателя.</p>
+
+<p>При варке карамели важно контролировать температуру. Перегрев смеси выше 180 градусов может привести к самопроизвольному воспламенению. Поэтому использование термометра и водяной бани является обязательным условием для получения качественного топлива с стабильной плотностью.</p>
+
+<div class="poll-widget" id="poll-2f2ce57f"><div class="poll-widget-question">📊 Какое топливо вы планируете использовать?</div><div class="poll-widget-option" data-poll="2f2ce57f" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Карамель (Селитра+Сахар)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="2f2ce57f" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Черный порох</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="2f2ce57f" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Готовые двигатели</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="2f2ce57f" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Жидкое топливо</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="материалы-и-инструменты-для-сборки-двигателя">Материалы и инструменты для сборки двигателя</h2>
+
+<p>Сборка надежного двигателя начинается с подбора правильных материалов. Корпусом чаще всего служат картонные гильзы, пропитанные эпоксидной смолой, или трубы из ПВХ и алюминия. Каждый материал имеет свои плюсы: картон легок и дешев, но одноразов, в то время как <strong>алюминиевые трубы</strong> позволяют создавать многоразовые конструкции.</p>
+
+<p>Для изготовления топливной шашки необходимы формы для прессования. Обычно используется метод горячего прессования, когда расплавленная смесь заливается в гильзу и уплотняется специальным пуансоном. Пуансон должен быть изготовлен из металла (сталь или латунь) и иметь идеально гладкую поверхность, чтобы топливо не прилипало к нему.</p>
+
+<p>Необходимый набор инструментов включает в себя электронные весы для точного взвешивания компонентов, термометр, формы для литья и пресс-машину или мощные тиски. Также понадобятся материалы для изготовления заглушек (обычно эпоксидная смола с наполнителем) и сопловых вставок.</p>
+
+<ul>
+<li>🛠️ Точные электронные весы с погрешностью не более 0.1 грамма.</li>
+<li>🌡️ Термометр с диапазоном до 250 градусов Цельсия.</li>
+<li>🧪 Химически стойкие емкости для варки топлива (нержавеющая сталь).</li>
+</ul>
+
+<div class="checklist-block"><h4>☑️ Проверка готовности к сборке</h4><label class="check-item"><input type="checkbox"><span>Подготовлены все компоненты топлива</span></label><label class="check-item"><input type="checkbox"><span>Проверена целостность гильз</span></label><label class="check-item"><input type="checkbox"><span>Изготовлен пуансон нужного диаметра</span></label><label class="check-item"><input type="checkbox"><span>Подготовлено место для работы с вентиляцией</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Отдельное внимание стоит уделить изоляции. Внутренние стенки корпуса, контактирующие с топливом, часто защищают слоем картона или специальной термостойкой бумагой, чтобы предотвратить прогар стенок в случае неравномерного горения.</p>
+
+<h2 id="изготовление-сопла-и-формовка-топлива">Изготовление сопла и формовка топлива</h2>
+
+<p>Сопло — это "ахиллесова пята" самодельного двигателя. Чаще всего для любительских моделей используют спрессованный глиняный состав или графит. Глиняное сопло легко изготовить: смесь каолина и оксида железа прессуется в торце гильзы под высоким давлением. <em>Графитовые сопла</em> более долговечны и лучше держат температуру, но требуют токарной обработки.</p>
+
+<p>Процесс формовки топлива требует аккуратности. После варки смесь быстро застывает, поэтому действовать нужно оперативно. Топливо загружается в гильзу порциями и прессуется пуансоном. Важно обеспечить отсутствие воздушных пузырей, так как они могут создать точки локального перегрева и привести к взрывному разрушению шашки.</p>
+
+<p>Диаметр центрального канала — это параметр, который нельзя менять на глаз. Он рассчитывается исходя из желаемой тяги и давления в камере. Слишком широкий канал приведет к резкому скачку давления и разрыву корпуса, слишком узкий — к затуханию или нестабильному горению.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+<th>Влияние на полет</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Диаметр канала</td>
+<td>Внутренний диаметр топливной шашки</td>
+<td>Определяет площадь горения и давление</td>
+</tr>
+<tr>
+<td>Длина шашки</td>
+<td>Высота топливного столба</td>
+<td>Влияет на общее время работы двигателя</td>
+</tr>
+<tr>
+<td>Плотность топлива</td>
+<td>Степень спрессованности смеси</td>
+<td>Определяет скорость горения и стаб</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>⚠️ Внимание: При прессовке топлива никогда не используйте ударные методы (молоток). Давление должно создаваться плавно винтовым прессом или тисками во избежание детонации смеси.</p>
+</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте графитовую смазку для пуансона перед каждой прессовкой, чтобы топливо не прилипало и поверхность канала оставалась гладкой.</p></div>
+
+<h2 id="расчет-тяги-и-баллистические-характеристики">Расчет тяги и баллистические характеристики</h2>
+
+<p>Прежде чем запускать ракету, необходимо произвести хотя бы приблизительный расчет тяги. Для этого используется формула, связывающая давление в камере, площадь критического сечения и коэффициент тяги. <strong>Баллистический расчет</strong> помогает понять, сможет ли ракета оторваться от стартовой направляющей и не развалится ли она от перегрузок.</p>
+
+<p>Существует множество программ для моделирования, таких как <em>OpenRocket</em> или <em>RPA</em>, которые позволяют ввести параметры двигателя и получить график тяги во времени. Эти инструменты также учитывают аэродинамическое сопротивление и массу ракеты, показывая предполагаемую высоту полета.</p>
+
+<p>Важно понимать разницу между импульсом и тягой. Суммарный импульс — это произведение средней тяги на время работы. Именно от суммарного импульса зависит, к какому классу относится ваш двигатель (например, класс А, В, С по международной классификации).</p>
+
+<p>При расчетах всегда закладывайте запас прочности. Если расчетная тяга составляет 50 Ньютон, корпус и крепления должны выдерживать минимум 100-150 Ньютон. Реальные условия могут отличаться от лабораторных из-за влажности топлива или качества прессовки.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Без предварительного компьютерного моделирования запуск самодельной ракеты превращается в лотерею с высокими рисками.</p></div>
+
+<h2 id="техника-безопасности-и-подготовка-к-запуску">Техника безопасности и подготовка к запуску</h2>
+
+<p>Ракетомоделизм — спорт для взрослых и ответственных людей. Основная опасность исходит не столько от самой ракеты, сколько от неправильного обращения с топливом и пиротехническими изделиями. <strong>Дистанция</strong> — ваш главный друг. Все операции с готовым двигателем должны проводиться на расстоянии не менее 5-10 метров от людей.</p>
+
+<p>Запускать ракеты можно только на специально отведенных площадках, вдали от жилых домов, линий электропередач и сухой травы. Обязательно наличие огнетушителя и аптечки на стартовой позиции. Погодные условия также играют роль: сильный ветер может унести ракету в сторону зрителей.</p>
+
+<p>Электрическая схема запуска должна быть надежной. Используйте только специальные пусковые устройства с ключом безопасности и длинными проводами. Никогда не используйте открытое пламя для поджига двигателя, если это не предусмотрено конструкцией (хотя для любительских ракет электровоспламенение является стандартом).</p>
+
+<ul>
+<li>🛡️ Обязательно носите защитные очки при любых манипуляциях с топливом.</li>
+<li>🔥 Имейте под рукой песок или воду для экстренного тушения.</li>
+<li>📏 Соблюдайте безопасную дистанцию при тестовых прожигах двигателей.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Категорически запрещено хранить готовые двигатели и топливо в жилых помещениях, вблизи отопительных приборов или источников искр.</p>
+</blockquote>
+
+<details class="faq-item"><summary>Что делать, если двигатель не воспламенился?</summary><div class="faq-answer"><p>Подождите минимум 5 минут после попытки запуска. Затем аккуратно подойдите к ракете, отсоедините провода и визуально осмотрите сопло. Часто причиной является плохой контакт воспламенителя.</p></div></details>
+
+<h2 id="частые-ошибки-новичков">Частые ошибки новичков</h2>
+
+<p>Одной из самых распространенных ошибок является пренебрежение качеством уплотнения заглушек. Если задняя заглушка (сопловая) вылетит раньше времени, ракета превратится в опасную гранату, летящую горизонтально. Использование качественной эпоксидной смолы с армированием (стекловолокно или карбонат кальция) обязательно.</p>
+
+<p>Вторая ошибка — неправильный расчет центровки. Двигатель должен быть установлен так, чтобы центр тяжести ракеты находился впереди центра парусности. Если двигатель слишком тяжелый или установлен неправильно, ракета может кувыркаться сразу после старта.</p>
+
+<p>Третья ошибка — экономия на материалах. Попытка использовать пластиковую бутылку вместо стальной гильзы или картонную трубку без пропитки почти гарантированно приведет к прогару и взрыву. Материалы должны соответствовать термическим и механическим нагрузкам.</p>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Можно ли использовать двигатель от фейерверка для ракеты?</summary>
+<p>Технически можно, но это крайне не рекомендуется. Двигатели фейерверков не предназначены для создания тяги, они созданы для выброса звездок. У них нет правильного сопла, и они часто имеют непредсказуемую кривую горения, что делает полет ракеты неуправляемым.</p>
+</details>
+
+<details>
+<summary>Какой максимальный размер может быть у самодельной ракеты?</summary>
+<p>Законодательство многих стран ограничивает количество топлива в любительских двигателях (обычно до 125 грамм смеси). Превышение этих норм переводит изделие в категорию пиротехники промышленного производства или даже оружия, что требует лицензий.</p>
+</details>
+
+<details>
+<summary>Почему моя ракета взорвалась на старте?</summary>
+<p>Наиболее вероятные причины: наличие трещин в топливной шашке, слишком маленькое критическое сечение сопла, использование материалов корпуса, не выдерживающих температуру, или попадание влаги в топливо при изготовлении.</p>
+</details>
+
+<details>
+<summary>Где безопасно тестировать двигатели?</summary>
+<p>Идеальное место — открытое поле вдали от строений, закрепленное в земле металлическое кольцо или бетонный блок, в который устанавливается двигатель соплом вверх. Все операции проводятся дистанционно.</p>
+</details>
+
+<details>
+<summary>Как утилизировать неудавшиеся двигатели?</summary>
+<p>Неудавшиеся двигатели или остатки топлива необходимо вымочить в большом количестве воды до полного растворения селитры. Только после этого твердые остатки можно утилизировать как обычный бытовой мусор.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принципы-работы-твердотопливного-ракетного-двигателя">Принципы работы твердотопливного ракетного двигателя</a></li><li><a href="#выбор-топлива-карамель-или-черный-порох">Выбор топлива: Карамель или Черный порох?</a></li><li><a href="#материалы-и-инструменты-для-сборки-двигателя">Материалы и инструменты для сборки двигателя</a></li><li><a href="#изготовление-сопла-и-формовка-топлива">Изготовление сопла и формовка топлива</a></li><li><a href="#расчет-тяги-и-баллистические-характеристики">Расчет тяги и баллистические характеристики</a></li><li><a href="#техника-безопасности-и-подготовка-к-запуску">Техника безопасности и подготовка к запуску</a></li><li><a href="#частые-ошибки-новичков">Частые ошибки новичков</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/l/lo/lodka-ploskodonka-svoimi-rukami-chertezhi.html" class="related-card">Лодка плоскодонка своими руками: чертежи, материалы и этапы сборки</a></li><li><a href="/articles/s/sa/samodelnyj-yakor-dlya-lodki-svoimi-rukami.html" class="related-card">Самодельный якорь для лодки своими руками: чертежи и инструкции</a></li><li><a href="/articles/f/fa/farshirovannye-lodochki-iz-kabachkov-s-farshem-v-dukhovke.html" class="related-card">Фаршированные лодочки из кабачков с фаршем в духовке: рецепт</a></li><li><a href="/articles/r/ru/rulevaya-konsol-dlya-lodki-pvkh-svoimi-rukami.html" class="related-card">Рулевая консоль для лодки ПВХ своими руками: чертежи и сборка</a></li><li><a href="/articles/k/ka/kak-delaetsya-lodka.html" class="related-card">Как делается лодка: этапы производства и технологии</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/l/lo/lodka-ploskodonka-svoimi-rukami-chertezhi.html" class="related-bottom-card"><span class="related-bottom-title">Лодка плоскодонка своими руками: чертежи, материалы и этапы сборки</span><span class="related-bottom-desc">Подробная инструкция по созданию лодки плоскодонки своими руками. Чертежи, расчет материалов, выбор </span></a><a href="/articles/s/sa/samodelnyj-yakor-dlya-lodki-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Самодельный якорь для лодки своими руками: чертежи и инструкции</span><span class="related-bottom-desc">Подробное руководство, как сделать надежный якорь для лодки ПВХ или катера из металла, бетона и плас</span></a><a href="/articles/f/fa/farshirovannye-lodochki-iz-kabachkov-s-farshem-v-dukhovke.html" class="related-bottom-card"><span class="related-bottom-title">Фаршированные лодочки из кабачков с фаршем в духовке: рецепт</span><span class="related-bottom-desc">Сочные фаршированные лодочки из кабачков с фаршем в духовке. Пошаговый рецепт, секреты выбора ингред</span></a><a href="/articles/r/ru/rulevaya-konsol-dlya-lodki-pvkh-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Рулевая консоль для лодки ПВХ своими руками: чертежи и сборка</span><span class="related-bottom-desc">Как сделать рулевую консоль для лодки ПВХ своими руками. Выбор материалов, чертежи, пошаговая сборка</span></a><a href="/articles/k/ka/kak-delaetsya-lodka.html" class="related-bottom-card"><span class="related-bottom-title">Как делается лодка: этапы производства и технологии</span><span class="related-bottom-desc">Подробный гид по созданию лодок. Изучите, как делают корпус из ПВХ или алюминия, этапы сборки, матер</span></a><a href="/articles/k/ka/kak-sozdat-lodku.html" class="related-bottom-card"><span class="related-bottom-title">Как сделать лодку своими руками: пошаговое руководство 2026</span><span class="related-bottom-desc">Полное руководство по самостоятельному изготовлению лодки: от выбора материалов до испытаний на воде</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

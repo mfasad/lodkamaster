@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>ГПБА подводной лодки: устройство, функции и принцип работы — ЛодкаМастер</title>
+    <meta name="description" content="Полный разбор ГПБА подводной лодки. Назначение главного распределительного щита бортовых автоматов, схема защиты и правила обслуживания.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/g/gp/gpba-podvodnoj-lodki.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ГПБА подводной лодки: устройство, функции и принцип работы">
+    <meta property="og:description" content="Полный разбор ГПБА подводной лодки. Назначение главного распределительного щита бортовых автоматов, схема защиты и правила обслуживания.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/podvodnye-lodki/">Подводные лодки</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">ГПБА подводной лодки: устройство, функции и принцип работы</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>ГПБА подводной лодки: устройство и эксплуатация</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#конструкция-и-основные-узлы-гпба">Конструкция и основные узлы ГПБА</a></li><li><a href="#принцип-работы-системы-защиты">Принцип работы системы защиты</a></li><li><a href="#распределение-энергии-по-потребителям">Распределение энергии по потребителям</a></li><li><a href="#эксплуатация-и-контроль-параметров">Эксплуатация и контроль параметров</a></li><li><a href="#регламентные-работы-и-обслуживание">Регламентные работы и обслуживание</a></li><li><a href="#типовые-неисправности-и-методы-их-устранения">Типовые неисправности и методы их устранения</a></li><li><a href="#безопасность-при-работе-с-гпба">Безопасность при работе с ГПБА</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+<p>В сложнейшем организме современного подводного корабля, где каждый механизм отвечает за выживание экипажа и выполнение боевой задачи, критически важным элементом является система распределения электроэнергии. Именно <strong>ГПБА подводной лодки</strong> (Главный Пульт Бортовых Автоматов) выступает в роли центрального узла, принимающего энергию от генераторов и аккумулирующих батарей, чтобы затем дозированно и безопасно передать её потребителям.</p>
+
+<p>Понимание принципов работы этого устройства необходимо не только инженерам-электрикам, но и всему командному составу, так как от его состояния зависит живучесть корабля в критических ситуациях. Любой сбой в работе <em>распределительного щита</em> может привести к потере хода, отказу систем жизнеобеспечения или невозможности всплытия, поэтому знание его устройства является базовым требованием для специалистов.</p>
+
+<p>В этой статье мы детально разберем конструкцию пульта, рассмотрим логику работы защитных автоматов и обсудим регламентные работы по обслуживанию. Особое внимание уделим вопросам безопасности, так как работа с токами высокой мощности в замкнутом объеме подводного корабля требует исключительной дисциплины и точности.</p>
+
+<h2 id="конструкция-и-основные-узлы-гпба">Конструкция и основные узлы ГПБА</h2>
+<p>Главный пульт представляет собой массивную металлическую конструкцию, разделенную на функциональные секции. Внутри расположены силовые шины, выполненные из меди высокой чистоты для минимизации потерь при передаче <strong>постоянного тока</strong>. Именно через эти шины энергия поступает от главных генераторов дизель-электрической установки или аккумуляторной батареи (АБ).</p>
+
+<p>Каждая секция пульта оснащена индивидуальными коммутационными аппаратами. Основу составляют автоматические выключатели, которые не только замыкают и размыкают цепь, но и мгновенно реагируют на перегрузки. Конструкция предусматривает возможность подключения <em>контрольно-измерительных приборов</em>, позволяющих оператору в реальном времени отслеживать напряжение и силу тока на каждом направлении.</p>
+
+<p>Важнейшим элементом конструкции является система изоляции токоведущих частей. Учитывая высокую влажность и возможность попадания забортной воды в аварийных ситуациях, все контакты покрыты специальными диэлектрическими составами. <mark>Рабочее напряжение ГПБА на большинстве дизель-электрических подводных лодок составляет 220 Вольт постоянного тока</mark>, что требует особого подхода к выбору материалов изоляции.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При осмотре ГПБА всегда обращайте внимание на цвет индикаторов — потемнение стекла лампы часто свидетельствует о длительной работе в режиме перегрузки.</p></div>
+
+<p>Механическая прочность креплений всех узлов рассчитана на вибрационные и ударные нагрузки, возникающие при движении лодки под водой или при воздействии близкого гидроакустического взрыва. Надежность фиксации шин исключает возникновение искрения, которое в атмосфере, насыщенной водородом (при зарядке батарей), может стать фатальным.</p>
+
+<h2 id="принцип-работы-системы-защиты">Принцип работы системы защиты</h2>
+<p>Основная функция ГПБА — это не просто коммутация, а интеллектуальная защита бортовой сети. Автоматические выключатели, установленные на пульте, настроены на определенные токи срабатывания. При коротком замыкании в цепи потребителя автомат должен отключиться за доли секунды, чтобы предотвратить повреждение кабельных трасс и возгорание.</p>
+
+<p>Существует селективность защиты, которая является ключевым понятием в электротехнике подводного корабля. Это означает, что при аварии в конкретной цепи (например, в системе вентиляции) отключается только автомат этой линии, а не главный ввод. Такая иерархия позволяет сохранить <strong>энергоснабжение</strong> остальных жизненно важных систем, таких как навигация и связь.</p>
+
+<ul>
+<li>🔌 <strong>Тепловая защита</strong> — реагирует на длительную, но незначительную перегрузку по току, защищая кабели от перегрева изоляции.</li>
+<li>⚡ <strong>Электромагнитная отсечка</strong> — срабатывает мгновенно при коротком замыкании, когда ток возрастает в разы за миллисекунды.</li>
+<li>📉 <strong>Защита по минимальному напряжению</strong> — отключает потребители, если напряжение в сети падает ниже критического уровня, предотвращая выход оборудования из строя.</li>
+</ul>
+
+<p>Оператор пульта должен четко понимать уставку каждого автомата. Неправильная замена выключателя на аналог с большими токовыми параметрами может привести к тому, что при аварии сгорит кабельная линия, но автомат так и не сработает. Это грубейшее нарушение правил технической эксплуатации.</p>
+
+<details class="faq-item"><summary>Почему нельзя заклинивать рукоятку автомата?</summary><div class="faq-answer"><p>Некоторые недобросовестные специалисты пытаются зафиксировать рукоятку автомата в положении "ВКЛ" при помощи проволоки или изоляционной ленты. Это категорически запрещено, так как в случае короткого замыкания автомат физически не сможет разорвать цепь, что приведет к расплавлению шин и пожару.</p></div></details>
+
+<h2 id="распределение-энергии-по-потребителям">Распределение энергии по потребителям</h2>
+<p>ГПБА подводной лодки распределяет энергию по множеству направлений. Потребители делятся на группы ответственности. К первой группе относятся механизмы, обеспечивающие всплытие, движение и борьбу за живучесть. Отключение питания на этих направлениях недопустимо, поэтому они часто имеют резервные вводы.</p>
+
+<p>Вторая группа включает системы обеспечения быта экипажа и вспомогательные механизмы. В аварийной ситуации, когда мощность главной энергетической установки ограничена, питание этих потребителей может быть снято вручную или автоматически для экономии заряда аккумуляторной батареи. Это позволяет продлить время автономного плавания.</p>
+
+<p>Схема распределения постоянно меняется в зависимости от режима работы лодки. В подводном положении, когда дизельные генераторы остановлены, ГПБА работает исключительно от АБ. В этом режиме контроль за токопотреблением ведется с секундной периодичностью, так как ресурс энергии ограничен.</p>
+
+<div class="poll-widget" id="poll-4dd5fccc"><div class="poll-widget-question">📊 Какой режим работы ГПБА наиболее критичен?</div><div class="poll-widget-option" data-poll="4dd5fccc" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">На поверхности при работе дизелей</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="4dd5fccc" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">В подводном положении от АБ</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="4dd5fccc" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">В режиме штурмовой атаки</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="4dd5fccc" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">При зарядке АБ от береговой сети</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Особое внимание уделяется цепям управления. Сами управляющие сигналы часто также проходят через автоматику ГПБА, хотя и при меньших токах. Надежность этих цепей гарантирует, что приказ командира будет исполнен механизмами исполнительных устройств без задержек.</p>
+
+<h2 id="эксплуатация-и-контроль-параметров">Эксплуатация и контроль параметров</h2>
+<p>Работа вахтенного электрика у ГПБА требует высокой концентрации. Основной инструмент контроля — это показания вольтметров и амперметров, а также визуальный осмотр состояния автоматов. Любое изменение гудения трансформаторов (если они есть в схеме выпрямления) или появление запаха гари требует немедленной реакции.</p>
+
+<p>Контроль осуществляется по строгому регламенту. Периодичность обходов и проверок записана в вахтенном журнале. Оператор обязан проверять температуру корпусов автоматических выключателей. Чрезмерный нагрев может указывать на плохой контакт в месте соединения шин, что ведет к росту переходного сопротивления и потерям энергии.</p>
+
+<p>В таблице ниже приведены типовые параметры, которые контролируются на ГПБА в различных режимах:</p>
+
+<table>
+<thead>
+<tr>
+<th>Режим работы</th>
+<th>Напряжение сети (В)</th>
+<th>Контролируемый параметр</th>
+<th>Нормативное значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Подводный ход (АБ)</td>
+<td>220 ± 10%</td>
+<td>Ток разряда</td>
+<td>Зависит от скорости</td>
+</tr>
+<tr>
+<td>Надводный ход (Дизель)</td>
+<td>220 ± 5%</td>
+<td>Частота вращения ДГ</td>
+<td>Стабильная</td>
+</tr>
+<tr>
+<td>Зарядка АБ</td>
+<td>250-280</td>
+<td>Ток заряда</td>
+<td>По графику зарядки</td>
+</tr>
+<tr>
+<td>Аварийный режим</td>
+<td>> 180</td>
+<td>Остаточная емкость</td>
+<td>Минимум</td>
+</tr>
+</tbody>
+</table>
+
+<p>Все отклонения от нормы фиксируются. Если напряжение падает ниже допустимого предела, автоматически или по команде отключаются второстепенные потребители. Это стандартная процедура для сохранения запаса хода.</p>
+
+<h2 id="регламентные-работы-и-обслуживание">Регламентные работы и обслуживание</h2>
+<p>Для поддержания ГПБА в боевой готовности проводятся регулярные технические обслуживания. Они включают в себя протяжку контактных соединений, так как вибрация способна ослабить болтовые соединения шин. Ослабленный контакт — это искрение и нагрев.</p>
+
+<p>Очистка от пыли и грязи производится сжатым воздухом или специальными пылесосами, безопасными для электроустановок. Накопление токопроводящей пыли (графитовой, металлической) может привести к межфазному замыканию или пробою на корпус. Влажная уборка внутри щита запрещена.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист обслуживания ГПБА</h4><label class="check-item"><input type="checkbox"><span>Визуальный осмотр изоляции</span></label><label class="check-item"><input type="checkbox"><span>Проверка затяжки болтовых соединений</span></label><label class="check-item"><input type="checkbox"><span>Очистка контактов от окислов</span></label><label class="check-item"><input type="checkbox"><span>Проверка работы расцепителей автоматов</span></label><label class="check-item"><input type="checkbox"><span>Запись параметров в журнал</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Периодически производится проверка работы расцепителей автоматов. Это делается с помощью специальных испытательных устройств, имитирующих перегрузку. Если автомат не отключает цепь при заданном токе, он подлежит немедленной замене или ремонту в мастерской.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Все работы внутри ГПБА проводятся только после снятия напряжения и вывешивания предупреждающих плакатов "Не включать! Работают люди". Остаточное напряжение на конденсаторах должно быть снято принудительным разрядом.</p>
+</blockquote>
+
+<h2 id="типовые-неисправности-и-методы-их-устранения">Типовые неисправности и методы их устранения</h2>
+<p>В процессе эксплуатации могут возникать различные неисправности. Одной из частых проблем является "подгорание" контактов. При частых коммутациях под нагрузкой поверхность контакта выгорает, увеличивается сопротивление, и автомат начинает греться даже без внешней перегрузки.</p>
+
+<p>Еще одна распространенная проблема — ложные срабатывания тепловых расцепителей. Это может происходить из-за старения биметаллической пластины или изменения температурного режима в помещении центрального поста. В таких случаях требуется калибровка или замена теплового элемента.</p>
+
+<ul>
+<li>🔥 <strong>Перегрев шин</strong> — устраняется зачисткой контактов и tightening (затяжкой) соединений.</li>
+<li>🔊 <strong>Гудение</strong> — указывает на вибрацию магнитопровода или ослабление крепежа самого автомата.</li>
+<li>🚫 <strong>Отказ включения</strong> — часто вызван срабатыванием независимого расцепителя или механической поломкой взводного механизма.</li>
+</ul>
+
+<p>Диагностика неисправностей требует наличия принципиальной электрической схемы и измерительных приборов. Самостоятельное вмешательство в настройки расцепителей без специального оборудования и допуска запрещено, так как это нарушает селективность защиты всего корабля.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Главная мысль раздела: Регулярное обслуживание ГПБА предотвращает 90% аварийных ситуаций, связанных с электрооборудованием подводной лодки.</p></div>
+
+<h2 id="безопасность-при-работе-с-гпба">Безопасность при работе с ГПБА</h2>
+<p>Электрооборудование подводной лодки работает в условиях повышенной опасности. Поражение электрическим током в замкнутом объеме отсека, где человек часто касается заземленных металлических конструкций (корпуса лодки), может привести к летальному исходу даже при относительно низких напряжениях из-за влажной кожи и пота.</p>
+
+<p>Персонал обязан использовать диэлектрические коврики, перчатки и инструмент с изолированными рукоятками. Запрещается прикасаться одновременно к токоведущим частям и корпусу оборудования. При работе с ГПБА всегда должен присутствовать второй человек для оказания первой помощи в случае поражения током.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> В случае задымления или пожара в районе ГПБА, первоочередной задачей является обесточивание соответствующего участка сети. Тушение электрооборудования под напряжением водой категорически запрещено.</p>
+</blockquote>
+
+<p>Особые требования предъявляются к освещению в районе пульта. Оно должно быть достаточным для чтения показаний приборов, но аварийное освещение должно переключаться автоматически при пропадании основного света. Эвакуация из отсека в темноте при работающей вентиляции и гудящих механизмах крайне затруднена.</p>
+
+<details>
+<summary>Что такое "земля" в сети постоянного тока подводной лодки?</summary>
+<p>В сетях постоянного тока подводных лодок "землей" называют минусовую шину, которая часто соединена с корпусом корабля. Однако, в некоторых схемах применяется изолированная нейтраль, где ни один полюс не соединен с корпусом. Контроль изоляции в таких сетях ведется постоянно специальными приборами, так как первое замыкание на корпус не вызывает короткого замыкания, но второе замыкание в другой точке приведет к аварии.</p>
+</details>
+
+<details>
+<summary>Почему ГПБА такой тяжелый и громоздкий?</summary>
+<p>Массивность ГПБА обусловлена необходимостью использования толстых медных шин для больших токов, мощных дугогасительных камер и прочных корпусов, выдерживающих давление и ударную волну. Кроме того, запас прочности механических частей рассчитан на десятилетия службы в агрессивной морской среде.</p>
+</details>
+
+<details>
+<summary>Можно ли заменить автомат ГПБА на бытовой аналог?</summary>
+<p>Категорически нет. Автоматы ГПБА имеют специальные характеристики срабатывания, устойчивы к вибрации, влажности и, главное, способны разрывать дугу постоянного тока высокого напряжения, что для бытовых автоматов (рассчитанных на переменный ток) невозможно и приведет к взрыву.</p>
+</details>
+
+<details>
+<summary>Как часто проверяется изоляция ГПБА?</summary>
+<p>Контроль изоляции ведется непрерывно в автоматическом режиме специальными приборами. Полная проверка сопротивления изоляции мегаомметром проводится при каждом выходе в море, после длительных стоянок и после любых работ, связанных с вскрытием электрооборудования.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#конструкция-и-основные-узлы-гпба">Конструкция и основные узлы ГПБА</a></li><li><a href="#принцип-работы-системы-защиты">Принцип работы системы защиты</a></li><li><a href="#распределение-энергии-по-потребителям">Распределение энергии по потребителям</a></li><li><a href="#эксплуатация-и-контроль-параметров">Эксплуатация и контроль параметров</a></li><li><a href="#регламентные-работы-и-обслуживание">Регламентные работы и обслуживание</a></li><li><a href="#типовые-неисправности-и-методы-их-устранения">Типовые неисправности и методы их устранения</a></li><li><a href="#безопасность-при-работе-с-гпба">Безопасность при работе с ГПБА</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-proiskhodit-pogruzhenie-podvodnoj-lodki.html" class="related-card">Как происходит погружение подводной лодки: физика процесса и устройство</a></li><li><a href="/articles/p/po/podvodnaya-lodka-film-1981-rezhisserskaya-versiya.html" class="related-card">Das Boot (1981) Режиссерская версия: Полный разбор культового фильма</a></li><li><a href="/articles/g/gi/gibel-podvodnoj-lodki.html" class="related-card">Гибель подводной лодки: причины, статистика и риски</a></li><li><a href="/articles/k/ko/kogda-postroili-pervuyu-podvodnuyu-lodku.html" class="related-card">Когда построили первую подводную лодку: история и факты</a></li><li><a href="/articles/k/k-/k-490-podvodnaya-lodka.html" class="related-card">Подводная лодка проекта 490: История, ТТХ и Анализ</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kak-proiskhodit-pogruzhenie-podvodnoj-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Как происходит погружение подводной лодки: физика процесса и устройство</span><span class="related-bottom-desc">Подробный разбор того, как происходит погружение подводной лодки. Физика балласта, работа цистерн гл</span></a><a href="/articles/p/po/podvodnaya-lodka-film-1981-rezhisserskaya-versiya.html" class="related-bottom-card"><span class="related-bottom-title">Das Boot (1981) Режиссерская версия: Полный разбор культового фильма</span><span class="related-bottom-desc">Анализ фильма Подводная лодка 1981 года режиссерская версия Вольфганга Петерсена. История создания, </span></a><a href="/articles/g/gi/gibel-podvodnoj-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Гибель подводной лодки: причины, статистика и риски</span><span class="related-bottom-desc">Анализ причин гибели подводных лодок: от имплозии до пожаров. Статистика аварийности, устройство про</span></a><a href="/articles/k/ko/kogda-postroili-pervuyu-podvodnuyu-lodku.html" class="related-bottom-card"><span class="related-bottom-title">Когда построили первую подводную лодку: история и факты</span><span class="related-bottom-desc">Узнайте, когда построили первую в мире подводную лодку. История от «Черепахи» Диббла до «Наутилуса» </span></a><a href="/articles/k/k-/k-490-podvodnaya-lodka.html" class="related-bottom-card"><span class="related-bottom-title">Подводная лодка проекта 490: История, ТТХ и Анализ</span><span class="related-bottom-desc">Детальный обзор проекта 490: характеристики, вооружение и роль малой ПЛ в ВМФ. Анализ конструкции и </span></a><a href="/articles/m/ma/maket-podvodnoj-lodki-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Макет подводной лодки своими руками: чертежи и сборка</span><span class="related-bottom-desc">Создаем точную модель субмарины в домашних условиях. Выбор материалов, чертежи, покраска и сборка де</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

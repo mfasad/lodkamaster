@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Компрессия на двухтактном двигателе: нормы, замеры и причины падения — ЛодкаМастер</title>
+    <meta name="description" content="Узнайте, какая компрессия должна быть на двухтактном двигателе. Причины низкого давления, методы диагностики и восстановление ЦПГ лодочного мотора.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/k/ko/kompressiya-na-dvukhtaktnom-dvigatele.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Компрессия на двухтактном двигателе: нормы, замеры и причины падения">
+    <meta property="og:description" content="Узнайте, какая компрессия должна быть на двухтактном двигателе. Причины низкого давления, методы диагностики и восстановление ЦПГ лодочного мотора.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Компрессия на двухтактном двигателе: нормы, замеры и причины падения</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Компрессия на двухтактном двигателе: диагностика и нормы давления</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#физические-основы-и-отличие-от-четырехтактных-моторов">Физические основы и отличие от четырехтактных моторов</a></li><li><a href="#нормальные-показатели-и-факторы-влияния">Нормальные показатели и факторы влияния</a></li><li><a href="#инструменты-для-замера-и-подготовка-двигателя">Инструменты для замера и подготовка двигателя</a></li><li><a href="#пошаговая-инструкция-по-измерению-компрессии">Пошаговая инструкция по измерению компрессии</a></li><li><a href="#причины-падения-компрессии-и-методы-диагностики">Причины падения компрессии и методы диагностики</a></li><li><a href="#восстановление-компрессии-ремонт-и-замена">Восстановление компрессии: ремонт и замена</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Снижение мощности лодочного мотора и увеличение расхода топлива часто указывают на износ цилиндро-поршневой группы, однако точный диагноз может поставить только измерение давления в цилиндре. Компрессия на двухтактном двигателе является ключевым показателем его технического состояния, напрямую влияющим на способность мотора запускаться и держать холостые обороты. В отличие от четырехтактных аналогов, здесь процессы продувки и сжатия происходят одновременно, что накладывает свои особенности на процедуру замера.</p>
+
+<p>Многие владельцы водной техники игнорируют этот параметр до момента полной остановки двигателя, что приводит к дорогостоящему капитальному ремонту. Понимание физических процессов, происходящих внутри картера и цилиндра, позволит вам вовремя заметить проблему. В этой статье мы разберем нормативные значения, влияние температуры и конструктивных особенностей на итоговые цифры манометра.</p>
+
+<h2 id="физические-основы-и-отличие-от-четырехтактных-моторов">Физические основы и отличие от четырехтактных моторов</h2>
+
+<p>Принципиальное отличие <strong>двухтактного цикла</strong> заключается в том, что сжатие рабочей смеси происходит не только в цилиндре, но и в кривошипной камере. Пока в надпоршневом пространстве идет такт рабочего хода или продувка, в картере происходит предварительное сжатие новой порции топливовоздушной смеси. Именно поэтому показатель компрессии здесь зависит от герметичности не только поршневых колец, но и сальников коленвала.</p>
+
+<p>В четырехтактных двигателях клапаны надежно изолируют цилиндр во время такта сжатия, тогда как в двухтактниках эту роль играют окна в цилиндре и поршень. <em>Герметичность</em> системы нарушается, если высота поршня недостаточна для перекрытия выпускного окна в момент измерения. Это делает замеры на двухтактных моторах более зависимыми от частоты вращения стартера.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Попытка замерить компрессию на холодном двигателе часто дает заниженные результаты, так как тепловые зазоры между поршнем и цилиндром еще не вышли на рабочий режим.</p>
+</blockquote>
+
+<p>Кроме того, важную роль играет степень сжатия, которая определяется геометрией камеры сгорания и фазой открытия выхлопного окна. Если в четырехтактном моторе мы измеряем максимальное давление, которое может создать механика, то в двухтактном — реальное давление с учетом потерь через окна. <strong>Эффективная компрессия</strong> всегда ниже теоретической из-за особенностей газообмена.</p>
+
+<details class="faq-item"><summary>Почему двухтактники шумнее?</summary><div class="faq-answer"><p>Шумность двухтактных двигателей обусловлена более высоким давлением в цилиндре в момент открытия выпускного окна. Резкий выход отработавших газов под высоким давлением создает характерный хлопок, который усиливается при износе глушителя или неправильной настройке выхлопа.</p></div></details>
+
+<h2 id="нормальные-показатели-и-факторы-влияния">Нормальные показатели и факторы влияния</h2>
+
+<p>Вопрос о том, какая компрессия должна быть на двухтактном двигателе, не имеет универсального ответа для всех моделей. Стандартным диапазоном для исправных лодочных моторов мощностью от 2 до 50 л.с. считаются значения от 7 до 10 атмосфер (бар). Однако современные форсированные модели могут показывать и более высокие значения, вплоть до 12 атмосфер, благодаря улучшенной геометрии ЦПГ.</p>
+
+<p>На итоговое число влияет множество факторов, среди которых основным является степень износа <strong>поршневых колец</strong>. Также значительное воздействие оказывает качество топлива и октановое число, так как детонация способна быстро разрушить перемычки поршня. Важно учитывать и состояние топливной смеси: наличие масла в бензине создает пленку, которая временно улучшает компрессию.</p>
+
+<ul>
+<li>🛠️ Состояние поршневых колец: залегание или поломка колец резко снижает давление.</li>
+<li>🌡️ Температура двигателя: на горячем моторе показатели всегда выше из-за теплового расширения металла.</li>
+<li>⚙️ Состояние сальников: подсос воздуха через сальники коленвала имитирует низкую компрессию.</li>
+<li>🔋 Заряд аккумулятора: слабый стартер не раскрутит мотор до оборотов, необходимых для точного замера.</li>
+</ul>
+
+<div class="poll-widget" id="poll-12dde417"><div class="poll-widget-question">📊 Какая компрессия у вашего мотора?</div><div class="poll-widget-option" data-poll="12dde417" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Меньше 6 атм</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="12dde417" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">6-8 атм</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="12dde417" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">9-10 атм</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="12dde417" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Более 11 атм</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="12dde417" data-idx="4" onclick="pbPollVote(this)"><span class="poll-widget-label">Не замерял</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Следует помнить, что разброс показаний между цилиндрами на многоцилиндровых моторах не должен превышать 1 атмосферу. Если на одном цилиндре 9 бар, а на соседнем 7 бар, это сигнал о неравномерном износе или проблеме с прокладкой. <em>Равномерность работы</em> всех цилиндров важнее абсолютного значения давления в одном из них.</p>
+
+<h2 id="инструменты-для-замера-и-подготовка-двигателя">Инструменты для замера и подготовка двигателя</h2>
+
+<p>Для проведения точной диагностики вам потребуется специализированный компрессометр, предназначенный для бензиновых двигателей. Стандартный набор обычно включает сам манометр, гибкий шланг и набор переходников с резьбой. Для двухтактных лодочных моторов критически важно наличие переходника, который вворачивается вместо свечи зажигания, обеспечивая герметичность соединения.</p>
+
+<p>Перед началом процедуры необходимо прогреть двигатель до рабочей температуры. Это можно сделать, прокатившись на лодке или дав мотору поработать на воде в бочке около 10-15 минут. Прогрев необходим для того, чтобы металлические детали ЦПГ расширились и заняли свое рабочее положение, минимизируя зазоры.</p>
+
+<p>Далее следует вывернуть все свечи зажигания. Если оставить свечи в соседних цилиндрах, компрессия в проверяемом цилиндре будет искусственно занижена из-за сопротивления проворачиванию коленвала. Также рекомендуется отключить систему зажигания, отсоединив высоковольтные провода или поставив "глушилку", чтобы избежать случайной искры и запуска двигателя.</p>
+
+<div class="checklist-block"><h4>☑️ Подготовка к замеру компрессии</h4><label class="check-item"><input type="checkbox"><span>Прогреть мотор до рабочей температуры</span></label><label class="check-item"><input type="checkbox"><span>Вывернуть все свечи зажигания</span></label><label class="check-item"><input type="checkbox"><span>Отключить систему зажигания</span></label><label class="check-item"><input type="checkbox"><span>Зарядить аккумулятор до максимума</span></label><label class="check-item"><input type="checkbox"><span>Подготовить компрессометр и ключи</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Обязательно проверьте заряд аккумуляторной батареи. <strong>Стартер</strong> должен вращать коленчатый вал с высокой и стабильной частотой. Если стартер крутит вяло, манометр покажет ложно заниженные значения, и вы можете ошибочно диагностировать износ колец. В идеале использовать внешний аккумулятор с толстыми пусковыми проводами.</p>
+
+<h2 id="пошаговая-инструкция-по-измерению-компрессии">Пошаговая инструкция по измерению компрессии</h2>
+
+<p>Процесс измерения начинается с вворачивания наконечника компрессометра в свечное отверстие. Убедитесь, что соединение герметично и инструмент сидит плотно. Резьбовое соединение предпочтительнее, чем прижимное, так как оно исключает потерю давления через неплотности в момент резкого скачка давления.</p>
+
+<p>После установки прибора необходимо резко провернуть двигатель стартером. Длительность прокрутки должна составлять не менее 3-5 секунд или примерно 10-15 оборотов коленвала. За это время стрелка манометра должна подняться до максимального значения и перестать расти.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не держите кнопку стартера нажатой дольше 10 секунд непрерывно, чтобы избежать перегрева обмоток стартера и разряда аккумулятора.</p>
+</blockquote>
+
+<p>Зафиксируйте показание, сбросьте давление кнопкой на приборе и повторите процедуру еще два раза для каждого цилиндра. Среднее арифметическое трех замеров даст наиболее точный результат. Все данные удобно заносить в таблицу для сравнения.</p>
+
+<table>
+<thead>
+<tr>
+<th>Цилиндр</th>
+<th>Замер 1 (атм)</th>
+<th>Замер 2 (атм)</th>
+<th>Замер 3 (атм)</th>
+<th>Среднее</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Цилиндр 1</td>
+<td>8.5</td>
+<td>8.6</td>
+<td>8.4</td>
+<td>8.5</td>
+</tr>
+<tr>
+<td>Цилиндр 2</td>
+<td>6.0</td>
+<td>6.2</td>
+<td>5.9</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>Цилиндр 3</td>
+<td>8.4</td>
+<td>8.5</td>
+<td>8.5</td>
+<td>8.5</td>
+</tr>
+<tr>
+<td>Цилиндр 4</td>
+<td>8.3</td>
+<td>8.4</td>
+<td>8.3</td>
+<td>8.3</td>
+</tr>
+</tbody>
+</table>
+
+<p>Анализируя таблицу, можно сразу увидеть, что второй цилиндр имеет критически низкое давление. Разброс между цилиндрами составляет более 2 атмосфер, что требует немедленного вмешательства. <mark>Критическим порогом</mark> для большинства двухтактных моторов считается значение ниже 6 атмосфер, при котором устойчивая работа на холостом ходу становится невозможной.</p>
+
+<h2 id="причины-падения-компрессии-и-методы-диагностики">Причины падения компрессии и методы диагностики</h2>
+
+<p>Если замеры показали низкие значения, необходимо определить причину. Самая распространенная проблема — износ или залегание поршневых колец. В этом случае кольца не плотно прилегают к стенкам цилиндра, и газы прорываются в картер. Часто это сопровождается повышенным расходом масла и дымным выхлопом.</p>
+
+<p>Второй причиной может быть повреждение самого цилиндра или поршня. Нагар на поршне, задиры на зеркале цилиндра или даже микротрещины в поршне drastically снижают эффективность сжатия. Для двухтактных моторов также характерен износ выхлопных окон, когда кромки окна стачиваются и перестают герметично перекрываться поршнем.</p>
+
+<ul>
+<li>🔍 Нагар в выхлопном окне: коксующееся масло забивает каналы и мешает закрытию.</li>
+<li>💥 Прогар поршня: локальное разрушение металла из-за детонации или бедной смеси.</li>
+<li>🔄 Износ сальников коленвала: подсос воздуха снаружи, а не прорыв газов внутрь.</li>
+<li>📉 Деформация шатуна: перекос поршня приводит к неравномерному прилеганию колец.</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Для проверки герметичности сальников можно подать давление в картер через дренажное отверстие и побрызгать мыльным раствором на сальники. Появление пузырей укажет на место утечки.</p></div>
+
+<p>Диагностику стоит начинать с визуального осмотра через свечное отверстие с помощью фонарика и эндоскопа. Наличие глубоких задиров или сколов видно сразу. Если визуально дефектов нет, но компрессия низкая, можно попробовать залить в цилиндр 5-10 мл моторного масла и повторить замер. Если давление выросло — проблема в кольцах, если осталось прежним — вероятен прогар поршня или неплотное прилегание головки цилиндра.</p>
+
+<h2 id="восстановление-компрессии-ремонт-и-замена">Восстановление компрессии: ремонт и замена</h2>
+
+<p>Восстановление работоспособности двигателя зависит от выявленной причины. Если проблема в нагаре, иногда помогает раскоксовка специальными химическими средствами, хотя для лодочных моторов механическая чистка часто эффективнее. При износе колец требуется разборка двигателя и замена поршневой группы.</p>
+
+<p>В современных условиях ремонт часто сводится к замене всей ЦПГ (цилиндр, поршень, кольца, пальцы, стопоры) в сборе. Это гарантирует заводские зазоры и отсутствие необходимости в расточке. <strong>Хонингование</strong> цилиндра при установке новых колец является обязательной процедурой для создания маслоудерживающей сетки.</p>
+
+<p>При сборке двигателя особое внимание уделяйте моменту затяжки болтов головки цилиндра и состоянию прокладок. Использование герметика допустимо только в местах, указанных производителем, и его избыток может привести к закупорке каналов охлаждения или смазки. После сборки необходим период обкатки, даже если использовались новые детали.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не используйте абразивные материалы для чистки зеркала цилиндра. Любая царапина станет очагом дальнейшего разрушения и задира.</p>
+</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Замена ЦПГ в сборе часто экономически выгоднее и надежнее, чем попытка расточить старый цилиндр и подобрать ремонтный поршень, особенно для моторов малой мощности.</p></div>
+
+<p>После завершения ремонта обязательно проведите повторный замер компрессии. Он должен показать значения в пределах заводских допусков. Также рекомендуется проверить работу мотора под нагрузкой, контролируя температуру и отсутствие посторонних шумов.</p>
+
+<details>
+<summary>Можно ли ездить на моторе с низкой компрессией?</summary>
+<p>Эксплуатация мотора с критически низкой компрессией не рекомендуется. Это приводит к перегреву, повышенному расходу топлива, затрудненному запуску и eventual разрушению двигателя. Кроме того, несгоревшее топливо смывает масляную пленку, ускоряя износ.</p>
+</details>
+
+<details>
+<summary>Влияет ли октановое число бензина на компрессию?</summary>
+<p>Само октановое число не меняет геометрическую компрессию, но использование бензина с низким октановым числом может вызвать детонацию. Детонация создает ударные нагрузки, которые могут привести к прогару поршня и падению компрессии.</p>
+</details>
+
+<details>
+<summary>Как часто нужно замерять компрессию?</summary>
+<p>Профилактический замер рекомендуется проводить раз в сезон или каждые 50-100 моточасов. Внеплановая диагностика необходима при появлении проблем с запуском, падении тяги или увеличении расхода топлива.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#физические-основы-и-отличие-от-четырехтактных-моторов">Физические основы и отличие от четырехтактных моторов</a></li><li><a href="#нормальные-показатели-и-факторы-влияния">Нормальные показатели и факторы влияния</a></li><li><a href="#инструменты-для-замера-и-подготовка-двигателя">Инструменты для замера и подготовка двигателя</a></li><li><a href="#пошаговая-инструкция-по-измерению-компрессии">Пошаговая инструкция по измерению компрессии</a></li><li><a href="#причины-падения-компрессии-и-методы-диагностики">Причины падения компрессии и методы диагностики</a></li><li><a href="#восстановление-компрессии-ремонт-и-замена">Восстановление компрессии: ремонт и замена</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/r/re/remont-lodochnykh-vintov.html" class="related-card">Ремонт лодочных винтов: устранение сколов и правка</a></li><li><a href="/articles/s/sv/svarka-lodki-progress.html" class="related-card">Сварка лодки Прогресс: технологии, электроды и чертежи</a></li><li><a href="/articles/k/ka/kak-smenit-klapan-na-lodke-pvkh.html" class="related-card">Как сменить клапан на лодке ПВХ: полная инструкция</a></li><li><a href="/articles/k/ka/kak-kleit-zhidkoj-latkoj-lodku-pvkh-pravilno.html" class="related-card">Как клеить жидкой латкой лодку ПВХ: пошаговая инструкция</a></li><li><a href="/articles/k/ka/kak-pravilno-zapuskat-dvigatel-posle-dolgogo-prostoya.html" class="related-card">Как запустить двигатель после долгого простоя: инструкция</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/r/re/remont-lodochnykh-vintov.html" class="related-bottom-card"><span class="related-bottom-title">Ремонт лодочных винтов: устранение сколов и правка</span><span class="related-bottom-desc">Профессиональный ремонт лодочных винтов своими руками. Правка лопастей, заварка трещин, устранение к</span></a><a href="/articles/s/sv/svarka-lodki-progress.html" class="related-bottom-card"><span class="related-bottom-title">Сварка лодки Прогресс: технологии, электроды и чертежи</span><span class="related-bottom-desc">Профессиональная сварка лодок Прогресс: выбор электродов, технология дуговой и аргоновой сварки, уст</span></a><a href="/articles/k/ka/kak-smenit-klapan-na-lodke-pvkh.html" class="related-bottom-card"><span class="related-bottom-title">Как сменить клапан на лодке ПВХ: полная инструкция</span><span class="related-bottom-desc">Подробный гид по замене клапана на надувной лодке. Выбор клея, подготовка поверхности, технология ре</span></a><a href="/articles/k/ka/kak-kleit-zhidkoj-latkoj-lodku-pvkh-pravilno.html" class="related-bottom-card"><span class="related-bottom-title">Как клеить жидкой латкой лодку ПВХ: пошаговая инструкция</span><span class="related-bottom-desc">Узнайте, как правильно клеить жидкой латкой лодку ПВХ. Подробная инструкция, выбор клея, подготовка </span></a><a href="/articles/k/ka/kak-pravilno-zapuskat-dvigatel-posle-dolgogo-prostoya.html" class="related-bottom-card"><span class="related-bottom-title">Как запустить двигатель после долгого простоя: инструкция</span><span class="related-bottom-desc">Правильный запуск двигателя после зимнего простоя. Подготовка масла, топлива и системы зажигания. По</span></a><a href="/articles/c/ch/chem-myt-motor.html" class="related-bottom-card"><span class="related-bottom-title">Чем мыть мотор лодки: средства и правила мойки</span><span class="related-bottom-desc">Подробный гид, чем мыть мотор лодки. Обзор химии, правила мойки подвесных двигателей, защита от корр</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

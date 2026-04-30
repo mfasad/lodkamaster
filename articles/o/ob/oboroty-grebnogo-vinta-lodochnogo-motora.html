@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Обороты гребного винта: как настроить мотор для скорости — ЛодкаМастер</title>
+    <meta name="description" content="Как правильно подобрать обороты винта лодочного мотора. Таблица соответствия шага винта и RPM. Почему нельзя превышать максимальные обороты.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/o/ob/oboroty-grebnogo-vinta-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Обороты гребного винта: как настроить мотор для скорости">
+    <meta property="og:description" content="Как правильно подобрать обороты винта лодочного мотора. Таблица соответствия шага винта и RPM. Почему нельзя превышать максимальные обороты.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Обороты гребного винта: как настроить мотор для скорости</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Обороты гребного винта: как настроить мотор для скорости</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#физика-процесса-связь-мощности-шага-винта-и-rpm">Физика процесса: связь мощности, шага винта и RPM</a></li><li><a href="#как-определить-оптимальный-диапазон-оборотов">Как определить оптимальный диапазон оборотов</a></li><li><a href="#влияние-шага-и-диаметра-винта-на-характеристики">Влияние шага и диаметра винта на характеристики</a></li><li><a href="#таблица-соответствия-шага-винта-и-оборотов-двигателя">Таблица соответствия шага винта и оборотов двигателя</a></li><li><a href="#типичные-ошибки-при-подборе-винтовой-пары">Типичные ошибки при подборе винтовой пары</a></li><li><a href="#практические-рекомендации-по-тестированию">Практические рекомендации по тестированию</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Каждый владелец водного транспорта рано или поздно сталкивается с вопросом эффективности работы двигателя. Именно <strong>обороты гребного винта</strong> являются тем критическим параметром, который напрямую влияет на скорость, расход топлива и ресурс силовой установки. Многие новички ошибочно полагают, что чем больше винт "крутится", тем лучше, но в реальности существует тонкая грань между максимальной производительностью и разрушительной перегрузкой.</p>
+
+<p>Правильная настройка соотношения мощности мотора и геометрии винта позволяет раскрыть весь потенциал вашей лодки. Если вы заметили, что судно плохо выходит на глиссирование или, наоборот, двигатель "ревёт", но скорость не растёт, проблема кроется именно в несоответствии RPM (Revolutions Per Minute) и шага винта. <mark>Оптимальным диапазоном для большинства двухтактных и четырехтактных моторов является 75-90% от максимально допустимого значения, указанного в спецификации производителя.</mark></p>
+
+<p>В этой статье мы подробно разберем физику процесса, научимся рассчитывать необходимые параметры и поймем, как избежать дорогостоящего ремонта. Понимание принципов работы <em>гребного винта</em> поможет вам сэкономить значительные средства на топливе и продлить жизнь двигателю на сотни моточасов.</p>
+
+<h2 id="физика-процесса-связь-мощности-шага-винта-и-rpm">Физика процесса: связь мощности, шага винта и RPM</h2>
+
+<p>Чтобы управлять скоростью, нужно понимать, как энергия вращения передается воде. Гребной винт работает как насос, отбрасывая массу воды назад и создавая реактивную тягу. <strong>Шаг винта</strong> — это теоретическое расстояние, которое винт проходит за один полный оборот в твердой среде. Чем больше шаг, тем больше воды отбрасывается, но и тем выше сопротивление, которое должен преодолеть мотор.</p>
+
+<p>При увеличении шага винта нагрузка на коленчатый вал возрастает. Двигателю становится тяжелее раскручивать тяжелый винт, и максимальные <strong>обороты двигателя</strong> падают. Это явление называется "недоворот". Если же установить слишком "легкий" винт с малым шагом, мотор легко раскрутится до предельных значений, но эффективная тяга будет низкой, а скорость лодки может даже снизиться из-за кавитации и проскальзывания.</p>
+
+<p>Существует понятие проскальзывания винта, которое в идеальных условиях составляет около 10-15%, но на практике может достигать 30% и более при неправильном подборе. Важно учитывать, что <em>лодочный мотор</em> должен работать в диапазоне, где крутящий момент максимален. Выход за пределы рекомендованных производителем зон работы ведет к детонации или, наоборот, к закоксовке свечей.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Постоянная работа двигателя на 100% максимальных оборотах (Wide Open Throttle) без запаса по RPM ведет к ускоренному износу поршневой группы и перегреву. Всегда оставляйте запас в 200-300 оборотов.</p>
+</blockquote>
+
+<h2 id="как-определить-оптимальный-диапазон-оборотов">Как определить оптимальный диапазон оборотов</h2>
+
+<p>Первым шагом в настройке является поиск технической документации к вашему двигателю. Производители, такие как <em>Yamaha</em>, <em>Tohatsu</em> или <em>Mercury</em>, всегда указывают диапазон максимальных рабочих оборотов (WOT — Wide Open Throttle). Например, диапазон может составлять 4500–5500 об/мин. Ваша цель — подобрать винт так, чтобы при полностью открытой дроссельной заслонке и нормальной загрузке лодки стрелка тахометра находилась в середине этого диапазона или чуть выше.</p>
+
+<p>Если мотор не набирает нужные обороты, это сигнал о том, что винт слишком "тяжелый" для данной конфигурации. В этом случае двигатель работает в режиме перегрузки, что чревато прогаром поршня. Если же стрелка тахометра уходит в "красную зону", вы рискуете получить "разнос" двигателя, когда клапаны или шатуны не выдерживают центробежных сил.</p>
+
+<div class="poll-widget" id="poll-715f7f01"><div class="poll-widget-question">📊 Какой у вас сейчас статус с настройкой мотора?</div><div class="poll-widget-option" data-poll="715f7f01" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Мотор не тянет/не набирает обороты</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="715f7f01" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Все работает идеально, жалоб нет</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="715f7f01" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Мотор слишком легко набирает обороты</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="715f7f01" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Только планирую покупку мотора и винта</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Для точной диагностики необходимо использовать тахометр. Даже если на румпеле вашего мотора есть встроенный индикатор, рекомендуется установить внешний, более точный прибор или использовать диагностический сканер, подключаемый к <code>Diagnostic Port</code>. Только достоверные данные позволят принять правильное решение о замене винта.</p>
+
+<h2 id="влияние-шага-и-диаметра-винта-на-характеристики">Влияние шага и диаметра винта на характеристики</h2>
+
+<p>Геометрия винта — это баланс между диаметром и шагом. Увеличение диаметра при сохранении шага также повышает нагрузку на мотор, так как площадь лопастей становится больше. Однако чаще всего корректировку производят именно изменением шага. Стандартный шаг винта измеряется в дюймах, и изменение шага на 1 дюйм обычно меняет обороты двигателя примерно на 150–250 единиц.</p>
+
+<p>Рассмотрим конкретный пример. Если у вас стоит винт с шагом 9 дюймов, и мотор развивает 5800 об/мин при максимуме 5500, то вам нужно увеличить нагрузку. Установка винта с шагом 10 или 11 дюймов должна снизить обороты до нормы. Напротив, если мотор еле крутит 4000 об/мин, шаг необходимо уменьшать.</p>
+
+<p>Также стоит учитывать материал винта. Алюминиевые винты более гибкие и при ударах гнутся, что может незаметно изменить их геометрию и характеристики. Стальные винты <em>Propeller</em> держат шаг идеально, но при ударе о камень могут передать энергию удара на дейдвуд. Композитные винты занимают промежуточное положение, обладая высокой прочностью и ремонтопригодностью.</p>
+
+<ul>
+<li>🚤 Увеличение шага винта снижает максимальные обороты двигателя и увеличивает тягу на высоких скоростях.</li>
+<li>⚓ Уменьшение шага винта повышает обороты, улучшая разгон ("дырку") и выход на глиссирование.</li>
+<li>🔧 Изменение диаметра винта влияет на тягу сильнее, чем изменение шага, но требует большей мощности мотора.</li>
+</ul>
+
+<h2 id="таблица-соответствия-шага-винта-и-оборотов-двигателя">Таблица соответствия шага винта и оборотов двигателя</h2>
+
+<p>Для упрощения подбора оборудования можно воспользоваться усредненными данными. Ниже приведена таблица, демонстрирующая примерное влияние изменения шага винта на обороты двигателя мощностью около 50-60 л.с. при полной загрузке.</p>
+
+<table>
+<thead>
+<tr>
+<th>Текущий шаг винта (дюймы)</th>
+<th>Замеренные обороты (RPM)</th>
+<th>Рекомендуемый шаг (дюймы)</th>
+<th>Ожидаемый эффект</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>5900 (Выше нормы)</td>
+<td>10 или 10.5</td>
+<td>Снижение RPM до 5400-5500</td>
+</tr>
+<tr>
+<td>10.5</td>
+<td>5400 (В норме)</td>
+<td>10.5</td>
+<td>Оставить без изменений</td>
+</tr>
+<tr>
+<td>11</td>
+<td>4800 (Ниже нормы)</td>
+<td>10 или 9.5</td>
+<td>Подъем RPM до 5400</td>
+</tr>
+<tr>
+<td>13</td>
+<td>4200 (Критически мало)</td>
+<td>11</td>
+<td>Значительный рост тяги и RPM</td>
+</tr>
+</tbody>
+</table>
+
+<p>Важно понимать, что данные в таблице приблизительны. Реальная картина зависит от веса лодки, состояния днища, качества топлива и даже плотности воды (пресная или соленая). В соленой воде лодка сидит ниже, что увеличивает сопротивление и может потребовать винта с меньшим шагом по сравнению с пресноводными условиями.</p>
+
+<h2 id="типичные-ошибки-при-подборе-винтовой-пары">Типичные ошибки при подборе винтовой пары</h2>
+
+<p>Одной из самых распространенных ошибок является попытка разогнать пустую лодку до максимальной скорости на "тяжелом" винте. Владельцы смотрят на тахометр, видят 5000 оборотов и думают, что все в порядке. Но стоит загрузить лодку пассажирами и топливом, как обороты падают до 3500, и мотор начинает работать в режиме детонации. <strong>Подбор винта</strong> всегда нужно производить при полной загрузке, на которую вы рассчитываете в реальных условиях эксплуатации.</p>
+
+<p>Другая крайность — установка винта с чрезмерно малым шагом ради "спортивного" разгона. Мотор легко выходит на глиссирование, но на крейсерской скорости он потребляет избыточное количество топлива и работает на пределе механических возможностей. Это не дает выигрыша в итоговой скорости, но гарантированно сокращает ресурс.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка правильности подобранного винта</h4><label class="check-item"><input type="checkbox"><span>Замерить обороты при полной загрузке лодки</span></label><label class="check-item"><input type="checkbox"><span>Проверить температуру двигателя после 15 минут работы на полном газу</span></label><label class="check-item"><input type="checkbox"><span>Оценить время выхода на глиссирование</span></label><label class="check-item"><input type="checkbox"><span>Сравнить расход топлива с паспортными данными</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Также часто игнорируют состояние самого винта. Сколы на кромках лопастей, "завернутые" края или биение вала сводят на нет все расчеты. Деформированный винт создает кавитационные пузыри, которые схлопываются с огромной силой, разрушая металл. Регулярный осмотр и правка винтов из мягких сплавов — обязательная процедура.</p>
+
+<h2 id="практические-рекомендации-по-тестированию">Практические рекомендации по тестированию</h2>
+
+<p>Процесс тестирования должен проходить в спокойной воде без сильного ветра и течения. Заправьте полный бак топлива, загрузите лодку стандартным набором снаряжения и пассажиров. Прогрейте двигатель до рабочей температуры, что особенно важно для <em>четырехтактных моторов</em>.</p>
+
+<p>Разгонитесь до максимальной скорости и зафиксируйте показания тахометра. Держите газ открытым не более 1-2 минут, чтобы не перегреть мотор, если параметры неверны. Если обороты выше или ниже рекомендованного диапазона более чем на 200-300 единиц, требуется замена винта.</p>
+
+
+
+<p>Не забывайте про чистоту эксперимента. Обрастание днища водорослями или ракушками может снизить скорость на 15-20% и увеличить расход топлива. Перед финальными замерами убедитесь, что днище чисто, а винт не имеет повреждений.</p>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Можно ли использовать винт от другого производителя на моем моторе?</summary>
+<p>Да, можно, если совпадают посадочные размеры (диаметр вала, количество шлицов, направление вращения). Однако геометрия лопастей у разных брендов (например, <em>Solax</em> против <em>Michigan Wheel</em>) может отличаться, поэтому после замены обязательно нужен повторный замер оборотов.</p>
+</details>
+
+<details>
+<summary>Почему мотор глохнет при резком открытии газа?</summary>
+<p>Это признак того, что винт слишком "тяжелый" для текущих условий. Двигатель захлебывается, не успевая набрать обороты под нагрузкой. Также причиной может быть неисправность ускорительного насоса карбюратора или системы впрыска.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять винт?</summary>
+<p>Сам винт не имеет срока годности, если он не поврежден. Однако, если вы сменили тип лодки, увеличили вес экипажа или изменили стиль катания, может потребоваться замена винта на модель с другим шагом для сохранения эффективности.</p>
+</details>
+
+<details>
+<summary>Влияет ли качество бензина на максимальные обороты?</summary>
+<p>Безусловно. Низкое октановое число или наличие воды в топливе вызывают детонацию. Система зажигания (ECU) в современных моторах начинает "душить" двигатель, сбрасывая обороты для защиты, что не дает выйти на расчетный режим.</p>
+</details>
+
+
+
+</div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#физика-процесса-связь-мощности-шага-винта-и-rpm">Физика процесса: связь мощности, шага винта и RPM</a></li><li><a href="#как-определить-оптимальный-диапазон-оборотов">Как определить оптимальный диапазон оборотов</a></li><li><a href="#влияние-шага-и-диаметра-винта-на-характеристики">Влияние шага и диаметра винта на характеристики</a></li><li><a href="#таблица-соответствия-шага-винта-и-оборотов-двигателя">Таблица соответствия шага винта и оборотов двигателя</a></li><li><a href="#типичные-ошибки-при-подборе-винтовой-пары">Типичные ошибки при подборе винтовой пары</a></li><li><a href="#практические-рекомендации-по-тестированию">Практические рекомендации по тестированию</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/l/lo/lodochnyj-motor-tokhatsu-18-otzyvy.html" class="related-card">Лодочный мотор Тохацу 18 л.с.: отзывы владельцев, плюсы и минусы</a></li><li><a href="/articles/m/mo/motor-neptun-23-otzyvy.html" class="related-card">Мотор Нептун 23: реальные отзывы 2026, плюсы и минусы, советы по выбору</a></li><li><a href="/articles/k/ka/kak-pravilno-ustanovit-lodochnyj-motor-na-tranets.html" class="related-card">Установка лодочного мотора на транец: пошаговая инструкция</a></li><li><a href="/articles/o/ot/otzyvy-o-lodochnom-motore-pulya.html" class="related-card">Отзывы о лодочном моторе Пуля: реальные плюсы и минусы</a></li><li><a href="/articles/l/lo/lodochnyj-motor-ndkh-9-9.html" class="related-card">Лодочный мотор НДХ 9.9: Полный обзор, характеристики и тест</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/l/lo/lodochnyj-motor-tokhatsu-18-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Тохацу 18 л.с.: отзывы владельцев, плюсы и минусы</span><span class="related-bottom-desc">Реальные отзывы о подвесном моторе Tohatsu MFS18: надежность, расход топлива, особенности эксплуатац</span></a><a href="/articles/m/mo/motor-neptun-23-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Мотор Нептун 23: реальные отзывы 2026, плюсы и минусы, советы по выбору</span><span class="related-bottom-desc">Честные отзывы владельцев о лодочном моторе Нептун-23: надёжность, расход топлива, ремонтопригодност</span></a><a href="/articles/k/ka/kak-pravilno-ustanovit-lodochnyj-motor-na-tranets.html" class="related-bottom-card"><span class="related-bottom-title">Установка лодочного мотора на транец: пошаговая инструкция</span><span class="related-bottom-desc">Как правильно закрепить мотор на лодке. Регулировка высоты дейдвуда, затяжка струбцин и предотвращен</span></a><a href="/articles/o/ot/otzyvy-o-lodochnom-motore-pulya.html" class="related-bottom-card"><span class="related-bottom-title">Отзывы о лодочном моторе Пуля: реальные плюсы и минусы</span><span class="related-bottom-desc">Честные отзывы о лодочном моторе Пуля. Разбор надежности, расхода топлива, проблем с запуском и срав</span></a><a href="/articles/l/lo/lodochnyj-motor-ndkh-9-9.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор НДХ 9.9: Полный обзор, характеристики и тест</span><span class="related-bottom-desc">Подробный анализ лодочного мотора НДХ 9.9. Технические данные, расход топлива, настройка карбюратора</span></a><a href="/articles/l/lo/lodochnyj-motor-sea-pro-98.html" class="related-bottom-card"><span class="related-bottom-title">Sea Pro 9.8: Характеристики, Тюнинг и Отзывы владельцев</span><span class="related-bottom-desc">Полный обзор Sea Pro 9.8. Реальная мощность, расход топлива, возможность раздушки и частые поломки. </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

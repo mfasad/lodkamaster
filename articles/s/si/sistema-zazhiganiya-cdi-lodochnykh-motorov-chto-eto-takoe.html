@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>CDI лодочных моторов: устройство, симптомы неисправности — ЛодкаМастер</title>
+    <meta name="description" content="CDI система зажигания лодочных моторов: что это, как работает и почему искра пропадает. Разбор принципа работы, диагностика модуля и таблица неисправностей.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/s/si/sistema-zazhiganiya-cdi-lodochnykh-motorov-chto-eto-takoe.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CDI лодочных моторов: устройство, симптомы неисправности">
+    <meta property="og:description" content="CDI система зажигания лодочных моторов: что это, как работает и почему искра пропадает. Разбор принципа работы, диагностика модуля и таблица неисправностей.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">CDI лодочных моторов: устройство, симптомы неисправности</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>CDI система зажигания лодочных моторов: устройство и диагностика</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-устройство-электронного-модуля">Принцип работы и устройство электронного модуля</a></li><li><a href="#основные-компоненты-системы-зажигания">Основные компоненты системы зажигания</a></li><li><a href="#типичные-симптомы-неисправности-cdi">Типичные симптомы неисправности CDI</a></li><li><a href="#диагностика-и-проверка-элементов-зажигания">Диагностика и проверка элементов зажигания</a></li><li><a href="#сравнение-характеристик-систем-зажигания">Сравнение характеристик систем зажигания</a></li><li><a href="#замена-модуля-и-меры-предосторожности">Замена модуля и меры предосторожности</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Каждый владелец подвесного мотора рано или поздно сталкивается с ситуацией, когда двигатель отказывается запускаться или работает с перебоями, и первым подозреваемым в списке становится система искрообразования. Именно <strong>CDI (Capacitor Discharge Ignition)</strong> является сердцем этой системы в большинстве современных двухтактных и некоторых четырехтактных лодочных моторов, обеспечивая мощный и своевременный заряд для свечи. Понимание того, как работает этот электронный блок, позволяет не только быстрее находить причину поломки, но и избегать ненужных трат на замену исправных деталей при диагностике в полевых условиях.</p>
+<p>В отличие от старых контактных систем, где искра зависела от механического размыкания, CDI использует энергию, накопленную в конденсаторе, что делает систему более надежной и не требующей регулярной регулировки зазоров. Однако электроника не любит влаги и перепадов температур, характерных для водной среды, поэтому владельцам <em>Tohatsu</em>, <em>Yamaha</em> или <em>Mercury</em> важно знать базовые принципы работы модуля. В этой статье мы детально разберем внутреннюю логику работы CDI, методы проверки катушек и статоров, а также ответим на вопрос, почему именно эта система считается стандартом в водномоторной технике.</p>
+
+<h2 id="принцип-работы-и-устройство-электронного-модуля">Принцип работы и устройство электронного модуля</h2>
+<p>Аббревиатура CDI расшифровывается как Capacitor Discharge Ignition, что дословно означает «искрообразование от разряда конденсатора». Основная идея технологии заключается в накоплении электрического заряда в специальном конденсаторе до момента, когда поршень двигателя подойдет к верхней мертвой точке. В этот точный момент триггерный сигнал подается на тиристор, который мгновенно разряжает конденсатор через первичную обмотку катушки зажигания, создавая высокое напряжение на свече. Этот процесс занимает доли миллисекунды, обеспечивая стабильную искру даже на высоких оборотах, где традиционные системы могли бы давать сбои.</p>
+<p>Ключевым элементом здесь является сам <strong>электронный блок CDI</strong>, который часто называют «коммутатором» или «модулем». Внутри пластикового корпуса скрыта печатная плата с тиристорами, диодами и резисторами, залитая эпоксидной смолой для защиты от вибрации и воды. Именно эта герметичность делает модуль практически необслуживаемым, но и неремонтопригодным в классическом понимании: если сгорает внутренний компонент, обычно меняют весь узел в сборе. Важно понимать, что модуль не генерирует энергию самостоятельно, а лишь перераспределяет ток, поступающий от магдино (статора) под маховиком.</p>
+
+<blockquote>⚠️ Внимание: Попытка вскрыть залитый смолой корпус CDI-модуля для пайки деталей в 99% случаев приводит к окончательному выходу узла из строя из-за нарушения герметичности и повреждения микросхем при нагреве.</blockquote>
+
+<p>Работа системы невозможна без согласованного действия всех компонентов, и отказ любого из них имитирует неисправность самого CDI. Например, если пробита изоляция высоковольтного провода или катушки, модуль может работать исправно, но искры на свече не будет. Поэтому <mark>критически важно</mark> проводить комплексную проверку всей цепи, начиная от источников питания и заканчивая свечным колпачком, прежде чем делать выводы о дефекте электроники. Современные системы также могут включать ограничители оборотов, предотвращающие разнос двигателя, что часто путают с поломкой при тестировании на воздухе.</p>
+
+<h2 id="основные-компоненты-системы-зажигания">Основные компоненты системы зажигания</h2>
+<p>Чтобы грамотно диагностировать проблему, необходимо четко представлять, из каких частей состоит цепь зажигания лодочного мотора. Первым звеном всегда выступает <strong>магдино (статор)</strong>, расположенное под маховиком, которое генерирует переменный ток при вращении коленвала. Этот ток поступает в CDI-модуль, где выпрямляется и накапливается. Вторым важным элементом является пусковая катушка (пульс-катушка), которая дает сигнал о положении поршня, определяя момент вспышки. Без этого синхронизирующего импульса искра либо не появится вовсе, либо возникнет в неправильный момент.</p>
+<p>Третьим звеном является сама катушка зажигания (бобина), которая трансформирует напряжение до тысяч вольт, необходимых для пробоя зазора свечи. В некоторых старых или маломощных моделях катушка может быть встроена непосредственно в блок CDI или маховик, но в большинстве современных моторов мощностью от 15 л.с. она вынесена отдельно. Замыкает цепь высоковольтный провод и свеча, состояние которых напрямую влияет на качество сгорания топливной смеси.</p>
+<ul>
+    <li>🔋 <strong>Зарядная катушка (Source Coil):</strong> вырабатывает первичный ток для зарядки конденсатора.</li>
+    <li>⚡ <strong>Триггерная катушка (Trigger/Pulse Coil):</strong> посылает сигнал времени зажигания в модуль.</li>
+    <li>🔥 <strong>Катушка зажигания:</strong> повышает напряжение до рабочего уровня для свечи.</li>
+    <li>🛑 <strong>Стоп-провод (Kill Switch):</strong> закорачивает систему на массу для остановки мотора.</li>
+</ul>
+<p>Отдельного внимания заслуживает провод остановки двигателя, который часто игнорируется при поиске неисправностей. Этот провод идет от выключателя аварийной остановки («грибка») или замка зажигания к модулю CDI. В нормальном состоянии он разомкнут, но при нажатии стоп-кнопки он замыкается на массу, принудительно сбрасывая заряд и прекращая искрообразование. Если этот провод перетерт и касается двигателя («массы»), искра пропадет полностью, даже если все остальные компоненты исправны.</p>
+
+<div class="poll-widget" id="poll-bf4fc42f"><div class="poll-widget-question">📊 Сталкивались ли вы с внезапным пропаданием искры на воде?</div><div class="poll-widget-option" data-poll="bf4fc42f" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Да, мотор глох на ходу</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="bf4fc42f" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Нет, но были проблемы с запуском</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="bf4fc42f" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Менял только свечи и масло</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="bf4fc42f" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Пока только читаю теорию</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="типичные-симптомы-неисправности-cdi">Типичные симптомы неисправности CDI</h2>
+<p>Диагностика системы зажигания часто начинается с анализа симптомов, которые могут быть довольно разнообразными. Самый очевидный признак — полное отсутствие искры при прокрутке стартером или дерганье шнура. Однако часто встречаются и более сложные случаи, когда мотор запускается, но глохнет через несколько секунд или не развивает полные обороты. В таких ситуациях виновником может быть пробой изоляции внутри модуля CDI, который проявляется только при нагреве или под нагрузкой.</p>
+<p>Еще одним характерным симптомом является нестабильная работа на холостом ходу или «троение» двигателя. Если искра проскакивает нерегулярно или имеет слабую, бледно-синюю окраску вместо насыщенного голубого разряда, это указывает на деградацию компонентов системы. Часто владельцы путают эти симптомы с проблемами карбюратора, начиная чистить топливную систему, когда причина кроется в электрике. Проверка должна быть последовательной: сначала убеждаемся в наличии искры, затем проверяем ее силу и стабильность.</p>
+<p>Важно учитывать влияние внешних факторов на работу электроники. Попадание воды внутрь колпака, окисление контактов разъемов или повреждение изоляции проводов могут создавать паразитные токи утечки. В таких случаях модуль CDI может получать искаженные сигналы от триггера, что приводит к сбоям в тайминге зажигания. Длительная эксплуатация мотора с перебоями в зажигании может привести к прогару поршня или разрушению шатунно-поршневой группы из-за детонации.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При проверке искры никогда не держите свечу в руке — высокое напряжение может дать серьезный удар током. Прижмите резьбу свечи к металлической части двигателя (массе) и крутите стартером, наблюдая за разрядом в безопасном месте.</p></div>
+
+<h2 id="диагностика-и-проверка-элементов-зажигания">Диагностика и проверка элементов зажигания</h2>
+<p>Процесс поиска неисправности следует начинать с визуального осмотра и проверки простых элементов, таких как свеча и провода. Выкрутите свечу, подключите ее к проводу и прижмите резьбой к массе двигателя. Если искра есть и она мощная, проблема может быть в самой свече (нагар, неправильный зазор) или в компрессии. Если искры нет или она слабая, переходим к проверке электрических параметров с помощью мультиметра. Для точной диагностики необходимо знать сопротивление катушек вашего конкретного мотора, так как значения могут отличаться у разных производителей.</p>
+<p>Первым делом проверяется сопротивление зарядной и триггерной катушек статора. Щупы мультиметра подключаются к соответствующим контактам разъема, отсоединенного от CDI. Несоответствие замеренных значений паспортным данным (обычно это диапазон от нескольких Ом до сотен Ом в зависимости от типа катушки) указывает на необходимость замены статора. Также обязательно проверяется отсутствие замыкания обмоток на массу: один щуп ставится на контакт, второй на металлический корпус статора — прибор должен показывать бесконечность.</p>
+<p>Если катушки в норме, внимание переключается на катушку зажигания. Измеряется сопротивление первичной и вторичной обмоток. Пробой вторичной обмотки — частая причина слабой искры, которую трудно заметить визуально при ярком солнечном свете. В темноте или с помощью специального тестера свечей можно увидеть утечку тока по корпусу катушки или через трещины в изоляции.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист первичной диагностики</h4><label class="check-item"><input type="checkbox"><span>Визуальный осмотр проводов на перегибы</span></label><label class="check-item"><input type="checkbox"><span>Проверка свечи на наличие нагара</span></label><label class="check-item"><input type="checkbox"><span>Замер сопротивления катушек мультиметром</span></label><label class="check-item"><input type="checkbox"><span>Проверка целостности стоп-провода</span></label><label class="check-item"><input type="checkbox"><span>Тест искры на массу</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Сам модуль CDI проверить мультиметром практически невозможно, так как он содержит активные электронные компоненты (тиристоры, конденсаторы), сопротивление которых в статике не информативно. Единственный надежный способ проверки — метод подстановки заведомо исправного модуля или использование специализированного тестера CDI, который имитирует сигналы от статора. Если при установке нового модуля искра появилась и мотор заработал ровно, значит, старый блок вышел из строя.</p>
+
+<h2 id="сравнение-характеристик-систем-зажигания">Сравнение характеристик систем зажигания</h2>
+<p>Для лучшего понимания места CDI в эволюции лодочных моторов полезно сравнить его с другими типами систем. Ранние модели использовали контактно-транзисторные системы (КТЗ), где прерыватель механически размыкал цепь. Такие системы требовали постоянной чистки контактов и регулировки угла опережения зажигания. CDI лишен этих недостатков, предлагая «необслуживаемый» ресурс, ограниченный лишь сроком службы электронных компонентов.</p>
+<p>В таблице ниже приведено сравнение основных параметров различных типов систем зажигания, применяемых в водномоторной технике:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Параметр</th>
+            <th>Контактная (КТЗ)</th>
+            <th>CDI (Электронная)</th>
+            <th>TCI (Транзисторная)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Источник искры</td>
+            <td>Размыкание контактов</td>
+            <td>Разряд конденсатора</td>
+            <td>Накопление в катушке</td>
+        </tr>
+        <tr>
+            <td>Обслуживание</td>
+            <td>Регулярная чистка</td>
+            <td>Не требуется</td>
+            <td>Не требуется</td>
+        </tr>
+        <tr>
+            <td>Мощность искры</td>
+            <td>Средняя, падает на оборотах</td>
+            <td>Высокая, стабильная</td>
+            <td>Высокая, длинная длительность</td>
+        </tr>
+        <tr>
+            <td>Применение</td>
+            <td>Старые моторы до 80-х</td>
+            <td>2-х тактные моторы</td>
+            <td>4-х тактные и инжекторные</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Стоит отметить, что современные четырехтактные моторы часто используют систему TCI (Transistor Controlled Ignition) или полностью электронное управление ECU, где момент зажигания рассчитывается компьютером на основе множества датчиков. Однако для классических двухтактников CDI остается золотым стандартом надежности и простоты. Разница между CDI и TCI заключается в способе накопления энергии: в CDI энергия хранится в конденсаторе и отдается мгновенно (короткая, но мощная искра), а в TCI — в катушке (более длинная искра, лучше для бедных смесей).</p>
+
+<h2 id="замена-модуля-и-меры-предосторожности">Замена модуля и меры предосторожности</h2>
+<p>Если диагностика однозначно указала на неисправность модуля CDI, его необходимо заменить. При покупке новой запчасти критически важно обращать внимание на каталожный номер, так как визуально одинаковые блоки могут иметь разную разводку контактов или характеристики тиристоров. Установка <em>не совместимого модуля</em> может привести к мгновенному сгоранию катушки зажигания или статора из-за неправильных параметров импульса.</p>
+<p>Перед установкой нового блока тщательно очистите разъемы от окислов и обработайте их контактной смазкой. Вода и соль — главные враги электрики лодочного мотора. Убедитесь, что провода не натянуты и не касаются горячих частей двигателя или движущихся механизмов. После сборки рекомендуется еще раз проверить наличие искры перед первой попыткой запуска.</p>
+
+<blockquote>⚠️ Внимание: Никогда не запускайте мотор без установленной свечи или высоковольтного провода, подключенного к массе. Обратный ток от катушки зажигания может пробить изоляцию и повредить новый модуль CDI или приборную панель.</blockquote>
+
+<p>Процесс замены обычно занимает не более 30-40 минут и требует минимального набора инструментов: отверток, ключей и мультиметра. После успешного запуска дайте мотору прогреться на холостых оборотах, контролируя стабильность работы. Если мотор работает ровно и реагирует на газ без провалов, операцию можно считать успешной.</p>
+
+<details class="faq-item"><summary>Почему сгорает CDI?</summary><div class="faq-answer"><p>Частые причины выхода из строя модуля CDI включают: 1) Попытку запуска мотора без подключения аккумулятора (на моторах с электростартером), что вызывает скачки напряжения. 2) Неисправность выпрямителя-регулятора, ведущую к подаче повышенного напряжения в сеть. 3) Попадание влаги внутрь корпуса из-за поврежденных сальников или трещин. 4) Использование свечей с неподходящим калильным числом, что меняет нагрузку на систему.</p></div></details>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Замена CDI — это не просто swap-операция, а финальный этап диагностики; установка нового блока без проверки статора и катушек может привести к повторной поломке дорогостоящей электроники.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+<details>
+    <summary>Можно ли отремонтировать сгоревший модуль CDI самостоятельно?</summary>
+    <p>Теоретически это возможно, если вы владеете навыками пайки микросхем и имеете схему конкретного модуля, но на практике это крайне сложно. Корпуса залиты эпоксидкой, которую трудно удалить без повреждения платы, а найти оригинальные тиристоры и конденсаторы для старых моделей почти невозможно. Дешевле и надежнее купить новый или восстановленный модуль.</p>
+</details>
+<details>
+    <summary>Почему пропала искра после мойки мотора керхером?</summary>
+    <p>Вода под давлением могла проникнуть в разъемы, свечной колодец или под колпак магдино, создав путь для утечки тока. Тщательно просушите все электрические контакты сжатым воздухом или спреем типа WD-40, и дайте мотору полностью высохнуть перед следующим запуском.</p>
+</details>
+<details>
+    <summary>Влияет ли октановое число бензина на работу CDI?</summary>
+    <p>Сама система CDI не реагирует на октановое число, она лишь дает искру по таймингу. Однако использование бензина с низким октановым числом может вызвать детонацию, которая физически разрушит двигатель, а не электронику. CDI работает одинаково на любом топливе, если двигатель способен его воспламенить.</p>
+</details>
+<details>
+    <summary>Как долго служит система зажигания CDI?</summary>
+    <p>При правильной эксплуатации и отсутствии коррозии контактов модули CDI могут служить 10-15 лет и более. Основной враг — это вибрация, приводящая к отслоению контактов внутри залитого корпуса, и перепады температур, вызывающие микротрещины в компаунде.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-и-устройство-электронного-модуля">Принцип работы и устройство электронного модуля</a></li><li><a href="#основные-компоненты-системы-зажигания">Основные компоненты системы зажигания</a></li><li><a href="#типичные-симптомы-неисправности-cdi">Типичные симптомы неисправности CDI</a></li><li><a href="#диагностика-и-проверка-элементов-зажигания">Диагностика и проверка элементов зажигания</a></li><li><a href="#сравнение-характеристик-систем-зажигания">Сравнение характеристик систем зажигания</a></li><li><a href="#замена-модуля-и-меры-предосторожности">Замена модуля и меры предосторожности</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/katushka-generatora-lodochnogo-motora.html" class="related-card">Катушка генератора лодочного мотора: устройство, проверка и ремонт</a></li><li><a href="/articles/k/ka/kak-benzin-popadaet-v-dvigatel.html" class="related-card">Как бензин попадает в двигатель: путь от бака до цилиндра</a></li><li><a href="/articles/k/ka/kak-zakleit-shov-lodki-pvkh-v-domashnikh-usloviyakh.html" class="related-card">Как заклеить шов лодки ПВХ в домашних условиях: инструкция</a></li><li><a href="/articles/k/ka/kak-pomenyat-maslo-v-noge-lodochnogo-motora.html" class="related-card">Как поменять масло в редукторе лодочного мотора: пошаговая инструкция</a></li><li><a href="/articles/k/kr/kraska-dlya-dyuralevoj-lodki.html" class="related-card">Краска для дюралевой лодки: выбор и технология покраски</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/katushka-generatora-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Катушка генератора лодочного мотора: устройство, проверка и ремонт</span><span class="related-bottom-desc">Полное руководство по диагностике, ремонту и замене катушки генератора лодочного мотора. Проверка му</span></a><a href="/articles/k/ka/kak-benzin-popadaet-v-dvigatel.html" class="related-bottom-card"><span class="related-bottom-title">Как бензин попадает в двигатель: путь от бака до цилиндра</span><span class="related-bottom-desc">Подробный разбор топливной системы: как бензин попадает в двигатель. Устройство топливного насоса, ф</span></a><a href="/articles/k/ka/kak-zakleit-shov-lodki-pvkh-v-domashnikh-usloviyakh.html" class="related-bottom-card"><span class="related-bottom-title">Как заклеить шов лодки ПВХ в домашних условиях: инструкция</span><span class="related-bottom-desc">Пошаговое руководство, как заклеить шов лодки ПВХ дома. Выбор клея, подготовка поверхности и техноло</span></a><a href="/articles/k/ka/kak-pomenyat-maslo-v-noge-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Как поменять масло в редукторе лодочного мотора: пошаговая инструкция</span><span class="related-bottom-desc">Подробная инструкция по замене масла в ноге лодочного мотора. Какое масло выбрать, как проверить нал</span></a><a href="/articles/k/kr/kraska-dlya-dyuralevoj-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Краска для дюралевой лодки: выбор и технология покраски</span><span class="related-bottom-desc">Как выбрать лучшую краску для дюралевой лодки? Полный гид по подготовке, выбору эпоксидных и полиуре</span></a><a href="/articles/m/ma/maslo-dlya-motornoj-lodki-2t.html" class="related-bottom-card"><span class="related-bottom-title">Масло для моторной лодки 2т: выбор, рейтинг и замена</span><span class="related-bottom-desc">Какое масло выбрать для лодочного мотора 2т? Обзоры лучших синтетических масел, пропорции смешивания</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

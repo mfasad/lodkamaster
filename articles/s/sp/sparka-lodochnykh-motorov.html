@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Спарка лодочных моторов: схемы, расчеты, плюсы и минусы — ЛодкаМастер</title>
+    <meta name="description" content="Полный гид по спарке лодочных моторов: как соединить два двигателя, выбор винтов, синхронизация и влияние на скорость лодки. Технические нюансы.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/s/sp/sparka-lodochnykh-motorov.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Спарка лодочных моторов: схемы, расчеты, плюсы и минусы">
+    <meta property="og:description" content="Полный гид по спарке лодочных моторов: как соединить два двигателя, выбор винтов, синхронизация и влияние на скорость лодки. Технические нюансы.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Спарка лодочных моторов: схемы, расчеты, плюсы и минусы</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Спарка лодочных моторов: технологии, расчеты и практика</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#целесообразность-и-физика-процесса-спарки">Целесообразность и физика процесса спарки</a></li><li><a href="#схемы-установки-параллельная-и-тандемная">Схемы установки: параллельная и тандемная</a></li><li><a href="#расчет-мощности-и-выбор-винтовых-пар">Расчет мощности и выбор винтовых пар</a></li><li><a href="#технические-требования-к-транцу-и-креплению">Технические требования к транцу и креплению</a></li><li><a href="#синхронизация-управления-и-топливная-система">Синхронизация управления и топливная система</a></li><li><a href="#эксплуатация-обслуживание-и-безопасность">Эксплуатация, обслуживание и безопасность</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Идея удвоить мощность силового агрегата на плавательном средстве не нова. Многие водномоторники, достигнув потолка возможностей одного двигателя, начинают задумываться о более радикальном апгрейде. <strong>Спарка лодочных моторов</strong> — это техническое решение, которое позволяет значительно увеличить тягу и динамику разгона, но требует глубоких знаний в области гидродинамики и механики.</p>
+
+<p>Существует распространенное заблуждение, что установка двух моторов автоматически удваивает скорость судна. Это не так. В реальности прирост скорости будет составлять 10-15%, зато тяга и возможность выхода на глиссирование с полной загрузкой вырастут кратно. <em>Тандемная схема</em> или спаренная установка — это выбор тех, кто ценит надежность и запас мощности, а не только максимальную скорость на пустом баке.</p>
+
+<p>Прежде чем приступать к реализации проекта, необходимо взвесить все за и против. Установка второго мотора — это не просто покупка еще одного двигателя. Это комплексная переделка транца, изменение развесовки, перенастройка топливной системы и, конечно, финансовые вложения. В этой статье мы детально разберем, как правильно реализовать спарку, какие схемы существуют и с какими трудностями вам придется столкнуться.</p>
+
+<h2 id="целесообразность-и-физика-процесса-спарки">Целесообразность и физика процесса спарки</h2>
+
+<p>Главный вопрос, который стоит перед владельцем лодки: зачем это нужно? Если ваша цель — исключительно скорость, то покупка одного более мощного мотора часто оказывается выгоднее и технически грамотнее. Однако, когда речь заходит о тяжелых катерах, необходимости буксировки или эксплуатации в мелководье, <strong>спарка моторов</strong> становится оправданной.</p>
+
+<p>Физика процесса гласит, что сопротивление воды растет экспоненциально. Чтобы увеличить скорость на несколько узлов, требуется непропорционально большое количество энергии. Два двигателя среднего класса часто работают в более экономичном режиме, чем один мотор, выжатый на пределе своих возможностей. Кроме того, наличие двух двигателей повышает безопасность: в случае отказа одного, вы сможете дойти до берега на другом.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Установка второго мотора смещает центр тяжести. Если не провести грамотный расчет дифферента, лодка может потерять остойчивость или стать неуправляемой на высоких скоростях.</p>
+</blockquote>
+
+<p>Важно понимать разницу между тандемной схемой (один за другим) и параллельной (два рядом). Параллельная схема — это классическая спарка, где оба мотора висят на транце. Тандемная — когда второй мотор стоит впереди первого. Вторая схема сложна в управлении и требует специальных валов или удлиненных дейдвудов, поэтому в любительском судостроении практически не встречается.</p>
+
+<div class="poll-widget" id="poll-150ef45a"><div class="poll-widget-question">📊 Какой у вас основной сценарий использования лодки?</div><div class="poll-widget-option" data-poll="150ef45a" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Рыбалка с полной загрузкой:Тюнинг для скорости:Экспедиции и дальние переходы:Прогулки по выходным</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="схемы-установки-параллельная-и-тандемная">Схемы установки: параллельная и тандемная</h2>
+
+<p>При реализации проекта спарки чаще всего рассматривают два основных варианта компоновки. Выбор зависит от конструкции корпуса лодки, ширины транца и бюджета владельца. Каждая схема имеет свои уникальные особенности монтажа и эксплуатации.</p>
+
+<p>Параллельная установка — самый популярный вариант. Два мотора крепятся на одной линии транца или на специальной платформе. Здесь критически важно соблюсти симметрию. Если <strong>дейдвуды</strong> будут установлены с перекосом, лодку будет постоянно уводить в сторону, что потребует постоянной работы рулем и увеличит расход топлива.</p>
+
+<ul>
+<li>✅ Преимущества параллельной схемы: простота обслуживания, равномерное распределение веса, стандартная система управления.</li>
+<li>✅ Возможность использования моторов разной мощности (хотя это и не рекомендуется для новичков).</li>
+<li>❌ Сложность с шириной: два мотора занимают много места, что может мешать проходу в корме.</li>
+</ul>
+
+<p>Тандемная схема (один мотор в кильватере другого) применяется реже. Она позволяет сохранить ширину транца свободной и улучшить обтекаемость. Однако такая конструкция требует сложной системы синхронизации управления румпелями или наличие электронной системы управления (ESS), так как физически дергать два румпеля, стоящих друг за другом, невозможно.</p>
+
+<details class="faq-item"><summary>Технические нюансы тандемной установки</summary><div class="faq-answer"><p>При тандемной установке задний мотор работает в "разряженной" воде (аэрированной струе переднего мотора), что снижает его КПД на 10-15%. Поэтому задний мотор часто ставят мощнее переднего.</p></div></details>
+
+<h2 id="расчет-мощности-и-выбор-винтовых-пар">Расчет мощности и выбор винтовых пар</h2>
+
+<p>Одной из главных ошибок при спарке является неправильный подбор винтов. Если на одиночном моторе вы используете винт с определенным шагом, то при установке двух двигателей геометрия потока меняется. <strong>Гидродинамическое сопротивление</strong> пары винтов отличается от сопротивления одного.</p>
+
+<p>Часто владельцы сталкиваются с тем, что лодка не выходит на глиссирование или, наоборот, моторы "перекручиваются". Это сигнал о том, что шаг винта подобран неверно. Для спарки часто требуется увеличение шага винта по сравнению с одиночной установкой, чтобы загрузить двигатели и выйти на оптимальные обороты.</p>
+
+<p>Рассмотрим примерное соотношение параметров для разных типов лодок. Данные приведены для справки, точный расчет требует учета веса экипажа и груза.</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип лодки / Вес</th>
+<th>Мощность моторов (2 шт)</th>
+<th>Рекомендуемый шаг винта</th>
+<th>Ожидаемая прибавка скорости</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ПВХ 3.6 - 3.9 м</td>
+<td>2 x 9.9 л.с.</td>
+<td>11-12 дюймов</td>
+<td>5-7 км/ч</td>
+</tr>
+<tr>
+<td>Алюминий 4.5 - 5.0 м</td>
+<td>2 x 15-20 л.с.</td>
+<td>13-14 дюймов</td>
+<td>8-10 км/ч</td>
+</tr>
+<tr>
+<td>Катер 5.5+ м</td>
+<td>2 x 40-60 л.с.</td>
+<td>15-17 дюймов</td>
+<td>10-15 км/ч</td>
+</tr>
+</tbody>
+</table>
+
+<p> Разница в шаге или диаметре даже в полдюйма приведет к тому, что один мотор будет работать с перегрузкой, а другой — вхолостую. Это прямой путь к перегреву и поломке <em>редуктора</em>.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Покупайте винты одной партии и от одного производителя. Даже незначительные различия в геометрии лопастей у разных брендов могут нарушить балансировку тяги.</p></div>
+
+<h2 id="технические-требования-к-транцу-и-креплению">Технические требования к транцу и креплению</h2>
+
+<p>Транец лодки — это фундамент вашей силовой установки. Стандартный транец часто не рассчитан на вес двух моторов и динамические нагрузки, которые они создают. Усиление транца — обязательный этап работ. Если вы пренебрежете этим, высок риск отрыва моторов на полном ходу или появления трещин в корпусе.</p>
+
+<p>Для спарки моторов часто изготавливают специальный подмоторный банк или используют расширители транца. Это позволяет разнести моторы шире, улучшив устойчивость, и опустить точку крепления ниже, что благоприятно сказывается на ходовых качествах. Материалы для усиления должны быть коррозионностойкими: морская фанера, алюминий марки <code>AMg</code> или нержавеющая сталь.</p>
+
+<p>Крепление моторов должно быть выполнено с запасом прочности. Болты должны быть класса прочности не ниже 8.8, а лучше 10.9. Использование обычных строительных болтов недопустимо из-за вибрационных нагрузок.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка готовности транца к спарке</h4><label class="check-item"><input type="checkbox"><span>Замер толщины транца (минимум 25-30 мм для тяжелых моторов):Проверка состояния стеклопластика/фанеры на гниль:Расчет грузоподъемности лодки с учетом веса вторых моторов:Проверка возможности установки двух топливных баков</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 1</div></div>
+
+<h2 id="синхронизация-управления-и-топливная-система">Синхронизация управления и топливная система</h2>
+
+<p>Управление двумя моторами — это отдельная тема для обсуждения. Если у вас стоят моторы с румпельным управлением, вам придется либо установить систему тросового управления (как на автомобилях), либо использовать электронные системы синхронизации (ESS). Тянуть два румпеля одной рукой физически сложно и неудобно.</p>
+
+<p>В случае использования электронного управления (газ/переключение передач тросами или электроприводом), необходимо убедиться, что оба мотора реагируют на движение рукоятки одновременно. Рассинхронизация приведет к рысканию лодки. Современные системы позволяют настроить чувствительность каждого двигателя индивидуально.</p>
+
+<p>Топливная система также требует доработки. Вам понадобятся два топливных бака и система переключения или сдвоенный топливный фильтр-сепаратор. Крайне важно, чтобы оба мотора получали топливо под одинаковым давлением.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не соединяйте топливные шланги двух моторов в один общий бак без специальных клапанов. Это может привести к переливу топлива из одного бака в другой или созданию вакуума в системе.</p>
+</blockquote>
+
+<p>Для реализации надежной системы часто используют тройники для топливных шлангов, но лучше установить отдельные магистрали с возможностью переключения. Это позволит опустошать баки последовательно, сохраняя балансировку лодки, или отключить один мотор в случае необходимости.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Идеальная синхронизация достигается только при использовании системы дистанционного управления (D-box или аналог) даже на моторах с румпелями.</p></div>
+
+<h2 id="эксплуатация-обслуживание-и-безопасность">Эксплуатация, обслуживание и безопасность</h2>
+
+<p>Эксплуатация лодки со спаркой моторов требует от владельца повышенной дисциплины. Обслуживать теперь нужно два двигателя, что удваивает затраты времени и денег на ГСМ, свечи и фильтры. Однако надежность такой системы того стоит.</p>
+
+<p>При движении необходимо постоянно следить за температурой обоих двигателей. Если один из моторов начал греться, его нужно немедленно заглушить и продолжить движение на втором. Выход из строя одного водяного насоса (импеллера) на спарке происходит чаще из-за возможного засора, поэтому возить запасные импеллеры — правило хорошего тона.</p>
+
+<p>Маневрирование на спарке имеет свои особенности. На малых скоростях лодка может быть более рыскучей, если газовать только одним мотором для поворота. На высоких скоростях, наоборот, управление становится очень четким, но любая асимметрия в тяге (например, заросший винт травой) будет сразу заметна.</p>
+
+<ul>
+<li>🔧 Регулярно проверяйте затяжку болтов крепления моторов — вибрация от двух двигателей ослабляет соединения быстрее.</li>
+<li>🔧 Следите за состоянием анодной защиты на обоих дейдвудах.</li>
+<li>🔧 Проверяйте уровень масла в редукторах перед каждым выходом.</li>
+</ul>
+
+<p>В заключение стоит отметить, что <strong>спарка лодочных моторов</strong> — это удел энтузиастов и профессионалов, которым не хватает стандартных решений. Это путь, требующий инженерного подхода, но дарующий уникальную свободу действий на воде.</p>
+
+<details>
+<summary>Можно ли поставить два мотора разной мощности?</summary>
+<p>Технически это возможно, но крайне не рекомендуется. Моторы будут работать в разных режимах, что приведет к рассинхронизации тяги, сложностям в управлении и неравномерному износу. Допустима разница в мощности не более 10-15% при условии грамотной настройки винтов.</p>
+</details>
+
+<details>
+<summary>Сильно ли вырастет расход топлива?</summary>
+<p>Да, суммарный расход двух моторов всегда выше, чем одного. Однако, если вы эксплуатируете лодку на средних оборотах, удвоения расхода не произойдет. Часто два мотора на 50% мощности экономичнее одного на 100%.</p>
+</details>
+
+<details>
+<summary>Нужно ли регистрировать второй мотор в ГИМС?</summary>
+<p>Да, каждый двигатель мощностью более 8 кВт (около 10.88 л.с.) подлежит регистрации. Если оба мотора мощнее этого порога, вы должны иметь документы на оба. Суммарная мощность учитывается при расчете транспортного налога, если он применяется в вашем регионе.</p>
+</details>
+
+<details>
+<summary>Как влияет спарка на управляемость в шторм?</summary>
+<p>Два мотора обеспечивают лучшую курсовую устойчивость. Лодка меньше подвержена сносу боковым ветром и волной. Однако парусность конструкции (два дейдвуда) увеличивается, что может создавать дополнительный дрейф.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#целесообразность-и-физика-процесса-спарки">Целесообразность и физика процесса спарки</a></li><li><a href="#схемы-установки-параллельная-и-тандемная">Схемы установки: параллельная и тандемная</a></li><li><a href="#расчет-мощности-и-выбор-винтовых-пар">Расчет мощности и выбор винтовых пар</a></li><li><a href="#технические-требования-к-транцу-и-креплению">Технические требования к транцу и креплению</a></li><li><a href="#синхронизация-управления-и-топливная-система">Синхронизация управления и топливная система</a></li><li><a href="#эксплуатация-обслуживание-и-безопасность">Эксплуатация, обслуживание и безопасность</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/a/an/antikavitatsionnaya-plita-lodochnogo-motora-dlya-chego.html" class="related-card">Антикавитационная плита лодочного мотора: функции и настройка</a></li><li><a href="/articles/1/12/124-motor-kupit.html" class="related-card">124 мотор купить: выбор, цены и где найти надежный агрегат</a></li><li><a href="/articles/m/mo/motor-tarpon-5.html" class="related-card">Мотор Таран 5: Полный обзор, технические характеристики и отзывы</a></li><li><a href="/articles/m/mo/motobot-spb-lodochnye-motory.html" class="related-card">Лодочные моторы СПб: покупка, сервис и подбор мотоботов</a></li><li><a href="/articles/k/ki/kitajskie-podvesnye-lodochnye-motory.html" class="related-card">Китайские подвесные лодочные моторы: выбор, обзор и надежность</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/a/an/antikavitatsionnaya-plita-lodochnogo-motora-dlya-chego.html" class="related-bottom-card"><span class="related-bottom-title">Антикавитационная плита лодочного мотора: функции и настройка</span><span class="related-bottom-desc">Зачем нужна антикавитационная плита на лодочном моторе? Изучаем влияние на скорость, охлаждение и за</span></a><a href="/articles/1/12/124-motor-kupit.html" class="related-bottom-card"><span class="related-bottom-title">124 мотор купить: выбор, цены и где найти надежный агрегат</span><span class="related-bottom-desc">Планируете 124 мотор купить? Полный гид по выбору двигателя 1.6 л: технические нюансы, цены, риски б</span></a><a href="/articles/m/mo/motor-tarpon-5.html" class="related-bottom-card"><span class="related-bottom-title">Мотор Таран 5: Полный обзор, технические характеристики и отзывы</span><span class="related-bottom-desc">Подробный анализ лодочного мотора Таран 5 л.с.: реальный расход топлива, особенности конструкции, со</span></a><a href="/articles/m/mo/motobot-spb-lodochnye-motory.html" class="related-bottom-card"><span class="related-bottom-title">Лодочные моторы СПб: покупка, сервис и подбор мотоботов</span><span class="related-bottom-desc">Полный гид по лодочным моторам в Санкт-Петербурге. Выбор техники для мотоботов, цены, сервисное обсл</span></a><a href="/articles/k/ki/kitajskie-podvesnye-lodochnye-motory.html" class="related-bottom-card"><span class="related-bottom-title">Китайские подвесные лодочные моторы: выбор, обзор и надежность</span><span class="related-bottom-desc">Полный гид по китайским лодочным моторам. Сравнение брендов, реальный ресурс, особенности обслуживан</span></a><a href="/articles/k/ka/kak-rastamozhit-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Как растаможить лодочный мотор: пошаговая инструкция 2026</span><span class="related-bottom-desc">Полный гид по растаможке лодочных моторов: расчет пошлин, коды ТН ВЭД, список документов и особеннос</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

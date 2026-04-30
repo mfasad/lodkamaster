@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Мотор для лодки из шуруповерта: сборка своими руками — ЛодкаМастер</title>
+    <meta name="description" content="Подробный гид по созданию лодочного электромотора из шуруповерта. Расчет винта, подбор аккумулятора, чертежи и советы по сборке надежного агрегата.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/m/mo/motor-dlya-lodki-iz-shurupoverta.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Мотор для лодки из шуруповерта: сборка своими руками">
+    <meta property="og:description" content="Подробный гид по созданию лодочного электромотора из шуруповерта. Расчет винта, подбор аккумулятора, чертежи и советы по сборке надежного агрегата.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/sdelaj-sam/">Сделай сам</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Мотор для лодки из шуруповерта: сборка своими руками</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Самодельный мотор для лодки из шуруповерта: полное руководство</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#выбор-донора-критерии-подбора-шуруповерта">Выбор донора: критерии подбора шуруповерта</a></li><li><a href="#конструирование-дейдвуда-и-системы-крепления">Конструирование дейдвуда и системы крепления</a></li><li><a href="#расчет-и-изготовление-гребного-винта">Расчет и изготовление гребного винта</a></li><li><a href="#электрическая-схема-и-защита-от-воды">Электрическая схема и защита от воды</a></li><li><a href="#тестирование-и-первый-запуск-на-воде">Тестирование и первый запуск на воде</a></li><li><a href="#частые-ошибки-и-срок-службы-самоделки">Частые ошибки и срок службы самоделки</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Идея использования электроинструмента для движения по воде не нова, но именно <strong>шуруповерт</strong> стал самым популярным донором для самодельных моторов благодаря своей доступности и высокой мощности. Многие водномоторники сталкиваются с ситуацией, когда для спокойной рыбалки на мелководье или для тихого перемещения на небольшие расстояния громоздкий бензиновый двигатель избыточен, а покупной электромотор кажется неоправданно дорогим. В таких случаях переделка строительного инструмента в тяговый агрегат становится идеальным решением, позволяющим сэкономить бюджет и получить удовольствие от процесса инженерного творчества.</p>
+
+<p>Главным преимуществом такой конструкции является простота обслуживания и экологичность. Вам не придется возиться с маслом, свечами и топливной смесью, а отсутствие шума позволит подкрадываться к рыбе практически бесшумно. Однако, прежде чем приступать к резке металла и пайке контактов, необходимо четко понимать, что <em>тяговые характеристики</em> шуруповерта и лодочного мотора кардинально отличаются по режимам работы, что требует грамотного подхода к выбору компонентов и расчету нагрузки.</p>
+
+<p>В этой статье мы подробно разберем все этапы создания надежного мотора, начиная от выбора подходящей модели инструмента и заканчивая установкой винта. Мы рассмотрим типичные ошибки, которые допускают новички, и дадим рекомендации по продлению срока службы вашего самодельного агрегата в агрессивной водной среде. <mark>Максимальная эффективность достигается при использовании литий-железо-фосфатных (LiFePO4) аккумуляторов, которые выдают стабильное напряжение под нагрузкой, в отличие от старых свинцово-кислотных аналогов.</mark></p>
+
+<h2 id="выбор-донора-критерии-подбора-шуруповерта">Выбор донора: критерии подбора шуруповерта</h2>
+
+<p>Не каждый шуруповерт подойдет для создания полноценного лодочного мотора, так как условия эксплуатации на воде значительно жестче, чем на стройплощадке. В первую очередь вас должен интересовать <strong>крутящий момент</strong>, а не максимальная скорость вращения. Для воды важнее тяга, поэтому оптимальным выбором станут модели с напряжением от 18 Вольт и выше, желательно в бесщеточном исполнении, так как они обладают большим ресурсом и КПД.</p>
+
+<p>Обратите внимание на патрон: он должен быть металлическим и надежно зафиксированным, так как вибрации и рывки винта в воде могут быстро расшатать пластиковый механизм. <em>Бренды вроде Makita, DeWalt или Metabo</em> часто имеют хорошую ремонтопригодность и доступность запчастей, что критически важно для самодельных проектов. Если у вас есть старый, но мощный инструмент с сгоревшей электроникой или разбитым корпусом, его можно использовать как донора только для двигателя и редуктора, но это потребует более сложных инженерных решений.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Использование шуруповертов с напряжением менее 12 Вольт нецелесообразно для лодок длиной более 2 метров, так как они не смогут развить достаточную тягу даже с идеально подобранным винтом.</p>
+</blockquote>
+
+<p>Также стоит учитывать наличие встроенной системы охлаждения. В воздухе инструмент охлаждается быстро, но в герметичном кожухе над водой или при брызгах теплоотвод может быть нарушен. Поэтому модели с металлическими элементами в редукторе предпочтительнее полностью пластиковых, так как металл лучше отводит тепло от трущихся деталей.</p>
+
+<div class="poll-widget" id="poll-350c090f"><div class="poll-widget-question">📊 Какой у вас основной источник питания для самоделок?</div><div class="poll-widget-option" data-poll="350c090f" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Старый шуруповерт 12В</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="350c090f" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Мощный 18-24В инструмент</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="350c090f" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Покупаю новый специально</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="350c090f" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Использую автомобильный стартер</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="конструирование-дейдвуда-и-системы-крепления">Конструирование дейдвуда и системы крепления</h2>
+
+<p>Самой сложной частью проекта является создание дейдвуда — трубы, в которой находится вал, передающий вращение от двигателя к винту. Для этой цели идеально подходят <strong>алюминиевые</strong> или нержавеющие трубы диаметром 30-50 мм. Внутри трубы вал должен вращаться свободно, но без люфтов, для чего используются подшипники скольжения или втулки из фторопласта, которые устойчивы к воде и не требуют смазки.</p>
+
+<p>Крепление самого шуруповерта к дейдвуду должно быть жестким и виброзащищенным. Часто используют фланцевое соединение или хомуты, обхватывающие шейку инструмента. Важно предусмотреть возможность быстрого снятия мотора для замены аккумулятора или обслуживания. <em>Герметизация</em> стыков является ключевым моментом: используйте качественные резиновые уплотнители и силиконовые герметики, стойкие к ультрафиuолету и соленой воде.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка сборки дейдвуда</h4><label class="check-item"><input type="checkbox"><span>Труба не имеет трещин и вмятин</span></label><label class="check-item"><input type="checkbox"><span>Подшипники установлены плотно и смазаны</span></label><label class="check-item"><input type="checkbox"><span>Вал проворачивается рукой без заеданий</span></label><label class="check-item"><input type="checkbox"><span>Место крепления мотора усилено металлом</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Угол наклона дейдвуда обычно регулируется с помощью шарнирного механизма, позволяющего приподнимать мотор над водой при прохождении мелководья. Этот узел испытывает максимальные нагрузки, поэтому его следует изготавливать из толстой стали или дюралюминия. Не забывайте, что вода создает значительное сопротивление, и любая слабость конструкции приведет к поломке в самый неподходящий момент.</p>
+
+<h2 id="расчет-и-изготовление-гребного-винта">Расчет и изготовление гребного винта</h2>
+
+<p>Штатный патрон шуруповерта не предназначен для установки гребного винта напрямую, так как его биения могут быть слишком велики для эффективной работы. Оптимальным решением является изготовление переходника на вал двигателя или использование готовых морских винтов с посадкой под нужный диаметр. <strong>Диаметр винта</strong> напрямую влияет на потребляемый ток: чем больше винт, тем выше нагрузка на мотор.</p>
+
+<p>Для небольших лодок и моторов на базе 12-18 вольтовых шуруповертов оптимальным считается диаметр винта в диапазоне 130-180 мм. Шаг винта подбирается экспериментально, но для тихого хода лучше подходят винты с малым шагом. Материалы для винтов могут быть разными: от вырезанных из текстолита или дюраля до покупных пластиковых моделей для надувных лодок, которые можно адаптировать.</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип винта</th>
+<th>Диаметр (мм)</th>
+<th>Материал</th>
+<th>Рекомендуемая мощность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Самодельный (текстолит)</td>
+<td>140-160</td>
+<td>Текстолит 5-8мм</td>
+<td>до 300 Вт</td>
+</tr>
+<tr>
+<td>Морской (алюминий)</td>
+<td>120-140</td>
+<td>Дюралюминий</td>
+<td>до 500 Вт</td>
+</tr>
+<tr>
+<td>Покупной (пластик)</td>
+<td>100-130</td>
+<td>Армированный пластик</td>
+<td>до 200 Вт</td>
+</tr>
+<tr>
+<td>Усиленный (сталь)</td>
+<td>150-180</td>
+<td>Нержавеющая сталь</td>
+<td>до 600 Вт</td>
+</tr>
+</tbody>
+</table>
+
+<p>Балансировка винта — обязательная процедура. Несбалансированный винт создаст сильную вибрацию, которая быстро разрушит подшипники двигателя шуруповерта. Проверить балансировку можно, надев винт на тонкий горизонтальный стержень: он не должен проворачиваться сам по себе, останавливаясь тяжелым местом вниз.</p>
+
+<details class="faq-item"><summary>Секрет балансировки</summary><div class="faq-answer"><p>Если винт тяжелее с одной стороны, не спешите его стачивать. Попробуйте наклеить на противоположную лопасть кусочек свинца или припоя, подобрав вес экспериментально. Это сохранит геометрию и прочность лопасти.</p></div></details>
+
+<h2 id="электрическая-схема-и-защита-от-воды">Электрическая схема и защита от воды</h2>
+
+<p>Электрическая часть требует особого внимания, так как сочетание электричества и воды всегда несет риски. Стандартная схема подключения проста: аккумулятор соединяется с шуруповертом через толстые медные провода, но обязательно должен присутствовать <strong>предохранитель</strong>, рассчитанный на ток чуть выше максимального потребления мотора. Это спасет проводку от плавления в случае заклинивания винта.</p>
+
+<p>Для управления скоростью вращения штатный курок шуруповерта часто оказывается неудобным или недостаточно защищенным. Многие мастера выводят управление на отдельную <em>педаль газа</em> или румпель с встроенным реостатом/контроллером. Если вы используете штатную кнопку, ее необходимо тщательно герметизировать, так как попадание влаги на контакты вызовет коррозию и отказ.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не оставляйте аккумуляторную батарею подключенной к мотору без присмотра. Даже в выключенном состоянии в цепи могут происходить микропроцессы, разряжающие батарею или вызывающие короткое замыкание при вибрации.</p>
+</blockquote>
+
+<p>Для защиты самого шуруповерта от брызг и дождя часто изготавливают защитный кожух из пластиковой бутылки или канистры, оставляя отверстия для вентиляции. Однако лучше сразу выбирать инструмент с пыле- и влагозащищенным корпусом (маркировка IP54 и выше), если вы планируете регулярные выходы на воду.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте силиконовый спрей для обработки контактов и внутренних частей шуруповерта перед сборкой. Он создает водоотталкивающую пленку, которая предотвращает окисление даже при попадании небольшого количества влаги.</p></div>
+
+<h2 id="тестирование-и-первый-запуск-на-воде">Тестирование и первый запуск на воде</h2>
+
+<p>Первый запуск лучше производить в емкости с водой (бочке или ведре), чтобы убедиться в отсутствии течей и вибраций. Погрузите дейдвуд и кратковременно включите мотор, проверяя направление вращения и отсутствие посторонних шумов. Если все проходит штатно, можно переходить к испытаниям на лодке, но в безопасном месте, вдали от купающихся и зарослей.</p>
+
+<p>Во время тестов обращайте внимание на нагрев корпуса шуруповерта. <strong>Перегрев</strong> — главный враг электродвигателя. Если через 15-20 минут работы корпус сильно горячий на ощупь, необходимо снизить нагрузку (уменьшить размер винта) или обеспечить принудительное охлаждение. Также проверьте крепление мотора к транцу: оно должно выдерживать упорные усилия без смещения.</p>
+
+<p>Реальная скорость лодки с таким мотором обычно составляет 5-8 км/ч, что вполне достаточно для рыбалки или прогулок. Не ожидайте от шуруповерта глиссирования тяжелой лодки ПВХ — это не его стихия. Его задача — уверенное перемещение в водоизмещающем режиме.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Успешное тестирование — это не только работающий мотор, но и стабильная температура узлов и отсутствие люфтов после 30 минут работы под нагрузкой.</p></div>
+
+<h2 id="частые-ошибки-и-срок-службы-самоделки">Частые ошибки и срок службы самоделки</h2>
+
+<p>Одной из самых распространенных ошибок является игнорирование качества контактов. Скрутки проводов, даже хорошие, со временем окисляются и начинают греться. Используйте только пайку с кислотным флюсом (с последующей промывкой) или специальные обжимные клеммы. <em>Плохой контакт</em> приводит к падению напряжения и потере мощности.</p>
+
+<p>Вторая ошибка — использование слабых аккумуляторов. Старые Ni-Cd батареи из шуруповерта могут иметь хорошую отдачу по току, но малую емкость, что сократит время прогулки до 20-30 минут. Современные Li-Ion элементы (например, форм-фактор 18650) лучше собирают в батарею с BMS-платой для защиты от переразряда.</p>
+
+<p>Срок службы такого мотора зависит от интенсивности эксплуатации и качества сборки. При аккуратном использовании и своевременной смазке подшипников двигатель шуруповерта может ходить несколько сезонов. Однако стоит помнить, что это все-таки <strong>временное решение</strong> или проект выходного дня, а не замена полноценному серийному электромотору для частых и дальних походов.</p>
+
+<details>
+<summary>Можно ли использовать шуруповерт на морской воде?</summary>
+<p>Использование на морской воде крайне нежелательно из-за высокой коррозионной активности соли. Если выхода нет, все металлические части (кроме самого винта) должны быть покрыты антикоррозийным составом, а после каждой вылазки мотор необходимо тщательно промывать пресной водой и сушить.</p>
+</details>
+
+<details>
+<summary>Какой запас хода у мотора из шуруповерта?</summary>
+<p>Запас хода зависит от емкости аккумулятора. Стандартная батарея 18В 4Ач позволит пройти примерно 8-12 км в спокойном темпе. Установка параллельно второй такой же батареи удвоит дальность плавания, но увеличит вес.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять смазку в редукторе шуруповерта?</summary>
+<p>Да, штатная смазка в редукторе шуруповерта может быть не рассчитана на постоянный контакт с водой (через сальники) и высокие обороты под нагрузкой. Рекомендуется заменить её на водостойкую литиевую смазку или специализированную смазку для лодочных моторов.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#выбор-донора-критерии-подбора-шуруповерта">Выбор донора: критерии подбора шуруповерта</a></li><li><a href="#конструирование-дейдвуда-и-системы-крепления">Конструирование дейдвуда и системы крепления</a></li><li><a href="#расчет-и-изготовление-гребного-винта">Расчет и изготовление гребного винта</a></li><li><a href="#электрическая-схема-и-защита-от-воды">Электрическая схема и защита от воды</a></li><li><a href="#тестирование-и-первый-запуск-на-воде">Тестирование и первый запуск на воде</a></li><li><a href="#частые-ошибки-и-срок-службы-самоделки">Частые ошибки и срок службы самоделки</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/s/sa/samodelnyj-stend-dlya-remonta-dvigatelya.html" class="related-card">Самодельный стенд для ремонта двигателя: чертежи и сборка</a></li><li><a href="/articles/l/le/lebyodka-iz-motorchika-ot-dvornikov.html" class="related-card">Лебедка из дворников своими руками: чертежи и схемы</a></li><li><a href="/articles/t/tr/tranets-na-naduvnuyu-lodku-svoimi-rukami.html" class="related-card">Транец на надувную лодку своими руками: чертежи, материалы</a></li><li><a href="/articles/n/na/nasos-dlya-lodki-pvkh-svoimi-rukami-elektricheskij-12-volt.html" class="related-card">Электрический насос 12 вольт для лодки ПВХ своими руками</a></li><li><a href="/articles/s/si/sidenya-v-lodku-svoimi-rukami.html" class="related-card">Сиденья в лодку своими руками: чертежи, материалы, монтаж</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/s/sa/samodelnyj-stend-dlya-remonta-dvigatelya.html" class="related-bottom-card"><span class="related-bottom-title">Самодельный стенд для ремонта двигателя: чертежи и сборка</span><span class="related-bottom-desc">Как сделать самодельный стенд для ремонта двигателя своими руками. Чертежи, выбор металла, расчеты п</span></a><a href="/articles/l/le/lebyodka-iz-motorchika-ot-dvornikov.html" class="related-bottom-card"><span class="related-bottom-title">Лебедка из дворников своими руками: чертежи и схемы</span><span class="related-bottom-desc">Как сделать лебедку из моторчика от дворников. Подробные чертежи, выбор редуктора и схемы подключени</span></a><a href="/articles/t/tr/tranets-na-naduvnuyu-lodku-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Транец на надувную лодку своими руками: чертежи, материалы</span><span class="related-bottom-desc">Как сделать транец на надувную лодку своими руками. Выбор фанеры, пропитка, чертежи и установка съем</span></a><a href="/articles/n/na/nasos-dlya-lodki-pvkh-svoimi-rukami-elektricheskij-12-volt.html" class="related-bottom-card"><span class="related-bottom-title">Электрический насос 12 вольт для лодки ПВХ своими руками</span><span class="related-bottom-desc">Пошаговая инструкция по сборке самодельного электронасоса 12В для лодки ПВХ. Выбор компрессора, схем</span></a><a href="/articles/s/si/sidenya-v-lodku-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Сиденья в лодку своими руками: чертежи, материалы, монтаж</span><span class="related-bottom-desc">Как сделать комфортное сиденье в лодку своими руками. Выбор материалов, чертежи, пошаговая инструкци</span></a><a href="/articles/p/pr/pritsep-dlya-lodki-svoimi-rukami-chertezhi-razmery-pod-pvkh.html" class="related-bottom-card"><span class="related-bottom-title">Прицеп для лодки своими руками: чертежи и размеры под ПВХ</span><span class="related-bottom-desc">Пошаговая инструкция, как сделать прицеп для лодки ПВХ своими руками. Чертежи, размеры, расчеты узло</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

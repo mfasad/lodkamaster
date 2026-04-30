@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Управление катером с подвесным мотором: уроки для новичков — ЛодкаМастер</title>
+    <meta name="description" content="Полная инструкция по управлению катером с подвесным мотором. Техника швартовки, правила триммирования и навигации для безопасной эксплуатации.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/k/ka/kak-upravlyat-katerom-s-podvesnym-motorom-i-rulem.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Управление катером с подвесным мотором: уроки для новичков">
+    <meta property="og:description" content="Полная инструкция по управлению катером с подвесным мотором. Техника швартовки, правила триммирования и навигации для безопасной эксплуатации.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Управление катером с подвесным мотором: уроки для новичков</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Как управлять катером с подвесным мотором и рулем: полное руководство</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принципы-работы-рулевого-управления-и-тяги">Принципы работы рулевого управления и тяги</a></li><li><a href="#подготовка-к-выходу-и-проверка-систем">Подготовка к выходу и проверка систем</a></li><li><a href="#техника-старта-и-выход-на-глиссирование">Техника старта и выход на глиссирование</a></li><li><a href="#навигация-и-маневрирование-на-воде">Навигация и маневрирование на воде</a></li><li><a href="#особенности-швартовки-и-маневров-задним-ходом">Особенности швартовки и маневров задним ходом</a></li><li><a href="#безопасность-и-аварийные-ситуации">Безопасность и аварийные ситуации</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Выход на воду на собственном судне — это всегда волнительный момент, особенно если вы впервые беретесь за штурвал. Управление катером с подвесным мотором кардинально отличается от вождения автомобиля, так как здесь отсутствует тормозная система, а траектория движения зависит не только от положения руля, но и от силы тяги винта. Понимание базовых принципов гидродинамики и механики работы <strong>транцевого двигателя</strong> станет фундаментом вашей безопасности.</p>
+
+<p>В отличие от автомобилей, где колеса жестко сцеплены с дорогой, катер скользит по поверхности воды, которая постоянно меняет свои свойства под воздействием ветра и течения. Рулевое управление начинает работать эффективно только при наличии поступательной скорости. Если вы попытаетесь повернуть руль на неподвижном судне, ничего не произойдет, так как поток воды, обтекающий перо руля, отсутствует.</p>
+
+<p>Особое внимание следует уделить эргономике рабочего места и правильному расположению рук на румпеле или рулевом колесе. Новички часто совершают ошибку, пытаясь управлять одной рукой, что в экстренной ситуации может привести к потере контроля над ситуацией. Важно заранее изучить расположение органов управления, чтобы не отвлекаться на поиск <em>ручки газа</em> или <strong>кнопки аварийного глушения</strong> в критический момент.</p>
+
+<h2 id="принципы-работы-рулевого-управления-и-тяги">Принципы работы рулевого управления и тяги</h2>
+
+<p>Основной механизм поворота катера завязан на взаимодействии руля и тяги винта. При движении вперед струя воды, отбрасываемая винтом, ударяет в перо руля, заставляя корму смещаться в противоположную сторону, а нос — поворачивать в сторону перекладки руля. Чем выше обороты двигателя, тем эффективнее работает руль, однако чрезмерная скорость делает судно чрезмерно чувствительным к малейшим движениям штурвала.</p>
+
+<p>Существует важное понятие реактивного момента, который особенно заметен на судах с одним подвесным мотором. При резком добавлении газа корпус катера может клониться в сторону, противоположную вращению винта. Это явление требует от оператора постоянной корректировки курса, особенно при выходе на глиссирование, когда нагрузка на <strong>транец</strong> и рулевую систему максимальна.</p>
+
+<p>При движении задним ходом логика управления меняется. Струя воды направляется вперед, и влияние руля становится минимальным или непредсказуемым. В этот момент поворот осуществляется в основном за счет смещения кормы под действием упора винта. Это свойство активно используется при швартовке, но требует высокой концентрации, так как инерция судна гасится хуже, чем при движении вперед.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не пытайтесь резко перекладывать руль на максимальный угол при движении на высоких скоростях. Это может привести к резкому крену, потере управления и даже опрокидыванию судна, особенно если на борту находятся пассажиры.</p>
+</blockquote>
+
+<div class="poll-widget" id="poll-d4f2f958"><div class="poll-widget-question">📊 Какой тип управления у вашего катера?</div><div class="poll-widget-option" data-poll="d4f2f958" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Румпель (только мотор)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="d4f2f958" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Румпель + Дистанция</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="d4f2f958" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Только рулевое колесо</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="d4f2f958" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Джойстик</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="подготовка-к-выходу-и-проверка-систем">Подготовка к выходу и проверка систем</h2>
+
+<p>Перед запуском двигателя необходимо провести тщательный визуальный осмотр подвесного мотора и корпуса. Убедитесь, что дейдвудная нога не имеет повреждений, а гребной винт надежно зафиксирован и не имеет сколов. Наличие посторонних предметов в воде вокруг винта может привести к его поломке в первые же секунды работы, что опасно для окружающих.</p>
+
+<p>Критически важным этапом является проверка системы охлаждения. После запуска двигателя на холостых оборотах, обязательно выйдите из кокпита и осмотрите контрольную струю. Отсутствие водяного «фонтанчика» свидетельствует о неисправности <strong>импеллера</strong> или забора воды, что приведет к перегреву мотора за считанные минуты.</p>
+
+<div class="checklist-block"><h4>☑️ Предстартовая проверка</h4><label class="check-item"><input type="checkbox"><span>Визуальный осмотр винта и дейдвуда</span></label><label class="check-item"><input type="checkbox"><span>Проверка уровня масла и топлива</span></label><label class="check-item"><input type="checkbox"><span>Контрольная струя охлаждения</span></label><label class="check-item"><input type="checkbox"><span>Наличие спасательных жилетов</span></label><label class="check-item"><input type="checkbox"><span>Проверка работы руля на холостых</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Также следует проверить работу рулевого механизма на предмет люфтов и заеданий. Движение должно быть плавным, без рывков. Если на катере установлена система <em>гидравлического усиления</em>, осмотрите шланги на предмет утечек жидкости. Любая неисправность в системе управления на воде может стать фатальной.</p>
+
+<h2 id="техника-старта-и-выход-на-глиссирование">Техника старта и выход на глиссирование</h2>
+
+<p>Запуск двигателя обычно производится с нейтральной передачи. После прогрева, который занимает несколько минут на холостых оборотах, можно начинать движение. Первоначальный разгон осуществляется плавно, чтобы не перегрузить трансмиссию и дать возможность пассажирам занять устойчивое положение. Резкий старт может привести к падению людей за борт.</p>
+
+<p>Выход на глиссирование — ключевой момент, когда корпус судна всплывает и начинает скользить по поверхности воды. В этот момент необходимо правильно настроить <strong>тримм</strong> (дифферентовку). Если нос катера слишком задран, судно будет «рыскать» и плохо реагировать на руль. Если опущен — возрастет сопротивление воды и расход топлива.</p>
+
+<p>Оптимальное положение тримма подбирается экспериментально для каждой загрузки судна. Обычно после выхода на глиссирование тримм немного поднимают, чтобы уменьшить площадь смоченного днища. Однако при встречной волне угол дифферента лучше уменьшить для смягчения ударов о воду.</p>
+
+<details class="faq-item"><summary>Что такое тримм и зачем он нужен?</summary><div class="faq-answer"><p>Тримм — это угол наклона подвесного мотора относительно транца. Регулируя его, вы меняете точку приложения тяги. Поднятый тримм уменьшает сопротивление и увеличивает скорость, опущенный — улучшает управляемость на волне и разгонные характеристики.</p></div></details>
+
+<h2 id="навигация-и-маневрирование-на-воде">Навигация и маневрирование на воде</h2>
+
+<p>Управление катером на ходу требует постоянного контроля окружающей обстановки. В отличие от дороги, на воде нет разметки, а препятствия могут быть скрыты под водой. При прохождении поворотов всегда учитывайте инерцию судна и снос ветром. Катер продолжает движение по касательной даже после перекладки руля, поэтому начинать маневр нужно заранее.</p>
+
+<p>При движении по волне руль нужно держать крепко обоими руками. Удары о гребни волн могут выбить штурвал из рук или, наоборот, резко переложить его, если вы ослабите хватку. На <em>алюминиевых лодках</em> с плоским дном это явление выражено сильнее из-за меньшей массы и жесткости корпуса.</p>
+
+<p>Особую осторожность следует проявлять при обгоне других судов и прохождении кильватерных струй от больших кораблей. Поперечная волна может резко накренить легкий катер. В таких ситуациях лучше сбросить газ и переждать неприятный участок на малой скорости, сохраняя курс перпенди-кулярно волне.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Держите курс перпендикулярно высокой волне. Движение на скуле (боком к волне) — самый верный способ получить сильный крен и черпануть бортам воды, что может привести к опрокидыванию.</p></div>
+
+<h2 id="особенности-швартовки-и-маневров-задним-ходом">Особенности швартовки и маневров задним ходом</h2>
+
+<p>Швартовка — один из самых сложных элементов для новичка. Подходить к причалу нужно под острым углом (около 20-30 градусов) на минимальной скорости. Когда до борта останется пара метров, кратковременно включается задний ход для гашения инерции, и одновременно нос разворачивается к причалу.</p>
+
+<p>При движении задним ходом подвесной мотор работает как руль. Если повернуть ручку газа (или руль) влево, корма пойдет вправо, а нос — влево. Это свойство называется «работа винта на поворот». Используя короткие включения передачи и работу рулем, можно развернуть катер практически на 360 градусов в ограниченном пространстве.</p>
+
+<table>
+<thead>
+<tr>
+<th>Ситуация</th>
+<th>Действие оператора</th>
+<th>Реакция судна</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Движение вперед, руль влево</td>
+<td>Поворот нос влево</td>
+<td>Корма смещается вправо</td>
+</tr>
+<tr>
+<td>Движение назад, газ влево</td>
+<td>Тяга винта толкает корму вправо</td>
+<td>Нос идет влево, корма вправо</td>
+</tr>
+<tr>
+<td>Встречный ветер в борт</td>
+<td>Подход под острым углом против ветра</td>
+<td>Ветер прижимает борт к причалу</td>
+</tr>
+<tr>
+<td>Течение по курсу</td>
+<td>Подход против течения</td>
+<td>Естественное торможение судна</td>
+</tr>
+</tbody>
+</table>
+
+<p>При швартовке в ветреную погоду всегда подходите к причалу против ветра. Ветер будет естественным образом тормозить судно, и вам не придется активно работать задним ходом, что повышает риск запутать винтом швартовные концы.</p>
+
+<h2 id="безопасность-и-аварийные-ситуации">Безопасность и аварийные ситуации</h2>
+
+<p>Главный враг водномоторника — паника. В любой нештатной ситуации, будь то глохнущий мотор или внезапный шквал, первое действие — сбросить газ и оценить обстановку. Если двигатель заглох, не пытайтесь сразу его завести, пока не убедитесь, что винт не находится в водорослях или сеть не намоталась на дейдвуд.</p>
+
+<p>При падении человека за борт алгоритм действий должен быть отработан до автоматизма. Немедленно бросьте спасательный круг (или любой плавающий предмет) в воду в сторону упавшего, чтобы не потерять место. Затем совершите маневр возвращения, подходя к человеку с подветренной стороны, чтобы течение и ветер не прижали его к борту.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Категорически запрещается подплывать к упавшему за борт работающим винтом. Подходите только на холостых оборотах или с выключенным двигателем, используя весла или течение для финального сближения.</p>
+</blockquote>
+
+<p>Всегда имейте на борту исправные средства связи и навигации. Мобильный телефон в гермоупаковке — это хорошо, но радиостанция или спутниковый телефон вдали от берега — необходимость. Знание своего местоположения и умение читать навигационные знаки спасает жизни.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Самое важное правило безопасности: скорость должна соответствовать условиям видимости и вашему опыту. Лучше прийти позже, но живым.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Почему катер рыскает из стороны в сторону на прямом курсе?</summary>
+<p>Это явление часто вызвано неправильной настройкой тримма или наличием воздушной пробки в системе охлаждения. Также причиной может быть слишком высокий подъем мотора, когда винт захватывает воздух, или несимметричная загрузка судна пассажирами и грузом.</p>
+</details>
+
+<details>
+<summary>Как долго нужно прогревать подвесной мотор перед выходом?</summary>
+<p>Современные 4-тактные моторы требуют прогрева около 3-5 минут на холостых оборотах. 2-тактные двигатели можно начинать нагружать чуть раньше, но обязательно дав маслу распределиться по системе. Длительный прогрев на высоких оборотах без нагрузки (на приколе) вреден для дейдвуда.</p>
+</details>
+
+<details>
+<summary>Что делать, если пропала тяга, но мотор работает?</summary>
+<p>Скорее всего, срезало шпонку гребного винта или на винт намоталась леска/водоросли. Необходимо заглушить двигатель, перевернуть ногу мотора вверх и осмотреть винт. Всегда имейте с собой запасную шпонку и инструмент для ее замены.</p>
+</details>
+
+<details>
+<summary>Можно ли управлять катером одной рукой?</summary>
+<p>Технически возможно, особенно на спокойной воде, но крайне не рекомендуется. В случае внезапной волны или отказа системы управления вторая рука необходима для удержания равновесия или аварийного глушения двигателя. Правила безопасности требуют контроля судна обеими руками.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принципы-работы-рулевого-управления-и-тяги">Принципы работы рулевого управления и тяги</a></li><li><a href="#подготовка-к-выходу-и-проверка-систем">Подготовка к выходу и проверка систем</a></li><li><a href="#техника-старта-и-выход-на-глиссирование">Техника старта и выход на глиссирование</a></li><li><a href="#навигация-и-маневрирование-на-воде">Навигация и маневрирование на воде</a></li><li><a href="#особенности-швартовки-и-маневров-задним-ходом">Особенности швартовки и маневров задним ходом</a></li><li><a href="#безопасность-и-аварийные-ситуации">Безопасность и аварийные ситуации</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/t/to/tokhatsu-3-5-l-s-lodochnyj-motor.html" class="related-card">Tohatsu 3.5 л.с.: Полный обзор мотора, характеристики и советы</a></li><li><a href="/articles/l/lo/lodochnyj-motor-yamakha-5-4kh-taktnyj.html" class="related-card">Лодочный мотор Ямаха 5 л.с. 4х тактный: обзор и характеристики</a></li><li><a href="/articles/k/kh/khranenie-lodochnogo-motora.html" class="related-card">Хранение лодочного мотора зимой: правила консервации и ухода</a></li><li><a href="/articles/n/na/nastrojka-takhometra-na-lodochnom-motore.html" class="related-card">Настройка тахометра на лодочном моторе: точная инструкция</a></li><li><a href="/articles/y/ya/yamakha-2-lodochnyj-motor.html" class="related-card">Ямаха 2 л.с.: обзор, характеристики и выбор 2-тактного мотора</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/t/to/tokhatsu-3-5-l-s-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Tohatsu 3.5 л.с.: Полный обзор мотора, характеристики и советы</span><span class="related-bottom-desc">Подробный гид по лодочному мотору Tohatsu 3.5 л.с. Разбор технических особенностей, расход топлива, </span></a><a href="/articles/l/lo/lodochnyj-motor-yamakha-5-4kh-taktnyj.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Ямаха 5 л.с. 4х тактный: обзор и характеристики</span><span class="related-bottom-desc">Полный обзор 4х тактного мотора Yamaha 5 л.с. Плюсы и минусы, технические характеристики, советы по </span></a><a href="/articles/k/kh/khranenie-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Хранение лодочного мотора зимой: правила консервации и ухода</span><span class="related-bottom-desc">Правильное хранение лодочного мотора продлит его ресурс. Узнайте, как законсервировать двигатель, за</span></a><a href="/articles/n/na/nastrojka-takhometra-na-lodochnom-motore.html" class="related-bottom-card"><span class="related-bottom-title">Настройка тахометра на лодочном моторе: точная инструкция</span><span class="related-bottom-desc">Подробный гид по калибровке тахометра для лодочных моторов Mercury, Yamaha, Tohatsu. Методы настройк</span></a><a href="/articles/y/ya/yamakha-2-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Ямаха 2 л.с.: обзор, характеристики и выбор 2-тактного мотора</span><span class="related-bottom-desc">Полный гид по моторам Yamaha 2 л.с. Сравнение 2-тактных и 4-тактных моделей, расход топлива, отзывы </span></a><a href="/articles/m/mo/mozhno-li-ispolzovat-obychnyj-akkumulyator-dlya-lodochnogo-elektromotora.html" class="related-bottom-card"><span class="related-bottom-title">Автомобильный аккумулятор для лодочного мотора: можно ли ставить?</span><span class="related-bottom-desc">Разбираем, можно ли использовать стартерный аккумулятор для электромотора лодки. Сравнение характери</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

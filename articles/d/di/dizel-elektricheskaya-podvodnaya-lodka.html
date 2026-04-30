@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Дизель-электрическая подводная лодка: устройство и тактика — ЛодкаМастер</title>
+    <meta name="description" content="Полный обзор ДЭПЛ: принцип работы, сравнение с АПЛ, преимущества бесшумности и особенности современных неатомных субмарин.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/d/di/dizel-elektricheskaya-podvodnaya-lodka.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Дизель-электрическая подводная лодка: устройство и тактика">
+    <meta property="og:description" content="Полный обзор ДЭПЛ: принцип работы, сравнение с АПЛ, преимущества бесшумности и особенности современных неатомных субмарин.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/podvodnye-lodki/">Подводные лодки</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Дизель-электрическая подводная лодка: устройство и тактика</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Дизель-электрическая подводная лодка: скрытность и мощь</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-устройство-силовой-установки">Принцип работы и устройство силовой установки</a></li><li><a href="#эволюция-аккумуляторных-батарей-и-энергетика">Эволюция аккумуляторных батарей и энергетика</a></li><li><a href="#технология-анаэробного-хода-стирлинг-двигатели-и-топливные-элементы">Технология анаэробного хода (Стирлинг-двигатели и Топливные элементы)</a></li><li><a href="#тактико-технические-характеристики-дэпл">Тактико-технические характеристики ДЭПЛ</a></li><li><a href="#вооружение-и-боевое-применение">Вооружение и боевое применение</a></li><li><a href="#современные-проекты-и-перспективы-развития">Современные проекты и перспективы развития</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>В современном военно-морском флоте <strong>дизель-электрическая подводная лодка</strong> (ДЭПЛ) занимает уникальную нишу, которую не могут полностью занять даже самые совершенные атомные субмарины. Эти корабли часто называют «тихими убийцами» океанов, поскольку их способность скрываться на дне или в слоях воды делает их практически невидимыми для гидроакустических систем противника.</p>
+
+<p>Принципиальное отличие ДЭПЛ от атомных аналогов заключается в источнике энергии для движения. Если атомоходы используют реактор для постоянной выработки пара и вращения турбин, то <em>дизель-электрические субмарины</em> работают по циклическому принципу, сочетая в себе мощь дизельных двигателей и емкость электрических батарей.</p>
+
+<p>Именно эта двойственность силовой установки определяет всю тактику их применения, позволяя годами оставаться незамеченными в стратегически важных районах мирового океана. <mark>Главное тактическое преимущество ДЭПЛ — возможность полностью отключать все механизмы и замирать на дне, становясь акустически неотличимой от морского дна.</mark></p>
+
+<h2 id="принцип-работы-и-устройство-силовой-установки">Принцип работы и устройство силовой установки</h2>
+
+<p>Основу энергетической установки классической ДЭПЛ составляют дизель-генераторы и гребные электродвигатели. Дизельные двигатели используются исключительно для вращения генераторов, которые заряжают аккумуляторные батареи и питают электродвигатели. Прямая передача крутящего момента от дизеля на вал, как в автомобилях, здесь практически не применяется.</p>
+
+<p>Когда лодка находится в надводном положении или на перископной глубине, работает <strong>дизель-генератор</strong>. Он вырабатывает электричество, часть которого идет на движение, а излишек запасается в аккумуляторной батарее (АКБ). В подводном положении дизель глохнет, и лодка переходит на бесшумный электрический ход, используя накопленную энергию.</p>
+
+<p>Для вентиляции двигателей и подачи воздуха используется специальное устройство — <em>шноркель</em> (РДП). Это позволяет дизелям работать, не всплывая полностью, что критически важно для скрытности. Однако даже использование РДП создает шум и тепловое пятно, поэтому время работы дизелей стараются минимизировать.</p>
+
+<div class="poll-widget" id="poll-9c5e9efe"><div class="poll-widget-question">📊 Что важнее для подводной лодки?</div><div class="poll-widget-option" data-poll="9c5e9efe" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Скорость хода</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="9c5e9efe" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Глубина погружения</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="9c5e9efe" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Уровень шума</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="9c5e9efe" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Автономность</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Современные системы управления позволяют seamlessly переключаться между источниками энергии. Операторы следят за напряжением в банках аккумуляторов, стараясь не разряжать их ниже критического уровня, так как глубокий разряд сокращает срок службы дорогостоящей батареи.</p>
+
+<h2 id="эволюция-аккумуляторных-батарей-и-энергетика">Эволюция аккумуляторных батарей и энергетика</h2>
+
+<p>Сердцем любой ДЭПЛ является аккумуляторная батарея. Долгое время стандартом являлись свинцово-кислотные аккумуляторы, которые были надежны, но имели ограничения по емкости и требовали регулярного обслуживания с доливом электролита.</p>
+
+<p>В последние десятилетия произошел революционный скачок благодаря внедрению литий-ионных технологий. <strong>Литий-ионные батареи</strong> обладают значительно большей энергоемкостью при меньшем весе и габаритах. Это позволяет увеличить подводную дальность хода и сократить время работы дизелей для подзарядки.</p>
+
+<p>Однако переход на новые технологии сопряжен с рисками. Литий-ионные элементы требуют сложнейших систем мониторинга температуры и напряжения, так как их перегрев может привести к тепловому разгону и пожару, что в замкнутом объеме подводной лодки является катастрофой.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Литий-ионные батареи позволяют ДЭПЛ проходить до 400 миль полным подводным ходом, что в 4-5 раз превышает показатели старых свинцовых аналогов.</p></div>
+
+<p>Инженеры постоянно работают над улучшением химического состава электролитов. Будущее, возможно, за твердотельными батареями, которые обещают еще большую безопасность и плотность энергии, что кардинально изменит облик неатомного флота.</p>
+
+<h2 id="технология-анаэробного-хода-стирлинг-двигатели-и-топливные-элементы">Технология анаэробного хода (Стирлинг-двигатели и Топливные элементы)</h2>
+
+<p>Классическая проблема ДЭПЛ — необходимость всплывать или использовать РДП для зарядки батарей. Решением этой проблемы стало создание двигателей Стирлинга и топливных элементов, создавших класс <em>подводных лодок с единым двигателем</em> (или ДЭПЛ с анаэробной энергоустановкой).</p>
+
+<p>Двигатель Стирлинга работает на принципе внешнего сгорания. Для реакции ему не нужен атмосферный кислород, так как окислителем служит жидкий кислород, хранящийся в криогенных емкостях на борту. Это позволяет лодке находиться под водой неделями без всплытия.</p>
+
+<p>Топливные элементы, в свою очередь, вырабатывают электричество в результате химической реакции водорода и кислорода. Побочным продуктом такой реакции является чистая вода, что также решает проблему опреснения воды для экипажа.</p>
+
+<details class="faq-item"><summary>Почему двигатели Стирлинга такие тихие?</summary><div class="faq-answer"><p>Двигатель Стирлинга не имеет такта взрыва, как дизель. Сгорание топлива происходит непрерывно и плавно, что исключает вибрации и резкие скачки давления, делая его работу практически бесшумной для гидроакустиков.</p></div></details>
+
+<p>Внедрение этих систем позволило ДЭПЛ сравняться по автономности подводного плавания с атомными субмаринами на малых и средних скоростях, сохранив при этом преимущество в скрытности на малых ходах.</p>
+
+<h2 id="тактико-технические-характеристики-дэпл">Тактико-технические характеристики ДЭПЛ</h2>
+
+<p>Сравнение дизель-электрических и атомных подводных лодок часто вызывает споры. Атомные субмарины (АПЛ) обладают практически неограниченной дальностью плавания и высокой скоростью, но они шумнее из-за постоянно работающих систем охлаждения реактора и насосов.</p>
+
+<p>ДЭПЛ, напротив, создавались для оборонительных задач и действий в прибрежных водах («green water»), где важна именно скрытность. Ниже приведено сравнение ключевых параметров современных представителей обоих классов.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Дизель-электрическая ПЛ (с ВНЕУ)</th>
+<th>Атомная ПЛ (многоцелевая)</th>
+</tr>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Полное водоизмещение</td>
+<td>2000 - 3500 т</td>
+<td>6000 - 12000 т</td>
+</tr>
+<tr>
+<td>Максимальная скорость (подводная)</td>
+<td>18 - 22 узла</td>
+<td>28 - 35 узлов</td>
+</tr>
+<tr>
+<td>Автономность (под водой)</td>
+<td>до 30-45 суток</td>
+<td>до 90 суток и более</td>
+</tr>
+<tr>
+<td>Уровень шума (на малом ходу)</td>
+<td>Крайне низкий (фоновый)</td>
+<td>Средний (шум насосов)</td>
+</tr>
+<tr>
+<td>Стоимость строительства</td>
+<td>Относительно низкая</td>
+<td>Очень высокая</td>
+</tr>
+</tbody>
+</table>
+
+<p>Как видно из таблицы, <strong>ДЭПЛ</strong> значительно компактнее и дешевле. Это позволяет странам с ограниченным военным бюджетом иметь эффективный подводный флот. Кроме того, меньшие габариты позволяют действовать на мелководье, где крупные атомоходы рискуют сесть на грунт.</p>
+
+<p>Однако скорость ДЭПЛ ограничена емкостью батарей. При движении полным ходом заряд расходуется за считанные часы, после чего лодка вынуждена всплывать. Атомоход же может развивать полную скорость неограниченно долго.</p>
+
+<h2 id="вооружение-и-боевое-применение">Вооружение и боевое применение</h2>
+
+<p>Несмотря на меньшие размеры, современные ДЭПЛ несут мощное вооружение. Основу арсенала составляют торпеды калибра 533 мм и крылатые ракеты. Многие проекты оснащаются вертикальными пусковыми шахтами для ракетного оружия.</p>
+
+<p><em>Крылатые ракеты</em> позволяют ДЭПЛ атаковать цели на суше или крупные надводные корабли, не входя в зону действия их ПВО. Торпеды с телеуправлением по кабелю или с акустическим самонаведением эффективны против любых подводных целей.</p>
+
+<ul>
+<li>🚀 <strong>Торпеды:</strong> Основной вид оружия для ближнего боя, оснащаются мощными боевыми частями или ядерными зарядами.</li>
+<li>🛰️ <strong>Крылатые ракеты:</strong> Предназначены для ударов по береговой инфраструктуре и авианосным группам на больших дистанциях.</li>
+<li>🪖 <strong>Минное оружие:</strong> Многие ДЭПЛ могут нести мины, которые выставляются через торпедные аппараты, превращая лодку в минный заградитель.</li>
+</ul>
+
+<p>Тактика применения ДЭПЛ часто строится на устройстве засад. Лодка занимает позицию на вероятном пути следования кораблей противника и ожидает их, используя пассивные средства гидролокации.</p>
+
+<div class="checklist-block"><h4>☑️ Критерии выбора позиции для ДЭПЛ</h4><label class="check-item"><input type="checkbox"><span>Анализ гидрологии (слои скачка температуры)</span></label><label class="check-item"><input type="checkbox"><span>Учет донного рельефа</span></label><label class="check-item"><input type="checkbox"><span>Наличие естественных шумов (судоходство, шторм)</span></label><label class="check-item"><input type="checkbox"><span>Удаленность от баз противника</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="современные-проекты-и-перспективы-развития">Современные проекты и перспективы развития</h2>
+
+<p>Мировое кораблестроение не стоит на месте. Лидерами в строительстве ДЭПЛ традиционно являются Германия, Швеция, Россия, Китай и Япония. Каждая страна вносит свои уникальные решения в конструкцию.</p>
+
+<p>Немецкие проекты серии 212 и 214 оснащаются передовыми топливными элементами. Российские проекты 636.3 «Варшавянка» и 677 «Лада» славятся своей надежностью и мощным ракетным вооружением. Японские лодки типа «Сорю» первыми массово перешли на литий-ионные батареи.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Эксплуатация ДЭПЛ в тропических широтах требует особой осторожности. Высокая температура забортной воды снижает эффективность охлаждения оборудования и может привести к перегреву аккумуляторных батарей при быстрой зарядке.</p>
+</blockquote>
+
+<p>Будущее ДЭПЛ связано с внедрением искусственного интеллекта в системы управления боем и движением. Автономные подводные аппараты смогут действовать в группе с ДЭПЛ, расширяя радиус разведки и атаки.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>ДЭПЛ остаются востребованными даже в эпоху атомного флота благодаря своей способности быть «невидимками» в прибрежных зонах и проливах.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Сколько времени дизель-электрическая лодка может находиться под водой?</summary>
+<p>Классическая ДЭПЛ может находиться под водой от 2 до 4 суток в зависимости от скорости хода. Лодки с анаэробной энергоустановкой (Стирлинг или топливные элементы) могут пребывать под водой до 30-45 суток без всплытия.</p>
+</details>
+
+<details>
+<summary>Почему ДЭПЛ называют «черными дырами»?</summary>
+<p>Это прозвище они получили за свою исключительную скрытность. На малых скоростях их практически невозможно обнаружить гидроакустикой, особенно если лодка лежит на грунте. Для противника она исчезает, как в черную дыру.</p>
+</details>
+
+<details>
+<summary>Может ли ДЭПЛ догнать атомную субмарину?</summary>
+<p>В подводном положении на полной скорости — нет, атомоход быстрее. Однако на малых и средних скоростях ДЭПЛ может быть эффективнее за счет лучшей маневренности и скрытности. В надводном положении ДЭПЛ также уступает в скорости современным кораблям.</p>
+</details>
+
+<details>
+<summary>Какова максимальная глубина погружения современных ДЭПЛ?</summary>
+<p>Рабочая глубина погружения современных проектов составляет от 250 до 400 метров. Предельная глубина может достигать 500-600 метров, но выход на такие глубины является аварийным режимом.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-и-устройство-силовой-установки">Принцип работы и устройство силовой установки</a></li><li><a href="#эволюция-аккумуляторных-батарей-и-энергетика">Эволюция аккумуляторных батарей и энергетика</a></li><li><a href="#технология-анаэробного-хода-стирлинг-двигатели-и-топливные-элементы">Технология анаэробного хода (Стирлинг-двигатели и Топливные элементы)</a></li><li><a href="#тактико-технические-характеристики-дэпл">Тактико-технические характеристики ДЭПЛ</a></li><li><a href="#вооружение-и-боевое-применение">Вооружение и боевое применение</a></li><li><a href="#современные-проекты-и-перспективы-развития">Современные проекты и перспективы развития</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/p/po/podvodnaya-lodka-tajfun.html" class="related-card">Подводная лодка Тайфун: характеристики, устройство и история</a></li><li><a href="/articles/n/na/na-kakoj-glubine-plavayut-podvodnye-lodki.html" class="related-card">На какой глубине плавают подводные лодки: рекорды и тактика</a></li><li><a href="/articles/p/po/podvodnaya-lodka-shch-216.html" class="related-card">Подводная лодка Щ-216: История, тактико-технические характеристики и боевой путь</a></li><li><a href="/articles/y/yu/yu-96-podvodnaya-lodka.html" class="related-card">Ю 96 Подводная лодка: История и Характеристики</a></li><li><a href="/articles/p/po/podlodka-proekt-641.html" class="related-card">Подлодка Проект 641: История, ТТХ и устройство дизельной субмарины</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/p/po/podvodnaya-lodka-tajfun.html" class="related-bottom-card"><span class="related-bottom-title">Подводная лодка Тайфун: характеристики, устройство и история</span><span class="related-bottom-desc">Подробный обзор ПЛАРК проекта 941 Акула (Тайфун). Технические характеристики, вооружение, история со</span></a><a href="/articles/n/na/na-kakoj-glubine-plavayut-podvodnye-lodki.html" class="related-bottom-card"><span class="related-bottom-title">На какой глубине плавают подводные лодки: рекорды и тактика</span><span class="related-bottom-desc">Подробный разбор глубин погружения: от перископной до предельной. Тактика скрытности, технические пр</span></a><a href="/articles/p/po/podvodnaya-lodka-shch-216.html" class="related-bottom-card"><span class="related-bottom-title">Подводная лодка Щ-216: История, тактико-технические характеристики и боевой путь</span><span class="related-bottom-desc">Подробный разбор советской субмарины Щ-216: устройство, тактика атаки, боевые походы Черноморского ф</span></a><a href="/articles/y/yu/yu-96-podvodnaya-lodka.html" class="related-bottom-card"><span class="related-bottom-title">Ю 96 Подводная лодка: История и Характеристики</span><span class="related-bottom-desc">Полный обзор советской ПЛ Ю 96 (проект 613). Тактико-технические характеристики, история службы, кон</span></a><a href="/articles/p/po/podlodka-proekt-641.html" class="related-bottom-card"><span class="related-bottom-title">Подлодка Проект 641: История, ТТХ и устройство дизельной субмарины</span><span class="related-bottom-desc">Полный обзор подводной лодки Проект 641 (Foxtrot): технические характеристики, история создания, воо</span></a><a href="/articles/p/po/podlodka-k-429.html" class="related-bottom-card"><span class="related-bottom-title">Подлодка К-429: Трагедия и подвиг советского флота</span><span class="related-bottom-desc">Полная история атомной подлодки К-429. Авария 1983 года, героизм экипажа, детали конструкции проекта</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

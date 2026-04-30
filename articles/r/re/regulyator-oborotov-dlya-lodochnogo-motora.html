@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Регулятор оборотов лодочного мотора: выбор и установка — ЛодкаМастер</title>
+    <meta name="description" content="Полный гид по регуляторам оборотов для лодочных моторов. Схемы подключения, настройка, устранение неисправностей и советы по продлению срока службы.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/r/re/regulyator-oborotov-dlya-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Регулятор оборотов лодочного мотора: выбор и установка">
+    <meta property="og:description" content="Полный гид по регуляторам оборотов для лодочных моторов. Схемы подключения, настройка, устранение неисправностей и советы по продлению срока службы.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Регулятор оборотов лодочного мотора: выбор и установка</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Регулятор оборотов для лодочного мотора: полное руководство</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-основные-типы-регуляторов">Принцип работы и основные типы регуляторов</a></li><li><a href="#критерии-выбора-регулятора-для-разных-типов-моторов">Критерии выбора регулятора для разных типов моторов</a></li><li><a href="#инструкция-по-установке-и-подключению-оборудования">Инструкция по установке и подключению оборудования</a></li><li><a href="#настройка-чувствительности-и-калибровка-дросселя">Настройка чувствительности и калибровка дросселя</a></li><li><a href="#диагностика-неисправностей-и-методы-ремонта">Диагностика неисправностей и методы ремонта</a></li><li><a href="#техническое-обслуживание-и-продление-срока-службы">Техническое обслуживание и продление срока службы</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Эффективное управление водным транспортом невозможно без точного контроля тяги, за которую отвечает <strong>регулятор оборотов лодочного мотора</strong>. Именно этот узел определяет, насколько быстро и экономично будет двигаться ваша лодка, а также напрямую влияет на ресурс силовой установки. Владельцы как мощных бензиновых двигателей, так и компактных электромоторов часто сталкиваются с необходимостью модернизации или ремонта системы управления скоростью.</p>
+
+<p>Современные системы контроля скорости прошли долгий путь эволюции от простых механических тросов до сложных электронных блоков управления. Понимание принципов их работы позволяет не только грамотно подобрать оборудование, но и самостоятельно диагностировать большинство распространенных неисправностей. <em>Электронная дроссельная заслонка</em> сегодня становится стандартом даже для средних по мощности моделей, обеспечивая плавность хода.</p>
+
+<p>В данной статье мы подробно разберем устройство, типы и особенности эксплуатации регуляторов. Вы узнаете, как правильно настроить чувствительность, избежать перегрева и продлить срок службы <strong>топливной системы</strong>. Особое внимание уделим нюансам установки, которые часто игнорируются любителями, что приводит к преждевременному выходу узлов из строя.</p>
+
+<h2 id="принцип-работы-и-основные-типы-регуляторов">Принцип работы и основные типы регуляторов</h2>
+
+<p>Фундаментально система управления скоростью делится на механическую и электронную. В классическом механическом варианте усилие от рычага или ручки газа передается через трос непосредственно на карбюратор или <strong>дроссельную заслонку</strong>. Это простая и надежная конструкция, но она имеет инерцию и требует периодической смазки и регулировки натяжения троса.</p>
+
+<p>Электронные системы, часто называемые <em>Drive-by-Wire</em>, используют датчики положения дроссельной заслонки (TPS) и сервоприводы. Когда вы перемещаете ручку, сигнал поступает в электронный блок управления (ЭБУ), который анализирует множество параметров, включая температуру двигателя и нагрузку, прежде чем изменить положение заслонки. Это обеспечивает более точный и безопасный контроль.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При переходе с механики на электронику критически важно проверять совместимость ЭБУ вашего мотора. Неправильно подобранная система может привести к рассинхронизации работы цилиндров.</p>
+</blockquote>
+
+<p>Существуют также промежуточные варианты, где трос управляет потенциометром, который, в свою очередь, дает сигнал на исполнительный механизм. Такой подход позволяет сохранить привычную эргономику румпеля, но добавить функции электронного контроля. <strong>Регулятор холостого хода</strong> в таких системах работает автоматически, поддерживая стабильные обороты независимо от нагрузки.</p>
+
+<div class="poll-widget" id="poll-e61074ef"><div class="poll-widget-question">📊 Какой тип управления установлен на вашем моторе?</div><div class="poll-widget-option" data-poll="e61074ef" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Механический трос</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="e61074ef" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Электронный (Drive-by-Wire)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="e61074ef" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Гидравлика</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="e61074ef" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Не знаю/Смотрю впервые</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="критерии-выбора-регулятора-для-разных-типов-моторов">Критерии выбора регулятора для разных типов моторов</h2>
+
+<p>Выбор подходящего контроллера зависит от множества факторов, главным из которых является тип двигателя. Для двухтактных бензиновых моторов важна скорость реакции системы на изменение положения дросселя, чтобы избежать провалов тяги. Четырехтактные агрегаты требуют более плавной работы на низких оборотах для стабильного прогрева и работы в режиме троллинга.</p>
+
+<p>Если речь идет об электромоторах, то здесь используется <strong>электронный регулятор скорости</strong> (ESC), который управляет мощностью, подаваемой на обмотки двигателя. Ключевыми параметрами здесь становятся максимальный ток и напряжение. Неправильный выбор ESC приведет к его сгоранию или повреждению аккумуляторной батареи.</p>
+
+<ul>
+<li>🚤 <strong>Совместимость:</strong> Убедитесь, что модель регулятора сертифицирована производителем вашего мотора.</li>
+<li>⚡ <strong>Мощность:</strong> Запас прочности по току должен составлять минимум 20% от номинала.</li>
+<li>🛡️ <strong>Защита:</strong> Наличие влагозащиты уровня IP67 и защиты от перегрева обязательно.</li>
+</ul>
+
+<p>При выборе также стоит учитывать наличие дополнительных функций, таких как режим "трал" или возможность подключения к бортовым компьютерам. Некоторые современные модели позволяют программировать кривую отклика дросселя, что полезно для специфических задач, например, спортивной рыбалки или буксировки водных лыжников.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При покупке регулятора для электромотора всегда берите модель с током на 10-15% выше максимального потребления вашего двигателя. Это снизит нагрев и продлит жизнь контроллеру.</p></div>
+
+<h2 id="инструкция-по-установке-и-подключению-оборудования">Инструкция по установке и подключению оборудования</h2>
+
+<p>Процесс монтажа начинается с демонтажа старых элементов и подготовки посадочных мест. Если вы устанавливаете электронный регулятор вместо механического, потребуется прокладка новых жгутов проводов. Важно использовать морскую проводку с лужеными медными жилами, устойчивую к соленой воде и ультрафиалету.</p>
+
+<p>Подключение датчиков положения дроссельной заслонки требует особой точности. Ошибка в подключении даже одного контакта может привести к тому, что <strong>система управления</strong> перейдет в аварийный режим или двигатель будет работать только на максимальных оборотах. Следуйте цветовой маркировке, указанной в мануале производителя.</p>
+
+
+
+<p>После физического монтажа необходимо провести калибровку. Для этого часто требуется выполнить последовательность действий: включить зажигание, выжать полный газ, затем сбросить до холостых и выключить зажигание. Точная процедура зависит от модели и описана в технической документации.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Перед первым запуском обязательно проверьте, свободно ли ходит дроссельная заслонка вручную. Механическое заедание может мгновенно вывести новый регулятор из строя.</p>
+</blockquote>
+
+<h2 id="настройка-чувствительности-и-калибровка-дросселя">Настройка чувствительности и калибровка дросселя</h2>
+
+<p>Правильная калибровка — залог долгой службы мотора. <strong>Холостой ход</strong> должен быть стабильным, без плавающих оборотов. Если двигатель глохнет при резком сбросе газа, возможно, требуется adjustment (подстройка) винта качества смеси или программная коррекция отклика.</p>
+
+<p>Для электронных систем важна настройка мертвых зон. Слишком широкая мертвая зона сделает управление вялым, слишком узкая — дерганым. Оптимальная настройка позволяет мотору плавно набирать скорость от минимума до максимума за 2-3 секунды равномерного движения ручки.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Нормальное значение</th>
+<th>Допустимое отклонение</th>
+<th>Последствия ошибки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Обороты ХХ</td>
+<td>900-1100 об/мин</td>
+<td>±50 об/мин</td>
+<td>Глохнет или перегрев</td>
+</tr>
+<tr>
+<td>Напряжение TPS</td>
+<td>0.5-0.9 В</td>
+<td>±0.1 В</td>
+<td>Неверный расчет смеси</td>
+</tr>
+<tr>
+<td>Ход дросселя</td>
+<td>Полный (0-100%)</td>
+<td>Без люфта</td>
+<td>Потеря мощности</td>
+</tr>
+<tr>
+<td>Температура срабатывания</td>
+<td>90-95 °C</td>
+<td>±3 °C</td>
+<td>Раннее ограничение мощности</td>
+</tr>
+</tbody>
+</table>
+
+<p>В некоторых случаях требуется использование специализированного ПО и интерфейсного кабеля для подключения к диагностическому порту мотора. Это позволяет точно настроить <em>топливно-воздушную смесь</em> для разных режимов работы, что особенно актуально при установке тюнингованных систем впуска или выпуска.</p>
+
+
+
+<h2 id="диагностика-неисправностей-и-методы-ремонта">Диагностика неисправностей и методы ремонта</h2>
+
+<p>Наиболее частой проблемой является нестабильный холостой ход. Причины могут крыться в загрязнении дроссельной заслонки, подсосе воздуха через прокладки или неисправности <strong>регулятора холостого хода</strong>. Первым шагом всегда должна быть визуальная inspection и чистка узлов.</p>
+
+<p>Если мотор дергается при наборе скорости, проблема часто кроется в датчике положения дроссельной заслонки (TPS). Изношенный потенциометр создает "шумный" сигнал, который ЭБУ воспринимает как резкое изменение нагрузки. Проверка производится мультиметром: сопротивление должно меняться плавно, без скачков.</p>
+
+<ul>
+<li>🔍 <strong>Проверка проводки:</strong> Ищите окисленные контакты и перетертые провода, особенно в местах изгибов.</li>
+<li>💧 <strong>Влага:</strong> Попадание воды в разъемы регулятора вызывает коррозию и короткие замыкания.</li>
+<li>🔥 <strong>Перегрев:</strong> Проверьте систему охлаждения, если регулятор уходит в защиту по температуре.</li>
+</ul>
+
+<p>В случае выхода из строя электронного блока, ремонт часто нецелесообразен из-за сложности и стоимости компонентов. Проще заменить модуль целиком. Однако, если проблема в механической части (заклинивание троса, износ шестерен сервопривода), то замена отдельных узлов вполне возможна и продлит жизнь системе.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не пытайтесь разбирать герметичные электронные блоки регулятора в полевых условиях. Нарушение герметичности гарантированно приведет к выходу устройства из строя при первом же контакте с водой.</p>
+</blockquote>
+
+<h2 id="техническое-обслуживание-и-продление-срока-службы">Техническое обслуживание и продление срока службы</h2>
+
+<p>Регулярное обслуживание — ключ к надежности. Раз в сезон необходимо смазывать механические соединения тросов и шарниры дроссельной заслонки специальной смазкой, устойчивой к вымыванию водой. Для электронных компонентов важна чистота контактов.</p>
+
+<p>Используйте спреи-очистители контактов (Contact Cleaner) для обработки разъемов перед началом сезона. Это удалит окислы и восстановит токопроводимость. Также проверяйте состояние гофр и защитных кожухов проводки — любой разрыв может стать входом для влаги.</p>
+
+
+
+<p>Не забывайте про <strong>топливный фильтр</strong>. Грязное топливо приводит к закоксовке форсунок и дроссельной заслонки, что заставляет регулятор работать в нештатных режимах, пытаясь компенсировать нехватку смеси. Замена фильтров — самая дешевая и эффективная мера профилактики.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли установить электронный регулятор на старый карбюраторный мотор?</summary>
+<p>Теоретически возможно, но это требует сложной переделки системы управления, замены карбюратора на инжектор или установки сервоприводов на заслонки. Экономически это редко оправдано, проще заменить мотор целиком.</p>
+</details>
+
+<details>
+<summary>Почему мотор глохнет при резком открытии дросселя?</summary>
+<p>Это может указывать на неисправность <strong>ускорительного насоса</strong> (в карбюраторе), подсос воздуха или неверную калибровку TPS. Также проверьте состояние свечей зажигания.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять регулятор холостого хода?</summary>
+<p>Ресурс механизма обычно составляет 500-800 моточасов. Однако при регулярной чистке и использовании качественного топлива он может служить значительно дольше. Меняйте при появлении плавающих оборотов, которые не устраняются чисткой.</p>
+</details>
+
+<details>
+<summary>Влияет ли длина троса газа на работу регулятора?</summary>
+<p>Для механических систем — да, слишком длинный трос увеличивает трение и инерцию. Для электронных систем (Drive-by-Wire) длина троса не имеет значения, так как он передает только сигнал, а не механическое усилие.</p>
+</details>
+
+<details>
+<summary>Безопасно ли эксплуатировать мотор с неисправным регулятором?</summary>
+<p>Категорически нет. Неконтролируемый набор оборотов или внезапная потеря тяги на воде могут привести к аварийной ситуации, столкновению или потере управления судном.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-и-основные-типы-регуляторов">Принцип работы и основные типы регуляторов</a></li><li><a href="#критерии-выбора-регулятора-для-разных-типов-моторов">Критерии выбора регулятора для разных типов моторов</a></li><li><a href="#инструкция-по-установке-и-подключению-оборудования">Инструкция по установке и подключению оборудования</a></li><li><a href="#настройка-чувствительности-и-калибровка-дросселя">Настройка чувствительности и калибровка дросселя</a></li><li><a href="#диагностика-неисправностей-и-методы-ремонта">Диагностика неисправностей и методы ремонта</a></li><li><a href="#техническое-обслуживание-и-продление-срока-службы">Техническое обслуживание и продление срока службы</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakoe-maslo-zalivat-v-dvigatel-lifan-15-l-s-na-motobuksirovshchik.html" class="related-card">Какое масло заливать в Lifan 15 л.с. на мотобуксировщик</a></li><li><a href="/articles/k/ka/kak-pravilno-zakleit-lodku-pvkh-svoimi-rukami.html" class="related-card">Как заклеить лодку ПВХ своими руками: пошаговая инструкция</a></li><li><a href="/articles/k/ko/konservatsiya-dvigatelya-dlya-dlitelnogo-khraneniya.html" class="related-card">Консервация двигателя для хранения: полное руководство по защите</a></li><li><a href="/articles/k/ka/kak-otkrutit-klapan-na-lodke-pvkh.html" class="related-card">Как открутить клапан на лодке ПВХ: пошаговая инструкция</a></li><li><a href="/articles/p/po/pochemu-pri-nagreve-dvigatelya-mashina-teryaet-moshchnost.html" class="related-card">Почему при нагреве двигателя машина теряет мощность</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kakoe-maslo-zalivat-v-dvigatel-lifan-15-l-s-na-motobuksirovshchik.html" class="related-bottom-card"><span class="related-bottom-title">Какое масло заливать в Lifan 15 л.с. на мотобуксировщик</span><span class="related-bottom-desc">Выбираем масло для двигателя Lifan 15 л.с. мотобуксировщика: вязкость, тип, интервалы замены и табли</span></a><a href="/articles/k/ka/kak-pravilno-zakleit-lodku-pvkh-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Как заклеить лодку ПВХ своими руками: пошаговая инструкция</span><span class="related-bottom-desc">Полное руководство: чем и как заклеить лодку ПВХ в домашних условиях. Выбор клея, технология ремонта</span></a><a href="/articles/k/ko/konservatsiya-dvigatelya-dlya-dlitelnogo-khraneniya.html" class="related-bottom-card"><span class="related-bottom-title">Консервация двигателя для хранения: полное руководство по защите</span><span class="related-bottom-desc">Как законсервировать двигатель на зиму? Пошаговая инструкция по обработке цилиндров, топливной систе</span></a><a href="/articles/k/ka/kak-otkrutit-klapan-na-lodke-pvkh.html" class="related-bottom-card"><span class="related-bottom-title">Как открутить клапан на лодке ПВХ: пошаговая инструкция</span><span class="related-bottom-desc">Узнайте, как безопасно открутить клапан на лодке ПВХ. Разборка, чистка, замена прокладок и советы по</span></a><a href="/articles/p/po/pochemu-pri-nagreve-dvigatelya-mashina-teryaet-moshchnost.html" class="related-bottom-card"><span class="related-bottom-title">Почему при нагреве двигателя машина теряет мощность</span><span class="related-bottom-desc">Разбираем причины падения тяги при прогреве: детонация, лямбда-зонд, датчик массового расхода воздух</span></a><a href="/articles/m/ma/maslo-yamolyub-2-t-dlya-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Масло Ямолюб 2Т для лодочных моторов: характеристики и отзывы</span><span class="related-bottom-desc">Подробный обзор масла Ямолюб 2Т для лодочных моторов. Состав, пропорции смешивания, совместимость с </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Принцип работы карбюратора лодочного мотора: устройство и регулировка — ЛодкаМастер</title>
+    <meta name="description" content="Подробно разбираем принцип работы карбюратора лодочного мотора. Устройство, основные системы, причины поломок и советы по настройке для стабильной тяги.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/p/pr/printsip-raboty-karbyuratora-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Принцип работы карбюратора лодочного мотора: устройство и регулировка">
+    <meta property="og:description" content="Подробно разбираем принцип работы карбюратора лодочного мотора. Устройство, основные системы, причины поломок и советы по настройке для стабильной тяги.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Принцип работы карбюратора лодочного мотора: устройство и регулировка</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Принцип работы карбюратора лодочного мотора: от физики процесса до настройки</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#конструктивные-особенности-и-устройство-узла">Конструктивные особенности и устройство узла</a></li><li><a href="#физика-процесса-как-создается-топливная-смесь">Физика процесса: как создается топливная смесь</a></li><li><a href="#системы-дозирования-в-разных-режимах-работы">Системы дозирования в разных режимах работы</a></li><li><a href="#типичные-неисправности-и-методы-их-диагностики">Типичные неисправности и методы их диагностики</a></li><li><a href="#процесс-регулировки-и-настройки-карбюратора">Процесс регулировки и настройки карбюратора</a></li><li><a href="#профилактика-и-уход-за-топливной-системой">Профилактика и уход за топливной системой</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Любой владелец водной техники знает, что стабильность работы двигателя напрямую зависит от качества смесеобразования. Именно за этот процесс отвечает <strong>карбюратор</strong>, являющийся сердцем топливной системы двухтактных и многих четырехтактных подвесных моторов. Понимание того, как именно воздух смешивается с бензином внутри этого узла, позволяет не только грамотно обслуживать технику, но и оперативно диагностировать проблемы с тягой или расходом топлива на воде.</p>
+
+<p>В отличие от инжекторных систем, где подача топлива контролируется электроникой, карбюратор работает исключительно на физических законах аэродинамики и перепадах давления. <em>Закон Бернулли</em> гласит, что при увеличении скорости потока жидкости или газа давление в нем падает. Этот фундаментальный принцип используется для засасывания топлива из поплавковой камеры в диффузор, где происходит его распыление и смешивание с воздухом перед попаданием в цилиндр.</p>
+
+<p>Неисправности в этом узле часто становятся причиной того, что лодка отказывается заводиться или глохнет на холостых оборотах. Зная устройство и <strong>принцип действия</strong> основных систем, вы сможете самостоятельно устранить большинство проблем, не прибегая к дорогостоящему сервису. Далее мы подробно разберем конструкцию, этапы работы и тонкости регулировки этого важнейшего агрегата.</p>
+
+<h2 id="конструктивные-особенности-и-устройство-узла">Конструктивные особенности и устройство узла</h2>
+
+<p>Внешне карбюратор представляет собой сложный металлический блок с множеством каналов, жиклеров и рычагов. Однако, если разобрать его на составляющие, станет ясно, что конструкция довольно логична и состоит из нескольких ключевых подсистем. Основной задачей инженеров при разработке было создание условий для идеального смешивания топлива и воздуха в любых режимах работы мотора, от холостого хода до полного газа.</p>
+
+<p>Центральным элементом является <strong>поплавковая камера</strong>, которая служит резервуаром для топлива. Уровень бензина в ней поддерживается автоматически благодаря поплавку и запорной игле. Когда камера пуста, поплавок опускается, открывая клапан, и топливо поступает внутрь. Как только уровень достигает нормы, поплавок всплывает и перекрывает подачу. Это обеспечивает стабильное давление топлива перед жиклерами независимо от количества бензина в баке.</p>
+
+<p>Над камерой расположен диффузор — сужение в воздушном канале, где создается разрежение. Именно здесь установлены главные распылители и жиклеры. Важно отметить, что в лодочных моторах часто используются карбюраторы типа <em>Mikuni</em> или <em>Keihin</em>, которые могут иметь одну, две или даже три ступени смесеобразования. Каждая ступень отвечает за свой диапазон оборотов коленчатого вала, что позволяет мотору работать ровно во всем диапазоне скоростей.</p>
+
+<ul>
+<li>🔧 <strong>Поплавковая камера</strong>: обеспечивает хранение и дозирование топлива перед подачей в распылители.</li>
+<li>🌬️ <strong>Диффузор и дроссельная заслонка</strong>: регулируют количество поступающего воздуха и создают необходимое разрежение.</li>
+<li>💎 <strong>Жиклеры (эмульсионные трубки)</strong>: калиброванные отверстия, определяющие точное количество подаваемого топлива.</li>
+<li>⚙️ <strong>Система холостого хода</strong>: отдельный канал для работы мотора при закрытой дроссельной заслонке.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: При разборке карбюратора категорически нельзя использовать острые металлические предметы (иглы, проволоку) для чистки жиклеров. Это может изменить геометрию отверстия и нарушить расчетные параметры смесеобразования, что приведет к некорректной работе мотора.</p>
+</blockquote>
+
+<h2 id="физика-процесса-как-создается-топливная-смесь">Физика процесса: как создается топливная смесь</h2>
+
+<p>Чтобы двигатель внутреннего сгорания мог эффективно работать, жидкий бензин должен превратиться в газообразную смесь. Этот процесс начинается в карбюраторе. Когда поршень в цилиндре движется вверх, он создает разрежение, которое засасывает воздух через воздушный фильтр в карбюратор. Проходя через суженную часть канала (диффузор), скорость воздушного потока резко возрастает.</p>
+
+<p>Согласно физическим законам, рост скорости потока приводит к падению статического давления в этой точке. Давление в поплавковой камере остается равным атмосферному (благодаря дыхательному клапану), в то время как в диффузоре оно становится ниже. Эта разница давлений заставляет топливо подниматься по трубке распылителя и вырываться наружу мелкими каплями.</p>
+
+<p>Далее в дело вступает дроссельная заслонка, связанная с ручкой «газа» на румпеле. Поворачивая ручку, вы меняете угол наклона заслонки, увеличивая или уменьшая проходное сечение канала. Это регулирует объем поступающей смеси и, соответственно, мощность мотора. <strong>Качество смеси</strong> (соотношение бензина и воздуха) напрямую влияет на температуру сгорания и мощность.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте только свежий бензин с октановым числом, рекомендованным производителем (обычно АИ-92 или АИ-95). Старое топливо теряет летучие фракции, что затрудняет испарение и образование качественной смеси.</p></div>
+
+<p>Важно понимать, что процесс испарения топлива не мгновенный. Крупные капли бензина могут не успеть сгореть и осесть на стенках цилиндра или вылететь в выхлопную трубу. Поэтому конструкция распылителей и форма диффузора спроектированы так, чтобы максимально дробить струю топлива еще до попадания в цилиндр.</p>
+
+<h2 id="системы-дозирования-в-разных-режимах-работы">Системы дозирования в разных режимах работы</h2>
+
+<p>Карбюратор лодочного мотора — это не просто труба с дыркой, а сложная система, которая должна подавать разное количество топлива в зависимости от нагрузки. Для этого используются разные системы дозирования, которые вступают в работу последовательно. На низких оборотах, когда дроссельная заслонка почти закрыта, основная система не работает из-за недостаточного разрежения.</p>
+
+<p>В этот момент в дело вступает <strong>система холостого хода</strong>. Она имеет свой собственный канал и жиклер, расположенный за дроссельной заслонкой, где создается максимальное разрежение при закрытом газе. Топливо смешивается с воздухом, поступающим через специальный воздушный жиклер, и подается в коллектор. Регулировка качества смеси на холостых производится винтом, изменяющим положение иглы или количество воздуха.</p>
+
+<p>При открытии дроссельной заслонки (примерно на 15-25% хода) начинает работать переходная система, которая часто объединена с системой холостого хода. По мере дальнейшего открытия заслонки в работу вступает главная дозирующая система с основным жиклером. В этот момент разрежение в диффузоре максимально, и именно главный жиклер определяет, насколько богатой или бедной будет смесь на полных оборотах.</p>
+
+<div class="poll-widget" id="poll-6858ed87"><div class="poll-widget-question">📊 С какой проблемой карбюратора вы сталкивались чаще всего?</div><div class="poll-widget-option" data-poll="6858ed87" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Мотор глохнет на холостых</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="6858ed87" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Провалы при резком газе</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="6858ed87" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Трудный запуск</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="6858ed87" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Перерасход топлива</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Некоторые современные карбюраторы оснащены системой <em>обогащения смеси</em> (подсос) для холодного запуска. Она перекрывает часть воздушного канала, искусственно увеличивая разрежение и затягивая больше топлива. После прогрева мотора эту заслонку необходимо открыть, иначе двигатель будет «захлебываться».</p>
+
+<h2 id="типичные-неисправности-и-методы-их-диагностики">Типичные неисправности и методы их диагностики</h2>
+
+<p>Нарушение работы карбюратора сразу сказывается на поведении лодки на воде. Двигатель может терять мощность, дымить или работать нестабильно. Чаще всего проблемы связаны с загрязнением каналов или износом деталей. Вода, попавшая в топливный бак, также может вызвать коррозию внутренних элементов и нарушение герметичности.</p>
+
+<p>Одной из самых распространенных проблем является <strong>загрязнение жиклеров</strong>. Мелкие частицы ржавчины, грязь или смолистые отложения от старого бензина закупоривают калиброванные отверстия. Это приводит к обеднению смеси: мотор теряет тягу, перегревается и может глохнуть под нагрузкой. Визуально это часто проявляется белым налетом на свечах зажигания.</p>
+
+<p>Другая крайность — слишком богатая смесь, когда топлива поступает больше, чем нужно. Симптомы: черный дым из выхлопа, черный нагар на свечах, повышенный расход топлива и потеря мощности из-за недогара. Часто причиной становится не жиклер, а негерметичный игольчатый клапан или неправильно выставленный уровень топлива в поплавковой камере.</p>
+
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Вероятная причина</th>
+<th>Метод решения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Мотор глохнет на холостых</td>
+<td>Загрязнен канал холостого хода</td>
+<td>Продувка канала и чистка жиклера</td>
+</tr>
+<tr>
+<td>Провалы при резком открытии газа</td>
+<td>Неисправность ускорительного насоса</td>
+<td>Проверка диафрагмы и распылителя</td>
+</tr>
+<tr>
+<td>Двигатель дымит и «ест» топливо</td>
+<td>Перелив (богатая смесь)</td>
+<td>Регулировка уровня топлива, замена иглы</td>
+</tr>
+<tr>
+<td>Мотор перегревается и теряет тягу</td>
+<td>Бедная смесь (забит главный жиклер)</td>
+<td>Чистка главного топливного жиклера</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>⚠️ Внимание: Перед любой разборкой топливной системы обязательно перекройте топливный кран и стравите давление в шланге. Бензин легко воспламеняется, и искра от статического электричества или инструмента может привести к пожару.</p>
+</blockquote>
+
+<h2 id="процесс-регулировки-и-настройки-карбюратора">Процесс регулировки и настройки карбюратора</h2>
+
+<p>Правильная настройка карбюратора — это баланс между экономичностью и мощностью. Заводские настройки обычно являются оптимальными, но со временем они могут сбиться из-за износа или изменения условий эксплуатации (например, использование топлива с другим октановым числом). Регулировка производится на прогретом двигателе.</p>
+
+<p>Сначала настраивается <strong>качество смеси на холостом ходу</strong>. Для этого используется винт качества (часто обозначается буквой L или имеет пружину). Его закручивают до упора (не сильно!), а затем выкручивают на определенное количество оборотов, указанное в мануале. Двигатель должен работать ровно, без провалов при резком открытии дросселя.</p>
+
+<p>Затем регулируются обороты холостого хода винтом количества (T или S). Если мотор глохнет при сбросе газа, обороты нужно добавить. Если лодка самопроизвольно плывет на холостых — убавить. Главная дозирующая система регулируется подбором жиклеров или перемещением иглы в дроссельной заслонке (в карбюраторах с подъемной иглой).</p>
+
+<div class="checklist-block"><h4>☑️ Диагностика перед регулировкой</h4><label class="check-item"><input type="checkbox"><span>Проверить воздушный фильтр на чистоту</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в герметичности топливных шлангов</span></label><label class="check-item"><input type="checkbox"><span>Проверить состояние свечи зажигания</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в отсутствии подсоса воздуха во впускном коллекторе</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Для точной настройки часто используют тахометр, выставляя максимальные обороты, разрешенные производителем. Однако опытные мотористы могут определить правильность настройки по цвету выхлопа и реакции мотора на ручку газа. Если при резком открытии газа мотор «спотыкается», смесь слишком бедная, если валит черный дым — слишком богатая.</p>
+
+<h2 id="профилактика-и-уход-за-топливной-системой">Профилактика и уход за топливной системой</h2>
+
+<p>Чтобы принцип работы карбюратора лодочного мотора всегда оставался безупречным, необходима регулярная профилактика. Главная угроза для карбюратора — это длительное хранение техники с топливом в системе. Бензин испаряется, оставляя смолистый налет, который намертво закупоривает тончайшие каналы.</p>
+
+<p>Перед консервацией лодки на зиму или длительную стоянку (более 2 недель) рекомендуется выработать топливо из карбюратора. Для этого можно просто перекрыть топливный кран и дать мотору работать до остановки. Также существуют специальные стабилизирующие присадки, которые предотвращают окисление бензина.</p>
+
+<p>Регулярная замена топливных фильтров (отстойников) — еще один важный пункт. Даже микроскопическая песчинка может нарушить работу всей системы. Визуальный осмотр прокладок и диафрагм также обязателен: резина со временем дубеет и трескается, нарушая герметичность камер.</p>
+
+<details class="faq-item"><summary>Почему карбюратор может обмерзать?</summary><div class="faq-answer"><p>В некоторых условиях (высокая влажность, низкая температура воды) карбюратор может обрастать льдом. Это происходит из-за резкого охлаждения воздуха при расширении в диффузоре и испарении топлива. Лед перекрывает каналы, и мотор глохнет. Решение — использование антиобледенительных присадок или подогрев воздуха (если предусмотрено конструкцией).</p></div></details>
+
+<p>Соблюдение этих простых правил позволит продлить жизнь вашему мотору и наслаждаться стабильной тягой в любой поездке. Помните, что карбюратор — это точный инструмент, требующий чистого топлива и внимательного отношения.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярная замена топливных фильтров и слив остатков бензина перед зимовкой предотвращают 90% проблем с карбюратором, связанных с загрязнением и смолообразованием.</p></div>
+
+<details>
+<summary>Как часто нужно чистить карбюратор лодочного мотора?</summary>
+<p>Профилактическую чистку рекомендуется проводить раз в сезон или каждые 100 моточасов. Однако, если вы используете старый бензин или заметили симптомы нестабильной работы (провалы, трудный запуск), чистка может потребоваться раньше. Визуальный осмотр фильтра-отстойника также подскажет, когда пора обслуживать систему.</p>
+</details>
+
+<details>
+<summary>Можно ли мыть карбюратор обычным бензином?</summary>
+<p>Использовать обычный бензин для промывки можно, но это малоэффективно для удаления смолистых отложений. Лучше всего применять специальные аэрозольные очистители карбюратора (Carb Cleaner), которые растворяют нагар и быстро испаряются, не оставляя следов.</p>
+</details>
+
+<details>
+<summary>Почему мотор работает только на подсосе?</summary>
+<p>Если двигатель работает только при закрытой заслонке воздушной заслонки (на подсосе), это верный признак того, что смесь слишком бедная. Скорее всего, забит главный топливный жиклер или топливный фильтр, либо в систему попадает лишний воздух (подсос воздуха через прокладки).</p>
+</details>
+
+<details>
+<summary>Влияет ли октановое число бензина на работу карбюратора?</summary>
+<p>Да, влияет. Карбюраторы настроены на определенную вязкость и испаряемость топлива. Использование бензина с октановым числом ниже рекомендованного может привести к детонации, а более высокого — к изменению характеристик испарения, что потребует перенастройки жиклеров для получения оптимальной мощности.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#конструктивные-особенности-и-устройство-узла">Конструктивные особенности и устройство узла</a></li><li><a href="#физика-процесса-как-создается-топливная-смесь">Физика процесса: как создается топливная смесь</a></li><li><a href="#системы-дозирования-в-разных-режимах-работы">Системы дозирования в разных режимах работы</a></li><li><a href="#типичные-неисправности-и-методы-их-диагностики">Типичные неисправности и методы их диагностики</a></li><li><a href="#процесс-регулировки-и-настройки-карбюратора">Процесс регулировки и настройки карбюратора</a></li><li><a href="#профилактика-и-уход-за-топливной-системой">Профилактика и уход за топливной системой</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ku/kupit-b-u-lodochnyj-motor-5l-s-na-avito.html" class="related-card">Купить б/у лодочный мотор 5 л.с. на Авито: гид покупателя</a></li><li><a href="/articles/l/lo/lodochnyj-motor-parus.html" class="related-card">Лодочный мотор Парус: обзор, характеристики и выбор</a></li><li><a href="/articles/s/sc/schetchik-motochasov-na-lodochnyj-motor.html" class="related-card">Счетчик моточасов на лодочный мотор: установка и настройка</a></li><li><a href="/articles/p/pa/pamyatnik-lodochnomu-motoru-vikhr.html" class="related-card">Памятник мотору «Вихрь»: история, фото, как добраться в 2026 году</a></li><li><a href="/articles/k/ka/kak-opredelit-shag-grebnogo-vinta-lodochnogo-motora.html" class="related-card">Как определить шаг гребного винта: инструкция и формулы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ku/kupit-b-u-lodochnyj-motor-5l-s-na-avito.html" class="related-bottom-card"><span class="related-bottom-title">Купить б/у лодочный мотор 5 л.с. на Авито: гид покупателя</span><span class="related-bottom-desc">Планируете купить б/у лодочный мотор 5 л.с. на Авито? Узнайте, как проверить мотор, избежать мошенни</span></a><a href="/articles/l/lo/lodochnyj-motor-parus.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Парус: обзор, характеристики и выбор</span><span class="related-bottom-desc">Полный гид по моторам Парус. Разбор моделей, сравнение с аналогами, особенности эксплуатации и совет</span></a><a href="/articles/s/sc/schetchik-motochasov-na-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Счетчик моточасов на лодочный мотор: установка и настройка</span><span class="related-bottom-desc">Как выбрать и установить счетчик моточасов на лодочный мотор. Обзор моделей, схемы подключения, кали</span></a><a href="/articles/p/pa/pamyatnik-lodochnomu-motoru-vikhr.html" class="related-bottom-card"><span class="related-bottom-title">Памятник мотору «Вихрь»: история, фото, как добраться в 2026 году</span><span class="related-bottom-desc">Где находится памятник легендарному лодочному мотору «Вихрь»? История создания, технические особенно</span></a><a href="/articles/k/ka/kak-opredelit-shag-grebnogo-vinta-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Как определить шаг гребного винта: инструкция и формулы</span><span class="related-bottom-desc">Подробный гид, как узнать шаг винта лодочного мотора. Формулы расчета, расшифровка маркировки, влиян</span></a><a href="/articles/c/ch/chem-otlichaetsya-dvukhtaktnyj-dvigatel-ot-chetyrekhtaktnogo-dvigatelya.html" class="related-bottom-card"><span class="related-bottom-title">Двухтактный или четырехтактный мотор: отличие и выбор</span><span class="related-bottom-desc">Подробное сравнение двухтактных и четырехтактных лодочных моторов. Разбор принципов работы, расхода </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

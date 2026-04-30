@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>3D модель подводной лодки для 3D принтера: выбор и печать — ЛодкаМастер</title>
+    <meta name="description" content="Как выбрать 3D модель подводной лодки для печати на FDM принтере. Настройки, материалы и сборка масштабных судов своими руками.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/3/3d/3d-model-podvodnoj-lodki-dlya-3d-printera.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="3D модель подводной лодки для 3D принтера: выбор и печать">
+    <meta property="og:description" content="Как выбрать 3D модель подводной лодки для печати на FDM принтере. Настройки, материалы и сборка масштабных судов своими руками.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/podvodnye-lodki/">Подводные лодки</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">3D модель подводной лодки для 3D принтера: выбор и печать</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>3D модель подводной лодки для 3D принтера: от файла к готовому судну</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#где-искать-качественные-3d-модели-субмарин">Где искать качественные 3D модели субмарин</a></li><li><a href="#анализ-геометрии-и-подготовка-к-печати">Анализ геометрии и подготовка к печати</a></li><li><a href="#выбор-материала-и-настройки-слайсера">Выбор материала и настройки слайсера</a></li><li><a href="#печать-сложных-элементов-винты-и-рубка">Печать сложных элементов: винты и рубка</a></li><li><a href="#постобработка-и-сборка-корпуса">Постобработка и сборка корпуса</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Создание масштабной копии боевого или исследовательского корабля — это высший пилотаж для любого владельца FDM-принтера. <strong>3D модель подводной лодки</strong> представляет собой сложный инженерный вызов, требующий не только мощного оборудования, но и глубокого понимания гидродинамики и прочности материалов. В отличие от простых статуэток, корпус субмарины должен выдерживать давление воды (если планируется запуск) или обладать идеальной геометрией для реалистичной покраски.</p>
+
+<p>Современные технологии аддитивного производства позволяют воссоздать мельчайшие детали: от рубки и перископов до якорных цепей и иллюминаторов. Однако выбор неподходящего файла или настроек слайсера может превратить процесс в борьбу с артефактами и браком. <em>Скафандр</em> для вашего будущего шедевра — это правильно подобранная цифровая основа.</p>
+
+<p>В этой статье мы разберем, где искать качественные файлы, как адаптировать их под печать и какие нюансы учитывать при сборке. Вы узнаете, почему <mark>толщина стенки корпуса не должна быть менее 1.6 мм для обеспечения герметичности при погружении</mark>, и как избежать типичных ошибок новичков. Готовьтесь погрузиться в мир микро-инженерии.</p>
+
+<h2 id="где-искать-качественные-3d-модели-субмарин">Где искать качественные 3D модели субмарин</h2>
+
+<p>Поиск исходного файла — первый и критически важный этап. Большинство энтузиастов обращаются к крупнейшим репозиториям, однако качество моделей там варьируется от профессионального до откровенно бракованного. Вам нужны файлы в форматах <code>.STL</code> или <code>.OBJ</code>, которые уже проверены сообществом.</p>
+
+<p>На специализированных платформах часто встречаются модели, разбитые на множество частей для печати на принтерах с малым рабочим полем. Это позволяет собрать огромную <strong>масштабную копию</strong> даже на настольном устройстве. Обращайте внимание на количество скачиваний и наличие фотографий готовых изделий в описании.</p>
+
+<ul>
+<li>🔍 <strong>Thingiverse</strong> — огромный архив бесплатных моделей, где можно найти как простые игрушки, так и сложные инженерные проекты с чертежами.</li>
+<li>💎 <strong>Cults3D</strong> — платформа с большим количеством платного контента высокого качества, часто создаваемого профессиональными моделлерами.</li>
+<li>🚀 <strong>MyMiniFactory</strong> — здесь модели проходят проверку на печатаемость, что снижает риск столкнуться с ошибками геометрии.</li>
+</ul>
+
+<p>При выборе модели обязательно проверяйте, предусмотрена ли возможность установки электроники. Если вы планируете запускать лодку, внутри должно быть пространство для <em>сервоприводов</em> и аккумуляторов. Статичные модели часто делают полностью полнотелыми или с минимальными пустотами, что не подходит для радиоуправляемых проектов.</p>
+
+<div class="poll-widget" id="poll-862c418a"><div class="poll-widget-question">📊 Какой тип подводной лодки вы планируете напечатать?</div><div class="poll-widget-option" data-poll="862c418a" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Атомная субмарина</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="862c418a" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Дизель-электрическая</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="862c418a" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Исследовательская</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="862c418a" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Фантастическая</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="анализ-геометрии-и-подготовка-к-печати">Анализ геометрии и подготовка к печати</h2>
+
+<p>Полученный файл необходимо тщательно проверить перед отправкой на печать. <strong>Водонепроницаемость</strong> модели — ключевой параметр. В программе для просмотра 3D-моделей (например, Meshmixer или встроенный анализатор слайсера) убедитесь, что mesh-сетка не имеет дыр и разрывов.</p>
+
+<p>Особое внимание уделите ориентации модели на столе. Печать длинного цилиндрического корпуса"лежа" минимизирует необходимость в поддержках, но создает линию стыка вдоль всей длины, которую потом сложно шлифовать. Вертикальная печать требует надежных <em>поддержек</em>, но дает более гладкую поверхность борта.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При печати крупных моделей частями убедитесь, что стыковочные узлы (штих-фиты) спроектированы с учетом усадки пластика. Слишком плотная посадка может привести к разрыву детали при сборке.</p>
+</blockquote>
+
+<p>Для улучшения адгезии и снижения риска деформации используйте <code>raft</code> (плот) или увеличенное количество линий <code>brim</code>. Это особенно актуально для длинных и узких деталей, таких как гребные винты или рули направления, которые имеют малую площадь контакта со столом.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте функцию"Cut" в слайсере, чтобы разрезать модель на удобные для печати сегменты, если её размеры превышают область построения вашего принтера.</p></div>
+
+<h2 id="выбор-материала-и-настройки-слайсера">Выбор материала и настройки слайсера</h2>
+
+<p>Материал для печати определяет долговечность и функциональность изделия. Для статичных моделей-копий отлично подойдет <strong>PLA-пластик</strong>. Он дешев, легко окрашивается и не требует закрытой камеры. Однако для моделей, которые будут контактировать с водой или находиться в теплом помещении (например, внутри корпуса), PLA может деформироваться.</p>
+
+<p>Более опытные пользователи выбирают <em>PETG</em> или <strong>ABS</strong>. PETG обладает хорошей химической стойкостью и эластичностью, что важно для герметичных соединений. ABS прочнее, но склонен к растрескиванию при печати больших объемов без подогреваемой камеры. Для создания гибких элементов, таких как уплотнительные кольца или имитация тросов, можно использовать <code>TPU</code>.</p>
+
+<p>Настройки слайсера должны быть оптимизированы под прочность. Увеличьте количество периметров до 4-5 штук, чтобы обеспечить жесткость стенок. Заполнение (infill) можно оставить стандартным (15-20%), но для мест крепления электроники лучше использовать <code>100%</code> или специальные паттерны усиления.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>PLA (Статика)</th>
+<th>PETG (Запуск)</th>
+<th>ABS (Прочность)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Температура сопла</td>
+<td>200-220°C</td>
+<td>230-250°C</td>
+<td>240-260°C</td>
+</tr>
+<tr>
+<td>Температура стола</td>
+<td>50-60°C</td>
+<td>70-80°C</td>
+<td>100-110°C</td>
+</tr>
+<tr>
+<td>Обдув</td>
+<td>100%</td>
+<td>30-50%</td>
+<td>0% (камера)</td>
+</tr>
+<tr>
+<td>Скорость печати</td>
+<td>50-60 мм/с</td>
+<td>30-40 мм/с</td>
+<td>40-50 мм/с</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="печать-сложных-элементов-винты-и-рубка">Печать сложных элементов: винты и рубка</h2>
+
+<p>Гребные винты и рубка — это самые заметные элементы <strong>подводной лодки</strong>. Их печать требует высокого разрешения. Используйте высоту слоя <code>0.12 мм</code> или даже <code>0.08 мм</code> для сглаживания ступенчатости на изогнутых поверхностях.</p>
+
+<p>При печати винтов критически важно правильно настроить поддержки. Они должны быть плотными у основания лопасти, но легко отделяемыми. Некоторые модели предусматривают печать винта в сборе с валом, другие — как отдельную деталь. Во втором случае необходимо предусмотреть посадочное место под <em>латунную втулку</em> или магнит для передачи вращения.</p>
+
+<ul>
+<li>⚙️ Печатайте винты из прочного пластика (PETG, Nylon) для предотвращения поломки лопастей при случайном ударе.</li>
+<li>🎨 Используйте разные цвета пластика для имитации различных материалов (например, серый для корпуса и черный для резиновых уплотнителей).</li>
+<li>🧪 Для рубки можно применить технику печати с переменным заполнением, чтобы создать иллюзию текстуры металла.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Нависающие элементы рубки (крылья, антенны) без adequate поддержек провиснут под собственным весом. Не экономьте на материале поддержек в этих зонах.</p>
+</blockquote>
+
+<p>Если модель предусматривает установку иллюминаторов, напечатайте их отдельно из прозрачного пластика (Clear PLA/PETG) или используйте готовые акриловые полусферы. Вклеивать их лучше после основной покраски корпуса, используя прозрачный клей для пластика.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка перед запуском печати</h4><label class="check-item"><input type="checkbox"><span>Файл проверен на ошибки (manifold)</span></label><label class="check-item"><input type="checkbox"><span>Поддержки добавлены в нужных местах</span></label><label class="check-item"><input type="checkbox"><span>Платформа выровнена</span></label><label class="check-item"><input type="checkbox"><span>Первый слой тестируется</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="постобработка-и-сборка-корпуса">Постобработка и сборка корпуса</h2>
+
+<p>После печати наступает этап, требующий терпения — постобработка. Швы между слоями (layer lines) на больших плоскостях корпуса субмарины очень заметны. Для их устранения используйте автомобильную шпатлевку или специализированный грунт-filler. <strong>Шлифовка</strong> производится поэтапно, начиная с зернистости P220 и заканчивая P1000.</p>
+
+<p>Сборка многосоставных моделей требует точности. Используйте цианакрилатный клей (суперклей) для мелких деталей и эпоксидную смолу для соединения крупных частей корпуса. Для обеспечения герметичности стыки можно промазывать жидким пластиком или растворителем, соответствующим типу используемого филамента.</p>
+
+<p>Внутреннее пространство необходимо подготовить к установке электроники. Если модель не была разбита на отсеки при, вам придется самостоятельно вклеивать переборки. Это важно для балансировки лодки и защиты электроники от воды в случае протечки.</p>
+
+<details class="faq-item"><summary>Секрет идеальной поверхности</summary><div class="faq-answer"><p>Используйте ацетоновую баню только для ABS пластика. Для PLA и PETG это не работает. Вместо этого применяйте технику"холодной сварки" пластиковой стружкой, растворенной в дихлорэтане (для ABS) или этилацетате (для PLA), чтобы заполнять глубокие дефекты.</p></div></details>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Можно ли напечатанную на 3D принтере лодку запускать в воду?</summary>
+<p>Да, можно, но только при соблюдении ряда условий. Модель должна быть напечатана водостойким пластиком (PETG, ABS, ASA, PP), иметь достаточную толщину стенок (минимум 2-3 мм) и быть тщательно обработана для устранения микропор. Также необходима качественная гидроизоляция отсека с электроникой.</p>
+</details>
+
+<details>
+<summary>Какой масштаб лучше выбрать для первого проекта?</summary>
+<p>Для начала рекомендуется масштаб 1:144 или 1:100. Эти размеры позволяют уместить модель в стандартную область печати (200x200 мм) без разрезания на частей, но при этом сохраняют достаточную детализацию для реалистичности.</p>
+</details>
+
+<details>
+<summary>Нужно ли утяжелять нос 3D модели?</summary>
+<p>В большинстве случаев да. Пластик легче воды, и напечатанная лодка будет всплывать носом или заваливаться на бок. Для правильной посадки на воду требуется балласт. Часто используют свинцовые грузики, размещаемые в носовой части, или печатают специальные отсеки под утяжелители.</p>
+</details>
+
+<details>
+<summary>Как скрыть линии слоев на корпусе?</summary>
+<p>Лучший способ — использование грунтовки-наполнителя (filler primer) в несколько слоев с промежуточной шлифовкой. Также помогает печать тонким слоем (0.12 мм) и использование пластика с добавлением древесной муки или камня, который легче шлифовать.</p>
+</details>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Успех проекта зависит не только от качества 3D модели, но и от тщательной постобработки и правильного выбора материала под конкретные задачи (статика или запуск).</p></div></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#где-искать-качественные-3d-модели-субмарин">Где искать качественные 3D модели субмарин</a></li><li><a href="#анализ-геометрии-и-подготовка-к-печати">Анализ геометрии и подготовка к печати</a></li><li><a href="#выбор-материала-и-настройки-слайсера">Выбор материала и настройки слайсера</a></li><li><a href="#печать-сложных-элементов-винты-и-рубка">Печать сложных элементов: винты и рубка</a></li><li><a href="#постобработка-и-сборка-корпуса">Постобработка и сборка корпуса</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/s/sa/samaya-bolshaya-podvodnaya-lodka-razmery.html" class="related-card">Самая большая подводная лодка: размеры и характеристики</a></li><li><a href="/articles/o/ot/otseki-podvodnoj-lodki.html" class="related-card">Отсеки подводной лодки: устройство, функции и классификация</a></li><li><a href="/articles/n/na/na-podvodnoj-lodke-sluzhit-kto.html" class="related-card">Кто служит на подводной лодке: экипаж и воинские звания</a></li><li><a href="/articles/p/po/podvodnaya-lodka-proekt-lira.html" class="related-card">Подводная лодка проекта 705 «Лира»: характеристики</a></li><li><a href="/articles/n/ne/nemetskaya-podvodnaya-lodka-7-serii.html" class="related-card">Немецкая подводная лодка 7 серии: конструкция, модификации и история</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/s/sa/samaya-bolshaya-podvodnaya-lodka-razmery.html" class="related-bottom-card"><span class="related-bottom-title">Самая большая подводная лодка: размеры и характеристики</span><span class="related-bottom-desc">Подробный обзор самой большой подводной лодки в истории. Размеры, водоизмещение и технические характ</span></a><a href="/articles/o/ot/otseki-podvodnoj-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Отсеки подводной лодки: устройство, функции и классификация</span><span class="related-bottom-desc">Полный разбор конструкции отсеков подводной лодки. Устройство герметичных переборок, систем жизнеобе</span></a><a href="/articles/n/na/na-podvodnoj-lodke-sluzhit-kto.html" class="related-bottom-card"><span class="related-bottom-title">Кто служит на подводной лодке: экипаж и воинские звания</span><span class="related-bottom-desc">Подробный обзор того, кто служит на подводной лодке. Должности, звания, распределение ролей в экипаж</span></a><a href="/articles/p/po/podvodnaya-lodka-proekt-lira.html" class="related-bottom-card"><span class="related-bottom-title">Подводная лодка проекта 705 «Лира»: характеристики</span><span class="related-bottom-desc">Полный обзор атомной подводной лодки проекта 705 «Лира» (Лайка). Характеристики, конструкция, вооруж</span></a><a href="/articles/n/ne/nemetskaya-podvodnaya-lodka-7-serii.html" class="related-bottom-card"><span class="related-bottom-title">Немецкая подводная лодка 7 серии: конструкция, модификации и история</span><span class="related-bottom-desc">Подробный анализ немецкой подводной лодки 7 серии. Технические характеристики, типы U-boat, сравнени</span></a><a href="/articles/p/po/podvodnaya-lodka-kote.html" class="related-bottom-card"><span class="related-bottom-title">Подводная лодка Котэ: обзор японской субмарины</span><span class="related-bottom-desc">Детальный обзор ПЛ Котэ (SS-501). История создания, технические характеристики, особенности конструк</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

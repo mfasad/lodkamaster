@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Подбор лодочного мотора по параметрам лодки: гид по мощности — ЛодкаМастер</title>
+    <meta name="description" content="Как выбрать лодочный мотор по характеристикам корпуса? Расчет мощности, транцев, веса и винта для безопасной и быстрой эксплуатации.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/p/po/podbor-lodochnogo-motora-po-parametram-lodki.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Подбор лодочного мотора по параметрам лодки: гид по мощности">
+    <meta property="og:description" content="Как выбрать лодочный мотор по характеристикам корпуса? Расчет мощности, транцев, веса и винта для безопасной и быстрой эксплуатации.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Подбор лодочного мотора по параметрам лодки: гид по мощности</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Подбор лодочного мотора по параметрам лодки: полное руководство</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#анализ-паспортных-характеристик-и-транцевое-давление">Анализ паспортных характеристик и транцевое давление</a></li><li><a href="#соотношение-длины-ширины-и-веса-корпуса">Соотношение длины, ширины и веса корпуса</a></li><li><a href="#длина-дейдвуда-и-заглубление-винта">Длина дейдвуда и заглубление винта</a></li><li><a href="#влияние-типа-винта-на-тяговые-характеристики">Влияние типа винта на тяговые характеристики</a></li><li><a href="#двухтактные-и-четырехтактные-двигатели-что-выбрать">Двухтактные и четырехтактные двигатели: что выбрать?</a></li><li><a href="#практический-расчет-и-проверка-на-воде">Практический расчет и проверка на воде</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Правильный подбор лодочного мотора по параметрам лодки — это фундамент безопасной и комфортной эксплуатации плавсредства. Многие новички совершают ошибку, покупая агрегат максимальной мощности, разрешенной для их модели, не учитывая реальные условия плавания, загрузку и конструкцию корпуса. Это часто приводит к перерасходу топлива, быстрому износу двигателя и даже опасным ситуациям на воде при сильном волнении.</p>
+
+<p>В этой статье мы разберем технические нюансы, которые помогут вам найти идеальный баланс между тягой, скоростью и экономичностью. Вы узнаете, как транцевое давление, длина дейдвуда и тип винта влияют на выход лодки на глиссирование. Понимание этих процессов позволит вам не просто следовать рекомендациям производителя, а осознанно управлять своим катером или ПВХ-лодкой.</p>
+
+<h2 id="анализ-паспортных-характеристик-и-транцевое-давление">Анализ паспортных характеристик и транцевое давление</h2>
+
+<p>Первым шагом всегда является изучение <strong>транцевого паспорта</strong> или шильдика на корпусе лодки. Именно там производитель указывает максимальную допустимую мощность в лошадиных силах и максимальный вес мотора. Превышение этих значений может привести к деформации транца, особенно у надувных лодок, или к нарушению ходовой дифферентовки у металлических катеров. Игнорирование этих лимитов также аннулирует гарантию.</p>
+
+<p>Однако «максимум» не всегда означает «оптимум». Для легких надувных лодок длиной до 3 метров часто целесообразно брать мотор на 20-30% слабее предельного значения. Это связано с тем, что легкий корпус при полном газе начинает скакать по волнам, создавая опасную «морскую болезнь» и риск удара о воду. В таких случаях меньшая мощность обеспечивает более мягкий и контролируемый ход.</p>
+
+<p>Критически важным параметром является <em>транцевое давление</em> — сила, с которой винт толкает лодку вперед, прижимая транец к воде. Если мотор слишком мощный для легкого корпуса, транец может «подныривать», зачерпывая воду. Особенно это актуально для лодок с узким и низким транцем. Владельцам таких моделей стоит рассмотреть установку транцевых плит или гидрокрыла для стабилизации.</p>
+
+<blockquote>⚠️ Внимание: Никогда не устанавливайте мотор мощнее, чем указано в паспорте лодки. Это может привести к мгновенному разрушению транца на полном ходу и затоплению судна.</blockquote>
+
+<p>Также стоит учитывать конструкцию транца. На надувных лодках он может быть жестким (фанера в чехле) или надувным. Для надувных транцев подходят только легкие моторы малой мощности, так как они не выдерживают высокого крутящего момента мощных двигателей. Жесткий транец способен передать тягу от более серьезных агрегатов, но требует проверки качества клея и швов.</p>
+
+<h2 id="соотношение-длины-ширины-и-веса-корпуса">Соотношение длины, ширины и веса корпуса</h2>
+
+<p>Геометрия корпуса напрямую диктует требования к мощности двигателя. <strong>Длина ватерлинии</strong> определяет теоретическую скорость водоизмещения, а ширина влияет на устойчивость и площадь сопротивления воды. Узкие и длинные лодки (скифы) требуют меньше мощности для выхода на глисс, но могут быть менее устойчивы на поворотах. Широкие и короткие лодки (понтоны, шлюпки) обладают отличной остойчивостью, но требуют значительной тяги для преодоления сопротивления воды.</p>
+
+<p>Вес лодки в снаряженном состоянии — еще один ключевой фактор. При расчете необходимо суммировать вес самого корпуса, мотора, топлива, экипажа и снаряжения. Если вы планируете рыбачить вдвоем с полным комплектом снастей и якорем, «слабый» мотор может просто не вывести лодку на глиссирование. Она будет «рыть» воду, расходуя топливо и перегревая двигатель.</p>
+
+<p>Существует эмпирическое правило: для выхода на глиссирование на каждый 25-30 кг общего веса лодки требуется примерно 1 л.с. мощности. Однако это очень грубая оценка. Современные гидроаэродинамические формы корпусов позволяют выходить на глисс с меньшими затратами энергии благодаря меньшему коэффициенту сопротивления.</p>
+
+<div class="poll-widget" id="poll-8eb75fdb"><div class="poll-widget-question">📊 Какой тип лодки вы планируете оснастить мотором?</div><div class="poll-widget-option" data-poll="8eb75fdb" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">ПВХ лодка</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="8eb75fdb" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Алюминиевый катер</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="8eb75fdb" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Пластиковый катер</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="8eb75fdb" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Надувная байдарка</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Особое внимание следует уделить <em>центровке</em>. Тяжелый мотор на короткой лодке смещает центр тяжести к корме, что может привести к зарыванию носа в волну при ходе против ветра. И наоборот, слишком легкий мотор заставит лодку идти с дифферентом на нос, увеличивая сопротивление и риск захлестывания волной через борт.</p>
+
+<h2 id="длина-дейдвуда-и-заглубление-винта">Длина дейдвуда и заглубление винта</h2>
+
+<p>Одним из самых технических моментов подбора является длина дейдвуда (ноги мотора). Стандартные значения обычно составляют 15 дюймов (S), 20 дюймов (L) и 25 дюймов (XL). Неправильный выбор длины приводит либо к кавитации (захвату воздуха), либо к чрезмерному сопротивлению воды.</p>
+
+<p>Если дейдвуд слишком короткий для вашего транца, антикавитационная плита окажется выше ватерлинии при движении. Это вызовет подсасывание воздуха винтом, потерю тяги и перегрев двигателя из-за забора воздуха вместо воды системой охлаждения. Если же нога слишком длинная, увеличивается площадь смачиваемой поверхности, что создает лишнее сопротивление, а винт рискует удариться о дно или донный мусор.</p>
+
+<p>Для лодок с плоским дном или низким транцем часто требуется установка специального удлиненного дейдвуда или использование проставки под мотор. Важно, чтобы антикавитационная плита располагалась на 2-5 см ниже днища лодки в статическом положении. При глиссировании корма приподнимается, и плита должна оставаться под водой.</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип лодки / Транца</th>
+<th>Рекомендуемая длина дейдвуда</th>
+<th>Особенности установки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Надувные лодки (ПВХ)</td>
+<td>Short (S) / 381 мм</td>
+<td>Часто требуют установки ниже линии киля</td>
+</tr>
+<tr>
+<td>Малые металлические лодки</td>
+<td>Long (L) / 508 мм</td>
+<td>Стандарт для большинства транцев 40-45 см</td>
+</tr>
+<tr>
+<td>Катера с высоким транцем</td>
+<td>Extra Long (XL) / 635 мм</td>
+<td>Необходимы для корпусов с высокой кормой</td>
+</tr>
+<tr>
+<td>Спортивные лодки</td>
+<td>Variable / Настраиваемая</td>
+<td>Требует точной регулировки под винт</td>
+</tr>
+</tbody>
+</table>
+
+<p>Не забывайте проверять высоту установки мотора после загрузки лодки экипажем. Под весом людей корма может существенно осесть, изменив заглубление винта. В идеале, при полной нагрузке антикавитационная плита должна быть параллельна днищу и находиться чуть ниже его уровня.</p>
+
+<h2 id="влияние-типа-винта-на-тяговые-характеристики">Влияние типа винта на тяговые характеристики</h2>
+
+<p>Винт — это «трансмиссия» лодочного мотора, и его подбор не менее важен, чем выбор самого двигателя. Основные параметры винта — это <strong>диаметр</strong> и <strong>шаг</strong>. Шаг винта (Pitch) теоретически показывает, на какое расстояние продвинется винт за один оборот в твердой среде. Большой шаг дает высокую максимальную скорость, но требует больше мощности для разгона.</p>
+
+<p>Для тяжелых лодок или лодок, которые часто используются с полной загрузкой, необходимы винты с меньшим шагом. Они обеспечивают лучшую тягу на низких оборотах, позволяя легче выходить на глиссирование. Однако «короткий» винт ограничит максимальную скорость, так как двигатель быстрее достигнет предельных оборотов (отсечки).</p>
+
+<details class="faq-item"><summary>Что такое слайд-винт?</summary><div class="faq-answer"><p>Слайд-винт (Skater) — это винт с серповидными лопастями, который меньше зарывается в воду при поворотах и лучше работает на мелководье, но имеет меньший КПД на прямых участках по сравнению с классическими винтами.</p></div></details>
+
+<p>Материал винта также играет роль. Алюминиевые винты дешевле и при ударе о твердое препятствие гнутся, защищая дейдвуд и редуктор от поломки. Нержавеющая сталь прочнее, тоньше и эффективнее, но при ударе может передать энергию на валы редуктора, что приведет к дорогому ремонту. Для новичков и каменистых рек алюминий часто является более разумным выбором.</p>
+
+<p>Важно помнить про максимальные обороты двигателя. Если при полном дросселе мотор не развивает положенных по паспорту оборотов (например, 5000-5500 об/мин), значит, винт слишком «тяжелый» (большой шаг или диаметр). Если мотор «ревёт», но скорость не растет — винт слишком «легкий».</p>
+
+<h2 id="двухтактные-и-четырехтактные-двигатели-что-выбрать">Двухтактные и четырехтактные двигатели: что выбрать?</h2>
+
+<p>Выбор между <em>2-тактным</em> и <em>4-тактным</em> мотором часто встает при планировании бюджета и условий эксплуатации. Двухтактники легче, проще в транспортировке (можно возить на боку) и дешевле в покупке. Они обладают лучшей удельной мощностью (мощность на кг веса), что критично для малых лодок, где каждый лишний килограмм влияет на остойчивость.</p>
+
+<p>Четырехтактные моторы экономичнее, тише, экологичнее и не требуют приготовления топливной смеси. Они имеют больший ресурс и стабильнее работают на малых оборотах, что важно для троллинга. Однако их вес значительно выше: мотор мощностью 10 л.с. 4Т может весить почти в два раза больше аналогичного 2Т. Это может потребовать усиления транца или изменения центровки лодки.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Если вы планируете длительные прогулки с семьей и цените комфорт — выбирайте 4-тактный мотор. Для быстрой доставки на рыбалку в одиночку и частой переноски лучше подойдет легкий 2-тактник.</p></div>
+
+<p>При подборе мотора по параметрам лодки для 4-тактных моделей часто приходится брать мощность чуть меньше предельной, чтобы не перегружать транец весом. Например, если лодка держит до 15 л.с., но вес 4Т мотора такой мощности превышает лимит транца, разумнее взять 9.9 л.с. или остаться на мощном 2Т.</p>
+
+<h2 id="практический-расчет-и-проверка-на-воде">Практический расчет и проверка на воде</h2>
+
+<p>Финальная точка в подборе ставится только на воде. Теоретические расчеты — это лишь база. После установки мотора необходимо провести тестовые заплывы с разной загрузкой. Обратите внимание на время выхода на глиссирование: в идеале лодка должна вставать на «лыжу» за 3-5 секунд при резком открытии дросселя.</p>
+
+<p>Проверьте угол дифферента. Если нос лодки сильно задран, добавьте trim-утяжелитель (гидрокрыло) на дейдвуд или попробуйте опустить мотор ниже. Если нос зарыт — поднимите мотор или переместите груз вперед. Правильный дифферент экономит до 15-20% топлива и увеличивает максимальную скорость.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка правильности подбора мотора</h4><label class="check-item"><input type="checkbox"><span>Лодка выходит на глисс за 3-5 секунд</span></label><label class="check-item"><input type="checkbox"><span>Двигатель достигает максимальных рабочих оборотов</span></label><label class="check-item"><input type="checkbox"><span>Отсутствует сильная вибрация и кавитация</span></label><label class="check-item"><input type="checkbox"><span>Транец не деформируется под нагрузкой</span></label><label class="check-item"><input type="checkbox"><span>Расход топлива соответствует паспортному</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Также прислушайтесь к работе двигателя. Отсутствие детонации, ровный выхлох и стабильная температура — признаки того, что мотор подобран правильно. Если же двигатель постоянно работает в режиме перегрузки, подумайте о замене винта на более «легкий» или рассмотрите вариант установки мотора большей мощности, если позволяет конструкция лодки.</p>
+
+<blockquote>⚠️ Внимание: После первых 10 часов эксплуатации (обкатки) обязательно проверьте затяжку болтов крепления мотора к транцу. Вибрация может ослабить соединения, что приведет к смещению мотора и потере управления.</blockquote>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли поставить мотор мощнее, чем разрешено, если поставить ограничитель?</summary>
+<p>Технически это возможно, но юридически и страховые компании могут расценить это как нарушение правил эксплуатации. Кроме того, усиленная вибрация и нагрузки на транец останутся, даже если вы не будете открывать газ на полную. Риск разрушения транца сохраняется.</p>
+</details>
+
+<details>
+<summary>Как понять, что винт подобран неправильно?</summary>
+<p>Если при полном газе обороты двигателя ниже максимального диапазона (указан в мануале) — винт «тяжелый». Если мотор достигает максимума оборотов, но скорость лодки низкая — винт «легкий». Также признаком может быть невозможность выхода на глисс при нормальной загрузке.</p>
+</details>
+
+<details>
+<summary>Влияет ли материал лодки (ПВХ или алюминий) на выбор мотора?</summary>
+<p>Да, влияет. Алюминиевые лодки жестче и лучше держат форму на скорости, позволяя ставить более мощные моторы. ПВХ лодки более гибкие, и при высокой скорости могут терять гидродинамику («эффект парусности» или прогиб дна), поэтому для них часто не имеет смысла ставить мотор на пределе мощности.</p>
+</details>
+
+<details>
+<summary>Нужен ли гидроподъемник для подбора мотора?</summary>
+<p>Гидроподъемник (гидроусилитель) не влияет на мощность, но облегчает управление тяжелым мотором. Если вы подбираете мощный 4-тактный мотор на небольшую лодку, наличие гидроподъемника критически важно для комфорта и безопасности управления, так как вручную крутить тяжелый дейдвуд очень трудно.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#анализ-паспортных-характеристик-и-транцевое-давление">Анализ паспортных характеристик и транцевое давление</a></li><li><a href="#соотношение-длины-ширины-и-веса-корпуса">Соотношение длины, ширины и веса корпуса</a></li><li><a href="#длина-дейдвуда-и-заглубление-винта">Длина дейдвуда и заглубление винта</a></li><li><a href="#влияние-типа-винта-на-тяговые-характеристики">Влияние типа винта на тяговые характеристики</a></li><li><a href="#двухтактные-и-четырехтактные-двигатели-что-выбрать">Двухтактные и четырехтактные двигатели: что выбрать?</a></li><li><a href="#практический-расчет-и-проверка-на-воде">Практический расчет и проверка на воде</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/l/lo/lodochnyj-motor-evinrude-75-otzyvy.html" class="related-card">Лодочный мотор Evinrude 75: отзывы, характеристики и реальная надежность</a></li><li><a href="/articles/k/ko/komatsu-lodochnyj-motor-99.html" class="related-card">Коматсу лодочный мотор 9.9: характеристики, тюнинг и отзывы</a></li><li><a href="/articles/m/mo/motor-golfstrim-98.html" class="related-card">Мотор Гольфстрим 9.8: Характеристики, Отзывы и Тест-драйв</a></li><li><a href="/articles/r/ru/ruchnoj-dvigatel-dlya-lodki.html" class="related-card">Ручной двигатель для лодки: выбор, виды и установка винта</a></li><li><a href="/articles/e/el/elektromotor-dlya-lodki-s-akkumulyatorom-kak-vybrat.html" class="related-card">Электромотор для лодки с аккумулятором: как выбрать лучший</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/l/lo/lodochnyj-motor-evinrude-75-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Evinrude 75: отзывы, характеристики и реальная надежность</span><span class="related-bottom-desc">Подробный анализ мотора Evinrude 75 л.с. Отзывы владельцев о расходе, ремонтопригодности и особеннос</span></a><a href="/articles/k/ko/komatsu-lodochnyj-motor-99.html" class="related-bottom-card"><span class="related-bottom-title">Коматсу лодочный мотор 9.9: характеристики, тюнинг и отзывы</span><span class="related-bottom-desc">Подробный обзор мотора Komatsu 9.9 л.с. Особенности конструкции, возможность увеличения мощности до </span></a><a href="/articles/m/mo/motor-golfstrim-98.html" class="related-bottom-card"><span class="related-bottom-title">Мотор Гольфстрим 9.8: Характеристики, Отзывы и Тест-драйв</span><span class="related-bottom-desc">Подробный обзор мотора Гольфстрим 9.8. Реальная мощность, расход топлива, настройки фаз газораспреде</span></a><a href="/articles/r/ru/ruchnoj-dvigatel-dlya-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Ручной двигатель для лодки: выбор, виды и установка винта</span><span class="related-bottom-desc">Полный гид по выбору ручного двигателя для лодки. Сравнение моделей, особенности установки, правила </span></a><a href="/articles/e/el/elektromotor-dlya-lodki-s-akkumulyatorom-kak-vybrat.html" class="related-bottom-card"><span class="related-bottom-title">Электромотор для лодки с аккумулятором: как выбрать лучший</span><span class="related-bottom-desc">Подробный гид по выбору тягового электромотора. Сравнение тяги, напряжения, дейдвудов и советы по по</span></a><a href="/articles/l/lo/lodochnyj-motor-veterok-gibrid.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор «Ветерок Гибрид»: характеристики, плюсы и минусы</span><span class="related-bottom-desc">Подробный обзор гибридного лодочного мотора «Ветерок Гибрид»: технические параметры, сравнение с ана</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

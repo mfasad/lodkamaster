@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Тахометр КУС для лодочного мотора: установка, схемы и настройка — ЛодкаМастер</title>
+    <meta name="description" content="Полный гид по тахометру КУС: схемы подключения, расшифровка ошибок, установка на лодочный мотор. Решаем проблемы с показаниями оборотов.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/t/ta/takhometr-kus-dlya-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Тахометр КУС для лодочного мотора: установка, схемы и настройка">
+    <meta property="og:description" content="Полный гид по тахометру КУС: схемы подключения, расшифровка ошибок, установка на лодочный мотор. Решаем проблемы с показаниями оборотов.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Тахометр КУС для лодочного мотора: установка, схемы и настройка</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Тахометр КУС для лодочного мотора: полная инструкция</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-действия-и-технические-особенности-прибора">Принцип действия и технические особенности прибора</a></li><li><a href="#схемы-подключения-и-выбор-проводов">Схемы подключения и выбор проводов</a></li><li><a href="#таблица-соответствия-настроек-для-разных-моторов">Таблица соответствия настроек для разных моторов</a></li><li><a href="#процесс-калибровки-и-юстировки-показаний">Процесс калибровки и юстировки показаний</a></li><li><a href="#диагностика-неисправностей-и-ремонт">Диагностика неисправностей и ремонт</a></li><li><a href="#современные-альтернативы-и-цифровые-решения">Современные альтернативы и цифровые решения</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Водная стихия не терпит неопределенности, особенно когда речь идет о контроле работы силовой установки. Для любого водномоторника <strong>тахометр</strong> является одним из важнейших приборов, позволяющим оценить реальное состояние <em>двигателя</em> и избежать перегрузок. Отечественные приборы серии <em>КУС</em> (контактный указатель скорости) заслужили репутацию надежных, хоть и капризных в настройке устройств, которые десятилетиями устанавливаются на катера и лодки.</p>
+
+<p>Основная сложность, с которой сталкиваются владельцы, кроется в правильном согласовании показаний прибора с реальными <strong>оборотами</strong> коленчатого вала. Неправильная калибровка может привести к тому, что вы будете эксплуатировать мотор в зоне критических нагрузок, даже не подозревая об этом. В этой статье мы детально разберем принцип работы, схемы подключения и методы точной настройки, чтобы ваш <em>индикатор</em> показывал только правду.</p>
+
+<p>Понимание физических процессов, происходящих внутри прибора, поможет вам быстрее диагностировать неисправности. Часто проблема кроется не в самом устройстве, а в <strong>коммутации</strong> или состоянии проводки, которая подвергается агрессивному воздействию соленой воды и вибрации. Грамотный подход к монтажу обеспечит долгую службу всей <em>электрической цепи</em> вашего судна.</p>
+
+<h2 id="принцип-действия-и-технические-особенности-прибора">Принцип действия и технические особенности прибора</h2>
+
+<p>Ключевым элементом системы измерения является <strong>датчик</strong>, который преобразует механическое вращение вала в электрический сигнал. В классических схемах для лодочных моторов часто используется индукционный метод, где сигнал снимается с катушки <em>зажигания</em> или отдельного генератора. Частота импульсов напрямую зависит от скорости вращения, что и фиксирует <strong>механизм</strong> стрелочного указателя.</p>
+
+<p>Сам прибор <em>КУС</em> представляет собой магнитоэлектрическую систему с подвижной рамкой. Ток, протекающий через обмотку, создает магнитное поле, которое взаимодействует с постоянным магнитом, вызывая отклонение <strong>стрелки</strong>. Особенностью морских исполнений является герметичность корпуса и защита от солевых испарений, однако внутренняя электроника все равно требует бережного отношения.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Превышение допустимого напряжения в бортовой сети (более 15-16 Вольт) может необратимо повредить внутреннюю схему прибора, вызвав перегрев обмоток или пробой диодов выпрямителя.</p>
+</blockquote>
+
+<p>Важно отметить, что для двухтактных и четырехтактных моторов количество импульсов на один оборот вала может существенно различаться. Это критический параметр, который необходимо учитывать при выборе <em>калибровочных коэффициентов</em> или настройке переключателей на задней панели. Игнорирование этого факта приведет к двукратной или трехкратной ошибке в показаниях.</p>
+
+<details class="faq-item"><summary>Почему стрелка дрожит?</summary><div class="faq-answer"><p>Нестабильность показаний часто вызвана плохим контактом массы или наводками от высоковольтных проводов. Экранирование сигнального провода помогает устранить помехи от системы зажигания.</p></div></details>
+
+<h2 id="схемы-подключения-и-выбор-проводов">Схемы подключения и выбор проводов</h2>
+
+<p>Монтаж любого электрооборудования на судне начинается с изучения принципиальной схемы. Для тахометра <em>КУС</em> обычно требуется подключение трех основных линий: питание, масса и сигнальный провод. Ошибки на этом этапе могут привести не только к некорректной работе, но и к выходу из строя <strong>коммутатора</strong> или блока зажигания.</p>
+
+<p>Сигнальный провод чаще всего подключается к выводу катушки зажигания, помеченному как <code>W</code>, <code>TACH</code> или <code>IGN</code>. В некоторых моделях лодочных моторов, особенно импортных, может потребоваться установка дополнительного <strong>конвертера</strong> сигналов, так как форма импульса может не соответствовать требованиям отечественного прибора.</p>
+
+<ul>
+<li>⚡ Красный провод — подключение к плюсовой клемме аккумулятора через предохранитель (обычно 12В).</li>
+<li>⚫ Черный провод — соединение с отрицательной клеммой («массой») двигателя или корпуса.</li>
+<li>🟡 Желтый или серый провод — сигнальная линия, идущая непосредственно к системе зажигания.</li>
+<li>🔵 Синий провод (опционально) — подключение к лампе подсветки шкалы для работы в темное время суток.</li>
+</ul>
+
+<p>При прокладке жгутов старайтесь избегать соседства с высоковольтными проводами свечей. Электромагнитные наводки могут вносить существенные искажения в <strong>сигнал</strong>, заставляя стрелку хаотично скакать. Использование экранированного кабеля значительно повышает стабильность работы всей системы.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка перед монтажом</h4><label class="check-item"><input type="checkbox"><span>Проверить целостность изоляции проводов</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в наличии предохранителя в цепи питания</span></label><label class="check-item"><input type="checkbox"><span>Проверить соответствие напряжения бортовой сети</span></label><label class="check-item"><input type="checkbox"><span>Подготовить инструмент для обжима клемм</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="таблица-соответствия-настроек-для-разных-моторов">Таблица соответствия настроек для разных моторов</h2>
+
+<p>Одной из главных проблем при установке является несоответствие настроек прибора типу двигателя. Разные производители используют различные схемы генерации импульсов. Ниже приведена справочная таблица, которая поможет сориентироваться в базовых параметрах для распространенных типов <em>агрегатов</strong>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип двигателя</th>
+<th>Количество цилиндров</th>
+<th>Импульсов на оборот</th>
+<th>Рекомендуемая настройка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2-тактный (Яamaha, Mercury)</td>
+<td>1</td>
+<td>1</td>
+<td>Режим "1 cyl"</td>
+</tr>
+<tr>
+<td>2-тактный (Tohatsu, Suzuki)</td>
+<td>2</td>
+<td>2</td>
+<td>Режим "2 cyl"</td>
+</tr>
+<tr>
+<td>4-тактный (Любой бренд)</td>
+<td>4</td>
+<td>2</td>
+<td>Режим "4 cyl"</td>
+</tr>
+<tr>
+<td>Дизельный с генератором</td>
+<td>Любое</td>
+<td>Зависит от генератора</td>
+<td>Требуется калибратор</td>
+</tr>
+</tbody>
+</table>
+
+<p>Если ваш мотор отсутствует в документации к прибору, придется подбирать коэффициент эмпирическим путем, сравнивая показания с эталонным <strong>лазерным тахометром</em>. Это трудоемкий процесс, требующий точности и наличия дополнительного оборудования для замера реальных оборотов.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте мультиметр в режиме измерения частоты (Hz) на сигнальном проводе при работе двигателя на холостом ходу. Это поможет понять, приходит ли сигнал вообще и какой он частоты.</p></div>
+
+<h2 id="процесс-калибровки-и-юстировки-показаний">Процесс калибровки и юстировки показаний</h2>
+
+<p>После физического подключения наступает этап тонкой настройки. Большинство моделей <em>КУС</em> имеют скрытый потенциометр или набор дип-переключателей на задней панели. Именно они отвечают за масштабирование входящего сигнала и положение <strong>стрелки</strong> на шкале.</p>
+
+<p>Процедура калибровки должна проводиться на прогретом двигателе. Сначала выставляется положение «ноль» механическим корректором на лицевой панели, затем двигатель запускается на холостых оборотах. Если показания отличаются от паспортных данных мотора, необходимо вращать регулировочный винт до совпадения значений.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Регулировку потенциометра следует производить только специальной диэлектрической отверткой, чтобы избежать короткого замыкания и поражения электрическим током.</p>
+</blockquote>
+
+<p>В некоторых случаях может потребоваться подбор <strong>резистора</strong> в разрыв сигнальной цепи. Это необходимо, если амплитуда сигнала слишком велика и «зашкаливает» прибор, или наоборот, слишком мала для уверенного срабатывания механизма. Точный номинал подбирается экспериментально.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Калибровка тахометра должна проводиться только после полного прогрева двигателя, так как сопротивление обмоток и параметры зажигания меняются в зависимости от температуры.</p></div>
+
+<h2 id="диагностика-неисправностей-и-ремонт">Диагностика неисправностей и ремонт</h2>
+
+<p>Если прибор перестал реагировать на запуск двигателя, в первую очередь следует проверить целостность предохранителя и надежность контактов «массы». Часто окисление клемм приводит к тому, что <strong>ток</strong> просто не доходит до потребителя. Визуальный осмотр проводки может выявить перетертости или следы коррозии.</p>
+
+<p>Стрелка может «гулять» или показывать заниженные значения при неисправности конденсатора в цепи фильтрации помех. Замена этого элемента часто возвращает прибору былую точность. Также стоит проверить состояние самого <em>датчика</strong>, если он выносной и подвержен механическим воздействиям.</p>
+
+<ul>
+<li>🔍 Проверьте напряжение на входе питания — оно должно быть стабильным в пределах 12-14 Вольт.</li>
+<li>🔍 Прозвоните сигнальный провод на обрыв или короткое замыкание на корпус.</li>
+<li>🔍 Осмотрите контакты на задней панели прибора на предмет зеленого налета окислов.</li>
+<li>🔍 Убедитесь, что высоковольтные провода не имеют трещин изоляции, создающих помехи.</li>
+</ul>
+
+<p>В случае выхода из строя внутренней катушки или механизма привода стрелки, ремонт часто становится экономически нецелесообразным. Проще приобрести новый <em>аналог</strong>, совместимый по посадочным размерам и электрическим параметрам.</p>
+
+<div class="poll-widget" id="poll-26803f44"><div class="poll-widget-question">📊 С какой проблемой тахометра вы сталкивались чаще всего?</div><div class="poll-widget-option" data-poll="26803f44" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Стрелка не двигается</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="26803f44" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Показания врут</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="26803f44" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Стрелка дрожит</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="26803f44" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Сгорела подсветка</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="современные-альтернативы-и-цифровые-решения">Современные альтернативы и цифровые решения</h2>
+
+<p>Рынок водномоторной техники активно развивается, и на смену аналоговым стрелочным приборам приходят <strong>цифровые</strong> комплексы. Они лишены механических частей, подверженных износу, и часто обладают функцией памяти, фиксирующей максимальные обороты и моточасы, что крайне полезно для обслуживания.</p>
+
+<p>Современные <em>мультиметры</strong> и навигационные дисплеи (MFD) могут принимать сигнал тахометра напрямую через протокол <code>NMEA 2000</code> или <code>RS-232</code>, выводя информацию на экран смартфона или планшета. Это позволяет полностью избавиться от старых панелей приборов, сделав кокпит более современным и минималистичным.</p>
+
+<p>Однако, классический стрелочный прибор остается предпочтительным для многих капитанов благодаря своей инертности и читаемости. Глазу легче оценить изменение динамики по движению стрелки, чем всматриваться в меняющиеся <strong>цифры</em> на ярком экране под солнцем. Выбор остается за владельцем судна.</p>
+
+<details>
+<summary>Как продлить срок службы стрелочного тахометра?</summary>
+<p>Для максимальной долговечности рекомендуется покрывать контакты специальной смазкой, защищающей от влаги, и регулярно (раз в сезон) протирать внутренности корпуса от конденсата. Также полезно отключать прибор от сети при длительном простое лодки.</p>
+</details>
+
+<details>
+<summary>Можно ли подключить тахометр от автомобиля к лодочному мотору?</summary>
+<p>Технически возможно, но крайне нежелательно. Автомобильные тахометры часто не имеют защиты от влаги и солевых туманов, а их калибровка может не совпадать с импульсами лодочного зажигания, что приведет к неверным показаниям.</p>
+</details>
+
+<details>
+<summary>Что делать, если тахометр показывает отрицательные значения?</summary>
+<p>Это физически невозможно для данного типа приборов. Если стрелка уходит ниже нуля, значит, нарушена полярность подключения или прибор неисправен. В нормальном состоянии стрелка просто лежит на ограничителе «0».</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-действия-и-технические-особенности-прибора">Принцип действия и технические особенности прибора</a></li><li><a href="#схемы-подключения-и-выбор-проводов">Схемы подключения и выбор проводов</a></li><li><a href="#таблица-соответствия-настроек-для-разных-моторов">Таблица соответствия настроек для разных моторов</a></li><li><a href="#процесс-калибровки-и-юстировки-показаний">Процесс калибровки и юстировки показаний</a></li><li><a href="#диагностика-неисправностей-и-ремонт">Диагностика неисправностей и ремонт</a></li><li><a href="#современные-альтернативы-и-цифровые-решения">Современные альтернативы и цифровые решения</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/l/lu/lukojl-moto-2t-v-lodochnyj-motor.html" class="related-card">Лукойл Мото 2Т для лодочного мотора: как выбрать и заливать</a></li><li><a href="/articles/l/lo/lodochnyj-motor-veterok-99-kupit-novyj.html" class="related-card">Лодочный мотор Ветерок 9.9 купить новый: цены, характеристики и где</a></li><li><a href="/articles/l/lo/lodochnyj-motor-90ls.html" class="related-card">Лодочный мотор 90 л.с.: выбор, характеристики и рейтинг лучших моделей</a></li><li><a href="/articles/m/mo/motor-salyut-2-l-s.html" class="related-card">Мотор «Салют 2ЛС»: характеристики, ремонт и тюнинг 2-тактного лодочного двигателя</a></li><li><a href="/articles/l/lo/lodochnyj-elektromotor-rejting.html" class="related-card">Лодочный электромотор: рейтинг лучших моделей 2026 и выбор тяги</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/l/lu/lukojl-moto-2t-v-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Лукойл Мото 2Т для лодочного мотора: как выбрать и заливать</span><span class="related-bottom-desc">Можно ли заливать Лукойл Мото 2Т в лодочный мотор? Разбираем совместимость, пропорции, плюсы и минус</span></a><a href="/articles/l/lo/lodochnyj-motor-veterok-99-kupit-novyj.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Ветерок 9.9 купить новый: цены, характеристики и где</span><span class="related-bottom-desc">Где купить новый лодочный мотор Ветерок 9.9? Полный обзор модели, технические характеристики, советы</span></a><a href="/articles/l/lo/lodochnyj-motor-90ls.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор 90 л.с.: выбор, характеристики и рейтинг лучших моделей</span><span class="related-bottom-desc">Полный обзор моторов 90 л.с. для лодок. Сравнение Yamaha, Tohatsu, Mercury. Расход топлива, особенно</span></a><a href="/articles/m/mo/motor-salyut-2-l-s.html" class="related-bottom-card"><span class="related-bottom-title">Мотор «Салют 2ЛС»: характеристики, ремонт и тюнинг 2-тактного лодочного двигателя</span><span class="related-bottom-desc">Подробный обзор мотора «Салют 2ЛС»: технические параметры, типичные неисправности, инструкции по рем</span></a><a href="/articles/l/lo/lodochnyj-elektromotor-rejting.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный электромотор: рейтинг лучших моделей 2026 и выбор тяги</span><span class="related-bottom-desc">Полный рейтинг лодочных электромоторов. Сравнение тяги, тесты аккумуляторов, обзоры Minn Kota и Hasw</span></a><a href="/articles/p/pr/progress-4-maksimalnaya-moshchnost-motora.html" class="related-bottom-card"><span class="related-bottom-title">Progress 4: Максимальная мощность мотора и реальные возможности</span><span class="related-bottom-desc">Разбор максимальной мощности мотора для лодки Прогресс 4. Установка 30 л.с., переделки транца, влиян</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

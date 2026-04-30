@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Диагностика цилиндров: как смотреть камеру двигателя — ЛодкаМастер</title>
+    <meta name="description" content="Профессиональная видеодефектовка мотора через свечные отверстия. Как провести осмотр цилиндров эндоскопом и что увидеть на экране.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/k/ka/kamera-smotret-v-tsilindr-dvigatelya.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Диагностика цилиндров: как смотреть камеру двигателя">
+    <meta property="og:description" content="Профессиональная видеодефектовка мотора через свечные отверстия. Как провести осмотр цилиндров эндоскопом и что увидеть на экране.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Диагностика цилиндров: как смотреть камеру двигателя</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Видеодефектовка двигателя: как заглянуть внутрь цилиндра</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#что-такое-эндоскопия-двигателя-и-зачем-она-нужна">Что такое эндоскопия двигателя и зачем она нужна</a></li><li><a href="#необходимое-оборудование-для-видеодефектовки">Необходимое оборудование для видеодефектовки</a></li><li><a href="#подготовка-двигателя-к-осмотру-через-свечное-отверстие">Подготовка двигателя к осмотру через свечное отверстие</a></li><li><a href="#техника-проведения-осмотра-и-навигация-камеры">Техника проведения осмотра и навигация камеры</a></li><li><a href="#анализ-изображения-что-можно-увидеть-внутри">Анализ изображения: что можно увидеть внутри</a></li><li><a href="#типичные-дефекты-и-их-влияние-на-работу-мотора">Типичные дефекты и их влияние на работу мотора</a></li><li><a href="#частые-вопросы-по-диагностике-цилиндров">Частые вопросы по диагностике цилиндров</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Современная диагностика силовых агрегатов вышла далеко за пределы прослушивания шума стетоскопом или замера компрессии. Сегодня, чтобы точно определить состояние <strong>цилиндро-поршневой группы</strong>, механики используют оптические приборы, позволяющие буквально заглянуть внутрь работающего или заглушенного мотора. Этот метод, часто называемый эндоскопией или видеодефектовкой, стал золотым стандартом при оценке остаточного ресурса двигателя перед покупкой автомобиля или при выявлении причин повышенного расхода масла.</p>
+
+<p>Многие автовладельцы ошибочно полагают, что отсутствие ошибок на приборной панели гарантирует идеальное здоровье мотора. Однако <em>скрытые дефекты</em>, такие как микротрещины в стенках цилиндров или начавшееся залегание колец, часто не фиксируются электроникой до момента серьезной поломки. Именно поэтому возможность <strong>визуального осмотра</strong> через свечное отверстие становится критически важной для предотвращения капитального ремонта.</p>
+
+<p>Процедура эта не требует полного разбора двигателя и может быть проведена достаточно быстро. В этой статье мы подробно разберем, как правильно использовать камеру для осмотра цилиндров, на что обращать внимание при анализе изображения и какие инструменты необходимы для получения качественной картинки. Вы узнаете, как отличить нормальный нагар от признаков серьезной неисправности.</p>
+
+<h2 id="что-такое-эндоскопия-двигателя-и-зачем-она-нужна">Что такое эндоскопия двигателя и зачем она нужна</h2>
+
+<p>Эндоскопия двигателя — это метод неразрушающего контроля, который позволяет оценить техническое состояние внутренних полостей агрегата без его демонтажа. Основным инструментом здесь выступает <strong>видеоэндоскоп</strong> или технический бороскоп. Это гибкий или жесткий щуп с миниатюрной камерой и подсветкой на конце, изображение с которой передается на экран смартфона или планшета.</p>
+
+<p>Зачем это нужно? Стандартные методы диагностики, такие как замер компрессии, дают лишь усредненные данные о герметичности камеры сгорания. Они не показывают <em>физическое состояние</em> стенок. Эндоскоп же позволяет увидеть реальную картину: наличие задиров, состояние хон-риски, целостность поршня и клапанов. Это особенно актуально для современных моторов с непосредственным впрыском, где проблемы могут развиваться стремительно.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте эндоскоп с поворотной головкой (до 180 градусов) — это позволит осмотреть не только стенки цилиндра, но и пространство под поршнем, а также обратную сторону клапанов, что невозможно сделать прямой камерой.</p></div>
+
+<p>Кроме того, метод незаменим при покупке подержанного автомобиля. Продавец может утверждать, что двигатель "не вскрывался", но камера покажет следы <strong>гильзовки</strong> или замены поршней, если они были выполнены некачественно. Также с помощью эндоскопа легко обнаружить посторонние предметы, попавшие в цилиндр, или остатки прокладок после неумелого ремонта.</p>
+
+<h2 id="необходимое-оборудование-для-видеодефектовки">Необходимое оборудование для видеодефектовки</h2>
+
+<p>Для проведения качественной диагностики недостаточно просто купить самую дешевую камеру на рынке. Качество изображения и возможности управления напрямую влияют на точность диагноза. Основным устройством является <strong>технический бороскоп</strong>, который может быть проводным или беспроводным. Проводные модели надежнее передают сигнал и не требуют постоянной подзарядки в процессе длительной работы.</p>
+
+<p>Важнейшим параметром является диаметр щупа. Для большинства бензиновых двигателей оптимальным считается диаметр <em>5-6 мм</em>, так как он свободно проходит через стандартное свечное отверстие. Для дизельных моторов или двигателей с маленькими свечными колодцами могут потребоваться более тонкие модели диаметром 3.5-4 мм, однако они часто имеют меньшее разрешение матрицы.</p>
+
+<p>Также необходимо подготовить следующий набор инструментов и материалов:</p>
+<ul>
+<li>🔦 <strong>Мощная LED-подсветка</strong> на торце щупа — позволяет осветить затемненные участки цилиндра без использования внешней вспышки, которая создает блики.</li>
+<li>🧹 <strong>Компрессор или груша</strong — для предварительной очистки свечных колодцев от пыли и масла, чтобы грязь не попала в цилиндр.</li>
+<li>🧴 <strong>Очиститель карбюратора</strong> — иногда требуется для смыва плотного слоя нагара перед осмотром стенок.</li>
+<li>📱 <strong>Устройство отображения</strong> — смартфон или планшет с качественным экраном для детального изучения картинки в высоком разрешении.</li>
+</ul>
+
+<div class="checklist-block"><h4>☑️ Проверка готовности к диагностике</h4><label class="check-item"><input type="checkbox"><span>Зарядить аккумулятор эндоскопа и телефон</span></label><label class="check-item"><input type="checkbox"><span>Очистить свечные колодцы от грязи</span></label><label class="check-item"><input type="checkbox"><span>Прогреть двигатель до рабочей температуры</span></label><label class="check-item"><input type="checkbox"><span>Подготовить чистую ветошь и фонарь</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="подготовка-двигателя-к-осмотру-через-свечное-отверстие">Подготовка двигателя к осмотру через свечное отверстие</h2>
+
+<p>Перед тем как вводить камеру, необходимо правильно подготовить двигатель. Оптимально проводить процедуру на <strong>прогретом моторе</strong>, когда он был в работе хотя бы 10-15 минут. В таком состоянии масляная пленка лучше покрывает стенки, а поршневые кольца занимают рабочее положение, что дает более реалистичную картину зазоров.</p>
+
+<p>Первым шагом становится выкручивание свечей зажигания. Здесь важно действовать аккуратно, чтобы не уронить в цилиндр ни песчинки. Вокруг свечных колодцев нужно тщательно убрать пыль и грязь с помощью сжатого воздуха. Если в колодцах осталось масло, его желательно удалить шприцем или грушей, чтобы оно не капало на камеру при погружении.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не проводите диагностику на работающем двигателе! Вращающийся коленвал и шатун могут мгновенно разрушить дорогостоящую камеру, а обломки попадут в цилиндр, вызвав задиры.</p>
+</blockquote>
+
+<p>Если целью осмотра является поиск причины троения или пропусков зажигания, имеет смысл пометить каждую свечу и вставлять камеру именно в тот цилиндр, где была проблема. Однако для полной оценки состояния мотора (например, при покупке авто) рекомендуется проверить <em>все цилиндры</em> последовательно, сравнивая их состояние между собой.</p>
+
+<p>Для лучшего обзора иногда требуется провернуть коленчатый вал стартером. Делать это нужно с выкрученными свечами и отключенными катушками или форсунками, чтобы двигатель не запустился. Кратковременная прокрутка поможет увидеть состояние цилиндра под разными углами и оценить работу поршневых колец.</p>
+
+<h2 id="техника-проведения-осмотра-и-навигация-камеры">Техника проведения осмотра и навигация камеры</h2>
+
+<p>Ввод щупа в цилиндр должен быть плавным, без применения силы. Камера обычно вводится через отверстие для свечи зажигания. Чтобы получить полный обзор, необходимо медленно вращать щуп вокруг своей оси и изменять угол наклона головки (если конструкция позволяет). Важно не касаться стенок цилиндра металлическими частями щупа, чтобы не оставить царапин на <strong>рабочей поверхности</strong>.</p>
+
+<p>При осмотре следует обращать внимание на несколько ключевых зон. Верхняя часть цилиндра (зона компрессионных колец) часто покрыта нагаром, который можно смыть очистителем для лучшей видимости. Средняя и нижняя части должны иметь четкую сетку хона. Если хон стерся полностью — это признак <strong>интенсивного износа</strong> или некачественного ремонта в прошлом.</p>
+
+<p>Для детального изучения труднодоступных мест, например, пространства под поршнем или зоны клапанов, используйте функцию поворота камеры. На некоторых моделях эндоскопов есть функция <em>макро-съемки</em> или зумирования, что позволяет рассмотреть микротрещины. Записывайте видео всего процесса осмотра, чтобы позже, в спокойной обстановке, изучить кадр за кадром.</p>
+
+<details class="faq-item"><summary>Как отличить тень от дефекта?</summary><div class="faq-answer"><p>При изменении угла подсветки тени меняют свою форму и положение, в то время как физические дефекты (задиры, трещины) остаются неизменными. Используйте это свойство для точной диагностики.</p></div></details>
+
+<p>Особое внимание уделите состоянию юбки поршня и зоне прилегания колец. Если видны вертикальные полосы или борозды на стенках — это и есть те самые <strong>задиры</strong>, которые часто становятся приговором для двигателя. В дизельных моторах через свечное отверстие (или отверстие форсунки) также можно оценить состояние тарелок клапанов на предмет прогара.</p>
+
+<h2 id="анализ-изображения-что-можно-увидеть-внутри">Анализ изображения: что можно увидеть внутри</h2>
+
+<p>Интерпретация увиденного требует определенных знаний. Нормальным состоянием считается наличие равномерного, тонкого слоя нагара на поршне и четко различимой сетки хона на стенках цилиндра. Цвет стенок может варьироваться от серебристого до темно-серого в зависимости от типа используемого топлива и присадок.</p>
+
+<p>Однако существуют признаки, которые должны насторожить любого специалиста. К ним относятся:</p>
+<ul>
+<li>🔴 <strong>Вертикальные царапины (задиры)</strong> — глубокие борозды на зеркале цилиндра, часто сопровождающиеся разрушением поршня.</li>
+<li>🔴 <strong>Следы перегрева</strong> — оплавление краев поршня, изменение цвета металла (побурение) или появление "сухих" пятен без масляной пленки.</li>
+<li>🔴 <strong>Налет на клапанах</strong> — толстый слой нагара на впускных клапанах (актуально для моторов с непосредственным впрыском), который может мешать нормальному газообмену.</li>
+<li>🔴 <strong>Посторонние предметы</strong> — кусочки металла, обломки колец или даже забытые ветоши, попавшие в камеру сгорания.</li>
+</ul>
+
+<p>Отдельного внимания заслуживает состояние <em>маслосъемных колец</em>. Если через щель между поршнем и стенкой видно, что канавки забиты коксом, а сами кольца не двигаются — это прямая причина маслосбора. Иногда ситуацию можно спасти раскоксовкой, но часто требуется механическая чистка или замена поршней.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Наличие даже одного глубокого задира в верхней мертвой точке (ВМТ) часто является основанием для отказа от покупки автомобиля или планирования капитального ремонта двигателя.</p></div>
+
+<h2 id="типичные-дефекты-и-их-влияние-на-работу-мотора">Типичные дефекты и их влияние на работу мотора</h2>
+
+<p>Каждый дефект, обнаруженный камерой, имеет свои последствия. Например, задиры в нижней части цилиндра могут не давать потери компрессии на холодную, но приводить к стукам и повышенному расходу масла на прогретом двигателе. Это связано с тепловым расширением поршня и изменением зазоров.</p>
+
+<p>Прогар клапана, видимый как черная воронка или оплавление кромки тарелки, ведет к потере мощности и троению мотора. В этом случае камера четко покажет неплотное прилегание клапана к седлу. Если же видны трещины в стенке цилиндра (часто у перемычек), то такой двигатель долго не проживет — трещина будет расти под воздействием температурных нагрузок.</p>
+
+<p>В таблице ниже приведена расшифровка основных визуальных признаков и их вероятных причин:</p>
+
+<table>
+<thead>
+<tr>
+<th>Визуальный признак</th>
+<th>Вероятная причина</th>
+<th>Последствия</th>
+<th>Метод устранения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Глубокие вертикальные борозды</td>
+<td>Разрушение катализатора, детонация</td>
+<td>Стук, расход масла, потеря компрессии</td>
+<td>Гильзовка или замена блока</td>
+</tr>
+<tr>
+<td>Черный рыхлый налет на клапанах</td>
+<td>Непосредственный впрыск, короткие поездки</td>
+<td>Плавающие обороты, потеря тяги</td>
+<td>Механическая чистка (пескоструй)</td>
+</tr>
+<tr>
+<td>Стертый хон (гладкие стенки)</td>
+<td>Естественный износ, плохое масло</td>
+<td>Увеличенный угар масла</td>
+<td>Расточка или хонингование</td>
+</tr>
+<tr>
+<td>Оплавление поршня</td>
+<td>Бедная смесь, раннее зажигание</td>
+<td>Прогар поршня, стук</td>
+<td>Замена поршневой группы</td>
+</tr>
+</tbody>
+</table>
+
+<p>Важно понимать, что некоторые дефекты могут быть "лечены" без разбора мотора, но большинство серьезных проблем, выявленных камерой, требуют вмешательства в <strong>механическую часть</strong> двигателя. Поэтому видеодефектовка — это не просто способ удовлетворить любопытство, а мощный инструмент для принятия финансовых решений.</p>
+
+<div class="poll-widget" id="poll-5ab0fe8d"><div class="poll-widget-question">📊 Сталкивались ли вы с необходимостью делать эндоскопию двигателя?</div><div class="poll-widget-option" data-poll="5ab0fe8d" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Да, при покупке авто</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="5ab0fe8d" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Да, при ремонте своего авто</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="5ab0fe8d" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Нет, но планирую</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="5ab0fe8d" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Никогда не слышал о таком</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<blockquote>
+<p>⚠️ Внимание: Если на экране видны блестящие металлические стружки на дне цилиндра или под поршнем, дальнейшая эксплуатация двигателя категорически запрещена — это признак активного разрушения деталей.</p>
+</blockquote>
+
+<h2 id="частые-вопросы-по-диагностике-цилиндров">Частые вопросы по диагностике цилиндров</h2>
+
+<details>
+<summary>Можно ли поцарапать цилиндр камерой эндоскопа?</summary>
+<p>Да, если использовать жесткий некачественный щуп или действовать неаккуратно. Современные эндоскопы имеют гладкую оболочку, но попадание абразива (песка) на конец камеры при введении может оставить риски. Всегда очищайте свечной колодец перед вводом.</p>
+</details>
+
+<details>
+<summary>Нужно ли выкручивать свечи на холодном или горячем двигателе?</summary>
+<p>Для оценки состояния цилиндров лучше проводить осмотр на слегка прогретом моторе (остывшем до 40-50 градусов), чтобы видеть реальную картину масляной пленки. Однако выкручивать свечи безопаснее и проще на полностью холодном двигателе, чтобы не получить ожогов и не сорвать резьбу.</p>
+</details>
+
+<details>
+<summary>Покажет ли камера залегание колец?</summary>
+<p>Прямо увидеть залегание сложно, так как кольца скрыты в канавках. Но косвенным признаком является отсутствие масляной пленки выше колец, наличие большого количества нагара в канавках поршня и сухие, закоксованные стенки цилиндра над зоной колец.</p>
+</details>
+
+<details>
+<summary>Какой минимальный диаметр камеры нужен для двигателя?</summary>
+<p>Стандартный свечной колодец позволяет пройти камере диаметром до 6-8 мм. Однако для современных компактных двигателей с узкими колодцами лучше использовать модели диаметром 3.5-4 мм, чтобы иметь запас хода и не повредить резьбу свечи или саму камеру.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#что-такое-эндоскопия-двигателя-и-зачем-она-нужна">Что такое эндоскопия двигателя и зачем она нужна</a></li><li><a href="#необходимое-оборудование-для-видеодефектовки">Необходимое оборудование для видеодефектовки</a></li><li><a href="#подготовка-двигателя-к-осмотру-через-свечное-отверстие">Подготовка двигателя к осмотру через свечное отверстие</a></li><li><a href="#техника-проведения-осмотра-и-навигация-камеры">Техника проведения осмотра и навигация камеры</a></li><li><a href="#анализ-изображения-что-можно-увидеть-внутри">Анализ изображения: что можно увидеть внутри</a></li><li><a href="#типичные-дефекты-и-их-влияние-на-работу-мотора">Типичные дефекты и их влияние на работу мотора</a></li><li><a href="#частые-вопросы-по-диагностике-цилиндров">Частые вопросы по диагностике цилиндров</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakoe-maslo-zalivat-v-reduktor-lodochnogo-motora-veterok-8.html" class="related-card">Масло в редуктор лодочного мотора Ветерок 8: выбор и замена</a></li><li><a href="/articles/m/ma/maslo-transmissionnoe-dlya-lodochnykh-motorov-motyul.html" class="related-card">Масло трансмиссионное для лодочных моторов Motul: выбор и замена</a></li><li><a href="/articles/v/vy/vypryamitel-regulyator-napryazheniya-dlya-lodochnogo-motora.html" class="related-card">Выпрямитель-регулятор напряжения для лодочного мотора: выбор и ремонт</a></li><li><a href="/articles/m/mo/motor-koleso-tugo-vrashchaetsya.html" class="related-card">Мотор колесо туго вращается: причины и ремонт</a></li><li><a href="/articles/z/za/zamena-vinta-na-lodochnom-motore.html" class="related-card">Замена винта на лодочном моторе: пошаговая инструкция и советы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kakoe-maslo-zalivat-v-reduktor-lodochnogo-motora-veterok-8.html" class="related-bottom-card"><span class="related-bottom-title">Масло в редуктор лодочного мотора Ветерок 8: выбор и замена</span><span class="related-bottom-desc">Какое масло заливать в редуктор лодочного мотора Ветерок 8? Разбор спецификаций API GL-5, вязкости S</span></a><a href="/articles/m/ma/maslo-transmissionnoe-dlya-lodochnykh-motorov-motyul.html" class="related-bottom-card"><span class="related-bottom-title">Масло трансмиссионное для лодочных моторов Motul: выбор и замена</span><span class="related-bottom-desc">Экспертный обзор трансмиссионных масел Motul для лодочных моторов. Выбор вязкости, интервалы замены,</span></a><a href="/articles/v/vy/vypryamitel-regulyator-napryazheniya-dlya-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Выпрямитель-регулятор напряжения для лодочного мотора: выбор и ремонт</span><span class="related-bottom-desc">Как проверить и заменить выпрямитель-регулятор на лодочном моторе. Симптомы неисправности, схемы зар</span></a><a href="/articles/m/mo/motor-koleso-tugo-vrashchaetsya.html" class="related-bottom-card"><span class="related-bottom-title">Мотор колесо туго вращается: причины и ремонт</span><span class="related-bottom-desc">Почему туго крутится мотор колесо электровелосипеда? Разбор причин: подшипники, магниты, датчики. Ди</span></a><a href="/articles/z/za/zamena-vinta-na-lodochnom-motore.html" class="related-bottom-card"><span class="related-bottom-title">Замена винта на лодочном моторе: пошаговая инструкция и советы</span><span class="related-bottom-desc">Подробный гид по замене винта на лодочном моторе. Как снять закипевшую гайку, проверить шпонку и под</span></a><a href="/articles/z/za/zamena-klapana-lodki-pvkh-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Замена клапана лодки ПВХ своими руками: пошаговая инструкция</span><span class="related-bottom-desc">Как заменить воздушный клапан на надувной лодке? Подробный гид по демонтажу, выбору клея и герметиза</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

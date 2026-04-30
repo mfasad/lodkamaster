@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Настройка лодочного мотора: полное руководство — ЛодкаМастер</title>
+    <meta name="description" content="Экспертная настройка лодочного мотора: регулировка карбюратора, зажигания, высоты подвески и угла дифферента. Советы по обкатке и устранению вибраций.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/n/na/nastrojka-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Настройка лодочного мотора: полное руководство">
+    <meta property="og:description" content="Экспертная настройка лодочного мотора: регулировка карбюратора, зажигания, высоты подвески и угла дифферента. Советы по обкатке и устранению вибраций.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Настройка лодочного мотора: полное руководство</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Профессиональная настройка лодочного мотора</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#установка-мотора-и-регулировка-высоты-подвески">Установка мотора и регулировка высоты подвески</a></li><li><a href="#регулировка-угла-дифферента-trim">Регулировка угла дифферента (Trim)</a></li><li><a href="#настройка-карбюратора-качество-смеси-и-холостой-ход">Настройка карбюратора: качество смеси и холостой ход</a></li><li><a href="#регулировка-системы-зажигания-и-зазора-свечи">Регулировка системы зажигания и зазора свечи</a></li><li><a href="#подбор-и-балансировка-гребного-винта">Подбор и балансировка гребного винта</a></li><li><a href="#обкатка-и-финальная-проверка-настроек">Обкатка и финальная проверка настроек</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Грамотная настройка лодочного мотора является критически важным этапом, от которого зависит не только максимальная скорость вашего плавательного средства, но и ресурс силового агрегата. Многие владельцы ошибочно полагают, что достаточно просто залить топливо и нажать на ручку газа, однако заводские настройки часто являются усредненными и не учитывают конкретные условия эксплуатации, вес лодки и стиль вождения.</p>
+
+<p>Некорректная регулировка может привести к перегреву поршневой группы, повышенному расходу топлива или, наоборот, к "захлебыванию" двигателя под нагрузкой. В этой статье мы разберем все нюансы, начиная от установки на транец и заканчивая тонкой настройкой системы зажигания и подачи смеси, чтобы вы могли выжать максимум из своей техники.</p>
+
+<p>Игнорирование базовых принципов настройки часто становится причиной преждевременного выхода из строя дорогостоящих узлов. Понимание физических процессов, происходящих внутри <strong>карбюратора</strong> и цилиндре, позволит вам самостоятельно диагностировать и устранять большинство проблем без обращения в сервисный центр.</p>
+
+<h2 id="установка-мотора-и-регулировка-высоты-подвески">Установка мотора и регулировка высоты подвески</h2>
+
+<p>Первым и фундаментальным шагом является правильная установка двигателя на транец лодки. Высота подвески <em>дейдвуда</em> напрямую влияет на гидродинамику глиссирования и эффективность работы винта. Если мотор установлен слишком низко, сопротивление воды возрастает, что приводит к потере скорости и перерасходу топлива. В случае чрезмерно высокой установки возникает риск захвата воздуха винтом, так называемое "кавитационное всасывание".</p>
+
+<p>Оптимальным считается положение, при котором антикавитационная плита располагается на одной линии с днищем лодки или чуть выше (на 10-25 мм), в зависимости от формы корпуса. Для проверки необходимо вывести лодку на глиссирование и внимательно осмотреть поток воды, выходящий из контрольного отверстия охлаждения. Если в струе видны пузырьки воздуха, а обороты двигателя "плавают", значит, винт хватает воздух.</p>
+
+<p>Для точной регулировки используйте специальные прокладки или регулируемые транцевые плиты. Не забывайте, что с изменением загрузки лодки (пассажиры, снаряжение) оптимальная высота может незначительно меняться, поэтому проверку следует проводить при полной загрузке.</p>
+
+<ul>
+<li>🚤 Проверьте симметричность установки мотора относительно диаметральной плоскости лодки.</li>
+<li>🔧 Убедитесь, что крепежные болты затянуты с рекомендованным моментом, чтобы избежать вибрации.</li>
+<li>🌊 Проведите тестовый заплыв с разной загрузкой для поиска идеальной высоты.</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При установке мотора на лодки с плоским транцем часто требуется установка дополнительного гидродинамического киля на антикавитационную плиту для улучшения управляемости.</p></div>
+
+<p>Важно отметить, что <strong>кавитация</strong> — это не просто потеря тяги, но и разрушительный процесс, который буквально "выгрызает" металл лопастей винта и крыльчатки помпы. Поэтому игнорировать появление воздушных пузырей в выхлопной струе категорически нельзя.</p>
+
+<h2 id="регулировка-угла-дифферента-trim">Регулировка угла дифферента (Trim)</h2>
+
+<p>Угол наклона двигателя относительно транца, или трим, является мощнейшим инструментом управления поведением лодки на воде. Изменяя угол, вы меняете точку приложения тяги, что заставляет нос лодки подниматься или опускаться. Правильно выставленный трим позволяет лодке быстрее выходить на глиссирование и двигаться с минимальным сопротивлением.</p>
+
+<p>Если нос лодки слишком задран вверх, площадь контакта корпуса с водой уменьшается, но ухудшается курсовая устойчивость, и лодку начинает рыскать из стороны в сторону. Кроме того, в этом положении винт работает в менее плотных слоях воды, что снижает его эффективность. Если же нос чрезмерно погружен, лодка "черпает" воду, скорость падает, а расход топлива резко возрастает.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не изменяйте угол трима на высоких оборотах резко и до упора. Это может привести к резкому изменению центра тяжести, потере управления и даже переворачиванию лодки, особенно на высоких скоростях или при сильном боковом ветре.</p>
+</blockquote>
+
+<p>Настройка осуществляется экспериментальным путем. Начните с нейтрального положения и постепенно увеличивайте угол подъема двигателя, следя за тахометром. Ваша цель — найти положение, при котором при полностью открытой дроссельной заслонке двигатель развивает максимальные разрешенные обороты, указанные в спецификации <em>manufacturer</em>.</p>
+
+<div class="poll-widget" id="poll-1e2e65f3"><div class="poll-widget-question">📊 Как вы обычно регулируете трим мотора?</div><div class="poll-widget-option" data-poll="1e2e65f3" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">На глаз, по ощущениям</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="1e2e65f3" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">По тахометру и секундомеру</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="1e2e65f3" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Оставляю как было с завода</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="1e2e65f3" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Использую электропривод с индикатором</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Стоит учитывать, что оптимальный угол трима зависит от волнения на воде. На спокойной воде можно сильнее задирать нос, а на волне, наоборот, опускать двигатель, чтобы винт лучше держал воду и лодка мягче проходила гребни волн.</p>
+
+<h2 id="настройка-карбюратора-качество-смеси-и-холостой-ход">Настройка карбюратора: качество смеси и холостой ход</h2>
+
+<p>Сердцем двухтактного или простого четырехтактного мотора является карбюратор. Именно здесь происходит приготовление топливно-воздушной смеси. Заводская настройка часто бывает "богатой" (много топлива), чтобы гарантировать безопасность при обкатке, но для активной эксплуатации требуется более точная регулировка.</p>
+
+<p>Регулировка обычно производится тремя винтами: винтом количества смеси (холостого хода), винтом качества смеси на низких оборотах и винтом качества на высоких оборотах. Начинать всегда следует с прогрева двигателя до рабочей температуры. Холодный мотор не даст объективной картины.</p>
+
+<p>Сначала регулируется холостой ход. Винтом качества добиваются стабильной работы, а винтом количества выставляют минимально необходимые обороты, при которых мотор не глохнет. Если смесь слишком бедная, мотор будет глохнуть при резком открытии газа. Если слишком богатая — появится черный дым, нагар на свече и потеря мощности.</p>
+
+<details class="faq-item"><summary>Секрет настройки переходных режимов</summary><div class="faq-answer"><p>Часто проблема провалов при резком газе кроется не в главных жиклерах, а в ускорительном насосе или жиклере холостого хода. Проверьте, что диафрагма ускорительного насоса цела и эластична.</p></div></details>
+
+<p>Для точной диагностики состояния смеси используйте метод выворачивания свечи. Кирпичный или коричневый цвет изолятора говорит об идеале. Белый цвет свидетельствует о перегреве и бедной смеси, а черный бархатистый налет или маслянистый налет — о переобогащении.</p>
+
+<ul>
+<li>🔥 Белый налет на свече сигнализирует оdangerously бедной смеси и риске прогара поршня.</li>
+<li>🛢️ Маслянистый черный налет указывает на избыток масла в бензине или проблемы с кольцами.</li>
+<li>🔧 Регулируйте винты качества по очереди, делая не более 1/4 оборота за раз.</li>
+</ul>
+
+<p>Помните, что <strong>обедненная смесь</strong> опаснее обогащенной. Она вызывает детонацию и тепловую перегрузку деталей цилиндро-поршневой группы, что может привести к задирам и клину двигателя за считанные минуты.</p>
+
+<h2 id="регулировка-системы-зажигания-и-зазора-свечи">Регулировка системы зажигания и зазора свечи</h2>
+
+<p>Своевременное и мощное искрообразование — залог эффективного сгорания топлива. В современных моторах с электронным зажиганием (CDI) угол опережения зажигания регулируется автоматически блоком управления, но в старых моделях или при установке нештатных катушек может потребоваться ручная настройка зазора между магнитом маховика и катушкой.</p>
+
+<p>Зазор должен быть строго в пределах, указанных производителем (обычно 0.3-0.5 мм). Слишком маленький зазор может привести к пробиванию искры внутри катушки или удару магнита о катушку при вибрации. Слишком большой зазор ослабит искру, что особенно заметно при запуске холодного двигателя.</p>
+
+<p>Также критически важно состояние самой свечи зажигания и <em>высоковольтного провода</em>. Нагар на электродах увеличивает сопротивление, а трещины в изоляторе свечи могут вызывать утечку тока, особенно во влажную погоду.</p>
+
+<div class="checklist-block"><h4>☑️ Диагностика системы зажигания</h4><label class="check-item"><input type="checkbox"><span>Проверить зазор свечи щупом</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть наконечник свечи на предмет окислов</span></label><label class="check-item"><input type="checkbox"><span>Проверить целостность изоляции высоковольтного провода</span></label><label class="check-item"><input type="checkbox"><span>Замерить сопротивление катушки мультиметром</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Не стоит забывать про угол опережения зажигания на низких оборотах. Если он сбит, мотор будет плохо держать холостые или глохнуть при сбросе газа. На моторах с прерывателем-распределителем этот параметр регулируется смещением контактной площадки.</p>
+
+<h2 id="подбор-и-балансировка-гребного-винта">Подбор и балансировка гребного винта</h2>
+
+<p>Гребной винт — это преобразователь мощности двигателя в тягу. Неправильно подобранный винт сведет на нет все усилия по настройке мотора. Основным параметром здесь является шаг винта, который определяет, насколько далеко теоретически продвинется лодка за один оборот винта.</p>
+
+<p>Если винт имеет слишком малый шаг, двигатель будет легко раскручиваться до максимальных оборотов, но лодка не разовьет высокой скорости (эффект "работы вхолостую"). Если шаг слишком велик, двигатель не сможет выйти на максимальные обороты, будет работать в режиме перегрузки, что чревато перегревом и детонацией.</p>
+
+<p>Критерием правильности подбора является способность двигателя достигать диапазона максимальных оборотов (WOT - Wide Open Throttle), указанного в паспорте, при полной загрузке лодки. Обычно этот диапазон составляет, например, 4500-5500 об/мин для двухтактников.</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип лодки</th>
+<th>Нагрузка</th>
+<th>Рекомендуемый шаг (дюймы)</th>
+<th>Цель настройки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ПВХ 3.2 м</td>
+<td>1 человек</td>
+<td>7 - 8</td>
+<td>Максимальная скорость</td>
+</tr>
+<tr>
+<td>ПВХ 3.6 м</td>
+<td>2 человека + груз</td>
+<td>9 - 10</td>
+<td>Тяга и выход на глисс</td>
+</tr>
+<tr>
+<td>Катер 4.5 м</td>
+<td>3-4 человека</td>
+<td>11 - 13</td>
+<td>Крейсерская скорость</td>
+</tr>
+<tr>
+<td>Тяжелый катер</td>
+<td>Полная загрузка</td>
+<td>14+</td>
+<td>Экономичность хода</td>
+</tr>
+</tbody>
+</table>
+
+<p>Также стоит упомянуть о балансировке винта. Дисбаланс вызывает вибрацию, которая передается на дейдвуд и может повредить подшипники. Проверить балансировку можно в домашних условиях, используя простой конусный балансир.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Запасной винт с шагом на 1-2 дюйма меньше основного — лучший друг водномоторника, позволяющий безопасно перегрузить лодку или выйти из сложной ситуации.</p></div>
+
+<p>Визуальный осмотр лопастей на предмет сколов и загибов обязателен перед каждым сезоном. Даже небольшая деформация кромки лопасти снижает КПД винта на 10-15%.</p>
+
+<h2 id="обкатка-и-финальная-проверка-настроек">Обкатка и финальная проверка настроек</h2>
+
+<p>Завершающим этапом настройки является правильная обкатка, особенно если производилась замена поршневой группы или карбюратора. Процесс обкатки необходим для притирки трущихся деталей и стабилизации тепловых зазоров.</p>
+
+<p>В период обкатки (обычно первые 10 моточасов) не рекомендуется превышать 70-80% от максимальной мощности. Двигатель должен работать в различных режимах, избегая длительной работы на постоянных оборотах. Это позволяет поршневым кольцам равномерно приработать стенки цилиндра.</p>
+
+<p>После обкатки необходимо провести финальную проверку всех регулировок. Тепловое расширение деталей может немного изменить зазоры в клапанах (для 4-тактных моторов) или настройки карбюратора. Обязательно протяните крепежные болты, так как вибрация в первые часы работы наиболее интенсивна.</p>
+
+<ul>
+<li>🛑 Первые 2 часа работайте на оборотах не выше 3000-3500 об/мин.</li>
+<li>🔩 Через 10 моточасов замените масло (в 4-тактных моторах) и проверьте затяжку болтов.</li>
+<li>🌡️ Следите за температурой двигателя, используя термометр или датчик, если он есть.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Если во время обкатки вы услышали стук, звон или почувствовали резкую потерю мощности, немедленно заглушите двигатель. Продолжение работы может привести к катастрофическим повреждениям, стоимость которых превысит цену нового мотора.</p>
+</blockquote>
+
+<p>Только после успешного прохождения обкатки и финальной проверки можно считать настройку лодочного мотора завершенной. Регулярное обслуживание и внимательное отношение к "поведению" мотора на воде продлят его жизнь на многие сезоны.</p>
+
+<details>
+<summary>Как часто нужно регулировать карбюратор?</summary>
+<p>Карбюратор требует регулировки при сезонном обслуживании, после замены топливных фильтров, при изменении октанового числа топлива или если вы заметили изменение в работе двигателя (плавают обороты, потеря мощности). В нормальных условиях стабильный карбюратор не требует вмешательства годами.</p>
+</details>
+
+<details>
+<summary>Почему мотор глохнет на полном газу?</summary>
+<p>Чаще всего это признак переобедненной смеси на высоких оборотах (проблема с главным жиклером) или попадания воды в топливный бак. Также причиной может быть засорение топливного фильтра или нарушение вентиляции бака.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать автомобильный бензин с октановым числом 92?</summary>
+<p>Это зависит от степени сжатия двигателя. Большинство современных 2-тактных моторов рассчитаны на АИ-92, но некоторые высокофорсированные модели требуют АИ-95 или АИ-98. Использование бензина с низким октановым числом может вызвать детонацию.</p>
+</details>
+
+<details>
+<summary>Что делать, если пропала искра?</summary>
+<p>Проверьте свечу (замкните на массу), высоковольтный провод и катушку. Если искры нет, проверьте наличие питания на катушке и работу датчика остановки двигателя (кнопка "стоп"). Часто проблема кроется в окислившихся контактах или обрыве провода заземления.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#установка-мотора-и-регулировка-высоты-подвески">Установка мотора и регулировка высоты подвески</a></li><li><a href="#регулировка-угла-дифферента-trim">Регулировка угла дифферента (Trim)</a></li><li><a href="#настройка-карбюратора-качество-смеси-и-холостой-ход">Настройка карбюратора: качество смеси и холостой ход</a></li><li><a href="#регулировка-системы-зажигания-и-зазора-свечи">Регулировка системы зажигания и зазора свечи</a></li><li><a href="#подбор-и-балансировка-гребного-винта">Подбор и балансировка гребного винта</a></li><li><a href="#обкатка-и-финальная-проверка-настроек">Обкатка и финальная проверка настроек</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/l/lo/lodochnyj-motor-yamaha-6.html" class="related-card">Лодочный мотор Yamaha 6: характеристики, отзывы и настройка</a></li><li><a href="/articles/m/mo/motor-suzuki-15-2-kh-taktnyj.html" class="related-card">Двухтактный мотор Suzuki 15 л.с.: характеристики, расход и отзывы</a></li><li><a href="/articles/l/lo/lodochnyj-motor-nissan.html" class="related-card">Лодочный мотор Ниссан: модели, характеристики и отзывы владельцев</a></li><li><a href="/articles/u/us/ustanovka-lodochnogo-motora-na-tranets.html" class="related-card">Установка лодочного мотора на транец: пошаговая инструкция и ошибки</a></li><li><a href="/articles/s/sv/svetofor-motornoe-maslo.html" class="related-card">Моторное масло «Светофор»: характеристики, аналоги и отзывы 2026</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/l/lo/lodochnyj-motor-yamaha-6.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Yamaha 6: характеристики, отзывы и настройка</span><span class="related-bottom-desc">Полный обзор мотора Yamaha 6 л.с. Особенности двухтактной версии 6CMHS, расход топлива, настройка ка</span></a><a href="/articles/m/mo/motor-suzuki-15-2-kh-taktnyj.html" class="related-bottom-card"><span class="related-bottom-title">Двухтактный мотор Suzuki 15 л.с.: характеристики, расход и отзывы</span><span class="related-bottom-desc">Полный обзор 2-тактного лодочного мотора Suzuki 15 л.с. Расход топлива, особенности обкатки, техниче</span></a><a href="/articles/l/lo/lodochnyj-motor-nissan.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Ниссан: модели, характеристики и отзывы владельцев</span><span class="related-bottom-desc">Подробный обзор лодочных моторов Nissan Marine. Технические характеристики, отличия от Tohatsu, выбо</span></a><a href="/articles/u/us/ustanovka-lodochnogo-motora-na-tranets.html" class="related-bottom-card"><span class="related-bottom-title">Установка лодочного мотора на транец: пошаговая инструкция и ошибки</span><span class="related-bottom-desc">Как правильно установить лодочный мотор на транец. Регулировка высоты, наклона дейдвуда, выбор болто</span></a><a href="/articles/s/sv/svetofor-motornoe-maslo.html" class="related-bottom-card"><span class="related-bottom-title">Моторное масло «Светофор»: характеристики, аналоги и отзывы 2026</span><span class="related-bottom-desc">Разбираем состав, классификацию и реальные тесты масла «Светофор» для 2Т/4Т моторов. Сравниваем с ан</span></a><a href="/articles/l/lo/lodochnye-motory-hdx-otzyvy-vladeltsev.html" class="related-bottom-card"><span class="related-bottom-title">Лодочные моторы HDX: отзывы владельцев, плюсы и минусы</span><span class="related-bottom-desc">Честные отзывы владельцев лодочных моторов HDX. Анализ надежности, расхода топлива, ресурса и особен</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

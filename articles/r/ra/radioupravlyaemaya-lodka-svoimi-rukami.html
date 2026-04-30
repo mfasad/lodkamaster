@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Радиоуправляемая лодка своими руками: полная инструкция по сборке — ЛодкаМастер</title>
+    <meta name="description" content="Как сделать радиоуправляемую лодку своими руками: чертежи, выбор мотора, герметизация и настройка. Пошаговое руководство для моделистов.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/r/ra/radioupravlyaemaya-lodka-svoimi-rukami.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Радиоуправляемая лодка своими руками: полная инструкция по сборке">
+    <meta property="og:description" content="Как сделать радиоуправляемую лодку своими руками: чертежи, выбор мотора, герметизация и настройка. Пошаговое руководство для моделистов.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/sdelaj-sam/">Сделай сам</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Радиоуправляемая лодка своими руками: полная инструкция по сборке</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Создаем радиоуправляемую лодку своими руками: от чертежа до спуска на воду</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#проектирование-корпуса-и-выбор-материалов">Проектирование корпуса и выбор материалов</a></li><li><a href="#подбор-силовой-установки-и-системы-управления">Подбор силовой установки и системы управления</a></li><li><a href="#монтаж-валопроводной-группы-и-рулевого-механизма">Монтаж валопроводной группы и рулевого механизма</a></li><li><a href="#электрическая-схема-и-герметизация-электроники">Электрическая схема и герметизация электроники</a></li><li><a href="#балансировка-и-предварительные-испытания">Балансировка и предварительные испытания</a></li><li><a href="#частые-ошибки-и-советы-по-эксплуатации">Частые ошибки и советы по эксплуатации</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Создание собственной модели судна — это захватывающий процесс, объединяющий инженерное мышление, работу с материалами и удовольствие от управления готовым изделием. <strong>Радиоуправляемая лодка своими руками</strong> может стать как простым хобби для выходного дня, так и сложным проектом, требующим глубоких знаний в электронике и гидродинамике. В отличие от готовых моделей из магазина, самодельный аппарат позволяет выбрать именно те характеристики, которые важны для вас: будь то высокая скорость, маневренность или способность нести груз.</p>
+
+<p>Перед началом работ необходимо четко определить класс будущего судна, так как от этого зависит выбор материалов и силовой установки. <em>Электроходы</em> подходят для новичков благодаря простоте обслуживания, в то время как <em>ДВС</em> (двигатели внутреннего сгорания) требуют серьезной настройки и опыта. Важно понимать, что вода — агрессивная среда, и любая ошибка в герметизации может привести к мгновенному выходу электроники из строя.</p>
+
+<p>В этой статье мы разберем все этапы создания <strong>модели корабля</strong>, от проектирования корпуса до первой обкатки на водоеме. Вы узнаете, как правильно подобрать валопровод, избежать перегрева двигателя и настроить аппаратуру управления для стабильного курса. <mark>Критически важным этапом является балансировка центра тяжести еще до спуска на воду, так как перевернутая лодка с работающей электроникой — это гарантированная потеря оборудования.</mark></p>
+
+<h2 id="проектирование-корпуса-и-выбор-материалов">Проектирование корпуса и выбор материалов</h2>
+
+<p>Любая постройка начинается с эскиза или чертежа, где рассчитываются основные размерения: длина, ширина и высота борта. Для первых экспериментов лучше всего подходят <strong>монокорпусные</strong> схемы с острой или округлой носовой частью, так как они проще в изготовлении и устойчивее на курсе, чем катамараны. Материалы для корпуса могут быть самыми разными: от доступного пенопласта и картона (для одноразовых моделей) до стеклопластика, фанеры и ABS-пластика.</p>
+
+<p>Если вы используете пенопласт высокой плотности, его необходимо тщательно оклеить эпоксидной смолой или покрыть несколькими слоями лака для создания прочной «скорлупы». Фанера требует качественной пропитки олифой или специальными составами, чтобы предотвратить разбухание и расслоение волокон. Современные моделисты часто обращают внимание на 3D-печать, позволяющую создать сложную геометрию <em>обводов корпуса</em>, которую трудно повторить вручную.</p>
+
+<blockquote>⚠️ Внимание: При использовании пенополистирола убедитесь, что выбранный клей или смола не растворяют материал. Эпоксидные смолы на основе полиэфира могут разъесть пенопласт, превратив корпус в кашу за считанные минуты.</blockquote>
+
+<p>Внутренняя компоновка также планируется заранее: нужно оставить место для аккумуляторов, приемника и регулятора хода. Важно предусмотреть съемный люк или крышку для доступа к аккумулятору, не нарушая при этом герметичности отсека. <strong>Ватерлиния</strong> должна проходить ниже уровня палубы с запасом, чтобы даже при волнении вода не захлестывала внутренние отсеки.</p>
+
+<div class="poll-widget" id="poll-3d31276b"><div class="poll-widget-question">📊 Какой материал корпуса вы планируете использовать?</div><div class="poll-widget-option" data-poll="3d31276b" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Пенопласт + стеклоткань</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="3d31276b" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Фанера</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="3d31276b" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">3D-печать (PLA/PETG)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="3d31276b" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Готовый корпус от другой модели</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="подбор-силовой-установки-и-системы-управления">Подбор силовой установки и системы управления</h2>
+
+<p>Сердцем вашей модели является двигатель, выбор которого зависит от желаемой скорости и размера лодки. Для небольших судов (длиной до 50-60 см) оптимальным выбором станут <strong>коллекторные электромоторы</strong> с редуктором или без, работающие в паре с Ni-Mh или Li-Po аккумуляторами. Для более крупных и скоростных моделей используются <em>бесколлекторные двигатели</em> (Brushless), которые обеспечивают высокий КПД и меньший нагрев при длительной работе.</p>
+
+<p>Вместе с двигателем необходимо подобрать соответствующий регулятор хода (ESC), способный выдержать максимальный ток потребления мотора с запасом в 20-30%. Если вы планируете использовать реверс, убедитесь, что регулятор поддерживает эту функцию, или установите отдельное реле. <strong>Винт</strong> подбирается по шагу и диаметру в зависимости от оборотов двигателя: для скоростных лодок ставят винты с большим шагом, для буксиров — с малым.</p>
+
+<details class="faq-item"><summary>Расчет примерной скорости</summary><div class="faq-answer"><p>Для грубого расчета скорости можно использовать формулу: Скорость (км/ч) ≈ (Обороты мотора × Шаг винта) / 1000. Например, мотор 10000 об/мин и винт с шагом 4 см дадут теоретическую скорость около 40 км/ч, но на практике КПД составит 60-70%.</p></div></details>
+
+<p>Система управления состоит из передатчика (пульта) и приемника, работающих на определенной частоте, обычно 2.4 ГГц. Современные системы имеют множество каналов, что позволяет управлять не только движением, но и дополнительными функциями: светом, звуком или поворотом пушки. Приемник должен быть надежно закреплен в носовой части, подальше от источников помех, таких как силовые провода или антенны видеопередатчиков.</p>
+
+<h2 id="монтаж-валопроводной-группы-и-рулевого-механизма">Монтаж валопроводной группы и рулевого механизма</h2>
+
+<p>Передача крутящего момента от двигателя к винту осуществляется через валопровод, который является одним из самых ответственных узлов. Конструктивно это может быть гибкий тросик в трубке или жесткий металлический вал, вращающийся в подшипниковых опорах. <strong>Дейдвудная трубка</strong> должна быть установлена под углом к днищу, чтобы обеспечить выход вала в воду и минимизировать сопротивление.</p>
+
+<p>Для смазки и охлаждения вала часто используют систему, где вода засасывается через отверстие в дейдвудной трубке при движении лодки. Альтернативный вариант — использование длинной гибкой трубки, заполненной густой смазкой, которая не требует постоянного притока воды, но требует периодического обслуживания. Рулевой механизм крепится на румпеле, который жестко соединен с пером руля, проходящим через днище.</p>
+
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Материал</th>
+<th>Функция</th>
+<th>Особенности</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Вал</td>
+<td>Нержавеющая сталь</td>
+<td>Передача вращения</td>
+<td>Требует точной центровки</td>
+</tr>
+<tr>
+<td>Трубка</td>
+<td>Латунь / Тефлон</td>
+<td>Защита вала</td>
+<td>Смазка снижает трение</td>
+</tr>
+<tr>
+<td>Муфта</td>
+<td>Пластик / Металл</td>
+<td>Соединение мотор-вал</td>
+<td>Компенсирует биения</td>
+</tr>
+<tr>
+<td>Сальник</td>
+<td>Резина</td>
+<td>Герметизация</td>
+<td>Предотвращает течь</td>
+</tr>
+</tbody>
+</table>
+
+<p>При сборке важно добиться свободного вращения вала рукой при выключенном двигателе. Любые закусывания или чрезмерное трение приведут к перегрузке двигателя и быстрой разрядке аккумулятора. <em>Подшипниковые опоры</em> следует располагать как можно ближе к двигателю и дейдвудной трубке для минимизации вибраций.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка валопровода</h4><label class="check-item"><input type="checkbox"><span>Вал вращается свободно от руки</span></label><label class="check-item"><input type="checkbox"><span>Отсутствует люфт в трубке</span></label><label class="check-item"><input type="checkbox"><span>Муфта плотно сидит на валу</span></label><label class="check-item"><input type="checkbox"><span>Смазка нанесена равномерно</span></label><label class="check-item"><input type="checkbox"><span>Герметичность выхода вала</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="электрическая-схема-и-герметизация-электроники">Электрическая схема и герметизация электроники</h2>
+
+<p>Правильное подключение компонентов — залог долгой жизни вашей модели. Стандартная схема включает аккумулятор, предохранитель, выключатель питания, регулятор хода (ESC), двигатель и приемник. Все соединения должны быть выполнены с использованием качественных разъемов (например, <em>XT60</em> или <em>Deans</em>) и пропаяны тугоплавким припоем, чтобы исключить окисление и нагрев.</p>
+
+<p>Герметизация электроники в радиоуправляемой модели — это не просто рекомендация, а необходимость. Приемник и регулятор лучше всего поместить в герметичные пластиковые боксы или залить компаундом (специальным гелем), если позволяет конструкция. Даже если корпус лодки кажется непотопляемым, при переворачивании вода неизбежно окажется внутри, и незащищенная электроника выйдет из строя.</p>
+
+<blockquote>⚠️ Внимание: Никогда не используйте обычную изоленту для герметизации контактов, погруженных в воду или находящихся во влажной среде. Она быстро отклеивается, и происходит короткое замыкание.</blockquote>
+
+<p>Для отвода тепла от регулятора и двигателя можно использовать алюминиевые радиаторы, установленные внутри корпуса. Поскольку лодка движется по воде, дополнительного обдува обычно не требуется, но тепло должно эффективно передаваться от компонентов к радиатору через термопасту. <strong>Аккумулятор</strong> следует крепить таким образом, чтобы его можно было быстро извлечь для зарядки или замены.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте силиконовый герметик для проклейки крышек люков и мест выхода проводов. Перед нанесением обезжирьте поверхность спиртом для лучшей адгезии.</p></div>
+
+<h2 id="балансировка-и-предварительные-испытания">Балансировка и предварительные испытания</h2>
+
+<p>Прежде чем запускать лодку на большую воду, необходимо провести статическую балансировку на суше. Модель устанавливается на ровную поверхность или на специальные опоры, и проверяется ее крен на борта и дифферент (наклон нос-корма). Грузы (свинец) добавляются в носовую или кормовую часть, а также по бортам до достижения идеального горизонтального положения.</p>
+
+<p>Центр тяжести должен находиться строго по диаметральной плоскости. Если лодка будет валиться на борт, управление станет непредсказуемым, а при движении на скорости возможен неконтролируемый разворот. <em>Дифферент на корму</em> обычно делают минимальным (1-2 градуса) для лучшего глиссирования, но для водоизмещающих режимов лодка должна сидеть ровно.</p>
+
+<p>Первые испытания лучше проводить в мелком водоеме, где модель можно быстро достать рукой в случае проблем. Проверьте работу руля: он должен перекладываться мягко, без задержек, и возвращаться в нейтральное положение. Двигатель должен запускаться сразу, без провалов, а на полном газу не должно наблюдаться сильных вибраций корпуса.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильная балансировка важнее мощности двигателя. Перегруженная носом лодка будет зарываться в волну, а перегруженная кормой — рыскать и терять управление.</p></div>
+
+<h2 id="частые-ошибки-и-советы-по-эксплуатации">Частые ошибки и советы по эксплуатации</h2>
+
+<p>Новички часто пренебрегают обслуживанием валопровода, забывая смазывать его после каждого запуска. Это приводит к коррозии вала и заклиниванию подшипников. Также распространенной ошибкой является установка слишком мощного аккумулятора без проверки токоотдачи регулятора, что ведет к перегреву и возгоранию.</p>
+
+<p>При эксплуатации в соленой воде все металлические детали, контактирующие с водой (винт, вал, дейдвудная трубка), должны быть из нержавеющей стали или латуни. После каждого запуска в соленой воде модель необходимо тщательно промывать пресной водой. <strong>Гальваническая пара</strong>, возникающая между разными металлами в соленой воде, способна уничтожить алюминиевые детали за считанные минуты.</p>
+
+<p>Хранить лодку следует в сухом месте, сняв аккумулятор и отсоединив разъемы. Рекомендуется оставлять люки открытыми для проветривания внутренних отсеков, чтобы испарилась влага. Регулярный осмотр корпуса на предмет трещин или сколов поможет избежать внезапного затопления во время заплыва.</p>
+
+<details>
+<summary>Какую скорость может развить самодельная лодка?</summary>
+<p>Скорость зависит от мощности мотора и обводов корпуса. Маленькие модели с коллекторным мотором развивают 10-15 км/ч. Спортивные модели с бесколлекторным мотором и Li-Po аккумулятором могут достигать 40-60 км/ч и выше. Однако для устойчивости на воде самодельным моделям редко стоит превышать 30-40 км/ч без серьезных расчетов гидродинамики.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать моторчики от игрушек?</summary>
+<p>Да, для самых первых моделей длиной 20-30 см подойдут моторчики типа RF-370 или аналогичные, работающие от 3-6 вольт. Они недорогие и простые в подключении, но не отличаются долговечностью и имеют низкий КПД. Для серьезного hobby-уровня их мощности уже недостаточно.</p>
+</details>
+
+<details>
+<summary>Что делать, если лодка перевернулась?</summary>
+<p>Если электроника была качественно загерметизирована (залита компаундом или в гермобоксе), модель часто удается спасти. Главное — быстро извлечь аккумулятор, промыть корпус пресной водой и просушить. Если приемник и регулятор не защищены, вероятность восстановления близка к нулю из-за коррозии контактов.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#проектирование-корпуса-и-выбор-материалов">Проектирование корпуса и выбор материалов</a></li><li><a href="#подбор-силовой-установки-и-системы-управления">Подбор силовой установки и системы управления</a></li><li><a href="#монтаж-валопроводной-группы-и-рулевого-механизма">Монтаж валопроводной группы и рулевого механизма</a></li><li><a href="#электрическая-схема-и-герметизация-электроники">Электрическая схема и герметизация электроники</a></li><li><a href="#балансировка-и-предварительные-испытания">Балансировка и предварительные испытания</a></li><li><a href="#частые-ошибки-и-советы-по-эксплуатации">Частые ошибки и советы по эксплуатации</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-prigotovit-lodochku-s-yajtsom-i-syrom.html" class="related-card">Лодочка с яйцом и сыром: рецепт идеального завтрака за 10 минут</a></li><li><a href="/articles/m/mo/motoveslo-svoimi-rukami-dlya-pvkh-lodki.html" class="related-card">Мотовесло своими руками для лодки ПВХ: чертежи и советы</a></li><li><a href="/articles/s/sk/skhema-elektriki-v-lodke.html" class="related-card">Схема электрики в лодке: монтаж, проводка и защита</a></li><li><a href="/articles/s/sa/samodelnye-aerolodki-s-dvigatelem-lifan.html" class="related-card">Самодельные аэролодки с двигателем Lifan: чертежи и сборка</a></li><li><a href="/articles/k/kr/kreslo-v-lodku-pvkh-iz-polipropilenovykh-trub.html" class="related-card">Кресло в лодку ПВХ из полипропиленовых труб своими руками</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kak-prigotovit-lodochku-s-yajtsom-i-syrom.html" class="related-bottom-card"><span class="related-bottom-title">Лодочка с яйцом и сыром: рецепт идеального завтрака за 10 минут</span><span class="related-bottom-desc">Узнайте, как приготовить вкусную лодочку с яйцом и сыром. Секреты идеального теста, выбор начинки и </span></a><a href="/articles/m/mo/motoveslo-svoimi-rukami-dlya-pvkh-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Мотовесло своими руками для лодки ПВХ: чертежи и советы</span><span class="related-bottom-desc">Подробная инструкция: как сделать мотовесло для лодки ПВХ своими руками. Выбор материалов, чертежи, </span></a><a href="/articles/s/sk/skhema-elektriki-v-lodke.html" class="related-bottom-card"><span class="related-bottom-title">Схема электрики в лодке: монтаж, проводка и защита</span><span class="related-bottom-desc">Подробная схема электрики в лодке. Правила прокладки проводов, выбор аккумуляторов, защита от корроз</span></a><a href="/articles/s/sa/samodelnye-aerolodki-s-dvigatelem-lifan.html" class="related-bottom-card"><span class="related-bottom-title">Самодельные аэролодки с двигателем Lifan: чертежи и сборка</span><span class="related-bottom-desc">Полное руководство по созданию аэрохода своими руками. Двигатель Lifan, винт в кольце, расчеты тяги </span></a><a href="/articles/k/kr/kreslo-v-lodku-pvkh-iz-polipropilenovykh-trub.html" class="related-bottom-card"><span class="related-bottom-title">Кресло в лодку ПВХ из полипропиленовых труб своими руками</span><span class="related-bottom-desc">Как сделать удобное кресло в лодку из полипропиленовых труб. Пошаговая инструкция, чертежи, выбор ма</span></a><a href="/articles/p/pr/proekt-lodki-dlya-samostoyatelnoj-postrojki.html" class="related-bottom-card"><span class="related-bottom-title">Проект лодки для постройки своими руками: чертежи, материалы</span><span class="related-bottom-desc">Подробный проект лодки для самостоятельной постройки. Выбор материалов, чертежи фанерных и металличе</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

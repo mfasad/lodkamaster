@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Перегрев лодочного мотора: причины, симптомы и методы устранения — ЛодкаМастер</title>
+    <meta name="description" content="Почему греется лодочный мотор? Полный гид по диагностике системы охлаждения, устранению воздушных пробок и ремонту помпы своими руками.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/p/pe/peregrev-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Перегрев лодочного мотора: причины, симптомы и методы устранения">
+    <meta property="og:description" content="Почему греется лодочный мотор? Полный гид по диагностике системы охлаждения, устранению воздушных пробок и ремонту помпы своими руками.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Перегрев лодочного мотора: причины, симптомы и методы устранения</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Перегрев лодочного мотора: полная диагностика и ремонт</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-системы-охлаждения-и-признаки-неисправности">Принцип работы системы охлаждения и признаки неисправности</a></li><li><a href="#основные-причины-перегрева-и-методы-диагностики">Основные причины перегрева и методы диагностики</a></li><li><a href="#замена-водяной-помпы-пошаговая-инструкция">Замена водяной помпы: пошаговая инструкция</a></li><li><a href="#воздушные-пробки-и-проблемы-с-термостатом">Воздушные пробки и проблемы с термостатом</a></li><li><a href="#сравнительная-таблица-симптомов-и-решений">Сравнительная таблица симптомов и решений</a></li><li><a href="#профилактика-и-правильное-обслуживание">Профилактика и правильное обслуживание</a></li><li><a href="#вопросы-и-ответы-faq">Вопросы и ответы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Резкое повышение температуры двигателя на воде — это ситуация, которая может превратить приятную прогулку в аварийный сценарий за считанные минуты. <strong>Перегрев лодочного мотора</strong> является одной из самых частых причин выхода из строя поршневой группы и прокладки головки блока цилиндров (ГБЦ). В отличие от автомобильных двигателей, судовые агрегаты работают в агрессивной соленой или пресной среде, что диктует свои жесткие условия эксплуатации.</p>
+<p>Многие водномоторники сталкиваются с тем, что система сигнализации начинает пищать, а двигатель теряет тягу. Игнорирование этих симптомов часто приводит к капитальному ремонту, стоимость которого может достигать половины цены нового агрегата. Понимание физики процесса теплоотвода и знание устройства <em>водяной помпы</em> позволит вам избежать фатальных ошибок.</p>
+<p>В этой статье мы детально разберем механику возникновения перегрева, методы экспресс-диагностики на воде и пошаговый алгоритм замены основных узлов системы охлаждения. Вы научитесь различать симптомы воздушной пробки от износа импеллера и поймете, когда мотору действительно требуется вмешательство специалиста.</p>
+
+<h2 id="принцип-работы-системы-охлаждения-и-признаки-неисправности">Принцип работы системы охлаждения и признаки неисправности</h2>
+<p>Большинство современных двухтактных и четырехтактных подвесных моторов используют принудительную систему охлаждения забортной водой. Ключевым элементом здесь выступает <strong>водяная помпа</strong>, которая создает необходимое давление для циркуляции жидкости через рубашку двигателя и термостат. Если этот цикл нарушается, температура металла растет экспоненциально.</p>
+<p>Первым и самым очевидным индикатором проблем является контрольная струя, выходящая из контрольного отверстия. Однако полагаться только на ее наличие опасно: вода может идти тонкой струйкой, создавая иллюзию нормальной работы, в то время как двигатель уже кипит. <em>Термостат</em> может заклинить в закрытом положении, не пуская воду в большой круг, даже если помпа качает.</p>
+
+<ul>
+<li>🔊 Звуковая сигнализация: непрерывный или прерывистый писк бортового зуммера, который часто сопровождается миганием индикатора на румпеле.</li>
+<li>💨 Пар из-под кожуха: визуальное наблюдение клубов пара, особенно заметное в прохладную погоду или при работе на высоких оборотах.</li>
+<li>📉 Потеря мощности: двигатель начинает «чихать», глохнуть на холостых или не развивает полные обороты из-за тепловых зазоров.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Если вы услышали сигнал перегрева, немедленно сбросьте газ до минимальных холостых оборотов. Резкая остановка горячего мотора может вызвать тепловой удар и деформацию ГБЦ.</p>
+</blockquote>
+
+<p>Также стоит обратить внимание на цвет выхлопных газов. Если вместе с водяным паром идет белый дым с сладковатым запахом (на 4-тактниках), это может свидетельствовать о попадании антифриза в камеру сгорания, хотя для большинства лодочников более актуальна проблема прямой подачи забортной воды.</p>
+
+<div class="poll-widget" id="poll-013bf2cb"><div class="poll-widget-question">📊 Как часто вы проверяете контрольную струю воды?</div><div class="poll-widget-option" data-poll="013bf2cb" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Только при запуске</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="013bf2cb" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Раз в час</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="013bf2cb" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Только если запищит сигнализация</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="013bf2cb" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Никогда не проверяю</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="основные-причины-перегрева-и-методы-диагностики">Основные причины перегрева и методы диагностики</h2>
+<p>Диагностику неисправности необходимо начинать с визуального осмотра и анализа условий эксплуатации. Часто причина кроется не в поломке, а в внешних факторах. <strong>Забитый водозабор</strong> водорослями, тиной или пластиковым мусором — лидер рейтинга причин перегрева в летний сезон.</p>
+<p>Если входное отверстие чисто, следует проверить состояние <em>импеллера</em> (резиновой крыльчатки). Резина со временем дубеет, трескается или истирается, теряя способность создавать нужное давление. Особенно быстро износ происходит при работе мотора «на сухую» или с частичным перекрытием потока.</p>
+
+<ul>
+<li>🌊 Низкий уровень воды: забор воды происходит выше ватерлины при крене, сильной волне или неправильном транцевании лодки.</li>
+<li>🪨 Механические повреждения: попадание камней или песка в каналы охлаждения, что создает локальные очаги перегрева.</li>
+<li>🧂 Коррозия и отложения: солевые наросты в узких каналах ГБЦ, которые перекрывают ток жидкости (актуально для морских условий).</li>
+</ul>
+
+<p>Для точной диагностики давления в системе опытные механики используют манометр, подключаемый к контрольному отверстию. Нормальное давление должно соответствовать спецификации производителя, обычно это диапазон от 0.1 до 0.3 бар на холостых оборотах. Если давление ниже нормы, а входное отверстие свободно — <mark>износ импеллера составляет более 90% вероятности неисправности</mark>.</p>
+
+<p>Не стоит забывать и о термостате. Если двигатель долго прогревается или, наоборот, мгновенно закипает после открытия большого круга, клапан термостата требует проверки. Его можно протестировать, нагрев в емкости с водой и наблюдая за моментом открытия.</p>
+
+<h2 id="замена-водяной-помпы-пошаговая-инструкция">Замена водяной помпы: пошаговая инструкция</h2>
+<p>Замена помпы — самая распространенная регламентная процедура, которую можно выполнить самостоятельно в гаражных условиях. Для начала необходимо демонтировать дейдвуд (ногу) мотора. Перед этим обязательно отсоедините тягу переключения передач и шланг подачи топлива, чтобы не повредить их при снятии.</p>
+<p>После снятия ноги открывается доступ к насосу. Важно аккуратно открутить крышку помпы, чтобы не повредить прокладки. Старый <strong>импеллер</strong> и корпус насоса требуют тщательной очистки от остатков резины и грязи. Любые царапины на внутренней поверхности стакана помпы могут стать причиной быстрого выхода из строя новой детали.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист замены помпы</h4><label class="check-item"><input type="checkbox"><span>Слить масло из редуктора</span></label><label class="check-item"><input type="checkbox"><span>Снять дейдвуд</span></label><label class="check-item"><input type="checkbox"><span>Очистить стакан помпы</span></label><label class="check-item"><input type="checkbox"><span>Смазать новый импеллер мыльным раствором</span></label><label class="check-item"><input type="checkbox"><span>Проверить работу термостата</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>При установке нового импеллера критически важно правильно задать направление вращения. <em>Крыльчатка</em> должна загибаться в сторону, противоположную направлению вращения вала при запуске. Если перепутать направление, помпа не создаст давления и мгновенно сгорит.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не запускайте мотор с демонтированной крышкой помпы или без воды даже на несколько секунд. Сухое трение уничтожает резиновые лопасти мгновенно.</p>
+</blockquote>
+
+<p>Сборка производится в обратном порядке. Особое внимание уделите установке дейдвуда: водяные патрубки должны попасть точно в свои гнезда. Для облегчения этой процедуры можно использовать мыльный раствор или специальную смазку. После сборки обязательно пролейте систему водой перед первым запуском, заполнив патрубки вручную.</p>
+
+<details class="faq-item"><summary>Секрет установки дейдвуда</summary><div class="faq-answer"><p>Чтобы водяные патрубки не заминались при установке ноги, используйте тонкую проволоку или специальный пластиковый конус-направитель, вставив его в патрубки корпуса помпы перед стыковкой.</p></div></details>
+
+<h2 id="воздушные-пробки-и-проблемы-с-термостатом">Воздушные пробки и проблемы с термостатом</h2>
+<p>Воздушная пробка — коварный враг системы охлаждения. Воздух, попавший в каналы, блокирует циркуляцию воды, создавая «тепловой карман». Это часто случается после замены помпы, если мастер забыт заполнить водяные каналы водой перед сборкой, или после длительной стоянки лодки вверх носом.</p>
+<p>Симптомы воздушной пробки схожи с перегревом: пульсирующая струя на выходе, нестабильная работа двигателя. Для удаления пробки иногда достаточно несколько раз резко газануть на нейтральной передаче, создав пульсацию давления. В сложных случаях требуется отсоединение шлангов для принудительной прокачки.</p>
+
+<p>Термостат — устройство простое, но капризное. Со временем его пружина слабеет, а клапан обрастает окислами. Если термостат заклинило в закрытом положении, вода не пойдет в двигатель. Если в открытом — мотор будет долго выходить на рабочую температуру, что также вредно для ресурса <strong>поршневой группы</strong>.</p>
+
+<ul>
+<li>🌡️ Проверка термостата: опустите деталь в кипяток и убедитесь, что клапан открывается плавно и полностью.</li>
+<li>🔧 Чистка: удалите накипь слабым раствором кислоты или специальным очистителем.</li>
+<li>🔄 Замена: если есть сомнения в герметичности или плавности хода, дешевле заменить термостат на новый.</li>
+</ul>
+
+<p>В некоторых моторах <em>Yamaha</em> или <em>Suzuki</em> конструкция термостата предполагает наличие маленького дренажного отверстия. Если оно забито, это также может привести к локальному перегреву. Прочистка тонкой проволокой часто решает проблему без замены детали.</p>
+
+<h2 id="сравнительная-таблица-симптомов-и-решений">Сравнительная таблица симптомов и решений</h2>
+<p>Для быстрой ориентации в проблеме используйте следующую таблицу. Она поможет сузить круг поиска неисправности, опираясь на внешние признаки.</p>
+
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Вероятная причина</th>
+<th>Решение</th>
+<th>Срочность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Нет струи воды</td>
+<td>Сломан вал помпы или срезан шпон</td>
+<td>Замена вала или шпонки</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Слабая струя, мотор горячий</td>
+<td>Износ импеллера или забит термостат</td>
+<td>Замена помпы, чистка</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Струя есть, но идет пар</td>
+<td>Воздушная пробка или отложения в ГБЦ</td>
+<td>Прокачка системы, промывка</td>
+<td>Средняя</td>
+</tr>
+<tr>
+<td>Перегрев только на высоких оборотах</td>
+<td>Частичное засорение или кавитация</td>
+<td>Проверка водозабора и антикавитационной плиты</td>
+<td>Средняя</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Отсутствие контрольной струи при работающем моторе — это «красный код». Эксплуатация в таком режиме более 2-3 минут гарантированно приведет к задирам в цилиндрах.</p></div>
+
+<h2 id="профилактика-и-правильное-обслуживание">Профилактика и правильное обслуживание</h2>
+<p>Чтобы <strong>лодочный мотор</strong> служил долго и не доставлял проблем с перегревом, необходимо соблюдать регламент технического обслуживания. Регулярная замена импеллера (раз в сезон или каждые 300 моточасов) — это минимальное требование, которое сэкономит вам тысячи рублей на ремонте.</p>
+<p>После каждой поездки, особенно по соленой воде или в заросших водоемах, рекомендуется промывать систему охлаждения пресной водой. Для этого существуют специальные приспособления («уши»), надеваемые на водозаборник, или подключение к штатному штуцеру промывки, если он предусмотрен конструкцией <em>мотора</em>.</p>
+
+<ul>
+<li>🛡️ Использование антикоррозийных присадок: добавление специальных составов в топливо (для 2-тактников) или масло помогает очищать нагар.</li>
+<li>👀 Визуальный контроль: перед каждым выходом осматривайте входное отверстие на предмет мусора.</li>
+<li>🔧 Регулировка угла транца: убедитесь, что мотор установлен правильно, и водозаборник всегда находится под водой.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: При консервации мотора на зиму обязательно обработайте систему охлаждения антикоррозийным составом (антифризом для лодочных моторов), чтобы предотвратить ржавление внутренних каналов во время простоя.</p>
+</blockquote>
+
+<p>Также следите за состоянием дейдвуда. Если на нем есть вмятины или глубокие царапины в районе дейдвудной трубы, это может нарушать ламинарный поток воды, поступающей к помпе. Ремонт дейдвуда в таких случаях обязателен.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При промывке мотора на «ушах» следите, чтобы уровень воды в емкости был выше водозаборника. Работа помпы с захватом воздуха даже в бочке вредна для резиновых деталей.</p></div>
+
+<h2 id="вопросы-и-ответы-faq">Вопросы и ответы (FAQ)</h2>
+
+<details>
+<summary>Можно ли временно ездить без термостата, если он заклинил?</summary>
+<p>Технически мотор будет работать, но это не рекомендуется. Без термостата двигатель будет долго прогреваться, работая на обогащенной смеси, что приведет к повышенному расходу топлива и нагарообразованию. Кроме того, зимой возможен риск переохлаждения цилиндров. Лучше временно снять клапан термостата, оставив рамку, чтобы обеспечить циркуляцию, но замените узел.</p>
+</details>
+
+<details>
+<summary>Почему греется 4-тактный мотор, хотя струя воды идет мощная?</summary>
+<p>Если поток воды хороший, но мотор кипит, проблема, скорее всего, в нарушении циркуляции внутри головки блока (забиты каналы) или в неисправности датчика температуры/сигнализации. Также возможен пробой прокладки ГБЦ, когда газы прорываются в систему охлаждения, создавая паровую пробку.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять импеллер водяной помпы?</summary>
+<p>Производители рекомендуют менять импеллер раз в год или каждые 300 моточасов. Однако, если вы храните лодку на воде (что нежелательно) или часто ездите по мелководью и песку, замену стоит проводить чаще — раз в сезон активной эксплуатации.</p>
+</details>
+
+<details>
+<summary>Опасно ли попадание песка в мотор через систему охлаждения?</summary>
+<p>Да, песок действует как абразив. Он быстро стирает стакан помпы и сам импеллер, а также может оседать в рубашке охлаждения, создавая локальные перегревы. После поездки по песчаному дну обязательно промойте мотор пресной водой под напором.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-системы-охлаждения-и-признаки-неисправности">Принцип работы системы охлаждения и признаки неисправности</a></li><li><a href="#основные-причины-перегрева-и-методы-диагностики">Основные причины перегрева и методы диагностики</a></li><li><a href="#замена-водяной-помпы-пошаговая-инструкция">Замена водяной помпы: пошаговая инструкция</a></li><li><a href="#воздушные-пробки-и-проблемы-с-термостатом">Воздушные пробки и проблемы с термостатом</a></li><li><a href="#сравнительная-таблица-симптомов-и-решений">Сравнительная таблица симптомов и решений</a></li><li><a href="#профилактика-и-правильное-обслуживание">Профилактика и правильное обслуживание</a></li><li><a href="#вопросы-и-ответы-faq">Вопросы и ответы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-pravilno-obkatat-lodochnyj-motor-2kh-taktnyj.html" class="related-card">Обкатка лодочного мотора 2х тактного: пошаговая инструкция</a></li><li><a href="/articles/m/mo/motor-lodochnyj-golfstream.html" class="related-card">Мотор лодочный Golfstream: характеристики, отзывы и выбор</a></li><li><a href="/articles/k/ku/kupit-lodochnyj-motor-sharmaks-98.html" class="related-card">Купить лодочный мотор Шармакс 9.8: цена, характеристики, отзывы</a></li><li><a href="/articles/o/ob/obkatka-lodochnogo-motora-khankaj-5.html" class="related-card">Обкатка мотора Ханкай 5: пошаговая инструкция и советы эксперта</a></li><li><a href="/articles/k/ka/kakoe-maslo-zalivat-v-lodochnyj-motor-2-taktnyj-v-reduktor.html" class="related-card">Какое масло заливать в редуктор 2-тактного мотора: выбор и замена</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kak-pravilno-obkatat-lodochnyj-motor-2kh-taktnyj.html" class="related-bottom-card"><span class="related-bottom-title">Обкатка лодочного мотора 2х тактного: пошаговая инструкция</span><span class="related-bottom-desc">Правильная обкатка 2х тактного лодочного мотора. Режимы работы, пропорции масла, советы по настройке</span></a><a href="/articles/m/mo/motor-lodochnyj-golfstream.html" class="related-bottom-card"><span class="related-bottom-title">Мотор лодочный Golfstream: характеристики, отзывы и выбор</span><span class="related-bottom-desc">Полный обзор моторов Golfstream. Характеристики, сравнение моделей, советы по обкатке и эксплуатации</span></a><a href="/articles/k/ku/kupit-lodochnyj-motor-sharmaks-98.html" class="related-bottom-card"><span class="related-bottom-title">Купить лодочный мотор Шармакс 9.8: цена, характеристики, отзывы</span><span class="related-bottom-desc">Хотите купить лодочный мотор Шармакс 9.8? Полный обзор модели 9.8 л.с., сравнение версий, советы по </span></a><a href="/articles/o/ob/obkatka-lodochnogo-motora-khankaj-5.html" class="related-bottom-card"><span class="related-bottom-title">Обкатка мотора Ханкай 5: пошаговая инструкция и советы эксперта</span><span class="related-bottom-desc">Как правильно обкатать лодочный мотор Ханкай 5 без ошибок? Пошаговый гайд с таблицами, чек-листами и</span></a><a href="/articles/k/ka/kakoe-maslo-zalivat-v-lodochnyj-motor-2-taktnyj-v-reduktor.html" class="related-bottom-card"><span class="related-bottom-title">Какое масло заливать в редуктор 2-тактного мотора: выбор и замена</span><span class="related-bottom-desc">Полный гид по маслам для редуктора лодочного мотора. Таблица вязкости, признаки попадания воды, инст</span></a><a href="/articles/l/lo/lodochnyj-motor-sia-pro-30-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Sea Pro 30: отзывы владельцев и характеристики</span><span class="related-bottom-desc">Подробный обзор Sea Pro 30. Реальные отзывы, технические характеристики, расход топлива, типичные не</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Как устроена подлодка: конструкция, отсеки и системы — ЛодкаМастер</title>
+    <meta name="description" content="Подробный разбор устройства подводной лодки. Изучаем прочный корпус, системы погружения, энергетические установки и жизнеобеспечения экипажа.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/k/ka/kak-ustroena-podlodka.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как устроена подлодка: конструкция, отсеки и системы">
+    <meta property="og:description" content="Подробный разбор устройства подводной лодки. Изучаем прочный корпус, системы погружения, энергетические установки и жизнеобеспечения экипажа.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/podvodnye-lodki/">Подводные лодки</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Как устроена подлодка: конструкция, отсеки и системы</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Как устроена подлодка: анатомия подводного корабля</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-двойного-корпуса-и-борьба-с-давлением">Принцип двойного корпуса и борьба с давлением</a></li><li><a href="#система-погружения-и-всплытия">Система погружения и всплытия</a></li><li><a href="#энергетические-установки-от-дизеля-до-атома">Энергетические установки: от дизеля до атома</a></li><li><a href="#жизнеобеспечение-экипажа-в-изоляции">Жизнеобеспечение экипажа в изоляции</a></li><li><a href="#навигация-и-связь-под-водой">Навигация и связь под водой</a></li><li><a href="#вооружение-и-гидроакустическое-обнаружение">Вооружение и гидроакустическое обнаружение</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Погружение многотысячетонной стальной глыбы на сотни метров под поверхность океана и её успешное всплытие — это торжество инженерной мысли, где каждый миллиметр рассчитан с математической точностью. Для непосвященного наблюдателя подводный крейсер кажется монолитным куском металла, но на самом деле это сложнейший организм, состоящий из тысяч взаимосвязанных систем.</p>
+
+<p>В этой статье мы разберем, как устроена <strong>подводная лодка</strong>, какие силы действуют на её корпус и что позволяет экипажу выживать в условиях, где давление воды способно сплющить автомобиль как консервную банку.</p>
+
+<p>Понимание принципов работы этих механизмов открывает завесу тайны над одним из самых сложных видов техники, когда-либо созданных человечеством.</p>
+
+<h2 id="принцип-двойного-корпуса-и-борьба-с-давлением">Принцип двойного корпуса и борьба с давлением</h2>
+
+<p>Фундаментальным отличием большинства подводных лодок, особенно советской и российской школы кораблестроения, является наличие двух корпусов: внутреннего <strong>прочного</strong> и внешнего <strong>легкого</strong>. Прочный корпус изготавливается из высокопрочной стали или титана и представляет собой герметичную капсулу, способную выдержать колоссальное давление воды на глубине.</p>
+
+<p>Легкий корпус, обтекающий прочный, не выдерживает давления и служит лишь для придания кораблю оптимальной гидродинамической формы. Именно в пространстве между этими двумя оболочками, называемом межбортным, располагаются цистерны главного балласта, топливные баки и различные трубопроводы.</p>
+
+<blockquote>⚠️ Внимание: Нарушение герметичности прочного корпуса на предельной глубине приводит к мгновенному схлопыванию отсека под действием внешнего давления, что фатально для находящихся внутри.</blockquote>
+
+<p>Форма прочного корпуса также имеет критическое значение. Чаще всего используется цилиндрическая форма с коническими или сферическими переборками на торцах, так как цилиндр лучше всего сопротивляется внешнему сжатию. Толщина стенок может достигать нескольких десятков миллиметров, а качество сварных швов проверяется рентгеном и ультразвуком.</p>
+
+<details class="faq-item"><summary>Почему не все лодки двухкорпусные?</summary><div class="faq-answer"><p>Американские подводные лодки часто проектируются однокорпусными, где функции легкого корпуса выполняют надстройки. Это снижает шумность и вес, но уменьшает запас плавучести и мореходность в шторм при нахождении в надводном положении.</p></div></details>
+
+<h2 id="система-погружения-и-всплытия">Система погружения и всплытия</h2>
+
+<p>Основой управления глубиной погружения является закон Архимеда. Чтобы погрузиться, подводная лодка должна стать тяжелее воды, вытесняемой её корпусом. Для этого используются <strong>цистерны главного балласта</strong> (ЦГБ), расположенные в межбортном пространстве.</p>
+
+<p>Процесс погружения начинается с открытия клапанов вентиляции ЦГБ. Вода под собственным давлением заполняет цистерны, вытесняя воздух через специальные отверстия в верхней части. Лодка теряет положительную плавучесть и начинает погружаться. Для всплытия используется сжатый воздух высокого давления, который подается в цистерны и вытесняет воду наружу через кингстоны в нижней части.</p>
+
+<p>Однако простого заполнения балласта недостаточно для точного управления. Для удержания на заданной глубине, особенно на перископной, используются <strong>цистерны вспомогательного балласта</strong> и горизонтальные рули. Они позволяют компенсировать изменение плотности воды в разных слоях океана и расходование боеприпасов или топлива в ходе похода.</p>
+
+<div class="poll-widget" id="poll-a15d8130"><div class="poll-widget-question">📊 Какой принцип погружения кажется вам надежнее?</div><div class="poll-widget-option" data-poll="a15d8130" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Классический балласт (вода/воздух)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="a15d8130" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Гидродинамический (только за счет скорости)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="a15d8130" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Комбинированный (балласт + рули)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="a15d8130" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Атомный нагрев воды</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="энергетические-установки-от-дизеля-до-атома">Энергетические установки: от дизеля до атома</h2>
+
+<p>Сердцем любой подводной лодки является её энергетическая установка. Именно она обеспечивает движение, зарядку аккумуляторных батарей и работу всех систем жизнеобеспечения. Исторически первыми стали <strong>дизель-электрические</strong> схемы, где дизельные двигатели вращают генераторы или гребной вал.</p>
+
+<p>Главная проблема дизеля — ему нужен воздух. Поэтому дизель-электрические лодки (<em>ДЭПЛ</em>) вынуждены всплывать или использовать шноркель для работы двигателей, что демаскирует их. Решением стала атомная энергетическая установка (<em>АЭУ</em>), где тепло ядерной реакции используется для генерации пара, вращающего турбины.</p>
+
+<p>Современные технологии также предлагают двигатели Стирлинга и топливные элементы, которые позволяют ДЭПЛ находиться под водой неделями, не всплывая для зарядки батарей. Выбор типа установки диктуется задачами: атомные субмарины предназначены для дальних океанских походов, тогда как дизельные эффективны для защиты акваторий.</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип установки</th>
+<th>Скорость (узлы)</th>
+<th>Автономность</th>
+<th>Шумность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Дизель-электрическая</td>
+<td>10-20</td>
+<td>Ограничена батареей</td>
+<td>Низкая (на электромоторе)</td>
+</tr>
+<tr>
+<td>Атомная</td>
+<td>25-35+</td>
+<td>Практически неограничена</td>
+<td>Выше из-за насосов</td>
+</tr>
+<tr>
+<td>С двигателем Стирлинга</td>
+<td>5-10</td>
+<td>Недели под водой</td>
+<td>Очень низкая</td>
+</tr>
+<tr>
+<td>Топливные элементы</td>
+<td>5-8</td>
+<td>Высокая</td>
+<td>Минимальная</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Атомная энергетика дает стратегическую свободу действий, позволяя лодке месяцами не всплывать, но делает конструкцию сложнее и дороже в обслуживании.</p></div>
+
+<h2 id="жизнеобеспечение-экипажа-в-изоляции">Жизнеобеспечение экипажа в изоляции</h2>
+
+<p>Нахождение человека в замкнутом объеме под водой требует создания искусственной среды обитания. Система регенерации воздуха — это <strong>критический элемент</strong> безопасности. Она не просто подает кислород, но и удаляет углекислый газ, а также вредные примеси, образующиеся от работы механизмов и жизнедеятельности людей.</p>
+
+<p>Кислород получают методом электролиза воды, расщепляя её на водород и кислород. Углекислый газ удаляется с помощью специальных поглотителей (аминов). Кроме того, на борту поддерживаются строго контролируемые температура и влажность, так как в замкнутом пространстве металлического корпуса condensation (конденсат) может привести к коротким замыканиям и коррозии.</p>
+
+<p>Важнейшую роль играет система пресной воды. Опреснение забортной воды происходит в дистилляторах, использующих тепло реактора или выхлопных газов дизелей. Запасы продовольствия рассчитываются с учетом калорийности и сроков хранения, ведь в условиях автономного плавания свежая пища доступна только из начальных запасов.</p>
+
+<blockquote>⚠️ Внимание: При пожаре на подводной лодке доступ кислорода к очагу горения перекрывается герметизацией отсеков, что создает риск удушья для экипажа, но предотвращает гибель всего корабля.</blockquote>
+
+<h2 id="навигация-и-связь-под-водой">Навигация и связь под водой</h2>
+
+<p>Под водой не работают обычные радиоволны, а GPS-сигнал не проникает через толщу воды. Поэтому основным инструментом навигации остается <strong>инерциальная навигационная система</strong> (ИНС). Гироскопы и акселерометры фиксируют малейшие изменения курса и скорости, позволяя компьютеру с высокой точностью вычислять координаты.</p>
+
+<p>Для уточнения позиции используются гидроакустические системы. Лодка может определять свое местоположение по рельефу дна или по сигналам навигационных гидроакустических маяков. Периодически, для коррекции накопленной ошибки ИНС, лодка должна всплывать или поднимать антенны на перископную глубину для приема сигналов спутников.</p>
+
+<p>Связь с командованием осуществляется через сверхдлинные волны, которые проникают на небольшую глубину, или через буи-ретрансляторы. Получение команд часто происходит в закодированном виде, а подтверждение приема требует выхода на связь, что может демаскировать корабль.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Современные атомные подводные крейсера способны месяцами находиться в автономном плавании, ориентируясь исключительно по показаниям внутренних гироскопов с погрешностью менее мили в сутки.</p></div>
+
+<h2 id="вооружение-и-гидроакустическое-обнаружение">Вооружение и гидроакустическое обнаружение</h2>
+
+<p>Главным органом чувств подводной лодки является <strong>гидроакустическая станция</strong> (ГАС). Вода отлично проводит звук, и ГАС способна услышать шум винтов другой лодки за десятки километров. Антенны ГАС могут располагаться в носовом обтекателе, в бортовых "лыжах" или букироваться за кормой на длинном тросе.</p>
+
+<p>Вооружение размещается внутри прочного корпуса или в специальных контейнерах. Торпедные аппараты — это сложные механизмы, позволяющие выстрелить торпеду водой или сжатым воздухом. Ракетное вооружение, включая баллистические ракеты с ядерными боеголовками, хранится в вертикальных шахтах, проходящих через прочный и легкий корпус.</p>
+
+<p>Для защиты от противника используются системы гидроакустического противодействия, выпускающие имитаторы шумов или газовые пузыри, которые сбивают с торпед с акустическим самонаведением. Тишина хода — главное оружие подводника, поэтому на лодках применяются специальные малошумные винты и виброизоляция механизмов.</p>
+
+<div class="checklist-block"><h4>☑️ Ключевые элементы скрытности</h4><label class="check-item"><input type="checkbox"><span>Отсутствие активных шумов двигателя</span></label><label class="check-item"><input type="checkbox"><span>Гидродинамическая чистота корпуса</span></label><label class="check-item"><input type="checkbox"><span>Поглощающее покрытие "ан эхо"</span></label><label class="check-item"><input type="checkbox"><span>Режим радиомолчания</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Как подводники дышат под водой?</summary>
+<p>Воздух не запасают в баллонах впрок. Кислород получают методом электролиза из обычной забортной воды, расщепляя её электрическим током. Углекислый газ, выдыхаемый экипажем, удаляется химическими поглотителями. Состав атмосферы постоянно контролируется датчиками.</p>
+</details>
+
+<details>
+<summary>Что будет, если откроется люк на глубине?</summary>
+<p>Если откроется люк или произойдет пробоина, вода под огромным давлением мгновенно заполнит отсек. Скорость потока будет настолько высокой, что вырваться из него будет невозможно. Именно поэтому отсеки разделены герметичными переборками, которые сразу же задраиваются при аварии.</p>
+</details>
+
+<details>
+<summary>Может ли подводная лодка утонуть?</summary>
+<p>Да, если будет нарушена герметичность прочного корпуса или исчерпан запас плавучести. Однако современные лодки имеют огромный запас положительной плавучести (около 30% объема). Чтобы утонуть, нужно, чтобы водой заполнился сам прочный корпус, что возможно только при его разрушении или открытии люков.</p>
+</details>
+
+<details>
+<summary>Как глубоко могут погружаться подлодки?</summary>
+<p>Рабочая глубина современных атомных субмарин составляет 300-450 метров. Предельная глубина может достигать 600 метров и более. Титановые лодки проекта 705 "Лира" ("Альфа") могли погружаться на 1000 метров, но это требовало исключительной прочности корпуса.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-двойного-корпуса-и-борьба-с-давлением">Принцип двойного корпуса и борьба с давлением</a></li><li><a href="#система-погружения-и-всплытия">Система погружения и всплытия</a></li><li><a href="#энергетические-установки-от-дизеля-до-атома">Энергетические установки: от дизеля до атома</a></li><li><a href="#жизнеобеспечение-экипажа-в-изоляции">Жизнеобеспечение экипажа в изоляции</a></li><li><a href="#навигация-и-связь-под-водой">Навигация и связь под водой</a></li><li><a href="#вооружение-и-гидроакустическое-обнаружение">Вооружение и гидроакустическое обнаружение</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/y/ya/yaponskie-podvodnye-lodki.html" class="related-card">Японские подводные лодки: История, типы и тактика ВМС Японии</a></li><li><a href="/articles/p/po/podvodnaya-lodka-k-278-komsomolets.html" class="related-card">Подводная лодка К-278 «Комсомолец»: история, конструкция и трагедия</a></li><li><a href="/articles/p/pa/pamyatnik-kursku-podvodnoj-lodke.html" class="related-card">Памятник Курской подводной лодке: история и мемориалы</a></li><li><a href="/articles/p/pr/proekt-641-podvodnaya-lodka-vikipediya.html" class="related-card">Проект 641: История, устройство и характеристики подлодки</a></li><li><a href="/articles/p/po/podlodka-akula-razmery.html" class="related-card">Подлодка Акула: размеры, водоизмещение и характеристики проекта 941</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/y/ya/yaponskie-podvodnye-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Японские подводные лодки: История, типы и тактика ВМС Японии</span><span class="related-bottom-desc">Полный обзор подводного флота Японии: от лодок типа I времён ВМВ до современных АПЛ класса Taigei. Т</span></a><a href="/articles/p/po/podvodnaya-lodka-k-278-komsomolets.html" class="related-bottom-card"><span class="related-bottom-title">Подводная лодка К-278 «Комсомолец»: история, конструкция и трагедия</span><span class="related-bottom-desc">Подробный обзор советской АПЛ К-278 «Комсомолец». Характеристики, конструкция титанового корпуса, хр</span></a><a href="/articles/p/pa/pamyatnik-kursku-podvodnoj-lodke.html" class="related-bottom-card"><span class="related-bottom-title">Памятник Курской подводной лодке: история и мемориалы</span><span class="related-bottom-desc">Подробный обзор памятников, посвященных гибели АПЛ «Курск». История создания мемориалов, описание мо</span></a><a href="/articles/p/pr/proekt-641-podvodnaya-lodka-vikipediya.html" class="related-bottom-card"><span class="related-bottom-title">Проект 641: История, устройство и характеристики подлодки</span><span class="related-bottom-desc">Подробный обзор дизель-электрической подводной лодки проекта 641 (Foxtrot). Технические характеристи</span></a><a href="/articles/p/po/podlodka-akula-razmery.html" class="related-bottom-card"><span class="related-bottom-title">Подлодка Акула: размеры, водоизмещение и характеристики проекта 941</span><span class="related-bottom-desc">Подробный разбор габаритов стратегической подлодки Акула. Размеры, водоизмещение, конструкция корпус</span></a><a href="/articles/p/po/podvodnye-lodki-tipa-zeekhund.html" class="related-bottom-card"><span class="related-bottom-title">Подводные лодки типа Зеехунд: история и характеристики</span><span class="related-bottom-desc">Подробный обзор немецкой сверхмалой подводной лодки Зеехунд. Технические характеристики, тактика при</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Тюнинг лодки Прогресс 2: доработка, чертежи, установка мотора — ЛодкаМастер</title>
+    <meta name="description" content="Полный гид по модернизации лодки Прогресс 2. Усиление транца, установка рундуков, выбор мотора и чертежи доработок своими руками.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/t/ty/tyuning-lodki-progress-2m.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Тюнинг лодки Прогресс 2: доработка, чертежи, установка мотора">
+    <meta property="og:description" content="Полный гид по модернизации лодки Прогресс 2. Усиление транца, установка рундуков, выбор мотора и чертежи доработок своими руками.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/tyuning-i-aksessuary/">Тюнинг и аксессуары</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Тюнинг лодки Прогресс 2: доработка, чертежи, установка мотора</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Тюнинг лодки Прогресс 2: от чертежей до установки мотора</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#анализ-исходной-конструкции-и-выявление-слабых-мест">Анализ исходной конструкции и выявление слабых мест</a></li><li><a href="#усиление-транца-и-установка-современного-мотора">Усиление транца и установка современного мотора</a></li><li><a href="#улучшение-ходовых-качеств-и-мореходности">Улучшение ходовых качеств и мореходности</a></li><li><a href="#организация-внутреннего-пространства-и-рундуки">Организация внутреннего пространства и рундуки</a></li><li><a href="#защита-корпуса-и-антикоррозийная-обработка">Защита корпуса и антикоррозийная обработка</a></li><li><a href="#установка-тента-ветрового-стекла-и-навигации">Установка тента, ветрового стекла и навигации</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+<p>Легендарная советская лодка <em>Прогресс 2</em>, выпускавшаяся в Николаеве с середины 60-х годов, до сих пор бороздит просторы водохранилищ и рек. Несмотря на солидный возраст конструкции, этот дюралевый катер остается востребованным благодаря ремонтопригодности и доступности запчастей. Однако заводская комплектация, разработанная полвека назад, редко удовлетворяет запросы современного рыболова или туриста, требуя глубокой модернизации.</p>
+<p>Грамотный тюнинг позволяет превратить устаревшую модель в комфортное плавсредство, способное конкурировать с новыми аналогами по ходовым качествам. Владельцы часто сталкиваются с необходимостью усиления корпуса, повышения мореходности и адаптации под современные <strong>подвесные моторы</strong>. Именно комплексный подход к доработкам продлевает жизнь этому металлическому ветерану.</p>
+<p>В данном материале мы разберем ключевые этапы модернизации, опираясь на проверенные чертежи и опыт реальных водномоторников. Вы узнаете, как правильно распределить вес, защитить дно от ударов и создать уютную атмосферу на борту. <mark>Основной упор при тюнинге Прогресс 2 следует делать на смещение центра тяжести ближе к корме</mark>, так как заводская компоновка часто приводит к дифференту на нос при полной загрузке.</p>
+
+<h2 id="анализ-исходной-конструкции-и-выявление-слабых-мест">Анализ исходной конструкции и выявление слабых мест</h2>
+<p>Прежде чем хвататься за инструменты, необходимо трезво оценить состояние корпуса. Дюралюминий Д16Т, из которого изготовлен <em>Прогресс 2</em>, склонен к коррозии и усталостным трещинам, особенно в местах клепаных соединений. Визуальный осмотр должен включать проверку швов на предмет течи и измерение толщины днища в наиболее нагруженных зонах. Часто обнаруживается, что штатные <strong>плавучие блоки</strong> уже потеряли герметичность или сгнили.</p>
+<p>Одной из главных проблем является штатный транец, который изначально не рассчитан на современные мощные моторы. Заводская конструкция предполагала эксплуатацию с двигателями до 25-30 л.с., что сегодня считается минимумом для глиссирования с полезной нагрузкой. Слабым звеном также является плоское днище в носовой части, которое при ходе на волне создает жесткие удары, передающиеся на корпус и пассажиров.</p>
+<p>Интерьер лодки также требует пересмотра: жесткие банки (сиденья) неудобны для длительных переходов, а отсутствие штатных ниш для хранения вещей заставляет загромождать кокпит снаряжением. Для устранения этих недостатков потребуется разработка индивидуального плана доработок. Без понимания физики поведения судна на воде дальнейшие работы могут лишь усугубить ситуацию.</p>
+<blockquote>⚠️ Внимание! Перед началом любых работ по усилению корпуса обязательно проведите дефектовку обшивки. Заваривание трещин поверх ржавчины или установка усиления на истонченный металл приведет к быстрому разрушению конструкции.</blockquote>
+
+<h2 id="усиление-транца-и-установка-современного-мотора">Усиление транца и установка современного мотора</h2>
+<p>Самым критичным элементом модернизации является замена или усиление транцевой доски. Штатный транец часто не выдерживает вибраций от современных двухтактных или четырехтактных двигателей мощностью 40-50 л.с. Оптимальным решением становится установка усиленного транца из морской фанеры толщиной не менее 25-30 мм, покрытой стеклопластиком и эпоксидной смолой. Это обеспечивает необходимую жесткость и защищает дерево от влаги.</p>
+<p>При установке мощного мотора важно учитывать не только статическую нагрузку, но и динамические рывки при ходе на волне. Крепление мотора должно осуществляться через усиленные кронштейны, приваренные к бортам и днищу, распределяя нагрузку на большую площадь. Многие владельцы предпочитают делать выносной транец, что позволяет использовать более тяжелые двигатели без риска повреждения кормовой части корпуса.</p>
+<p>Не стоит забывать и про защиту подвесного мотора. Установка транцевого колеса значительно облегчает вытаскивание лодки на берег, особенно в одиночку. Кроме того, целесообразно предусмотреть крепление для датчика эхолота и транцевого крепления удочек, чтобы не сверлить лишние отверстия в борту.</p>
+<ul>
+<li>🔩 Использование морского герметика при монтаже транца предотвратит попадание воды в пространство между обшивкой и усилением.</li>
+<li>⚓ Установка рым-болта на верхней кромке транца упростит швартовку и буксировку лодки.</li>
+<li>🛡️ Применение амортизирующих прокладок между мотором и транцем снизит уровень вибрации и шума в кокпите.</li>
+</ul>
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При усилении транца используйте только оцинкованный или нержавеющий крепеж. Обычная сталь заржавеет за один сезон, и вы рискуете потерять мотор на ходу.</p></div>
+
+<h2 id="улучшение-ходовых-качеств-и-мореходности">Улучшение ходовых качеств и мореходности</h2>
+<p>Плоское днище <em>Прогресс 2</em> — это палка о двух концах: оно обеспечивает отличную устойчивость на стоянке, но создает дискомфорт на волне. Для улучшения мореходности многие мастера устанавливают надувные или жесткие скуловые кили. Надувные баллоны, крепящиеся по бортам, не только смягчают удары, но и увеличивают грузоподъемность и остойчивость судна.</p>
+<p>Жесткие кили, изготовленные из алюминия или стеклопластика, требуют сварочных работ или клепки, но обеспечивают более предсказуемое поведение лодки на высоких скоростях. Они помогают лодке легче выходить на глиссирование и улучшают курсовую устойчивость. Важно правильно рассчитать угол установки килей, чтобы не увеличить сопротивление воды и расход топлива.</p>
+<p>Еще одним способом улучшить ходовые качества является установка гидрокрыла на дейдвуд мотора. Этот простой элемент помогает стабилизировать лодку, убирает рыскание и облегчает выход на глисс, особенно при неполной загрузке. В сочетании с правильно подобранным винтом это дает ощутимый прирост скорости.</p>
+<p>Распределение веса внутри лодки играет ключевую роль в ее поведении на воде. Смещение тяжелых вещей (аккумуляторов, якоря, запасов топлива) ближе к корме помогает компенсировать вес мотора и пассажиров в носу. Неправильная развесовка может привести к зарыванию носа в волну и захлестыванию кокпита водой, что небезопасно.</p>
+<div class="poll-widget" id="poll-c241de34"><div class="poll-widget-question">📊 Что важнее для вашей лодки?</div><div class="poll-widget-option" data-poll="c241de34" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Скорость и глиссирование</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="c241de34" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Устойчивость на рыбалке</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="c241de34" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Комфорт и мягкость хода</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="c241de34" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Грузоподъемность</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="организация-внутреннего-пространства-и-рундуки">Организация внутреннего пространства и рундуки</h2>
+<p>Комфорт на воде напрямую зависит от эргономики внутреннего пространства. Стандартные деревянные банки <em>Прогресс 2</em> лучше заменить на легкие алюминиевые или фанерные конструкции с мягкими съемными подушками. Под сиденьями целесообразно организовать герметичные рундуки для хранения инструментов, ремкомплекта и личных вещей, защищая их от брызг и дождя.</p>
+<p>Для рыболовов критически важно наличие удобных полок для снастей и держателей удилищ. Встроенные в борта карманы из непромокаемой ткани или пластика позволяют держать под рукой мелочи: плоскогубцы, запасные крючки, телефон. Особое внимание стоит уделить организации места под аккумулятор, который должен быть надежно зафиксирован и защищен от попадания воды.</p>
+<p>Настил пола (слани) — еще один элемент комфорта. Деревянные рейки, уложенные поперек корпуса, не только защищают ноги от холодного металла, но и скрывают возможные дефекты днища, облегчая доступ к ним при необходимости. Съемные слани также упрощают просушку лодки после эксплуатации.</p>
+<div class="checklist-block"><h4>☑️ Организация кокпита</h4><label class="check-item"><input type="checkbox"><span>Изготовить мягкие съемные сиденья</span></label><label class="check-item"><input type="checkbox"><span>Сделать герметичные рундуки под банками</span></label><label class="check-item"><input type="checkbox"><span>Установить держатели для удилищ</span></label><label class="check-item"><input type="checkbox"><span>Организовать место под аккумулятор</span></label><label class="check-item"><input type="checkbox"><span>Постелитький настил на пол</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+<p>Использование современных материалов, таких как вспененный ПВХ или композиты, позволяет снизить общий вес оборудования, сохранив прочность. Важно не перегружать лодку лишними конструкциями, помня о ограничениях по грузоподъемности.</p>
+
+<h2 id="защита-корпуса-и-антикоррозийная-обработка">Защита корпуса и антикоррозийная обработка</h2>
+<p>Дюралюминий требует постоянного ухода, так как склонен к электрохимической коррозии, особенно в соленой воде или при контакте с разнородными металлами. Качественная антикоррозийная обработка начинается с тщательной зачистки поверхности до металлического блеска и обезжиривания. Использование преобразователей ржавчины на начальных этапах помогает остановить уже начавшиеся процессы окисления.</p>
+<p>Для защиты внешних поверхностей отлично зарекомендовали себя эпоксидные грунты и полиуретановые эмали. Они создают прочное, химически стойкое покрытие, устойчивое к ударам камней и трению о песок. Особое внимание следует уделить привальным брускам и скуловым частям, которые принимают на себя основные механические нагрузки.</p>
+<p>Внутренняя часть корпуса также нуждается в защите. Часто владельцы оклеивают борта и днище изнутри ковровым покрытием или специальными самоклеящимися материалами. Это не только улучшает эстетику, но и работает как дополнительная тепло- и шумоизоляция, а также предотвращает образование конденсата.</p>
+<table>
+<thead>
+<tr>
+<th>Материал обработки</th>
+<th>Назначение</th>
+<th>Срок службы (сезонов)</th>
+<th>Особенности нанесения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Эпоксидный грунт</td>
+<td>Первичная защита, адгезия</td>
+<td>5-7 лет</td>
+<td>Требует идеальной подготовки поверхности</td>
+</tr>
+<tr>
+<td>Полиуретановая эмаль</td>
+<td>Финишное декоративное покрытие</td>
+<td>3-5 лет</td>
+<td>Устойчива к УФ-излучению и истиранию</td>
+</tr>
+<tr>
+<td>Битумные мастики</td>
+<td>Защита днища от ударов</td>
+<td>2-3 года</td>
+<td>Тяжелые, могут отслаиваться при перегреве</td>
+</tr>
+<tr>
+<td>Жидкая резина</td>
+<td>Шумоизоляция и защита</td>
+<td>4-6 лет</td>
+<td>Эластична, скрывает мелкие неровности</td>
+</tr>
+</tbody>
+</table>
+<blockquote>⚠️ Внимание! Категорически запрещается использовать медьсодержащие антиобрастающие краски на алюминиевых корпусах. Это вызовет мгновенную и необратимую гальваническую коррозию металла.</blockquote>
+
+<h2 id="установка-тента-ветрового-стекла-и-навигации">Установка тента, ветрового стекла и навигации</h2>
+<p>Защита от солнца, дождя и ветра — обязательный элемент комфортной эксплуатации. Тент-трансформер позволяет быстро адаптировать лодку под разные погодные условия: от открытого кокпита для загорания до полностью закрытого помещения с обзорными окнами. Каркас тента обычно выполняется из нержавеющих труб, что гарантирует долгий срок службы.</p>
+<p>Ветровое стекло не только бережет от встречного потока воздуха, но и существенно повышает безопасность, защищая глаза от брызг и насекомых. Установка полноценного стеклопластикового ветровика с форточками превращает <em>Прогресс 2</em> в подобие мини-катера. Важно предусмотреть надежное крепление, выдерживающее нагрузку на высоких скоростях.</p>
+<p>Современная навигация требует наличия эхолота, GPS-навигатора и радиостанции. Монтаж приборов на панели перед водителем должен быть эргономичным и защищенным от попадания воды. Проводку следует выполнять в гофрированных трубках, надежно фиксируя кабели, чтобы они не мешали управлению и не перетирались.</p>
+<details class="faq-item"><summary>Секреты монтажа тента</summary><div class="faq-answer"><p>При пошиве тента используйте нитки №45 ЛЛ (лавсановые), они не гниют и не выгорают. Все швы обязательно проклеивайте специальной лентой для обеспечения полной герметичности.</p></div></details>
+<p>Дополнительное освещение, такое как светодиодные ленты по периметру кокпита или прожектор на мачте, позволит безопасно перемещаться в темное время суток и облегчит ночную рыбалку.</p>
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Правильно подобранный и установленный тент-трансформер увеличивает сезонность использования лодки, позволяя комфортно чувствовать себя на воде даже в прохладную и дождливую погоду.</p></div>
+
+<details>
+<summary>Какой максимальный мотор можно поставить на Прогресс 2?</summary>
+<p>Заводом-изготовителем рекомендовались моторы мощностью до 22-25 л.с. Однако усиленный транец и грамотная развесовка позволяют безопасно эксплуатировать лодку с моторами мощностью 40-50 л.с. Превышение этого порога (например, установка 60-70 л.с.) возможно только при серьезной переделке корпуса и транца, что экономически не всегда оправдано.</p>
+</details>
+<details>
+<summary>Нужно ли варить корпус или достаточно клепок?</summary>
+<p>Для <em>Прогресс 2</em>, изготовленного из дюралюминия Д16Т, сварка в домашних условиях крайне нежелательна без последующей термообработки, так как в зоне шва металл теряет прочность и становится хрупким. Ремонт и усиление лучше выполнять на заклепках с использованием герметика. Сварка возможна только аргоном с последующим старением, что сложно реализовать вне цеха.</p>
+</details>
+<details>
+<summary>Как часто нужно смазывать швы герметиком?</summary>
+<p>Проверку герметичности швов следует проводить ежегодно, перед началом навигации. Если вы заметили появление белесого налета (окисление) или следов влаги внутри лодки, необходимо зачистить шов и обновить слой герметика. Качественный полиуретановый герметик служит 3-5 лет без потери свойств.</p>
+</details>
+<details>
+<summary>Стоит ли ставить надувные баллоны на Прогресс?</summary>
+<p>Определенно стоит. Надувные баллоны (кильсонные или бортовые) значительно улучшают мореходность, гасят удары о волну и повышают грузоподъемность. Они также служат дополнительной страховкой плавучести в случае пробоины. Это один из самых эффективных и недорогих видов тюнинга.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#анализ-исходной-конструкции-и-выявление-слабых-мест">Анализ исходной конструкции и выявление слабых мест</a></li><li><a href="#усиление-транца-и-установка-современного-мотора">Усиление транца и установка современного мотора</a></li><li><a href="#улучшение-ходовых-качеств-и-мореходности">Улучшение ходовых качеств и мореходности</a></li><li><a href="#организация-внутреннего-пространства-и-рундуки">Организация внутреннего пространства и рундуки</a></li><li><a href="#защита-корпуса-и-антикоррозийная-обработка">Защита корпуса и антикоррозийная обработка</a></li><li><a href="#установка-тента-ветрового-стекла-и-навигации">Установка тента, ветрового стекла и навигации</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/u/up/upor-dlya-perevozki-lodochnogo-motora-na-pritsepe.html" class="related-card">Упор для лодочного мотора на прицеп: выбор и установка</a></li><li><a href="/articles/k/ka/karpet-dlya-lodki.html" class="related-card">Карпет для лодки: выбор, монтаж и уход за покрытием</a></li><li><a href="/articles/s/st/steklo-na-lodku-mkm.html" class="related-card">Стекло на лодку МКМ: выбор, установка и ветрозащита</a></li><li><a href="/articles/s/sk/skladnoj-stul-v-lodku-pvkh.html" class="related-card">Складной стул в лодку ПВХ: критерии выбора и ТОП-5 моделей</a></li><li><a href="/articles/l/li/liktros-dlya-lodki.html" class="related-card">Ликтрос для лодки: выбор, установка и уход за фалом</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/u/up/upor-dlya-perevozki-lodochnogo-motora-na-pritsepe.html" class="related-bottom-card"><span class="related-bottom-title">Упор для лодочного мотора на прицеп: выбор и установка</span><span class="related-bottom-desc">Как надежно зафиксировать лодочный мотор при транспортировке. Виды упоров, инструкция по монтажу, та</span></a><a href="/articles/k/ka/karpet-dlya-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Карпет для лодки: выбор, монтаж и уход за покрытием</span><span class="related-bottom-desc">Полный гид по выбору и установке карпета на лодку. Сравнение материалов, пошаговый монтаж, защита от</span></a><a href="/articles/s/st/steklo-na-lodku-mkm.html" class="related-bottom-card"><span class="related-bottom-title">Стекло на лодку МКМ: выбор, установка и ветрозащита</span><span class="related-bottom-desc">Полный гид по остеклению лодки МКМ. Виды лобовых стекол, чертежи для самостоятельного изготовления, </span></a><a href="/articles/s/sk/skladnoj-stul-v-lodku-pvkh.html" class="related-bottom-card"><span class="related-bottom-title">Складной стул в лодку ПВХ: критерии выбора и ТОП-5 моделей</span><span class="related-bottom-desc">Как выбрать идеальный складной стул в лодку ПВХ? Обзор материалов, конструкций и советы по комфортно</span></a><a href="/articles/l/li/liktros-dlya-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Ликтрос для лодки: выбор, установка и уход за фалом</span><span class="related-bottom-desc">Как выбрать надежный ликтрос для лодки ПВХ? Подробный гид по материалам, диаметрам, методам креплени</span></a><a href="/articles/a/ak/akkumulyator-v-lodku.html" class="related-bottom-card"><span class="related-bottom-title">Аккумулятор в лодку: выбор, установка и зарядка</span><span class="related-bottom-desc">Как выбрать тяговый аккумулятор для лодки? Сравнение AGM и GEL, расчет емкости, схемы подключения и </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

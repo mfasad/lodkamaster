@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Переделка лодочного мотора под дистанцию: пошаговая инструкция — ЛодкаМастер</title>
+    <meta name="description" content="Как установить дистанционное управление на лодочный мотор. Схема проводки, выбор румпеля, установка тросов и нюансы настройки системы.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/p/pe/peredelka-lodochnogo-motora-pod-distantsiyu.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Переделка лодочного мотора под дистанцию: пошаговая инструкция">
+    <meta property="og:description" content="Как установить дистанционное управление на лодочный мотор. Схема проводки, выбор румпеля, установка тросов и нюансы настройки системы.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Переделка лодочного мотора под дистанцию: пошаговая инструкция</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Переделка лодочного мотора под дистанцию: полное руководство</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#оценка-необходимости-переделки-и-выбор-комплектующих">Оценка необходимости переделки и выбор комплектующих</a></li><li><a href="#демонтаж-румпельной-группы-и-подготовка-мотора">Демонтаж румпельной группы и подготовка мотора</a></li><li><a href="#установка-механизма-управления-и-прокладка-тросов">Установка механизма управления и прокладка тросов</a></li><li><a href="#подключение-к-карбюратору-и-редуктору">Подключение к карбюратору и редуктору</a></li><li><a href="#электрическая-схема-и-установка-замка-зажигания">Электрическая схема и установка замка зажигания</a></li><li><a href="#настройка-тестирование-и-безопасность">Настройка, тестирование и безопасность</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Управление лодкой с помощью румпеля дарит ощущение полного контроля, но с ростом мощности двигателя или желанием установить комфортный пульт, этот вариант становится неудобным. <strong>Переделка лодочного мотора под дистанцию</strong> — это не просто замена ручки, а комплексная инженерная задача, требующая понимания механики и электрики. Многие владельцы старых или бюджетных моделей сталкиваются с необходимостью модернизации, чтобы повысить безопасность и комфорт на воде.</p>
+
+<p>Процесс трансформации подразумевает установку тросового управления газом и реверсом, а также вывод электрической цепи на поворотный ключ зажигания. Это позволяет управлять судном одной рукой или полностью отпустить румпель для навигации по приборам. Важно понимать, что вмешательство в конструкцию мотора может повлиять на гарантию, поэтому все работы следует проводить с максимальной точностью и соблюдением технических норм.</p>
+
+<p>В этой статье мы детально разберем этапы подготовки, выбора комплектующих и непосредственного монтажа системы. Вы узнаете, как избежать распространенных ошибок при прокладке тросов и подключении электрики. Грамотно выполненная <em>модернизация</em> продлит срок службы агрегата и сделает управление плавсредством действительно комфортным.</p>
+
+<h2 id="оценка-необходимости-переделки-и-выбор-комплектующих">Оценка необходимости переделки и выбор комплектующих</h2>
+
+<p>Прежде чем приступать к разборке мотора, необходимо четко определиться с типом устанавливаемой системы. Рынок предлагает множество решений, от универсальных китайских наборов до оригинальных запчастей от <em>Yamaha</em> или <em>Mercury</em>. Универсальные комплекты часто дешевле, но могут потребовать доработки посадочных мест или не обладать должной плавностью хода.</p>
+
+<p>Ключевым элементом является сам механизм управления (машинка). Он должен обеспечивать четкую фиксацию положения рукояти газа и реверса. Дешевые аналоги могут люфтить, что на воде ощущается как "ватное" управление. Также стоит обратить внимание на длину тросов: стандартные наборы часто имеют длину 3 метра, что может быть недостаточно для крупных лодок.</p>
+
+<ul>
+<li>🔧 <strong>Механизм управления:</strong> выбирайте модели с металлическим корпусом и качественными подшипниками скольжения.</li>
+<li>🔌 <strong>Комплект тросов:</strong> обязательно наличие тросов для газа и реверса, желательно с тефлоновой оплеткой внутри.</li>
+<li>🔑 <strong>Бокс замка зажигания:</strong> должен быть герметичным (стандарт IP67 и выше) и иметь встроенную аварийную остановку двигателя.</li>
+<li>📡 <strong>Жгут проводов:</strong> проверяйте сечение проводов, оно должно соответствовать току стартера и системе зарядки.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: При выборе универсального комплекта убедитесь, что резьбовые соединения тросов совпадают с резьбой на карбюраторе или дроссельной заслонке вашего мотора. Несоответствие шага резьбы сделает регулировку невозможной.</p>
+</blockquote>
+
+<div class="poll-widget" id="poll-fa4053d2"><div class="poll-widget-question">📊 Что для вас важнее при выборе системы управления?</div><div class="poll-widget-option" data-poll="fa4053d2" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Оригинальные запчасти</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="fa4053d2" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Цена комплекта</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="fa4053d2" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Длина тросов</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="fa4053d2" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Наличие гарантии</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="демонтаж-румпельной-группы-и-подготовка-мотора">Демонтаж румпельной группы и подготовка мотора</h2>
+
+<p>Начало работ всегда связано с демонтажем штатного румпеля. Этот процесс требует аккуратности, так как под пластиковыми кожухами часто скрыты тонкие тяги и пластиковые фиксаторы. Первым делом необходимо отсоединить электрические разъемы, идущие к кнопке "стоп" и датчику положения дросселя, если он предусмотрен конструкцией.</p>
+
+<p>После снятия кожуха открывается доступ к <strong>карбюратору</strong> и механизму переключения передач. На этом этапе важно сфотографировать исходное положение всех тяг и пружин. Это поможет не только при обратной сборке, но и при отладке новой системы. Часто румпель крепится на нескольких болтах, которые могут быть скрыты под декоративными заглушками.</p>
+
+<p>Если мотор двухтактный, особое внимание уделите тросику газа. Он может быть интегрирован в общую систему тяг. В четырехтактных моторах часто используется отдельный сервопривод или тросовая тяга к дроссельной заслонке. <em>Демонтаж</em> должен проходить без применения чрезмерной силы, чтобы не сломать пластиковые элементы карбюратора.</p>
+
+<details class="faq-item"><summary>Нюансы демонтажа старых моторов</summary><div class="faq-answer"><p>На моторах возрастом более 10 лет пластиковые элементы могут быть хрупкими. Перед откручиванием рекомендуется прогреть пластик феном или обработать проникающей смазкой места креплений, чтобы избежать сколов и трещин.</p></div></details>
+
+<h2 id="установка-механизма-управления-и-прокладка-тросов">Установка механизма управления и прокладка тросов</h2>
+
+<p>Монтаж "машинки" управления обычно производится на борт лодки или на специальный кронштейн. Главное требование — жесткая фиксация. Любые вибрации корпуса лодки не должны передаваться на механизм, вызывая самопроизвольное изменение оборотов. После закрепления корпуса начинается самый ответственный этап — прокладка тросов.</p>
+
+<p>Тросы необходимо вести по кратчайшему пути, избегая острых углов и мест возможного трения. Радиус изгиба троса не должен быть меньше допустимого значения, указанного в инструкции (обычно не менее 15-20 см). Резкие перегибы приведут к быстрому износу внутренней оплетки и заклиниванию механизма.</p>
+
+<p>Для защиты от влаги и механических повреждений тросы рекомендуется укладывать в гофрированный шланг или кабель-канал. Особенно это актуально в местах прохода через борт. В точке входа в мотор необходимо обеспечить герметичность, используя специальные резиновые манжеты или герметик для судовой техники.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка прокладки тросов</h4><label class="check-item"><input type="checkbox"><span>Отсутствие перекрутов троса</span></label><label class="check-item"><input type="checkbox"><span>Соблюдение минимального радиуса изгиба</span></label><label class="check-item"><input type="checkbox"><span>Надежная фиксация оболочки</span></label><label class="check-item"><input type="checkbox"><span>Смазка подвижных соединений</span></label><label class="check-item"><input type="checkbox"><span>Проверка свободы хода</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="подключение-к-карбюратору-и-редуктору">Подключение к карбюратору и редуктору</h2>
+
+<p>Подключение троса газа к <strong>карбюратору</strong> требует точной регулировки. Рычаг на карбюраторе должен иметь свободный ход в начале и конце движения рукояти управления. Это необходимо для того, чтобы при полностью отпущенном газе дроссельная заслонка была закрыта, а при полном ходе — открыта на 100%.</p>
+
+<p>Трос реверса подключается к механизму переключения передач в дейдвуде. Здесь критически важно настроить момент включения передачи. Если трос будет натянут слишком сильно, передачи могут включаться с ударом или не до конца, что приведет к проскальзыванию шестерен. Слишком слабый трос не позволит включить передачу вовсе.</p>
+
+<p>Для регулировки используются специальные наконечники с резьбой. Закручивая или выкручивая их, можно изменять эффективную длину троса. После первичной настройки необходимо несколько раз переключить передачи и проверить работу дросселя на слух и визуально.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Нормальное значение</th>
+<th>Признак ошибки</th>
+<th>Действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Свободный ход газа</td>
+<td>2-5 мм</td>
+<td>Двигатель глохнет на холостых</td>
+<td>Ослабить трос</td>
+</tr>
+<tr>
+<td>Ход реверса</td>
+<td>До упора</td>
+<td>Нет нейтрали или передачи</td>
+<td>Регулировать наконечник</td>
+</tr>
+<tr>
+<td>Натяжение оболочки</td>
+<td>Без провисания</td>
+<td>Задержка реакции мотора</td>
+<td>Подтянуть фиксатор</td>
+</tr>
+<tr>
+<td>Угол изгиба троса</td>
+<td>> 15 см</td>
+<td>Тяжелый ход рукояти</td>
+<td>Переложить трассу</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>⚠️ Внимание: Неправильная настройка троса реверса может привести к включению передачи при запущенном двигателе с резким рывком лодки. Всегда проверяйте работу реверса на берегу, держа рукоять firmly.</p>
+</blockquote>
+
+<h2 id="электрическая-схема-и-установка-замка-зажигания">Электрическая схема и установка замка зажигания</h2>
+
+<p>Электрическая часть переделки включает в себя установку замка зажигания с кнопкой аварийной остановки и вывод сигнальных ламп (опционально). Стандартная схема для большинства моторов включает цепи стартера, зарядки и "массы" для глушения двигателя. Цветовая маркировка проводов может отличаться у разных производителей, поэтому наличие <strong>электрической схемы</strong> конкретного мотора обязательно.</p>
+
+<p>Провода должны быть защищены от попадания воды и короткого замыкания. Все соединения рекомендуется выполнять с помощью пайки и изолировать термоусадочными трубками. Скрутки в условиях вибрации и влаги на лодке быстро окисляются и могут стать причиной отказа двигателя в самый неподходящий момент.</p>
+
+<p>Кнопка аварийной остановки ("kill switch") должна быть подключена так, чтобы размыкала цепь зажигания при вытягивании чеки. Это критически важный элемент безопасности. Проверьте работу системы: при вытянутой чеке стартер не должен крутиться, а работающий двигатель должен глохнуть.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте многожильный медный провод с силиконовой изоляцией. Он более устойчив к вибрациям и низким температурам, чем стандартный ПВХ, и не дубеет на морозе.</p></div>
+
+<h2 id="настройка-тестирование-и-безопасность">Настройка, тестирование и безопасность</h2>
+
+<p>Финальный этап — комплексное тестирование. Двигатель запускается и прогревается на холостых оборотах. В этот момент проверяется стабильность работы и отсутствие вибраций на тросах. Затем производится проверка реакции на добавление газа и переключение реверса.</p>
+
+<p>Обратите внимание на усилие, требуемое для перемещения рукояти управления. Оно должно быть равномерным по всему ходу. Если в определенных точках требуется усилие, значит, трос где-то пережат или имеет дефект внутренней оплетки. <em>Плавность хода</em> — залог комфортного управления.</p>
+
+<p>Также проверяется работа системы аварийной остановки. Вытягивание чеки на полном ходу (кратковременно) должно приводить к мгновенному глушению двигателя. После проверки чека возвращается на место, и двигатель снова запускается.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Качественно выполненная переделка под дистанцию не должна ухудшать ходовые характеристики мотора. Любые потери мощности или нестабильная работа указывают на ошибки в настройке тросов газ-реверс.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли установить дистанцию на мотор без отдельного генератора?</summary>
+<p>Да, можно. Если мотор не имеет отдельного генератора для зарядки аккумулятора, система зажигания будет работать от магнето. Однако для работы стартера и электрооборудования все равно потребуется аккумулятор, который нужно будет заряжать от внешнего источника.</p>
+</details>
+
+<details>
+<summary>Какой длины тросы выбрать для лодки длиной 4 метра?</summary>
+<p>Для лодки длиной 4 метра обычно достаточно тросов длиной 3 метра. Однако лучше замерить расстояние от места установки "машинки" до мотора с учетом всех изгибов и добавить запас в 30-50 см. Лишнюю длину троса всегда можно аккуратно свернуть в кольцо.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять карбюратор при установке дистанции?</summary>
+<p>В большинстве случаев замена карбюратора не требуется. Штатный карбюратор адаптируется под тросовое управление с помощью правильной регулировки тяг. Замена может потребоваться только если штатный карбюратор неисправен или не имеет возможности подключения троса.</p>
+</details>
+
+<details>
+<summary>Сложно ли вернуть все обратно на румпель?</summary>
+<p>Если при переделке вы не вносили необратимых изменений в конструкцию (например, не сверлили новые отверстия в дейдвуде), то вернуть все обратно достаточно просто. Достаточно отсоединить тросы и установить штатный румпель на место, если все детали сохранены.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#оценка-необходимости-переделки-и-выбор-комплектующих">Оценка необходимости переделки и выбор комплектующих</a></li><li><a href="#демонтаж-румпельной-группы-и-подготовка-мотора">Демонтаж румпельной группы и подготовка мотора</a></li><li><a href="#установка-механизма-управления-и-прокладка-тросов">Установка механизма управления и прокладка тросов</a></li><li><a href="#подключение-к-карбюратору-и-редуктору">Подключение к карбюратору и редуктору</a></li><li><a href="#электрическая-схема-и-установка-замка-зажигания">Электрическая схема и установка замка зажигания</a></li><li><a href="#настройка-тестирование-и-безопасность">Настройка, тестирование и безопасность</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ki/kitajskie-lodochnye-motory-rejting.html" class="related-card">ТОП-10 китайских лодочных моторов 2026: рейтинг, цены, отзывы</a></li><li><a href="/articles/s/sa/samyj-nadyozhnyj-kitajskij-lodochnyj-motor-99.html" class="related-card">Самый надёжный китайский лодочный мотор 9.9 л.с.: рейтинг и обзор</a></li><li><a href="/articles/l/lo/lodochnyj-motor-nissan-marin-15.html" class="related-card">Лодочный мотор Ниссан Марин 15: характеристики и отзывы</a></li><li><a href="/articles/m/mo/motor-na-lodku-veterok.html" class="related-card">Мотор на лодку Ветерок: обзор, характеристики и настройка</a></li><li><a href="/articles/l/lo/lodochnyj-motor-toyama-5.html" class="related-card">Лодочный мотор Тояма 5: обзор, характеристики и отзывы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ki/kitajskie-lodochnye-motory-rejting.html" class="related-bottom-card"><span class="related-bottom-title">ТОП-10 китайских лодочных моторов 2026: рейтинг, цены, отзывы</span><span class="related-bottom-desc">Обзор лучших китайских подвесных моторов для лодок ПВХ: сравнение характеристик, плюсы/минусы, совет</span></a><a href="/articles/s/sa/samyj-nadyozhnyj-kitajskij-lodochnyj-motor-99.html" class="related-bottom-card"><span class="related-bottom-title">Самый надёжный китайский лодочный мотор 9.9 л.с.: рейтинг и обзор</span><span class="related-bottom-desc">Выбираем самый надёжный китайский лодочный мотор 9.9 л.с. Обзор лучших моделей, ресурс двигателя, ср</span></a><a href="/articles/l/lo/lodochnyj-motor-nissan-marin-15.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Ниссан Марин 15: характеристики и отзывы</span><span class="related-bottom-desc">Подробный обзор лодочного мотора Nissan Marine 15 л.с. Технические характеристики, расход топлива, о</span></a><a href="/articles/m/mo/motor-na-lodku-veterok.html" class="related-bottom-card"><span class="related-bottom-title">Мотор на лодку Ветерок: обзор, характеристики и настройка</span><span class="related-bottom-desc">Полный гид по подвесным моторам Ветерок. Технические характеристики, устранение неисправностей, наст</span></a><a href="/articles/l/lo/lodochnyj-motor-toyama-5.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Тояма 5: обзор, характеристики и отзывы</span><span class="related-bottom-desc">Подробный обзор лодочного мотора Тояма 5 л.с. Разбор технических характеристик, особенности эксплуат</span></a><a href="/articles/c/ch/chem-otlichaetsya-shag-vinta-na-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Шаг винта на лодочный мотор: как выбрать и настроить</span><span class="related-bottom-desc">Подробный гид по шагу винта лодочного мотора. Узнайте, как влияет шаг винта на скорость и тягу, как </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

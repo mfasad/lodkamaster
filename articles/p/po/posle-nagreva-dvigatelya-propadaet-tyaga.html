@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>После нагрева двигателя пропадает тяга: причины и ремонт — ЛодкаМастер</title>
+    <meta name="description" content="Почему после прогрева мотора падает тяга? Разбираем основные причины: датчики, топливная система, компрессия и методы диагностики.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/p/po/posle-nagreva-dvigatelya-propadaet-tyaga.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="После нагрева двигателя пропадает тяга: причины и ремонт">
+    <meta property="og:description" content="Почему после прогрева мотора падает тяга? Разбираем основные причины: датчики, топливная система, компрессия и методы диагностики.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">После нагрева двигателя пропадает тяга: причины и ремонт</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Проблема: после нагрева двигателя пропадает тяга</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#влияние-датчиков-на-работу-прогретого-мотора">Влияние датчиков на работу прогретого мотора</a></li><li><a href="#топливная-система-давление-и-производительность">Топливная система: давление и производительность</a></li><li><a href="#система-впуска-и-выпуск-отработавших-газов">Система впуска и выпуск отработавших газов</a></li><li><a href="#компрессия-и-тепловые-зазоры-в-цилиндро-поршневой-группе">Компрессия и тепловые зазоры в цилиндро-поршневой группе</a></li><li><a href="#трансмиссия-и-сцепление-где-теряется-момент">Трансмиссия и сцепление: где теряется момент</a></li><li><a href="#система-охлаждения-и-термостат">Система охлаждения и термостат</a></li><li><a href="#диагностика-и-план-действий">Диагностика и план действий</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Ситуация, когда автомобиль уверенно набирает обороты на холодную, но стоит стрелке температуры достичь рабочей зоны, как <strong>пропадает тяга</strong>, знакома многим владельцам подержанных иномарок. Двигатель перестает тянуть, машина становится вялой, а разгон до сотни превращается в мучение. Это классический признак того, что система управления перешла в аварийный режим или один из критически важных параметров вышел за допустимые пределы.</p>
+
+<p>В отличие от проблем с запуском, которые часто кроются в стартере или аккумуляторе, потеря мощности именно на горячую указывает на тепловое расширение деталей или изменение физических свойств жидкостей и газов. Электронный блок управления (ЭБУ) получает сигналы от датчиков и, видя некорректные данные, искусственно <em>душит мотор</em>, чтобы предотвратить разрушение цилиндров или катализатора.</p>
+
+<p>Игнорировать такое поведение нельзя. Если двигатель потерял мощность, это не просто дискомфорт при обгонах, это сигнал о прогрессирующей неисправности. В лучшем случае вы просто потратите лишнее топливо, в худшем — получите капитальный ремонт мотора через пару тысяч километров пробега.</p>
+
+<h2 id="влияние-датчиков-на-работу-прогретого-мотора">Влияние датчиков на работу прогретого мотора</h2>
+
+<p>Современный двигатель не может работать без корректных показаний сенсоров. Когда автомобиль только запускается, ЭБУ работает по заранее заданным таблицам (картам) для холодного пуска. Однако после прогрева система переходит в режим замкнутого контура, где решающую роль играют показания в реальном времени.</p>
+
+<p>Чаще всего виновником становится <strong>датчик положения дроссельной заслонки</strong> (ДПДЗ). При нагреве его резистивный слой может терять контакт в определенных точках. ЭБУ видит резкий скачок или провал напряжения и сбрасывает подачу топлива. Также критичен <em>датчик массового расхода воздуха</em> (ДМРВ), который при загрязнении или неисправности на горячем воздухе начинает занижать показания.</p>
+
+<ul>
+<li>🔌 Датчик массового расхода воздуха (ДМРВ) — часто врет при нагреве из-за изменения сопротивления нити.</li>
+<li>🎚️ Датчик положения дроссельной заслонки (ДПДЗ) — изнашивается дорожка, появляются"мертвые зоны".</li>
+<li>🌡️ Датчик температуры охлаждающей жидкости (ДТОЖ) — может показывать ложный перегрев, заставляя ЭБУ обогащать смесь.</li>
+<li>⚡ Кислородный датчик (Лямбда-зонд) — при выходе из строя не корректирует смесь, что ведет к потере динамики.</li>
+</ul>
+
+<p>Особое внимание стоит уделить <mark>катушке зажигания</mark>. Это тот случай, когда пробой изоляции происходит именно при достижении определенной температуры. На холодную искра есть, но как только корпус катушки нагревается, диэлектрические свойства ухудшаются, и искра начинает"гулять" по корпусу, а не проскакивать на свече.</p>
+
+<blockquote>⚠️ Внимание: Если при потере тяги загорается"Check Engine", не спешите сбрасывать ошибку. Запишите код неисправности, он укажет на конкретный цилиндр или систему, где произошел сбой в момент потери мощности.</blockquote>
+
+<p>Диагностику датчиков лучше всего проводить с помощью мультиметра, отслеживая изменение сопротивления в процессе нагрева двигателя. Статичная проверка на холодном моторе часто не дает результатов, так как дефект носит температурный характер.</p>
+
+<div class="poll-widget" id="poll-babf90be"><div class="poll-widget-question">📊 Какой симптом проявляется у вас сильнее всего?</div><div class="poll-widget-option" data-poll="babf90be" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Рывки при разгоне</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="babf90be" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Двигатель троит</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="babf90be" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Загорелась лампа Check Engine</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="babf90be" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Машина просто не разгоняется</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="топливная-система-давление-и-производительность">Топливная система: давление и производительность</h2>
+
+<p>Если электрическая часть в норме, стоит проверить"кровеносную" систему автомобиля. Когда после нагрева двигателя пропала тяга, причиной часто становится неспособность топливного насосаить требуемое давление в рампе. Бензонасос, работая в баке, охлаждается самим топливом.</p>
+
+<p>При низком уровне бензина или загрязненном фильтре насос начинает перегреваться. Его производительность падает, давление в топливной рампе снижается, и форсунки просто не успевают впрыснуть нужное количество топлива для создания мощного импульса. Смесь становится бедной, и мотор"захлебывается".</p>
+
+<p>Также стоит проверить регулятор давления топлива. Если его мембрана повреждена или клапан заклинил в открытом положении, бензин будет сбрасываться в обратку быстрее, чем успевает закачать насос. На холостых оборотах это может быть не заметно, но под нагрузкой давление критически падает.</p>
+
+<div class="checklist-block"><h4>☑️ Диагностика топливной системы</h4><label class="check-item"><input type="checkbox"><span>Замерить давление в рампе манометром</span></label><label class="check-item"><input type="checkbox"><span>Проверить сетку бензонасоса</span></label><label class="check-item"><input type="checkbox"><span>Оценить производительность форсунок</span></label><label class="check-item"><input type="checkbox"><span>Проверить работу регулятора давления</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Засоренные форсунки — еще одна распространенная причина. Нагар на распылителе нарушает факел впрыска. Топливо не испаряется мгновенно, а попадает в цилиндр крупными каплями, не успевая сгореть полностью. Это приводит к нагарообразованию и дальнейшей потере компрессии.</p>
+
+<h2 id="система-впуска-и-выпуск-отработавших-газов">Система впуска и выпуск отработавших газов</h2>
+
+<p>Двигатель — это воздушный насос. Сколько воздуха он засосет, столько топлива сможет сжечь. Если после прогрева пропала тяга, возможно, возникло сопротивление на впуске или, что чаще, на выпуске. Забитый воздушный фильтр элементарно душит мотор, но это заметно и на холодную.</p>
+
+<p>Более коварная проблема — <strong>катализатор</strong>. Со временем соты керамического блока разрушаются и спекаются, превращаясь в глухую пробку. Выхлопным газам некуда выходить, создается обратное давление. Поршни тратят огромную энергию на выталкивание газов, и полезная мощность на колесах стремится к нулю.</p>
+
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Вероятная причина</th>
+<th>Метод проверки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Свистящий звук под капотом</td>
+<td>Подсос воздуха после ДМРВ</td>
+<td>Опрыскивание стыков очистителем</td>
+</tr>
+<tr>
+<td>Гудение из-под днища</td>
+<td>Разрушение катализатора</td>
+<td>Замер давления выхлопа</td>
+</tr>
+<tr>
+<td>Нестабильные холостые</td>
+<td>Негерметичность впускного коллектора</td>
+<td>Дымогенератор</td>
+</tr>
+<tr>
+<td>Черный дым из выхлопной</td>
+<td>Переобогащение смеси</td>
+<td>Анализ выхлопа</td>
+</tr>
+</tbody>
+</table>
+
+<p>Подсос немеренного воздуха — бич старых автомобилей. Резиновые патрубки рассыхаются, трескаются прокладки впускного коллектора. Лишний воздух обедняет смесь. ЭБУ пытается это компенсировать, но на определенных режимах коррекции заканчиваются, и тяга пропадает.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Для поиска подсоса воздуха используйте специальный спрей или очиститель карбюратора. Побрызгайте на стыки патрубков на работающем двигателе. Если обороты изменятся — вы нашли дыру.</p></div>
+
+<h2 id="компрессия-и-тепловые-зазоры-в-цилиндро-поршневой-группе">Компрессия и тепловые зазоры в цилиндро-поршневой группе</h2>
+
+<p>Механическое состояние двигателя — фундамент его мощности. Когда говорят, что"мотор не держит компрессию", часто имеют в виду износ колец или клапанов. Но почему тяга пропадает именно после нагрева?</p>
+
+<p>При нагреве металл расширяется. Если зазоры между поршнем и цилиндром нарушены (задиры, эллипс), то на горячую поршень может перекашиваться, и компрессия падает. Еще хуже ситуация с тепловыми зазорами клапанов. Если зазор слишком мал, то на горячем двигателе клапан просто не закрывается до конца.</p>
+
+<p>В этом случае часть топливно-воздушной смеси вылетает обратно во впускной коллектор, а часть выхлопных газов остается в цилиндре. Двигатель начинает"троить", его мощность падает катастрофически. Это особенно актуально для двигателей, где нет гидрокомпенсаторов и требуется ручная регулировка.</p>
+
+<blockquote>⚠️ Внимание: Эксплуатация двигателя с прогоревшим клапаном или разрушенным поршневым кольцом приведет к быстрому выходу из строя катализатора и повреждению стенок цилиндра.</blockquote>
+
+<p>Проверка компрессии на горячем двигателе даст более точную картину в таких случаях, чем проверка на холодную. Разница в показаниях между цилиндрами не должна превышать 1 атмосферу.</p>
+
+<h2 id="трансмиссия-и-сцепление-где-теряется-момент">Трансмиссия и сцепление: где теряется момент</h2>
+
+<p>Не всегда проблема кроется внутри двигателя. Бывает так, что мотор ревет, обороты растут, а машина не едет. Это классический признак проскальзывания <strong>сцепления</strong> (на механике) или гидротрансформатора (на автомате).</p>
+
+<p>При нагреве фрикционные свойства дисков могут меняться. Если диск сцепления изношен или замаслен, он начинает проскальзывать под нагрузкой. Энергия двигателя тратится на трение, а не на вращение колес. Визуально это выглядит как потеря тяги, хотя двигатель исправен.</p>
+
+<ul>
+<li>🚗 Сцепление — износ диска, замасливание, неисправность выжимного подшипника.</li>
+<li>🛢️ Гидротрансформатор (АКПП) — износ фрикционов, низкий уровень масла, забитый фильтр.</li>
+<li>🔄 Вариатор — растяжение ремня, износ конусов, перегрев масла.</li>
+<li>⚙️ МКПП — износ синхронизаторов или подшипников валов.</li>
+</ul>
+
+<p>На автоматических коробках передач причиной может быть перегрев масла. Вязкость падает, давление в системе падает, пакеты фрикционов не сжимаются с нужным усилием. Машина перестает разгоняться, а коробка переходит в аварийный режим.</p>
+
+<details class="faq-item"><summary>Как проверить сцепление без разборки?</summary><div class="faq-answer"><p>Включите 4-ю или 5-ю передачу на скорости около 50 км/ч и резко нажмите на газ. Если обороты двигателя резко выросли, а скорость автомобиля не изменилась — сцепление буксует и требует замены.</p></div></details>
+
+<h2 id="система-охлаждения-и-термостат">Система охлаждения и термостат</h2>
+
+<p>Казалось бы, при чем здесь система охлаждения, если двигатель уже прогрет? Все дело в термостате. Если его заклинило в закрытом положении, антифриз циркулирует только по малому кругу. Двигатель перегревается локально, даже если датчик на корпусе еще показывает норму.</p>
+
+<p>Перегрев ведет к детонации. Датчик детонации фиксирует ударные нагрузки и ЭБУ начинает сильно сдвигать угол опережения зажигания (УОЗ) в позднюю сторону. Двигатель становится"тупым", тяга пропадает полностью, расход топлива растет.</p>
+
+<p>Также стоит проверить работу вентилятора радиатора. Если он не включается при нагреве до 95-100 градусов, температура в подкапотном пространстве растет, воздух на впуске становится горячим и менее плотным, что также снижает мощность.</p>
+
+<h2 id="диагностика-и-план-действий">Диагностика и план действий</h2>
+
+<p>Что делать, если вы столкнулись с такой проблемой? Не нужно гадать на кофейной гуще. Необходим системный подход. Сначала исключаем самые простые и дешевые варианты, затем переходим к сложным.</p>
+
+<p>Начните с компьютерной диагностики. Даже если лампа"Check Engine" не горит, в памяти могут быть сохранены_pending_ ошибки. Обратите внимание на параметры работы лямбда-зонда и время коррекции смеси. Если коррекция уходит далеко от нуля (более 10%), значит, смесь не оптимальна.</p>
+
+<pre><code>Алгоритм поиска неисправности:
+<p>1. Считать коды ошибок OBDII.</p>
+<p>2. Проверить давление в топливной рампе.</p>
+<p>3. Замерить компрессию на горячем двигателе.</p>
+<p>4. Проверить целостность выпускной системы (противодавление).</p>
+<p>5. Осмотреть свечи зажигания (цвет нагара).</code></pre></p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>90% случаев потери тяги на горячую решаются заменой свечей, чисткой дроссельной заслонки или заменой топливного фильтра. Не спешите делать капитальный ремонт двигателя!</p></div>
+
+<p>Если простые методы не помогли, потребуется более глубокое вмешательство: проверка фаз газораспределения (не перескочил ли ремень ГРМ на зуб), эндоскопия цилиндров и проверка герметичности клапанов.</p>
+
+<details>
+<summary>Почему тяга пропадает только в жару?</summary>
+<p>В жаркую погоду плотность воздуха на впуске еще ниже, чем зимой. Двигателю не хватает кислорода. Если к этому добавляется неисправность (например, забитый катализатор), то эффект потери мощности усиливается многократно. Летом система охлаждения работает на пределе, и любой дефект термостата сразу сказывается на работе мотора.</p>
+</details>
+
+<details>
+<summary>Может ли плохой бензин вызвать потерю тяги?</summary>
+<p>Да, низкооктановый бензин вызывает детонацию. ЭБУ, пытаясь спасти мотор, сбрасывает мощность. Также в бензине может содержаться вода, которая на горячем двигателе превращается в пар и нарушает работу форсунок, вызывая пропуски зажигания.</p>
+</details>
+
+<details>
+<summary>Как влияет воздушный фильтр на динамику?</summary>
+<p>Забитый пылью фильтр создает вакуум перед дроссельной заслонкой. Двигатель работает как человек, пытающийся вдохнуть через плотную ткань. Кислорода не хватает, топливо сгорает не полностью, мощность падает, а расход растет.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#влияние-датчиков-на-работу-прогретого-мотора">Влияние датчиков на работу прогретого мотора</a></li><li><a href="#топливная-система-давление-и-производительность">Топливная система: давление и производительность</a></li><li><a href="#система-впуска-и-выпуск-отработавших-газов">Система впуска и выпуск отработавших газов</a></li><li><a href="#компрессия-и-тепловые-зазоры-в-цилиндро-поршневой-группе">Компрессия и тепловые зазоры в цилиндро-поршневой группе</a></li><li><a href="#трансмиссия-и-сцепление-где-теряется-момент">Трансмиссия и сцепление: где теряется момент</a></li><li><a href="#система-охлаждения-и-термостат">Система охлаждения и термостат</a></li><li><a href="#диагностика-и-план-действий">Диагностика и план действий</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/v/vo/voda-v-masle-dvigatelya.html" class="related-card">Вода в масле двигателя: признаки, причины и методы устранения</a></li><li><a href="/articles/k/ka/kamera-v-tsilindr-dvigatelya.html" class="related-card">Камера в цилиндр двигателя: Эндоскопия ДВС для диагностики</a></li><li><a href="/articles/p/po/polirovka-lodochnogo-vinta.html" class="related-card">Полировка лодочного винта: как вернуть КПД и скорость за 5 шагов</a></li><li><a href="/articles/k/ka/kak-razobrat-dvigatel-shurupoverta-metabo.html" class="related-card">Как разобрать двигатель шуруповерта Metabo: пошаговая инструкция</a></li><li><a href="/articles/m/mo/mozhno-li-krutit-dvigatel-do-5000-oborotov.html" class="related-card">Можно ли крутить двигатель до 5000 оборотов: мифы и реальность</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/v/vo/voda-v-masle-dvigatelya.html" class="related-bottom-card"><span class="related-bottom-title">Вода в масле двигателя: признаки, причины и методы устранения</span><span class="related-bottom-desc">Как определить попадание воды в масло двигателя? Полный гид по симптомам, причинам эмульсии, методам</span></a><a href="/articles/k/ka/kamera-v-tsilindr-dvigatelya.html" class="related-bottom-card"><span class="related-bottom-title">Камера в цилиндр двигателя: Эндоскопия ДВС для диагностики</span><span class="related-bottom-desc">Зачем нужна камера в цилиндр двигателя? Подробный разбор метода эндоскопии, выявление нагара, задиро</span></a><a href="/articles/p/po/polirovka-lodochnogo-vinta.html" class="related-bottom-card"><span class="related-bottom-title">Полировка лодочного винта: как вернуть КПД и скорость за 5 шагов</span><span class="related-bottom-desc">Пошаговая инструкция по полировке гребного винта лодки: материалы, инструменты, ошибки и советы для </span></a><a href="/articles/k/ka/kak-razobrat-dvigatel-shurupoverta-metabo.html" class="related-bottom-card"><span class="related-bottom-title">Как разобрать двигатель шуруповерта Metabo: пошаговая инструкция</span><span class="related-bottom-desc">Подробная инструкция по разборке двигателя шуруповерта Metabo. Разборка редуктора, замена щеток и ди</span></a><a href="/articles/m/mo/mozhno-li-krutit-dvigatel-do-5000-oborotov.html" class="related-bottom-card"><span class="related-bottom-title">Можно ли крутить двигатель до 5000 оборотов: мифы и реальность</span><span class="related-bottom-desc">Подробный разбор последствий раскрутки двигателя до 5000 об/мин. Влияние на ресурс мотора, типы двиг</span></a><a href="/articles/d/de/deforsirovanie-dvigatelya-chto-eto.html" class="related-bottom-card"><span class="related-bottom-title">Дефорсирование двигателя: что это, зачем и как влияет на ресурс</span><span class="related-bottom-desc">Полный гид по дефорсированию мотора. Снижение мощности для надежности, экономии топлива и продления </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

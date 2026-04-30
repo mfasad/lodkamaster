@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Progress 4: Максимальная мощность мотора и реальные возможности — ЛодкаМастер</title>
+    <meta name="description" content="Разбор максимальной мощности мотора для лодки Прогресс 4. Установка 30 л.с., переделки транца, влияние на ходовые качества и юридические аспекты.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/p/pr/progress-4-maksimalnaya-moshchnost-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Progress 4: Максимальная мощность мотора и реальные возможности">
+    <meta property="og:description" content="Разбор максимальной мощности мотора для лодки Прогресс 4. Установка 30 л.с., переделки транца, влияние на ходовые качества и юридические аспекты.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Progress 4: Максимальная мощность мотора и реальные возможности</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Прогресс 4: Максимальная мощность мотора и реальные возможности</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#заводские-ограничения-и-паспортные-данные">Заводские ограничения и паспортные данные</a></li><li><a href="#реальная-практика-30-лс-или-больше">Реальная практика: 30 л.с. или больше?</a></li><li><a href="#технические-требования-к-установке-мощного-мотора">Технические требования к установке мощного мотора</a></li><li><a href="#влияние-мощности-на-ходовые-качества">Влияние мощности на ходовые качества</a></li><li><a href="#юридические-аспекты-и-регистрация-в-гимс">Юридические аспекты и регистрация в ГИМС</a></li><li><a href="#частые-ошибки-при-тюнинге-прогресса-4">Частые ошибки при тюнинге Прогресса 4</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Легендарная <em>Progress 4</em> остается одним из самых популярных корпусов на отечественных водоемах, несмотря на солидный возраст модели. Вопрос о том, какой <strong>лодочный мотор</strong> способен раскрыть её потенциал, не превращаясь в опасный эксперимент, волнует каждого владельца. Заводские характеристики указывают на 30 л.с., но практика показывает, что лодка способна выдержать и большие нагрузки при правильном подходе.</p>
+
+<p>Однако слепое следование цифрам на шильдике двигателя часто приводит к разочарованиям или, что хуже, к аварийным ситуациям на воде. <strong>Глиссирование</strong> — это тот режим, к которому стремятся все, но для тяжелой лодки с четырьмя пассажирами и грузом одного «тридцатника» может быть недостаточно. Важно понимать физику процесса: мощность должна соответствовать не только длине корпуса, но и его водоизмещению в полной загрузке.</p>
+
+<p>В этой статье мы детально разберем, где проходит граница разумного при выборе силовой установки для <em>Прогресса 4</em>. Вы узнаете о нюансах установки более мощных агрегатов, рисках перегрузки транца и о том, как юридически грамотно подойти к вопросу регистрации <strong>судна</strong> с нестандартным мотором.</p>
+
+<h2 id="заводские-ограничения-и-паспортные-данные">Заводские ограничения и паспортные данные</h2>
+
+<p>Согласно технической документации, выпущенной Куйбышевским авиационным заводом, штатной мощностью для данной модели считалась цифра в 30 лошадиных сил. Этот параметр был выбран не случайно: он обеспечивал приемлемую скорость при полной загрузке и гарантировал безопасность конструкции при стандартных условиях эксплуатации. <strong>Транцевая плита</strong> рассчитывалась именно под вес и тягу двигателей того времени, таких как <em>Вихрь-30</em>.</p>
+
+<p>Однако современные материалы и технологии производства моторов позволяют значительно снизить вес силовой установки при сохранении или увеличении мощности. Если старый <em>Вихрь</em> весил более 50 кг, то современные 30-сильные <em>Yamaha</em> или <em>Mercury</em> могут быть существенно легче. Это создает иллюзию, что можно поставить мотор мощнее без вреда для лодки, но здесь кроется главная ошибка.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Превышение рекомендованной мощности мотора автоматически снимает с производителя ответственность за целостность корпуса. Эксплуатация лодки с мотором выше 30 л.с. осуществляется владельцем на свой страх и риск и может быть расценена инспекцией ГИМС как нарушение правил безопасности.</p>
+</blockquote>
+
+<p>Паспортные данные также учитывали прочность днища при ударе о волну на высокой скорости. При установке более мощного <strong>двигателя</strong> ударные нагрузки на обшивку возрастают экспоненциально, особенно если вы попадаете на встречную волну. Алюминиевый сплав Д16Т, из которого изготовлен корпус, имеет свой предел усталостной прочности, и игнорирование этого факта может привести к появлению трещин.</p>
+
+<h2 id="реальная-практика-30-лс-или-больше">Реальная практика: 30 л.с. или больше?</h2>
+
+<p>Опытные водномоторники давно пришли к выводу, что для <em>Прогресс 4</em> с двумя взрослыми пассажирами и минимальным грузом 30 л.с. — это абсолютный минимум для уверенного выхода на глиссирование. В идеальных условиях лодка разгоняется до 35-40 км/ч, что для рек и озер вполне достаточно. Но стоит добавить еще двух человек или запас топлива, и лодка переходит в водоизмещающий режим, теряя экономичность и маневренность.</p>
+
+<p>На практике многие владельцы устанавливают моторы мощностью 40 и даже 50 л.с. В этом случае <strong>лодка</strong> приобретает совершенно другие ходовые качества: она легко всходит на глиссирование даже с полной загрузкой, лучше держит курс и увереннее чувствует себя на волне. Скорость может достигать 50-55 км/ч, что уже сопоставимо с более крупными судами.</p>
+
+<div class="poll-widget" id="poll-79b792f8"><div class="poll-widget-question">📊 Какую мощность мотора вы считаете оптимальной для Прогресс 4?</div><div class="poll-widget-option" data-poll="79b792f8" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">30 л.с. (штатная)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="79b792f8" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">40 л.с. (золотая середина)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="79b792f8" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">50 л.с. (максимум)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="79b792f8" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Мне хватает и 20 л.с.</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Однако установка мотора мощностью свыше 40 л.с. требует обязательной доработки транца. Родная транцевая плита может не выдержать возросшего крутящего момента и веса подвесного мотора. Часто приходится усиливать транец дополнительными накладками из нержавеющей стали или алюминия той же марки, что и корпус.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При установке мотора мощнее 30 л.с. обязательно проверьте состояние клепаных соединений в кормовой части. Вибрация от более мощного двигателя может быстро расшатать старые заклепки.</p></div>
+
+<h2 id="технические-требования-к-установке-мощного-мотора">Технические требования к установке мощного мотора</h2>
+
+<p>Если вы твердо решили повысить мощность, необходимо провести комплексную оценку технического состояния <em>Progress 4</em>. Первым делом проверяется геометрия днища и отсутствие деформаций в кормовой части. Установка мощного мотора на перекошенный транец приведет к рысканию лодки на курсе и повышенному расходу топлива.</p>
+
+<p>Критически важным элементом становится <strong>дейдвуд</strong> и его защита. При высоких скоростях риск встречи с плавающим предметом или мелью возрастает. Рекомендуется установить дополнительную защиту гребного винта или убедиться, что штатный кильсон достаточно прочен. Также стоит обратить внимание на состояние румпеля или системы дистанционного управления.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка готовности лодки к мощному мотору</h4><label class="check-item"><input type="checkbox"><span>Осмотр транца на трещины и деформации</span></label><label class="check-item"><input type="checkbox"><span>Проверка герметичности кормового отсека</span></label><label class="check-item"><input type="checkbox"><span>Усиление крепления банок (сидений)</span></label><label class="check-item"><input type="checkbox"><span>Проверка состояния заклепочных швов в корме</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Не стоит забывать и о системе управления. Штатный румпель может не выдержать возросших нагрузок на перекладку курса, особенно на высоких скоростях. Переход на дистанционное управление (ДУ) с гидроусилителем или просто более надежной механикой — разумный шаг для моторов мощностью от 40 л.с. и выше.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Мотор 30 л.с.</th>
+<th>Мотор 40-50 л.с.</th>
+<th>Мотор 60+ л.с.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Выход на глиссирование</td>
+<td>С 1-2 чел.</td>
+<td>С 3-4 чел.</td>
+<td>Мгновенно</td>
+</tr>
+<tr>
+<td>Максимальная скорость</td>
+<td>~38 км/ч</td>
+<td>~48 км/ч</td>
+<td>55+ км/ч</td>
+</tr>
+<tr>
+<td>Расход топлива</td>
+<td>~10 л/ч</td>
+<td>~15-18 л/ч</td>
+<td>20+ л/ч</td>
+</tr>
+<tr>
+<td>Нагрузка на транец</td>
+<td>Штатная</td>
+<td>Повышенная</td>
+<td>Критическая</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="влияние-мощности-на-ходовые-качества">Влияние мощности на ходовые качества</h2>
+
+<p>Увеличение мощности мотора кардинально меняет поведение <em>Прогресса 4</em> на воде. Лодка становится более динамичной, исчезает провал тяги на переходных режимах. Это особенно важно при движении против течения или ветра, когда запаса мощности 30-сильного мотора может не хватать для удержания глиссирования.</p>
+
+<p>Однако есть и обратная сторона медали. <strong>Прогресс 4</strong> имеет достаточно узкий корпус и высокую скуловую линию. При резком добавлении газа на мощном моторе лодка может проявлять склонность к рысканию или даже подхватыванию скулой волны (дельфинированию). Пилотирование требует более внимательного отношения к распределению веса пассажиров.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При установке мотора мощностью более 40 л.с. строго контролируйте дифферентовку. Смещение груза в нос может привести к опасному зарыванию скулы в волну на высокой скорости.</p>
+</blockquote>
+
+<p>Комфорт на волне также меняется. С одной стороны, лодка быстрее проходит гребень волны. С другой — удары о воду становятся жестче из-за возросшей скорости. Пассажиры могут испытывать большие перегрузки на позвоночник, поэтому наличие мягких сидений и правильная рассадка становятся вопросом безопасности.</p>
+
+<details class="faq-item"><summary>Секрет экономии топлива</summary><div class="faq-answer"><p>Парадоксально, но более мощный мотор (40-50 л.с.) на Прогрессе 4 при крейсерской скорости 30-35 км/ч может расходовать меньше топлива, чем 30-сильный мотор в режиме полного газа. Это связано с тем, что двигателю не нужно работать на пределе возможностей для поддержания глиссирования.</p></div></details>
+
+<h2 id="юридические-аспекты-и-регистрация-в-гимс">Юридические аспекты и регистрация в ГИМС</h2>
+
+<p>Вопрос регистрации <strong>маломерного судна</strong> с мотором мощнее паспортного требует отдельного внимания. Согласно действующим правилам, мощность мотора, указанная в судовом билете, не должна превышать максимальную мощность, указанную в маркировке производителя на самом судне. Для <em>Прогресс 4</em> это 22.06 кВт (30 л.с.).</p>
+
+<p>Если вы установите мотор 40 или 50 л.с., у инспектора ГИМС при проверке документов могут возникнуть вопросы. Формально это является нарушением, так как фактическая мощность превышает разрешенную для данного типа корпуса. В случае ДТП или ЧП это может стать основанием для признания владельца виновным в нарушении правил эксплуатации.</p>
+
+<p>Существует практика внесения изменений в конструктив судна, но она сложна и требует технической экспертизы, которая в случае сими лодками часто экономически нецелесообразна. Большинство владельцев идут на риск, понимая, что проверка мощности мотора «на глаз» невозможна, но при серьезном инциденте это станет проблемой.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Юридически безопасным вариантом остается установка мотора до 30 л.с. включительно. Все, что выше — зона ответственности владельца и потенциального конфликта с regulations.</p></div>
+
+<h2 id="частые-ошибки-при-тюнинге-прогресса-4">Частые ошибки при тюнинге Прогресса 4</h2>
+
+<p>Стремление выжать из лодки максимум часто приводит к типичным ошибкам. Одна из самых распространенных — установка мотора без усиления транца. В лучшем случае это приводит к деформации транцевой плиты, в худшем — к отрыву дейдвуда или появлению трещин в углах транца.</p>
+
+<p>Вторая ошибка — игнорирование центровки. Установка тяжелого 4-тактного мотора большой мощности смещает центр тяжести в корму. Лодка начинает «клевать носом» на полном ходу или, наоборот, задирает нос, если двигатель слишком тяжелый, что ухудшает обзор и управляемость. Требуется перераспределение веса аккумуляторов и баков.</p>
+
+<ul>
+<li>🚫 Установка мотора мощнее 50 л.с. без серьезной переделки корпуса и усиления днища.</li>
+<li>🚫 Игнорирование состояния дейдвудного отверстия и сальников при повышении скоростного режима.</li>
+<li>🚫 Использование нештатных креплений для бензобака, которые могут не выдержать вибрации мощного мотора.</li>
+<li>✅ Правильная балансировка лодки с учетом веса нового двигателя и пассажиров.</li>
+</ul>
+
+<p>Третья ошибка — экономия на крепеже. Болты и гайки, держащие мощностной мотор, должны быть класса прочности не ниже 8.8, желательно из нержавеющей стали. Вибрация на высоких оборотах способна быстро раскрутить обычный крепеж, что приведет к потере мотора за бортом.</p>
+
+<details>
+<summary>Можно ли legally зарегистрировать Прогресс 4 с мотором 40 л.с.?</summary>
+<p>Официально — нет, если в маркировке на транце указано ограничение 30 л.с. (22.06 кВт). Инспектор ГИМС при освидетельствовании сверяет мощность мотора с данными в маркировке судна. Превышение этого значения считается изменением конструкции без разрешения, что запрещено правилами.</p>
+</details>
+
+<details>
+<summary>Какой винт лучше подобрать для Прогресс 4 с мотором 40 л.с.?</summary>
+<p>Для тяжелой лодки с мощным мотором важен шаг винта. Обычно рекомендуется уменьшать шаг на 1-2 дюйма относительно стандартного для данного мотора, чтобы быстрее выводить лодку на глиссирование и снизить нагрузку на дейдвуд при старте. Для 40 л.с. оптимальным может быть шаг в районе 9-10 дюймов в зависимости от модели винта.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять транец при установке 50-сильного мотора?</summary>
+<p>Замена транца целиком требуется редко, но его усиление — обязательно. Необходимо проверить толщину алюминия и наличие усилителей. Часто приваривают или приклепывают дополнительные косынки и накладки из того же сплава (Д16Т), чтобы распределить нагрузку от более мощного и тяжелого двигателя.</p>
+</details>
+
+<p>В заключение стоит сказать, что <em>Прогресс 4</em> — это удивительно живучая и универсальная лодка. Она способна переварить и 40, и 50 лошадиных сил, превращаясь в быстрый глиссер. Однако этот путь требует не просто покупки нового мотора, но и глубокого понимания устройства своего судна, готовности к доработкам и осознания всех юридических и технических рисков.</p></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#заводские-ограничения-и-паспортные-данные">Заводские ограничения и паспортные данные</a></li><li><a href="#реальная-практика-30-лс-или-больше">Реальная практика: 30 л.с. или больше?</a></li><li><a href="#технические-требования-к-установке-мощного-мотора">Технические требования к установке мощного мотора</a></li><li><a href="#влияние-мощности-на-ходовые-качества">Влияние мощности на ходовые качества</a></li><li><a href="#юридические-аспекты-и-регистрация-в-гимс">Юридические аспекты и регистрация в ГИМС</a></li><li><a href="#частые-ошибки-при-тюнинге-прогресса-4">Частые ошибки при тюнинге Прогресса 4</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/l/lo/lodochnyj-elektromotor-khasving.html" class="related-card">Лодочный электромотор Haswing: выбор, модели, характеристики и отзывы</a></li><li><a href="/articles/m/ma/maslo-dlya-reduktora-lodochnogo-motora-2-kh.html" class="related-card">Масло для редуктора лодочного мотора 2т: выбор, замена, ошибки</a></li><li><a href="/articles/k/ka/kak-pravilno-perevozit-chetyrekhtaktnyj-lodochnyj-motor.html" class="related-card">Как правильно перевозить четырехтактный лодочный мотор: инструкция</a></li><li><a href="/articles/y/ya/yaponskij-auktsion-lodochnykh-motorov.html" class="related-card">Японский аукцион лодочных моторов: полный гид по покупке</a></li><li><a href="/articles/c/ch/chem-otlichaetsya-shag-vinta-na-lodochnyj-motor.html" class="related-card">Шаг винта на лодочный мотор: как выбрать и настроить</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/l/lo/lodochnyj-elektromotor-khasving.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный электромотор Haswing: выбор, модели, характеристики и отзывы</span><span class="related-bottom-desc">Полный обзор лодочных электромоторов Haswing. Сравнение моделей, тяга, время работы, особенности уст</span></a><a href="/articles/m/ma/maslo-dlya-reduktora-lodochnogo-motora-2-kh.html" class="related-bottom-card"><span class="related-bottom-title">Масло для редуктора лодочного мотора 2т: выбор, замена, ошибки</span><span class="related-bottom-desc">Какое масло заливать в редуктор лодочного мотора 2т? Рейтинг масел, инструкция по замене, ошибки и п</span></a><a href="/articles/k/ka/kak-pravilno-perevozit-chetyrekhtaktnyj-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Как правильно перевозить четырехтактный лодочный мотор: инструкция</span><span class="related-bottom-desc">Полное руководство по транспортировке лодочного мотора. Узнайте, в каком положении возить 4-тактный </span></a><a href="/articles/y/ya/yaponskij-auktsion-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Японский аукцион лодочных моторов: полный гид по покупке</span><span class="related-bottom-desc">Как купить мотор на японском аукционе? Разбор системы оценки, скрытых комиссий, популярных брендов и</span></a><a href="/articles/c/ch/chem-otlichaetsya-shag-vinta-na-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Шаг винта на лодочный мотор: как выбрать и настроить</span><span class="related-bottom-desc">Подробный гид по шагу винта лодочного мотора. Узнайте, как влияет шаг винта на скорость и тягу, как </span></a><a href="/articles/v/vy/vysota-trantsa-pod-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Высота транца под лодочный мотор: стандарты, риски и настройка</span><span class="related-bottom-desc">Как правильно выставить высоту транца для лодочного мотора? Стандарты глубины, влияние на ходовые ка</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

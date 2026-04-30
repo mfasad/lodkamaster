@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Мотор лодки глохнет: причины и ремонт своими руками — ЛодкаМастер</title>
+    <meta name="description" content="Лодочный мотор глохнет на ходу или на холостых? Полный гид по диагностике топливной системы, свечей и карбюратора. Устраняем проблемы ПЛМ.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/m/mo/motor-lodki-glokhnet.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Мотор лодки глохнет: причины и ремонт своими руками">
+    <meta property="og:description" content="Лодочный мотор глохнет на ходу или на холостых? Полный гид по диагностике топливной системы, свечей и карбюратора. Устраняем проблемы ПЛМ.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Мотор лодки глохнет: причины и ремонт своими руками</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Почему глохнет мотор лодки: диагностика и решение проблем</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#первичная-диагностика-топливная-система-и-подача-бензина">Первичная диагностика: топливная система и подача бензина</a></li><li><a href="#система-зажигания-свечи-катушки-и-вв-провода">Система зажигания: свечи, катушки и ВВ провода</a></li><li><a href="#проблемы-с-карбюратором-и-смесеобразованием">Проблемы с карбюратором и смесеобразованием</a></li><li><a href="#воздушная-система-и-подсос-лишнего-воздуха">Воздушная система и подсос лишнего воздуха</a></li><li><a href="#водяное-охлаждение-и-температурный-режим">Водяное охлаждение и температурный режим</a></li><li><a href="#механические-неисправности-и-компрессия">Механические неисправности и компрессия</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Ситуация, когда <strong>лодочный мотор</strong> внезапно теряет тягу и глохнет посреди водоема, способна превратить приятную прогулку в опасное приключение. Это не просто техническая неисправность, это риск остаться дрейфовать вдали от берега без возможности маневра. Чаще всего причина кроется в нарушении подачи топлива, системы зажигания или попадании воды в критические узлы агрегата.</p>
+
+<p>Паниковать в такой момент не стоит, так как большинство поломок можно диагностировать и устранить прямо на воде или после буксировки к причалу. <em>Двухтактные</em> и четырехтактные двигатели имеют свои нюансы, но базовые принципы их работы схожи. В этой статье мы разберем алгоритм действий, который поможет вам понять, почему <strong>глохнет двигатель</strong>, и вернет вас на берег своим ходом.</p>
+
+<p>Важно понимать, что игнорирование первых симптомов, таких как нестабильные обороты или рывки, часто приводит к более серьезным последствиям. <mark>Если мотор заглох после удара о дно или корягу, первым делом проверьте дейдвуд на предмет трещин и целостность водозаборника.</mark> Дальнейшая эксплуатация без визуального осмотра может привести к полному разрушению дейдвудной части.</p>
+
+<h2 id="первичная-диагностика-топливная-система-и-подача-бензина">Первичная диагностика: топливная система и подача бензина</h2>
+
+<p>Самая распространенная причина остановки двигателя — банальное отсутствие топлива в цилиндрах. Даже если бак полон, бензин может не доходить до карбюратора из-за воздушной пробки или пережатого шланга. Визуально проверьте весь путь от бака до мотора, убедившись, что топливный шланг нигде не перекручен и не передавлен элементами конструкции лодки.</p>
+
+<p>Особое внимание следует уделить состоянию <strong>топливного фильтра</strong>-отстойника, который часто устанавливается перед мотором. Если в баке была вода или грязь, именно этот узел примет удар на себя. При засорении фильтра двигатель сначала начнет "троить", теряя мощность на высоких оборотах, а затем полностью остановится.</p>
+
+<ul>
+    <li>🛢️ Проверьте вентиляцию топливного бака: открутите крышку и попробуйте завести мотор; если он заработает, значит, забито вентиляционное отверстие.</li>
+    <li>🔍 Осмотрите прозрачный фильтр-отстойник на наличие воды или мусора.</li>
+    <li>🚿 Продуйте топливные шланги сжатым воздухом для удаления возможных пробок.</li>
+    <li>⚙️ Убедитесь, что груша ручной подкачки жесткая, что свидетельствует о нормальном давлении в системе.</li>
+</ul>
+
+<p>Иногда проблема кроется в самом баке. В жаркую погоду внутри может создаваться избыточное давление паров бензина, блокирующее работу топливного насоса. В таких случаях помогает временное снятие крышки бака для выравнивания давления.</p>
+
+<div class="poll-widget" id="poll-cb964243"><div class="poll-widget-question">📊 Как часто у вас глохнет мотор на воде?</div><div class="poll-widget-option" data-poll="cb964243" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Только в первый сезон</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="cb964243" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Раз в сезон</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="cb964243" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Постоянно, есть проблема</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="cb964243" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Никогда не глох</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Если после проверки подачи топлива проблема не исчезла, стоит обратить внимание на качество самой смеси. Использование старого бензина, простоявшего в баке более месяца, часто приводит к расслоению фракций и образованию смол. <strong>Карбюратор</strong> забивается липким налетом, и игла перестает пропускать топливо в необходимых объемах.</p>
+
+<h2 id="система-зажигания-свечи-катушки-и-вв-провода">Система зажигания: свечи, катушки и ВВ провода</h2>
+
+<p>Второй по популярности причиной отказа двигателя является отсутствие искры. В условиях повышенной влажности и соленой воды электрическая система лодочного мотора подвергается агрессивному воздействию. Коррозия контактов и пробой изоляции высоковольтных проводов — частые гости на старых моторах.</p>
+
+<p>Первым делом необходимо выкрутить <strong>свечу зажигания</strong> и оценить ее состояние. Цвет нагара может многое рассказать о работе двигателя: черный бархатистый налет указывает на богатую смесь, белый — на бедную, а маслянистый налет свидетельствует о проблемах с поршневой группой или качеством масла.</p>
+
+<p>Для проверки искры свечу прикладывают металлической частью к массе двигателя (например, к головке блока) и прокручивают стартером. Однако, делать это на открытом воздухе опасно из-за паров бензина, поэтому лучше использовать специальный тестер или проводить проверку с максимальной осторожностью.</p>
+
+<blockquote>
+<p>⚠️ Внимание! Никогда не держите свечу в руках при прокрутке стартера — удар током от системы зажигания может быть очень сильным и болезненным.</p>
+</blockquote>
+
+<p>Если искра слабая или отсутствует, проверьте колпачок свечи. Внутри него часто окисляется контакт или скапливается влага. Протрите внутреннюю поверхность колпачка сухой тканью и обезжирьте контакт. Также стоит осмотреть катушку зажигания на предмет трещин корпуса, через которые может происходить пробой на массу.</p>
+
+<p>В современных моторах с электронным управлением (CDI или TCI) причиной может стать выход из строя датчика аварийной остановки (kill-switch). Проверьте, плотно ли сидит магнитный выключатель на румпеле или панели управления. Иногда достаточно просто несколько раз нажать и отпустить кнопку "Стоп", чтобы восстановить контакт.</p>
+
+<h2 id="проблемы-с-карбюратором-и-смесеобразованием">Проблемы с карбюратором и смесеобразованием</h2>
+
+<p>Карбюратор — это сердце топливной системы, где происходит смешивание воздуха и топлива. Если <strong>лодочный мотор</strong> глохнет сразу после запуска или не держит холостые обороты, скорее всего, проблема именно здесь. Жиклеры имеют микроскопические отверстия, которые легко забиваются мельчайшими частицами грязи или смолами.</p>
+
+<p>Частая ситуация: мотор работает на полном газу, но глохнет при сбросе газа на холостые. Это говорит о засорении канала холостого хода или неправильной регулировке винта качества смеси. В таком случае двигатель "захлебывается" слишком богатой смесью или, наоборот, испытывает топливное голодание.</p>
+
+<div class="checklist-block"><h4>☑️ Диагностика карбюратора</h4><label class="check-item"><input type="checkbox"><span>Снять и разобрать карбюратор:Продуть все каналы сжатым воздухом:Промыть жиклеры очистителем:Проверить поплавок и запорную иглу:Собрать и настроить</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 1</div></div>
+
+<p>Регулировка карбюратора требует точности. Винт количества смеси отвечает за обороты холостого хода, а винт качества — за состав смеси. Закручивая винт качества до упора (не сильно!) и затем выкручивая его на определенное количество оборотов, можно найти оптимальный режим работы.</p>
+
+<p>Стоит также проверить состояние диафрагмы топливного насоса, если она встроена в карбюратор. Со временем резиновая мембрана дубеет или рвется, переставая качать топливо. Это приводит к тому, что мотор работает только на остатках топлива в поплавковой камере, а затем глохнет.</p>
+
+<p>Для четырехтактных моторов характерна еще одна проблема — замерзание карбюратора. При интенсивном испарении бензина в зоне диффузора может образовываться ледяная корка, перекрывающая подачу воздуха. Это редкое явление, но возможное в холодную и влажную погоду.</p>
+
+<h2 id="воздушная-система-и-подсос-лишнего-воздуха">Воздушная система и подсос лишнего воздуха</h2>
+
+<p>Двигатель внутреннего сгорания работает как насос, засасывающий воздух. Если в системе впуска появляется неучтенное отверстие, смесь становится слишком бедной, и мотор глохнет. <strong>Подсос воздуха</strong> часто происходит через прокладки между карбюратором и цилиндром или через сальники коленвала.</p>
+
+<p>Диагностировать подсос можно методом опрыскивания места соединения карбюратора и двигателя горючей жидкостью (например, очистителем карбюратора) при работающем моторе. Если обороты изменятся, значит, жидкость попала через щель в камеру сгорания, и герметичность нарушена.</p>
+
+<ul>
+    <li>🌬️ Проверьте воздушный фильтр: если он забит пылью или пухом, двигатель будет задыхаться.</li>
+    <li>🔩 Осмотрите крепежные болты карбюратора — от вибрации они могут ослабнуть.</li>
+    <li>🛑 Обратите внимание на состояние прокладок впускного коллектора.</li>
+    <li>👂 Прислушайтесь к характерному свисту на холостых оборотах.</li>
+</ul>
+
+<p>Особенно актуальна эта проблема для моторов, которые долго простояли без работы. Резиновые уплотнители высыхают и теряют эластичность. В таком случае поможет только замена прокладочного комплекта.</p>
+
+<p>Не забывайте про воздушную заслонку ("подсос"). При запуске холодного двигателя она должна быть закрыта, enriching смесь. Если забыть открыть заслонку после прогрева, мотор будет работать с перебоями и eventually заглохнет из-за перелива.</p>
+
+<h2 id="водяное-охлаждение-и-температурный-режим">Водяное охлаждение и температурный режим</h2>
+
+<p>Перегрев — верный способ заставить мотор остановиться. Система водяного охлаждения лодочного мотора критически важна. Если водяная помпа (импеллер) изношена или забиты каналы охлаждения, температура двигателя растет, и срабатывает температурный датчик, принудительно отключающий зажигание.</p>
+
+<p>Первым признаком перегрева часто становится отсутствие воды в контрольной струе ("писсуаре"). Если струя слабая или отсутствует, немедленно глушите мотор. Эксплуатация без охлаждения даже в течение пары минут может привести к задирам поршней и клину двигателя.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Симптом</th>
+            <th>Вероятная причина</th>
+            <th>Действие</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Нет контрольной струи</td>
+            <td>Забит водозаборник или изношен импеллер</td>
+            <td>Прочистить входное отверстие, заменить помпу</td>
+        </tr>
+        <tr>
+            <td>Струя прерывистая</td>
+            <td>Воздушная пробка в системе</td>
+            <td>Продуть систему, проверить герметичность патрубков</td>
+        </tr>
+        <tr>
+            <td>Мотор горячий, но струя есть</td>
+            <td>Забиты водяные рубашки блока</td>
+            <td>Промыть систему охлаждения кислотой или спецсредством</td>
+        </tr>
+        <tr>
+            <td>Сработала сигнализация</td>
+            <td>Критический перегрев</td>
+            <td>Остановить двигатель, дать остыть, проверить термостат</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>В зимний период опасность представляет не перегрев, а замерзание воды в рубашке охлаждения, если мотор не был законсервирован. Лед может расколоть блок цилиндров, что приведет к фатальным повреждениям. Всегда сливайте воду после эксплуатации в мороз.</p>
+
+<details class="faq-item"><summary>Как правильно промыть систему охлаждения?</summary><div class="faq-answer"><p>Для профилактики используйте раствор лимонной кислоты или специальные средства для раскоксовки. Подключите мотор к бочке с раствором, дайте поработать 15-20 минут на холостых, затем тщательно промойте чистой водой. Это удалит солевые отложения и ржавчину.</p></div></details>
+
+<h2 id="механические-неисправности-и-компрессия">Механические неисправности и компрессия</h2>
+
+<p>Если все системы в порядке, но мотор не заводится или глохнет, стоит проверить механическую часть. Падение <strong>компрессии</strong> — серьезный диагноз, указывающий на износ поршневой группы, колец или клапанов (в 4-тактных моторах).</p>
+
+<p>Измерить компрессию можно с помощью специального компрессометра, вкручиваемого вместо свечи. Нормальные значения зависят от модели мотора, но обычно составляют от 9 до 12 атмосфер для исправного двухтактника. Разброс значений между цилиндрами более 1 атмосферы говорит о проблеме.</p>
+
+<p>Часто причиной потери компрессии становятся изношенные сальники коленвала. Через них двигатель может подсасывать воздух, обедняя смесь, или, наоборот, выбрасывать масло в камеру сгорания. Замена сальников — трудоемкая процедура, требующая разборки двигателя.</p>
+
+<blockquote>
+<p>⚠️ Внимание! Если при попытке запуска стартер крутится очень легко, как будто без нагрузки, это может означать обрыв шатуна или разрушение поршня. Дальнейшие попытки запуска только добьют мотор.</p>
+</blockquote>
+
+<p>Также стоит проверить состояние лепесткового клапана (лепестков) на впуске. Если лепесток сломан или не прилегает плотно, топливная смесь будет выбрасываться обратно во впускной тракт, и цилиндр не получит нужного заряда. Это частая причина нестабильной работы на низких оборотах.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+    <summary>Почему мотор заводится и сразу глохнет?</summary>
+    <p>Чаще всего это указывает на засорение жиклера холостого хода в карбюраторе или подсос воздуха через прокладки. Также стоит проверить, не перекрыт ли топливный кран и работает ли система вентиляции бака.</p>
+</details>
+
+<details>
+    <summary>Мотор глохнет на полном газу, что делать?</summary>
+    <p>Это классический признак топливного голодания. Проверьте топливный фильтр, грушу подкачки и состояние топливного шланга (не схлопывается ли он при работе насоса). Возможно, забита сетка в баке или сам карбюратор не справляется с подачей смеси.</p>
+</details>
+
+<details>
+    <summary>Как часто нужно менять свечи на лодочном моторе?</summary>
+    <p>Ресурс свечей зависит от качества топлива и масла. В среднем рекомендуется менять их каждые 100 моточасов или раз в сезон для профилактики. Однако, если мотор начал троить, проверку свечей нужно проводить немедленно.</p>
+</details>
+
+<details>
+    <summary>Может ли мотор глохнуть из-за плохого масла?</summary>
+    <p>Да, особенно в двухтактных двигателях. Если масло не соответствует спецификации TC-W3 или смешано в неправильной пропорции, это ведет к образованию нагара на свечах и поршнях, что нарушает работу двигателя и может вызвать его остановку.</p>
+</details>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Всегда возите с собой на борту запасную свечу, набор ключей и запасной топливный шланг с грушей. Эти мелочи могут спасти вашу рыбалку или прогулку.</p></div>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>90% случаев, когда глохнет лодочный мотор, связаны с топливной системой (грязь, вода, воздух) или системой зажигания (свечи, влага). Начинайте диагностику всегда с них.</p></div></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#первичная-диагностика-топливная-система-и-подача-бензина">Первичная диагностика: топливная система и подача бензина</a></li><li><a href="#система-зажигания-свечи-катушки-и-вв-провода">Система зажигания: свечи, катушки и ВВ провода</a></li><li><a href="#проблемы-с-карбюратором-и-смесеобразованием">Проблемы с карбюратором и смесеобразованием</a></li><li><a href="#воздушная-система-и-подсос-лишнего-воздуха">Воздушная система и подсос лишнего воздуха</a></li><li><a href="#водяное-охлаждение-и-температурный-режим">Водяное охлаждение и температурный режим</a></li><li><a href="#механические-неисправности-и-компрессия">Механические неисправности и компрессия</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/d/dv/dvigatel-kolbasit-na-kholostykh.html" class="related-card">Двигатель колбасит на холостых: поиск причин и ремонт</a></li><li><a href="/articles/o/ob/obkatka-4-taktnogo-lodochnogo-motora.html" class="related-card">Обкатка 4-тактного лодочного мотора: пошаговая инструкция и советы</a></li><li><a href="/articles/k/ka/kak-menyat-maslo-v-reduktore-lodochnogo-motora.html" class="related-card">Замена масла в редукторе лодочного мотора: полная инструкция</a></li><li><a href="/articles/k/kr/kryshka-benzobaka-lodochnogo-motora.html" class="related-card">Крышка бензобака лодочного мотора: устройство, выбор, ремонт и уход</a></li><li><a href="/articles/g/gi/gibrid-lodochnogo-motora-veterok.html" class="related-card">Гибрид лодочного мотора Ветерок: сборка, чертежи и советы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/d/dv/dvigatel-kolbasit-na-kholostykh.html" class="related-bottom-card"><span class="related-bottom-title">Двигатель колбасит на холостых: поиск причин и ремонт</span><span class="related-bottom-desc">Почему двигатель колбасит на холостых оборотах? Полный гид по диагностике подсоса воздуха, свечей, т</span></a><a href="/articles/o/ob/obkatka-4-taktnogo-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Обкатка 4-тактного лодочного мотора: пошаговая инструкция и советы</span><span class="related-bottom-desc">Как правильно обкатать 4-тактный лодочный мотор? Подробный график, выбор масла, ошибки новичков и от</span></a><a href="/articles/k/ka/kak-menyat-maslo-v-reduktore-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Замена масла в редукторе лодочного мотора: полная инструкция</span><span class="related-bottom-desc">Пошаговая инструкция по замене масла в редукторе лодочного мотора. Какое масло выбрать, интервалы за</span></a><a href="/articles/k/kr/kryshka-benzobaka-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Крышка бензобака лодочного мотора: устройство, выбор, ремонт и уход</span><span class="related-bottom-desc">Все о крышках топливных баков лодочных моторов: как выбрать, почему протекают, ремонт клапана и табл</span></a><a href="/articles/g/gi/gibrid-lodochnogo-motora-veterok.html" class="related-bottom-card"><span class="related-bottom-title">Гибрид лодочного мотора Ветерок: сборка, чертежи и советы</span><span class="related-bottom-desc">Как создать гибрид лодочного мотора Ветерок? Полный гид по переделке, установке электромотора и повы</span></a><a href="/articles/k/ka/kakim-maslom-shpritsevat-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Каким маслом шприцевать лодочный мотор: инструкция и выбор смазки</span><span class="related-bottom-desc">Полный гид по шприцеванию лодочных моторов. Какое масло выбрать, куда смазывать и как продлить ресур</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

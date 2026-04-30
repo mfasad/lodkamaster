@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Разбор лодочных моторов Меркури: диагностика и ремонт — ЛодкаМастер</title>
+    <meta name="description" content="Экспертный разбор лодочных моторов Mercury. Типичные неисправности, схемы двигателей, проверка компрессии и советы по обслуживанию редуктора.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/r/ra/razbor-lodochnykh-motorov-merkuri.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Разбор лодочных моторов Меркури: диагностика и ремонт">
+    <meta property="og:description" content="Экспертный разбор лодочных моторов Mercury. Типичные неисправности, схемы двигателей, проверка компрессии и советы по обслуживанию редуктора.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Разбор лодочных моторов Меркури: диагностика и ремонт</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Разбор лодочных моторов Меркури: диагностика и ремонт</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-к-демонтажу-и-диагностика-состояния">Подготовка к демонтажу и диагностика состояния</a></li><li><a href="#снятие-дейдвуда-и-проверка-компрессии">Снятие дейдвуда и проверка компрессии</a></li><li><a href="#разборка-карбюраторной-системы-и-топливного-насоса">Разборка карбюраторной системы и топливного насоса</a></li><li><a href="#демонтаж-головки-блока-и-поршневой-группы">Демонтаж головки блока и поршневой группы</a></li><li><a href="#ревизия-редуктора-и-гребного-вала">Ревизия редуктора и гребного вала</a></li><li><a href="#сборка-двигателя-и-финальная-настройка">Сборка двигателя и финальная настройка</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Эксплуатация водной техники неизбежно подводит владельца к моменту, когда требуется глубокое вмешательство в механику агрегата. <strong>Лодочные моторы Mercury</strong> заслуженно считаются одними из самых надежных на рынке, однако даже им свойственны износ деталей, выработка ресурса и необходимость замены расходных материалов. Грамотный разбор двигателя — это не просто снятие крышек, а сложная процедура, требующая понимания принципов работы двухтактных и четырехтактных систем.</p>
+
+<p>Неправильная последовательность действий при демонтаже может привести к повреждению прокладок, потере герметичности картера или, что еще хуже, к заклиниванию поршневой группы при сборке. В этой статье мы детально рассмотрим этапы разборки популярных моделей, уделив особое внимание нюансам, которые часто упускают новички при первом знакомстве с агрегатом.</p>
+
+<p>Прежде чем браться за инструменты, необходимо четко осознавать, что вы имеете дело с высокоточным механизмом. Любая пыль, попавшая внутрь картера, или сорванная резьба могут стать фатальными для мотора. Давайте разберем основные этапы подготовки и первичной диагностики.</p>
+
+<h2 id="подготовка-к-демонтажу-и-диагностика-состояния">Подготовка к демонтажу и диагностика состояния</h2>
+
+<p>Первым шагом всегда является визуальный осмотр и первичная диагностика. Не спешите откручивать болты, если не уверены в причине неисправности. Часто внешние симптомы, такие как вибрация или потеря тяги, кроются не в глубине двигателя, а в системе топливоподачи или зажигания. Проверьте состояние <em>свечей зажигания</em> и качество искры.</p>
+
+<p>Если мотор четырехтактный, обязательно слейте масло из картера перед началом работ. В двухтактных моделях Mercury важно проверить состояние дейдвудного соединения. Для этого необходимо отсоединить топливные шланги и тросы управления. Убедитесь, что рабочая зона чистая и хорошо освещена.</p>
+
+<div class="checklist-block"><h4>☑️ Готовность к разборке мотора</h4><label class="check-item"><input type="checkbox"><span>Слить топливо из поплавковой камеры</span></label><label class="check-item"><input type="checkbox"><span>Отсоединить аккумуляторную батарею</span></label><label class="check-item"><input type="checkbox"><span>Подготовить чистую тару для деталей</span></label><label class="check-item"><input type="checkbox"><span>Проверить наличие мануала для вашей модели</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Особое внимание стоит уделить креплению мотора к транцу или стойке. Снимите мотор с лодки и надежно зафиксируйте его на стенде или устойчивой поверхности. Шатая агрегат из стороны в сторону, прислушайтесь к посторонним стукам в районе <strong>дейдвуда</strong> и редуктора. Это поможет локализовать проблему еще до снятия кожухов.</p>
+
+<h2 id="снятие-дейдвуда-и-проверка-компрессии">Снятие дейдвуда и проверка компрессии</h2>
+
+<p>Отделение дейдвуда от блока цилиндров — критический момент. На многих моделях Mercury, особенно сериях <em>ProKicker</em> и <em>SeaPro</em>, болты крепления дейдвуда могут быть покрыты коррозией. Используйте проникающую смазку и дайте ей время подействовать. Никогда не применяйте чрезмерную силу, чтобы не сорвать резьбу в алюминиевом сплаве.</p>
+
+<p>После снятия дейдвуда открывается доступ к шатунно-поршневой группе. Именно здесь чаще всего скрываются проблемы с компрессией. Перед полной разборкой цилиндров настоятельно рекомендуется замерить компрессию, если мотор еще хоть как-то заводится. Нормальные показатели для двухтактников Mercury варьируются в диапазоне 90–110 PSI, а для четырехтактных могут достигать 150 PSI и выше.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При снятии дейдвуда на четырехтактных моторах следите за штангами переключения передач. Их легко согнуть или потерять фиксирующие шарики, если резко дернуть узел в сторону.</p>
+</blockquote>
+
+<p>Если компрессия низкая, добавьте немного масла в цилиндры и повторите замер. Рост показаний укажет на износ поршневых колец, а отсутствие изменений — на проблемы с клапанами (в 4-тактниках) или лепестковыми клапанами (в 2-тактниках). Также проверьте состояние прокладки между блоком и дейдвудом: ее разрыв ведет к подсосу воды и перегреву.</p>
+
+<p>Для двухтактных двигателей важным элементом является <strong>лепестковый клапан</strong>. На старых моделях Mercury он может быть выполнен в виде отдельной пластины, на новых — интегрирован в блок. Его деформация или загрязнение смолами напрямую влияют на набор оборотов и приемистость мотора.</p>
+
+<details class="faq-item"><summary>Секрет проверки лепесткового клапана</summary><div class="faq-answer"><p>Просветите лепестковый клапан мощным фонариком с обратной стороны. Даже микроскопические зазоры, невидимые глазу, будут пропускать свет и указывать на необходимость замены или притирки лепестков.</p></div></details>
+
+<h2 id="разборка-карбюраторной-системы-и-топливного-насоса">Разборка карбюраторной системы и топливного насоса</h2>
+
+<p>Топливная система — это кровеносная система вашего лодочного мотора. На карбюраторных моделях Mercury, таких как популярные <em>Mercury 5 M</em> или <em>15 M</em>, часто встречаются проблемы с диафрагмами топливного насоса. Они дубеют от времени и ethanol-содержащего бензина, переставая качать топливо.</p>
+
+<p>При снятии карбюраторов маркируйте каждый шланг и тросик. Перепутав вакуумные шланги при сборке, вы получите либо нестабильный холостой ход, либо невозможность запуска. Внутри карбюратора внимание стоит обратить на жиклеры и поплавок. Забитые каналы — основная причина "троения" двигателя.</p>
+
+<ul>
+<li>🔧 Снимите верхнюю крышку карбюратора и проверьте уровень топлива в поплавковой камере.</li>
+<li>🔧 Продуйте все каналы сжатым воздухом, но не ковыряйте жиклеры металлическими предметами.</li>
+<li>🔧 Осмотрите диафрагму насоса на предмет трещин и разрывов, даже микроскопических.</li>
+<li>🔧 Проверьте герметичность соединения карбюратора с впускным коллектором.</li>
+</ul>
+
+<p>В современных системах с электронным впрыском (EFI) разборка ограничивается заменой фильтров и проверкой датчиков. Однако, если речь идет о классическом карбюраторе, его чистка и настройка — обязательный этап. Не забудьте проверить игольчатый клапан, который отвечает за перекрытие подачи топлива.</p>
+
+<div class="poll-widget" id="poll-d9cc922c"><div class="poll-widget-question">📊 Что чаще всего выходит из строя в топливной системе?</div><div class="poll-widget-option" data-poll="d9cc922c" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Мембрана бензонасоса</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="d9cc922c" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Забились жиклеры карбюратора</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="d9cc922c" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Порвался топливный шланг</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="d9cc922c" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Неисправен электромагнитный клапан</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="демонтаж-головки-блока-и-поршневой-группы">Демонтаж головки блока и поршневой группы</h2>
+
+<p>Снятие головки блока цилиндров требует особой аккуратности. Болты головки необходимо откручивать крест-накрест, начиная с крайних и двигаясь к центру. Это предотвратит деформацию плоскости прилегания. На четырехтактных моторах Mercury, таких как серия <em>FourStroke</em>, предварительно нужно выставить метки ГРМ, чтобы при сборке не нарушить фазы газораспределения.</p>
+
+<p>После снятия головки осмотрите камеру сгорания. Наличие черного нагара свидетельствует о богатой смеси, а светлый, почти белый налет — о бедной, что опасно перегревом. Если на поршнях видны глубокие задиры, потребуется расточка или замена цилиндров, что в домашних условиях сделать практически невозможно.</p>
+
+<p>При извлечении поршней будьте осторожны с стопорными кольцами пальца. Потерянное внутри картера кольцо может натворить бед, попав в кривошипно-шатунный механизм. Шатунные подшипники на двухтактных моторах Mercury обычно игольчатые, и их состояние напрямую влияет на стук двигателя.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>2-тактные моторы</th>
+<th>4-тактные моторы</th>
+<th>Критический износ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Зазор колец (мм)</td>
+<td>0.3 - 0.5</td>
+<td>0.2 - 0.4</td>
+<td>> 1.0 мм</td>
+</tr>
+<tr>
+<td>Компрессия (PSI)</td>
+<td>90 - 110</td>
+<td>130 - 160</td>
+<td>< 70 PSI</td>
+</tr>
+<tr>
+<td>Момент затяжки ГБЦ</td>
+<td>Зависит от модели</td>
+<td>Строго по мануалу</td>
+<td>Срыв резьбы</td>
+</tr>
+<tr>
+<td>Тип смазки</td>
+<td>Масло в бензин</td>
+<td>Картерное масло</td>
+<td>Эмульсия</td>
+</tr>
+</tbody>
+</table>
+
+<p>Важно отметить, что на некоторых двухтактных моделях с раздельной смазкой (Oil Injection) необходимо отключить подачу масла перед разборкой, чтобы не залить картер. Система <strong>OptiMax</strong>, например, имеет сложный насос высокого давления, требующий отдельной диагностики.</p>
+
+<h2 id="ревизия-редуктора-и-гребного-вала">Ревизия редуктора и гребного вала</h2>
+
+<p>Редуктор — это узел, который принимает на себя самые большие нагрузки от воды и посторонних предметов. Разбор редуктора лодочного мотора Mercury начинается со снятия гребного винта. Обратите внимание на состояние шлицов вала и наличие намотанной лески, которая может повредить сальники.</p>
+
+<p>При снятии нижней крышки редуктора обязательно слейте масло и оцените его состояние. Наличие металлической стружки ("серебрянки") говорит о износе шестерен или подшипников. Эмульсия (масло цвета кофе с молоком) указывает на попадание воды через сальники.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При сборке редуктора обязательно используйте новый сальник штока переключения и смазывайте манжетные уплотнения перед установкой. Сухие сальники сгорают при первом же запуске.</p>
+</blockquote>
+
+<p>Проверьте шлицы гребного вала и состояние упорных подшипников. Люфт вала вверх-вниз недопустим и регулируется подбором шайб под нижним подшипником. В моторах Mercury часто встречается износ втулки выхлопной трубы (отвода газов), которая находится внутри дейдвуда. Ее замена требует снятия дейдвуда, но продлевает жизнь выхлопной системе.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При сборке редуктора используйте только специальную трансмиссионную смазку для лодочных моторов. Обычное литиевое масло может вспениваться и потерять свойства под нагрузкой.</p></div>
+
+<h2 id="сборка-двигателя-и-финальная-настройка">Сборка двигателя и финальная настройка</h2>
+
+<p>Сборка — это процесс, обратный разборке, но с соблюдением моментов затяжки. Использование динамометрического ключа обязательно. Перетянутые болты картера могут привести к его растрескиванию, а недотянутые — к потере герметичности и проворачиванию вкладышей.</p>
+
+<p>При установке поршней следите за направлением стрелок на днище — они должны смотреть в сторону выхлопа. Перепутав направление, вы нарушите работу продувочных окон. На четырехтактных моторах критически важно правильно выставить метки ГРМ по коленвалу и распредвалу.</p>
+
+<p>После сборки необходимо проверить работу системы зажигания. Для этого удобно использовать стробоскоп. Угол опережения зажигания на моторах Mercury должен точно соответствовать спецификациям для данной модели. Смещение угла даже на несколько градусов может вызвать детонацию или перегрев.</p>
+
+<p>Финальным этапом становится обкатка. Даже если вы просто перебрали мотор, первые часы работы должны пройти в щадящем режиме. Не давайте полный газ, следите за температурой и давлением масла (если есть датчик). Это позволит деталям притереться друг к другу.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Качество сборки и чистота при монтаже важнее скорости выполнения работ. Одна песчинка в подшипнике способна убить мотор за считанные минуты работы.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Как часто нужно менять сальники дейдвуда на моторе Mercury?</summary>
+<p>Рекомендуется менять сальники дейдвуда (штока переключения и гребного вала) каждые 2-3 сезона или при каждой замене масла в редукторе, если обнаружена эмульсия. Профилактическая замена дешевле ремонта шестерен.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать автомобильные свечи на лодочном моторе?</summary>
+<p>Категорически не рекомендуется. Свечи для лодочных моторов имеют другую конструкцию изолятора и калильное число, адаптированное под работу на постоянных нагрузках и низких оборотах. Автомобильные свечи могут вызвать калильное зажигание.</p>
+</details>
+
+<details>
+<summary>Что означает белый дым из выхлопа двухтактного мотора?</summary>
+<p>Белый дым — это нормальное явление для двухтактных моторов, так как сгорает масло. Однако, если дым становится густым и синеватым, это может указывать на слишком богатую смесь или сгорание масла из-за неисправности колец.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять прокладки при каждом разборе мотора?</summary>
+<p>Да, это золотое правило водномоторника. Все бумажные и паронитовые прокладки при разборке деформируются и теряют герметичность. Использование старых прокладок гарантированно приведет к подсосу воздуха или воды.</p>
+</details>
+
+<details>
+<summary>Какое масло заливать в редуктор Mercury?</summary>
+<p>Необходимо использовать специализированное трансмиссионное масло для лодочных моторов (обычно классификация API GL-5 с вязкостью SAE 90 или 80W-90). Оно содержит присадки, защищающие цветные металлы от коррозии, в отличие от автомобильных масел.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#подготовка-к-демонтажу-и-диагностика-состояния">Подготовка к демонтажу и диагностика состояния</a></li><li><a href="#снятие-дейдвуда-и-проверка-компрессии">Снятие дейдвуда и проверка компрессии</a></li><li><a href="#разборка-карбюраторной-системы-и-топливного-насоса">Разборка карбюраторной системы и топливного насоса</a></li><li><a href="#демонтаж-головки-блока-и-поршневой-группы">Демонтаж головки блока и поршневой группы</a></li><li><a href="#ревизия-редуктора-и-гребного-вала">Ревизия редуктора и гребного вала</a></li><li><a href="#сборка-двигателя-и-финальная-настройка">Сборка двигателя и финальная настройка</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/c/ch/chto-takoe-perekrut-vinta-na-lodochnom-motore.html" class="related-card">Перекрут винта на лодочном моторе: причины, признаки, ремонт</a></li><li><a href="/articles/k/ka/kak-zamenit-klapan-na-rezinovoj-lodke.html" class="related-card">Замена клапана на лодке ПВХ: полная инструкция</a></li><li><a href="/articles/z/za/zazhiganie-cdi-chto-eto-na-lodochnom-motore.html" class="related-card">Зажигание CDI на лодочном моторе: устройство, диагностика и ремонт</a></li><li><a href="/articles/m/mo/motornoe-maslo-shell-5w40-sintetika-tsena.html" class="related-card">Моторное масло Shell 5W40 синтетика: цена, характеристики, отзывы</a></li><li><a href="/articles/o/oc/ochistka-dvigatelya-ot-nagara-i-otlozhenij.html" class="related-card">Очистка двигателя от нагара: методы раскоксовки и последствия</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/c/ch/chto-takoe-perekrut-vinta-na-lodochnom-motore.html" class="related-bottom-card"><span class="related-bottom-title">Перекрут винта на лодочном моторе: причины, признаки, ремонт</span><span class="related-bottom-desc">Что такое перекрут винта лодочного мотора, как его избежать и устранить? Причины, симптомы, пошагова</span></a><a href="/articles/k/ka/kak-zamenit-klapan-na-rezinovoj-lodke.html" class="related-bottom-card"><span class="related-bottom-title">Замена клапана на лодке ПВХ: полная инструкция</span><span class="related-bottom-desc">Пошаговая инструкция, как заменить клапан на надувной лодке. Выбор клея, подготовка поверхности, про</span></a><a href="/articles/z/za/zazhiganie-cdi-chto-eto-na-lodochnom-motore.html" class="related-bottom-card"><span class="related-bottom-title">Зажигание CDI на лодочном моторе: устройство, диагностика и ремонт</span><span class="related-bottom-desc">Что такое CDI зажигание на лодочном моторе? Подробный разбор схемы, принцип работы, признаки неиспра</span></a><a href="/articles/m/mo/motornoe-maslo-shell-5w40-sintetika-tsena.html" class="related-bottom-card"><span class="related-bottom-title">Моторное масло Shell 5W40 синтетика: цена, характеристики, отзывы</span><span class="related-bottom-desc">Актуальная цена на синтетическое масло Shell Helix Ultra 5W40. Подробный обзор характеристик, допуск</span></a><a href="/articles/o/oc/ochistka-dvigatelya-ot-nagara-i-otlozhenij.html" class="related-bottom-card"><span class="related-bottom-title">Очистка двигателя от нагара: методы раскоксовки и последствия</span><span class="related-bottom-desc">Подробный гид по удалению нагара из двигателя. Химическая и механическая чистка, риски для лодочных </span></a><a href="/articles/m/ma/maslo-4t-dlya-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Масло 4т для лодочных моторов: выбор, замена, классы вязкости</span><span class="related-bottom-desc">Как правильно выбрать масло 4т для лодочных моторов? Разбор спецификаций NMMA FC-W, вязкости SAE и и</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>ШИМ для лодочного электромотора: устройство, ремонт и настройка — ЛодкаМастер</title>
+    <meta name="description" content="Как работает ШИМ для лодочного электромотора? Подробный разбор схемы, частоты и регулировки скорости. Ремонт контроллера своими руками.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/s/sh/shim-dlya-lodochnogo-elektromotora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ШИМ для лодочного электромотора: устройство, ремонт и настройка">
+    <meta property="og:description" content="Как работает ШИМ для лодочного электромотора? Подробный разбор схемы, частоты и регулировки скорости. Ремонт контроллера своими руками.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">ШИМ для лодочного электромотора: устройство, ремонт и настройка</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>ШИМ для лодочного электромотора: полное руководство</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-широтно-импульсной-модуляции">Принцип работы широтно-импульсной модуляции</a></li><li><a href="#типовая-схема-контроллера-и-его-компоненты">Типовая схема контроллера и его компоненты</a></li><li><a href="#диагностика-неисправностей-шим-контроллера">Диагностика неисправностей ШИМ-контроллера</a></li><li><a href="#настройка-частоты-и-регулировка-скорости">Настройка частоты и регулировка скорости</a></li><li><a href="#сравнение-аналоговых-и-цифровых-систем-управления">Сравнение аналоговых и цифровых систем управления</a></li><li><a href="#меры-безопасности-и-обслуживание">Меры безопасности и обслуживание</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+<p>Электрическая тяга становится стандартом для малых судов, обеспечивая бесшумное и экологичное перемещение по воде. Сердцем любой такой системы является контроллер, который управляет мощностью, подаваемой на обмотки двигателя. Именно <strong>ШИМ для лодочного электромотора</strong> (широтно-импульсная модуляция) выполняет эту критически важную функцию, преобразуя постоянный ток аккумулятора в управляемые импульсы.</p>
+
+<p>Понимание принципов работы этого узла необходимо каждому владельцу электрической лодки. Это знание позволяет не только грамотно эксплуатировать оборудование, но и самостоятельно диагностировать неисправности, избегая дорогостоящего ремонта в сервисных центрах. Современные системы управления эволюционировали от простых реостатов до сложных цифровых схем.</p>
+
+<p>В данной статье мы детально разберем физику процесса, рассмотрим типовые схемы и ответим на вопросы, возникающие при тюнинге или восстановлении вышедшей из строя техники. Вы узнаете, почему частота модуляции так важна и как она влияет на КПД всей системы.</p>
+
+<h2 id="принцип-работы-широтно-импульсной-модуляции">Принцип работы широтно-импульсной модуляции</h2>
+<p>Технология PWM (Pulse Width Modulation) базируется на коммутации постоянного напряжения с высокой частотой. Вместо того чтобы гасить лишнюю энергию на сопротивлении, превращая ее в тепло, контроллер быстро включает и выключает подачу тока. Отношение времени включения к периоду сигнала называется <strong>коэффициентом заполнения</strong> или скважностью.</p>
+
+<p>Когда вы поворачиваете ручку газа на румпеле, вы не меняете напряжение напрямую. Вы изменяете длительность импульса. При малом ходе рукоятки импульсы короткие, и двигатель получает мало энергии. При полном газе импульсы становятся длиннее, приближаясь к постоянному току. Это обеспечивает высокий <em>КПД</em> системы, часто превышающий 90%.</p>
+
+<p>Ключевым элементом здесь выступает силовой транзистор, обычно MOSFET или IGBT. Он работает в ключевом режиме: либо полностью открыт (минимальное сопротивление), либо полностью закрыт. Благодаря этому на самом транзисторе выделяется минимальное количество тепла, что позволяет делать компактные <strong>контроллеры</strong> без громоздких радиаторов.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Попытка измерить выходное напряжение контроллера обычным мультиметром в режиме DC покажет неверные данные, так как прибор усредняет импульсы. Для точной диагностики необходим осциллограф.</p>
+</blockquote>
+
+<p>Частота переключений также играет роль. Слишком низкая частота может вызывать гул обмоток и рывки на низких оборотах. Слишком высокая увеличивает потери на переключение транзисторов. Оптимальный диапазон для лодочных моторов обычно лежит между 10 и 20 кГц.</p>
+
+<h2 id="типовая-схема-контроллера-и-его-компоненты">Типовая схема контроллера и его компоненты</h2>
+<p>Конструктивно любой <strong>регулятор скорости</strong> состоит из нескольких функциональных блоков. Входной каскад принимает напряжение от аккумуляторной батареи (12, 24 или 36 вольт) и фильтрует его. Далее сигнал поступает на логическую часть, где формируется управляющий импульс.</p>
+
+<p>Основную работу выполняет силовой модуль. В дешевых моделях используется один мощный транзистор, в более продвинутых — мостовая схема, позволяющая менять направление вращения винта (реверс). Важнейшим элементом защиты является <strong>термодатчик</strong>, предотвращающий перегрев.</p>
+
+<ul>
+<li>🔋 Входной фильтр — сглаживает пульсации напряжения от АКБ.</li>
+<li>⚡ Силовой ключ (MOSFET) — непосредственно коммутирует ток на мотор.</li>
+<li>🌡️ Система охлаждения — радиаторы и иногда вентиляторы для отвода тепла.</li>
+<li>📡 Блок управления — микроконтроллер, обрабатывающий сигнал от ручки газа.</li>
+</ul>
+
+<p>Особое внимание стоит уделить элементной базе. В качественных устройствах, таких как <em>Minn Kota</em> или <em>Haswing</em>, применяются транзисторы с низким сопротивлением открытого канала. Это снижает потери энергии и повышает надежность.</p>
+
+<details class="faq-item"><summary>Почему греется контроллер?</summary><div class="faq-answer"><p>Основная причина нагрева — работа транзистора в линейном режиме вместо ключевого, либо недостаточная площадь радиатора. Также тепло может генерироваться из-за плохого контакта в клеммах.</p></div></details>
+
+<h2 id="диагностика-неисправностей-шим-контроллера">Диагностика неисправностей ШИМ-контроллера</h2>
+<p>Если электромотор перестал реагировать на ручку газа или работает рывками, проблема может крыться в цепи управления. Первым делом необходимо провести визуальный осмотр платы. Ищите следы гари, вздувшиеся конденсаторы или почерневшие дорожки.</p>
+
+<p>Частой причиной отказа является пробой силового транзистора. В этом случае мотор может либо не запускаться вовсе, либо работать на полные обороты сразу после включения, игнорируя положение регулятора. Проверку следует начинать с прозвонки ключевых элементов мультимlметром.</p>
+
+<p>Также стоит проверить цепь питания логической части. Если микроконтроллер не получает стабильные 5 вольт, он не сможет генерировать <strong>ШИМ-сигнал</strong>. Часто виновником становятся высохшие электролитические конденсаторы.</p>
+
+<div class="checklist-block"><h4>☑️ Первичная диагностика мотора</h4><label class="check-item"><input type="checkbox"><span>Проверить напряжение на клеммах АКБ</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть предохранитель на целостность</span></label><label class="check-item"><input type="checkbox"><span>Проверить контакты провода управления</span></label><label class="check-item"><input type="checkbox"><span>Прозвонить силовые транзисторы мультиметром</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Не забывайте о механических повреждениях. Вибрация и влага — главные враги электроники на воде. Окисление контактов может имитировать поломку электроники, поэтому зачистка разъемов — обязательный этап.</p>
+
+<h2 id="настройка-частоты-и-регулировка-скорости">Настройка частоты и регулировка скорости</h2>
+<p>Для пользователей, занимающихся тюнингом, важно понимать влияние частоты на работу двигателя. Стандартные значения подобраны производителями для баланса между плавностью хода и уровнем шума. Однако изменение параметров может улучшить характеристики.</p>
+
+<p>Повышение частоты делает работу мотора более плавной, особенно на низких оборотах, и убирает характерный свист обмоток. Но это также увеличивает нагрев силовых ключей. Понижение частоты снижает нагрев, но может привести к дерганому ходу.</p>
+
+<p>Регулировка скорости осуществляется изменением скважности импульсов. В аналоговых системах за это отвечает потенциометр, в цифровых — алгоритмы микроконтроллера. Современные модели используют <strong>цифровую обработку сигналов</strong> для точного поддержания заданной скорости.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Низкая частота (до 5 кГц)</th>
+<th>Высокая частота (15-20 кГц)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Плавность хода</td>
+<td>Низкая, возможны рывки</td>
+<td>Высокая, ровная тяга</td>
+</tr>
+<tr>
+<td>Нагрев транзисторов</td>
+<td>Минимальный</td>
+<td>Повышенный</td>
+</tr>
+<tr>
+<td>Шум мотора</td>
+<td>Слышный гул</td>
+<td>Практически бесшумно</td>
+</tr>
+<tr>
+<td>КПД системы</td>
+<td>Высокий</td>
+<td>Средний (из-за потерь переключения)</td>
+</tr>
+</tbody>
+</table>
+
+<p>При самостоятельной доработке контроллера важно не нарушить баланс. Замена конденсаторов в цепи фильтрации может потребовать перенастройки всей системы.</p>
+
+<div class="poll-widget" id="poll-bec5afd9"><div class="poll-widget-question">📊 Какой у вас опыт ремонта электроники?</div><div class="poll-widget-option" data-poll="bec5afd9" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Никакого, боюсь открывать корпус</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="bec5afd9" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Базовый, умею паять</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="bec5afd9" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Профессиональный, работаю с осциллографом</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="bec5afd9" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Меня интересует только покупка нового</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="сравнение-аналоговых-и-цифровых-систем-управления">Сравнение аналоговых и цифровых систем управления</h2>
+<p>Рынок предлагает два основных типа контроллеров. Аналоговые системы проще и дешевле, но менее точны. Цифровые <strong>контроллеры</strong> на базе микропроцессоров обеспечивают лучшую защиту и эффективность.</p>
+
+<p>В аналоговых схемах сигнал с потенциометра напрямую влияет на зарядку конденсатора, задающего время импульса. Это просто, но подвержено дрейфу параметров при изменении температуры. Цифровые системы считывают положение ручки через АЦП и выдают строго рассчитанный сигнал.</p>
+
+<p>Преимущество цифровых систем — возможность реализации сложных алгоритмов. Например, плавный старт, защита от заклинивания винта или автоматическое снижение мощности при разряде батареи. Бренды вроде <em>Watersnake</em> активно внедряют такие решения.</p>
+
+<ul>
+<li>📉 Аналоговые системы — надежность, простота ремонта, низкая цена.</li>
+<li>💻 Цифровые системы — высокая точность, дополнительные функции, защита.</li>
+<li>🔧 Ремонтопригодность — аналог проще починить "на коленке".</li>
+</ul>
+
+<p>Выбор зависит от задач. Для простой лодки-плоскодонки хватит аналога. Для серьезной рыбалки с троллингом на низких скоростях цифровая обработка сигнала незаменима.</p>
+
+<h2 id="меры-безопасности-и-обслуживание">Меры безопасности и обслуживание</h2>
+<p>Работа с электричеством и водой требует строгого соблюдения правил. Любые манипуляции с контроллером должны проводиться только после полного отключения аккумуляторной батареи. Остаточное напряжение в конденсаторах может быть опасным.</p>
+
+<p>Регулярное обслуживание продлевает жизнь устройству. Необходимо проверять затяжку клемм, так как вибрация ослабляет контакты, вызывая нагрев. Также важно следить за чистотой системы охлаждения.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не погружайте контроллер в воду, даже если он имеет маркировку IP67. Герметичность рассчитана на брызги и кратковременное погружение, но не на работу под давлением на глубине.</p>
+</blockquote>
+
+<p>Если вы заметили запах гари или дым, немедленно прекратите эксплуатацию. Дальнейшее включение может привести к полному выгоранию платы и повреждению двигателя.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Смазывайте движущиеся части потенциометра (ручки газа) специальной смазкой для контактов раз в сезон — это предотвратит появление "мертвых зон" и треска при регулировке.</p></div>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Своевременная протяжка клемм и защита от влаги предотвращают 80% всех возможных поломок контроллера электромотора.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+<details>
+<summary>Можно ли использовать автомобильный ШИМ для лодочного мотора?</summary>
+<p>Теоретически возможно, если напряжение и ток совпадают. Однако автомобильные контроллеры часто не имеют защиты от влаги и реверса, что критично для лодки.</p>
+</details>
+
+<details>
+<summary>Поч мотор гудит на низких оборотах?</summary>
+<p>Гудение вызвано низкой частотой ШИМ, которая попадает в слышимый диапазон. Это нормально для бюджетных моделей, но может указывать на неисправность фильтра.</p>
+</details>
+
+<details>
+<summary>Как проверить исправность ШИМ без осциллографа?</summary>
+<p>Точно проверить форму сигнала нельзя. Можно лишь косвенно судить по работе мотора: плавный разгон и отсутствие рывков говорят об исправности.</p>
+</details>
+
+<details>
+<summary>Сгорит ли мотор, если ШИМ выйдет из строя?</summary>
+<p>При пробое силового ключа на мотор может пойти полный ток напрямую, что приведет к его перегреву и сгоранию обмоток при длительной работе.</p>
+</details>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Использование оригинальных запчастей и соблюдение полярности при подключении АКБ — залог долгой службы вашего электромотора.</p></div></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-широтно-импульсной-модуляции">Принцип работы широтно-импульсной модуляции</a></li><li><a href="#типовая-схема-контроллера-и-его-компоненты">Типовая схема контроллера и его компоненты</a></li><li><a href="#диагностика-неисправностей-шим-контроллера">Диагностика неисправностей ШИМ-контроллера</a></li><li><a href="#настройка-частоты-и-регулировка-скорости">Настройка частоты и регулировка скорости</a></li><li><a href="#сравнение-аналоговых-и-цифровых-систем-управления">Сравнение аналоговых и цифровых систем управления</a></li><li><a href="#меры-безопасности-и-обслуживание">Меры безопасности и обслуживание</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/s/so/sorvali-rezbu-na-sveche-v-dvigatele-chto-delat.html" class="related-card">Сорвали резьбу на свече зажигания: что делать в 2026 году</a></li><li><a href="/articles/k/kl/klapan-predokhranitelnyj-dlya-lodki-pvkh.html" class="related-card">Клапан предохранительный для лодки ПВХ: виды, ремонт и настройка</a></li><li><a href="/articles/k/ka/kak-razobrat-dvigatel-trimmera.html" class="related-card">Как разобрать двигатель триммера: полная инструкция</a></li><li><a href="/articles/m/ma/maslo-v-lodochnyj-motor-4kh-taktnyj.html" class="related-card">Масло в лодочный мотор 4х тактный: выбор, замена, допуски</a></li><li><a href="/articles/p/pe/peredaet-vrashchenie-ot-motora-kolesam-krossvord.html" class="related-card">Передача вращения: от мотора к колесам кроссворд</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/s/so/sorvali-rezbu-na-sveche-v-dvigatele-chto-delat.html" class="related-bottom-card"><span class="related-bottom-title">Сорвали резьбу на свече зажигания: что делать в 2026 году</span><span class="related-bottom-desc">Пошаговая инструкция по ремонту сорванной резьбы свечи в двигателе лодки или авто. Методы восстановл</span></a><a href="/articles/k/kl/klapan-predokhranitelnyj-dlya-lodki-pvkh.html" class="related-bottom-card"><span class="related-bottom-title">Клапан предохранительный для лодки ПВХ: виды, ремонт и настройка</span><span class="related-bottom-desc">Полный гид по клапанам для надувных лодок. Виды, причины травли воздуха, методы ремонта и таблица со</span></a><a href="/articles/k/ka/kak-razobrat-dvigatel-trimmera.html" class="related-bottom-card"><span class="related-bottom-title">Как разобрать двигатель триммера: полная инструкция</span><span class="related-bottom-desc">Подробный гид по разборке бензинового двигателя триммера. Диагностика поршневой, чистка карбюратора </span></a><a href="/articles/m/ma/maslo-v-lodochnyj-motor-4kh-taktnyj.html" class="related-bottom-card"><span class="related-bottom-title">Масло в лодочный мотор 4х тактный: выбор, замена, допуски</span><span class="related-bottom-desc">Какое масло лить в 4х тактный лодочный мотор? Разбор вязкости, допусков NMMA FC-W, интервалов замены</span></a><a href="/articles/p/pe/peredaet-vrashchenie-ot-motora-kolesam-krossvord.html" class="related-bottom-card"><span class="related-bottom-title">Передача вращения: от мотора к колесам кроссворд</span><span class="related-bottom-desc">Как передается вращение от мотора к колесам: кроссворд по устройству трансмиссии. Разбираем сцеплени</span></a><a href="/articles/r/re/rezinovaya-kraska-dlya-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Резиновая краска для лодки: виды, технология нанесения и рейтинг</span><span class="related-bottom-desc">Полный гид по жидкой резине для лодок. Технология нанесения, сравнение брендов, подготовка поверхнос</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>На лодочной станции было 150 лодок: анализ вместимости — ЛодкаМастер</title>
+    <meta name="description" content="Разбор задачи про 150 лодок на станции. Расчет пропускной способности причала, логистика хранения и правила ГИМС для баз.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/n/na/na-lodochnoj-stantsii-bylo-150-lodok.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="На лодочной станции было 150 лодок: анализ вместимости">
+    <meta property="og:description" content="Разбор задачи про 150 лодок на станции. Расчет пропускной способности причала, логистика хранения и правила ГИМС для баз.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/zakony-i-gims/">Законы и ГИМС</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">На лодочной станции было 150 лодок: анализ вместимости</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>На лодочной станции было 150 лодок: логистика и расчеты</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#математическое-моделирование-загрузки-причала">Математическое моделирование загрузки причала</a></li><li><a href="#типология-флота-от-пвх-до-катеров">Типология флота: от ПВХ до катеров</a></li><li><a href="#организация-стоянки-и-швартовки">Организация стоянки и швартовки</a></li><li><a href="#техническое-обслуживание-и-экология">Техническое обслуживание и экология</a></li><li><a href="#правовые-аспекты-и-регистрация-в-гимс">Правовые аспекты и регистрация в ГИМС</a></li><li><a href="#сезонность-и-логистика-хранения">Сезонность и логистика хранения</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Ситуация, когда на лодочной станции одновременно находится 150 лодок, представляет собой не просто математическую задачу из школьного учебника, а реальное инженерное и логистическое испытание для управляющих базой.</p>
+<p>Подобная концентрация плавсредств требует тщательного планирования акватории, наличия достаточного количества причальных мест и строгого соблюдения норм пожарной безопасности.</p>
+<p>Владельцы водного транспорта часто сталкиваются с вопросами о том, как организовано хранение и обслуживание такого количества техники в одном месте.</p>
+
+<h2 id="математическое-моделирование-загрузки-причала">Математическое моделирование загрузки причала</h2>
+<p>Когда мы говорим о <strong>150 лодках</strong>, находящихся на станции, важно понимать, что это число может варьироваться в зависимости от времени суток и сезона.</p>
+<p>Для обеспечения безопасной стоянки необходимо учитывать габариты каждого судна, будь то компактная <em>надувная лодка ПВХ</em> или полноценный <strong>катер с жестким корпусом</strong>.</p>
+<p>Расчет полезной площади причала ведется с учетом длины корпуса плюс технологический зазор для прохода людей и швартовки.</p>
+
+<div class="poll-widget" id="poll-0aa7a542"><div class="poll-widget-question">📊 Какой тип лодки вы предпочитаете для рыбалки?</div><div class="poll-widget-option" data-poll="0aa7a542" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Надувная ПВХ</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="0aa7a542" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Металлическая (алюминий)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="0aa7a542" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Пластиковый катер</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="0aa7a542" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Деревянная классика</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Если средняя длина плавсредства составляет 4.5 метра, то для размещения 150 единиц в одну линию потребовался бы причал длиной более 675 метров, что встречается редко.</p>
+<p>Поэтому на практике используется <strong>двухрядная или трехрядная швартовка</strong>, где лодки ставятся бортами друг к другу или под углом.</p>
+<p>Такая конфигурация позволяет оптимизировать использование водного пространства, но требует от водителей высокой культуры судовождения при маневрах.</p>
+
+<h2 id="типология-флота-от-пвх-до-катеров">Типология флота: от ПВХ до катеров</h2>
+<p>Статистика показывает, что в типичном парке из 150 единиц техники преобладают модели, не требующие сложного обслуживания на плаву.</p>
+<p>Наибольшую долю часто занимают <em>лодки ПВХ</em> с навесными транцевыми моторами малой мощности.</p>
+<p>Они легки, маневренны и занимают меньше места на воде благодаря малой осадке и габаритам.</p>
+
+<ul>
+<li>🚤 <strong>Надувные суда</strong>: составляют около 60% парка, идеальны для рыбалки в одиночку.</li>
+<li>⚓ <strong>Алюминиевые лодки</strong>: занимают 25%, ценятся за долговечность и устойчивость к ударам.</li>
+<li>🛥️ <strong>Стеклопластиковые катера</strong>: оставшиеся 15%, требуют глубоководных причалов и мощных моторов.</li>
+</ul>
+
+<p>Наличие разнородного флота диктует свои правила распределения мест: тяжелые катера с <strong>стациональными двигателями</strong> размещаются у внешнего края, чтобы их волны не раскачивали легкие надувные суда.</p>
+<p>Важно учитывать весовую нагрузку на понтонные конструкции, особенно если на станции базируются суда с тяжелыми <em>бензиновыми баками</em>.</p>
+
+<details class="faq-item"><summary>Почему ПВХ лодки популярнее?</summary><div class="faq-answer"><p>Надувные лодки дешевле в хранении, их легче транспортировать на крыше автомобиля и они не требуют регистрации в ГИМС, если их грузоподъемность менее 200 кг и мощность мотора до 8 л.с.</p></div></details>
+
+<h2 id="организация-стоянки-и-швартовки">Организация стоянки и швартовки</h2>
+<p>Безопасное размещение 150 лодок невозможно без четкой системы швартовки и якорных растяжек.</p>
+<p>Использование <strong>якорей-кошек</strong> или бетонных блоков на дне водоема позволяет фиксировать положение плавучих дорожек.</p>
+<p>Каждая лодка должна быть надежно закреплена носовым и кормовым фалинями, чтобы исключить перехлестывание тросов при изменении уровня воды или ветре.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание</strong>: Использование гнилых или перетертых швартовных концов на переполненной стоянке может привести к цепной реакции столкновений и повреждению десятков лодок одновременно.</p>
+</blockquote>
+
+<p>Расстояние между соседними причалами должно быть не менее ширины корпуса самой широкой лодки плюс 1.5 метра для безопасного прохода.</p>
+<p>Для обслуживания такой массы техники часто применяются специальные трапы с противоскользящим покрытием и ограждениями.</p>
+<p>В ночное время обязательна подсветка углов причалов и навигационных знаков, ограничивающих акваторию.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка готовности лодки к сезону</h4><label class="check-item"><input type="checkbox"><span>Осмотреть корпус на проколы</span></label><label class="check-item"><input type="checkbox"><span>Проверить надежность крепления транца</span></label><label class="check-item"><input type="checkbox"><span>Проверить работу помпы</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в наличии спасжилета</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="техническое-обслуживание-и-экология">Техническое обслуживание и экология</h2>
+<p>Нахождение 150 лодочных моторов на станции создает потенциальную угрозу загрязнения водоема ГСМ.</p>
+<p>Современные требования <strong>экологической безопасности</strong> обязывают владельцев проводить заправку и обслуживание техники в специально отведенных местах с маслобензостойкими покрытиями.</p>
+<p>Слив отработанных масел в воду категорически запрещен и карается крупными штрафами со стороны надзорных органов.</p>
+
+<p>Регулярная мойка днища от обрастания водорослями — еще одна важная процедура, которую удобно проводить на базе.</p>
+<p>Для двухтактных моторов, до сих пор популярных на <em>маломерных судах</em>, важно использовать качественные смеси масла и бензина во избежание дымления на стоянке.</p>
+<p>Специалисты рекомендуют хранить топливо в специальных емкостях, исключающих испарение и пролив.</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип мотора</th>
+<th>Расход топлива (л/ч)</th>
+<th>Ресурс до капремонта</th>
+<th>Экологичность</th>
+</tr>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2-тактный (5 л.с.)</td>
+<td>1.5 - 2.0</td>
+<td>~3000 моточасов</td>
+<td>Низкая</td>
+</tr>
+<tr>
+<td>4-тактный (5 л.с.)</td>
+<td>1.0 - 1.3</td>
+<td>~5000 моточасов</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Электромотор</td>
+<td>0 (зависит от АКБ)</td>
+<td>~10000 часов</td>
+<td>Максимальная</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте специальные абсорбирующие боны вокруг причалов — они эффективно собирают масляные пятна с поверхности воды, предотвращая загрязнение акватории.</p></div>
+
+<h2 id="правовые-аспекты-и-регистрация-в-гимс">Правовые аспекты и регистрация в ГИМС</h2>
+<p>Скопление 150 плавсредств автоматически переводит лодочную станцию в разряд объектов, требующих особого контроля со стороны ГИМС МЧС.</p>
+<p>Каждое судно, подлежащее регистрации, должно иметь <strong>судовой билет</strong> и четко читаемые бортовые номера.</p>
+<p>Отсутствие документов у владельца может стать причиной запрета на выход в плавание и постановки судна на штрафстоянку.</p>
+
+<p>Владелец базы обязан обеспечить наличие средств спасения на каждом причале: кругов, концов "Александрова" и аптечек.</p>
+<p>Навигационное оборудование, такое как <em>эхолоты</em> и GPS-навигаторы, хотя и не является обязательным для всех, настоятельно рекомендуется для безопасного маневрирования в плотном потоке.</p>
+<p>Проверка документов проводится регулярно, особенно в выходные дни, когда загруженность водоема максимальна.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание</strong>: Эксплуатация незарегистрированного судна или судна без номерных знаков влечет наложение административного штрафа и задержание транспортного средства.</p>
+</blockquote>
+
+<h2 id="сезонность-и-логистика-хранения">Сезонность и логистика хранения</h2>
+<p>Цифра в 150 лодок актуальна для пика летнего сезона, однако зимой логистика меняется кардинально.</p>
+<p>Большинство владельцев предпочитают забирать технику на <strong>зимнее хранение</strong> в отапливаемые помещения или сухие ангары.</p>
+<p>Это позволяет продлить срок службы материалов корпуса, особенно если речь идет о чувствительном к ультрафиолету и морозу <em>ПВХ</em> или алюминии.</p>
+
+<p>На станциях часто организуют услуги по консервации моторов: слив топлива, замена масла, обработка узлов антикором.</p>
+<p>Правильная подготовка к зиме — залог того, что весной, при спуске на воду, техника запустится с первого раза.</p>
+<p>Логистика подъема и спуска 150 единиц техники требует наличия мощных тракторов-тягачей или специализированных кранов-укосин.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Грамотная организация зимнего хранения на специализированной базе может увеличить срок службы лодки на 30-40% по сравнению с хранением под открытым небом.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Нужно ли регистрировать лодку, если на станции их много?</summary>
+<p>Да, количество лодок на станции не влияет на обязанность регистрации. Регистрируются все маломерные суда массой более 200 кг или с мощностью мотора свыше 8 л.с. (5.88 кВт), независимо от того, где они хранятся.</p>
+</details>
+
+<details>
+<summary>Как рассчитать стоимость стоянки для 150 лодок?</summary>
+<p>Стоимость формируется исходя из длины причального фронта, глубины у причала, наличия охраны, электрификации мест стоянки и дополнительных услуг (слип, мойка). Обычно цена устанавливается за погонный метр в месяц.</p>
+</details>
+
+<details>
+<summary>Можно ли хранить лодку с полным баком бензина?</summary>
+<p>Длительное хранение (более месяца) с полным баком не рекомендуется, так как бензин может окисляться и терять свойства, а также образовывать конденсат. Лучше использовать стабилизаторы топлива или сливать его.</p>
+</details>
+
+<details>
+<summary>Какие требования к спасательным жилетам?</summary>
+<p>На каждом маломерном судне должен быть спасательный жилет по числу людей, на которое оно рассчитано. Жилеты должны быть сертифицированы, исправны и находиться в легкодоступном месте.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#математическое-моделирование-загрузки-причала">Математическое моделирование загрузки причала</a></li><li><a href="#типология-флота-от-пвх-до-катеров">Типология флота: от ПВХ до катеров</a></li><li><a href="#организация-стоянки-и-швартовки">Организация стоянки и швартовки</a></li><li><a href="#техническое-обслуживание-и-экология">Техническое обслуживание и экология</a></li><li><a href="#правовые-аспекты-и-регистрация-в-гимс">Правовые аспекты и регистрация в ГИМС</a></li><li><a href="#сезонность-и-логистика-хранения">Сезонность и логистика хранения</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakoj-lodochnyj-motor-nado-registrirovat.html" class="related-card">Какой лодочный мотор нужно регистрировать в ГИМС: правила</a></li><li><a href="/articles/k/ka/kakie-dokumenty-nuzhny-pri-pokupke-dvigatelya-s-ruk.html" class="related-card">Документы для покупки двигателя с рук: полный список 2026</a></li><li><a href="/articles/p/pr/proverka-nomer-dvigatelya.html" class="related-card">Проверка номера двигателя: где найти и как расшифровать</a></li><li><a href="/articles/k/ko/komplektatsiya-lodki-pvkh-dlya-gims.html" class="related-card">Комплектация лодки ПВХ для ГИМС: полное оснащение по закону</a></li><li><a href="/articles/k/ka/kak-proverit-lodku-po-bortovomu-nomeru-v-gims.html" class="related-card">Как проверить лодку по бортовому номеру в ГИМС: инструкция</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kakoj-lodochnyj-motor-nado-registrirovat.html" class="related-bottom-card"><span class="related-bottom-title">Какой лодочный мотор нужно регистрировать в ГИМС: правила</span><span class="related-bottom-desc">Нужно ли регистрировать мотор до 5 л.с.? Ответы на вопросы о мощности, суммировании тяги и штрафах в</span></a><a href="/articles/k/ka/kakie-dokumenty-nuzhny-pri-pokupke-dvigatelya-s-ruk.html" class="related-bottom-card"><span class="related-bottom-title">Документы для покупки двигателя с рук: полный список 2026</span><span class="related-bottom-desc">Какие документы нужны при покупке двигателя с рук в 2026 году? Полный список бумаг, риски ГИБДД, дог</span></a><a href="/articles/p/pr/proverka-nomer-dvigatelya.html" class="related-bottom-card"><span class="related-bottom-title">Проверка номера двигателя: где найти и как расшифровать</span><span class="related-bottom-desc">Полный гид по поиску, сверке и проверке номера двигателя на чистоту. Как пробить по базе ГИБДД, что </span></a><a href="/articles/k/ko/komplektatsiya-lodki-pvkh-dlya-gims.html" class="related-bottom-card"><span class="related-bottom-title">Комплектация лодки ПВХ для ГИМС: полное оснащение по закону</span><span class="related-bottom-desc">Полная комплектация лодки ПВХ для ГИМС: обязательное оборудование, навигация, безопасность и правиль</span></a><a href="/articles/k/ka/kak-proverit-lodku-po-bortovomu-nomeru-v-gims.html" class="related-bottom-card"><span class="related-bottom-title">Как проверить лодку по бортовому номеру в ГИМС: инструкция</span><span class="related-bottom-desc">Узнайте, как проверить лодку по бортовому номеру в ГИМС. Полная инструкция по расшифровке кода, реес</span></a><a href="/articles/k/ka/kakoj-lodochnyj-motor-mozhno-ispolzovat-bez-prav-i-registratsii.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор без прав и регистрации: мощность, правила ГИМС</span><span class="related-bottom-desc">Полный разбор законодательства РФ: какой лодочный мотор не требует прав и регистрации в 2026 году. Т</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Редукция лодочного мотора: устройство, передаточное число, ремонт — ЛодкаМастер</title>
+    <meta name="description" content="Как устроен редуктор лодочного мотора? Все о передаточном числе, типах редукции, смазке и признаках поломки. Экспертный гид по винто-рулевому комплексу.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/r/re/reduktsiya-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Редукция лодочного мотора: устройство, передаточное число, ремонт">
+    <meta property="og:description" content="Как устроен редуктор лодочного мотора? Все о передаточном числе, типах редукции, смазке и признаках поломки. Экспертный гид по винто-рулевому комплексу.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Редукция лодочного мотора: устройство, передаточное число, ремонт</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Редукция лодочного мотора: устройство, передаточное число и ремонт</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-назначение-редуктора">Принцип работы и назначение редуктора</a></li><li><a href="#передаточное-число-что-это-и-как-влияет-на-скорость">Передаточное число: что это и как влияет на скорость</a></li><li><a href="#типы-редукторов-одноступенчатые-и-двухступенчатые">Типы редукторов: одноступенчатые и двухступенчатые</a></li><li><a href="#система-смазки-и-обслуживание-узла">Система смазки и обслуживание узла</a></li><li><a href="#таблица-типичные-передаточные-числа-популярных-моторов">Таблица: Типичные передаточные числа популярных моторов</a></li><li><a href="#неисправности-стук-шум-и-нагрев">Неисправности: стук, шум и нагрев</a></li><li><a href="#ремонт-и-замена-шестерен-стоит-ли-браться-самому">Ремонт и замена шестерен: стоит ли браться самому?</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Любой опытный водномоторник знает, что сердце лодки бьется в картере двигателя, но именно ноги, или нижняя часть подвесного мотора, превращают эту мощь в поступательное движение. Редукция лодочного мотора — это сложный механический узел, который отвечает за передачу крутящего момента от коленчатого вала к гребному винту. Без этого элемента невозможно представить эксплуатацию современной техники, будь то компактный двухтактник или мощный четырехтактный агрегат.</p>
+<p>Главная задача этого узла заключается не просто в передаче вращения, но и в его преобразовании. Двигатель внутреннего сгорания развивает максимальную мощность и эффективность на высоких оборотах, тогда как гребному винту для создания оптимальной тяги требуется значительно меньшая скорость вращения. Именно здесь вступает в игру механизм редукции, обеспечивая согласование этих противоположных требований.</p>
+<p>Понимание принципов работы этого агрегата необходимо каждому владельцу плавсредства. Это знание позволяет не только правильно подобрать винт, но и вовремя диагностировать начинающиеся проблемы, избегая дорогостоящего капитального ремонта или полной замены дорогостоящего узла.</p>
+
+<h2 id="принцип-работы-и-назначение-редуктора">Принцип работы и назначение редуктора</h2>
+<p>Механизм редукции представляет собой герметичный корпус, внутри которого расположена система шестерен. Основная функция — снижение угловой скорости выходного вала по сравнению со входным валом. Если бы винт вращался с той же скоростью, что и коленвал (например, 5000–6000 об/мин), эффективность гребного винта упала бы до нуля из-за кавитации, а сам он бы мгновенно разрушился.</p>
+<p>Внутри корпуса находятся шестерни, которые взаимодействуют друг с другом, передавая усилие. В современных моделях, таких как <em>Yamaha</em> или <em>Mercury</em>, используются косозубые или шевронные шестерни. Такая форма зуба обеспечивает более плавное зацепление и снижает уровень шума, что критически важно для комфорта на воде.</p>
+<p><strong>Редукция</strong> позволяет увеличить крутящий момент на винте пропорционально степени снижения оборотов. Это означает, что мотор получает возможность толкать тяжелую лодку с грузом, используя силу рычага, заложенную в механике шестерен. Без этого преобразования лодка просто не смогла бы сдвинуться с места под нагрузкой.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При покупке нового мотора обращайте внимание на наличие системы антиреверса (anti-reverse) в редукторе — это защищает двигатель от обратного вращения винта на волне.</p></div>
+
+<h2 id="передаточное-число-что-это-и-как-влияет-на-скорость">Передаточное число: что это и как влияет на скорость</h2>
+<p>Ключевой характеристикой любого редуктора является передаточное число. Оно показывает, сколько оборотов делает входной вал (от двигателя) на один полный оборот выходного вала (винта). Это значение обычно указывается в спецификации мотора в виде дроби, например, 2.08:1 или 1.85:1.</p>
+<p>Чем больше первое число в соотношении, тем «тяговитее» будет мотор, но ниже его максимальная скорость. <strong>Передаточное число</strong> подбирается инженерами в зависимости от класса мотора: для мощных offshore-моторов оно меньше (чтобы развить высокую скорость), а для тяжелых моторов средней мощности — больше (чтобы тянуть тяжелые грузы).</p>
+<p>Рассмотрим влияние на примере. Если у вас мотор с передаточным числом 2.33:1, это означает, что коленвал должен сделать 2.33 оборота, чтобы винт провернулся один раз. Замена редуктора на модель с другим числом возможна, но требует пересчета шага винта, чтобы не перегрузить двигатель.</p>
+
+<details class="faq-item"><summary>Как рассчитать обороты винта?</summary><div class="faq-answer"><p>Разделите максимальные обороты двигателя (WOT) на передаточное число. Например, 5500 об/мин / 2.08 = 2644 об/мин винта. Это теоретический максимум, к которому нужно стремиться при подборе винта.</p></div></details>
+
+<p>Неправильный подбор винта относительно редукции может привести к «перекруту» или, наоборот, к «недокруту» двигателя. В первом случае вы рискуете превысить предел прочности клапанного механизма, во втором — получить нагар на свечах и перегрев поршневой группы.</p>
+
+<h2 id="типы-редукторов-одноступенчатые-и-двухступенчатые">Типы редукторов: одноступенчатые и двухступенчатые</h2>
+<p>В мире подвесных моторов существует два основных типа конструкции зубчатой передачи. Понимание разницы между ними помогает при выборе запчастей и оценке ремонтопригодности узла.</p>
+<p>Одноступенчатые редукторы используют одну пару шестерен для передачи момента. Это классическая схема, где шестерня на валу двигателя напрямую передает вращение на шестерню гребного вала. Такая конструкция проще, дешевле в производстве и легче ремонтируется.</p>
+<p>Двухступенчатые редукторы (часто встречаются на мощных 4-тактных моторах) имеют промежуточный вал. Это позволяет:</p>
+<ul>
+<li>🔧 Разнести шестерни реверса на два вала, уменьшив их размер и нагрузку.</li>
+<li>🔧 Снизить общий уровень шума и вибрации за счет распределения усилий.</li>
+<li>🔧 Компактно разместить механизм переключения передач в нижней части дейдвуда.</li>
+<li>🔧 Увеличить ресурс узла при высоких нагрузках на больших мощностях.</li>
+</ul>
+<p><strong>Двухступенчатая система</strong> сложнее в обслуживании, так как требует более точной регулировки зазоров и использования специнструмента. Однако для моторов мощностью свыше 100 л.с. это практически стандарт, обеспечивающий надежность.</p>
+
+<div class="poll-widget" id="poll-44e39a80"><div class="poll-widget-question">📊 Какой у вас тип мотора?</div><div class="poll-widget-option" data-poll="44e39a80" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">2-тактный с простой редукцией</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="44e39a80" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">4-тактный одноступенчатый</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="44e39a80" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">4-тактный двухступенчатый</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="44e39a80" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Электрический (без редуктора)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="система-смазки-и-обслуживание-узла">Система смазки и обслуживание узла</h2>
+<p>Внутреннее пространство редуктора заполнено специальным трансмиссионным маслом. Оно выполняет сразу несколько функций: смазывает трущиеся пары, отводит тепло и защищает металлические детали от коррозии. Поскольку узел работает в воде, герметичность сальников играет решающую роль.</p>
+<p>Регулярная замена масла в редукторе — это самая простая, но важная процедура ТО. Она позволяет удалить металлическую стружку, которая неизбежно образуется в процессе притирки и работы шестерен. Наличие эмульсии (масло цвета «кофе с молоком») сигнализирует о попадании воды.</p>
+<p>Процесс замены выглядит следующим образом:</p>
+<ol>
+<li>Прогрейте мотор на суше, чтобы масло стало жиже.</li>
+<li>Отверните нижний сливной винт, затем верхний (для создания вентиляции).</li>
+<li>Слейте отработку в емкость.</li>
+<li>С помощью специального шприца закачайте новое масло снизу вверх до появления его из верхнего отверстия.</li>
+<li>Заверните верхний винт, затем быстро нижний, чтобы минимизировать вытекание.</li>
+</ol>
+<p>Используйте только масла, предназначенные для <em>outboard gear oil</em>. Автомобильные трансмиссионки могут содержать присадки, разрушающие цветные металлы (латунь, бронзу), из которых часто делают шестерни редуктора.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка редуктора перед сезоном</h4><label class="check-item"><input type="checkbox"><span>Визуальный осмотр сальников</span></label><label class="check-item"><input type="checkbox"><span>Проверка уровня масла</span></label><label class="check-item"><input type="checkbox"><span>Отсутствие люфта винта</span></label><label class="check-item"><input type="checkbox"><span>Чистота масла (тест на бумаге)</span></label><label class="check-item"><input type="checkbox"><span>Затяжка крепежных болтов</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="таблица-типичные-передаточные-числа-популярных-моторов">Таблица: Типичные передаточные числа популярных моторов</h2>
+<p>Для быстрой ориентировки в характеристиках различных брендов полезно знать стандартные значения передаточных чисел. Они могут варьироваться в зависимости от года выпуска и конкретной серии мотора.</p>
+
+<table>
+<thead>
+<tr>
+<th>Бренд мотора</th>
+<th>Мощность (л.с.)</th>
+<th>Тип редукции</th>
+<th>Передаточное число</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yamaha</td>
+<td>2.5 - 6</td>
+<td>Одноступенчатая</td>
+<td>2.08 : 1</td>
+</tr>
+<tr>
+<td>Tohatsu</td>
+<td>9.8 - 18</td>
+<td>Одноступенчатая</td>
+<td>2.08 : 1</td>
+</tr>
+<tr>
+<td>Mercury</td>
+<td>25 - 60</td>
+<td>Одноступенчатая</td>
+<td>2.15 : 1</td>
+</tr>
+<tr>
+<td>Suzuki</td>
+<td>90 - 140</td>
+<td>Двухступенчатая</td>
+<td>2.09 : 1</td>
+</tr>
+<tr>
+<td>Yamaha</td>
+<td>200 - 300</td>
+<td>Двухступенчатая</td>
+<td>1.85 : 1</td>
+</tr>
+</tbody>
+</table>
+
+<p>Как видно из таблицы, с ростом мощности передаточное число часто уменьшается. Это связано с тем, что мощные двигатели имеют больший крутящий момент и могут позволить себе вращать винт быстрее для развития высокой скорости.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Знание точного передаточного числа вашего мотора критически важно при покупке нового гребного винта, чтобы не нарушить режимы работы двигателя.</p></div>
+
+<h2 id="неисправности-стук-шум-и-нагрев">Неисправности: стук, шум и нагрев</h2>
+<p>Редуктор — узел надежный, но и он не вечен. Первыми признаками trouble часто становятся посторонние звуки. Если вы слышите вой, который меняется с оборотами, скорее всего, изношены подшипники или нарушено зацепление шестерен.</p>
+<p>Стук при переключении передач (особенно с Forward на Neutral) может указывать на износ кулачков муфты сцепления или неправильную регулировку троса. <strong>Износ шестерен</strong> часто сопровождается металлическим хрустом и появлением крупной стружки на магнитном наконечнике нижнего винта.</p>
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Если после длительной поездки корпус редуктора невозможно удержать рукой из-за жара, немедленно прекратите эксплуатацию. Это признак работы «на сухую» или разрушения подшипников, что приведет к заклиниванию и обрыву дейдвуда.</p>
+</blockquote>
+<p>Также стоит обращать внимание на люфт гребного винта. Если винт болтается в вертикальной плоскости больше, чем на пару миллиметров, это свидетельствует о выработке втулки гребного вала или износе упорных подшипников.</p>
+
+<h2 id="ремонт-и-замена-шестерен-стоит-ли-браться-самому">Ремонт и замена шестерен: стоит ли браться самому?</h2>
+<p>Ремонт редуктора — задача для подготовленного механика. Она требует наличия съемников, динамометрических ключей и, главное, набора щупов для регулировки зазоров. Просто заменить шестерню «на глаз» нельзя — это приведет к быстрому разрушению пары.</p>
+<p>Процесс дефектовки включает проверку биения валов, состояния посадочных мест подшипников и зубчатого зацепления. Часто дешевле и надежнее заменить весь узел в сборе (gearcase swap), чем пытаться восстановить старый, особенно если корпус имеет трещины или деформации.</p>
+<p><mark>Критическим параметром при сборке является толщина регулировочных шайб под подшипниками.</mark> Их подбор осуществляется методом проб и ошибок с измерением глубины посадки валов, и ошибка в 0.1 мм может стоить мотору жизни.</p>
+
+<details class="faq-item"><summary>Почему гудит редуктор на холостых?</summary><div class="faq-answer"><p>Гудение на холостых часто вызвано неправильным зазором между шестерней и дог-клоузом (муфтой сцепления). Требуется регулировка высоты штока переключения.</p></div></details>
+
+<p>Если вы не обладаете опытом работы с прецизионной механикой, лучше доверить эту работу сервисному центру. Неправильно собранный редуктор может заклинить на полном ходу, что чревато потерей управления судном.</p>
+
+<details>
+<summary>Как часто нужно менять масло в редукторе?</summary>
+<p>Производители рекомендуют менять масло раз в 100 моточасов или раз в сезон, если вы эксплуатируете лодку интенсивно. При редком использовании — минимум раз в два года, так как масло гигроскопично и со временем теряет свойства.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать автомобильное масло в редукторе?</summary>
+<p>Категорически не рекомендуется. Масла для редукторов лодочных моторов (API GL-4/GL-5 с маркировкой Outboard) не содержат присадок, агрессивных к цветным металлам, и обладают эмульгирующими свойствами, позволяющими воде оседать внизу, а не смешиваться с маслом.</p>
+</details>
+
+<details>
+<summary>Что делать, если в масло попала вода?</summary>
+<p>Нужно найти место подсоса. Чаще всего это сальники гребного вала или уплотнительные кольца винтов. Промойте редуктор сольвентом, замените сальники и залейте свежее масло. Эксплуатация с водой внутри приведет к коррозии шестерен за один сезон.</p>
+</details>
+
+<details>
+<summary>Почему редуктор греется?</summary>
+<p>Нагрев может быть вызван отсутствием смазки, разрушением подшипников или чрезмерным трением шестерен из-за неправильной регулировки. Также редуктор может греться, если вы долго двигаетесь задним ходом на высоких оборотах (система охлаждения на многих моторах неэффективна при реверсе).</p>
+</details>
+
+<details>
+<summary>Какой винт выбрать: 3 или 4 лопасти?</summary>
+<p>Трехлопастные винты лучше для скорости и экономии топлива на легких лодках. Четырехлопастные обеспечивают лучшую тягу на низких оборотах, меньше вибрируют и лучше держат глиссирование на тяжелых лодках, но немного снижают максимальную скорость.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-и-назначение-редуктора">Принцип работы и назначение редуктора</a></li><li><a href="#передаточное-число-что-это-и-как-влияет-на-скорость">Передаточное число: что это и как влияет на скорость</a></li><li><a href="#типы-редукторов-одноступенчатые-и-двухступенчатые">Типы редукторов: одноступенчатые и двухступенчатые</a></li><li><a href="#система-смазки-и-обслуживание-узла">Система смазки и обслуживание узла</a></li><li><a href="#таблица-типичные-передаточные-числа-популярных-моторов">Таблица: Типичные передаточные числа популярных моторов</a></li><li><a href="#неисправности-стук-шум-и-нагрев">Неисправности: стук, шум и нагрев</a></li><li><a href="#ремонт-и-замена-шестерен-стоит-ли-браться-самому">Ремонт и замена шестерен: стоит ли браться самому?</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/a/ar/arsenal-kirov-lodochnye-motory.html" class="related-card">Арсенал Киров: лодочные моторы — каталог, цены и выбор</a></li><li><a href="/articles/l/lo/lodochnyj-motor-yamer.html" class="related-card">Лодочный мотор Yamer: полный обзор, характеристики и отзывы</a></li><li><a href="/articles/r/ra/raskhod-benzina-lodochnykh-motorov-tablitsa.html" class="related-card">Расход бензина лодочных моторов: таблица и расчеты</a></li><li><a href="/articles/m/me/mercury-maslo-motornoe.html" class="related-card">Масло моторное Mercury: выбор, замена, допуски для лодочных моторов</a></li><li><a href="/articles/m/mo/motor-yamaha-5.html" class="related-card">Мотор Yamaha 5 л.с.: характеристики, расход топлива, отзывы и советы по ТО</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/a/ar/arsenal-kirov-lodochnye-motory.html" class="related-bottom-card"><span class="related-bottom-title">Арсенал Киров: лодочные моторы — каталог, цены и выбор</span><span class="related-bottom-desc">Полный обзор лодочных моторов в магазине Арсенал Киров. Сравнение брендов Yamaha, Tohatsu, Sea-Pro. </span></a><a href="/articles/l/lo/lodochnyj-motor-yamer.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Yamer: полный обзор, характеристики и отзывы</span><span class="related-bottom-desc">Подробный анализ лодочного мотора Yamer. Технические характеристики, особенности эксплуатации, сравн</span></a><a href="/articles/r/ra/raskhod-benzina-lodochnykh-motorov-tablitsa.html" class="related-bottom-card"><span class="related-bottom-title">Расход бензина лодочных моторов: таблица и расчеты</span><span class="related-bottom-desc">Подробная таблица расхода топлива лодочных моторов Yamaha, Mercury, Tohatsu. Как рассчитать литраж н</span></a><a href="/articles/m/me/mercury-maslo-motornoe.html" class="related-bottom-card"><span class="related-bottom-title">Масло моторное Mercury: выбор, замена, допуски для лодочных моторов</span><span class="related-bottom-desc">Полный гид по моторным маслам Mercury. Разбор типов, вязкости, допусков и интервалов замены для двух</span></a><a href="/articles/m/mo/motor-yamaha-5.html" class="related-bottom-card"><span class="related-bottom-title">Мотор Yamaha 5 л.с.: характеристики, расход топлива, отзывы и советы по ТО</span><span class="related-bottom-desc">Полный обзор двигателя Yamaha 5 л.с. Технические параметры, реальный расход бензина, особенности обс</span></a><a href="/articles/l/lo/lodochnyj-motor-hidea-5-l-s-4-kh-taktnyj.html" class="related-bottom-card"><span class="related-bottom-title">Hidea 5 л.с. 4 такта: обзор, характеристики и отзывы</span><span class="related-bottom-desc">Полный гид по мотору Hidea 5 л.с. 4-тактный: технические характеристики, особенности эксплуатации, с</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

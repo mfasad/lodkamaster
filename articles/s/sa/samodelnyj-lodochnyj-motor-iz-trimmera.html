@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Самодельный лодочный мотор из триммера: сборка своими руками — ЛодкаМастер</title>
+    <meta name="description" content="Подробная инструкция, как сделать лодочный мотор из триммера. Выбор двигателя, чертежи винта, расчет редуктора и советы по установке на лодку.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/s/sa/samodelnyj-lodochnyj-motor-iz-trimmera.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Самодельный лодочный мотор из триммера: сборка своими руками">
+    <meta property="og:description" content="Подробная инструкция, как сделать лодочный мотор из триммера. Выбор двигателя, чертежи винта, расчет редуктора и советы по установке на лодку.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/sdelaj-sam/">Сделай сам</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Самодельный лодочный мотор из триммера: сборка своими руками</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Самодельный лодочный мотор из триммера: полная инструкция по сборке</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#выбор-донора-какой-триммер-подойдет-лучше-всего">Выбор донора: какой триммер подойдет лучше всего</a></li><li><a href="#проектирование-дейдвуда-и-выбор-винта">Проектирование дейдвуда и выбор винта</a></li><li><a href="#материалы-и-инструменты-для-сборки">Материалы и инструменты для сборки</a></li><li><a href="#технология-сборки-мотора">Технология сборки мотора</a></li><li><a href="#сравнение-характеристик-самодельный-мотор-vs-заводские-аналоги">Сравнение характеристик: самодельный мотор vs заводские аналоги</a></li><li><a href="#испытания-настройка-и-безопасность">Испытания, настройка и безопасность</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Идея переоборудовать обычный садовый триммер в полноценный лодочный двигатель привлекает множество рыболовов и любителей тихой водной прогулки. Это решение позволяет сэкономить значительную сумму, приобретая готовый <strong>подвесной мотор</strong>, и дает возможность использовать имеющийся в хозяйстве бензиновый инструмент. Чаще всего для таких экспериментов выбирают двухтактные мотокосы с объемом двигателя от 1.5 до 2.5 литров, так как их конструкция наиболее проста и надежна.</p>
+
+<p>Однако, создание <em>самодельного лодочного мотора</em> требует не только технических навыков, но и четкого понимания физики процесса. Простое соединение вала триммера с самодельным винтом может привести к перегреву двигателя или разрушению узлов из-за неправильных передаточных чисел. В этой статье мы детально разберем все этапы трансформации, от выбора донора до первых испытаний на воде.</p>
+
+<p>Главное преимущество такой самоделки заключается в ремонтопригодности и доступности запчастей. Если в заводском моторе сгорает поршневая, ремонт может стоить половина цены нового агрегата, тогда как цилиндро-поршневая группа от триммера стоит копейки и продается в любом сервисе садовой техники. Кроме того, <strong>бензиновый двигатель</small> триммера уже имеет встроенное зажигание и карбюратор, что упрощает задачу конструктора.</p>
+
+<p>Прежде чем приступать к сварке и точению деталей, необходимо взвесить все «за» и «против». Самодельная конструкция никогда не будет иметь такой же КПД, как серийное изделие, но для малых скоростей и спокойной воды она подходит идеально. <mark>Критически важным моментом является герметичность дейдвуда, так как попадание воды на подшипники вала мгновенно выведет узел из строя.</mark></p>
+
+<h2 id="выбор-донора-какой-триммер-подойдет-лучше-всего">Выбор донора: какой триммер подойдет лучше всего</h2>
+
+<p>Не каждый триммер годится для работы в водной среде. В первую очередь нужно обращать внимание на тип двигателя. Двухтактные модели предпочтительнее четырехтактных из-за меньшего веса и возможности работы под любым углом наклона, что актуально при движении лодки по волне. Мощность двигателя должна быть не менее 1.5–2 л.с., иначе лодка с одним человеком будет двигаться слишком медленно, едва преодолевая сопротивление воды.</p>
+
+<p>Важным параметром является конструкция вала. Он может быть гибким (тросик в трубе) или жестким (металлический вал с подшипниками). Для лодочного мотора категорически не подходит гибкий вал, так как он не рассчитан на высокие нагрузки от упора винта в воду и может скрутиться или порваться. Вам нужен триммер с <strong>жестким валом</strong>, где крутящий момент передается напрямую через шлицевое соединение.</p>
+
+<ul>
+<li>🛠️ <strong>Объем двигателя:</strong> Оптимальный диапазон 33–52 куб. см, что соответствует мощности 1.5–2.5 л.с.</li>
+<li>⚙️ <strong>Тип вала:</strong> Только жесткий вал в алюминиевой штанге, наличие редуктора на конце.</li>
+<li>🔩 <strong>Крепление:</strong> Возможность отсоединения штанги от двигателя для удобного монтажа на транец.</li>
+</ul>
+
+<p>При выборе донора также стоит оценить состояние системы охлаждения. Большинство триммеров имеют воздушное охлаждение, что вполне достаточно для работы на воде, так как встречный поток воздуха при движении лодки эффективен. Однако, если вы планируете длительные прогулки на малых скоростях, стоит предусмотреть дополнительный обдув или модернизацию кожуха.</p>
+
+<div class="poll-widget" id="poll-68a55981"><div class="poll-widget-question">📊 Какой триммер у вас есть или вы планируете купить?</div><div class="poll-widget-option" data-poll="68a55981" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Одноцилиндровый 1.5 л.с.</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="68a55981" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Мощный 2.5+ л.с.</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="68a55981" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Четырехтактный</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="68a55981" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Пока нет, выбираю</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="проектирование-дейдвуда-и-выбор-винта">Проектирование дейдвуда и выбор винта</h2>
+
+<p>Самая сложная часть проекта — это создание дейдвуда, то есть нижней части, погружаемой в воду. Именно здесь происходит передача вращения от вала триммера на гребной винт. Простейший вариант — использовать редуктор от старого, вышедшего из строя лодочного мотора, но найти его в хорошем состоянии сложно. Поэтому чаще всего изготавливают угловой редуктор самостоятельно или используют готовые решения от мотоблоков.</p>
+
+<p>Винт — это сердце мотора. Для самодельных конструкций на базе триммеров редко удается развить высокие обороты, поэтому винт должен иметь большой шаг и диаметр, чтобы толкать лодку даже на низких оборотах. Можно использовать винты от старых моторов «Ветерок» или «Москва», адаптировав посадочное место, либо изготовить винт из листового алюминия или нержавеющей стали. <strong>Гребной винт</strong> должен быть идеально отбалансирован, иначе вибрация разрушит подшипники вала за считанные минуты.</p>
+
+<p>При проектировании вала необходимо учитывать его длину. Слишком короткий вал потребует глубокого погружения, увеличивая сопротивление, а слишком длинный создаст лишние потери на трение. Оптимальное заглубление винта — 15–20 см ниже уровня воды. Для защиты вала от обрастания и повреждений используется труба, которая одновременно служит дейдвудом.</p>
+
+<details class="faq-item"><summary>Где взять чертежи винта?</summary><div class="faq-answer"><p>Чертежи винтов можно найти в технической литературе по судовым двигателям 60-70-х годов или рассчитать геометрию лопастей с помощью специализированных калькуляторов, учитывая диаметр и шаг.</p></div></details>
+
+<h2 id="материалы-и-инструменты-для-сборки">Материалы и инструменты для сборки</h2>
+
+<p>Для реализации проекта вам понадобится набор стандартных слесарных инструментов и специфические материалы. Основным конструкционным материалом станет дюралюминий или нержавеющая сталь, так как обычный черный металл в воде быстро заржавеет, даже с покраской. Сварочные работы по алюминию требуют аргонной сварки, поэтому часто используют комбинированные соединения или нержавейку.</p>
+
+<p>Особое внимание нужно уделить уплотнениям. Вал, выходящий из дейдвуда в воду, должен быть надежно защищен от проникновения влаги внутрь корпуса, где находятся подшипники и шестерни. Для этого используются сальники (манжеты), которые подбираются под диаметр вала. <strong>Подшипниковые узлы</strong> должны быть закрытого типа или иметь возможность регулярной смазки.</p>
+
+<ul>
+<li>🔧 <strong>Инструменты:</strong> УШМ (болгарка), дрель, набор гаечных ключей, штангенциркуль.</li>
+<li>⚙️ <strong>Материалы:</strong> Труба диаметром 20–30 мм (нержавейка или дюраль), листовой металл 3–4 мм.</li>
+<li>💧 <strong>Герметики:</strong> Маслостойкий герметик, сальники подходящего размера, графитовая смазка.</li>
+</ul>
+
+<p>Не забудьте про крепежные элементы. Все болты и гайки должны быть из нержавеющей стали или оцинкованными, чтобы избежать коррозии. Использование обычных черных болтов приведет к тому, что через сезон эксплуатации открутить их будет невозможно без разрушения.</p>
+
+<div class="checklist-block"><h4>☑️ Список необходимых материалов</h4><label class="check-item"><input type="checkbox"><span>Триммер с жестким валом</span></label><label class="check-item"><input type="checkbox"><span>Труба для дейдвуда</span></label><label class="check-item"><input type="checkbox"><span>Листовой металл</span></label><label class="check-item"><input type="checkbox"><span>Подшипники и сальники</span></label><label class="check-item"><input type="checkbox"><span>Винт или заготовка для него</span></label><label class="check-item"><input type="checkbox"><span>Крепеж (нержавейка)</span></label><label class="check-item"><input type="checkbox"><span>Герметик и смазка</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 7</div></div>
+
+<h2 id="технология-сборки-мотора">Технология сборки мотора</h2>
+
+<p>Процесс сборки начинается с демонтажа штанги триммера и отрезания нижнего редуктора, если он не подходит по передаточному числу. Часто стандартный редуктор триммера имеет слишком высокие обороты для винта, поэтому может потребоваться установка дополнительной понижающей передачи. Вал триммера соединяется с валом винта через шлицевое соединение или муфту, которая должна быть жесткой и не иметь люфтов.</p>
+
+<p>Дейдвуд изготавливается из трубы, в нижней части которой монтируется корпус редуктора с винтом. Внутри трубы устанавливаются опорные подшипники вала. Критически важно обеспечить смазку этих подшипников и защитить их от воды. Для этого пространство внутри дейдвуда часто заполняют <strong>консистентной смазкой</strong> (литол, солидол), которая вытесняет воду и не дает ей контактировать с металлом.</p>
+
+<p>Крепление мотора к транцу лодки должно быть надежным. Обычно изготавливают струбцину из профильной трубы или уголка, которая позволяет регулировать угол наклона дейдвуда (дифферент). Неправильный угол наклона приведет к тому, что лодка будет либо зарываться носом, либо, наоборот, задирать его, теряя скорость.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Перед первой установкой обязательно проверьте балансировку вращающихся частей. Дисбаланс винта на высоких оборотах создаст вибрацию, которая может расшатать крепления двигателя и привести к его падению в воду.</p>
+</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте переходную муфту из текстолита или прочного пластика между валом триммера и валом винта. Это снизит передачу вибрации и защитит коленвал двигателя от ударных нагрузок при ударе винта о подводные предметы.</p></div>
+
+<h2 id="сравнение-характеристик-самодельный-мотор-vs-заводские-аналоги">Сравнение характеристик: самодельный мотор vs заводские аналоги</h2>
+
+<p>Чтобы понимать, чего ожидать от самоделки, полезно сравнить её параметры с серийными моделями. Самодельный мотор из триммера — это компромисс между ценой и производительностью. Он не сможет развить скорость глиссирования на тяжелой лодке, но для trolling (троллинга) или спокойного перемещения по водохранилищу его вполне достаточно.</p>
+
+<p>Ниже приведена таблица сравнения типичного самодельного мотора на базе триммера 2 л.с. и заводского электромотора или бензинового аналога начального уровня.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Самодельный (Триммер 2 л.с.)</th>
+<th>Заводской бензиновый (2.5 л.с.)</th>
+<th>Электромотор (тяговый)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Вес</td>
+<td>6–8 кг</td>
+<td>9–10 кг</td>
+<td>7–9 кг (+ АКБ)</td>
+</tr>
+<tr>
+<td>Расход топлива</td>
+<td>0.6–0.8 л/час</td>
+<td>0.7–0.9 л/час</td>
+<td>Зависит от емкости АКБ</td>
+</tr>
+<tr>
+<td>Скорость (ПВХ 3.2м)</td>
+<td>8–12 км/ч</td>
+<td>15–20 км/ч</td>
+<td>5–7 км/ч</td>
+</tr>
+<tr>
+<td>Шумность</td>
+<td>Высокая</td>
+<td>Средняя</td>
+<td>Бесшумный</td>
+</tr>
+<tr>
+<td>Цена</td>
+<td>Низкая (при наличии триммера)</td>
+<td>Высокая</td>
+<td>Средняя</td>
+</tr>
+</tbody>
+</table>
+
+<p>Из таблицы видно, что самодельный вариант уступает в скорости, но выигрывает в стоимости владения. <strong>Ремонт</strong> такого мотора обходится в разы дешевле, а запасные части можно найти в любом магазине садовой техники. Для рыбака, которому не нужна скорость, а важна надежность и автономность, это отличный выбор.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Главное преимущество самодельного мотора — не цена, а возможность самостоятельного ремонта в полевых условиях с минимальным набором инструментов.</p></div>
+
+<h2 id="испытания-настройка-и-безопасность">Испытания, настройка и безопасность</h2>
+
+<p>Первый запуск мотора лучше производить в бочке с водой или на привязи, чтобы проверить работу системы охлаждения (если она есть) и отсутствие вибраций. Обязательно проверьте нагрев подшипников дейдвуда после 10–15 минут работы. Если вал греется, значит, подшипники перетянуты или смазки недостаточно.</p>
+
+<p>При эксплуатации на воде соблюдайте меры предосторожности. Бензиновые пары тяжелее воздуха и могут скапливаться в низких точках лодки, поэтому двигатель должен быть установлен так, чтобы выхлоп был направлен в сторону от пассажиров. <strong>Топливный бак</strong> должен быть надежно закреплен и защищен от прямых солнечных лучей.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Никогда не оставляйте работающий мотор без присмотра и не допускайте к управлению детей. Самодельная конструкция не имеет штатной системы аварийной остановки (чеки), поэтому в случае падения человека за борт остановить винт будет сложно.</p>
+</blockquote>
+
+<p>Регулярно проверяйте состояние крепежных болтов, так как вибрация имеет свойство их раскручивать. После каждой высадки на воду промывайте дейдвуд пресной водой, чтобы смыть соль и грязь, которые ускоряют коррозию. Соблюдение этих простых правил продлит жизнь вашему творению на многие сезоны.</p>
+
+<details>
+<summary>Какой винт лучше: двухлопастной или трехлопастной?</summary>
+<p>Для маломощных моторов (до 2 л.с.) предпочтительнее двухлопастной винт. Он создает меньше сопротивления и легче проворачивается двигателем на низких оборотах. Трехлопастной винт эффективнее на высоких скоростях, но маломощный триммер может просто не «раскрутить» его до нужных оборотов, что приведет к перегрузке двигателя.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять масло в редукторе триммера?</summary>
+<p>В большинстве триммеров редуктор смазывается консистентной смазкой, которая закладывается производителем на весь срок службы. Однако при переделке в лодочный мотор и работе в водной среде рекомендуется менять смазку в редукторе каждые 50 моточасов или раз в сезон, проверяя её на наличие воды (эмульсии).</p>
+</details>
+
+<details>
+<summary>Можно ли использовать четырехтактный триммер?</summary>
+<p>Теоретически можно, но это сложнее. Четырехтактные двигатели требуют строгого вертикального положения для нормальной работы системы смазки (картера). При наклоне лодки на волне масло может попасть в камеру сгорания или, наоборот, перестать поступать к трущимся деталям, что приведет к заклиниванию.</p>
+</details>
+
+<details>
+<summary>Как рассчитать передаточное число?</summary>
+<p>Оптимальное передаточное число зависит от шага винта и оборотов двигателя. Для триммеров с оборотами 10 000–12 000 об/мин и винтом диаметром 200 мм желательно иметь редукцию примерно 1:2 или 1:2.5, чтобы получить на винте 4000–5000 об/мин. Если редуктора нет, придется подбирать винт с очень малым шагом, что снизит КПД.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#выбор-донора-какой-триммер-подойдет-лучше-всего">Выбор донора: какой триммер подойдет лучше всего</a></li><li><a href="#проектирование-дейдвуда-и-выбор-винта">Проектирование дейдвуда и выбор винта</a></li><li><a href="#материалы-и-инструменты-для-сборки">Материалы и инструменты для сборки</a></li><li><a href="#технология-сборки-мотора">Технология сборки мотора</a></li><li><a href="#сравнение-характеристик-самодельный-мотор-vs-заводские-аналоги">Сравнение характеристик: самодельный мотор vs заводские аналоги</a></li><li><a href="#испытания-настройка-и-безопасность">Испытания, настройка и безопасность</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/s/sa/samodelnye-lodki-iz-plastika.html" class="related-card">Самодельные лодки из пластика: полное руководство по изготовлению</a></li><li><a href="/articles/y/ya/yakor-nezatseplyajka-dlya-lodki-pvkh-svoimi-rukami.html" class="related-card">Якорь-незацепляйка для лодки ПВХ своими руками: чертежи и инструкция</a></li><li><a href="/articles/l/lo/lodka-iz-trub-pnd-svoimi-rukami.html" class="related-card">Лодка из труб ПНД своими руками: чертежи и инструкция</a></li><li><a href="/articles/s/sv/svarka-alyuminievoj-lodki.html" class="related-card">Как сварить алюминиевую лодку: пошаговая инструкция для новичков</a></li><li><a href="/articles/n/no/nosovoj-tent-na-lodku-pvkh-svoimi-rukami-vykrojki-chertezhi.html" class="related-card">Носовой тент на лодку ПВХ своими руками: выкройки, чертежи, фото</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/s/sa/samodelnye-lodki-iz-plastika.html" class="related-bottom-card"><span class="related-bottom-title">Самодельные лодки из пластика: полное руководство по изготовлению</span><span class="related-bottom-desc">Как сделать лодку из стеклопластика своими руками. Выбор смолы, чертежи матрицы, технология укладки </span></a><a href="/articles/y/ya/yakor-nezatseplyajka-dlya-lodki-pvkh-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Якорь-незацепляйка для лодки ПВХ своими руками: чертежи и инструкция</span><span class="related-bottom-desc">Как сделать якорь-незацепляйку для надувной лодки самостоятельно. Пошаговая инструкция, чертежи, выб</span></a><a href="/articles/l/lo/lodka-iz-trub-pnd-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Лодка из труб ПНД своими руками: чертежи и инструкция</span><span class="related-bottom-desc">Подробный гайд по изготовлению лодки из полиэтиленовых труб своими руками. Чертежи, расчет плавучест</span></a><a href="/articles/s/sv/svarka-alyuminievoj-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Как сварить алюминиевую лодку: пошаговая инструкция для новичков</span><span class="related-bottom-desc">Полное руководство по сварке алюминиевых лодок: выбор оборудования, подготовка металла, техника свар</span></a><a href="/articles/n/no/nosovoj-tent-na-lodku-pvkh-svoimi-rukami-vykrojki-chertezhi.html" class="related-bottom-card"><span class="related-bottom-title">Носовой тент на лодку ПВХ своими руками: выкройки, чертежи, фото</span><span class="related-bottom-desc">Пошаговая инструкция, как сделать носовой тент на лодку ПВХ своими руками. Выкройки, чертежи, выбор </span></a><a href="/articles/y/ya/yakor-grib-dlya-lodki-pvkh-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Якорь гриб для лодки ПВХ своими руками: чертежи, инструкция</span><span class="related-bottom-desc">Как сделать якорь-гриб для надувной лодки своими руками. Выбор материалов, расчет веса, пошаговая сб</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

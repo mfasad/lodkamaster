@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Ремонт моторов Parsun: диагностика, коды ошибок и ТО — ЛодкаМастер</title>
+    <meta name="description" content="Профессиональный ремонт лодочных моторов Parsun. Разбор кодов ошибок, настройка карбюратора, устранение перегрева и замена запчастей своими руками.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/r/re/remont-motorov-parsun.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ремонт моторов Parsun: диагностика, коды ошибок и ТО">
+    <meta property="og:description" content="Профессиональный ремонт лодочных моторов Parsun. Разбор кодов ошибок, настройка карбюратора, устранение перегрева и замена запчастей своими руками.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Ремонт моторов Parsun: диагностика, коды ошибок и ТО</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Ремонт моторов Parsun: полное руководство по диагностике и устранению неисправностей</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#типичные-неисправности-и-первичная-диагностика">Типичные неисправности и первичная диагностика</a></li><li><a href="#регулировка-и-ремонт-карбюратора">Регулировка и ремонт карбюратора</a></li><li><a href="#система-зажигания-свечи-катушки-и-cdi">Система зажигания: свечи, катушки и CDI</a></li><li><a href="#обслуживание-дейдвуда-и-замена-сальников">Обслуживание дейдвуда и замена сальников</a></li><li><a href="#система-охлаждения-и-борьба-с-перегревом">Система охлаждения и борьба с перегревом</a></li><li><a href="#запчасти-и-совместимость-с-другими-брендами">Запчасти и совместимость с другими брендами</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+<p>Эксплуатация водной техники, особенно в суровых условиях, часто приводит к необходимости вмешательства в работу силовой установки. Китайские <strong>лодочные моторы</strong> бренда <em>Parsun</em> заслужили репутацию доступных и достаточно надежных агрегатов, однако даже они требуют грамотного обслуживания и, время от времени, квалифицированного ремонта. Владелец должен понимать, что своевременная диагностика способна предотвратить капитальный выход из строя, экономя значительные средства на покупке нового оборудования.</p>
+
+<p>В этой статье мы подробно разберем типичные проблемы, с которыми сталкиваются пользователи моделей <em>Parsun F2.5</em>, <em>F5</em>, <em>F9.8</em> и более мощных четырехтактных аналогов. Мы обсудим нюансы настройки топливной системы, особенности работы системы зажигания и критические моменты, требующие немедленного внимания. <mark>Критически важно знать, что большинство поломок Parsun вызвано использованием некачественной топливной смеси или нарушением температурного режима, а не заводским браком.</mark> Понимание этих процессов позволит вам самостоятельно устранить до 70% неисправностей.</p>
+
+<p>Ремонт моторов <em>Parsun</em> требует не только наличия стандартного набора инструментов, но и специфических знаний о конструкции этих агрегатов. Многие узлы унифицированы с двигателями <em>Tohatsu</em>, что упрощает поиск запчастей, но имеет свои особенности в регулировках. Ниже представлен подробный анализ основных узлов и методов их восстановления.</p>
+
+<h2 id="типичные-неисправности-и-первичная-диагностика">Типичные неисправности и первичная диагностика</h2>
+<p>Прежде чем приступать к разборке двигателя, необходимо провести грамотную первичную диагностику. Часто симптомы, указывающие на серьезную поломку, являются следствием банальных причин. Например, если мотор <em>Parsun</em> не заводится, не стоит сразу грешить на поршневую группу. В первую очередь проверяется наличие искры и качество подаваемой топливной смеси. Отсутствие искры может быть вызвано загрязнением свечи, нарушением зазора или выходом из строя катушки зажигания.</p>
+
+<p>Двигатели <em>Parsun</em> чувствительны к качеству топлива. Использование старого бензина или смеси с неправильной пропорцией масла часто приводит к закоксовке поршня и потере компрессии. Если вы чувствуете запах несгоревшего топлива или видите черный дым, это верный признак нарушения смесеобразования. Также стоит обратить внимание на состояние топливного фильтра-отстойника, который часто забивается мелким мусором из бака.</p>
+
+<p>Вибрация и посторонний шум могут указывать на проблемы с гребным винтом или редуктором. Попадание посторонних предметов (леска, трава, камни) между винтом и корпусом дейдвуда вызывает биение, которое передается на коленчатый вал. Игнорирование этого симптола может привести к разрушению сальников и попаданию воды в картер. Для точной диагностики необходимо снять винт и осмотреть вал на предмет намотки.</p>
+
+<ul>
+<li>🔍 Проверка компрессии: показатель ниже 6-7 атмосфер требует ремонта ЦПГ.</li>
+<li>⚡ Тест искры: выкрутите свечу, прижмите к массе и дерните стартер — искра должна быть ярко-синей.</li>
+<li>💧 Контроль водяной помпы: отсутствие струи в контрольном отверстии свидетельствует о поломке импеллера.</li>
+<li>⛽ Анализ выхлопа: черный дым — богатая смесь, белый — попадание воды или масла.</li>
+</ul>
+
+<div class="poll-widget" id="poll-8e857d6f"><div class="poll-widget-question">📊 С какой основной проблемой мотора Parsun вы сталкивались чаще всего?</div><div class="poll-widget-option" data-poll="8e857d6f" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Не заводится / Плохо тянет / Перегрев / Проблемы с передачей / Другое</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Диагностика должна проводиться последовательно, от простого к сложному. Начните с визуального осмотра, затем проверьте систему зажигания и топливоподачи, и только после этого переходите к замеру компрессии и разборке двигателя.</p>
+
+<h2 id="регулировка-и-ремонт-карбюратора">Регулировка и ремонт карбюратора</h2>
+<p>Карбюратор является сердцем двухтактного двигателя <em>Parsun</em>, и именно от его правильной настройки зависит стабильность работы на всех режимах. Наиболее распространенной проблемой является нестабильный холостой ход или провалы при резком открытии дросселя. Часто причина кроется в засорении жиклеров или нарушении герметичности впускного тракта. Перед началом работ необходимо тщательно очистить внешнюю поверхность карбюратора от грязи и масла.</p>
+
+<p>Процесс регулировки начинается с установки базовых положений винтов качества и количества смеси. Для большинства моделей <em>Parsun</em> начальные настройки описаны в мануале, но в процессе эксплуатации они могут сбиться. Винт качества смеси (Low Speed) отвечает за работу на малых оборотах, а винт количества (High Speed) — за максимальную мощность. Закручивание винтов обедняет смесь, выкручивание — обогащает.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Чрезмерное обеднение смеси (сильное закручивание винтов) может привести к перегреву поршня и его задирам. Никогда не оставляйте мотор работать на предельно бедной смеси для экономии топлива.</p>
+</blockquote>
+
+<p>Если чистка и регулировка не помогают, потребуется полная переборка карбюратора с заменой ремкомплекта. Особое внимание уделите состоянию мембран, которые со временем дубеют и теряют эластичность. Также проверьте запорный клапан иглы — малейшая песчинка может нарушить герметичность, вызывая перелив топлива.</p>
+
+<details class="faq-item"><summary>Секреты чистки карбюратора</summary><div class="faq-answer"><p>Используйте специальный аэрозольный очиститель карбюраторов. Продувайте все каналы сжатым воздухом. Не используйте для чистки металлических деталей острые предметы (иглы, проволоку), чтобы не изменить диаметр калиброванных отверстий. Лучше использовать мягкую леску или щетину.</p></div></details>
+
+<h2 id="система-зажигания-свечи-катушки-и-cdi">Система зажигания: свечи, катушки и CDI</h2>
+<p>Электрическая часть моторов <em>Parsun</em> относительно проста, но требует внимательного отношения. Основной элемент, требующий регулярной замены — это <strong>свеча зажигания</strong>. Нагар на электродах может рассказать о состоянии двигателя: коричневый цвет свидетельствует о нормальной работе, черный — о богатой смеси, белый — о перегреве или бедной смеси. Для моторов <em>Parsun</em> рекомендуется использовать свечи с калильным числом, соответствующим заводским спецификациям (обычно NGK BR7HS или аналоги).</p>
+
+<p>Если искра слабая или отсутствует даже на новой свече, проверяется высоковольтный провод и катушка зажигания. Пробой изоляции катушки — частая проблема после длительного простоя или попадания влаги. Визуально это может проявляться в виде трещин или темных пятен на корпусе. Проверка сопротивления первичной и вторичной обмоток мультиметром позволяет точно определить неисправность.</p>
+
+<p>Блок электронного зажигания (CDI) управляет моментом искрообразования. Выход из строя CDI-блока часто приводит к невозможности запуска двигателя или его работе с перебоями на высоких оборотах. При установке нового блока необходимо убедиться в надежности контакта массы.</p>
+
+<ul>
+<li>🔌 Зазор свечи: оптимальное расстояние между электродами составляет 0.7-0.8 мм.</li>
+<li>🛡️ Защита от влаги: используйте диэлектрическую смазку для обработки колпачков свечей.</li>
+<li>📉 Сопротивление: проверяйте соответствие параметров обмоток данным из сервисной мануала.</li>
+</ul>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Всегда имейте в запасе комплект новых свечей и свечной ключ. На воде замена свечи — самая быстрая процедура восстановления работоспособности мотора.</p></div>
+
+<h2 id="обслуживание-дейдвуда-и-замена-сальников">Обслуживание дейдвуда и замена сальников</h2>
+<p>Нижняя часть мотора, или дейдвуд, подвергается наибольшим механическим нагрузкам и агрессивному воздействию водной среды. Ключевым элементом здесь является редуктор, внутри которого находится масло. Регулярная замена масла в редукторе — обязательная процедура, позволяющая избежать дорогостоящего ремонта шестерен и подшипников. Масло должно быть прозрачным; если оно приобрело цвет «кофе с молоком», значит, в редуктор попала вода.</p>
+
+<p>Попадание воды чаще всего происходит через изношенные сальники гребного вала или вала переключения передач. Для замены сальников требуется полная разборка дейдвуда, выпрессовка старых уплотнений и установка новых с соблюдением правильной ориентации (рабочей кромкой внутрь). Использование качественных сальников, устойчивых к морской воде, критически важно.</p>
+
+<p>Гребной винт также требует осмотра. Сколы на лопастях приводят к вибрации и потере тяги. Если винт имеет повреждения, его необходимо заменить или отдать на профессиональную наплавку и балансировку. Не забудьте смазать шлицы вала специальной смазкой, не смываемой водой, чтобы избежать прикипания винта к валу.</p>
+
+<pre><code>Порядок замены масла в редукторе:
+<p>1. Установить мотор вертикально.</p>
+<p>2. Выкрутить нижний и верхний сливные винты.</p>
+<p>3. Слить отработанное масло в емкость.</p>
+<p>4. Шприцем закачать новое масло снизу до появления его в верхнем отверстии.</p>
+<p>5. Быстро закрутить верхний винт, затем нижний.</code></pre></p>
+
+<div class="checklist-block"><h4>☑️ Ежегодное ТО дейдвуда</h4><label class="check-item"><input type="checkbox"><span>Слить и заменить масло в редукторе</span></label><label class="check-item"><input type="checkbox"><span>Смазать шлицы гребного вала</span></label><label class="check-item"><input type="checkbox"><span>Проверить состояние анодной защиты</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть сальники на наличие течи</span></label><label class="check-item"><input type="checkbox"><span>Проверить затяжку болтов крепления дейдвуда</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="система-охлаждения-и-борьба-с-перегревом">Система охлаждения и борьба с перегревом</h2>
+<p>Двигатели <em>Parsun</em>, как и большинство подвесных моторов, имеют водяное охлаждение замкнутого типа. Основным рабочим элементом системы является водяная помпа с резиновым импеллером. Резина со временем теряет эластичность, трескается и перестает качать воду. Результатом становится быстрый перегрев двигателя, что чревато заклиниванием поршня.</p>
+
+<p>Признаками неисправности системы охлаждения является отсутствие контрольной струи воды или ее слабый напор. Также мотор может самопроизвольно глохнуть после работы на высоких оборотах. Если вы заметили пар из-под кожуха или почувствовали запах горячего металла, немедленно заглушите двигатель. Эксплуатация перегретого мотора недопустима.</p>
+
+<p>При замене импеллера обязательно очищайте каналы охлаждения от солевых отложений и водорослей. Используйте специальные средства для промывки или слабый раствор кислоты. После промывки продуйте систему сжатым воздухом. Не забудьте смазать новый импеллер мыльным раствором или специальной смазкой перед установкой, чтобы он не сгорел при первом запуске.</p>
+
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Возможная причина</th>
+<th>Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Нет струи воды</td>
+<td>Разрушен импеллер помпы</td>
+<td>Замена водяной помпы</td>
+</tr>
+<tr>
+<td>Слабый напор</td>
+<td>Забиты каналы охлаждения</td>
+<td>Промывка системы</td>
+</tr>
+<tr>
+<td>Стук в двигателе</td>
+<td>Стук поршня (задиры)</td>
+<td>Расточка цилиндра, замена поршня</td>
+</tr>
+<tr>
+<td>Дым из глушителя</td>
+<td>Попадание воды в цилиндр</td>
+<td>Замена сальников, сушка</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не запускайте мотор на суше без подключения к системе внешнего охлаждения (бочка с водой) более чем на несколько секунд. Сухой ход мгновенно выведет из строя импеллер помпы.</p>
+</blockquote>
+
+<h2 id="запчасти-и-совместимость-с-другими-брендами">Запчасти и совместимость с другими брендами</h2>
+<p>Одним из главных преимуществ моторов <em>Parsun</em> является высокая степень унификации с двигателями <em>Tohatsu</em>. Многие детали, такие как поршни, кольца, прокладки, сальники и даже целые узлы (карбюраторы, катушки), взаимозаменяемы. Это значительно упрощает поиск запчастей и снижает стоимость владения. Однако при заказе деталей всегда сверяйте номер двигателя и каталожные номера.</p>
+
+<p>При выборе запчастей отдавайте предпочтение оригинальным компонентам или проверенным аналогам от известных производителей. Дешевые китайские копии могут не соответствовать допускам и ресурсу оригинала, что приведет к повторной поломке. Особое внимание уделяйте подшипникам и сальникам — здесь экономия недопустима.</p>
+
+<p>Для проведения качественного ремонта вам потребуется не только набор инструментов, но и специальные приспособления, такие как съемник маховика, оправки для сальников и динамометрический ключ. Соблюдение моментов затяжки резьбовых соединений — залог надежности собранного двигателя.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Высокая совместимость с Tohatsu делает ремонт Parsun доступным, но требует точного подбора деталей по каталожным номерам конкретного года выпуска.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Какое масло лучше использовать для смеси с бензином в моторе Parsun?</summary>
+<p>Для двухтактных моторов <em>Parsun</em> рекомендуется использовать высококачественные синтетические или полусинтетические масла с маркировкой <strong>TC-W3</strong>. Пропорция смешивания обычно составляет 1:50 (20 мл масла на 1 литр бензина) для новых моторов и обкатанных двигателей, но для старых моделей или при тяжелых условиях эксплуатации производитель может рекомендовать 1:40. Всегда используйте свежий бензин АИ-92 или АИ-95.</p>
+</details>
+
+<details>
+<summary>Почему мотор Parsun глохнет на высоких оборотах?</summary>
+<p>Это может быть вызвано несколькими причинами: засорением топливного фильтра в баке или карбюраторе, нарушением вентиляции топливного бака (забит клапан в крышке), неправильной регулировкой винта качества смеси или перебоями в системе зажигания (пробой катушки под нагрузкой). Также стоит проверить угол опережения зажигания.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять масло в редукторе?</summary>
+<p>Масло в редукторе рекомендуется менять один раз в сезон или после каждых 100 моточасов работы. Если цвет масла изменился на молочный, замену нужно произвести немедленно, найдя и устранив причину попадания воды (чаще всего это сальники).</p>
+</details>
+
+<details>
+<summary>Можно ли использовать мотор Parsun в соленой воде?</summary>
+<p>Да, моторы <em>Parsun</em> адаптированы для использования в соленой воде, но требуют более тщательного ухода. После каждой вылазки на море мотор необходимо промывать пресной водой, чтобы удалить соль с внешних поверхностей и из системы охлаждения. Анодную защиту следует проверять регулярно и менять при коррозии более 50%.</p>
+</details>
+
+<details>
+<summary>Что делать, если мотор не заводится после зимнего хранения?</summary>
+<p>Скорее всего, проблема в старом топливе, которое потеряло свои свойства, или в залитой свече. Слейте остатки топлива из бака и карбюратора, замените свечу на новую, проверьте наличие искры. Если мотор долго стоял, желательно продуть цилиндры, выкрутив свечу и несколько раз дернув стартер, чтобы удалить лишнее масло.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#типичные-неисправности-и-первичная-диагностика">Типичные неисправности и первичная диагностика</a></li><li><a href="#регулировка-и-ремонт-карбюратора">Регулировка и ремонт карбюратора</a></li><li><a href="#система-зажигания-свечи-катушки-и-cdi">Система зажигания: свечи, катушки и CDI</a></li><li><a href="#обслуживание-дейдвуда-и-замена-сальников">Обслуживание дейдвуда и замена сальников</a></li><li><a href="#система-охлаждения-и-борьба-с-перегревом">Система охлаждения и борьба с перегревом</a></li><li><a href="#запчасти-и-совместимость-с-другими-брендами">Запчасти и совместимость с другими брендами</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/u/us/ustanovka-schetchika-motochasov-na-lodochnyj-motor.html" class="related-card">Установка счетчика моточасов на лодочный мотор: схема и советы</a></li><li><a href="/articles/k/ka/kak-pokrasit-lodku.html" class="related-card">Как покрасить лодку: полная инструкция по покраске и выбору краски</a></li><li><a href="/articles/c/ch/chem-bystro-zakleit-lodku-pvkh.html" class="related-card">Чем быстро заклеить лодку ПВХ: лучшие методы и средства</a></li><li><a href="/articles/c/ch/chto-delat-esli-v-motor-popala-voda.html" class="related-card">Вода в моторе лодки: что делать и как спасти двигатель</a></li><li><a href="/articles/m/ma/maks-43-remont-lodochnogo-motora.html" class="related-card">Ремонт лодочного мотора Макс 43: диагностика и устранение неисправностей</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/u/us/ustanovka-schetchika-motochasov-na-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Установка счетчика моточасов на лодочный мотор: схема и советы</span><span class="related-bottom-desc">Подробная инструкция по установке счетчика моточасов на лодочный мотор. Схемы подключения, выбор при</span></a><a href="/articles/k/ka/kak-pokrasit-lodku.html" class="related-bottom-card"><span class="related-bottom-title">Как покрасить лодку: полная инструкция по покраске и выбору краски</span><span class="related-bottom-desc">Узнайте, как правильно покрасить лодку своими руками. Выбор эмали, технология шлифовки, грунтовка и </span></a><a href="/articles/c/ch/chem-bystro-zakleit-lodku-pvkh.html" class="related-bottom-card"><span class="related-bottom-title">Чем быстро заклеить лодку ПВХ: лучшие методы и средства</span><span class="related-bottom-desc">Срочный ремонт лодки ПВХ на водоеме. Обзор клеев, методы временной и капитальной починки, таблица ма</span></a><a href="/articles/c/ch/chto-delat-esli-v-motor-popala-voda.html" class="related-bottom-card"><span class="related-bottom-title">Вода в моторе лодки: что делать и как спасти двигатель</span><span class="related-bottom-desc">Срочная инструкция: что делать, если в лодочный мотор попала вода. Пошаговый план сушки, разборки и </span></a><a href="/articles/m/ma/maks-43-remont-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Ремонт лодочного мотора Макс 43: диагностика и устранение неисправностей</span><span class="related-bottom-desc">Полное руководство по ремонту лодочного мотора Макс 43. Разбор типичных проблем, настройка карбюрато</span></a><a href="/articles/r/re/rele-regulyator-na-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Реле-регулятор на лодочный мотор: диагностика и замена</span><span class="related-bottom-desc">Полный гид по реле-регулятору лодочного мотора: признаки неисправности, проверка мультиметром, схема</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

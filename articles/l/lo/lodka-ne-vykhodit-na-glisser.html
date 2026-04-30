@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Лодка не выходит на глиссер: причины, ошибки и решения — ЛодкаМастер</title>
+    <meta name="description" content="Почему лодка не выходит на глиссер? Полный гид по диагностике: винт, транец, развесовка. Устраняем проблемы с выходом на режим глиссирования.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/l/lo/lodka-ne-vykhodit-na-glisser.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Лодка не выходит на глиссер: причины, ошибки и решения">
+    <meta property="og:description" content="Почему лодка не выходит на глиссер? Полный гид по диагностике: винт, транец, развесовка. Устраняем проблемы с выходом на режим глиссирования.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Лодка не выходит на глиссер: причины, ошибки и решения</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Почему лодка не выходит на глиссер: устранение неисправностей</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#влияние-развесовки-и-посадки-пассажиров">Влияние развесовки и посадки пассажиров</a></li><li><a href="#диагностика-гребного-винта-и-кавитация">Диагностика гребного винта и кавитация</a></li><li><a href="#положение-дейдвуда-и-антикавитационной-плиты">Положение дейдвуда и антикавитационной плиты</a></li><li><a href="#состояние-днища-и-обрастание">Состояние днища и обрастание</a></li><li><a href="#таблица-типичные-симптомы-и-методы-устранения">Таблица: Типичные симптомы и методы устранения</a></li><li><a href="#технические-неисправности-двигателя-и-трансмиссии">Технические неисправности двигателя и трансмиссии</a></li><li><a href="#влияние-состояния-воды-и-ветра">Влияние состояния воды и ветра</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Ситуация, когда водно-моторный комплекс разгоняется до определенного порога скорости, но дальше, вместо резкого ускорения и всплытия, лишь ревет и выбрасывает фонтан брызг, знакома многим водномоторникам. Это явление называется «рысканием» или невозможностью выхода на <strong>глиссирование</strong>. Вместо скольжения по поверхности воды корпус продолжает тонуть носом, встречая колоссальное сопротивление воды. Чаще всего проблема кроется не в нехватке мощности двигателя, а в неправильной настройке узлов или ошибках эксплуатации.</p>
+
+<p>Необходимо понимать физику процесса: для перехода в режим глиссирования требуется преодолеть гидродинамический барьер, когда подъемная сила начинает превышать силу тяжести судна. Если лодка буксует, значит, баланс сил нарушен. Причин может быть множество: от банальной перегрузки до сложной кавитации на лопастях винта. В этой статье мы детально разберем механику процесса и предложим пошаговый алгоритм действий для исправления ситуации.</p>
+
+<p>Игнорирование проблемы приводит к перерасходу топлива, повышенному износу двигателя и, что самое опасное, к риску попадания волны на транец. Вода может захлестнуть корму, создав аварийную ситуацию. Поэтому поиск и устранение причин — это не просто вопрос комфорта, а элемент безопасности на воде.</p>
+
+<h2 id="влияние-развесовки-и-посадки-пассажиров">Влияние развесовки и посадки пассажиров</h2>
+
+<p>Самой распространенной и легко устранимой причиной является неправильная <strong>развесовка</strong> (диффертовка) лодки. Для выхода на глиссирование носовая часть должна приподняться, уменьшив площадь смоченной поверхности корпуса. Если центр тяжести смещен слишком далеко в нос, лодка будет «зарываться» носом, создавая огромную волну сопротивления. В этом случае двигатель работает на пределе, пытаясь оторвать тяжелый нос от воды.</p>
+
+<p>Идеальным решением является перемещение пассажиров и груза ближе к транцу. Однако здесь важно соблюдать меру: чрезмерный дифферент на корму также опасен, так как может привести к <em>порпозингу</em> (ритмичному подпрыгиванию носовой части) и потере курсовой устойчивости. Оптимальное положение — когда днище касается воды примерно на 1/3 или 1/4 своей длины от транца при движении.</p>
+
+<ul>
+<li>🚣 Проверьте, не перегружена ли носовая часть якорями, ящиками или пассажирами.</li>
+<li>⚖️ Попробуйте сдвинуть все тяжелые предметы максимально близко к корме.</li>
+<li>👥 Распределите вес пассажиров так, чтобы они сидели на задних банках или на рундуках у транца.</li>
+</ul>
+
+<p>В некоторых случаях, особенно на ПВХ лодках с жестким днищем, помогает использование <strong>транцевых плит</strong> или даже временное утяжеление транца (например, баком с топливом, установленным у борта), чтобы искусственно приподнять нос. Но это временное решение; правильная загрузка эффективнее.</p>
+
+<div class="poll-widget" id="poll-a0309a62"><div class="poll-widget-question">📊 Где у вас обычно располагаются пассажиры при попытке выхода на глиссирование?</div><div class="poll-widget-option" data-poll="a0309a62" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">В носу лодки</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="a0309a62" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Равномерно по бортам</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="a0309a62" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Ближе к транцу</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="a0309a62" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Стоят в центре</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="a0309a62" data-idx="4" onclick="pbPollVote(this)"><span class="poll-widget-label">В лодке только один человек</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="диагностика-гребного-винта-и-кавитация">Диагностика гребного винта и кавитация</h2>
+
+<p>Второй по значимости фактор — состояние и параметры гребного винта. Если винт подобран неверно, двигатель физически не сможет развить необходимые обороты или, наоборот, уйдет в «разнос», не создавая достаточной тяги. Ключевым параметром здесь является шаг винта. Слишком большой шаг создает высокую нагрузку, мотор «давится» и не набирает максимальные обороты. Слишком малый шаг позволяет мотору крутиться легко, но упор недостаточен для отрыва лодки.</p>
+
+<p>Также стоит обратить внимание на явление <strong>кавитации</strong>. Это образование пузырьков пара в зонах разрежения на лопастях. При схлопывании пузырьков возникает ударная волна, которая снижает КПД винта до нуля — он просто прокручивается в «молочной» воде. Часто это происходит из-за повреждения кромок лопастей, наличия сколов или налипшей травы.</p>
+
+<details class="faq-item"><summary>Как проверить винт на кавитацию?</summary><div class="faq-answer"><p>Визуально осмотрите лопасти. Если на них есть раковины, похожие на следы коррозии, или острые кромки повреждены — винт требует замены или профессиональной правки. Также признаком кавитации является характерный треск и отсутствие тяги при высоких оборотах.</p></div></details>
+
+<p>Для диагностики необходимо выкрутить винт и осмотреть его. Наличие трещин, изгибов или сильной выработки втулки демпфера (резиновой втулки внутри ступицы) может приводить к проскальзыванию. Втулка может проворачиваться относительно вала, и несмотря на высокие обороты двигателя, лодка не движется.</p>
+
+<ul>
+<li>🔍 Осмотрите кромки лопастей на предмет сколов и загибов.</li>
+<li>🔄 Проверьте ступицу винта: нет ли проворота резиновой втулки относительно металла.</li>
+<li>🌊 Убедитесь, что винт полностью погружен в воду и не захватывает воздух.</li>
+</ul>
+
+<h2 id="положение-дейдвуда-и-антикавитационной-плиты">Положение дейдвуда и антикавитационной плиты</h2>
+
+<p>Регулировка наклона дейдвуда (trim) — это мощный инструмент настройки, которым часто пренебрегают. <strong>Антикавитационная плита</strong> (горизонтальная пластина над винтом) должна располагаться параллельно килю лодки или быть слегка опущена носом вниз. Если плита стоит слишком высоко (нос дейдвуда задран вверх), поток воды срывается, и винт захватывает воздух, вызывая кавитацию и потерю тяги.</p>
+
+<p>Оптимальное положение плиты — когда ее задняя кромка находится на одном уровне с нижней точкой днища лодки (или на 10-20 мм ниже для глиссирующих лодок). Регулировка осуществляется путем перестановки штифта в пазах транцевого крепления или с помощью гидроподъема, если он предусмотрен конструкцией. Неправильный угол также влияет на курсовую устойчивость.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При регулировке дейдвуда на ходу (гидроподъем), выдвигайте шток медленно. Резкое изменение угла может привести к мгновенной потере управления и развороту лодки.</p></div>
+
+<p>Если у вас мотор с ручным управлением наклоном, поэкспериментируйте с отверстиями на транце. Перестановка штифта на одно отверстие может кардинально изменить поведение лодки. Иногда проблема решается элементарной установкой <em>концевика</em> (дополнительной пластины) на антикавитационную плиту, что улучшает поток воды на винт.</p>
+
+<h2 id="состояние-днища-и-обрастание">Состояние днища и обрастание</h2>
+
+<p>Гидродинамика лодки напрямую зависит от гладкости днища. Любые неровности, вмятины на ПВХ, вздутия клея или торчащие элементы (например, неправильно установленные датчики эхолота) создают турбулентность. Вода, обтекая такие препятствия, тормозит лодку, не давая ей выйти на режим скольжения. Особенно критично состояние последних 30-40% днища ближе к транцу.</p>
+
+<p>В летний период актуальной проблемой становится обрастание. Водоросли, ракушки и тина, налипающие на днище, работают как естественный тормоз. Шероховатая поверхность увеличивает трение о воду в разы. Даже тонкий слой слизи может снизить максимальную скорость на 10-15%, что для пограничных значений мощности становится фатальным.</p>
+
+<p>Регулярная мойка и полировка днища — обязательная процедура. Для ПВХ лодок можно использовать специальные полироли, восстанавливающие скольжение. Для металлических лодок важна борьба с коррозией и ракушечником. Если лодка хранится на воде, обработка антиобрастающей краской (для соответствующих материалов) или частая очистка обязательны.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Гладкость днища в кормовой части важнее, чем в носовой. Именно там формируется поток, отрывающий лодку от воды.</p></div>
+
+<h2 id="таблица-типичные-симптомы-и-методы-устранения">Таблица: Типичные симптомы и методы устранения</h2>
+
+<p>Для быстрой диагностики используйте следующую таблицу. Она поможет сопоставить наблюдаемое поведение лодки с вероятной причиной.</p>
+
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Вероятная причина</th>
+<th>Метод решения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Мотор ревет, обороты высокие, скорости нет</td>
+<td>Кавитация, захват воздуха</td>
+<td>Опустить дейдуд, проверить винт на повреждения</td>
+</tr>
+<tr>
+<td>Мотор «давится», обороты не растут</td>
+<td>Большой шаг винта, перегруз</td>
+<td>Заменить винт на меньший шаг, убрать груз</td>
+</tr>
+<tr>
+<td>Лодка рыскает носом, брызги в лицо</td>
+<td>Дифферент на нос</td>
+<td>Сместить пассажиров и груз к транцу</td>
+</tr>
+<tr>
+<td>Вибрация на высоких оборотах</td>
+<td>Деформация винта, износ втулки</td>
+<td>Правка/замена винта, замена демпфера</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="технические-неисправности-двигателя-и-трансмиссии">Технические неисправности двигателя и трансмиссии</h2>
+
+<p>Если с развесовкой и винтом все в порядке, стоит обратить внимание на техническое состояние мотора. Забитые водозаборные отверстия в дейдвуде (травой или песком) приводят к перегреву и автоматическому сбросу мощности (если есть датчик температуры) или просто к потере эффективности охлаждения, что заставляет сбрасывать газ.</p>
+
+<p>Также возможна проблема с <strong>карбюратором</strong> (на 2Т моторах) или системой впрыска (на 4Т). Если смесь слишком бедная или богатая, двигатель не отдаст полную мощность. На двухтактных моторах частой проблемой становится закоксовка выхлопных окон цилиндра или глушителя, что снижает продувку и мощность.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Если вы чувствуете запах гари или видите пар из-под кожуха, немедленно сбросьте газ. Продолжение движения может привести к заклиниванию поршневой группы и капитальному ремонту.</p>
+</blockquote>
+
+<p>Проверьте также состояние топливной системы. Воздушная пробка в карбюраторе, забитый фильтр-отстойник или шланг, который сплющивается под вакуумом при работе на высоких оборотах, могут создавать иллюзию нехватки мощности. Мотор просто «голодает».</p>
+
+<h2 id="влияние-состояния-воды-и-ветра">Влияние состояния воды и ветра</h2>
+
+<p>Не стоит забывать и о внешних условиях. На «крутой» волне лодке требуется значительно больше энергии для выхода на глиссирование, так как она постоянно взбирается на гребни волн. В таких условиях может помочь техника «подгазовки»: резкое добавление газа на подходе к волне помогает проскочить критический участок.</p>
+
+<p>Ветер также играет роль. Движение против ветра создает дополнительную аэродинамическую нагрузку на корпус и пассажира, что может снизить скорость на 2-3 км/ч, что иногда оказывается решающим фактором для перехода через барьер глиссирования.</p>
+
+</div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#влияние-развесовки-и-посадки-пассажиров">Влияние развесовки и посадки пассажиров</a></li><li><a href="#диагностика-гребного-винта-и-кавитация">Диагностика гребного винта и кавитация</a></li><li><a href="#положение-дейдвуда-и-антикавитационной-плиты">Положение дейдвуда и антикавитационной плиты</a></li><li><a href="#состояние-днища-и-обрастание">Состояние днища и обрастание</a></li><li><a href="#таблица-типичные-симптомы-и-методы-устранения">Таблица: Типичные симптомы и методы устранения</a></li><li><a href="#технические-неисправности-двигателя-и-трансмиссии">Технические неисправности двигателя и трансмиссии</a></li><li><a href="#влияние-состояния-воды-и-ветра">Влияние состояния воды и ветра</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakim-maslom-razbavlyat-benzin-dlya-lodochnogo-motora-2kh-taktnogo.html" class="related-card">Каким маслом разбавлять бензин для лодочного мотора: пропорции</a></li><li><a href="/articles/p/po/pokraska-alyuminievoj-lodki.html" class="related-card">Покраска алюминиевой лодки: полная технология и выбор краски</a></li><li><a href="/articles/l/lo/lodka-pvkh-zamena-klapana.html" class="related-card">Замена клапана на лодке ПВХ: пошаговая инструкция и советы</a></li><li><a href="/articles/c/ch/chto-budet-esli-zavesti-dvigatel-bez-masla.html" class="related-card">Что будет, если завести двигатель без масла: последствия и ремонт</a></li><li><a href="/articles/o/op/opressovka-reduktora-lodochnogo-motora-svoimi-rukami.html" class="related-card">Опрессовка редуктора лодочного мотора: своими руками или в сервисе?</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kakim-maslom-razbavlyat-benzin-dlya-lodochnogo-motora-2kh-taktnogo.html" class="related-bottom-card"><span class="related-bottom-title">Каким маслом разбавлять бензин для лодочного мотора: пропорции</span><span class="related-bottom-desc">Подробный гид: какое масло лить в 2-тактный лодочный мотор. Пропорции смеси, типы масел, таблица сме</span></a><a href="/articles/p/po/pokraska-alyuminievoj-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Покраска алюминиевой лодки: полная технология и выбор краски</span><span class="related-bottom-desc">Как покрасить алюминиевую лодку своими руками. Подготовка поверхности, выбор эмали, грунтовка, техно</span></a><a href="/articles/l/lo/lodka-pvkh-zamena-klapana.html" class="related-bottom-card"><span class="related-bottom-title">Замена клапана на лодке ПВХ: пошаговая инструкция и советы</span><span class="related-bottom-desc">Как заменить клапан на лодке ПВХ своими руками: выбор модели, пошаговая инструкция, выбор клея и про</span></a><a href="/articles/c/ch/chto-budet-esli-zavesti-dvigatel-bez-masla.html" class="related-bottom-card"><span class="related-bottom-title">Что будет, если завести двигатель без масла: последствия и ремонт</span><span class="related-bottom-desc">Разбираем последствия запуска ДВС без смазки. Сколько мотор проживет без масла, признаки масляного г</span></a><a href="/articles/o/op/opressovka-reduktora-lodochnogo-motora-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Опрессовка редуктора лодочного мотора: своими руками или в сервисе?</span><span class="related-bottom-desc">Как проверить герметичность редуктора лодочного мотора в домашних условиях. Пошаговая инструкция опр</span></a><a href="/articles/v/vy/vypryamitel-regulyator-dlya-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Регулятор-выпрямитель для лодочного мотора: устройство и ремонт</span><span class="related-bottom-desc">Подробный гид по регулятору-выпрямителю лодочного мотора: диагностика, схемы, симптомы неисправности</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

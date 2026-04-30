@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Как выровнять лодку: настройка транца и балансировка — ЛодкаМастер</title>
+    <meta name="description" content="Подробная инструкция, как выровнять лодку на транце. Настройка высоты подвесного мотора, балансировка центра тяжести и устранение рыскания для стабильного хода.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/k/ka/kak-vyrovnyat-lodku.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как выровнять лодку: настройка транца и балансировка">
+    <meta property="og:description" content="Подробная инструкция, как выровнять лодку на транце. Настройка высоты подвесного мотора, балансировка центра тяжести и устранение рыскания для стабильного хода.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Как выровнять лодку: настройка транца и балансировка</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Как выровнять лодку: устранение кренов и настройка мотора</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#диагностика-неправильного-положения-лодки">Диагностика неправильного положения лодки</a></li><li><a href="#регулировка-высоты-подвески-мотора-на-транце">Регулировка высоты подвески мотора на транце</a></li><li><a href="#настройка-трима-и-наклона-дейдвуда">Настройка трима и наклона дейдвуда</a></li><li><a href="#устранение-рыскания-с-помощью-скулового-руля">Устранение рыскания с помощью скулового руля</a></li><li><a href="#балансировка-лодки-и-распределение-груза">Балансировка лодки и распределение груза</a></li><li><a href="#влияние-состояния-транца-на-ходовые-качества">Влияние состояния транца на ходовые качества</a></li><li><a href="#частые-вопросы-faq">Частые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Правильная установка лодки на транце и её балансировка являются критически важными этапами подготовки к выходу на воду. Многие владельцы плавательных средств сталкиваются с проблемой рыскания (виляния носом), чрезмерного дифферента на корму или заваливания лодки на борт при наборе скорости. Эти симптомы указывают на то, что <strong>геометрия движения</strong> нарушена, и требуется вмешательство в настройки подвески двигателя или распределение груза.</p>
+
+<p>Игнорирование вопроса о том, как выровнять лодку, может привести к повышенному расходу топлива, снижению максимальной скорости и, что самое опасное, к потере управляемости в экстренной ситуации. Неправильный угол наклона дейдвуда или смещенный центр тяжести заставляют пилота постоянно работать рулем, компенсируя увод судна в сторону. В этой статье мы разберем технические аспекты установки мотора и методы корректировки положения корпуса для достижения идеального глиссирования.</p>
+
+<div class="poll-widget" id="poll-03e29612"><div class="poll-widget-question">📊 С какой проблемой выравнивания лодки вы сталкивались чаще всего?</div><div class="poll-widget-option" data-poll="03e29612" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Лодка рыскает (виляет носом)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="03e29612" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Лодка клюет носом на глиссировании</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="03e29612" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Лодка заваливается на бок</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="03e29612" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Проблем с выравниванием не было</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="диагностика-неправильного-положения-лодки">Диагностика неправильного положения лодки</h2>
+
+<p>Прежде чем приступать к механическим регулировкам, необходимо точно определить характер поведения судна на воде. <strong>Симптоматика</strong> может быть различной, и каждая из них указывает на конкретную ошибку в настройке. Часто владельцы пытаются лечить следствие, а не причину, меняя положение мотора, когда проблема кроется в загрузке или состоянии самого корпуса.</p>
+
+<p>Наиболее распространенной проблемой является <em>рыскание</em> — самопроизвольное отклонение лодки от курса влево или вправо. Это явление часто путают с ветровым сносом, однако при ветре лодку просто сносит в сторону, а при рыскании она пытается развернуться вокруг своей оси. Другой частый случай — <strong>капотажный момент</strong>, когда нос лодки чрезмерно поднят, что ухудшает обзор и увеличивает риск опрокидывания при встречной волне.</p>
+
+<blockquote>⚠️ Внимание: Если лодку уводит в сторону только при полном газе, а на малых оборотах она идет прямо, проблема почти наверняка кроется в положении антикавитационной плиты или триме мотора, а не в поломке рулевого управления.</blockquote>
+
+<p>Также следует обратить внимание на поведение лодки при входе в режим глиссирования. Если для выхода на глисс требуется слишком много времени и мощности, а корма глубоко погружена в воду, значит, <strong>дифферент</strong> на корму избыточен. Это не только снижает скорость, но и создает брызговую струю, которая может перехлестывать через транец, что особенно опасно для маломощных двигателей.</p>
+
+<h2 id="регулировка-высоты-подвески-мотора-на-транце">Регулировка высоты подвески мотора на транце</h2>
+
+<p>Фундаментальным параметром, определяющим, как лодка будет вести себя на воде, является высота установки подвесного мотора. Стандартной считается установка, при которой <strong>антикавитационная пластина</strong> (горизонтальная плоскость над винтом) находится на одной линии с условной продолжением днища лодки в районе транца. Если пластина расположена слишком высоко, винт будет захватывать воздух, вызывая кавитацию и потерю тяги.</p>
+
+<p>В случае, когда мотор опущен слишком низко, сопротивление воды резко возрастает. Дейдвуд (нога мотора) создает дополнительную волну и тормозит лодку, а брызги летят в кокпит. Оптимальная высота позволяет винту работать в чистом потоке воды, обеспечивая максимальную <strong>эффективность гребного винта</strong>. Для точной настройки часто требуется экспериментальный подбор высоты с шагом в 1-2 сантиметра.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка установки мотора</h4><label class="check-item"><input type="checkbox"><span>Антикавитационная пластина параллельна дну</span></label><label class="check-item"><input type="checkbox"><span>Винт не захватывает воздух на поворотах</span></label><label class="check-item"><input type="checkbox"><span>Брызги не летят в кокпит</span></label><label class="check-item"><input type="checkbox"><span>Мотор не создает излишнего сопротивления</span></label><label class="check-item"><input type="checkbox"><span>Тяга соответствует паспортной</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>При регулировке высоты важно учитывать тип лодки. Для <em>лодок ПВХ</em> с надувным дном низкого давления (НДНД) допустима установка мотора чуть выше, чем для жестких корпусов, так как кормовая часть надувного баллона может прогибаться под весом двигателя. В то же время, алюминиевые мотоботы требуют строгого соблюдения геометрии, так как деформация транца здесь исключена конструктивно.</p>
+
+<h2 id="настройка-трима-и-наклона-дейдвуда">Настройка трима и наклона дейдвуда</h2>
+
+<p>Современные подвесные моторы, такие как <em>Yamaha</em>, <em>Tohatsu</em> или <em>Honda</em>, оснащены системой регулировки угла наклона дейдвуда относительно транца. Это осуществляется с помощью отверстий для штифта на кронштейне мотора или гидравлического трима. Изменяя этот угол, вы влияете на то, как нос лодки реагирует на прибавление газа.</p>
+
+<p>Если при выходе на глиссирование нос лодки задирается слишком высоко, закрывая обзор, необходимо уменьшить угол наклона (приклонить мотор вперед). Это прижмет нос к воде. И наоборот, если лодка «роет» воду носом и забрызгивает водителя, дейдвуд нужно отклонить назад. Правильно настроенный <strong>трим</strong> позволяет лодке идти параллельно поверхности воды, минимизируя площадь смачиваемой поверхности корпуса.</p>
+
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Действие с тримом</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Нос задирается вверх</td>
+<td>Наклонить мотор вперед (Trim Down)</td>
+<td>Нос опускается, улучшается обзор</td>
+</tr>
+<tr>
+<td>Лодка роет носом</td>
+<td>Отклонить мотор назад (Trim Up)</td>
+<td>Нос всплывает, скорость растет</td>
+</tr>
+<tr>
+<td>Винт хватает воздух</td>
+<td>Опустить дейдвуд</td>
+<td>Устранение кавитации</td>
+</tr>
+<tr>
+<td>Падение скорости на повороте</td>
+<td>Проверить угол наклона</td>
+<td>Стабилизация хода</td>
+</tr>
+</tbody>
+</table>
+
+<p>Стоит отметить, что настройка трима — это поиск компромисса между скоростью и управляемостью. Слишком большой подъем носа (over-trim) может привести к потере сцепления винта с водой на поворотах, что чревато резким разворотом лодки. <strong>Безопасность</strong> в данном случае приоритетнее рекордных показателей скорости.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При настройке трима делайте небольшие изменения (один шаг регулировки) и проверяйте результат на воде. Резкая смена угла может привести к неожиданному поведению лодки.</p></div>
+
+<h2 id="устранение-рыскания-с-помощью-скулового-руля">Устранение рыскания с помощью скулового руля</h2>
+
+<p>Одной из самых эффективных мер по выравниванию курса лодки является установка и правильная настройка скулового руля (гидрофола). Этот элемент, закрепляемый над гребным винтом, выполняет две функции: защищает дейдвуд от ударов и перенаправляет потоки воды, создаваемые винтом, для компенсации крутящего момента.</p>
+
+<p>Подвесной мотор вращает винт в одну сторону (обычно по часовой стрелке, если смотреть сзади), что по закону сохранения момента импульса стремится развернуть корпус лодки в противоположную сторону. Именно поэтому на многих лодках без гидрофоров приходится постоянно держать руль слегка повернутым. Правильно выставленный <strong>скуловой руль</strong> позволяет отпустить румпель, и лодка будет идти строго прямо.</p>
+
+<p>Регулировка осуществляется путем поворота задней части гидрофора относительно оси вращения мотора. Если лодку уводит влево, заднюю часть руля нужно сместить вправо, и наоборот. Процесс требует терпения: внесли изменение, проверили на воде, скорректировали. В идеале, при отпускании румпеля на прямой воде лодка должна описывать очень широкую дугу или идти прямо в течение 10-15 секунд.</p>
+
+<blockquote>⚠️ Внимание: Не используйте скуловой руль для компенсации постоянного крена лодки из-за неправильной загрузки. Его задача — устранение рыскания от винта, а не выравнивание дифферента по бортам.</blockquote>
+
+<details class="faq-item"><summary>Влияние шага винта на рыскание</summary><div class="faq-answer"><p>Установка винта с большим шагом может усилить рыскание, так как возрастает нагрузка на двигатель и крутящий момент. Если вы сменили винт и лодку стало уводить сильнее, потребуется повторная настройка гидрофора.</p></div></details>
+
+<h2 id="балансировка-лодки-и-распределение-груза">Балансировка лодки и распределение груза</h2>
+
+<p>Даже идеально настроенный мотор не поможет, если нарушена <strong>балансировка</strong> самой лодки. Центр тяжести должен находиться на диаметральной плоскости судна. Смещение пассажиров или груза на один борт приведет к крену, который придется постоянно парировать работой руля, что увеличивает сопротивление и расход топлива.</p>
+
+<p>При посадке в лодку необходимо учитывать вес пассажиров и оборудования. Тяжелые аккумуляторы, якоря и багаж следует размещать как можно ближе к центру тяжести лодки (обычно это район мидель-шпангоута) и строго по центру. Если один борт все равно тяжелее, имеет смысл переместить топливный бак или ящик с инструментами на противоположную сторону для компенсации.</p>
+
+<p>Важно также учитывать динамическую балансировку. При движении на глиссировании центр тяжести смещается. Если лодка начинает заваливаться на бок только на скорости, возможно, форма корпуса имеет дефект или транец перекошен. В таких случаях может потребоваться установка <mark>балансировочных плиток</mark> (trim tabs) на транец, которые принудительно приподнимают нужный угол кормы.</p>
+
+<h2 id="влияние-состояния-транца-на-ходовые-качества">Влияние состояния транца на ходовые качества</h2>
+
+<p>Часто вопрос «как выровнять лодку» упирается в техническое состояние самого транца. Перекошенный транец — это болезнь не только старых деревянных лодок, но и современных алюминиевых и ПВХ моделей после ударов или длительной эксплуатации. Если линия транца не перпендикулярна диаметральной плоскости, мотор изначально будет установлен с перекосом.</p>
+
+<p>Проверку можно выполнить визуально, приложив длинную линейку или уровень от носа к центру транца. Если виден явный перекос влево или вправо, никакая настройка мотора не даст идеального результата. В случае с <em>лодками из ПВХ</em> иногда помогает симметричная подтяжка стрингеров или использование проставок под кронштейн мотора.</p>
+
+<p>Для металлических лодок деформация транца может потребовать правки в мастерской. Игнорирование этого дефекта приведет к неравномерному износу дейдвуда и подшипников, а также к постоянному уводу лодки в одну сторону, который невозможно компенсировать стандартными методами настройки.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Ключ к идеальному ходу — комплексный подход: исправный транец, правильная высота мотора, настроенный трим и грамотное распределение груза внутри кокпита.</p></div>
+
+<h2 id="частые-вопросы-faq">Частые вопросы (FAQ)</h2>
+
+<details>
+<summary>Почему лодку уводит в сторону даже при отпущенном руле?</summary>
+<p>Это явление называется рысканием. Чаще всего оно вызвано крутящим моментом гребного винта. Для устранения необходимо настроить скуловой руль (гидрофор) или, при его отсутствии, установить его. Также причиной может быть перекошенный транец или неравномерная загрузка лодки.</p>
+</details>
+
+<details>
+<summary>На какой высоте должна быть антикавитационная пластина?</summary>
+<p>В идеале она должна быть на одном уровне с линией днища лодки. Допускается небольшое превышение (на 1-2 см) для лодок с плоским дном, но сильное поднятие приведет к кавитации, а опускание — к потере скорости из-за сопротивления.</p>
+</details>
+
+<details>
+<summary>Можно ли выровнять лодку только за счет перемещения пассажиров?</summary>
+<p>Частично — да. Смещение пассажиров на борт, противоположный направлению увода, может компенсировать рыскание. Однако это временное решение. Для постоянного эффекта необходима механическая настройка положения мотора и скулового руля.</p>
+</details>
+
+<details>
+<summary>Как влияет шаг винта на выравнивание лодки?</summary>
+<p>Винт с большим шагом создает большую нагрузку на двигатель и усиливает крутящий момент, что может усилить рыскание. Если лодку стало сильно уводить после замены винта, потребуется повторная настройка гидрофора.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#диагностика-неправильного-положения-лодки">Диагностика неправильного положения лодки</a></li><li><a href="#регулировка-высоты-подвески-мотора-на-транце">Регулировка высоты подвески мотора на транце</a></li><li><a href="#настройка-трима-и-наклона-дейдвуда">Настройка трима и наклона дейдвуда</a></li><li><a href="#устранение-рыскания-с-помощью-скулового-руля">Устранение рыскания с помощью скулового руля</a></li><li><a href="#балансировка-лодки-и-распределение-груза">Балансировка лодки и распределение груза</a></li><li><a href="#влияние-состояния-транца-на-ходовые-качества">Влияние состояния транца на ходовые качества</a></li><li><a href="#частые-вопросы-faq">Частые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakoe-maslo-zalivat-v-dvigatel-omoda-s5.html" class="related-card">Какое масло заливать в двигатель OMODA C5: допуски и объемы</a></li><li><a href="/articles/k/ka/kamera-smotret-tsilindry-dvigatelya.html" class="related-card">Камера для осмотра цилиндров: эндоскопия двигателя</a></li><li><a href="/articles/r/re/remont-plastikovoj-lodki-svoimi-rukami.html" class="related-card">Ремонт пластиковой лодки своими руками: пошаговые инструкции</a></li><li><a href="/articles/k/ka/kak-promyt-dvigatel-ot-nagara-bez-razborki.html" class="related-card">Промывка двигателя от нагара без разборки: методы и средства</a></li><li><a href="/articles/t/te/tekhobsluzhivanie-lodochnogo-motora.html" class="related-card">Техобслуживание лодочного мотора: полный гид по ТО</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kakoe-maslo-zalivat-v-dvigatel-omoda-s5.html" class="related-bottom-card"><span class="related-bottom-title">Какое масло заливать в двигатель OMODA C5: допуски и объемы</span><span class="related-bottom-desc">Полный гид по моторным маслам для OMODA C5. Разбор допусков API, вязкости 5W-30/40, объемов замены д</span></a><a href="/articles/k/ka/kamera-smotret-tsilindry-dvigatelya.html" class="related-bottom-card"><span class="related-bottom-title">Камера для осмотра цилиндров: эндоскопия двигателя</span><span class="related-bottom-desc">Как выбрать и использовать технический эндоскоп для диагностики цилиндров ДВС. Обзор дефектов, пошаг</span></a><a href="/articles/r/re/remont-plastikovoj-lodki-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Ремонт пластиковой лодки своими руками: пошаговые инструкции</span><span class="related-bottom-desc">Как отремонтировать пластиковую лодку в домашних условиях: заплатки, герметизация, устранение трещин</span></a><a href="/articles/k/ka/kak-promyt-dvigatel-ot-nagara-bez-razborki.html" class="related-bottom-card"><span class="related-bottom-title">Промывка двигателя от нагара без разборки: методы и средства</span><span class="related-bottom-desc">Как убрать нагар в двигателе без вскрытия? Эффективные способы раскоксовки, выбор химии, пошаговая и</span></a><a href="/articles/t/te/tekhobsluzhivanie-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Техобслуживание лодочного мотора: полный гид по ТО</span><span class="related-bottom-desc">Полное руководство по техобслуживанию лодочного мотора. Замена масла, свечей, проверка редуктора. Со</span></a><a href="/articles/p/po/pokraska-lodki-iz-stekloplastika.html" class="related-bottom-card"><span class="related-bottom-title">Покраска лодки из стеклопластика: пошаговая инструкция</span><span class="related-bottom-desc">Профессиональная покраска стеклопластиковой лодки своими руками. Выбор краски, технология нанесения,</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

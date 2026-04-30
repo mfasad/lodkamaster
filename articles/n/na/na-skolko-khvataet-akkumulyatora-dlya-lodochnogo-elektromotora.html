@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>На сколько хватает аккумулятора для лодочного электромотора — ЛодкаМастер</title>
+    <meta name="description" content="Реальный расчет времени работы аккумулятора для электромотора. Таблицы, формулы, влияние температуры и глубины разряда. Советы по выбору емкости.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/n/na/na-skolko-khvataet-akkumulyatora-dlya-lodochnogo-elektromotora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="На сколько хватает аккумулятора для лодочного электромотора">
+    <meta property="og:description" content="Реальный расчет времени работы аккумулятора для электромотора. Таблицы, формулы, влияние температуры и глубины разряда. Советы по выбору емкости.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">На сколько хватает аккумулятора для лодочного электромотора</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>На сколько хватает аккумулятора для лодочного электромотора</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#факторы-влияющие-на-время-работы-электромотора">Факторы, влияющие на время работы электромотора</a></li><li><a href="#расчет-времени-работы-формула-и-примеры">Расчет времени работы: формула и примеры</a></li><li><a href="#сравнение-типов-аккумуляторов-свинец-против-лития">Сравнение типов аккумуляторов: свинец против лития</a></li><li><a href="#влияние-температуры-и-условий-эксплуатации">Влияние температуры и условий эксплуатации</a></li><li><a href="#практические-советы-по-увеличению-дальности-хода">Практические советы по увеличению дальности хода</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Вопрос автономности плавания на электротяге волнует каждого владельца лодки, который планирует провести на воде несколько часов без возможности подзарядки. Точного ответа"в часах" не существует, так как время работы <strong>аккумулятора для лодочного электромотора</strong> зависит от десятка переменных, начиная от веса лодки и заканчивая силой встречного ветра. Многие новички совершают ошибку, полагаясь только на заявленную производителем емкость батареи, забывая о реальном потреблении тока в разных режимах.</p>
+
+<p>Фактическое время, которое вы сможете провести на воде, определяется балансом между запасенной энергией и мощностью, потребляемой мотором в конкретный момент. Если вы двигаетесь против течения или сильного ветра на максимальной скорости, <em>свинцово-кислотный аккумулятор</em> может разрядиться за 40-50 минут, тогда как при спокойном троллинге его хватит на 5-6 часов. Понимание физики процесса поможет вам избежать ситуации, когда мотор останавливается в километре от берега.</p>
+
+<p>В этой статье мы детально разберем формулы расчета, влияние типа батареи и температуры воды, а также рассмотрим реальные сценарии эксплуатации. Вы научитесь самостоятельно прогнозировать дальность хода и подбирать оптимальную связку"мотор-аккумулятор" под свои задачи.</p>
+
+<h2 id="факторы-влияющие-на-время-работы-электромотора">Факторы, влияющие на время работы электромотора</h2>
+
+<p>Первое, что нужно осознать: <strong>потребление тока</strong> электромотором не является константой. Оно меняется каждую секунду в зависимости от нагрузки на винт. Если вы плывете по гладкой воде без ветра на 3-й передаче из 5 возможных, потребление будет минимальным. Однако стоит добавить встречный ветер или увеличить скорость до максимума, и ток вырастет в разы.</p>
+
+<p>Второй критический фактор — это состояние самого источника энергии. Старые батареи теряют свою номинальную емкость, а холодная вода (ниже +15°C) снижает эффективность химических реакций внутри <em>AGM или GEL аккумуляторов</em>. Также вес лодки: дополнительная загрузка в 100 кг потребует больше энергии для преодоления сопротивления воды.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не разряжайте свинцово-кислотные аккумуляторы ниже 50% от их емкости. Глубокий разряд необратимо снижает ресурс батареи, превращая полноценный источник питания в бесполезный груз уже через несколько сезонов.</p>
+</blockquote>
+
+<p>Третий аспект — техническое состояние лодки. Обрастание днища водорослями, грязный винт или неправильно подобранный шаг гребного винта создают дополнительное сопротивление. Мотор вынужден работать на более высоких оборотах для поддержания той же скорости, что приводит к ускоренному <strong>расходу заряда</strong>.</p>
+
+<div class="poll-widget" id="poll-c8171b79"><div class="poll-widget-question">📊 Какой тип аккумулятора вы планируете использовать?</div><div class="poll-widget-option" data-poll="c8171b79" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Свинцово-кислотный (WET/AGM/GEL)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="c8171b79" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Литий-железо-фосфатный (LiFePO4)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="c8171b79" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Щелочной</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="c8171b79" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Пока не знаю, выбираю</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="расчет-времени-работы-формула-и-примеры">Расчет времени работы: формула и примеры</h2>
+
+<p>Для получения точных данных необходимо использовать простую физическую формулу. Время работы (в часах) равно емкости аккумулятора (в Ампер-часах), деленной на ток потребления мотора (в Амперах). Однако здесь есть важный нюанс: для свинцовых батарей мы берем только 50% емкости, а для литиевых — до 90-95%.</p>
+
+<p>Рассмотрим конкретный пример. У вас есть аккумулятор емкостью 100 Ач и электромотор, потребляющий 20 Ампер на средней скорости. Если батарея свинцовая, usable capacity (полезная емкость) составит 50 Ач. Разделив 50 на 20, получаем 2.5 часа работы. Если же это <em>LiFePO4</em> батарея, полезная емкость будет около 90 Ач, что даст нам 4.5 часа хода.</p>
+
+<p>Важно понимать, что ток потребления указан в спецификациях мотора для максимальной тяги. На практике, при троллинге на низких оборотах, потребление может составлять всего 5-10 Ампер, что автоматически увеличивает время работы в 2-4 раза.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте мультиметр или вольтметр с функцией замера тока, чтобы узнать реальное потребление вашего мотора на разных передачах. Данные в паспорте часто носят справочный характер и могут отличаться на 10-15%.</p></div>
+
+<h2 id="сравнение-типов-аккумуляторов-свинец-против-лития">Сравнение типов аккумуляторов: свинец против лития</h2>
+
+<p>Выбор типа батареи кардинально меняет ответ на вопрос"на сколько хватит заряда". Традиционные <strong>свинцово-кислотные аккумуляторы</strong> (WET, AGM, GEL) дешевы, но имеют низкую удельную энергоемкость и боятся глубокого разряда. Литий-железо-фосфатные (<em>LiFePO4</em>) батареи дороже, но позволяют использовать почти 100% своей емкости без вреда для химии.</p>
+
+<p>Ниже приведена таблица сравнения реального времени работы для аккумулятора номиналом 100 Ач при нагрузке 25 Ампер (режим активного движения):</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип аккумулятора</th>
+<th>Номинальная емкость</th>
+<th>Допустимый разряд</th>
+<th>Полезная емкость</th>
+<th>Время работы (ч)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Свинцовый (WET)</td>
+<td>100 Ач</td>
+<td>50%</td>
+<td>50 Ач</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>AGM / GEL</td>
+<td>100 Ач</td>
+<td>60%</td>
+<td>60 Ач</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td>Литий (LiFePO4)</td>
+<td>100 Ач</td>
+<td>95%</td>
+<td>95 Ач</td>
+<td>3.8</td>
+</tr>
+<tr>
+<td>Литий (NMC)</td>
+<td>100 Ач</td>
+<td>90%</td>
+<td>90 Ач</td>
+<td>3.6</td>
+</tr>
+</tbody>
+</table>
+
+<p>Как видно из таблицы, литиевая батарея той же массы и габаритов (или даже меньших) обеспечит почти двукратное преимущество по времени хода. Кроме того, <strong>напряжение</strong> на клеммах лития держится стабильным до самого конца разряда, тогда как у свинца оно падает постепенно, снижая мощность мотора к концу рыбалки.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При установке литиевых аккумуляторов убедитесь, что ваш зарядное устройство поддерживает профиль заряда LiFePO4. Зарядка лития свинцовым зарядником может привести к неполному заряду или, в худшем случае, к возгоранию.</p>
+</blockquote>
+
+<h2 id="влияние-температуры-и-условий-эксплуатации">Влияние температуры и условий эксплуатации</h2>
+
+<p>Температура окружающей среды — скрытый враг автономности. Химические реакции внутри батареи замедляются на холоде. При температуре воды +5°C емкость свинцового аккумулятора может упасть на 20-30% по сравнению с летними показателями при +25°C. Литиевые батареи также чувствительны к холоду, особенно в момент заряда, но разряд переносят лучше.</p>
+
+<p>Стиль управления лодкой также играет роль. Резкие разгоны и торможения ("газ в пол" с последующей остановкой) создают пиковые токи, которые греют проводку и саму батарею, снижая общий КПД системы. Плавное управление тягой позволяет <strong>оптимизировать расход</strong> и продлить время нахождения на воде.</p>
+
+<p>Ветер и течение — внешние факторы, которые невозможно игнорировать. Движение против ветра 5-7 м/с может увеличить потребление энергии на 40-50% по сравнению со штилем. Планируйте маршрут так, чтобы возвращаться домой по ветру или течению, когда заряд батареи будет уже невелик.</p>
+
+<details class="faq-item"><summary>Почему зимой аккумулятор садится быстрее?</summary><div class="faq-answer"><p>Химические процессы в электролите зависят от температуры. На морозе электролит становится более вязким, ионы движутся медленнее, внутреннее сопротивление батареи растет. Это приводит к падению отдаваемой емкости.</p></div></details>
+
+<h2 id="практические-советы-по-увеличению-дальности-хода">Практические советы по увеличению дальности хода</h2>
+
+<p>Существует ряд проверенных методов, позволяющих выжать максимум из имеющегося оборудования без покупки новых батарей. В первую очередь, это регулярное обслуживание. Чистый винт без намотанных лесок и водорослей работает эффективнее, требуя меньше оборотов для той же скорости.</p>
+
+<p>Используйте правильную передачу. Многие модели электромоторов имеют 5 ступеней. Часто 4-я передача дает почти ту же скорость, что и 5-я, но потребляет на 15-20% меньше энергии. Экспериментируйте с настройками, находя баланс между скоростью и экономичностью.</p>
+
+<ul>
+<li>🔋 Всегда берите с собой запасной аккумулятор или Powerbank для подзарядки гаджетов, чтобы не разряжать тяговую батарею.</li>
+<li>🌡️ Храните аккумуляторы в теплом помещении перед выходом на воду, холодная батарея имеет меньшую стартовую емкость.</li>
+<li>⚓ Используйте якорный стоянка вместо работы мотора на удержание позиции против ветра, если позволяет глубина и дно.</li>
+<li>🔌 Проверьте контакты и клеммы: окисление создает сопротивление, которое греет соединение и крадет драгоценные амперы.</li>
+</ul>
+
+<div class="checklist-block"><h4>☑️ Проверка перед длительной рыбалкой</h4><label class="check-item"><input type="checkbox"><span>Проверить уровень электролита (если WET)</span></label><label class="check-item"><input type="checkbox"><span>Очистить винт от травы</span></label><label class="check-item"><input type="checkbox"><span>Зарядить батарею до 100%</span></label><label class="check-item"><input type="checkbox"><span>Проверить затяжку клемм</span></label><label class="check-item"><input type="checkbox"><span>Взять мультиметр</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Сколько часов работает электромотор на аккумуляторе 100 Ач?</summary>
+<p>В среднем, на свинцовом аккумуляторе 100 Ач мотор средней мощности (30-50 lb) работает 2-3 часа в режиме активной езды или 5-6 часов в режиме троллинга на малых оборотах. Литиевый аналог покажет результаты в 1.5-2 раза лучше.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать автомобильный аккумулятор для лодочного мотора?</summary>
+<p>Категорически не рекомендуется. Стартерные аккумуляторы предназначены для кратковременной отдачи огромного тока и последующей быстрой зарядки. Глубокий разряд током электромотора выведет такую батарею из строя за 5-10 циклов. Используйте только тяговые (<em>Deep Cycle</em>) модели.</p>
+</details>
+
+<details>
+<summary>Как понять, что аккумулятор скоро сядет?</summary>
+<p>Основной признак — падение напряжения под нагрузкой. Если при включении мотора напряжение на клеммах падает ниже 10.5-11 Вольт (для 12В системы), батарею срочно нужно заряжать. Также индикатором служит снижение мощности мотора: лодка перестает развивать прежнюю скорость на той же передаче.</p>
+</details>
+
+<details>
+<summary>Влияет ли длина провода от аккумулятора до мотора на работу?</summary>
+<p>Да, влияет существенно. Слишком тонкий или длинный провод создает падение напряжения. Часть энергии теряется в виде тепла в проводах, не доходя до мотора. Используйте кабель сечением не менее того, что рекомендует производитель мотора, обычно это от 6 мм² (10 AWG) и выше для мощных моделей.</p>
+</details>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Главный секрет долгой работы — не гнаться за максимальной скоростью. Снижение оборотов мотора всего на 20% может увеличить время автономной работы на 40-50%.</p></div></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#факторы-влияющие-на-время-работы-электромотора">Факторы, влияющие на время работы электромотора</a></li><li><a href="#расчет-времени-работы-формула-и-примеры">Расчет времени работы: формула и примеры</a></li><li><a href="#сравнение-типов-аккумуляторов-свинец-против-лития">Сравнение типов аккумуляторов: свинец против лития</a></li><li><a href="#влияние-температуры-и-условий-эксплуатации">Влияние температуры и условий эксплуатации</a></li><li><a href="#практические-советы-по-увеличению-дальности-хода">Практические советы по увеличению дальности хода</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ku/kupit-shprits-dlya-smazki-lodochnogo-motora.html" class="related-card">Купить шприц для смазки лодочного мотора: гид по выбору</a></li><li><a href="/articles/r/ra/razmery-dejdvuda-lodochnykh-motorov-podvesnykh.html" class="related-card">Размеры дейдвуда лодочных моторов: таблица и стандарты</a></li><li><a href="/articles/y/ya/yaponskij-auktsion-lodochnykh-motorov.html" class="related-card">Японский аукцион лодочных моторов: полный гид по покупке</a></li><li><a href="/articles/l/lo/lodochnyj-motor-hangkai-kupit.html" class="related-card">Лодочный мотор Hangkai купить: цены, обзоры и выбор модели</a></li><li><a href="/articles/e/ev/evinrud-lodochnye-motory.html" class="related-card">Лодочные моторы Эвинруд: модели, особенности и советы по выбору</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ku/kupit-shprits-dlya-smazki-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Купить шприц для смазки лодочного мотора: гид по выбору</span><span class="related-bottom-desc">Где купить шприц для смазки лодочного мотора, виды устройств, таблица совместимости и советы по прав</span></a><a href="/articles/r/ra/razmery-dejdvuda-lodochnykh-motorov-podvesnykh.html" class="related-bottom-card"><span class="related-bottom-title">Размеры дейдвуда лодочных моторов: таблица и стандарты</span><span class="related-bottom-desc">Полный обзор дейдвудов подвесных моторов: размеры, стандарты, таблицы совместимости. Узнайте, как вы</span></a><a href="/articles/y/ya/yaponskij-auktsion-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Японский аукцион лодочных моторов: полный гид по покупке</span><span class="related-bottom-desc">Как купить мотор на японском аукционе? Разбор системы оценки, скрытых комиссий, популярных брендов и</span></a><a href="/articles/l/lo/lodochnyj-motor-hangkai-kupit.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Hangkai купить: цены, обзоры и выбор модели</span><span class="related-bottom-desc">Ищете где лодочный мотор Hangkai купить? Полный гид по выбору, характеристикам двух- и четырехтактни</span></a><a href="/articles/e/ev/evinrud-lodochnye-motory.html" class="related-bottom-card"><span class="related-bottom-title">Лодочные моторы Эвинруд: модели, особенности и советы по выбору</span><span class="related-bottom-desc">Подробный обзор лодочных моторов Эвинруд. История бренда, ключевые технологии E-TEC, выбор мощности </span></a><a href="/articles/r/re/rejting-lodochnykh-motorov-do-5-loshadinykh-sil.html" class="related-bottom-card"><span class="related-bottom-title">Рейтинг лодочных моторов до 5 л.с.: ТОП-5 моделей для рыбалки и лодок ПВХ</span><span class="related-bottom-desc">Обзор лучших лодочных моторов до 5 л.с. 2026 года. Сравнение Yamaha, Honda, Tohatsu. Советы по выбор</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

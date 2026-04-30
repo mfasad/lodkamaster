@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Разбор лодочных моторов: пошаговая инструкция по дефектовке — ЛодкаМастер</title>
+    <meta name="description" content="Полный разбор лодочного мотора своими руками. Как разобрать редуктор, карбюратор и дейдвуд. Советы по диагностике и ремонту ПЛМ.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/r/ra/razbor-lodochnykh-motorov.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Разбор лодочных моторов: пошаговая инструкция по дефектовке">
+    <meta property="og:description" content="Полный разбор лодочного мотора своими руками. Как разобрать редуктор, карбюратор и дейдвуд. Советы по диагностике и ремонту ПЛМ.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Разбор лодочных моторов: пошаговая инструкция по дефектовке</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Разбор лодочных моторов: полная инструкция по дефектовке</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-рабочего-места-и-необходимый-инструмент">Подготовка рабочего места и необходимый инструмент</a></li><li><a href="#демонтаж-дейдвуда-и-редуктора">Демонтаж дейдвуда и редуктора</a></li><li><a href="#разборка-дейдвудной-трубы-и-системы-охлаждения">Разборка дейдвудной трубы и системы охлаждения</a></li><li><a href="#снятие-маховика-и-демонтаж-статора">Снятие маховика и демонтаж статора</a></li><li><a href="#дефектовка-карбюратора-и-топливной-системы">Дефектовка карбюратора и топливной системы</a></li><li><a href="#разборка-блока-цилиндров-и-поршневой-группы">Разборка блока цилиндров и поршневой группы</a></li><li><a href="#сборка-и-первый-запуск-после-ремонта">Сборка и первый запуск после ремонта</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Каждый владелец плавательного средства рано или поздно сталкивается с необходимостью <strong>глубокого обслуживания</strong> своего двигателя. Будь то плановое ТО или срочный ремонт после попадания в воду постороннего предмета, умение правильно разобрать <em>лодочный мотор</em> является критически важным навыком. Неправильная последовательность действий может привести к повреждению прокладок, потере шайб или даже деформации картера.</p>
+<p>В этой статье мы подробно рассмотрим процесс демонтажа основных узлов двухтактных и четырехтактных двигателей. Вы узнаете, как снять редуктор, добраться до <strong>карбюратора</strong> и проверить состояние поршневой группы без лишних затрат времени. Важно понимать, что конструкция разных брендов, таких как <em>Yamaha</em>, <em>Tohatsu</em> или <em>Mercury</em>, может иметь свои нюансы, но общие принципы остаются схожими.</p>
+<p>Прежде чем браться за инструменты, необходимо подготовить рабочее место. Чистота в мастерской — залог успешной сборки, так как попадание песка или грязи внутрь механизмов недопустимо. Также стоит заранее приобрести ремкомплект прокладок и сальников, поскольку при разборе старые уплотнители почти всегда повреждаются.</p>
+
+<h2 id="подготовка-рабочего-места-и-необходимый-инструмент">Подготовка рабочего места и необходимый инструмент</h2>
+<p>Качественный разбор лодочного мотора невозможен без правильно подобранного инструментария. Стандартный набор автолюбителя здесь не подойдет, так как в конструкции ПЛМ используются специфические крепежные элементы. Вам обязательно понадобятся торцевые головки с удлинителями, набор рожковых ключей и, что особенно важно, <strong>специальный съемник</strong> для маховика и шестерни.</p>
+<p>Особое внимание следует уделить фиксации коленчатого вала. Для этого часто требуется специальный стопор или, в крайнем случае, веревочный фиксатор, продеваемый через свечное отверстие. Использование посторонних предметов для стопорки вала может привести к поломке шатуна или поршня, что повлечет за собой дорогостоящий <strong>капитальный ремонт</strong>.</p>
+<blockquote>
+<p>⚠️ Внимание: Перед началом работ обязательно отсоедините топливный шланг и слейте остатки бензина из поплавковой камеры, чтобы избежать воспламенения паров при искрообразовании.</p>
+</blockquote>
+<p>Для работы с электроникой четырехтактных моторов может потребоваться диагностический сканер или хотя бы мультиметр для проверки катушек зажигания. Не забывайте про <em>динамометрический ключ</em>, так как момент затяжки болтов картера и головки блока цилиндров регламентирован производителем и должен соблюдаться с высокой точностью.</p>
+<ul>
+<li>🛠️ Набор торцевых головок и трещотка (обязательно с удлинителями).</li>
+<li>🔧 Специальный съемник маховика (подбирается под резьбу коленвала).</li>
+<li>📏 Щупы для измерения зазоров в клапанах и компрессионном кольце.</li>
+<li>🧴 Термопаста и герметик для судовых двигателей (например, <em>Loctite 515</em>).</li>
+</ul>
+<p>Организация пространства вокруг мотора также играет роль. Двигатель должен быть надежно закреплен на стенде или стойке. Шаткое положение приведет к тому, что при откручивании тяжелых узлов мотор может упасть, что чревато травмами или повреждением <strong>карбюратора</strong> и тяг.</p>
+
+<div class="checklist-block"><h4>☑️ Подготовка к разборке</h4><label class="check-item"><input type="checkbox"><span>Слить топливо и масло</span></label><label class="check-item"><input type="checkbox"><span>Отсоединить топливный шланг</span></label><label class="check-item"><input type="checkbox"><span>Подготовить чистую ветошь</span></label><label class="check-item"><input type="checkbox"><span>Проверить наличие съемника маховика</span></label><label class="check-item"><input type="checkbox"><span>Найти мануал с моментами затяжки</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="демонтаж-дейдвуда-и-редуктора">Демонтаж дейдвуда и редуктора</h2>
+<p>Традиционно разборка начинается с нижней части мотора, где расположен <strong>редуктор</strong>. Это наиболее нагруженный узел, часто страдающий от ударов о подводные препятствия. Первым шагом необходимо снять топливный бак и отсоединить тросик переключения передач, если он механический. На современных моделях может потребоваться отключение электрического актуатора.</p>
+<p>Далее откручиваются болты крепления дейдвуда к дейдвудной трубе. Здесь важно не потерять конические штифты или направляющие втулки, которые обеспечивают правильное позиционирование узлов. После снятия крепежа редуктор аккуратно опускается вниз. Если он «прикипел», не стоит бить по валу молотком — лучше использовать деревянную проставку или специальный съемник.</p>
+<p>Внутри редуктора находятся шестерни переднего и заднего хода, а также подшипники вала гребного винта. При разборке самого редуктора (отделение нижней крышки) часто требуется нагрев корпуса строительным феном, так как уплотнительный герметик прочно склеивает половинки. Будьте осторожны, чтобы не повредить посадочные места сальников.</p>
+<table>
+<thead>
+<tr>
+<th>Узел</th>
+<th>Тип неисправности</th>
+<th>Необходимая замена</th>
+<th>Частота проверки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сальник гребного вала</td>
+<td>Течь масла, вода в редукоре</td>
+<td>Сальник + стопорное кольцо</td>
+<td>Каждый сезон</td>
+</tr>
+<tr>
+<td>Подшипники вала</td>
+<td>Шум, люфт винта</td>
+<td>Комплект подшипников</td>
+<td>Раз в 2 года</td>
+</tr>
+<tr>
+<td>Шестерни реверса</td>
+<td>Выбитые зубья, шум</td>
+<td>Пара шестерен (передняя/задняя)</td>
+<td>По состоянию</td>
+</tr>
+<tr>
+<td>Уплотнительное кольцо</td>
+<td>Потеря герметичности</td>
+<td>О-ринг (прокладка)</td>
+<td>Каждая разборка</td>
+</tr>
+</tbody>
+</table>
+<p>После снятия редуктора открывается доступ к нижним концам тяг переключения передач. Их необходимо отсоединить от механизма реверса, чтобы полностью освободить дейдвудную трубу. Часто в этом узле скапливается старая смазка и продукты износа, которые нужно тщательно вымыть.</p>
+
+<h2 id="разборка-дейдвудной-трубы-и-системы-охлаждения">Разборка дейдвудной трубы и системы охлаждения</h2>
+<p>Дейдвудная труба соединяет силовой блок с редуктором и служит каналом для выхлопных газов и охлаждающей воды. Для ее снятия обычно требуется демонтировать тяги переключения и трос газа, если он проходит внутри. На некоторых моделях <em>Yamaha</em> и <em>Suzuki</em> тяги проходят параллельно трубе и снимаются вместе с ней.</p>
+<p>Внутри дейдвудной трубы расположен водяной насос (импеллер). Это «сердце» системы охлаждения. При разборе мотора замена крыльчатки водяного насоса является обязательной процедурой, даже если она выглядит целой. Резина со временем дубеет и теряет эластичность, что приводит к перегреву двигателя.</p>
+<blockquote>
+<p>⚠️ Внимание: При установке новой крыльчатки водяного насоса обязательно смажьте ее мыльным раствором или силиконовой смазкой. Сухой запуск мгновенно разрушит лепестки новой детали.</p>
+</blockquote>
+<p>Также в дейдвудной трубе находится выхлопной патрубок. На двухтактных моторах он часто обрастает нагаром, который необходимо очистить. В четырехтактниках стоит проверить состояние прокладки выпускного коллектора, так как прогар здесь ведет к потере тяги и посторонним звукам.</p>
+<p>Снятие дейдвудной трубы открывает доступ к нижнему торцу коленчатого вала и сальнику. Если сальник течет, масло попадает в воду, а при остановке мотора вода может затекать в картер, вызывая коррозию. Замена этого сальника требует аккуратности, чтобы не повредить зеркало вала.</p>
+
+<details class="faq-item"><summary>Как проверить водяной насос без разборки?</summary><div class="faq-answer"><p>Запустите мотор на суше (кратковременно!) или на бочке и посмотрите на контрольное отверстие. Слабая струя или ее отсутствие говорят о проблемах с импеллером или засорении термостата. Однако визуальный осмотр при разборе обязателен, так как внутренние трещины лепестков могут быть не видны сразу.</p></div></details>
+
+<h2 id="снятие-маховика-и-демонтаж-статора">Снятие маховика и демонтаж статора</h2>
+<p>Переходим к верхней части силового блока. Для снятия маховика необходимо застопорить коленчатый вал. После откручивания гайки (или шайбы) используется специальный съемник. <strong>Категорически запрещено</strong> поддевать маховик монтировкой или бить по нему, так как это приведет к трещинам в чугунном корпусе или повреждению магнитов.</p>
+<p>Под маховиком расположен статор с катушками зажигания и датчиками (триггерами). Здесь важно запомнить или сфотографировать схему подключения проводов. Перепутанные контакты могут привести к короткому замыканию и выходу из строя <strong>коммутатора</strong> или CDI-блока.</p>
+<p>Осмотрите поверхность маховика. На ней не должно быть следов перегрева (посинения) или сколов. Если маховик болтался на валу, возможно, провернуло шпонку. В этом случае потребуется замена шпонки и проверка конуса вала на биение.</p>
+<ul>
+<li>🔍 Визуально проверьте обмотки статора на предмет почернения или оплавления.</li>
+<li>🧲 Убедитесь, что магниты на маховике держатся крепко и не имеют сколов.</li>
+<li>📏 Проверьте зазор между катушками и магнитами (обычно 0.25-0.3 мм).</li>
+<li>🧹 Очистите пространство под маховиком от масляной пыли и грызунов.</li>
+</ul>
+<p>На четырехтактных моторах под маховиком также может располагаться масляный насос и привод ГРМ. Будьте внимательны при снятии, чтобы не нарушить метки зажигания. Сбивка меток приведет к невозможности запуска или работе двигателя в неправильном режиме.</p>
+
+<div class="poll-widget" id="poll-420a7d42"><div class="poll-widget-question">📊 С какой проблемой при снятии маховика вы сталкивались чаще всего?</div><div class="poll-widget-option" data-poll="420a7d42" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Прикипела гайка</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="420a7d42" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Нет съемника нужного диаметра</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="420a7d42" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Сломалась шпонка</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="420a7d42" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Не могу открутить без съемника</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="420a7d42" data-idx="4" onclick="pbPollVote(this)"><span class="poll-widget-label">Маховик не снимается даже съемником</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="дефектовка-карбюратора-и-топливной-системы">Дефектовка карбюратора и топливной системы</h2>
+<p>Снятие карбюратора — один из самых деликатных этапов. На современных моторах это может быть сложный узел с электронным управлением или простой вакуумный карбюратор. Перед снятием перекройте топливный кран и отсоедините все тяги и шланги. Рекомендуется пронумеровать шланги, чтобы при сборке не перепутать вакуумные каналы.</p>
+<p>Внутри карбюратора находятся жиклеры, иглы и диафрагмы. Главная причина проблем — <strong>засорение жиклеров</strong> и окаменение диафрагм. При разборе все металлические детали промываются в ультразвуковой ванне или специальном очистителе, а резиновые элементы меняются на новые из ремкомплекта.</p>
+<blockquote>
+<p>⚠️ Внимание: При продувке карбюратора сжатым воздухом никогда не дуйте в него, если он собран с установленными поплавками. Давление может загнуть язычок поплавка, что приведет к переливу топлива.</p>
+</blockquote>
+<p>Также проверьте состояние впускного коллектора. На двухтактных моторах в этом месте часто образуется смолистый нагар, сужающий проходное сечение. Это напрямую влияет на мощность. Зачистка коллектора и лепесткового клапана (если он есть) восстанавливает нормальную тягу.</p>
+<p>Для инжекторных систем разборка топливной рампы требует предварительного сброса давления в системе. Форсунки проверяются на стенде на предмет факела распыла. Неравномерный факел или «капание» форсунки требуют ее замены или профессиональной чистки.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте прозрачный шланг для подключения к топливному насосу при проверке. Это позволит визуально оценить пульсацию и наличие пузырьков воздуха, что указывает на подсос воздуха в системе.</p></div>
+
+<h2 id="разборка-блока-цилиндров-и-поршневой-группы">Разборка блока цилиндров и поршневой группы</h2>
+<p>Это самый ответственный этап, определяющий ресурс мотора. Для снятия блока цилиндров необходимо открутить гайки шпилек или болты по периметру. На двухтактных моторах блок цилиндров снимается вместе с головкой, открывая доступ к поршням. На четырехтактниках сначала снимается головка блока (ГБЦ) с клапанами.</p>
+<p>При снятии поршней обязательно пометьте их (передний, задний, левый, правый), так как они могут иметь разный износ и выработку. Шатуны также должны оставаться на своих местах. Если планируется переборка, поршни и кольца меняются в комплекте. Зазор в кольцах проверяется щупом и должен соответствовать спецификациям завода.</p>
+<p>Осмотрите зеркало цилиндров. Наличие глубоких задиров требует расточки или замены блока. Легкий «хон» (сетка царапин) должен сохраняться для удержания масла. Если хон полностью исчез и цилиндр стал гладким, мотор будет расходовать масло и терять компрессию.</p>
+<p>Коленчатый вал проверяется на люфт в подшипниках и шатунных пальцах. Люфт шатуна вверх-вниз не допускается, а радиальный люфт должен быть минимальным. Подшипники коленвала меняются только с использованием горячего метода или специальных оправок, чтобы не повредить новые детали.</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Допустимое значение</th>
+<th>Критическое значение</th>
+<th>Действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Компрессия</td>
+<td>8.5 - 10.5 кг/см²</td>
+<td>Менее 7.0 кг/см²</td>
+<td>Замена колец</td>
+</tr>
+<tr>
+<td>Зазор в кольцах</td>
+<td>0.15 - 0.25 мм</td>
+<td>Более 0.4 мм</td>
+<td>Замена колец</td>
+</tr>
+<tr>
+<td>Люфт шатуна</td>
+<td>0.02 - 0.05 мм</td>
+<td>Ощутимый стук</td>
+<td>Замена подшипников</td>
+</tr>
+</tbody>
+</table>
+<p>При сборке блока цилиндров критически важно соблюдать моменты затяжки болтов и порядок их закручивания (обычно от центра к краям в шахматном порядке). Использование старых болтов ГБЦ на четырехтактных моторах не рекомендуется, так как они могут вытянуться и не обеспечить нужного прижима.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Главный ресурс мотора зависит от качества сборки кривошипно-шатунного механизма и чистоты при сборке. Пылинка, попавшая между подшипником и валом, сократит жизнь мотора в разы.</p></div>
+
+<h2 id="сборка-и-первый-запуск-после-ремонта">Сборка и первый запуск после ремонта</h2>
+<p>Сборка производится в обратной последовательности, но с соблюдением ряда важных правил. Все прокладки заменяются на новые. Резиновые уплотнители смазываются маслом перед установкой. Болты картера и ГБЦ затягиваются динамометрическим ключом строго по схеме.</p>
+<p>Перед первым запуском обязательно проверьте уровень масла в редукторе и (для четырехтактников) в картере двигателя. Топливная система должна быть заполнена бензином. Для двухтактных моторов полезно предварительно смазать цилиндры через свечные отверстия смесью бензина и масла.</p>
+<p>Первый запуск лучше производить на бочке или в бассейне. Следите за температурой, наличием водяной струи и отсутствием посторонних шумов. Дайте мотору поработать на холостых оборотах, затем прогрейте и проверьте работу на средних оборотах. Если все параметры в норме, можно проводить обкатку.</p>
+<p>Качественно выполненный <strong>разбор лодочных моторов</strong> и последующая сборка возвращают технике вторую жизнь. Не бойтесь сложных процедур, если у вас есть необходимый инструмент и мануал. Главное — внимательность к деталям и чистота в работе.</p>
+
+<details>
+<summary>Можно ли мыть детали лодочного мотора бензином?</summary>
+<p>Использовать чистый бензин для мойки деталей можно, но это пожароопасно и вредно для резиновых уплотнителей. Лучше использовать специальные очистители карбюраторов или дизельное топливо, которое менее агрессивно к резине и безопаснее в работе.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять все прокладки при разборе?</summary>
+<p>Да, это золотое правило моториста. Старые прокладки (паронит, бумага, резина) при повторном сжатии не обеспечивают герметичности. Экономия на ремкомплекте прокладок может привести к попаданию воды в цилиндры или потере компрессии.</p>
+</details>
+
+<details>
+<summary>Как правильно хранить разобранный мотор?</summary>
+<p>Если мотор разобран на длительное хранение, все открытые отверстия (впуск, выпуск, картер) должны быть закрыты заглушками или ветошью, чтобы исключить попадание влаги, пыли и грызунов. Детали лучше хранить в закрытых контейнерах.</p>
+</details>
+
+<details>
+<summary>Что делать, если после сборки мотор не заводится?</summary>
+<p>Проверьте три условия: искру (выкрутите свечу и проверьте на массу), наличие топлива (выкрутите свечу — она должна быть мокрой) и компрессию. Чаще всего проблема в забытом подключении провода свечного наконечника или завоздушивании топливной системы.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#подготовка-рабочего-места-и-необходимый-инструмент">Подготовка рабочего места и необходимый инструмент</a></li><li><a href="#демонтаж-дейдвуда-и-редуктора">Демонтаж дейдвуда и редуктора</a></li><li><a href="#разборка-дейдвудной-трубы-и-системы-охлаждения">Разборка дейдвудной трубы и системы охлаждения</a></li><li><a href="#снятие-маховика-и-демонтаж-статора">Снятие маховика и демонтаж статора</a></li><li><a href="#дефектовка-карбюратора-и-топливной-системы">Дефектовка карбюратора и топливной системы</a></li><li><a href="#разборка-блока-цилиндров-и-поршневой-группы">Разборка блока цилиндров и поршневой группы</a></li><li><a href="#сборка-и-первый-запуск-после-ремонта">Сборка и первый запуск после ремонта</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/m/ma/maslo-v-svetofore-motornoe.html" class="related-card">Масло в редукторе лодочного мотора: выбор, замена, контроль</a></li><li><a href="/articles/d/dl/dlya-chego-anod-na-lodochnom-motore.html" class="related-card">Для чего нужен анод на лодочном моторе: защита от коррозии</a></li><li><a href="/articles/c/ch/chem-pokrasit-plastikovuyu-lodku-snaruzhi.html" class="related-card">Чем покрасить пластиковую лодку: выбор краски и технология</a></li><li><a href="/articles/o/oc/ochistka-alyuminievoj-lodki.html" class="related-card">Очистка алюминиевой лодки: полное руководство по уходу и защите</a></li><li><a href="/articles/p/po/pochemu-lodochnyj-motor-chikhaet.html" class="related-card">Почему лодочный мотор чихает: причины и устранение</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/m/ma/maslo-v-svetofore-motornoe.html" class="related-bottom-card"><span class="related-bottom-title">Масло в редукторе лодочного мотора: выбор, замена, контроль</span><span class="related-bottom-desc">Всё о масле в редукторе (светофоре) мотора: как часто менять, как проверить на воду, выбор смазки дл</span></a><a href="/articles/d/dl/dlya-chego-anod-na-lodochnom-motore.html" class="related-bottom-card"><span class="related-bottom-title">Для чего нужен анод на лодочном моторе: защита от коррозии</span><span class="related-bottom-desc">Подробный разбор функции цинкового анода на лодочном моторе. Как работает электрохимическая защита, </span></a><a href="/articles/c/ch/chem-pokrasit-plastikovuyu-lodku-snaruzhi.html" class="related-bottom-card"><span class="related-bottom-title">Чем покрасить пластиковую лодку: выбор краски и технология</span><span class="related-bottom-desc">Экспертный гид по выбору краски для пластиковых лодок. Обзор составов, пошаговая инструкция покраски</span></a><a href="/articles/o/oc/ochistka-alyuminievoj-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Очистка алюминиевой лодки: полное руководство по уходу и защите</span><span class="related-bottom-desc">Как правильно очистить алюминиевую лодку от окислов, соли и грязи. Эффективные методы полировки, сре</span></a><a href="/articles/p/po/pochemu-lodochnyj-motor-chikhaet.html" class="related-bottom-card"><span class="related-bottom-title">Почему лодочный мотор чихает: причины и устранение</span><span class="related-bottom-desc">Лодочный мотор чихает и не заводится? Разбираем причины: топливо, искра, компрессия. Советы по настр</span></a><a href="/articles/r/re/remont-lodki-iz-pvkh-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Ремонт лодки из ПВХ своими руками: полная инструкция</span><span class="related-bottom-desc">Как сделать ремонт лодки ПВХ своими руками? Разбор клеев, пошаговая инструкция, выбор заплаток и час</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

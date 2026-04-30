@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Соленоид подсоса лодочного мотора: устройство и ремонт — ЛодкаМастер</title>
+    <meta name="description" content="Полный гид по соленоиду подсоса. Признаки неисправности, проверка мультиметром, замена и таблица напряжений для моторов Tohatsu, Yamaha, Mercury.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/s/so/solenoid-podsosa-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Соленоид подсоса лодочного мотора: устройство и ремонт">
+    <meta property="og:description" content="Полный гид по соленоиду подсоса. Признаки неисправности, проверка мультиметром, замена и таблица напряжений для моторов Tohatsu, Yamaha, Mercury.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Соленоид подсоса лодочного мотора: устройство и ремонт</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Соленоид подсоса лодочного мотора: диагностика и ремонт</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-назначение-электромагнитного-клапана">Принцип работы и назначение электромагнитного клапана</a></li><li><a href="#типичные-симптомы-неисправности-соленоида">Типичные симптомы неисправности соленоида</a></li><li><a href="#визуальный-осмотр-и-первичная-проверка">Визуальный осмотр и первичная проверка</a></li><li><a href="#диагностика-мультиметром-замеры-сопротивления-и-напряжения">Диагностика мультиметром: замеры сопротивления и напряжения</a></li><li><a href="#процесс-замены-и-регулировка-узла">Процесс замены и регулировка узла</a></li><li><a href="#специфика-для-разных-брендов-моторов">Специфика для разных брендов моторов</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Запуск холодного лодочного двигателя — это всегда стресс для механических узлов и нервной системы владельца плавсредства. Если мотор отказывается заводиться или глохнет сразу после старта, в 80% случаев проблема кроется в системе подачи топливовоздушной смеси. Ключевым элементом здесь выступает <strong>соленоид подсоса</strong>, который автоматически регулирует обогащение смеси в зависимости от температуры двигателя.</p>
+
+<p>Многие водномоторники игнорируют этот узел до тех пор, пока он окончательно не выйдет из строя, оставляя их на мели в самый неподходящий момент. Понимание принципа работы этого электромагнитного клапана позволяет быстро диагностировать проблему прямо на воде, не прибегая к помощи сервисного центра. В этой статье мы разберем устройство, типичные неисправности и методы восстановления работоспособности системы холодного пуска.</p>
+
+<h2 id="принцип-работы-и-назначение-электромагнитного-клапана">Принцип работы и назначение электромагнитного клапана</h2>
+
+<p>Основная задача <strong>соленоида</strong> заключается в автоматическом управлении заслонкой подсоса (choke). В отличие от старых карбюраторных моделей, где водителю приходилось вручную тянуть тросик, современные двухтактные и четырехтактные моторы используют электрическое управление. При повороте ключа зажигания на стартере, на катушку соленоида подается напряжение, штоки втягиваются или выдвигаются, открывая доступ дополнительному топливу.</p>
+
+<p>Процесс происходит циклично: при запуске холодного двигателя клапан открыт, обеспечивая богатую смесь. Как только мотор начинает работать и вырабатывать ток через статорную катушку (или через отдельный генераторный контур), напряжение на соленоиде меняется или пропадает, и пружина постепенно закрывает заслонку. Этот процесс занимает обычно от 30 секунд до 2 минут, в зависимости от модели мотора <em>Yamaha</em> или <em>Tohatsu</em>.</p>
+
+<p>Важно понимать, что внутри устройства находятся две обмотки: пусковая (тяговая) и удерживающая. Первая создает мощное магнитное поле для резкого движения штока, вторая лишь удерживает его в рабочем положении с меньшим потреблением энергии. Если сгорает одна из них, <strong>механизм подсоса</strong> перестает функционировать корректно, что приводит либо к невозможности запуска, либо к "захлебыванию" мотора бензином.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Всегда проверяйте состояние контактов на клеммах соленоида. Окисление в этом месте встречается чаще, чем сгорание самой катушки, особенно после зимнего хранения лодки.</p></div>
+
+<h2 id="типичные-симптомы-неисправности-соленоида">Типичные симптомы неисправности соленоида</h2>
+
+<p>Диагностика начинается с наблюдения за поведением двигателя. Если лодочный мотор заводится и сразу глохнет, или же работает только на высоких оборотах, но не держит холостой ход — это классические признаки проблемы с обогащением смеси. Также стоит прислушаться: исправный соленоид издает характерный щелчок в момент включения зажигания.</p>
+
+<p>Часто водители путают симптомы неисправности подсоса с проблемами в системе зажигания или качеством топлива. Однако есть специфические маркеры, указывающие именно на <strong>электромагнитный клапан</strong>. Если вы заметили, что мотор дымит сильнее обычного после запуска или, наоборот, выстреливает в глушитель из-за переобедненной смеси, внимание стоит обратить на шток и катушку.</p>
+
+<p>Рассмотрим основные признаки детальнее:</p>
+<ul>
+<li>🔥 Двигатель заводится только при полностью открытом дросселе (газе), а на холостых глохнет.</li>
+<li>🔥 Отсутствует характерный щелчок при включении зажигания в положении "Start".</li>
+<li>🔥 Мотор работает нестабильно первые минуты, пока не прогреется, даже в теплую погоду.</li>
+<li>🔥 Видимое повреждение изоляции проводов или следы перегрева на корпусе соленоида.</li>
+</ul>
+
+<div class="poll-widget" id="poll-32ae1687"><div class="poll-widget-question">📊 С какой проблемой при запуске мотора вы сталкивались чаще?</div><div class="poll-widget-option" data-poll="32ae1687" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Мотор не заводится вообще</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="32ae1687" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Заводится и глохнет</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="32ae1687" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Работает только на газу</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="32ae1687" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Проблем не было, мотор шепчет</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="визуальный-осмотр-и-первичная-проверка">Визуальный осмотр и первичная проверка</h2>
+
+<p>Прежде чем брать в руки мультиметр, необходимо провести тщательный визуальный осмотр. Часто причина банальна: окислившиеся контакты, перетертый провод или механическое заклинивание штока. Снимите крышку карбюратора (или доступ к узлу подсоса) и оцените состояние узла. На моторах <em>Mercury</em> и <em>Hidea</em> доступ к соленоиду обычно открыт сбоку карбюратора.</p>
+
+<p>Обратите внимание на шток. Он должен двигаться плавно, без заеданий. Если шток закис в открытом положении, мотор будет "захлебываться". Если в закрытом — запустить холодный двигатель будет крайне сложно. В некоторых случаях помогает простая очистка и смазка механизма, но если шток имеет коррозию или повреждена резьба, потребуется замена узла в сборе.</p>
+
+<blockquote>⚠️ Внимание! Перед любым осмотром электрической части обязательно отсоедините клеммы аккумулятора. Короткое замыкание в проводке подсоса может привести к перегоранию предохранителей или повреждению статорной катушки.</blockquote>
+
+<p>Проверьте целостность проводов, идущих от выпрямителя-регулятора к соленоиду. Часто изоляция трескается от вибрации и попадания масла, что приводит к утечке тока на массу. Если визуально дефектов нет, переходим к инструментальной диагностике.</p>
+
+<h2 id="диагностика-мультиметром-замеры-сопротивления-и-напряжения">Диагностика мультиметром: замеры сопротивления и напряжения</h2>
+
+<p>Для точной диагностики вам понадобится цифровой мультиметр. Первым делом измеряем сопротивление обмоток. Отсоедините разъемы от соленоида и переведите прибор в режим измерения сопротивления (Ом). Нормальные значения варьируются в зависимости от производителя, но обычно составляют от 1.5 до 3 Ом для тяговой обмотки и чуть выше для удерживающей.</p>
+
+<p>Если мультиметр показывает бесконечность (обрыв) или ноль (короткое замыкание), катушку необходимо менять. Также важно проверить наличие напряжения при прокрутке стартера. Подключите щупы к контактам разъема (не самого соленоида, а проводки мотора) и попросите помощника крутануть стартер.</p>
+
+<p>Таблица типовых значений для диагностики:</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Нормальное значение</th>
+<th>Отклонение</th>
+<th>Действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сопротивление катушки</td>
+<td>1.5 - 3.0 Ом</td>
+<td>∞ или 0 Ом</td>
+<td>Замена соленоида</td>
+</tr>
+<tr>
+<td>Напряжение при старте</td>
+<td>10 - 12 Вольт</td>
+<td>< 8 Вольт</td>
+<td>Проверка АКБ и проводки</td>
+</tr>
+<tr>
+<td>Ход штока</td>
+<td>3 - 5 мм</td>
+<td>Заклинил</td>
+<td>Чистка или замена</td>
+</tr>
+<tr>
+<td>Ток потребления</td>
+<td>до 4 Ампер</td>
+<td>> 6 Ампер</td>
+<td>Короткое замыкание</td>
+</tr>
+</tbody>
+</table>
+
+<details class="faq-item"><summary>Нюансы замера напряжения</summary><div class="faq-answer"><p>При замере напряжения важно понимать, что оно подается только в момент прокрутки стартера. Если просто включить зажигание, напряжения на проводе подсоса может не быть, так как цепь замыкается через стартерный реле-регулятор.</p></div></details>
+
+<h2 id="процесс-замены-и-регулировка-узла">Процесс замены и регулировка узла</h2>
+
+<p>Если диагностика показала неисправность, соленоид необходимо заменить. Процедура довольно проста и не требует специальных навыков, кроме аккуратности. Важно не потерять пружинки и шайбы, которые могут разлететься при демонтаже. Перед установкой нового узла рекомендуется продуть посадочное место карбюратора сжатым воздухом.</p>
+
+<p>При установке нового соленоида критически важно правильно выставить длину штока. Слишком длинный шток не даст заслонке закрыться полностью, вызывая перелив топлива. Слишком короткий — не откроет подсос достаточно для запуска. Регулировка осуществляется закручиванием или выкручиванием пластикового наконечника на штоке.</p>
+
+<p>Алгоритм действий при замене:</p>
+<ul>
+<li>🔧 Отсоедините аккумулятор и снимите топливную рампу или карбюратор (если доступ ограничен).</li>
+<li>🔧 Открутите два крепежных болта соленоида и отсоедините электрический разъем.</li>
+<li>🔧 Установите новый соленоид, предварительно смазав шток легкой силиконовой смазкой.</li>
+<li>🔧 Подключите провода и проведите тестовый запуск, контролируя работу заслонки.</li>
+</ul>
+
+<div class="checklist-block"><h4>☑️ Чек-лист замены соленоида</h4><label class="check-item"><input type="checkbox"><span>Подготовлен новый соленоид</span></label><label class="check-item"><input type="checkbox"><span>Отключен аккумулятор</span></label><label class="check-item"><input type="checkbox"><span>Очищено посадочное место</span></label><label class="check-item"><input type="checkbox"><span>Проверена длина штока</span></label><label class="check-item"><input type="checkbox"><span>Выполнен тестовый запуск</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="специфика-для-разных-брендов-моторов">Специфика для разных брендов моторов</h2>
+
+<p>Хотя принцип работы един для всех, конструктивные особенности у брендов различаются. На моторах <em>Tohatsu</em> и <em>Nissan</em> соленоид часто интегрирован в единый блок с регулятором, что упрощает монтаж, но делает узел дороже при замене. Здесь <strong>электрическая схема</strong> может отличаться количеством проводов.</p>
+
+<p>Моторы <em>Yamaha</em> часто используют отдельный соленоид, крепящийся непосредственно к корпусу карбюратора. Особенность их конструкции — наличие дополнительной пружины возврата, которая со временем теряет упругость. Владельцам <em>Suzuki</em> стоит обратить внимание на герметичность разъема, так как он расположен в зоне активного разбрызгивания воды при ходе лодки.</p>
+
+<p>Некоторые китайские производители (<em>Parsun</em>, <em>Hidea</em>) используют универсальные соленоиды, которые подходят от японских аналогов, но требуют внимательной подгонки по длине штока. Всегда сравнивайте маркировку новой детали со старой перед покупкой.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Универсальных соленоидов не существует — всегда проверяйте длину хода штока и расположение крепежных отверстий перед покупкой запчасти для конкретного мотора.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли ездить с неисправным соленоидом подсоса?</summary>
+<p>Теоретически можно, если двигатель прогрет, но это не рекомендуется. При неисправном соленоиде мотор будет сложно запустить в холодном состоянии, а работа на богатой смеси приведет к быстрому загрязнению свечей и повышенному расходу топлива.</p>
+</details>
+
+<details>
+<summary>Почему сгорает соленоид подсоса?</summary>
+<p>Основные причины: попадание влаги внутрь корпуса, скачки напряжения в бортовой сети (неисправность регулятора напряжения) или механическое заклинивание штока, из-за чего катушка работает в режиме короткого замыкания.</p>
+</details>
+
+<details>
+<summary>Как проверить соленоид без мультиметра?</summary>
+<p>Можно подать напряжение 12В напрямую от аккумулятора на контакты соленоида (соблюдая полярность, если она есть, хотя часто они неполярные). Исправный соленоид должен издать громкий щелчок и втянуть шток.</p>
+</details>
+
+<details>
+<summary>Влияет ли октановое число бензина на работу соленоида?</summary>
+<p>Прямого влияния нет, так как это электромеханический узел. Однако использование некачественного топлива с примесями может привести к образованию нагара на игле подсоса, что затруднит ее ход и создаст нагрузку на механизм соленоида.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-и-назначение-электромагнитного-клапана">Принцип работы и назначение электромагнитного клапана</a></li><li><a href="#типичные-симптомы-неисправности-соленоида">Типичные симптомы неисправности соленоида</a></li><li><a href="#визуальный-осмотр-и-первичная-проверка">Визуальный осмотр и первичная проверка</a></li><li><a href="#диагностика-мультиметром-замеры-сопротивления-и-напряжения">Диагностика мультиметром: замеры сопротивления и напряжения</a></li><li><a href="#процесс-замены-и-регулировка-узла">Процесс замены и регулировка узла</a></li><li><a href="#специфика-для-разных-брендов-моторов">Специфика для разных брендов моторов</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakoe-maslo-lit-v-4-taktnyj-dvigatel.html" class="related-card">Какое масло лить в 4-тактный лодочный мотор: выбор и замена</a></li><li><a href="/articles/g/ge/germetik-dlya-lodki.html" class="related-card">Герметик для лодки: виды, выбор и инструкция по ремонту</a></li><li><a href="/articles/o/ob/obkatka-dvukhtaktnogo-dvigatelya.html" class="related-card">Обкатка двухтактного двигателя: правила, смесь и этапы</a></li><li><a href="/articles/m/ma/maslo-ts-w3-dlya-lodochnykh-motorov.html" class="related-card">Масло ТС W3 для лодочных моторов: свойства, допуски и выбор</a></li><li><a href="/articles/k/ka/kak-razobrat-dvigatel-shurupoverta-metabo.html" class="related-card">Как разобрать двигатель шуруповерта Metabo: пошаговая инструкция</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kakoe-maslo-lit-v-4-taktnyj-dvigatel.html" class="related-bottom-card"><span class="related-bottom-title">Какое масло лить в 4-тактный лодочный мотор: выбор и замена</span><span class="related-bottom-desc">Полный гид по маслу для 4-тактных двигателей. Вязкость, допуски NMMA FC-W, интервалы замены и таблиц</span></a><a href="/articles/g/ge/germetik-dlya-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Герметик для лодки: виды, выбор и инструкция по ремонту</span><span class="related-bottom-desc">Как выбрать надежный герметик для лодки ПВХ или металла? Обзор лучших составов, технология нанесения</span></a><a href="/articles/o/ob/obkatka-dvukhtaktnogo-dvigatelya.html" class="related-bottom-card"><span class="related-bottom-title">Обкатка двухтактного двигателя: правила, смесь и этапы</span><span class="related-bottom-desc">Правильная обкатка двухтактного лодочного мотора: пропорции масла, режимы работы и таблица этапов. К</span></a><a href="/articles/m/ma/maslo-ts-w3-dlya-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Масло ТС W3 для лодочных моторов: свойства, допуски и выбор</span><span class="related-bottom-desc">Всё о масле ТС W3 для двухтактных лодочных моторов. Разбор характеристик, отличия от аналогов, табли</span></a><a href="/articles/k/ka/kak-razobrat-dvigatel-shurupoverta-metabo.html" class="related-bottom-card"><span class="related-bottom-title">Как разобрать двигатель шуруповерта Metabo: пошаговая инструкция</span><span class="related-bottom-desc">Подробная инструкция по разборке двигателя шуруповерта Metabo. Разборка редуктора, замена щеток и ди</span></a><a href="/articles/k/kl/kleem-lodku-pvkh-v-domashnikh-usloviyakh.html" class="related-bottom-card"><span class="related-bottom-title">Как клеить лодку ПВХ в домашних условиях: полная инструкция</span><span class="related-bottom-desc">Проверенный способ ремонта лодок ПВХ своими руками. Выбор клея, пошаговая технология, устранение про</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

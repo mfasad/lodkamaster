@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Дизельный двигатель подводной лодки: устройство и принцип работы — ЛодкаМастер</title>
+    <meta name="description" content="Как работает дизельный двигатель подводной лодки? Изучаем устройство ДВС, системы наддува, охлаждение и особенности работы в замкнутом объеме.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/d/di/dizelnyj-dvigatel-podvodnoj-lodki.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Дизельный двигатель подводной лодки: устройство и принцип работы">
+    <meta property="og:description" content="Как работает дизельный двигатель подводной лодки? Изучаем устройство ДВС, системы наддува, охлаждение и особенности работы в замкнутом объеме.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/podvodnye-lodki/">Подводные лодки</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Дизельный двигатель подводной лодки: устройство и принцип работы</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Дизельный двигатель подводной лодки: устройство и особенности</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-дизеля-в-условиях-субмарины">Принцип работы дизеля в условиях субмарины</a></li><li><a href="#системы-наддува-и-воздухоснабжения">Системы наддува и воздухоснабжения</a></li><li><a href="#особенности-системы-охлаждения">Особенности системы охлаждения</a></li><li><a href="#топливная-система-и-виды-топлива">Топливная система и виды топлива</a></li><li><a href="#шумность-и-вибрация-проблема-скрытности">Шумность и вибрация: проблема скрытности</a></li><li><a href="#экологические-аспекты-и-современные-требования">Экологические аспекты и современные требования</a></li><li><a href="#перспективы-развития-дизельных-установок">Перспективы развития дизельных установок</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Основой энергетической установки большинства неатомных подводных лодок на протяжении столетия остается <strong>дизельный двигатель</strong>. Именно этот тип внутреннего сгорания обеспечивает субмарину энергией для движения в надводном положении и, что критически важно, для зарядки аккумуляторных батарей. Без надежной работы дизеля погружение и автономное плавание становятся невозможными, так как электрическая энергия, накопленная в аккумуляторах, исчерпывается довольно быстро.</p>
+
+<p>В отличие от наземной техники, судовые дизели работают в экстремальных условиях, где каждый грамм веса и каждый кубический сантиметр объема имеют значение. <em>Инженеры</em> вынуждены балансировать между мощностью, экономичностью и надежностью, учитывая агрессивную морскую среду. Любой сбой в работе главного двигателя может превратить боевой корабль в неподвижную мишень или привести к катастрофе на глубине.</p>
+
+<p>История развития подводного дизелестроения полна уникальных технических решений, призванных решить главную проблему — необходимость огромного количества воздуха для горения топлива под водой. Современные образцы этих агрегатов представляют собой вершину инженерной мысли, сочетая в себе массивность и невероятную точность настроек. Понимание их работы необходимо не только для экипажа, но и для любого, кто интересуется морской техникой.</p>
+
+<h2 id="принцип-работы-дизеля-в-условиях-субмарины">Принцип работы дизеля в условиях субмарины</h2>
+
+<p>Фундаментальный принцип работы <strong>двигателя внутреннего сгорания</strong> на подводной лодке мало чем отличается от наземных аналогов: воспламенение топлива происходит от сжатия. Однако, реализация этого процесса требует учета специфики замкнутого объема. Воздух для горения поступает не просто из атмосферы, а через сложную систему клапанов и трубопроводов, которые герметично соединяют двигатель с атмосферой только в надводном положении или при работе шноркеля.</p>
+
+<p>В момент запуска <em>дизельный агрегат</em> потребляет колоссальное количество кислорода. В замкнутом пространстве отсека это привело бы к мгновенному удушью экипажа и падению давления, поэтому выхлопные газы и забор воздуха строго изолированы от жилых помещений. Система вентиляции должна работать идеально, обеспечивая приток свежего воздуха и отвод продуктов сгорания за борт.</p>
+
+<p>Ключевым моментом является управление подачей топлива. Точная дозировка позволяет поддерживать стабильные обороты, необходимые для вращения генераторов. Перегрузка двигателя недопустима, так как в ограниченном пространстве теплоотвод затруднен.</p>
+
+<blockquote>⚠️ Внимание: Работа дизеля в герметичном отсеке без правильно настроенной системы выхлопа приведет к быстрому отравлению экипажа угарным газом и созданию избыточного давления, что может повредить корпусные конструкции.</blockquote>
+
+<div class="poll-widget" id="poll-83fc1956"><div class="poll-widget-question">📊 Какой аспект работы дизеля на подлодке кажется вам наиболее сложным?</div><div class="poll-widget-option" data-poll="83fc1956" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Герметизация выхлопа</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="83fc1956" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Охлаждение двигателя</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="83fc1956" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Подача воздуха</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="83fc1956" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Шумоизоляция</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="системы-наддува-и-воздухоснабжения">Системы наддува и воздухоснабжения</h2>
+
+<p>Для повышения мощности и экономичности современные <strong>судовые дизели</strong> оснащаются системами турбонаддува. Турбокомпрессор использует энергию выхлопных газов для сжатия поступающего воздуха, увеличивая его плотность перед подачей в цилиндры. Это позволяет сжигать больше топлива и получать больше энергии с каждого такта работы поршня.</p>
+
+<p>Однако на подводной лодке существует нюанс: противодавление на выхлопе. Когда лодка использует устройство для зарядки аккумуляторов на перископной глубине (шноркель), оголовок трубы может захлебываться волной. В этот момент <em>турбокомпрессор</em> должен работать в нештатном режиме, преодолевая резкие скачки давления в выхлопном тракте. Специальные клапаны и буферные емкости сглаживают эти пульсации.</p>
+
+<p>Система воздухоснабжения включает в себя мощные фильтры, очищающие воздух от соленой морской пыли, которая крайне абразивна и разрушительна для цилиндро-поршневой группы. Попадание соли в двигатель равносильно быстрому износу трущихся деталей.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Соленая морская пыль, попадая в цилиндры дизеля, действует как абразивная паста, сокращая ресурс двигателя в десятки раз, поэтому качество воздушных фильтров критически важно.</p></div>
+
+<h2 id="особенности-системы-охлаждения">Особенности системы охлаждения</h2>
+
+<p>Эффективный отвод тепла — одна из главных проблем эксплуатации <strong>дизельного двигателя</strong> в подводном положении. В отличие от надводных кораблей, где поток воздуха естественным образом обдувает радиаторы, подлодка лишена этой возможности. Основным хладагентом выступает забортная вода, которая прокачивается через теплообменники.</p>
+
+<p>Система охлаждения обычно двухконтурная. В первом контуре циркулирует пресная дистиллированная вода с добавками, омывающая блок цилиндров и головки. Она не подвержена коррозии и не образует накипи. Во втором контуре — забортная вода, которая охлаждает пресную в теплообменниках. Такая схема защищает внутренние каналы двигателя от агрессивного воздействия морской соли.</p>
+
+<p>При погружении на глубину давление забортной воды растет, что требует использования мощных насосов и надежных уплотнений. Утечка забортной воды в систему охлаждения двигателя может привести к гидроудару или коррозии, что фатально для <em>силовой установки</em>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Пресный контур</th>
+<th>Забортный контур</th>
+<th>Риски</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Жидкость</td>
+<td>Дистиллят с присадками</td>
+<td>Морская вода</td>
+<td>Коррозия, накипь</td>
+</tr>
+<tr>
+<td>Давление</td>
+<td>Избыточное (0.3-0.5 МПа)</td>
+<td>Зависит от глубины</td>
+<td>Разрыв патрубков</td>
+</tr>
+<tr>
+<td>Температура</td>
+<td>80-90 °C</td>
+<td>Зависит от региона</td>
+<td>Перегрев цилиндров</td>
+</tr>
+<tr>
+<td>Фильтрация</td>
+<td>Механическая (грубая)</td>
+<td>Сетки и фильтры</td>
+<td>Заиливание теплообменника</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="топливная-система-и-виды-топлива">Топливная система и виды топлива</h2>
+
+<p>В качестве основного топлива для <strong>подводных дизелей</strong> historically использовался керосин из-за его меньшей воспламеняемости и отсутствия запаха, что было критично для скрытности. Однако современные лодки чаще используют специальное дизельное топливо, обладающее высокой цетановой воспламеняемостью и стабильностью при хранении.</p>
+
+<p>Топливные баки на подводных лодках часто расположены между прочным и легким корпусом. Это не только экономит ценное внутреннее пространство, но и служит дополнительной защитой. При расходе топлива его место в цистернах занимает забортная вода, чтобы сохранить плавучесть и дифферентовку корабля. Этот процесс называется компенсацией.</p>
+
+<p>Очистка топлива от воды и механических примесей происходит в сепараторах и фильтрах-отстойниках перед подачей в двигатель высокого давления. Наличие воды в топливе для дизеля губительно, так как вода не сгорает и может вызвать разрушение форсунок или даже поломку плунжерных пар.</p>
+
+<details class="faq-item"><summary>Почему керосин пахнет меньше дизеля?</summary><div class="faq-answer"><p>Керосин состоит из более легких фракций углеводородов, которые испаряются при более низкой температуре, но при этом имеют менее резкий и стойкий запах по сравнению с тяжелыми фракциями солярки, что облегчает маскировку лодки.</p></div></details>
+
+<h2 id="шумность-и-вибрация-проблема-скрытности">Шумность и вибрация: проблема скрытности</h2>
+
+<p>Для подводной лодки <strong>акустическая скрытность</strong> является вопросом выживания. Дизельный двигатель — источник мощного низкочастотного шума и вибрации, которые отлично распространяются в водной среде и могут быть detected гидроакустическими системами противника за десятки миль.</p>
+
+<p>Для снижения шума применяются массивные фундаментные рамы с амортизаторами, которые гасят вибрации, не передавая их на корпус лодки. Кроме того, используются специальные кожухи с звукопоглощающим покрытием. Конструкция выхлопного тракта также включает глушители, снижающие шум отрыва газов.</p>
+
+<p>Несмотря на все меры, работающий дизель делает лодку "звучной". Поэтому режим работы на дизелях ограничен по времени и требует тщательного акустического мониторинга окружающей обстановки. Часто дизели включают только на безопасных глубинах и в районах с высоким уровнем естественного шума.</p>
+
+<blockquote>⚠️ Внимание: Вибрация работающего дизеля переданная на корпус, может резонировать с частотой работы гидролокаторов самой лодки, полностью "ослепляя" и "оглушая" экипаж.</blockquote>
+
+<h2 id="экологические-аспекты-и-современные-требования">Экологические аспекты и современные требования</h2>
+
+<p>Современное судостроение диктует жесткие требования к <strong>экологичности</strong> силовых установок. Хотя подводные лодки редко находятся в портах на стоянке с работающим двигателем, выбросы сажи и оксидов серы при работе шноркеля могут демаскировать корабль тепловизорами или визуально (черный дым).</p>
+
+<p>Инженеры внедряют системы рециркуляции выхлопных газов (EGR) и каталитические нейтрализаторы даже на военные образцы техники. Это позволяет снизить температуру выхлопа и сделать его менее заметным. Кроме того, современные топливные смеси сгорают более эффективно, оставляя меньше несгоревших частиц.</p>
+
+<p>Утилизация отработанных масел и фильтров на борту производится строго по регламенту. Слив любых технических жидкостей в море запрещен международными конвенциями, поэтому на борту предусмотрены специальные емкости для сбора отходов, которые сдаются в порту.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка готовности дизеля к выходу</h4><label class="check-item"><input type="checkbox"><span>Проверка уровня масла в картере</span></label><label class="check-item"><input type="checkbox"><span>Контроль давления в системе охлаждения</span></label><label class="check-item"><input type="checkbox"><span>Продувка топливных фильтров</span></label><label class="check-item"><input type="checkbox"><span>Проверка герметичности выхлопного коллектора</span></label><label class="check-item"><input type="checkbox"><span>Тестовый запуск на холостых</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="перспективы-развития-дизельных-установок">Перспективы развития дизельных установок</h2>
+
+<p>Несмотря на развитие атомной энергетики и водородных технологий, <strong>дизель-электрическая схема</strong> остается актуальной для флотов многих стран. Она дешевле в производстве и обслуживании, а также тише атомных реакторов на малых ходах. Будущее за гибридными установками, где дизель работает в оптимальном экономичном режиме, заряжая батареи или питая электромоторы.</p>
+
+<p>Развивается направление двигателей Стирлинга и топливных элементов, которые могут дополнять или заменять традиционные ДВС. Однако высокая надежность и отработанность конструкции дизеля делают его незаменимым еще долгие годы. <em>Технологии</em> лишь совершенствуют его, делая более компактным и эффективным.</p>
+
+<p>Автоматизация процессов управления позволяет сократить экипаж, необходимый для обслуживания машинного отделения. Компьютеризированные системы сами регулируют подачу топлива и воздуха, минимизируя человеческий фактор и риск ошибок при маневрировании.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Дизельный двигатель остается "сердцем" неатомного флота, обеспечивая автономность, которую не могут дать чисто электрические схемы без подзарядки.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Может ли дизельная подводная лодка работать под водой?</summary>
+<p>Нет, классический дизельный двигатель требует огромного количества кислорода для горения, который можно получить только из атмосферы. Под водой лодка переходит на электромоторы, питаясь от аккумуляторов. Существуют системы воздухонезависимости (ВНЕД), позволяющие работать дизелю под водой, используя запасенный окислитель, но это сложные и дорогие системы.</p>
+</details>
+
+<details>
+<summary>Почему дизельные подлодки такие шумные?</summary>
+<p>Шум создают взрывы топлива в цилиндрах, движение поршней и работа навесных агрегатов (насосов, компрессоров). В воде звук распространяется быстрее и дальше, чем в воздухе, делая работающий двигатель легко обнаруживаемым.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять масло в дизеле подлодки?</summary>
+<p>Ресурс масла зависит от типа двигателя и условий эксплуатации, но на флоте контроль ведется по моточасам и лабораторному анализу проб. Обычно замена производится после определенного количества часов наработки или при плановом ремонте, так как масло быстро теряет свойства из-за высоких температур и нагрузок.</p>
+</details>
+
+<details>
+<summary>Что такое шноркель и зачем он нужен?</summary>
+<p>Шноркель — это устройство в виде трубы, которое поднимается над водой, когда лодка находится на перископной глубине. Через него дизель получает воздух для работы, а через соседнюю трубу выбрасывает выхлопные газы. Это позволяет заряжать батареи, не всплывая в надводное положение.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-дизеля-в-условиях-субмарины">Принцип работы дизеля в условиях субмарины</a></li><li><a href="#системы-наддува-и-воздухоснабжения">Системы наддува и воздухоснабжения</a></li><li><a href="#особенности-системы-охлаждения">Особенности системы охлаждения</a></li><li><a href="#топливная-система-и-виды-топлива">Топливная система и виды топлива</a></li><li><a href="#шумность-и-вибрация-проблема-скрытности">Шумность и вибрация: проблема скрытности</a></li><li><a href="#экологические-аспекты-и-современные-требования">Экологические аспекты и современные требования</a></li><li><a href="#перспективы-развития-дизельных-установок">Перспективы развития дизельных установок</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/n/na/na-kakuyu-glubinu-opuskayutsya-podvodnye-lodki.html" class="related-card">На какую глубину опускаются подводные лодки: рекорды и типы</a></li><li><a href="/articles/u/u-/u-505-podvodnaya-lodka.html" class="related-card">Подводная лодка U-505: История, захват и технические данные</a></li><li><a href="/articles/m/mu/muzej-podlodki-v-vytegre.html" class="related-card">Музей подводной лодки в Вытегре: полный гид по экспозиции</a></li><li><a href="/articles/p/po/podvodnaya-lodka-chto-eto.html" class="related-card">Подводная лодка: что это, устройство и принцип работы</a></li><li><a href="/articles/n/ne/nemetskie-podvodnye-lodki-vtoroj-mirovoj-vojny.html" class="related-card">Немецкие подводные лодки Второй мировой: типы, тактика, потери</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/n/na/na-kakuyu-glubinu-opuskayutsya-podvodnye-lodki.html" class="related-bottom-card"><span class="related-bottom-title">На какую глубину опускаются подводные лодки: рекорды и типы</span><span class="related-bottom-desc">Узнайте предельные глубины погружения атомных и дизельных субмарин. Рабочие и предельные глубины, ре</span></a><a href="/articles/u/u-/u-505-podvodnaya-lodka.html" class="related-bottom-card"><span class="related-bottom-title">Подводная лодка U-505: История, захват и технические данные</span><span class="related-bottom-desc">Подробный обзор немецкой субмарины U-505: захват американцами, технические характеристики, судьба эк</span></a><a href="/articles/m/mu/muzej-podlodki-v-vytegre.html" class="related-bottom-card"><span class="related-bottom-title">Музей подводной лодки в Вытегре: полный гид по экспозиции</span><span class="related-bottom-desc">Подробный обзор музея-лодмана в Вытегре. История, характеристики экспоната, график работы, стоимость</span></a><a href="/articles/p/po/podvodnaya-lodka-chto-eto.html" class="related-bottom-card"><span class="related-bottom-title">Подводная лодка: что это, устройство и принцип работы</span><span class="related-bottom-desc">Подробно о том, что такое подводная лодка. Устройство, принцип погружения, типы двигателей и тактико</span></a><a href="/articles/n/ne/nemetskie-podvodnye-lodki-vtoroj-mirovoj-vojny.html" class="related-bottom-card"><span class="related-bottom-title">Немецкие подводные лодки Второй мировой: типы, тактика, потери</span><span class="related-bottom-desc">Обзор немецких подводных лодок Второй мировой войны. Тактика волчьих стай, технические характеристик</span></a><a href="/articles/c/ch/chto-sluchilos-s-kurskoj-podvodnoj-lodkoj.html" class="related-bottom-card"><span class="related-bottom-title">Курская подводная лодка: причины трагедии и гибель экипажа</span><span class="related-bottom-desc">Подробный разбор катастрофы АПЛ «Курская» в Баренцевом море. Хронология событий, версии взрыва, попы</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

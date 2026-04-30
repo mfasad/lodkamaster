@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Сборка мотора 157QMJ: пошаговая инструкция и тонкости — ЛодкаМастер</title>
+    <meta name="description" content="Полное руководство по сборке двигателя 157QMJ. Моменты затяжки, установка ГРМ и клапанов. Советы эксперта для китайских скутеров 150 кубов.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/s/sb/sborka-motora-157qmj.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Сборка мотора 157QMJ: пошаговая инструкция и тонкости">
+    <meta property="og:description" content="Полное руководство по сборке двигателя 157QMJ. Моменты затяжки, установка ГРМ и клапанов. Советы эксперта для китайских скутеров 150 кубов.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Сборка мотора 157QMJ: пошаговая инструкция и тонкости</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Профессиональная сборка двигателя 157QMJ: от поршневой до головки</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#подготовка-картера-и-установка-коленчатого-вала">Подготовка картера и установка коленчатого вала</a></li><li><a href="#монтаж-поршневой-группы-и-цпг">Монтаж поршневой группы и ЦПГ</a></li><li><a href="#регулировка-газораспределительного-механизма-грм">Регулировка газораспределительного механизма (ГРМ)</a></li><li><a href="#настройка-клапанных-зазоров">Настройка клапанных зазоров</a></li><li><a href="#сборка-системы-смазки-и-масляного-насоса">Сборка системы смазки и масляного насоса</a></li><li><a href="#первый-запуск-и-обкатка">Первый запуск и обкатка</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Процесс восстановления или капитального ремонта силового агрегата для скутера объемом 150 кубических сантиметров требует от мастера не только наличия специнструмента, но и глубокого понимания термодинамических процессов, происходящих внутри картера. Двигатель <em>157QMJ</em>, являющийся стандартом де-факто для большинства китайских мотосредств, обладает конструктивными особенностями, игнорирование которых может привести к быстрому выходу из строя даже только что собранного узла. В отличие от более простых 50-кубовых аналогов, здесь критически важны зазоры в клапанном механизме и правильная ориентация масляного насоса.</p>
+
+<p>Качество сборки напрямую влияет на ресурс поршневой группы и надежность работы вариатора. Многие владельцы совершают фатальную ошибку, полагаясь исключительно на заводские метки, не проверяя фактическое состояние поверхностей сопряжения. <strong>Точность подгонки</strong> деталей в данном классе двигателей часто оставляет желать лучшего, поэтому ручной контроль плоскостей и зазоров становится обязательным этапом. Перед началом работ необходимо убедиться, что все прокладки заменены на новые, а посадочные места очищены от старого герметика и нагара.</p>
+
+<p>В этой статье мы разберем ключевые этапы сборки, акцентируя внимание на моментах, которые чаще всего упускаются из виду в гаражных условиях. Вы узнаете, как правильно выставить фазы газораспределения и почему направление установки сальников коленвала имеет решающее значение для давления масла. Грамотно собранный мотор <em>157QMJ</em> способен пройти десятки тысяч километров без вскрытия, если соблюдены все технологические карты производителя.</p>
+
+<h2 id="подготовка-картера-и-установка-коленчатого-вала">Подготовка картера и установка коленчатого вала</h2>
+
+<p>Начинать сборку следует с тщательной ревизии половин картера. Алюминиевый сплав, используемый в <em>157QMJ</em>, склонен к деформациям при перегреве, поэтому проверка плоскости прилегания цилиндра и крышки генератора обязательна. Используйте металлическую линейку и щуп для контроля: зазор не должен превышать 0.05 мм на всей площади. Если обнаружены микронеровности, их устраняют притиркой на стекле с использованием абразивной пасты, но снимать более 0.1 мм материала <strong>категорически запрещено</strong>.</p>
+
+<p>Установка коленчатого вала требует особого внимания к посадочным местам подшипников. Перед монтажом прогрейте картер феном до температуры около 80-90 градусов Цельсия — это позволит валу сесть на место без ударов молотка, которые могут повредить хрупкие дорожки качения. <mark>Ориентация маслоотражательных шайб на щеках коленвала строго определена: выступающая часть должна смотреть в сторону подшипников, обеспечивая смазку и предотвращая заброс масла в камеру сгорания.</mark> Неправильная установка приведет к масляному голоданию или, наоборот, к повышенному угару.</p>
+
+<p>При сборке половин картера убедитесь, что направляющие втулки (пилоты) чисты и не имеют задиров. Болты стяжки картера необходимо затягивать крест-накрест в несколько этапов, чтобы избежать перекоса. Момент затяжки для болтов М6 обычно составляет 10-12 Нм, но лучше ориентироваться на усилие, указанное в мануале для конкретного производителя двигателя. После соединения половин проверьте легкость вращения вала — он должен проворачиваться от руки без заеданий и люфтов.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При установке сальников коленвала смажьте рабочую кромку моторным маслом. Сухой сальник при первом запуске может перегреться и потерять герметичность за считанные секунды работы.</p>
+</blockquote>
+
+<div class="checklist-block"><h4>☑️ Проверка картера перед сборкой</h4><label class="check-item"><input type="checkbox"><span>Плоскости проверены линейкой</span></label><label class="check-item"><input type="checkbox"><span>Направляющие втулки очищены</span></label><label class="check-item"><input type="checkbox"><span>Подшипники прогреты</span></label><label class="check-item"><input type="checkbox"><span>Сальники смазаны маслом</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="монтаж-поршневой-группы-и-цпг">Монтаж поршневой группы и ЦПГ</h2>
+
+<p>Установка цилиндра и поршня — это этап, где решается судьба компрессии. Поршень <em>157QMJ</em> имеет специфическую форму днища и расположение бобышек, поэтому важно не перепутать переднюю и заднюю части. На многих поршнях есть стрелка или надпись <code>EX</code> (Exhaust), которая должна смотреть в сторону выпускного канала. Перед монтажом колец проверьте их тепловой зазор в канавке поршня и в самом цилиндре. Зазор в замке кольца должен находиться в пределах 0.2-0.4 мм для верхнего компрессионного кольца.</p>
+
+<p>Смажьте зеркало цилиндра и поршневой палец обильным количеством масла. При установке колец соблюдайте очередность: сначала маслосъемное (составное или цельное), затем нижнее компрессионное, и в последнюю очередь — верхнее. Замки колец не должны совпадать друг с другом или располагаться над бобышками поршня; оптимальное распределение — через 120 градусов. <strong>Хон</strong> на стенках цилиндра должен быть виден невооруженным глазом; если цилиндр глянцевый, его необходимо хонинговать заново.</p>
+
+<p>При установке головки цилиндра критически важно состояние прокладки ГБЦ. Используйте только качественные прокладки из многослойного металла или качественного паронита. Болты головки затягиваются строго по схеме "крест-накрест" динамометрическим ключом. Момент затяжки болтов М8 для головки 157QMJ обычно составляет 20-25 Нм. Недотягивание приведет к прогару прокладки, а перетяжка — к деформации резьбы в алюминиевом картере.</p>
+
+<details class="faq-item"><summary>Секрет долговечности колец</summary><div class="faq-answer"><p>Перед установкой новых колец обязательно удалите нагар из канавок поршня. Остатки старого нагара могут расколоть новое тонкое кольцо при работе двигателя, что приведет к падению компрессии.</p></div></details>
+
+<h2 id="регулировка-газораспределительного-механизма-грм">Регулировка газораспределительного механизма (ГРМ)</h2>
+
+<p>Сборка ГРМ на 150-кубовом моторе часто вызывает трудности из-за наличия декомпрессора и специфического профиля кулачков. Первым делом установите распределительный вал так, чтобы метка на звездочке совпала с краем плоскости головки цилиндра при положении поршня в ВМТ (верхней мертвой точке) такта сжатия. Убедитесь, что кулачки распределвала смотрят в стороны (развернуты наружу), а коромысла не зажаты.</p>
+
+<p>Установка цепи ГРМ должна производиться без перекосов. Направляющая цепи (натяжитель) должна быть установлена правильно, с учетом направления вращения вала. В двигателях <em>157QMJ</em> часто используется автоматический натяжитель цепи, который начинает работать после запуска двигателя, но первоначальную выборку слабины нужно сделать вручную при сборке. Проверьте натяжение цепи прощупыванием пальцем в средней части — она не должна провисать более чем на 5 мм.</p>
+
+<p>После установки распредвала необходимо вручную провернуть коленвал на два полных оборота и снова совместить метки. Это действие подтверждает отсутствие перескока зубьев и правильность сборки. Если метки не совпадают после проворота, процедуру установки звездочки необходимо повторить. Ошибка даже на один зуб приведет к неправильным фазам газораспределения, потере мощности и возможному столкновению клапанов с поршнем.</p>
+
+<div class="poll-widget" id="poll-5370ac0b"><div class="poll-widget-question">📊 С каким типом ГРМ вы сталкивались чаще?</div><div class="poll-widget-option" data-poll="5370ac0b" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Одинарный распредвал (SOHC)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="5370ac0b" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Два распредвала (DOHC)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="5370ac0b" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Вариаторная система</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="5370ac0b" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Гильзовый механизм</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="настройка-клапанных-зазоров">Настройка клапанных зазоров</h2>
+
+<p>Регулировка клапанов — это, пожалуй, самый важный этап для тихой и ровной работы двигателя. Для 157QMJ оптимальные зазоры на холодном двигателе составляют: 0.05 мм для впускного клапана и 0.10 мм для выпускного. Выпускному клапану нужен больший зазор из-за более высоких температурных расширений. Использовать необходимо специальный плоский щуп, а не щупы для свечей зажигания, так как последние имеют большую толщину и могут дать неверный результат.</p>
+
+<p>Процесс регулировки выполняется на полностью остывшем двигателе. Ослабьте контргайку регулировочного болта, вставьте щуп и вращайте регулировочный винт до появления легкого сопротивления при движении щупа. Щуп должен ходить свободно, но с ощутимым трением по всей плоскости. После фиксации положения винта, затяните контргайку, придерживая регулировочный винт ключом, чтобы сбитый зазор не изменился. После затяжки обязательно перепроверьте зазор щупом.</p>
+
+<p>Неправильно выставленные зазоры ведут к серьезным последствия. Слишком маленький зазор на впуске приведет к хлопкам в карбюратор и нестабильному холостому ходу, а на выпуске — к прогару клапана и седла. Слишком большой зазор вызоывает характерный цокот ("тракторный" звук) и уменьшает время открытия клапана, что снижает наполняемость цилиндра и мощность. <strong>Тепловой зазор</strong> — это не статичный параметр, он может изменяться после первых 500 км пробега, поэтому проверку рекомендуется повторить после обкатки.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Впуск (мм)</th>
+<th>Выпуск (мм)</th>
+<th>Инструмент</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Стандартный зазор</td>
+<td>0.05</td>
+<td>0.10</td>
+<td>Плоский щуп</td>
+</tr>
+<tr>
+<td>Допустимая погрешность</td>
+<td>+/- 0.01</td>
+<td>+/- 0.01</td>
+<td>Микрометр</td>
+</tr>
+<tr>
+<td>Состояние двигателя</td>
+<td>Холодный</td>
+<td>Холодный</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Момент проверки</td>
+<td>ВМТ сжатия</td>
+<td>ВМТ сжатия</td>
+<td>Индикатор</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте резьбовой фиксатор (анаэробный герметик) на резьбу регулировочных винтов перед окончательной затяжкой контргаек. Это предотвратит самопроизвольное изменение зазора от вибрации.</p></div>
+
+<h2 id="сборка-системы-смазки-и-масляного-насоса">Сборка системы смазки и масляного насоса</h2>
+
+<p>Двигатель 157QMJ оснащен масляным насосом трохоидного типа, который интегрирован в правую крышку картера или установлен отдельно в зависимости от модификации. При сборке обратите внимание на состояние шестерен насоса и корпуса. Зазор между торцами шестерен и корпусом не должен превышать 0.15 мм. Износ этих деталей приводит к падению давления масла и быстрому выходу из строя подшипников коленвала и распредвала.</p>
+
+<p>Важнейшим элементом является редукционный клапан, который регулирует давление в системе. Проверьте легкость хода плунжера клапана и состояние пружины. Заклинивание клапана в открытом положении приведет к тому, что масло будет постоянно сливаться в картер, не поступая к трущимся парам. В закрытом положении это грозит выдавливанием сальников и разрывом фильтра (если он есть в системе).</p>
+
+<p>При установке крышки генератора (где часто расположен насос) используйте новую прокладку или качественный термостойкий герметик. Болты крепления крышки закручивайте равномерно. После сборки и заливки масла необходимо проверить систему на предмет течей и убедиться, что индикатор давления масла (если предусмотрен конструкцией) гаснет сразу после запуска.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не запускайте двигатель без предварительной прокачки масляной системы. Прокрутите стартером двигатель 5-10 секунд с вывернутыми свечами, чтобы масло заполнило каналы и смазало подшипники до появления давления.</p>
+</blockquote>
+
+<h2 id="первый-запуск-и-обкатка">Первый запуск и обкатка</h2>
+
+<p>Финальный этап — первый запуск собранного агрегата. Залейте рекомендованное производителем масло (обычно 10W-40 для 157QMJ) и топливо. Проверьте уровни жидкостей еще раз. При первом запуске двигатель может не запуститься с первой попытки из-за отсутствия топлива в поплавковой камере или воздуха в системе — это нормально. Не крутите стартер дольше 5-7 секунд непрерывно, давайте ему остыть.</p>
+
+<p>После успешного запуска дайте мотору поработать на холостых оборотах 2-3 минуты. Внимательно слушайте посторонние шумы: стуки, скрежет или свист недопустимы. Проверьте давление масла (если есть датчик) и отсутствие течей из-под прокладок. В первые минуты работы возможен легкий дымок из выхлопной трубы — это выгорают остатки консервационной смазки и технологических жидкостей.</p>
+
+<p>Процесс обкатки нового или перебранного двигателя 157QMJ должен проходить в щадящем режиме. Первые 500 км не рекомендуется открывать дроссель более чем на 50-60% и долго держать постоянные обороты. <strong>Вариатор</strong> должен работать в паре с постепенно притирающейся поршневой группой. Резкие ускорения и максимальные скорости в период обкатки приведут к локальным перегревам и задирам, сведя на нет всю работу по сборке.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Качество сборки двигателя 157QMJ на 80% зависит от чистоты деталей и точности соблюдения моментов затяжки, а не от стоимости запчастей.</p></div>
+
+<details>
+<summary>Какой момент затяжки головки блока для 157QMJ?</summary>
+<p>Оптимальный момент затяжки болтов головки блока цилиндров для двигателя 157QMJ составляет от 20 до 25 Нм (Ньютон-метров). Затяжку необходимо производить в два этапа: сначала предварительная затяжка до 10 Нм крест-накрест, затем финальная до 25 Нм по той же схеме. Использование динамометрического ключа обязательно, так как алюминиевая резьба картера легко срывается при перетяжке.</p>
+</details>
+
+<details>
+<summary>Почему после сборки нет компрессии?</summary>
+<p>Отсутствие компрессии после сборки чаще всего указывает на неправильную установку поршневых колец (замки совмещены или кольцо сломано), перепутанные фазы ГРМ (клапаны открыты в момент такта сжатия) или повреждение прокладки ГБЦ. Также причиной может быть отсутствие зазора в клапанах, из-за чего они не закрываются до конца.</p>
+</details>
+
+<details>
+<summary>Нужно ли притирать клапаны при сборке?</summary>
+<p>Если вы меняли клапана или седла, притирка обязательна для обеспечения герметичности. Если же двигатель разбирался только для замены колец, и клапана не имеют нагара и раковин, притирка не требуется. Достаточно проверить герметичность керосином: налить его в каналы перевернутой головки — жидкость не должна просачиваться к свечному отверстию.</p>
+</details>
+
+<details>
+<summary>Какое масло заливать в двигатель 157QMJ?</summary>
+<p>Для двигателя объемом 150 куб. см рекомендуется использовать полусинтетические или синтетические моторные масла вязкостью 10W-40 или 15W-50 (для жаркого климата). Объем масла при замене составляет около 0.8 - 0.9 литра. Важно использовать масла, предназначенные для 4-тактных двигателей мототехники (стандарт JASO MA/MA2), так как они содержат присадки, защищающие сцепление в масляной ванне (если оно конструктивно связано с двигателем, что в 157QMJ не так, но стандарт един).</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#подготовка-картера-и-установка-коленчатого-вала">Подготовка картера и установка коленчатого вала</a></li><li><a href="#монтаж-поршневой-группы-и-цпг">Монтаж поршневой группы и ЦПГ</a></li><li><a href="#регулировка-газораспределительного-механизма-грм">Регулировка газораспределительного механизма (ГРМ)</a></li><li><a href="#настройка-клапанных-зазоров">Настройка клапанных зазоров</a></li><li><a href="#сборка-системы-смазки-и-масляного-насоса">Сборка системы смазки и масляного насоса</a></li><li><a href="#первый-запуск-и-обкатка">Первый запуск и обкатка</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/m/ma/maslo-mineralnoe-dlya-4-kh-taktnykh-dvigatelej.html" class="related-card">Минеральное масло для 4-тактных двигателей: выбор, свойства и применение</a></li><li><a href="/articles/k/ku/kupit-maslo-yamalyube-dlya-2-kh-taktnykh-lodochnykh-motorov.html" class="related-card">Купить масло Ямалубе для 2х тактных лодочных моторов: цены и советы</a></li><li><a href="/articles/m/mo/motornoe-maslo-dlya-4-kh-taktnykh-lodochnykh-motorov.html" class="related-card">Моторное масло для 4-х тактных лодочных моторов: выбор и замена</a></li><li><a href="/articles/u/ud/udalenie-lakovykh-otlozhenij-v-dvigatele.html" class="related-card">Удаление лаковых отложений в двигателе: методы и средства</a></li><li><a href="/articles/k/ka/kak-opressovat-reduktor-lodochnogo-motora.html" class="related-card">Как опрессовать редуктор лодочного мотора: полная инструкция</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/m/ma/maslo-mineralnoe-dlya-4-kh-taktnykh-dvigatelej.html" class="related-bottom-card"><span class="related-bottom-title">Минеральное масло для 4-тактных двигателей: выбор, свойства и применение</span><span class="related-bottom-desc">Полный гид по минеральным маслам для 4-тактных моторов. Разбор свойств, интервалов замены, сравнение</span></a><a href="/articles/k/ku/kupit-maslo-yamalyube-dlya-2-kh-taktnykh-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Купить масло Ямалубе для 2х тактных лодочных моторов: цены и советы</span><span class="related-bottom-desc">Где выгодно купить масло Ямалубе для 2х тактных лодочных моторов. Обзор характеристик, совместимость</span></a><a href="/articles/m/mo/motornoe-maslo-dlya-4-kh-taktnykh-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Моторное масло для 4-х тактных лодочных моторов: выбор и замена</span><span class="related-bottom-desc">Как выбрать масло для 4-тактного лодочного мотора? Разбор вязкости, допусков API/ACEA, отличия от ав</span></a><a href="/articles/u/ud/udalenie-lakovykh-otlozhenij-v-dvigatele.html" class="related-bottom-card"><span class="related-bottom-title">Удаление лаковых отложений в двигателе: методы и средства</span><span class="related-bottom-desc">Как удалить лаковые отложения в двигателе? Эффективные способы промывки, признаки закоксовки поршнев</span></a><a href="/articles/k/ka/kak-opressovat-reduktor-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Как опрессовать редуктор лодочного мотора: полная инструкция</span><span class="related-bottom-desc">Профессиональная инструкция по опрессовке редуктора лодочного мотора. Проверка на герметичность, выб</span></a><a href="/articles/k/ka/kakaya-kompressiya-v-lodochnom-motore.html" class="related-bottom-card"><span class="related-bottom-title">Компрессия в лодочном моторе: нормы, замеры и причины</span><span class="related-bottom-desc">Какая компрессия должна быть в 2-тактном и 4-тактном лодочном моторе? Таблица норм, инструкция по за</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

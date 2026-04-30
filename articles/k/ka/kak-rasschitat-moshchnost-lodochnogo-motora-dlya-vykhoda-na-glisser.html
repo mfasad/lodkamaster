@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Как рассчитать мощность мотора для выхода на глиссер: формулы — ЛодкаМастер</title>
+    <meta name="description" content="Полный гид по расчету мощности лодочного мотора. Формулы, таблицы и советы для уверенного выхода лодки на глиссирование.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/k/ka/kak-rasschitat-moshchnost-lodochnogo-motora-dlya-vykhoda-na-glisser.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как рассчитать мощность мотора для выхода на глиссер: формулы">
+    <meta property="og:description" content="Полный гид по расчету мощности лодочного мотора. Формулы, таблицы и советы для уверенного выхода лодки на глиссирование.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Как рассчитать мощность мотора для выхода на глиссер: формулы</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Расчет мощности лодочного мотора для выхода на глиссер</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#физика-процесса-что-такое-глиссирование">Физика процесса: что такое глиссирование</a></li><li><a href="#ключевые-факторы-влияния-на-расчет">Ключевые факторы влияния на расчет</a></li><li><a href="#формулы-и-методы-расчета-мощности">Формулы и методы расчета мощности</a></li><li><a href="#таблица-соответствия-массы-и-мощности">Таблица соответствия массы и мощности</a></li><li><a href="#практические-шаги-по-подбору-винтомоторной-группы">Практические шаги по подбору винтомоторной группы</a></li><li><a href="#распространенные-ошибки-и-их-последствия">Распространенные ошибки и их последствия</a></li><li><a href="#специфика-для-разных-типов-корпусов">Специфика для разных типов корпусов</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+<p>Выход на глиссирование — это тот самый момент, когда тяжелая лодка отрывается от воды и начинает скользить по её поверхности, словно на крыльях. Для многих судоводителей это не просто вопрос комфорта, а необходимость, позволяющая экономить топливо и время в пути, а также проходить мелководные участки с меньшим креном.</p>
+<p>Однако, если <strong>мощность двигателя</strong> подобрана неверно, лодка будет «рыть носом» воду, потреблять запредельное количество горючего и не развивать даже минимально возможной скорости. Правильный расчет — это баланс между весом плавсредства, его геометрией и характеристиками винтомоторной группы.</p>
+<p>В этой статье мы разберем физические принципы, формулы и практические нюансы, которые помогут вам избежать ошибок при выборе или настройке мотора.</p>
+
+<h2 id="физика-процесса-что-такое-глиссирование">Физика процесса: что такое глиссирование</h2>
+<p>Глиссирование — это режим движения, при котором судно удерживается на поверхности воды за счет динамических сил давления, возникающих при обтекании водой днища. В отличие от водоизмещающего режима, где лодка выталкивается архимедовой силой, здесь основную работу выполняет <strong>гидродинамическая подъемная сила</strong>. Чтобы перейти в этот режим, необходимо преодолеть так называемый «горб сопротивления».</p>
+<p>Критическим параметром является число Фруда. Для большинства малых судов переходный режим начинается при скорости около 15–18 км/ч, а уверенное глиссирование наступает после 20–22 км/ч. Если двигатель слаб, лодка застревает на переходном режиме, создавая огромную волну и раскачиваясь.</p>
+<p>Важно понимать, что геометрия корпуса играет не меньшую роль, чем лошадиные силы. <em>Плоское днище</em> выходит на глисс быстрее, но требует больше мощности для поддержания скорости, тогда как килеватые обводы режут волну лучше, но для их подъема нужен более мощный старт.</p>
+
+<h2 id="ключевые-факторы-влияния-на-расчет">Ключевые факторы влияния на расчет</h2>
+<p>Прежде чем хвататься за калькулятор, необходимо собрать точные данные. Ошибка в оценке веса или игнорирование состояния корпуса приведут к тому, что расчетная мощность окажется недостаточной. <strong>Полная масса</strong> складывается не только из веса самой лодки, но и из веса экипажа, топлива, снаряжения и мотора.</p>
+<p>Второй важный фактор — состояние днища. Обросшее ракушками или покрытое водорослями дно увеличивает сопротивление трения на 20–30%. Также критичен угол установки транца: если мотор слишком заглублен или, наоборот, задран, эффективность винта падает, и мощности не хватает для отрыва.</p>
+<blockquote>⚠️ Внимание: Никогда не устанавливайте мотор мощнее, чем разрешено заводом-изготовителем лодки. Это может привести к разрушению транца и опрокидыванию судна на полном ходу из-за потери остойчивости.</blockquote>
+<p>Третий аспект — тип винта. Шаг и диаметр гребного винта должны соответствовать оборотам двигателя и весу судна. Слишком большой шаг «задушит» мотор, не дав выйти на максимальные обороты, а слишком маленький не позволит развить нужную тягу.</p>
+<ul>
+<li>🚤 <strong>Вес снаряженной лодки:</strong> включает корпус, мотор, аккумулятор, якорь и все незакрепленные предметы.</li>
+<li>👥 <strong>Экипаж:</strong> средний вес человека принимается за 75–80 кг, но лучше брать с запасом.</li>
+<li>⛽ <strong>Запас топлива:</strong> бензин тяжелый (1 литр ≈ 0.75 кг), полный бак может добавить 30–50 кг.</li>
+</ul>
+
+<h2 id="формулы-и-методы-расчета-мощности">Формулы и методы расчета мощности</h2>
+<p>Существует несколько эмпирических формул, позволяющих получить ориентировочное значение необходимой мощности. Одна из самых распространенных методик базируется на соотношении полной массы судна и желаемой скорости. Для выхода на глисс обычно требуется обеспечить скорость не менее 1.5–1.7 от скорости водоизмещающего режима.</p>
+<p>Упрощенная формула для предварительной оценки выглядит так: <code>P = (M * V^3) / K</code>, где P — мощность в л.с., M — масса в тоннах, V — скорость в узлах, а K — коэффициент, зависящий от обводов (для глиссирующих корпусов 200–250). Однако проще использовать правило «лошадиная сила на тонну».</p>
+<p>Для уверенного глиссирования легких алюминиевых или ПВХ лодок с плоским дном достаточно 30–40 л.с. на тонну водоизмещения. Для килеватых морских ботов этот показатель растет до 50–60 л.с. на тонну. Это означает, что лодка весом 500 кг с экипажем потребует минимум 15–20 л.с. для старта, но для комфортной езды лучше 25–30 л.с.</p>
+<div class="poll-widget" id="poll-a6e83aef"><div class="poll-widget-question">📊 Какой у вас тип лодки?</div><div class="poll-widget-option" data-poll="a6e83aef" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">ПВХ с надувным дном</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="a6e83aef" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Алюминиевая с плоским дном</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="a6e83aef" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Килевая (FRP)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="a6e83aef" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Другое</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+<p>При использовании формул всегда округляйте полученное значение в большую сторону. Двигатель, работающий в режиме 80–90% от максимальной мощности, имеет больший ресурс, чем мотор, который постоянно работает на «полном газу».</p>
+
+<h2 id="таблица-соответствия-массы-и-мощности">Таблица соответствия массы и мощности</h2>
+<p>Для быстрого ориентирования можно использовать справочные данные. Они актуальны для стандартных условий загрузки и исправного состояния корпуса. Помните, что наличие пассажиров на носу может сместить центр тяжести и затруднить выход на режим.</p>
+
+<table>
+<thead>
+<tr>
+<th>Полная масса лодки (кг)</th>
+<th>Мин. мощность для глисса (л.с.)</th>
+<th>Оптимальная мощность (л.с.)</th>
+<th>Ожидаемая скорость (км/ч)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>300 – 400</td>
+<td>9.9</td>
+<td>15 – 20</td>
+<td>35 – 45</td>
+</tr>
+<tr>
+<td>400 – 600</td>
+<td>20</td>
+<td>25 – 30</td>
+<td>40 – 50</td>
+</tr>
+<tr>
+<td>600 – 800</td>
+<td>30</td>
+<td>40 – 50</td>
+<td>45 – 55</td>
+</tr>
+<tr>
+<td>800 – 1000</td>
+<td>40</td>
+<td>60 – 75</td>
+<td>50 – 60</td>
+</tr>
+</tbody>
+</table>
+
+<p>Данные в таблице приведены для двигателей с короткой ногой и стандартным передаточным числом. При использовании моторов с длинной ногой или специальными редукторами эффективность может варьироваться.</p>
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Оптимальная мощность всегда выше минимальной: запас лошадиных сил обеспечивает безопасность и экономию ресурса двигателя.</p></div>
+
+<h2 id="практические-шаги-по-подбору-винтомоторной-группы">Практические шаги по подбору винтомоторной группы</h2>
+<p>Расчет на бумаге — это только начало. Реальная проверка происходит на воде. Первым шагом всегда является визуальный осмотр и подготовка. Убедитесь, что транец ровный, без деформаций, а кронштейн навески мотора позволяет регулировать угол наклона.</p>
+<p>Далее следует этап подбора винта. Если лодка не выходит на глисс, попробуйте уменьшить шаг винта. Это позволит двигателю быстрее набрать обороты. Если же мотор «кричит», но скорость не растет — шаг велик или винт поврежден.</p>
+<div class="checklist-block"><h4>☑️ Проверка перед тестовым заплывом</h4><label class="check-item"><input type="checkbox"><span>Проверить уровень масла в редукторе</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в чистоте днища</span></label><label class="check-item"><input type="checkbox"><span>Проверить затяжку гаек на винте</span></label><label class="check-item"><input type="checkbox"><span>Замерить давление в шинах (для ПВХ)</span></label><label class="check-item"><input type="checkbox"><span>Взять тахометр для замера оборотов</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+<p>Во время тестовых заплывов используйте тахометр. Двигатель должен выходить на максимальные рекомендованные производителем обороты (обычно 5000–5500 об/мин для 2-тактных и 5500–6000 для 4-тактных) при полностью открытой дроссельной заслонке и нормальной загрузке.</p>
+<blockquote>⚠️ Внимание: Длительная работа двигателя на оборотах выше максимальных (перекрут) приводит к задирам цилиндров и разрушению поршневой группы за считанные минуты.</blockquote>
+
+<h2 id="распространенные-ошибки-и-их-последствия">Распространенные ошибки и их последствия</h2>
+<p>Одной из самых частых ошибок является игнорирование распределения веса. Если весь экипаж сидит на носу, лодка зарывается в волну и глиссирование становится невозможным даже при избытке мощности. Правильная посадка — ближе к центру тяжести или со смещением к корме на этапе разгона.</p>
+<p>Еще одна проблема — использование мотора с неподходящим дейдвудом. Установка длинной ноги на лодку с коротким транцем (даже с использованием проставки) меняет гидродинамику потока и снижает КПД. Также негативно сказывается установка мотора слишком высоко, когда антикавитационная плита оказывается выше уровня воды.</p>
+<details class="faq-item"><summary>Влияние качества бензина на мощность</summary><div class="faq-answer"><p>Использование бензина с октановым числом ниже рекомендованного или старого топлива (старше 1 месяца) снижает октановое число и может вызвать детонацию. Двигатель автоматически (или вручную) теряет мощность, и выход на глисс становится невозможным. Всегда используйте свежий АИ-92 или АИ-95 с добавлением стабилизатора.</p></div></details>
+<p>Не забывайте про аэродинамическое сопротивление. Установка громоздкого тента-трансформера или неправильное размещение груза на багажнике могут создавать дополнительное сопротивление, которое «съест» 10–15% мощности.</p>
+
+<h2 id="специфика-для-разных-типов-корпусов">Специфика для разных типов корпусов</h2>
+<p>Лодки <em>ПВХ с надувным дном</em> (НДНД или пайол) имеют мягкие обводы. Они легче выходят на глисс, но требуют точной настройки давления в баллонах. Недокачанное дно работает как парус, тормозящий судно. Для них характерен меньший запас плавучести, поэтому перегруз мотором опасен.</p>
+<p>Алюминиевые «казанки» и «воронежи» с плоским дном очень чувствительны к волнению. На них легко достичь глиссирования, но комфортной эту езду назвать сложно. Здесь важно не переборщить с мощностью, чтобы сохранить управляемость.</p>
+<p>Килевые стеклопластиковые катера требуют самой высокой удельной мощности. Их глубокий киль создает большое сопротивление на низких скоростях, но обеспечивает отличную мореходность. Для таких судов расчет мощности должен вестись с коэффициентом запаса не менее 20%.</p>
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Для лодок ПВХ с жестким пайольным дном перед выходом на глисс полезно немного приподнять нос, переместив груз или пассажиров ближе к корме, чтобы облегчить отрыв от воды.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+<details>
+<summary>Можно ли выйти на глисс с мотором меньшей мощности, если убрать пассажиров?</summary>
+<p>Да, уменьшение общей массы судна снижает требуемую мощность. Однако, если запас мощности критически мал, лодка может выходить на глисс только в идеальных погодных условиях и с минимальным запасом топлива.</p>
+</details>
+<details>
+<summary>Влияет ли тип топлива (АИ-92 против АИ-95) на возможность выхода на глисс?</summary>
+<p>Косвенно — да. Если двигатель рассчитан на АИ-95, а залит АИ-92, может возникать детонация, и электроника (или пользователь) будет ограничивать мощность, что не позволит развить нужные обороты для глиссирования.</p>
+</details>
+<details>
+<summary>Что делать, если лодка выходит на глисс, но сразу срывается при добавлении газа?</summary>
+<p>Скорее всего, неправильно подобран шаг винта (слишком большой) или нарушена центровка. Также проверьте угол наклона дейдвуда: возможно, мотор «задирает» нос слишком сильно, и лодка начинает скакать (порпоизинг).</p>
+</details>
+<details>
+<summary>Нужно ли делать разбежку для выхода на глисс?</summary>
+<p>Да, глиссирование — динамический процесс. Необходимо плавно, но уверенно добавить газ, чтобы преодолеть переходный режим. Резкий старт с места («с пятака») возможен только на очень легких лодках с мощными моторами.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#физика-процесса-что-такое-глиссирование">Физика процесса: что такое глиссирование</a></li><li><a href="#ключевые-факторы-влияния-на-расчет">Ключевые факторы влияния на расчет</a></li><li><a href="#формулы-и-методы-расчета-мощности">Формулы и методы расчета мощности</a></li><li><a href="#таблица-соответствия-массы-и-мощности">Таблица соответствия массы и мощности</a></li><li><a href="#практические-шаги-по-подбору-винтомоторной-группы">Практические шаги по подбору винтомоторной группы</a></li><li><a href="#распространенные-ошибки-и-их-последствия">Распространенные ошибки и их последствия</a></li><li><a href="#специфика-для-разных-типов-корпусов">Специфика для разных типов корпусов</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/s/sk/skolko-mozhno-khranit-benzin-s-maslom-dlya-dvukhtaktnykh-dvigatelej-lodochnykh-motorov.html" class="related-card">Срок хранения смеси бензина с маслом для лодочных моторов: нормы и риски</a></li><li><a href="/articles/s/st/stabilizator-napryazheniya-dlya-lodochnogo-motora.html" class="related-card">Стабилизатор напряжения для лодочного мотора: как выбрать и подключить</a></li><li><a href="/articles/k/ka/kak-pravilno-obkatat-lodochnyj-motor.html" class="related-card">Как правильно обкатать лодочный мотор: пошаговая инструкция</a></li><li><a href="/articles/c/ch/chto-takoe-vysota-trantsa-na-lodochnom-motore.html" class="related-card">Высота транца: как настроить лодочный мотор правильно</a></li><li><a href="/articles/l/lu/luchshij-kitajskij-lodochnyj-motor-98-dvukhtaktnyj.html" class="related-card">Лучший китайский лодочный мотор 9.8 л.с. двухтактный: Рейтинг</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/s/sk/skolko-mozhno-khranit-benzin-s-maslom-dlya-dvukhtaktnykh-dvigatelej-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Срок хранения смеси бензина с маслом для лодочных моторов: нормы и риски</span><span class="related-bottom-desc">Сколько можно хранить бензин с маслом для двухтактных лодочных моторов? Разбор химии процесса, сроки</span></a><a href="/articles/s/st/stabilizator-napryazheniya-dlya-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Стабилизатор напряжения для лодочного мотора: как выбрать и подключить</span><span class="related-bottom-desc">Экспертный гайд по выбору стабилизатора для лодочного мотора: типы, мощность, схемы подключения и ТО</span></a><a href="/articles/k/ka/kak-pravilno-obkatat-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Как правильно обкатать лодочный мотор: пошаговая инструкция</span><span class="related-bottom-desc">Подробный гайд по обкатке лодочного мотора. Режимы, смесь, ошибки и сроки для 2-х и 4-х тактных двиг</span></a><a href="/articles/c/ch/chto-takoe-vysota-trantsa-na-lodochnom-motore.html" class="related-bottom-card"><span class="related-bottom-title">Высота транца: как настроить лодочный мотор правильно</span><span class="related-bottom-desc">Разбор понятия высоты транца на лодке. Влияние установки мотора на скорость, расход топлива и кавита</span></a><a href="/articles/l/lu/luchshij-kitajskij-lodochnyj-motor-98-dvukhtaktnyj.html" class="related-bottom-card"><span class="related-bottom-title">Лучший китайский лодочный мотор 9.8 л.с. двухтактный: Рейтинг</span><span class="related-bottom-desc">Обзор мощных двухтактных моторов 9.8 л.с. из Китая. Сравнение Hidea, Sea-Pro, Parsun. Характеристики</span></a><a href="/articles/c/ch/chto-takoe-reduktor-v-lodochnom-motore.html" class="related-bottom-card"><span class="related-bottom-title">Что такое редуктор в лодочном моторе: устройство, смазка и ремонт</span><span class="related-bottom-desc">Полный гид по редуктору лодочного мотора. Как работает, какие масла использовать, признаки неисправн</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

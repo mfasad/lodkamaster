@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Диорама с подводной лодкой: создание и масштаб — ЛодкаМастер</title>
+    <meta name="description" content="Как собрать диораму с подводной лодкой. Выбор масштаба, создание эффекта воды, покраска модели и выбор сцены для экспозиции.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/d/di/diorama-s-podvodnoj-lodkoj.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Диорама с подводной лодкой: создание и масштаб">
+    <meta property="og:description" content="Как собрать диораму с подводной лодкой. Выбор масштаба, создание эффекта воды, покраска модели и выбор сцены для экспозиции.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/sdelaj-sam/">Сделай сам</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Диорама с подводной лодкой: создание и масштаб</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Диорама с подводной лодкой: руководство по сборке</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#выбор-исторической-эпохи-и-сценария">Выбор исторической эпохи и сценария</a></li><li><a href="#определение-масштаба-и-выбор-модели">Определение масштаба и выбор модели</a></li><li><a href="#подготовка-основания-и-ландшафта">Подготовка основания и ландшафта</a></li><li><a href="#техники-имитации-водной-поверхности">Техники имитации водной поверхности</a></li><li><a href="#покраска-и-детализация-корпуса">Покраска и детализация корпуса</a></li><li><a href="#финальная-сборка-и-эффекты-погоды">Финальная сборка и эффекты погоды</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Создание диорамы с подводной лодкой — это высший пилотаж в моделизме, требующий не только художественного вкуса, но и глубокого понимания физики моря. В отличие от танков или самолетов, подводный объект должен быть вписан в среду, которая невидима, но ощутима. <strong>Правильная передача атмосферы</strong> глубины превращает статичную модель в динамичную сцену, застывшую во времени.</p>
+
+<p>Многие моделисты боятся браться за <em>waterline</em> сцены, опасаясь сложностей с имитацией воды и волнения. Однако именно эта сложность делает готовую работу такой эффектной. <mark>Главный секрет реалистичной диоремы — это не сама лодка, а переходная зона между корпусом и водой.</mark> Если этот стык выполнен грамотно, мозг зрителя сам "дорисовывает" остальное.</p>
+
+<p>В этой статье мы разберем все этапы создания морской экспозиции, от выбора исторического контекста до финальной заливки смолой. Вам не обязательно быть профессиональным художником, чтобы создать достойную работу, но знание <strong>базовых принципов композиции</strong> здесь критически важно.</p>
+
+<h2 id="выбор-исторической-эпохи-и-сценария">Выбор исторической эпохи и сценария</h2>
+
+<p>Прежде чем купить первую банку краски, необходимо четко определить, какую именно историю вы хотите рассказать. Диорама — это всегда <strong>нарратив</strong>, застывший момент. Будет ли это напряженная атака немецкой <em>U-boat</em> времен Второй мировой войны или мирный выход советской АПЛ проекта 641 в штормовом Баренцевом море? От ответа на этот вопрос зависит выбор масштаба и цветовой гаммы.</p>
+
+<p>Для новичков рекомендуется выбирать сцены с минимальным количеством объектов, но с выразительным действием. Например, лодка, идущая полным надводным ходом, создает меньше проблем с имитацией воды, чем всплывающая субмарина с брызгами и пеной. <strong>Историческая достоверность</strong> здесь играет ключевую роль: изучите архивные фотографии именно этого типа кораблей в интересующий вас период.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не смешивайте элементы разных эпох. Установка радара холодной войны на дизель-электрическую лодку 1942 года — грубая ошибка, которая сразу бросится в глаза знающему человеку.</p>
+</blockquote>
+
+<p>Сценарий диктует состояние моря. Шторм требует сложной лепки волн и брызг, тогда как штиль позволяет сосредоточиться на отражениях и деталях палубы. Подумайте также о времени суток: рассвет или закат дадут возможность использовать <strong>теплые тона</strong> в окраске неба и воды, что выгодно выделит серый корпус лодки.</p>
+
+<h2 id="определение-масштаба-и-выбор-модели">Определение масштаба и выбор модели</h2>
+
+<p>Масштаб диорамы напрямую влияет на детализацию и занимаемое пространство. Наиболее популярными для морских тем являются масштабы 1:350 и 1:700. В масштабе <em>1:350</em> уже видны отдельные леерные стойки и фигуры людей, что позволяет создавать очень живые сцены. Однако такая лодка займет значительную часть стола или полки.</p>
+
+<p>Масштаб 1:700 более компактен и позволяет разместить в одной сцене несколько объектов, например, лодку в сопровождении эскорта или в порту. Для больших атомных подводных крейсеров часто выбирают масштаб 1:700 или даже 1:1000, так как в 350-м они становятся гигантскими. <strong>Совместимость моделей</strong> разных производителей в одном масштабе может варьироваться, поэтому проверяйте размеры перед покупкой.</p>
+
+<div class="poll-widget" id="poll-803767fb"><div class="poll-widget-question">📊 Какой масштаб вы предпочитаете для морских диорам?</div><div class="poll-widget-option" data-poll="803767fb" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">1:350 (крупный план)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="803767fb" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">1:700 (стандарт флота)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="803767fb" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">1:1000 (стратегический)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="803767fb" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">1:144 (редкий крупный)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>При выборе конкретной модели-основы обращайте внимание на качество расшивки и наличие фото травленых деталей в комплекте. Современные модели от таких брендов, как <em>Tamiya</em>, <em>Trumpeter</em> или <em>Revell</em>, часто не требуют сложной доработки, но для диорамы уровня "мастер" все равно потребуется <strong>замена швов</strong> и добавление мелочевки.</p>
+
+<h2 id="подготовка-основания-и-ландшафта">Подготовка основания и ландшафта</h2>
+
+<p>Основание диорамы — это фундамент вашей истории. Оно должно быть достаточно прочным, чтобы выдержать вес воды (если используется смола) и самой модели. Традиционно используются деревянные планшетки или плотный пенопласт, обшитый фанерой. Толщина основания должна учитывать глубину "погружения" лодки.</p>
+
+<p>Ландшафт под водой (если диорама прозрачная или срезанная) или поверхность дна (для сцен всплытия/погружения) требуют тщательной проработки. Песок, камни, водоросли — все это создает объем. Используйте <strong>акриловые грунты</strong> и текстурные пасты для создания рельефа дна перед заливкой имитации воды.</p>
+
+<div class="checklist-block"><h4>☑️ Подготовка основания</h4><label class="check-item"><input type="checkbox"><span>Выбрать прочную фанерную основу:Зашкурить и обезжирить поверхность:Нанести грунт для адгезии:Разметить границы воды и суши</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 1</div></div>
+
+<p>Если вы делаете сцену с частичным погружением, важно правильно рассчитать ватерлинию. Она не бывает идеально прямой, особенно если лодка идет на волнении. <strong>Динамика движения</strong> должна читаться в наклонах корпуса и форме создаваемого буруна.</p>
+
+<h2 id="техники-имитации-водной-поверхности">Техники имитации водной поверхности</h2>
+
+<p>Самый сложный и важный этап — создание воды. Существует несколько основных материалов: двухкомпонентные эпоксидные смолы, специальные гели для моделизма и акриловые лаки. Эпоксидная смола дает наиболее реалистичный эффект глубины и прозрачности, но требует времени на застывание и аккуратности при работе.</p>
+
+<p>Для имитации ряби и мелких волн часто используют густые гели, которые наносятся мастихином. Крупные волны лепятся из пенопласта или формируются слоями застывающей смолы. <strong>Многослойность</strong> — ключ к успеху: сначала создается базовый уровень, затем добавляются волны, и только в конце — белая пена и брызги.</p>
+
+<table>
+<thead>
+<tr>
+<th>Материал</th>
+<th>Время высыхания</th>
+<th>Эффект</th>
+<th>Сложность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Эпоксидная смола</td>
+<td>24-48 часов</td>
+<td>Глубина, стекло</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Модельный гель</td>
+<td>12-24 часа</td>
+<td>Рябь, волны</td>
+<td>Средняя</td>
+</tr>
+<tr>
+<td>Акриловый лак</td>
+<td>2-4 часа</td>
+<td>Блеск, мокрый эффект</td>
+<td>Низкая</td>
+</tr>
+<tr>
+<td>Силиконовый герметик</td>
+<td>24 часа</td>
+<td>Крупные брызги</td>
+<td>Средняя</td>
+</tr>
+</tbody>
+</table>
+
+<p>Не забывайте про цвет воды. В открытом океане она синяя, у берегов — зеленоватая или мутная. Подкрашивание основы или самих слоев смолы <strong>масляными красками</strong> или специализированными пигментами поможет добиться нужного оттенка.</p>
+
+<h2 id="покраска-и-детализация-корпуса">Покраска и детализация корпуса</h2>
+
+<p>Подводная лодка в диореме часто выглядит иначе, чем просто модель на подставке. Здесь важнее общий силуэт и читаемость деталей с расстояния. Используйте технику <strong>модуляции</strong> или пост-шейдинг, чтобы выделить объемы корпуса. Серый цвет на море часто кажется более светлым из-за отражения неба.</p>
+
+<p>Особое внимание уделите ватерлинии и подводной части. На реальной лодке ниже ватерлинии всегда есть обрастание, ржавчина и следы эксплуатации. Имитация <em>ракушек</em> и водорослей добавит реализма. Используйте сухую кисть с темными и светлыми оттенками для выделения клепки и листов обшивки.</p>
+
+<details class="faq-item"><summary>Секрет реалистичной ржавчины</summary><div class="faq-answer"><p>Для создания потеков ржавчины используйте разбавленную масляную краску цвета жженой сиены. Нанесите каплю у края детали и дайте стечь вниз по вертикальной поверхности.</p></div></details>
+
+<p>Детализация палубных механизмов, перископов и антенн должна быть выполнена до установки лодки в воду. После монтажа в смолу доступ к нижней части корпуса будет невозможен. <strong>Фототравление</strong> здесь творит чудеса, превращая грубый пластик в тонкий металл.</p>
+
+<h2 id="финальная-сборка-и-эффекты-погоды">Финальная сборка и эффекты погоды</h2>
+
+<p>Финальный этап — это интеграция всех элементов. Лодка должна "лежать" в воде естественно. Если диорама статичная, убедитесь, что уровень воды совпадает с ватерлинией со всех сторон. Если лодка идет с креном, вода должна этот крен поддерживать.</p>
+
+<p>Эффекты погоды, такие как дождь, туман или брызги, оживляют сцену. Брызги делаются из застывших капель клея или специальной пены. Туман можно имитировать ватой или аэрографом с полупрозрачной белой краской на заднем плане. <strong>Атмосферная перспектива</strong> помогает скрыть возможные огрехи в дальних планах диорамы.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При работе с эпоксидной смолой в закрытом помещении обязательно используйте респиратор и обеспечьте мощную вентиляцию. Пары смолы токсичны до полной полимеризации.</p>
+</blockquote>
+
+<p>Защитите готовую работу от пыли. Диорамы с водой — магниты для пыли, которую потом очень трудно убрать, не повредив мелкие детали. Лучше всего сразу предусмотреть <strong>защитный купол</strong> или витрину.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте старый фен для ускорения застывания верхних слоев геля-воды, но держите его на расстоянии не менее 30 см, чтобы не создать пузыри или рябь.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Какую смолу лучше выбрать для новичка?</summary>
+<p>Для начала попробуйте специальные модельные имитаторы воды на водной основе или акриловые гели. Они менее токсичны, легче смываются и прощают ошибки. Эпоксидную смолу используйте, когда наберетесь опыта в работе с пропорциями и временем жизни смеси.</p>
+</details>
+
+<details>
+<summary>Можно ли сделать диораму без использования реальных жидкостей?</summary>
+<p>Да, существуют техники "сухой воды", где волны и поверхность имитируются слоями окрашенного прозрачного пластика, акрила или даже застывшего горячего клея. Это сложнее в исполнении, но избавляет от проблем с весом и пылью.</p>
+</details>
+
+<details>
+<summary>Как закрепить лодку в смоле, чтобы она не всплыла?</summary>
+<p>Используйте скрытый каркас из проволоки или деревянных брусков, который приклеивается ко дну основы и временно фиксирует лодку на нужной глубине до застывания первого слоя смолы. После полимеризации каркас можно удалить или оставить внутри.</p>
+</details>
+
+<details>
+<summary>Где брать референсы для подводных лодок?</summary>
+<p>Лучшие источники — специализированные форумы моделистов, книги из серии "Warship" или "Naval Weapons", а также рассекреченные фотографии с архивных сайтов военно-морских флотов. Обращайте внимание на тени и блики на фото.</p>
+</details>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Успех диорамы зависит от баланса между технической точностью модели и художественной выразительностью окружающей среды.</p></div></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#выбор-исторической-эпохи-и-сценария">Выбор исторической эпохи и сценария</a></li><li><a href="#определение-масштаба-и-выбор-модели">Определение масштаба и выбор модели</a></li><li><a href="#подготовка-основания-и-ландшафта">Подготовка основания и ландшафта</a></li><li><a href="#техники-имитации-водной-поверхности">Техники имитации водной поверхности</a></li><li><a href="#покраска-и-детализация-корпуса">Покраска и детализация корпуса</a></li><li><a href="#финальная-сборка-и-эффекты-погоды">Финальная сборка и эффекты погоды</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-sdelat-nosovoj-tent-na-lodku-pvkh-svoimi-rukami.html" class="related-card">Носовой тент на лодку ПВХ своими руками: чертежи, раскрой, пошив</a></li><li><a href="/articles/s/st/steklo-dlya-lodki-svoimi-rukami.html" class="related-card">Стекло для лодки своими руками: выбор материала и установка</a></li><li><a href="/articles/l/lo/lodochnyj-elektromotor-iz-startera.html" class="related-card">Лодочный электромотор из стартера своими руками: чертежи и схема</a></li><li><a href="/articles/p/pr/proekt-lodki-raduga-34.html" class="related-card">Проект лодки Радуга 34: чертежи, характеристики и постройка</a></li><li><a href="/articles/s/st/stojka-dlya-lodochnogo-motora-chertezh-s-razmerami.html" class="related-card">Стойка для лодочного мотора: чертежи с размерами своими руками</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kak-sdelat-nosovoj-tent-na-lodku-pvkh-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Носовой тент на лодку ПВХ своими руками: чертежи, раскрой, пошив</span><span class="related-bottom-desc">Пошаговая инструкция: как сшить носовой тент на лодку ПВХ самостоятельно. Выбор ткани, построение вы</span></a><a href="/articles/s/st/steklo-dlya-lodki-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Стекло для лодки своими руками: выбор материала и установка</span><span class="related-bottom-desc">Как сделать стекло для лодки своими руками. Выбор оргстекла, триплекса, расчет толщины. Пошаговая ин</span></a><a href="/articles/l/lo/lodochnyj-elektromotor-iz-startera.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный электромотор из стартера своими руками: чертежи и схема</span><span class="related-bottom-desc">Подробная инструкция по созданию лодочного электромотора из автомобильного стартера. Схемы, подбор в</span></a><a href="/articles/p/pr/proekt-lodki-raduga-34.html" class="related-bottom-card"><span class="related-bottom-title">Проект лодки Радуга 34: чертежи, характеристики и постройка</span><span class="related-bottom-desc">Подробный разбор проекта Радуга 34. Чертежи, схемы раскроя, расчет плавучести и нюансы сборки стекло</span></a><a href="/articles/s/st/stojka-dlya-lodochnogo-motora-chertezh-s-razmerami.html" class="related-bottom-card"><span class="related-bottom-title">Стойка для лодочного мотора: чертежи с размерами своими руками</span><span class="related-bottom-desc">Подробные чертежи и размеры стойки для лодочного мотора. Инструкция по сборке надежного стенда из пр</span></a><a href="/articles/c/ch/chertezhi-alyuminievoj-lodki-dlya-samostoyatelnoj-postrojki.html" class="related-bottom-card"><span class="related-bottom-title">Чертежи алюминиевой лодки своими руками: схемы и расчеты</span><span class="related-bottom-desc">Подробный гид по выбору чертежей для постройки алюминиевой лодки. Схемы раскроя, выбор сплава и техн</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

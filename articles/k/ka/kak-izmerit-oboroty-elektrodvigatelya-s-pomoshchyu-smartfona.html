@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Как измерить обороты электродвигателя с помощью смартфона: точные методы — ЛодкаМастер</title>
+    <meta name="description" content="Подробная инструкция по замеру RPM электродвигателя через мобильное приложение, оптический тахометр и анализ звуковой частоты без покупки дорогого оборудования.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/k/ka/kak-izmerit-oboroty-elektrodvigatelya-s-pomoshchyu-smartfona.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Как измерить обороты электродвигателя с помощью смартфона: точные методы">
+    <meta property="og:description" content="Подробная инструкция по замеру RPM электродвигателя через мобильное приложение, оптический тахометр и анализ звуковой частоты без покупки дорогого оборудования.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Как измерить обороты электродвигателя с помощью смартфона: точные методы</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Измерение оборотов электродвигателя с помощью смартфона: профессиональный подход</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принципы-работы-мобильных-тахометров-и-физические-основы">Принципы работы мобильных тахометров и физические основы</a></li><li><a href="#подготовка-двигателя-и-маркировка-вала-для-замеров">Подготовка двигателя и маркировка вала для замеров</a></li><li><a href="#оптический-метод-использование-камеры-и-стробоскопа">Оптический метод: использование камеры и стробоскопа</a></li><li><a href="#акустический-анализ-измерение-через-микрофон">Акустический анализ: измерение через микрофон</a></li><li><a href="#выбор-программного-обеспечения-для-android-и-ios">Выбор программного обеспечения для Android и iOS</a></li><li><a href="#интерпретация-данных-и-расчет-скольжения-асинхронных-двигателей">Интерпретация данных и расчет скольжения асинхронных двигателей</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Ситуация, когда под рукой не оказывается специализированного измерительного оборудования, а узнать частоту вращения вала электродвигателя необходимо срочно, знакома многим мастерам и энтузиастам. Современные мобильные устройства обладают вычислительной мощностью и сенсорами, которые позволяют превратить смартфон в полноценный измерительный прибор с минимальной погрешностью. Использование встроенного микрофона для анализа звуковой волны или камеры высокой четкости для оптического метода дает результаты, сопоставимые с показаниями промышленных тахометров.</p>
+
+<p>Точность замеров напрямую зависит от правильной подготовки поверхности вала и выбора подходящего программного обеспечения, способного интерпретировать полученные данные. <strong>Частота вращения</strong> является критическим параметром для диагностики состояния подшипников, оценки нагрузки и настройки частотных преобразователей. В этой статье мы разберем проверенные методики, позволяющие получить достоверные данные о работе механизма, используя лишь ресурсы вашего мобильного гаджета.</p>
+
+<p>Стоит отметить, что безопасность при работе с вращающимися механизмами всегда стоит на первом месте, независимо от используемого инструмента. Даже если вы не касаетесь двигателя физически, приближение к открытым вращающимся частям требует концентрации и понимания физических процессов. <em>Android</em> и <em>iOS</em> предлагают различные алгоритмы обработки сигналов, которые мы научимся применять эффективно.</p>
+
+<h2 id="принципы-работы-мобильных-тахометров-и-физические-основы">Принципы работы мобильных тахометров и физические основы</h2>
+
+<p>Основой любого метода измерения частоты вращения является преобразование периодического события в электрический сигнал, который затем оцифровывается процессором. В случае со смартфоном мы можем использовать два основных физических явления: прерывание светового потока или периодические звуковые колебания. Оптический метод базируется на стробоскопическом эффекте, когда частота вспышек камеры или экрана синхронизируется с частотой вращения метки на валу.</p>
+
+<p>Акустический метод, в свою очередь, опирается на анализ спектра звука, издаваемого работающим двигателем. <strong>Звуковая волна</strong>, генерируемая лопастями вентилятора или зубьями шестерен, имеет четко выраженную основную частоту, кратную скорости вращения. Микрофон смартфона улавливает эти колебания, а приложение выполняет быстрое преобразование Фурье (FFT) для выделения доминирующей частоты из общего шумового фона.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Акустический метод может давать погрешности в условиях сильного промышленного шума или если двигатель имеет конструктивные особенности, гасящие звуковые колебания. Всегда перепроверяйте данные оптическим способом при возможности.</p>
+</blockquote>
+
+<p>Для корректной работы алгоритмов необходимо понимать разницу между частотой вращения вала и частотой следования импульсов. Если на валу наклеена одна метка, то частота импульсов равна частоте вращения. Однако, если вы используете звуковой метод и у вентилятора 5 лопастей, то частота звукового сигнала будет в 5 раз выше частоты вращения вала. <strong>Коэффициент пересчета</strong> в данном случае является критически важным параметром.</p>
+
+<div class="poll-widget" id="poll-7167828b"><div class="poll-widget-question">📊 Какой метод измерения вы планируете использовать?</div><div class="poll-widget-option" data-poll="7167828b" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Оптический (через камеру)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="7167828b" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Акустический (через микрофон)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="7167828b" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Вибрационный (через акселерометр)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="7167828b" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Мне нужно просто узнать теорию</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="подготовка-двигателя-и-маркировка-вала-для-замеров">Подготовка двигателя и маркировка вала для замеров</h2>
+
+<p>Качество подготовки поверхности вала определяет точность оптических измерений. Гладкий металлический вал часто обладает высокой отражающей способностью, что может приводить к ложным срабатываниям датчика освещенности или размытию изображения на камере. Для устранения этого эффекта необходимо создать контрастную метку, которая будет четко выделяться на общем фоне при вращении.</p>
+
+<p>Идеальным материалом для маркировки служит матовая черная изолента или маркер, если вал светлый, и белая краска или светоотражающая наклейка, если вал темный. <strong>Контрастность метки</strong> должна быть максимальной, чтобы приложение могло уверенно фиксировать момент прохождения метки через зону сканирования. Размер метки также имеет значение: слишком маленькая может быть не замечена алгоритмом, а слишком большая — создавать эффект смазывания.</p>
+
+<div class="checklist-block"><h4>☑️ Подготовка к замеру</h4><label class="check-item"><input type="checkbox"><span>Очистить вал от масла и грязи</span></label><label class="check-item"><input type="checkbox"><span>Нанести контрастную метку (белую или черную)</span></label><label class="check-item"><input type="checkbox"><span>Проверить надежность крепления метки</span></label><label class="check-item"><input type="checkbox"><span>Обеспечить доступ к валу для камеры</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>При нанесении метки убедитесь, что она не нарушает балансировку вала, особенно если двигатель работает на высоких оборотах. Для маломощных двигателей весом до 1 кВт это не критично, но для высокоскоростных шпинделей дисбаланс может вызвать вибрацию, исказившую результаты. Используйте тонкие полоски материала, располагая их строго вдоль оси вращения или поперек, в зависимости от геометрии вала.</p>
+
+<h2 id="оптический-метод-использование-камеры-и-стробоскопа">Оптический метод: использование камеры и стробоскопа</h2>
+
+<p>Оптический метод является наиболее точным среди мобильных решений и не требует прямого контакта с оборудованием. Существует два подхода: использование экрана смартфона в качестве стробоскопа и использование высокоскоростной видеозаписи. В первом случае на экран выводится мигающее изображение определенной частоты, которую вы регулируете до тех пор, пока метка на валу не станет визуально неподвижной.</p>
+
+<p>При использовании видеозаписи необходимо включить режим замедленной съемки (<em>Slow Motion</em>) с максимальной доступной частотой кадров, например, 240 или 960 FPS. Записав несколько секунд вращения, вы можете покадрово проанализировать видео и посчитать количество полных оборотов за известное время. <strong>Временная метка</strong> в видеоредакторе позволяет достичь высокой точности подсчета.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+<th>Влияние на точность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Частота кадров (FPS)</td>
+<td>Количество кадров в секунду</td>
+<td>Чем выше FPS, тем меньше погрешность</td>
+</tr>
+<tr>
+<td>Контраст метки</td>
+<td>Разница яркости метки и фона</td>
+<td>Критично для автофокуса и трекинга</td>
+</tr>
+<tr>
+<td>Расстояние до вала</td>
+<td>Дистанция от камеры до объекта</td>
+<td>Влияет на разрешение и размытие</td>
+</tr>
+<tr>
+<td>Освещение</td>
+<td>Внешний свет или вспышка</td>
+<td>Недостаток света смазывает кадр</td>
+</tr>
+</tbody>
+</table>
+
+<p>Некоторые приложения используют камеру для подсчета проходов метки в реальном времени, анализируя изменение яркости пикселей в определенной зоне кадра. Этот метод требует хорошей освещенности и стабильного положения смартфона. <strong>Стабилизация</strong> устройства в этот момент обязательна, так как дрожание рук вносит шум в видеопоток.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте штатив или зафиксируйте смартфон на неподвижной поверхности рядом с двигателем, чтобы исключить дрожание камеры и получить четкое изображение для анализа.</p></div>
+
+<h2 id="акустический-анализ-измерение-через-микрофон">Акустический анализ: измерение через микрофон</h2>
+
+<p>Акустический метод удобен тем, что позволяет проводить замеры на расстоянии и не требует нанесения меток на вал, однако он более чувствителен к внешним условиям. Для реализации этого способа вам потребуется приложение-анализатор спектра (FFT анализатор), которое отображает амплитудно-частотную характеристику звука в реальном времени. На спектрограмме вы увидите пики, соответствующие частоте вращения и ее гармоникам.</p>
+
+<p>Основная сложность заключается в том, чтобы выделить полезный сигнал из общего шума. Двигатель издает звук не только из-за вращения вала, но и из-за магнитного гудения обмоток (частота сети 50/100 Гц) и работы подшипников. <strong>Основная гармоника</strong> вращения обычно является самой мощной после сетевой частоты, но не всегда самой низкочастотной.</p>
+
+<p>Для повышения точности рекомендуется подносить микрофон ближе к кожуху вентилятора или редуктору, где звук вращения наиболее выражен. Если двигатель оснащен крыльчаткой охлаждения, звук ее лопастей будет доминирующим. Зная количество лопастей <em>N</em>, вы можете рассчитать обороты по формуле: <code>RPM = (Частота_пика / N) * 60</code>.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Не направляйте микрофон смартфона непосредственно в выхлопные отверстия горячего двигателя или в зону возможного разлета деталей при разрушении механизма.</p>
+</blockquote>
+
+<h2 id="выбор-программного-обеспечения-для-android-и-ios">Выбор программного обеспечения для Android и iOS</h2>
+
+<p>Рынок мобильных приложений предлагает множество решений, но не все они подходят для технических измерений. Для платформы <em>Android</em> отличные результаты показывают приложения вроде "Physics Toolbox Sensor Suite" или специализированные "Tachometer" с поддержкой FFT. В экосистеме <em>iOS</em> стоит обратить внимание на "Spectroid" (аналоги) или "Phyphox", которые предоставляют доступ к сырым данным сенсоров.</p>
+
+<p>При выборе программы обращайте внимание на наличие ручных настроек чувствительности и возможности калибровки. Автоматические алгоритмы часто ошибаются, принимая фоновый шум за полезный сигнал. <strong>Ручная настройка</strong> порога срабатывания позволяет отсечь тихие посторонние звуки и сосредоточиться на работе двигателя.</p>
+
+<details class="faq-item"><summary>Секреты настройки чувствительности</summary><div class="faq-answer"><p>Если приложение показывает скачущие значения, попробуйте заклеить ненужные микрофоны (если их несколько) кусочком пластилина, оставив только один, направленный на источник звука.</p></div></details>
+
+<p>Также существуют приложения, использующие виброметр, прикладывая телефон непосредственно к корпусу двигателя (только для низкочастотных вибраций и при соблюдении мер безопасности). Этот метод менее точен для высоких оборотов, но позволяет оценить общее состояние подшипниковых узлов по характеру вибрации.</p>
+
+<h2 id="интерпретация-данных-и-расчет-скольжения-асинхронных-двигателей">Интерпретация данных и расчет скольжения асинхронных двигателей</h2>
+
+<p>Получив значение частоты вращения, важно правильно интерпретировать его в контексте типа двигателя. Для асинхронных электродвигателей характерно явление скольжения, когда реальная скорость ротора всегда меньше синхронной скорости магнитного поля. Синхронная скорость зависит от частоты сети и количества пар полюсов: для 50 Гц это 3000, 1500, 1000 об/мин и так далее.</p>
+
+<p>Если ваш смартфон показал значение, например, 1440 об/мин, то речь идет о четырехполюсном двигателе с номинальной скоростью 1500 об/мин. Разница в 60 об/мин — это и есть <strong>скольжение</strong>, которое составляет около 4%. Понимание этого принципа позволяет сразу определить, сколько пар полюсов имеет двигатель, даже если шильдик не читается.</p>
+
+<p>Для двигателей постоянного тока или коллекторных моторов такая жесткая привязка к частоте сети отсутствует, и их скорость регулируется напряжением. В этом случае измеренное значение просто отражает текущий режим работы. Сравнение измеренных оборотов с паспортными данными (если они известны) позволяет судить о нагрузке на валу: сильное падение оборотов под нагрузкой может свидетельствовать о проблемах с питанием или механическом заклинивании.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Знание номинальной синхронной скорости (3000, 1500, 1000 об/мин) позволяет мгновенно оценить процент скольжения и диагностировать перегрузку двигателя.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли измерить обороты без нанесения меток на вал?</summary>
+<p>Да, это возможно с помощью акустического метода, анализируя звук лопастей вентилятора или зубьев шестерен, либо используя метод видеосъемки с последующим покадровым просмотром естественных дефектов поверхности вала.</p>
+</details>
+
+<details>
+<summary>Какова максимальная погрешность измерения смартфоном?</summary>
+<p>При правильном использовании оптического метода погрешность составляет менее 1%, однако акустический метод в шумном помещении может давать ошибку до 5-10% из-за сложности выделения полезного сигнала.</p>
+</details>
+
+<details>
+<summary>Подойдет ли обычный диктофон для записи звука?</summary>
+<p>Сам по себе диктофон не покажет обороты, он лишь запишет аудиофайл. Вам потребуется дополнительно проанализировать запись в спектральном редакторе на компьютере или в специализированном приложении на телефоне.</p>
+</details>
+
+<details>
+<summary>Влияет ли частота обновления экрана на точность стробоскопа?</summary>
+<p>Да, стандартная частота 60 Гц может создавать ограничения для измерения очень высоких скоростей, вызывая эффект наложения частот. Для точных замеров лучше использовать приложения, работающие напрямую с камерой, а не с экраном.</p>
+</details>
+
+<details>
+<summary>Безопасно ли держать телефон рядом с работающим двигателем?</summary>
+<p>Необходимо соблюдать дистанцию, чтобы вращающиеся части не задели устройство, а также избегать зон с высокой температурой и сильным электромагнитным полем, которое теоретически может повлиять на работу электроники телефона.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принципы-работы-мобильных-тахометров-и-физические-основы">Принципы работы мобильных тахометров и физические основы</a></li><li><a href="#подготовка-двигателя-и-маркировка-вала-для-замеров">Подготовка двигателя и маркировка вала для замеров</a></li><li><a href="#оптический-метод-использование-камеры-и-стробоскопа">Оптический метод: использование камеры и стробоскопа</a></li><li><a href="#акустический-анализ-измерение-через-микрофон">Акустический анализ: измерение через микрофон</a></li><li><a href="#выбор-программного-обеспечения-для-android-и-ios">Выбор программного обеспечения для Android и iOS</a></li><li><a href="#интерпретация-данных-и-расчет-скольжения-асинхронных-двигателей">Интерпретация данных и расчет скольжения асинхронных двигателей</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-otkleit-privalnyj-brus-na-lodke-pvkh.html" class="related-card">Как отклеить привальный брус на лодке ПВХ: пошаговая инструкция</a></li><li><a href="/articles/s/sk/skhema-lodochnogo-motora-yamakha-99.html" class="related-card">Схема лодочного мотора Yamaha 9.9: устройство, узлы, ремонт</a></li><li><a href="/articles/k/ka/kak-pomenyat-shesterenku-na-motorchike-shurupoverta.html" class="related-card">Как поменять шестеренку в шуруповерте: полная инструкция</a></li><li><a href="/articles/k/ka/kak-pravilno-kleit-rezinovuyu-lodku.html" class="related-card">Как клеить резиновую лодку: инструкция по ремонту ПВХ</a></li><li><a href="/articles/m/ma/maslo-v-reduktor-dlya-lodochnogo-motora-2-kh-taktnyj.html" class="related-card">Масло в редуктор для лодочного мотора 2 х тактный: выбор и замена</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kak-otkleit-privalnyj-brus-na-lodke-pvkh.html" class="related-bottom-card"><span class="related-bottom-title">Как отклеить привальный брус на лодке ПВХ: пошаговая инструкция</span><span class="related-bottom-desc">Пошаговый ремонт лодки ПВХ: как снять привальный брус без повреждения ткани, чем очистить клей и пра</span></a><a href="/articles/s/sk/skhema-lodochnogo-motora-yamakha-99.html" class="related-bottom-card"><span class="related-bottom-title">Схема лодочного мотора Yamaha 9.9: устройство, узлы, ремонт</span><span class="related-bottom-desc">Подробная схема лодочного мотора Yamaha 9.9. Разбор узлов, устройство карбюратора, системы зажигания</span></a><a href="/articles/k/ka/kak-pomenyat-shesterenku-na-motorchike-shurupoverta.html" class="related-bottom-card"><span class="related-bottom-title">Как поменять шестеренку в шуруповерте: полная инструкция</span><span class="related-bottom-desc">Подробное руководство по замене шестеренки редуктора шуруповерта. Разборка, смазка, выбор запчастей </span></a><a href="/articles/k/ka/kak-pravilno-kleit-rezinovuyu-lodku.html" class="related-bottom-card"><span class="related-bottom-title">Как клеить резиновую лодку: инструкция по ремонту ПВХ</span><span class="related-bottom-desc">Подробная инструкция: как правильно клеить резиновую лодку своими руками. Выбор клея, подготовка пов</span></a><a href="/articles/m/ma/maslo-v-reduktor-dlya-lodochnogo-motora-2-kh-taktnyj.html" class="related-bottom-card"><span class="related-bottom-title">Масло в редуктор для лодочного мотора 2 х тактный: выбор и замена</span><span class="related-bottom-desc">Полный гид по выбору масла в редуктор для лодочного мотора 2 х тактный. Сроки замены, вязкость GL-5,</span></a><a href="/articles/t/tr/trosa-gaz-revers-dlya-lodochnykh-motorov-merkuri.html" class="related-bottom-card"><span class="related-bottom-title">Троса газ реверс Меркури: выбор, замена и настройка</span><span class="related-bottom-desc">Полный гид по тросам управления Mercury. Как выбрать, заменить и настроить тросы газ-реверс для лодо</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

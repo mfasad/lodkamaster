@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Обкатка 4-тактного мотора с воздушным охлаждением: полный гид — ЛодкаМастер</title>
+    <meta name="description" content="Подробное руководство по обкатке 4-тактного лодочного мотора с воздушным охлаждением. Режимы работы, смеси, интервалы замены масла и таблица нагрузок.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/o/ob/obkatka-4-kh-taktnogo-dvigatelya-s-vozdushnym-okhlazhdeniem.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Обкатка 4-тактного мотора с воздушным охлаждением: полный гид">
+    <meta property="og:description" content="Подробное руководство по обкатке 4-тактного лодочного мотора с воздушным охлаждением. Режимы работы, смеси, интервалы замены масла и таблица нагрузок.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Обкатка 4-тактного мотора с воздушным охлаждением: полный гид</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Правильная обкатка 4-тактного двигателя с воздушным охлаждением</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#физика-процесса-почему-нельзя-сразу-давать-полный-газ">Физика процесса: почему нельзя сразу давать полный газ</a></li><li><a href="#подготовка-к-первому-запуску-топливо-и-масло">Подготовка к первому запуску: топливо и масло</a></li><li><a href="#режимы-работы-двигателя-в-период-обкатки">Режимы работы двигателя в период обкатки</a></li><li><a href="#специфика-обкатки-на-суше-и-на-воде">Специфика обкатки на суше и на воде</a></li><li><a href="#контроль-температурного-режима-и-охлаждения">Контроль температурного режима и охлаждения</a></li><li><a href="#завершение-обкатки-и-первое-техническое-обслуживание">Завершение обкатки и первое техническое обслуживание</a></li><li><a href="#частые-ошибки-при-обкатке-лодочных-моторов">Частые ошибки при обкатке лодочных моторов</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Запуск нового <strong>лодочного мотора</strong> — это всегда волнительный момент для владельца, знаменующий начало эксплуатации надежного помощника на воде. Однако именно первые часы работы определяют, насколько долго и эффективно будет служить силовая установка в будущем. Двигатели внутреннего сгорания, особенно с воздушным охлаждением, требуют особого внимания к температурным режимам и трению деталей в начальный период.</p>
+
+<p>Многие ошибочно полагают, что современные технологии производства позволяют сразу выходить на полный газ, но это грубейшая ошибка. <em>Поршневая группа</em>, кольца и подшипники должны притереться друг к другу, образовав идеальную геометрию сопряжения. Если проигнорировать этот этап, можно получить задиры, повышенный расход топлива и потерю компрессии уже в первый сезон.</p>
+
+<p>В этой статье мы детально разберем физику процессов, происходящих внутри агрегата, и составим пошаговый план действий. Вы узнаете, почему <strong>воздушное охлаждение</strong> диктует свои правила игры, отличающиеся от водных систем, и как не допустить фатальных ошибок при первом запуске.</p>
+
+<h2 id="физика-процесса-почему-нельзя-сразу-давать-полный-газ">Физика процесса: почему нельзя сразу давать полный газ</h2>
+
+<p>Внутри нового двигателя поверхности деталей, какими бы гладкими они ни казались, имеют микроскопические неровности. При первом контакте под нагрузкой эти выступы начинают срезаться. Если нагрузка слишком велика, возникает локальный перегрев и схватывание металла, что приводит к необратимым повреждениям. <strong>Притирка колец</strong> к стенкам цилиндра — ключевой момент, обеспечивающий герметичность камеры сгорания.</p>
+
+<p>Особенность моторов с воздушным охлаждением заключается в их термической инерции. В отличие от водяного охлаждения, где температура стабилизируется быстро благодаря огромной теплоемкости жидкости, здесь нагрев происходит резче. <em>Алюминиевые сплавы</em>, из которых изготовлены блоки цилиндров, расширяются быстрее, чем стальные гильзы или поршни, что меняет зазоры в реальном времени.</p>
+
+<details class="faq-item"><summary>Почему воздушное охлаждение капризнее?</summary><div class="faq-answer"><p>Двигатели с воздушным охлаждением работают при более высоких рабочих температурах и имеют неравномерный нагрев цилиндров (передний греется меньше, задний больше). Это создает дополнительные термические напряжения, которые должны быть компенсированы плавным прогревом.</p></div></details>
+
+<p>Критически важно понимать, что обкатка — это не просто работа на холостых оборотах. Для правильной посадки колец необходимо определенное давление газов в цилиндре, которое достигается только под нагрузкой. Однако эта нагрузка должна быть дозированной и строго соответствовать текущему состоянию <strong>трущихся пар</strong>.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Длительная работа нового 4-тактного мотора на холостом ходу без нагрузки может привести к залеганию поршневых колец и образованию нагара, так как давление в цилиндре недостаточно для их приработки к стенкам.</p>
+</blockquote>
+
+<h2 id="подготовка-к-первому-запуску-топливо-и-масло">Подготовка к первому запуску: топливо и масло</h2>
+
+<p>Фундаментом успешной обкатки является качество используемых технических жидкостей. Для 4-тактных двигателей <strong>моторное масло</strong> выполняет функцию не только смазки, но и теплоотвода, а также защищает детали от коррозии при хранении. В период обкатки в масле будет содержаться повышенное количество металлической стружки, поэтому его свойства должны быть безупречными.</p>
+
+<p>Используйте только те масла, которые рекомендованы производителем в инструкции по эксплуатации (обычно это классификации API SG, SH, SJ или выше). Для двигателей с воздушным охлаждением критически важна термостабильность масла, так как температуры в зоне поршневых колец могут достигать экстремальных значений.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка перед запуском</h4><label class="check-item"><input type="checkbox"><span>Уровень масла в картере проверен по щупу</span></label><label class="check-item"><input type="checkbox"><span>Залито свежее топливо не старше 2 недель</span></label><label class="check-item"><input type="checkbox"><span>Система воздушного охлаждения чиста от пыли</span></label><label class="check-item"><input type="checkbox"><span>Трос газа и переключения передач работают свободно</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Что касается топлива, то здесь действуют строгие правила. Бензин должен быть свежим, без признаков окисления или расслоения смеси (если используется бензин с этанолом). <em>Октановое число</mark> должно строго соответствовать требованиям завода-изготовителя, обычно это АИ-92 или АИ-95. Использование старого топлива может привести к детонации, которая разрушит поршневую группу в первые минуты работы.</p>
+
+<h2 id="режимы-работы-двигателя-в-период-обкатки">Режимы работы двигателя в период обкатки</h2>
+
+<p>Процесс обкатки обычно делится на несколько этапов, каждый из которых имеет свои ограничения по оборотам и времени работы. Первый этап (первые 10 моточасов) является самым щадящим. В этот период рекомендуется работать на оборотах, не превышающих 50% от максимальной мощности. Это позволяет маслу равномерно распределиться по всем узлам.</p>
+
+<p>На втором этапе (с 10 до 20 моточасов) нагрузку можно постепенно увеличивать до 70-80% от максимума. Здесь важно чередовать режимы работы: не держать долго постоянные обороты, а давать кратковременные повышения тяги. Это помогает <strong>поршневым кольцам</strong> занять правильное положение в канавках и прижаться к стенкам цилиндра.</p>
+
+<p>После 20 часов работы двигатель считается прошедшим первичную обкатку, но окончательная притирка может длиться до 50-100 моточасов. В этот период уже допускается работа в режиме полной мощности, но кратковременно. Постоянная работа на «полном газу» все еще не рекомендуется.</p>
+
+<div class="poll-widget" id="poll-0f736aec"><div class="poll-widget-question">📊 Как вы планируете обкатывать мотор?</div><div class="poll-widget-option" data-poll="0f736aec" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Только на воде (реальная нагрузка)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="0f736aec" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">На суше в бочке (холостой ход)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="0f736aec" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Комбинированный метод</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="0f736aec" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Отдам в сервис на обкатку</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p> Если вы проводите обкатку на суше, убедитесь, что двигатель не перегревается. Температура головки цилиндра не должна превышать допустимые пределы, иначе произойдет деформация металла.</p>
+
+<table>
+<thead>
+<tr>
+<th>Этап обкатки</th>
+<th>Наработка (моточасы)</th>
+<th>Макс. нагрузка (%)</th>
+<th>Рекомендуемый режим</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Начальный</td>
+<td>0 – 10</td>
+<td>до 50%</td>
+<td>Переменные обороты, избегание полного газа</td>
+</tr>
+<tr>
+<td>Средний</td>
+<td>10 – 20</td>
+<td>до 80%</td>
+<td>Кратковременные ускорения, работа под нагрузкой</td>
+</tr>
+<tr>
+<td>Завершающий</td>
+<td>20 – 50</td>
+<td>до 100%</td>
+<td>Кратковременный полный газ, выход на глиссирование</td>
+</tr>
+<tr>
+<td>Финишный</td>
+<td>50+</td>
+<td>100%</td>
+<td>Полная эксплуатация, замена масла</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="специфика-обкатки-на-суше-и-на-воде">Специфика обкатки на суше и на воде</h2>
+
+<p>Существует два основных подхода к обкатке: на суше (в бочке или на специальном стенде) и непосредственно на воде. У каждого метода есть свои сторонники и противники, но для 4-тактных моторов с воздушным охлаждением есть важные нюансы. Обкатка на воде считается более естественной, так как двигатель сразу работает под реальной нагрузкой, что способствует лучшей притирке.</p>
+
+<p>При обкатке на суше, особенно в емкости с водой, часто возникает проблема с циркуляцией охлаждающей жидкости (если она есть в помпе) и, главное, с отводом тепла от цилиндров. Водяной пар, вырывающийся из выхлопа, может создавать ложное ощущение нормального температурного режима, тогда как головка двигателя уже перегрета.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При обкатке в бочке обязательно используйте промышленный вентилятор, направленный на цилиндр, или обеспечьте мощный естественный приток воздуха, чтобы имитировать набегающий поток при движении лодки.</p></div>
+
+<p>Если вы выбрали вариант обкатки на воде, следите за температурой <strong>выхлопных газов</em> и общим тепловым режимом. Двигатель с воздушным охлаждением очень чувствителен к длительным остановкам с работающим мотором. Если лодка остановилась, лучше заглушить двигатель, чтобы избежать теплового удара.</p>
+
+<p>При движении на воде старайтесь варьировать скорость. Не плывите все время с одной скоростью. Разгоняйтесь, затем сбрасывайте газ. Такая «рваная» динамика в разумных пределах полезна для распределения масла и приработки <em>подшипников коленвала</em>.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Никогда не проводите обкатку 4-тактного мотора с воздушным охлаждением в замкнутом помещении или гараже без мощной вытяжной вентиляции. Продукты сгорания топлива смертельно опасны для человека.</p>
+</blockquote>
+
+<h2 id="контроль-температурного-режима-и-охлаждения">Контроль температурного режима и охлаждения</h2>
+
+<p>Как уже упоминалось, <strong>воздушное охлаждение</strong> менее эффективно отводит тепло, чем жидкостное, особенно на низких оборотах, когда поток воздуха от вентилятора или набегающей струи слабый. Перегрев — главный враг нового двигателя. Следите за цветом свечи зажигания (он должен быть кирпично-коричневым, но не белым) и отсутствием детонации.</p>
+
+<p>Оребрение цилиндра должно быть всегда чистым. Пыль, пух, грязь или насекомые, забившиеся между ребрами радиатора, мгновенно нарушают теплоотдачу. Перед каждым запуском в период обкатки визуально inspectруйте состояние cooling fins (ребер охлаждения).</p>
+
+<p>В жаркую погоду (+30°C и выше) тепловая нагрузка на двигатель возрастает. В таких условиях рекомендуется сократить время непрерывной работы на высоких оборотах и чаще давать мотору остывать на холостом ходу или в выключенном состоянии. <em>Термическое расширение</em> алюминиевых деталей при сильном нагреве может привести к заклиниванию поршня, если зазоры еще не выбраны правильно.</p>
+
+<h2 id="завершение-обкатки-и-первое-техническое-обслуживание">Завершение обкатки и первое техническое обслуживание</h2>
+
+<p>После того как двигатель отработал положенные 20-50 часов (в зависимости от модели), необходимо провести первое техническое обслуживание. Это обязательная процедура, игнорирование которой аннулирует гарантию. Главным событием становится замена <strong>моторного масла</strong>.</p>
+
+<p>В слитом масле будет содержаться большое количество металлической взвеси — это продукт приработки деталей. Также необходимо заменить масляный фильтр, если он предусмотрен конструкцией вашего мотора. Проверьте натяжение ремней (если есть), состояние свечей зажигания и чистоту воздушного фильтра.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Первая замена масла после обкатки — самый важный этап обслуживания. Не экономьте на этом: старое масло с металлической стружкой работает как абразив, ускоряя износ двигателя.</p></div>
+
+<p>После замены масла можно переходить к нормальной эксплуатации. Однако даже после 50 часов не стоит сразу «выжимать все соки» из мотора. Дайте ему еще несколько баков поработать в щадящем режиме, чтобы новые детали окончательно стабилизировались.</p>
+
+<h2 id="частые-ошибки-при-обкатке-лодочных-моторов">Частые ошибки при обкатке лодочных моторов</h2>
+
+<p>Одной из самых распространенных ошибок является мнение, что «современные моторы не требуют обкатки». Производители часто пишут «предварительная обкатка на заводе», но это касается только проверки работоспособности, а не полной притирки всех узлов. Покупатель, поверивший в «необкатываемость», рискует ресурсом своего <em>лодочного мотора</em>.</p>
+
+<p>Вторая ошибка — использование присадок-молибденов или других «чудо-средств» в период обкатки. В качественном масле уже есть все необходимые пакеты присадок. Добавление посторонней химии может нарушить баланс и замедлить процесс естественной приработки трущихся поверхностей.</p>
+
+<p>Третья ошибка — обкатка только на холостых оборотах. Многие владельцы, боясь повредить мотор, держат его на минимуме. Как было сказано выше, для 4-тактного двигателя это вредно. Кольца не прижимаются к стенкам, происходит закоксовка, и вместо пользы вы наносите вред.</p>
+
+<details>
+<summary>Можно ли использовать синтетическое масло для обкатки?</summary>
+<p>Да, современные синтетические масла для 4-тактных двигателей (с маркировкой FC-W для марина) отлично подходят для обкатки. Они обеспечивают стабильную масляную пленку даже при высоких температурах, что критично для моторов с воздушным охлаждением. Главное — соблюдать вязкость, указанную в мануале (обычно 10W-30 или 10W-40).</p>
+</details>
+
+<details>
+<summary>Что делать, если во время обкатки загорелась лампочка давления масла?</summary>
+<p>Немедленно заглушите двигатель! Лампочка низкого давления масла — критический сигнал. Проверьте уровень масла. Если уровень в норме, запускать мотор нельзя — возможно, неисправен масляный насос или датчик. Продолжение работы приведет к провороту вкладышей и капитальному ремонту.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять свечи после обкатки?</summary>
+<p>Обычно нет, если двигатель работал на правильном топливе и масло не уходит в камеру сгорания. Однако выкрутить свечу и проверить ее цвет (диагностика смеси) после первых 10 часов — очень полезная привычка. Если свеча черная и мокрая — смесь слишком богатая, если белая — бедная или перегрев.</p>
+</details>
+
+<details>
+<summary>Как влияет ethanol в бензине на обкатку?</summary>
+<p>Бензин с содержанием этанола (Е10, Е15) может быть агрессивен к резиновым уплотнителям и карбюраторам старых моделей, а также склонен к впитыванию влаги. Для периода обкатки, когда мотор может простаивать между запусками, лучше использовать свежий бензин с минимальным содержанием спирта или специальные стабилизаторы топлива, чтобы избежать расслоения смеси.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#физика-процесса-почему-нельзя-сразу-давать-полный-газ">Физика процесса: почему нельзя сразу давать полный газ</a></li><li><a href="#подготовка-к-первому-запуску-топливо-и-масло">Подготовка к первому запуску: топливо и масло</a></li><li><a href="#режимы-работы-двигателя-в-период-обкатки">Режимы работы двигателя в период обкатки</a></li><li><a href="#специфика-обкатки-на-суше-и-на-воде">Специфика обкатки на суше и на воде</a></li><li><a href="#контроль-температурного-режима-и-охлаждения">Контроль температурного режима и охлаждения</a></li><li><a href="#завершение-обкатки-и-первое-техническое-обслуживание">Завершение обкатки и первое техническое обслуживание</a></li><li><a href="#частые-ошибки-при-обкатке-лодочных-моторов">Частые ошибки при обкатке лодочных моторов</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/l/lo/lodochnyj-motor-hidea-hd-98-fhs.html" class="related-card">Лодочный мотор Hidea HD 9.8 FHS: обзор, характеристики и отзывы</a></li><li><a href="/articles/l/lo/lodka-pod-5-silnyj-motor.html" class="related-card">Лодка под 5 л.с. мотор: выбор, модели и советы</a></li><li><a href="/articles/m/ma/masla-dlya-lodochnykh-motorov-2-kh-taktnykh.html" class="related-card">Масла для лодочных моторов 2х тактных: выбор, смешивание, рейтинг</a></li><li><a href="/articles/m/ma/maslo-v-nogu-lodochnogo-motora-tokhatsu-98.html" class="related-card">Масло в ногу лодочного мотора Tohatsu 9.8: выбор, замена, ошибки</a></li><li><a href="/articles/k/ka/kakoe-maslo-zalivat-v-lodochnyj-motor-2-taktnyj.html" class="related-card">Какое масло заливать в 2-тактный лодочный мотор: выбор и пропорции</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/l/lo/lodochnyj-motor-hidea-hd-98-fhs.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Hidea HD 9.8 FHS: обзор, характеристики и отзывы</span><span class="related-bottom-desc">Полный обзор лодочного мотора Hidea HD 9.8 FHS. Технические характеристики, особенности 4-тактного д</span></a><a href="/articles/l/lo/lodka-pod-5-silnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Лодка под 5 л.с. мотор: выбор, модели и советы</span><span class="related-bottom-desc">Выбираем лодку под 5 сильный мотор? Полный обзор моделей, совместимость с моторами, советы ГИМС и та</span></a><a href="/articles/m/ma/masla-dlya-lodochnykh-motorov-2-kh-taktnykh.html" class="related-bottom-card"><span class="related-bottom-title">Масла для лодочных моторов 2х тактных: выбор, смешивание, рейтинг</span><span class="related-bottom-desc">Полный гид по маслам для 2х тактных лодочных моторов. Синтетика или минералка? Пропорции смешивания,</span></a><a href="/articles/m/ma/maslo-v-nogu-lodochnogo-motora-tokhatsu-98.html" class="related-bottom-card"><span class="related-bottom-title">Масло в ногу лодочного мотора Tohatsu 9.8: выбор, замена, ошибки</span><span class="related-bottom-desc">Как правильно выбрать и заменить масло в редукторе (ноге) Tohatsu 9.8? Инструкция с фото, ошибки нов</span></a><a href="/articles/k/ka/kakoe-maslo-zalivat-v-lodochnyj-motor-2-taktnyj.html" class="related-bottom-card"><span class="related-bottom-title">Какое масло заливать в 2-тактный лодочный мотор: выбор и пропорции</span><span class="related-bottom-desc">Полный гид по выбору масла для 2-тактных лодочных моторов. Пропорции смешивания, стандарты TC-W3 и J</span></a><a href="/articles/m/ma/maksimalnye-oboroty-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Максимальные обороты лодочного мотора: нормы и регулировка</span><span class="related-bottom-desc">Узнайте, как правильно замерить максимальные обороты лодочного мотора, почему они падают и как регул</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

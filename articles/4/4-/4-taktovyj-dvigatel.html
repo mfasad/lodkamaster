@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>4 тактный двигатель: принцип работы, устройство и обслуживание — ЛодкаМастер</title>
+    <meta name="description" content="Полный гид по 4 тактному двигателю. Устройство, рабочий цикл, сравнение с 2 тактными моторами, правила обкатки и таблица масел для лодочных моторов.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/4/4-/4-taktovyj-dvigatel.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="4 тактный двигатель: принцип работы, устройство и обслуживание">
+    <meta property="og:description" content="Полный гид по 4 тактному двигателю. Устройство, рабочий цикл, сравнение с 2 тактными моторами, правила обкатки и таблица масел для лодочных моторов.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">4 тактный двигатель: принцип работы, устройство и обслуживание</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>4 тактный двигатель: устройство, цикл работы и обслуживание</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-устройство-четырехтактного-цикла">Принцип работы и устройство четырехтактного цикла</a></li><li><a href="#ключевые-системы-двигателя-и-газораспределение">Ключевые системы двигателя и газораспределение</a></li><li><a href="#сравнение-4-такта-против-2-тактов">Сравнение: 4 такта против 2 тактов</a></li><li><a href="#топливо-и-масла-требования-и-стандарты">Топливо и масла: требования и стандарты</a></li><li><a href="#обкатка-нового-двигателя-правила-и-этапы">Обкатка нового двигателя: правила и этапы</a></li><li><a href="#типичные-неисправности-и-диагностика">Типичные неисправности и диагностика</a></li><li><a href="#сезонное-хранение-и-консервация">Сезонное хранение и консервация</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+<p>Современный водный транспорт невозможно представить без надежного источника энергии, и именно <strong>4 тактный двигатель</strong> стал золотым стандартом для большинства владельцев маломерных судов. В отличие от своих предшественников, эти агрегаты обеспечивают тихую работу, высокую топливную эффективность и минимальное воздействие на окружающую среду. Для водномоторника понимание принципов работы такого мотора — это не просто теоретическая база, а ключ к грамотной эксплуатации и своевременному обслуживанию.</p>
+<p>Выбор между двухтактной и четырехтактной схемой часто становится первым и самым сложным решением при покупке <em>лодочного мотора</em>. Четырехтактная схема, или цикл Отто, предполагает, что один рабочий цикл совершается за четыре хода поршня и два полных оборота коленчатого вала. Это фундаментальное отличие кардинально меняет подход к конструкции, смазке и ремонту техники.</p>
+<p>В этой статье мы детально разберем внутреннее устройство мотора, рассмотрим каждый такт работы и обсудим нюансы, которые помогут продлить жизнь вашему двигателю. Вы узнаете, почему такие моторы требуют меньше внимания в повседневной эксплуатации, но более сложны в ремонте.</p>
+
+<h2 id="принцип-работы-и-устройство-четырехтактного-цикла">Принцип работы и устройство четырехтактного цикла</h2>
+<p>Сердцем любого <strong>двигателя внутреннего сгорания</strong> является цилиндро-поршневая группа, где происходит преобразование тепловой энергии сгорающего топлива в механическое движение. В четырехтактном моторе этот процесс строго разделен на четыре последовательные фазы, каждая из которых выполняет критически важную функцию. Понимание этих фаз помогает диагностировать неисправности по звуку и характеру работы агрегата.</p>
+<p>Первый такт называется впуском. В этот момент поршень движется от верхней мертвой точки (ВМТ) вниз, создавая разрежение в цилиндре. <strong>Впускной клапан</strong> открывается, и в цилиндр засасывается свежая топливно-воздушная смесь. Важно отметить, что в карбюраторных моторах за формирование смеси отвечает карбюратор, а в инжекторных — форсунки, распыляющие топливо непосредственно во впускной коллектор или цилиндр.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не пытайтесь регулировать зазоры клапанов на горячем двигателе. Тепловое расширение металла исказит измерения, что приведет к прогару клапанов или потере компрессии после остывания.</p>
+</blockquote>
+
+<p>Второй такт — это сжатие. Оба клапана закрыты, герметизируя камеру сгорания. Поршень движется вверх, сжимая смесь, что приводит к резкому росту температуры и давления. В конце этого такта <strong>свеча зажигания</strong> дает искру, воспламеняющую смесь. Момент зажигания строго регламентирован и зависит от оборотов двигателя.</p>
+<p>Третий такт — рабочий ход. Это единственный момент, когда двигатель вырабатывает энергию. Сгорающие газы расширяются с огромной силой, толкая поршень вниз. Именно это движение через шатун передается на коленчатый вал, заставляя его вращаться. Остальные три такта проходят за счет инерции маховика или энергии других цилиндров в многоцилиндровых моторах.</p>
+<p>Четвертый такт — выпуск. Поршень снова движется вверх, выталкивая отработавшие газы через открытый <strong>выпускной клапан</strong> в выхлопную систему. На этом цикл замыкается, и процесс повторяется. Стабильность этого процесса зависит от синхронизации работы газораспределительного механизма (ГРМ).</p>
+
+<div class="poll-widget" id="poll-61f653af"><div class="poll-widget-question">📊 Какой тип мотора стоит на вашей лодке?</div><div class="poll-widget-option" data-poll="61f653af" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">2 тактный бензиновый</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="61f653af" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">4 тактный бензиновый</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="61f653af" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Электромотор</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="61f653af" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Дизельный мотор</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="ключевые-системы-двигателя-и-газораспределение">Ключевые системы двигателя и газораспределение</h2>
+<p>Надежность четырехтактного мотора во многом зависит от сложной системы газораспределения. В отличие от двухтактников, где окна в цилиндре открываются самим поршнем, здесь за timing (время) открытия клапанов отвечает <strong>газораспределительный вал</strong> (распредвал). Он приводится в движение цепью, ремнем или шестернями от коленчатого вала.</p>
+<p>Система смазки в четырехтактных двигателях кардинально отличается от двухтактных. Здесь масло не смешивается с бензином, а находится в отдельном картере. Специальный масляный насос под давлением подает смазку к трущимся деталям: коренным и шатунным подшипникам, пальцам поршней и паре «кулачок распредвала — толкатель». Это обеспечивает долгий ресурс деталей.</p>
+<p>Система охлаждения также играет критическую роль. Большинство лодочных моторов используют забортную воду, которая прокачивается через рубашку охлаждения с помощью <strong>импеллера</strong> (водяной помпы). Перегрев — главный враг алюминиевых блоков цилиндров, поэтому контроль за струей воды («контролькой») обязателен при каждом запуске.</p>
+
+<ul>
+<li>🔧 <strong>ГРМ:</strong> Обеспечивает своевременный впуск смеси и выпуск газов, требуя периодической проверки натяжения цепи или ремня.</li>
+<li>💧 <strong>Смазка:</strong> Использует чистое моторное масло, которое фильтруется и циркулирует по замкнутому контуру, не сгорая в цилиндре.</li>
+<li>❄️ <strong>Охлаждение:</strong> Термостат регулирует температуру, открывая большой круг циркуляции воды при прогреве мотора.</li>
+</ul>
+
+<p>Особое внимание стоит уделить системе вентиляции картера. При работе двигателя часть газов неизбежно прорывается через поршневые кольца в картер. Если их не удалять, они смешаются с маслом, образуя агрессивную кислотную эмульсию. Современные моторы направляют эти газы обратно во впуск для дожигания.</p>
+
+<details class="faq-item"><summary>Что такое гидроудар и как его избежать?</summary><div class="faq-answer"><p>Гидроудар — это попадание жидкости (воды) в цилиндр двигателя. Поскольку вода несжимаема, при попытке поршня сжать её происходит мгновенная остановка мотора, что часто приводит к поломке шатуна или коленвала. На лодках это случается при резком наборе воды через выхлопное отверстие или при глубоком погружении транца.</p></div></details>
+
+<h2 id="сравнение-4-такта-против-2-тактов">Сравнение: 4 такта против 2 тактов</h2>
+<p>Споры между приверженцами двух типов моторов не утихают годами. Двухтактные двигатели проще конструктивно, легче и дешевле в производстве. Однако их ресурс значительно ниже, а экологичность оставляет желать лучшего, так как часть топлива просто вылетает в выхлопную трубу вместе с маслом.</p>
+<p>Четырехтактные моторы тяжелее и дороже, но они обеспечивают стабильный крутящий момент на низких оборотах, что идеально для троллинга и тяжелых глиссирующих лодок. Отсутствие необходимости смешивать масло с бензином упрощает заправку и снижает риск ошибки оператора.</p>
+<p>Ниже приведена таблица, демонстрирующая ключевые различия, которые помогут вам сделать окончательный выбор при покупке техники.</p>
+
+<table>
+<thead>
+<tr>
+<th>Характеристика</th>
+<th>2 тактный двигатель</th>
+<th>4 тактный двигатель</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Расход топлива</td>
+<td>Высокий (до 30% смеси сгорает впустую)</td>
+<td>Низкий (экономичный режим)</td>
+</tr>
+<tr>
+<td>Уровень шума</td>
+<td>Высокий, звонкий</td>
+<td>Низкий, глухой</td>
+</tr>
+<tr>
+<td>Ресурс до капремонта</td>
+<td>1000–2000 моточасов</td>
+<td>3000–5000+ моточасов</td>
+</tr>
+<tr>
+<td>Вес мотора</td>
+<td>Легче на 15–20%</td>
+<td>Тяжелее из-за сложной конструкции</td>
+</tr>
+<tr>
+<td>Обслуживание</td>
+<td>Простое, но частое</td>
+<td>Сложнее, но реже</td>
+</tr>
+</tbody>
+</table>
+
+<p>Стоит отметить, что современные 4 тактные моторы научились быть достаточно компактными. Использование <em>системы DOHC</em> (два распределительных вала) позволяет оптимизировать наполнение цилиндров, повышая мощность без увеличения объема.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Для длительных прогулок, рыбалки и работы в режиме троллинга 4 тактный мотор является безальтернативным лидером по комфорту и экономичности.</p></div>
+
+<h2 id="топливо-и-масла-требования-и-стандарты">Топливо и масла: требования и стандарты</h2>
+<p>Качество горюче-смазочных материалов напрямую влияет на долговечность <strong>поршневой группы</strong>. Для четырехтактных лодочных моторов необходимо использовать бензин с октановым числом, указанным в инструкции (обычно АИ-92 или АИ-95). Использование топлива с более низким октановым числом может вызвать детонацию, которая разрушает поршни.</p>
+<p>Выбор моторного масла — отдельная наука. В отличие от автомобилей, лодочные моторы часто работают в экстремальных условиях: высокие обороты, риск попадания воды, долгий простой. Масла должны иметь соответствующие допуски, например, <strong>NMMA FC-W</strong>. Это стандарт, разработанный специально для четырехтактных морских двигателей.</p>
+<p>Вязкость масла подбирается в зависимости от климатической зоны. Для умеренного климата наиболее универсальным выбором является <em>10W-30</em> или <em>10W-40</em>. Синтетические основы лучше защищают двигатель при холодном пуске и высоких температурах, предотвращая образование задиров.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не используйте автомобильные масла с энергосберегающими добавками (обозначаются как Energy Conserving на этикетке). Моющие присадки в них могут вызвать обрастание свечей и нагар на клапанах в условиях работы лодочного мотора.</p>
+</blockquote>
+
+<p>Замену масла в четырехтактном моторе рекомендуется проводить каждые 50–100 моточасов или раз в сезон, даже если пробег небольшой. Конденсат, выпадающий внутри картера при перепадах температур, превращается в воду, которая эмульгирует масло, превращая его в «майонез» — субстанцию, не способную смазывать детали.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка перед сезоном</h4><label class="check-item"><input type="checkbox"><span>Проверить уровень и состояние масла</span></label><label class="check-item"><input type="checkbox"><span>Заменить топливный фильтр</span></label><label class="check-item"><input type="checkbox"><span>Проверить состояние свечи зажигания</span></label><label class="check-item"><input type="checkbox"><span>Смазать точки смазки (шприцевание)</span></label><label class="check-item"><input type="checkbox"><span>Проверить импеллер помпы</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="обкатка-нового-двигателя-правила-и-этапы">Обкатка нового двигателя: правила и этапы</h2>
+<p>Новый 4 тактный двигатель требует обязательной обкатки. В процессе притирки поршневые кольца прижимаются к стенкам цилиндра, а все подвижные элементы занимают свои рабочие позиции. Пренебрежение этим этапом сокращает ресурс мотора в разы и может привести к повышенному расходу масла в будущем.</p>
+<p>Процесс обкатки обычно занимает около 10 часов. В первые два часа не рекомендуется превышать 50% от максимальной мощности. Следующие 8 часов можно работать на 70–80% мощности, избегая длительной работы на постоянных оборотах. Важно варьировать нагрузку, чтобы кольца притерлись равномерно по всей поверхности.</p>
+<p>После первых 10 часов обязательно проводится первое ТО. Необходимо заменить моторное масло и масляный фильтр. В масле после обкатки будет содержаться много металлической стружки — это нормальный продукт приработки деталей. Также следует проверить затяжку болтов крепления и состояние свечей.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Во время обкатки старайтесь чаще менять положение дроссельной заслонки, избегая монотонной работы на одном режиме. Это обеспечит равномерную приработку всех поверхностей трения.</p></div>
+
+<h2 id="типичные-неисправности-и-диагностика">Типичные неисправности и диагностика</h2>
+<p>Даже самый надежный <strong>4 тактный мотор</strong> может выйти из строя. Одна из самых частых проблем — отсутствие струи воды из контрольного отверстия. Это свидетельствует о неисправности помпы, засорении водяных каналов или повреждении импеллера. Эксплуатация мотора без охлаждения приведет к перегреву и заклиниванию поршня за считанные минуты.</p>
+<p>Другая распространенная проблема — затрудненный запуск или нестабильная работа на холостом ходу. Часто причина кроется в загрязненных топливных форсунках, свечах зажигания или подсосе воздуха во впускном коллекторе. Диагностика начинается с проверки искры и компрессии в цилиндрах.</p>
+<p>Посторонний стук в двигателе — тревожный сигнал. Глухой стук может указывать на износ шатунных вкладышей, а звонкий — на проблемы с клапанным механизмом или детонацию. При появлении стуков эксплуатацию необходимо немедленно прекратить.</p>
+<p>Сложности с электроникой также не редкость. Датчики положения дроссельной заслонки (<em>TPS</em>), датчики температуры и давления масла могут выходить из строя, переводя двигатель в аварийный режим. Для точной диагностики современных инжекторных моторов требуется подключение сканера.</p>
+
+<details class="faq-item"><summary>Почему двигатель не развивает полные обороты?</summary><div class="faq-answer"><p>Причин может быть несколько: загрязненный топливный фильтр, низкооктановое топливо, неправильно установленный угол опережения зажигания или зарастание ракушками дейдвуда, создающее сопротивление винту.</p></div></details>
+
+<h2 id="сезонное-хранение-и-консервация">Сезонное хранение и консервация</h2>
+<p>Правильная консервация на зиму — залог успешного запуска весной. Основная задача — защитить двигатель от коррозии и замерзания остатков воды. Первым делом необходимо слить всю воду из системы охлаждения. Для этого мотор снимают с лодки или устанавливают в вертикальное положение.</p>
+<p>Затем рекомендуется обработать внутренние полости цилиндров консервантом. Для этого свечу выкручивают, брызгают немного масла в цилиндр и несколько раз прокручивают стартер, распределяя масляную пленку по стенкам. После этого свечу закручивают обратно.</p>
+<p>Топливную систему лучше законсервировать, добавив в бак стабилизатор топлива и выработав его остатки, либо полностью опустошив систему. Открытые металлические части, такие как дейдвуд и крепежные болты, следует смазать специальной смазкой для защиты от влаги.</p>
+
+<details>
+<summary>Как правильно хранить лодочный мотор зимой?</summary>
+<p>Мотор должен храниться в сухом, проветриваемом помещении. Оптимальное положение — вертикальное, на специальной стойке. Если мотор хранится на транце лодки, убедитесь, что вода не может попасть в выхлопное отверстие и замерзнуть, расширившись и повредив блок.</p>
+</details>
+
+<details>
+<summary>Нужно ли заряжать аккумулятор зимой?</summary>
+<p>Да, свинцово-кислотные аккумуляторы склонны к саморазряду. Раз в месяц-полтора их необходимо подзаряжать стационарным зарядным устройством, чтобы предотвратить сульфатацию пластин и потерю емкости.</p>
+</details>
+
+<details>
+<summary>Можно ли мыть двигатель водой под давлением?</summary>
+<p>Категорически не рекомендуется использовать мойки высокого давления (Karcher и аналоги). Мощная струя может повредить сальники, загнать воду в электрические разъемы и смыть смазку с трущихся узлов. Используйте садовый шланг и мягкую щетку.</p>
+</details>
+
+<details>
+<summary>Что делать, если мотор «закипел»?</summary>
+<p>Если загорелась лампа перегрева или вы услышали сигнал, немедленно сбросьте газ до минимума и дайте мотору поработать на холостых пару минут для остывания. Резкая остановка горячего двигателя может привести к деформации головки блока. Затем проверьте систему охлаждения на наличие препятствий.</p>
+</details>
+
+<details>
+<summary>Как часто менять свечи зажигания?</summary>
+<p>В четырехтактных лодочных моторах свечи рекомендуется менять каждые 100 моточасов или раз в сезон, даже если они выглядят нормально. Нагар на электродах влияет на качество искры и расход топлива.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-и-устройство-четырехтактного-цикла">Принцип работы и устройство четырехтактного цикла</a></li><li><a href="#ключевые-системы-двигателя-и-газораспределение">Ключевые системы двигателя и газораспределение</a></li><li><a href="#сравнение-4-такта-против-2-тактов">Сравнение: 4 такта против 2 тактов</a></li><li><a href="#топливо-и-масла-требования-и-стандарты">Топливо и масла: требования и стандарты</a></li><li><a href="#обкатка-нового-двигателя-правила-и-этапы">Обкатка нового двигателя: правила и этапы</a></li><li><a href="#типичные-неисправности-и-диагностика">Типичные неисправности и диагностика</a></li><li><a href="#сезонное-хранение-и-консервация">Сезонное хранение и консервация</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakoj-akkumulyator-dlya-elektromotora-lodochnogo.html" class="related-card">Какой аккумулятор выбрать для лодочного электромотора: гид</a></li><li><a href="/articles/k/ku/kupit-takhometr-dlya-lodki.html" class="related-card">Купить тахометр для лодки: выбор, установка и настройка</a></li><li><a href="/articles/l/lo/lodochnyj-motor-merkurij-kto-proizvoditel-strana.html" class="related-card">Лодочный мотор Меркурий: страна производитель и история бренда</a></li><li><a href="/articles/d/dv/dvukh-ili-chetyrekhtaktnyj-lodochnyj-motor-kakoj-vybrat.html" class="related-card">Двухтактный или четырехтактный мотор: что выбрать для лодки</a></li><li><a href="/articles/l/lo/lodochnye-motory-rossijskogo-proizvodstva.html" class="related-card">Лодочные моторы российского производства: ТОП брендов и моделей 2026-2026</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kakoj-akkumulyator-dlya-elektromotora-lodochnogo.html" class="related-bottom-card"><span class="related-bottom-title">Какой аккумулятор выбрать для лодочного электромотора: гид</span><span class="related-bottom-desc">Полный гид по выбору тягового аккумулятора для электромотора. Сравнение AGM, GEL и LiFePO4, расчет е</span></a><a href="/articles/k/ku/kupit-takhometr-dlya-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Купить тахометр для лодки: выбор, установка и настройка</span><span class="related-bottom-desc">Где купить тахометр для лодки и как его выбрать. Обзор моделей, инструкция по подключению, настройка</span></a><a href="/articles/l/lo/lodochnyj-motor-merkurij-kto-proizvoditel-strana.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Меркурий: страна производитель и история бренда</span><span class="related-bottom-desc">Где производят моторы Mercury? Полный разбор истории бренда, локализации заводов в США, Мексике и Ки</span></a><a href="/articles/d/dv/dvukh-ili-chetyrekhtaktnyj-lodochnyj-motor-kakoj-vybrat.html" class="related-bottom-card"><span class="related-bottom-title">Двухтактный или четырехтактный мотор: что выбрать для лодки</span><span class="related-bottom-desc">Сравнение 2Т и 4Т моторов: расход, шум, ресурс и цена. Поможем выбрать лучший лодочный мотор для ПВХ</span></a><a href="/articles/l/lo/lodochnye-motory-rossijskogo-proizvodstva.html" class="related-bottom-card"><span class="related-bottom-title">Лодочные моторы российского производства: ТОП брендов и моделей 2026-2026</span><span class="related-bottom-desc">Обзор отечественных лодочных моторов: Hangkai, Mikatsu, Tohatsu, Sea-Pro. Сравнение характеристик, ц</span></a><a href="/articles/k/ku/kupit-lodochnyj-motor-veterok-12-novyj-tsena-s-zavoda.html" class="related-bottom-card"><span class="related-bottom-title">Купить лодочный мотор Ветерок 12 новый: цена с завода и обзор</span><span class="related-bottom-desc">Где купить новый мотор Ветерок 12 по цене завода? Актуальные цены, технические характеристики, плюсы</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Генератор лодочного мотора: устройство, диагностика и ремонт — ЛодкаМастер</title>
+    <meta name="description" content="Как работает генератор лодочного мотора? Симптомы неисправностей, проверка катушек мультиметром, устранение пробоев и замена деталей своими руками.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/g/ge/generator-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Генератор лодочного мотора: устройство, диагностика и ремонт">
+    <meta property="og:description" content="Как работает генератор лодочного мотора? Симптомы неисправностей, проверка катушек мультиметром, устранение пробоев и замена деталей своими руками.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Генератор лодочного мотора: устройство, диагностика и ремонт</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Генератор лодочного мотора: полное руководство по ремонту</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#принцип-работы-и-устройство-системы-зажигания">Принцип работы и устройство системы зажигания</a></li><li><a href="#симптомы-неисправностей-генератора">Симптомы неисправностей генератора</a></li><li><a href="#диагностика-как-проверить-генератор-мультиметром">Диагностика: как проверить генератор мультиметром</a></li><li><a href="#таблица-типовых-сопротивлений-катушек">Таблица типовых сопротивлений катушек</a></li><li><a href="#замена-и-перемотка-катушек-своими-руками">Замена и перемотка катушек своими руками</a></li><li><a href="#настройка-зазоров-и-финальная-сборка">Настройка зазоров и финальная сборка</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+<p>Потеря искры в самый неподходящий момент — это классическая проблема, с которой сталкивается каждый владелец водной техники. Часто причиной отказа системы зажигания становится <strong>генератор лодочного мотора</strong>, который перестает вырабатывать необходимый ток для катушек. В отличие от автомобильных аналогов, здесь нет аккумулятора, который мог бы какое-то время поддерживать работу двигателя, поэтому исправность магдино и зарядной катушки критически важна для запуска.</p>
+
+<p>В этой статье мы детально разберем устройство системы, способы диагностики обрывов и межвитковых замыканий, а также методы восстановления работоспособности узла. Понимание принципов работы <em>магдино</em> позволит вам не зависеть от сервисных центров и быстро вернуть лодку в строй даже в полевых условиях. Важно знать, что современные электронные системы CDI требуют точных параметров напряжения, и любые отклонения могут привести к полному отказу мотора.</p>
+
+<p>Прежде чем приступать к разборке, необходимо понимать, что <strong>генератор</strong> в лодочном моторе — это, по сути, магнитно-электрическая машина переменного тока. Она преобразует механическую энергию вращения коленвала в электрическую. Если вы столкнулись с отсутствием искры, первым делом стоит проверить именно этот узел, так как он является источником энергии для всей системы зажигания.</p>
+
+<h2 id="принцип-работы-и-устройство-системы-зажигания">Принцип работы и устройство системы зажигания</h2>
+<p>Основу системы составляет статор с намотанными на него катушками и маховик с мощными магнитами, вращающийся вокруг него. При вращении маховика магнитное поле пересекает обмотки, индуцируя в них электрический ток. <strong>Зарядная катушка</strong> генерирует напряжение для накопления энергии в конденсаторе коммутатора, а катушка освещения питает бортовую сеть или фары. Конструкция кажется простой, но требует высокой точности изготовления.</p>
+
+<p>Ключевым элементом является <em>магдино</em>, которое представляет собой сборку всех катушек на одной пластине. В зависимости от мощности мотора, количество катушек может варь-ироваться. На маломощных моделях часто встречается одна зарядная катушка, тогда как на более мощных их может быть две или больше для обеспечения стабильной искры на высоких оборотах. Разрыв цепи в любой из них приведет к остановке двигателя.</p>
+
+<p>Контроль за искрообразованием осуществляет электронный блок управления, но первичный импульс поступает именно от генератора. <mark>Критически важным параметром является зазор между магнитами маховика и катушками, который не должен превышать 0.3-0.5 мм.</mark> Нарушение этого зазора приводит к резкому падению напряжения и невозможности пробоя искрового промежутка свечи. Именно поэтому при сборке узла необходимо использовать специальные щупы.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Перед снятием маховика обязательно пометьте положение шпонки и стопорных гаек. Неправильная установка маховика приведет к смещению угла опережения зажигания, что может вызвать детонацию и разрушение поршневой группы.</p>
+</blockquote>
+
+<p>Разнообразие конструкций требует индивидуального подхода. Где-то используется одноцилиндровая схема, а где-то многоцилиндровая с распределением фаз. В любом случае, <strong>индукционная катушка</strong> остается сердцем процесса. Если вы видите оплавленный пластик на статоре, это верный признак перегрева или короткого замыкания, требующий немедленной замены элемента.</p>
+
+<details class="faq-item"><summary>Почему сгорает генератор?</summary><div class="faq-answer"><p>Чаще всего причиной выхода из строя становится не качество деталей, а нарушение зазоров или попадание воды в подкапотное пространство при длительной работе на высоких оборотах. Также часты случаи пробоя изоляции из-за вибрации и трения проводов о корпус.</p></div></details>
+
+<h2 id="симптомы-неисправностей-генератора">Симптомы неисправностей генератора</h2>
+<p>Определить проблему с выработкой тока можно по ряду косвенных и прямых признаков. Самый очевидный — мотор глохнет на «горячую» или отказывается заводиться после попадания в воду. <strong>Пропажа искры</strong> на свече при исправной катушке зажигания указывает на то, что генератор не посылает импульс на коммутатор. Это может происходить как на холостых оборотах, так и под нагрузкой.</p>
+
+<p>Еще одним симптомом является нестабильная работа двигателя на высоких оборотах. Если мотор «троит» или дергается, возможно, одна из катушек <em>магдино</em> имеет межвитковое замыкание. В этом случае напряжение генерируется, но его форма искажена, что сбивает работу электроники. Также стоит обратить внимание на состояние проводов: окисление контактов или перетертая изоляция могут давать схожие симптомы.</p>
+
+<p>Визуальный осмотр часто помогает выявить проблему быстрее, чем прозвонка. Ищите следы гари, почернения или вздутия лакового покрытия на обмотках. <strong>Трещины в корпусе</strong> катушек также недопустимы, так как через них внутрь проникает влага, вызывая коррозию меди. Если вы заметили подобные дефекты, ремонт обычно нецелесообразен — требуется полная замена узла.</p>
+
+<ul>
+<li>🔥 Полное отсутствие искры на всех цилиндрах при исправной свече и катушке.</li>
+<li>⚡ Двигатель заводится и сразу глохнет, не держит обороты.</li>
+<li>🌊 Мотор работает нестабильно после попадания волны в поддон.</li>
+<li>🔌 Видимые повреждения изоляции или следы перегрева на статоре.</li>
+</ul>
+
+<div class="poll-widget" id="poll-076bf21f"><div class="poll-widget-question">📊 Как часто у вас пропадает искра?</div><div class="poll-widget-option" data-poll="076bf21f" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Только весной/осенью</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="076bf21f" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">После каждой зимовки</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="076bf21f" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Редко, раз в несколько лет</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="076bf21f" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Постоянно, мотор старый</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="диагностика-как-проверить-генератор-мультиметром">Диагностика: как проверить генератор мультиметром</h2>
+<p>Для точной диагностики вам понадобится цифровой мультиметр. Первым делом необходимо получить доступ к катушкам, сняв кожух и маховик. Перед измерениями внимательно осмотрите схему подключения вашего мотора, так как цветовая маркировка проводов у разных производителей (Yamaha, Tohatsu, Mercury) может отличаться. <strong>Сопротивление катушек</strong> — основной параметр, который мы будем проверять.</p>
+
+<p>Переключите мультиметр в режим измерения сопротивления (Ом). Подсоедините щупы к выводам зарядной катушки. Для большинства двухтактных моторов мощностью до 50 л.с. нормальное сопротивление составляет от 180 до 400 Ом. Если прибор показывает «бесконечность» (обрыв) или «ноль» (короткое замыкание), катушка неисправна. Также важно проверить изоляцию: один щуп ставим на вывод катушки, другой на массу (металлическую пластину статора).</p>
+
+<p>Отдельное внимание уделите катушке освещения, если она есть в вашей системе. Ее сопротивление обычно ниже, в пределах 0.1–0.5 Ом, так как она рассчитана на большой ток. <em>Прозвонка</em> должна показать целостность цепи. Если значения сильно отличаются от паспортных данных, указанных в мануале, узел требует замены. Не забывайте, что измерения нужно проводить на холодном двигателе.</p>
+
+<div class="checklist-block"><h4>☑️ Алгоритм проверки генератора</h4><label class="check-item"><input type="checkbox"><span>Снять маховик и визуализировать катушки</span></label><label class="check-item"><input type="checkbox"><span>Найти схему цветов проводов для вашей модели</span></label><label class="check-item"><input type="checkbox"><span>Замерить сопротивление зарядной катушки</span></label><label class="check-item"><input type="checkbox"><span>Проверить отсутствие пробоя на массу</span></label><label class="check-item"><input type="checkbox"><span>Сравнить показания с мануалом</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Существует также метод проверки «на искру», но он менее точен и может быть опасен для электроники. Лучше использовать проверенный инструмент. Если мультиметр показывает погрешности, попробуйте зачистить контакты щупов и повторить измерение. Окисленные разъемы могут вносить существенное искажение в результаты, создавая ложное впечатление неисправности генератора.</p>
+
+<h2 id="таблица-типовых-сопротивлений-катушек">Таблица типовых сопротивлений катушек</h2>
+<p>Ниже приведены ориентировочные значения сопротивления для популярных типов лодочных моторов. Помните, что точные данные всегда следует искать в сервисной документации производителя, так как модификации могут отличаться.</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип мотора</th>
+<th>Катушка</th>
+<th>Нормальное сопротивление (Ом)</th>
+<th>Допуск</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2-такт, до 15 л.с.</td>
+<td>Зарядная (CDI)</td>
+<td>200 – 400</td>
+<td>±10%</td>
+</tr>
+<tr>
+<td>2-такт, 25-50 л.с.</td>
+<td>Зарядная (CDI)</td>
+<td>180 – 350</td>
+<td>±10%</td>
+</tr>
+<tr>
+<td>2-такт, >50 л.с.</td>
+<td>Зарядная (CDI)</td>
+<td>120 – 250</td>
+<td>±15%</td>
+</tr>
+<tr>
+<td>4-такт (генератор)</td>
+<td>Основная обмотка</td>
+<td>0.5 – 2.0</td>
+<td>±20%</td>
+</tr>
+<tr>
+<td>Катушка освещения</td>
+<td>Осветительная</td>
+<td>0.1 – 0.5</td>
+<td>±10%</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Если сопротивление катушки отличается от нормы более чем на 20%, ее работоспособность под нагрузкой будет нестабильной, и замена необходима.</p></div>
+
+<h2 id="замена-и-перемотка-катушек-своими-руками">Замена и перемотка катушек своими руками</h2>
+<p>Если диагностика подтвердила неисправность, перед владельцем встает выбор: купить новый статор или перемотать катушки. Покупка нового узла — путь наименьшего сопротивления, но он дорогостоящ. <strong>Перемотка</strong> требует навыков, специального оборудования и терпения, но обходится значительно дешевле. Для начала необходимо аккуратно снять старую обмотку, не повредив металлический сердечник.</p>
+
+<p>Вам потребуется эмальпровод точно такого же диаметра, что и оригинал. Количество витков также должно быть соблюдено с точностью до единицы. Намотку производят вручную или на простейшем станке, тщательно укладывая витки. После намотки катушку обязательно пропитывают специальным лаком для электродвигателей и сушат в печи или духовом шкафу при температуре около 100-120 градусов Цельсия.</p>
+
+<p>Процесс установки нового или восстановленного <em>магдино</em> требует соблюдения чистоты. Все поверхности должны быть обезжирены. При затяжке болтов крепления используйте фиксатор резьбы, так как вибрация лодочного мотора очень высока. <strong>Момент затяжки</strong> не должен превышать значений, указанных в инструкции, чтобы не сорвать резьбу в алюминиевом блоке.</p>
+
+<ul>
+<li>🛠️ Аккуратно снимите старую обмотку, сохранив сердечник целым.</li>
+<li>🧵 Подберите эмальпровод идентичного диаметра (микрометр в помощь).</li>
+<li>🌀 Намотайте катушку, соблюдая направление и количество витков.</li>
+<li>💧 Пропитайте лаком и просушите при высокой температуре.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: При пайке выводов катушек используйте быстродействующий припой и минимальное время нагрева. Длительный нагрев может расплавить изоляцию внутри катушки, вызвав короткое замыкание между витками.</p>
+</blockquote>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте термоусадочные трубки на все паяные соединения. В условиях лодки постоянная влажность и солевой туман быстро окисляют открытую медь, приводя к потере контакта.</p></div>
+
+<h2 id="настройка-зазоров-и-финальная-сборка">Настройка зазоров и финальная сборка</h2>
+<p>После установки генератора на место необходимо выставить правильный зазор между катушками и магнитами маховика. Это критически важный этап. Слишком большой зазор приведет к слабой искре, а слишком маленький — к удару магнитов о катушки при биении вала. Для регулировки используются специальные щупы или пластиковые прокладки толщиной 0.3–0.5 мм.</p>
+
+<p>Вращая статор вокруг своей оси, добейтесь равномерного зазора по всей окружности. Зафиксируйте положение болтов и затяните их. После этого соберите мотор в обратном порядке, не забыв смазать сальники и подшипники. <strong>Смазка</strong> должна быть совместима с резиновыми уплотнителями, чтобы не вызвать их разбухание.</p>
+
+<p>Финальный тест проводится на воде или на стенде. Запустите мотор и дайте ему прогреться. Проверьте работу на холостых оборотах и резкий набор газа. Если искра стабильна и двигатель работает ровно, ремонт можно считать успешным. В противном случае придется повторить диагностику, уделив внимание коммутатору и высоковольтным проводам.</p>
+
+<details class="faq-item"><summary>Что делать, если искра есть, но мотор не заводится?</summary><div class="faq-answer"><p>Проверьте качество топлива, состояние свечи (нагар, зазор), компрессию в цилиндрах и герметичность картера. Иногда проблема кроется не в электрике, а в механике или топливной системе.</p></div></details>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли ездить с неисправным генератором, если есть аккумулятор?</summary>
+<p>Нет, в двухтактных лодочных моторах система зажигания полностью автономна и не зависит от аккумулятора. Аккумулятор нужен только для стартера (если он есть) и приборов. Если генератор не дает искру, мотор не заведется, даже с полностью заряженной батареей.</p>
+</details>
+
+<details>
+<summary>Почему генератор пробивает на массу?</summary>
+<p>Это происходит из-за разрушения изоляции проводов внутри катушки. Причины: перегрев, вибрация, заводской брак или попадание агрессивных жидкостей. Пробой на массу блокирует генерацию высокого напряжения.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять катушки зажигания?</summary>
+<p>При правильной эксплуатации и отсутствии экстремальных перегрузок катушки служат годами. Плановой замены нет, меняют только по факту неисправности. Однако раз в сезон рекомендуется визуально inspectровать состояние изоляции.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать генератор от другого мотора?</summary>
+<p>Теоретически можно, если совпадают посадочные места, диаметр вала и электрические параметры (сопротивление, вольтаж). Однако лучше искать оригинальные запчасти или качественные аналоги, специально предназначенные для вашей модели, чтобы избежать проблем с углом зажигания.</p>
+</details>
+
+<details>
+<summary>Влияет ли качество бензина на работу генератора?</summary>
+<p>Косвенно — да. Плохой бензин вызывает детонацию и перегрев двигателя, что ведет к тепловому расширению деталей и перегреву статора. Также этилированный бензин может создавать токопроводящий нагар на свечах и контактах, нарушая работу системы.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#принцип-работы-и-устройство-системы-зажигания">Принцип работы и устройство системы зажигания</a></li><li><a href="#симптомы-неисправностей-генератора">Симптомы неисправностей генератора</a></li><li><a href="#диагностика-как-проверить-генератор-мультиметром">Диагностика: как проверить генератор мультиметром</a></li><li><a href="#таблица-типовых-сопротивлений-катушек">Таблица типовых сопротивлений катушек</a></li><li><a href="#замена-и-перемотка-катушек-своими-руками">Замена и перемотка катушек своими руками</a></li><li><a href="#настройка-зазоров-и-финальная-сборка">Настройка зазоров и финальная сборка</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ku/kupit-maslo-dlya-dvukhtaktnykh-dvigatelej-lodochnykh-motorov.html" class="related-card">Купить масло для двухтактных двигателей лодочных моторов: гид по выбору</a></li><li><a href="/articles/k/ka/kakoe-maslo-lit-v-reduktor-lodochnogo-motora.html" class="related-card">Какое масло лить в редуктор лодочного мотора: выбор и замена</a></li><li><a href="/articles/k/ka/kak-uznat-peregretyj-dvigatel-ili-net.html" class="related-card">Как определить перегрев двигателя: симптомы, риски и диагностика</a></li><li><a href="/articles/c/ch/chem-ochistit-dvigatel-ot-nagara-vnutri-ne-razbiraya.html" class="related-card">Чем очистить двигатель от нагара внутри: методы без разборки</a></li><li><a href="/articles/s/st/stravlivayushchij-klapan-dlya-lodki-pvkh.html" class="related-card">Стравливающий клапан для лодки ПВХ: устройство, выбор и ремонт</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ku/kupit-maslo-dlya-dvukhtaktnykh-dvigatelej-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Купить масло для двухтактных двигателей лодочных моторов: гид по выбору</span><span class="related-bottom-desc">Поможем купить масло для двухтактных двигателей лодочных моторов. Разбор стандартов TC-W3, вязкости </span></a><a href="/articles/k/ka/kakoe-maslo-lit-v-reduktor-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Какое масло лить в редуктор лодочного мотора: выбор и замена</span><span class="related-bottom-desc">Полный гид по выбору масла для редуктора лодочного мотора. Маркировки GL-4 и GL-5, вязкость, частота</span></a><a href="/articles/k/ka/kak-uznat-peregretyj-dvigatel-ili-net.html" class="related-bottom-card"><span class="related-bottom-title">Как определить перегрев двигателя: симптомы, риски и диагностика</span><span class="related-bottom-desc">Как узнать, что перегрет двигатель: основные признаки, способы проверки и действия при аварийном пов</span></a><a href="/articles/c/ch/chem-ochistit-dvigatel-ot-nagara-vnutri-ne-razbiraya.html" class="related-bottom-card"><span class="related-bottom-title">Чем очистить двигатель от нагара внутри: методы без разборки</span><span class="related-bottom-desc">Эффективные способы раскоксовки ДВС без вскрытия. Выбор химии, пошаговая инструкция промывки поршнев</span></a><a href="/articles/s/st/stravlivayushchij-klapan-dlya-lodki-pvkh.html" class="related-bottom-card"><span class="related-bottom-title">Стравливающий клапан для лодки ПВХ: устройство, выбор и ремонт</span><span class="related-bottom-desc">Полное руководство по клапанам стравливания давления на надувных лодках. Разбор конструкций, причины</span></a><a href="/articles/k/ka/kak-zamenit-klapana-na-lodke-pvkh.html" class="related-bottom-card"><span class="related-bottom-title">Как заменить клапан на лодке ПВХ: пошаговая инструкция</span><span class="related-bottom-desc">Подробное руководство по замене надувного клапана на лодке. Выбор клея, подготовка поверхности, техн</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

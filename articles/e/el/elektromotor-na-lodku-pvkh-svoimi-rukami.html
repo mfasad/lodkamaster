@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Электромотор на лодку ПВХ своими руками: чертежи, схемы, сборка — ЛодкаМастер</title>
+    <meta name="description" content="Подробная инструкция: как сделать электромотор для лодки ПВХ своими руками. Выбор двигателя, аккумулятора, расчет тяги, схемы подключения и чертежи винта.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/e/el/elektromotor-na-lodku-pvkh-svoimi-rukami.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Электромотор на лодку ПВХ своими руками: чертежи, схемы, сборка">
+    <meta property="og:description" content="Подробная инструкция: как сделать электромотор для лодки ПВХ своими руками. Выбор двигателя, аккумулятора, расчет тяги, схемы подключения и чертежи винта.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/sdelaj-sam/">Сделай сам</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Электромотор на лодку ПВХ своими руками: чертежи, схемы, сборка</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Электромотор на лодку ПВХ своими руками: от идеи до первого запуска</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#выбор-силового-агрегата-и-донора">Выбор силового агрегата и донора</a></li><li><a href="#конструкция-дейдвуда-и-валовой-линии">Конструкция дейдвуда и валовой линии</a></li><li><a href="#изготовление-гребного-винта">Изготовление гребного винта</a></li><li><a href="#система-управления-и-контроллер">Система управления и контроллер</a></li><li><a href="#монтаж-на-транец-и-крепление">Монтаж на транец и крепление</a></li><li><a href="#расчет-автономности-и-подбор-аккумулятора">Расчет автономности и подбор аккумулятора</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Многие владельцы надувных судов мечтают избавиться от шума бензинового двигателя и запаха топлива, перейдя на электрическую тягу. Создание <strong>электромотора на лодку ПВХ своими руками</strong> — это не только способ сэкономить значительную сумму, но и возможность получить устройство, идеально адаптированное под ваши задачи. Самодельный агрегат часто оказывается надежнее бюджетных китайских аналогов, так как вы лично контролируете качество сборки и герметизацию узлов.</p>
+
+<p>В отличие от заводских моделей, где стоимость складывается из маркетинга и упаковки, в самодельном варианте вы платите только за <em>реальные компоненты</em>. Это позволяет собрать силовую установку, которая будет работать тише, эффективнее и прослужит дольше при правильном обслуживании. Главное — заранее определиться с требуемой мощностью и типом управления.</p>
+
+<p>Перед началом работ важно понять, что <mark>КПД самодельного электродвигателя напрямую зависит от качества согласования вала, винта и редуктора</mark>. Любое биение или неверный угол атаки лопастей сведут на нет все усилия. В этой статье мы разберем все этапы создания полноценного лодочного электродвигателя, от выбора мотора-донора до финальной настройки.</p>
+
+<h2 id="выбор-силового-агрегата-и-донора">Выбор силового агрегата и донора</h2>
+
+<p>Основой всей конструкции является электродвигатель. Для лодок ПВХ чаще всего используют два типа моторов: коллекторные от автомобильных стеклоочистителей или дворников, и бесколлекторные (BLDC) от электроинструмента или электровелосипедов. <strong>Коллекторные моторы</strong> просты в управлении, дешевы, но имеют меньший ресурс и боятся влаги. Бесколлекторные модели, такие как <em>Turnigy</em> или <em>Axial</em>, обладают высоким КПД, но требуют сложного контроллера (ESC) и настройки.</p>
+
+<p>Если вы делаете мотор впервые, лучше остановиться на проверенном варианте — двигателе от дворников ВАЗ или аналогичном трапециевидном моторе. Они выдают достаточный крутящий момент на низких оборотах, что критично для <strong>гребного винта</strong>. Мощность в 100-200 Вт позволит уверенно перемещать лодку с одним-двумя пассажирами со скоростью около 5-7 км/ч.</p>
+
+<p>Важно учитывать напряжение питания. Стандартные автомобильные моторы работают от 12 вольт, что идеально сочетается с емкостью большинства аккумуляторов. Однако существуют и 24-вольтовые модификации, которые при той же силе тока дают большую мощность, но требуют последовательного соединения батарей.</p>
+
+<ul>
+<li>🔧 Коллекторный мотор: простота, дешевизна, шумность.</li>
+<li>⚡ BLDC мотор: тишина, высокий КПД, сложность настройки.</li>
+<li>🚗 Мотор стеклоочистителя: оптимальный баланс цены и тяги.</li>
+<li>🛠️ Дрель-шуруповерт: доступно, но низкий ресурс в воде.</li>
+</ul>
+
+<blockquote>⚠️ Внимание: Никогда не используйте двигатели с открытой системой вентиляции (где воздух засасывается через щели корпуса) без дополнительной герметизации, иначе попадание воды вызовет короткое замыкание.</blockquote>
+
+<div class="poll-widget" id="poll-09bdb10c"><div class="poll-widget-question">📊 Какой тип двигателя вы планируете использовать?</div><div class="poll-widget-option" data-poll="09bdb10c" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Коллекторный (дворники/стеклоочиститель)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="09bdb10c" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Бесколлекторный (BLDC)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="09bdb10c" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Готовый мотор-колесо</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="09bdb10c" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Дрель/Шуруповерт</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="конструкция-дейдвуда-и-валовой-линии">Конструкция дейдвуда и валовой линии</h2>
+
+<p>Дейдвуд — это труба, внутри которой вращается вал, передающий усилие от двигателя к винту. Для самодельной конструкции идеально подходит <strong>нержавеющая труба</strong> диаметром 20-25 мм или прочная ПВХ труба с толстыми стенками, если обороты не будут экстремальными. Валом часто служит резьбовая шпилька из нержавеющей стали диаметром 8-10 мм или вал от старой дрели.</p>
+
+<p>Ключевой момент — установка подшипников скольжения или качения. В бюджетных вариантах используют <em>втулки</em> из фторопласта или бронзы, запрессованные в торцы трубы. Это обеспечивает центровку вала и снижает трение. Если вы используете шпильку, она должна быть идеально прямой, иначе вибрация быстро разрушит уплотнения.</p>
+
+<p>Герметизация вала — самая уязвимая часть конструкции. Простейший способ — использование сальников (манжет) с двух сторон дейдвуда с закладкой <strong>смазки</strong> между ними. Более продвинутый вариант — магнитная муфта, которая полностью исключает проход вала через корпус, но она сложнее в изготовлении. Для начала остановитесь на качественных сальниках, подобрав их под диаметр вала.</p>
+
+<p>Длина дейдвуда рассчитывается исходя из глубины погружения винта. Винт должен находиться под водой на 15-20 см ниже днища лодки, чтобы не захватывать воздух и не создавать кавитационную воронку. Стандартная длина дейдвуда для лодок ПВХ составляет 60-80 см.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Для смазки дейдвуда используйте литиевую смазку или специальные водостойкие составы, которые не смываются водой и сохраняют вязкость на морозе.</p></div>
+
+<h2 id="изготовление-гребного-винта">Изготовление гребного винта</h2>
+
+<p>Гребной винт — это сердце вашей двигательной установки. Для электромотора, работающего на низких оборотах (300-800 об/мин), нужен винт с большим шагом и диаметром. Заводские винты для бензиновых моторов (3000-5000 об/мин) здесь не подойдут — они просто будут "месить" воду без тяги.</p>
+
+<p>Самый доступный материал для изготовления — <strong>алюминий</strong> или <em>сталь</em>. Можно вырезать винт из листовой заготовки, задав лопастям необходимый угол скрутки. Однако более эффективный метод — использование готовых авиамодельных винтов большого диаметра (например, 12-16 дюймов) или винтов от мотоблоков, адаптированных под вал.</p>
+
+<p>Если вы решили сделать винт самостоятельно из металла, вам потребуется шаблон. Лопасти должны иметь профиль крыла: плоский с одной стороны и выпуклый с другой. Угол атаки на конце лопасти обычно составляет 10-15 градусов, а у комля — больше. После формовки винт обязательно балансируют, стачивая лишний металл с более тяжелой лопасти.</p>
+
+<details class="faq-item"><summary>Секрет эффективности винта</summary><div class="faq-answer"><p>Гладкая поверхность лопастей критически важна. После изготовления отполируйте винт до зеркального блеска и покройте эпоксидной смолой или лаком. Микронеровности создают сопротивление и кавитацию, снижая КПД на 10-15%.</p></div></details>
+
+<h2 id="система-управления-и-контроллер">Система управления и контроллер</h2>
+
+<p>Управление скоростью вращения в самодельном электромоторе реализуется через изменение напряжения или скважности импульсов (ШИМ). Для коллекторных моторов 12В можно использовать готовые автомобильные регуляторы хода или мощные ШИМ-контроллеры на MOSFET-транзисторах. Они позволяют плавно менять скорость от 0 до 100%.</p>
+
+<p>Для бесколлекторных моторов (BLDC) обязателен <strong>ESC-регулятор</strong> (Electronic Speed Controller). Он преобразует постоянный ток аккумулятора в трехфазный переменный ток для мотора. При выборе регулятора обращайте внимание на максимальный ток: он должен быть на 20-30% выше тока потребления мотора под нагрузкой.</p>
+
+<p>Органы управления выводятся на румпель. В простейшем варианте это потенциометр (для ШИМ) или курок с фиксатором. Важно использовать провода сечением не менее 2.5-4 мм², так как при токе в 20-30 ампер тонкие провода будут греться и терять напряжение. Все соединения должны быть пропаяны и заизолированы термоусадкой.</p>
+
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Назначение</th>
+<th>Требования</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ШИМ-контроллер</td>
+<td>Регулировка оборотов</td>
+<td>Ток > 30А, защита от перегрева</td>
+</tr>
+<tr>
+<td>Аккумулятор</td>
+<td>Источник питания</td>
+<td>LiFePO4 или AGM, 12-24В</td>
+</tr>
+<tr>
+<td>Предохранитель</td>
+<td>Защита цепи</td>
+<td>Автоматический, на 1-2А выше макс. тока</td>
+</tr>
+<tr>
+<td>Кабель питания</td>
+<td>Передача энергии</td>
+<td>Медь, сечение 4 мм² и более</td>
+</tr>
+</tbody>
+</table>
+
+<div class="checklist-block"><h4>☑️ Проверка системы управления</h4><label class="check-item"><input type="checkbox"><span>Проверить работу регулятора без нагрузки</span></label><label class="check-item"><input type="checkbox"><span>Замерить ток холостого хода</span></label><label class="check-item"><input type="checkbox"><span>Проверить нагрев проводов под нагрузкой</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в плавности хода румпеля</span></label><label class="check-item"><input type="checkbox"><span>Проверить работу предохранителя</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="монтаж-на-транец-и-крепление">Монтаж на транец и крепление</h2>
+
+<p>Крепление самодельного электромотора к лодке ПВХ должно быть надежным и предусматривать возможность снятия. Простейший вариант — использование струбцины от старого мотора или изготовление Г-образного кронштейна из профильной трубы. Кронштейн крепится к транцевой доске болтами М8 или М10.</p>
+
+<p>Важно предусмотреть возможность изменения глубины погружения винта. Для этого в конструкции кронштейна делают вертикальные прорези или используют телескопическую трубу. Фиксация положения осуществляется болтами с барашковыми гайками для быстрой регулировки руками.</p>
+
+<p>Также стоит предусмотреть механизм подъема винта из воды при движении на веслах или буксировке. В самодельных вариантах это реализуется поворотным узлом на подшипниках, позволяющим откинуть мотор вверх. Не забывайте про <strong>страховочный трос</strong>, который удержит мотор, если крепление ослабнет.</p>
+
+<blockquote>⚠️ Внимание: При креплении мотора убедитесь, что вибрация двигателя не передается на баллоны лодки. Используйте резиновые прокладки между кронштейном и транцем, чтобы избежать повреждения ПВХ ткани.</blockquote>
+
+<h2 id="расчет-автономности-и-подбор-аккумулятора">Расчет автономности и подбор аккумулятора</h2>
+
+<p>Время работы электромотора зависит от емкости аккумулятора и потребляемого тока. Для расчета используйте формулу: <code>Время (ч) = Емкость (Ач) / Ток потребления (А)</code>. Однако стоит учитывать, что нельзя разряжать аккумулятор полностью. Для свинцовых батарей (AGM, GEL) допустим разряд до 50%, для литиевых (LiFePO4) — до 80-90%.</p>
+
+<p>Если ваш мотор потребляет в среднем 15 Ампер, а вы установили аккумулятор емкостью 50 Ач, то реальное время хода составит около 2.5-3 часов в экономичном режиме. Для полноценного рыболовного дня (6-8 часов) потребуется батарея емкостью 100 Ач и более.</p>
+
+<p>Литий-железо-фосфатные аккумуляторы (<em>LiFePO4</em>) сейчас являются золотым стандартом. Они легче свинцовых в 2-3 раза, имеют больший ресурс циклов и не боятся глубокого разряда. Несмотря на высокую начальную стоимость, в пересчете на срок службы они выгоднее.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Оптимальная конфигурация для лодки ПВХ: мотор 200-300 Вт + аккумулятор LiFePO4 12В 50Ач. Это дает запас хода 20-25 км в спокойном режиме при весе комплекта около 6-7 кг.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли использовать шуруповерт как основу для мотора?</summary>
+<p>Теоретически можно, но это плохая идея. Патрон шуруповерта не рассчитан на постоянную осевую нагрузку и работу в воде. Механизм редуктора быстро износится, а герметизация вала вызовет трудности. Лучше взять отдельный мотор-редуктор.</p>
+</details>
+
+<details>
+<summary>Какой винт лучше: двухлопастной или трехлопастной?</summary>
+<p>Для тихоходных электромоторов лучше подходят двухлопастные винты большого диаметра. Они создают меньше сопротивления и эффективнее работают на низких оборотах. Трехлопастные винты нужны для высоких скоростей, которые электромоторы редко развивают.</p>
+</details>
+
+<details>
+<summary>Нужно ли смазывать вал дейдвуда перед каждым выходом?</summary>
+<p>Если использована консистентная смазка и качественные сальники, то частая смазка не нужна. Достаточно проверять состояние сальников и добавлять смазку через масленку (если предусмотрена) раз в сезон или после длительных простоев.</p>
+</details>
+
+<details>
+<summary>Боится ли электромотор соленой воды?</summary>
+<p>Да, коррозия в соленой воде идет очень быстро. Все металлические части (кроме нержавеющей стали и латуни) нужно тщательно красить, покрывать эпоксидкой или использовать протекторную защиту (цинковые аноды). Алюминиевые винты в соленой воде разрушаются за один сезон без защиты.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#выбор-силового-агрегата-и-донора">Выбор силового агрегата и донора</a></li><li><a href="#конструкция-дейдвуда-и-валовой-линии">Конструкция дейдвуда и валовой линии</a></li><li><a href="#изготовление-гребного-винта">Изготовление гребного винта</a></li><li><a href="#система-управления-и-контроллер">Система управления и контроллер</a></li><li><a href="#монтаж-на-транец-и-крепление">Монтаж на транец и крепление</a></li><li><a href="#расчет-автономности-и-подбор-аккумулятора">Расчет автономности и подбор аккумулятора</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/l/lo/lodka-katamaran-svoimi-rukami.html" class="related-card">Лодка катамаран своими руками: чертежи, материалы и сборка</a></li><li><a href="/articles/p/po/podstavka-pod-lodochnyj-motor-svoimi-rukami-iz-dereva.html" class="related-card">Подставка под лодочный мотор своими руками: чертежи и сборка</a></li><li><a href="/articles/k/ka/kak-delayut-lodki-iz-pnd-svoimi-rukami.html" class="related-card">Лодка из ПНД своими руками: чертежи, сварка и сборка</a></li><li><a href="/articles/p/pr/proekt-lodki-iz-fanery-dlya-samostoyatelnoj-postrojki.html" class="related-card">Проект лодки из фанеры: чертежи и постройка своими руками</a></li><li><a href="/articles/s/sl/slan-dlya-lodki-svoimi-rukami.html" class="related-card">Слань для лодки ПВХ своими руками: чертежи, материалы, сборка</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/l/lo/lodka-katamaran-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Лодка катамаран своими руками: чертежи, материалы и сборка</span><span class="related-bottom-desc">Как сделать лодку катамаран своими руками? Подробная инструкция по сборке плавсредства из ПВХ труб, </span></a><a href="/articles/p/po/podstavka-pod-lodochnyj-motor-svoimi-rukami-iz-dereva.html" class="related-bottom-card"><span class="related-bottom-title">Подставка под лодочный мотор своими руками: чертежи и сборка</span><span class="related-bottom-desc">Пошаговая инструкция, как сделать надежную деревянную подставку под лодочный мотор своими руками. Че</span></a><a href="/articles/k/ka/kak-delayut-lodki-iz-pnd-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Лодка из ПНД своими руками: чертежи, сварка и сборка</span><span class="related-bottom-desc">Подробная инструкция, как сделать лодку из ПНД своими руками. Чертежи, выбор толщины листа, технолог</span></a><a href="/articles/p/pr/proekt-lodki-iz-fanery-dlya-samostoyatelnoj-postrojki.html" class="related-bottom-card"><span class="related-bottom-title">Проект лодки из фанеры: чертежи и постройка своими руками</span><span class="related-bottom-desc">Полное руководство: как сделать лодку из фанеры. Выбор проекта, раскрой листов, сборка корпуса, проп</span></a><a href="/articles/s/sl/slan-dlya-lodki-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Слань для лодки ПВХ своими руками: чертежи, материалы, сборка</span><span class="related-bottom-desc">Подробная инструкция по изготовлению слани для лодки своими руками. Выбор фанеры, пропитка, чертежи </span></a><a href="/articles/k/ka/kak-sdelat-slan-knizhka-v-lodku-pvkh-svoimi-rukami.html" class="related-bottom-card"><span class="related-bottom-title">Как сделать слань-книжку для лодки ПВХ своими руками: пошаговая инструкция</span><span class="related-bottom-desc">Подробное руководство по изготовлению сланей-книжки для лодки ПВХ: материалы, инструменты, чертежи, </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Ремонт лодочных моторов: Гусар, диагностика и обслуживание — ЛодкаМастер</title>
+    <meta name="description" content="Полное руководство по ремонту моторов Гусар. Диагностика, устранение неисправностей, настройка карбюратора и советы по продлению срока службы.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/g/gu/gusar-remont-lodochnykh-motorov.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ремонт лодочных моторов: Гусар, диагностика и обслуживание">
+    <meta property="og:description" content="Полное руководство по ремонту моторов Гусар. Диагностика, устранение неисправностей, настройка карбюратора и советы по продлению срока службы.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/remont-i-to/">Ремонт и ТО</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Ремонт лодочных моторов: Гусар, диагностика и обслуживание</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Ремонт и обслуживание лодочных моторов Гусар</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#диагностика-основных-неисправностей-двигателя">Диагностика основных неисправностей двигателя</a></li><li><a href="#регулировка-и-ремонт-карбюратора">Регулировка и ремонт карбюратора</a></li><li><a href="#обслуживание-системы-зажигания-и-электрики">Обслуживание системы зажигания и электрики</a></li><li><a href="#ремонт-дейдвуда-и-замена-сальников">Ремонт дейдвуда и замена сальников</a></li><li><a href="#замена-поршневой-группы-и-цпг">Замена поршневой группы и ЦПГ</a></li><li><a href="#профилактика-и-подготовка-к-зимнему-хранению">Профилактика и подготовка к зимнему хранению</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Эксплуатация лодочного мотора на воде — это всегда баланс между удовольствием от прогулки и риском столкнуться с техническими проблемами. <strong>Ремонт лодочных моторов Гусар</strong> часто становится необходимостью для владельцев, ценящих простоту конструкции и доступность запчастей, но игнорирующих регулярное ТО. В отличие от сложных импортных аналогов, отечественные разработки требуют внимательного отношения к системе смазки и качеству топливной смеси.</p>
+
+<p>Многие проблемы, возникающие в пути, можно решить самостоятельно, если понимать базовые принципы работы <em>двухтактного двигателя</em>. Владелец должен уметь отличать механический износ от ошибок в регулировке карбюратора. Игнорирование первых признаков нестабильной работы часто приводит к дорогостоящему восстановлению поршневой группы.</p>
+
+<p>В этой статье мы подробно разберем типичные неисправности, методы их диагностики и профилактики. Вы узнаете, как правильно настроить <strong>карбюратор</strong>, заменить сальники и провести консервацию техники перед зимним хранением. Грамотный подход позволит продлить ресурс вашего «Гусаря» на сотни моточасов.</p>
+
+<div class="poll-widget" id="poll-838b7fbe"><div class="poll-widget-question">📊 Какой у вас лодочный мотор Гусар?</div><div class="poll-widget-option" data-poll="838b7fbe" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Гусар-2.5</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="838b7fbe" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Гусар-5</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="838b7fbe" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Гусар-9.9</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="838b7fbe" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Другая модель</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="диагностика-основных-неисправностей-двигателя">Диагностика основных неисправностей двигателя</h2>
+
+<p>Первым шагом в любом ремонте является правильная постановка диагноза. Двигатели серии <em>Гусар</em> отличаются надежной конструкцией, но имеют свои слабые места, характерные для бюджетных двухтактников. Чаще всего владельцы сталкиваются с потерей мощности или невозможностью запустить агрегат.</p>
+
+<p>Если мотор не заводится, необходимо проверить наличие искры и поступление топлива. <strong>Система зажигания</strong> может давать сбой из-за намокания свечного колпачка или пробоя высоковольтного провода. В сырую погоду вода часто становится причиной отсутствия искры, поэтому сушка элементов системы зажигания — первое, что нужно сделать.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не пытайтесь запустить двигатель с открытым топливным баком внутри лодки. Пары бензина тяжелее воздуха и могут воспламениться от искры стартера или свечи, что приведет к взрыву.</p>
+</blockquote>
+
+<p>Потеря тяги часто свидетельствует о нарушении компрессии или проблемах с выхлопом. <mark>Критическим признаком является появление металлического стука, который указывает на разрушение подшипников коленвала или задиры в цилиндре.</mark> Дальнейшая эксплуатация в таком режиме приведет к полному заклиниванию мотора.</p>
+
+<p>Для точной диагностики полезно использовать таблицу симптомов:</p>
+
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Возможная причина</th>
+<th>Метод решения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Двигатель глохнет на холостых</td>
+<td>Загрязнен жиклер ХХ или подсос воздуха</td>
+<td>Прочистка карбюратора, замена прокладок</td>
+</tr>
+<tr>
+<td>Нет искры</td>
+<td>Неисправность катушки или маховика</td>
+<td>Проверка зазора, замена модуля зажигания</td>
+</tr>
+<tr>
+<td>Сильная вибрация</td>
+<td>Разбалансировка винта или износ дейдвуда</td>
+<td>Балансировка винта, замена подшипников</td>
+</tr>
+<tr>
+<td>Перегрев</td>
+<td>Забита помпа или каналы охлаждения</td>
+<td>Разборка помпы, очистка системы</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>При диагностике всегда проверяйте состояние топливного фильтра-отстойника. Даже микроскопическая капля воды в системе питания способна вывести мотор из строя за считанные минуты работы на высоких оборотах.</p></div>
+
+<h2 id="регулировка-и-ремонт-карбюратора">Регулировка и ремонт карбюратора</h2>
+
+<p>Карбюратор является сердцем топливной системы, и его правильная настройка напрямую влияет на приемистость и экономичность. В моторах <em>Гусар</em> часто используются простые поплавковые карбюраторы, которые чувствительны к качеству бензина. Грязь и смолистые отложения быстро забивают тонкие каналы.</p>
+
+<p>Процесс регулировки начинается с визуального осмотра. Необходимо убедиться в герметичности соединения карбюратора с цилиндром. Подсос лишнего воздуха через прокладку приводит к обеднению смеси, что вызывает перегрев и детонацию. <strong>Обороты холостого хода</strong> регулируются специальным винтом, положение которого зависит от температуры окружающей среды.</p>
+
+<p>Если двигатель «чихает» или стреляет в глушитель, значит, смесь слишком богатая или слишком бедная. Для устранения проблемы требуется разборка и дефектовка узлов. Особое внимание уделите состоянию иглы и запорного клапана.</p>
+
+<details class="faq-item"><summary>Секреты чистки карбюратора</summary><div class="faq-answer"><p>Используйте ультразвуковую ванну для удаления лаковых отложений. Обычная промывка в бензине часто неэффективна против старых смол. После чистки обязательно продуйте все каналы сжатым воздухом.</p></div></details>
+
+<p>При сборке важно не перетянуть винты крепления, так как силуминовый корпус может лопнуть. Герметичность системы — залог стабильной работы на всех режимах. После регулировки мотор должен уверенно набирать обороты без провалов.</p>
+
+<h2 id="обслуживание-системы-зажигания-и-электрики">Обслуживание системы зажигания и электрики</h2>
+
+<p>Электрическая схема моторов <em>Гусар</em> относительно проста, что облегчает поиск неисправностей. Основными элементами здесь являются магдино, катушка зажигания, выпрямитель и свеча. Проблемы чаще всего кроются в окислении контактов или нарушении изоляции.</p>
+
+<p>Проверка искрообразования должна проводиться с помощью специального разрядника или прижатием резьбы свечи к массе двигателя. <strong>Зазор свечи</strong> должен составлять 0.6–0.7 мм. Слишком большой зазор может привести к пробую катушки, а слишком маленький — к слабому искрообразованию.</p>
+
+<ul>
+<li>🔌 Проверьте надежность крепления высоковольтного провода в колпачке — окисление снижает мощность искры.</li>
+<li>🔋 Убедитесь, что стоп-кнопка не замыкает на массу, блокируя искру.</li>
+<li>🧲 Осмотрите магниты маховика на предмет сколов и трещин.</li>
+<li>💡 Замените свечу, если на электродах есть черный нагар или маслянистые отложения.</li>
+</ul>
+
+<p> Регулярная смазка контактов спреем-вытеснителем влаги помогает предотвратить коррозию. Если мотор долго не заводился, проверьте сопротивление первичной и вторичной обмоток катушки.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка зажигания</h4><label class="check-item"><input type="checkbox"><span>Снять колпачок свечи</span></label><label class="check-item"><input type="checkbox"><span>Выкрутить свечу</span></label><label class="check-item"><input type="checkbox"><span>Проверить зазор щупом</span></label><label class="check-item"><input type="checkbox"><span>Оценить цвет нагара</span></label><label class="check-item"><input type="checkbox"><span>Проверить искру на массе</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="ремонт-дейдвуда-и-замена-сальников">Ремонт дейдвуда и замена сальников</h2>
+
+<p>Нижняя часть мотора, или дейдвуд, подвергается наибольшим нагрузкам. Именно здесь расположены подшипники гребного вала и сальники, предотвращающие попадание воды в редуктор. <strong>Замена сальников</strong> — процедура, которую необходимо проводить регулярно, особенно после ударов о подводные препятствия.</p>
+
+<p>Признаками необходимости ремонта являются появление эмульсии (воды с маслом) в редукторе или течь масла наружу. Для замены потребуется полностью разобрать дейдвуд, сняв гребной винт и корпус. Старые сальники лучше выбрасывать, так как повторное использование невозможно.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При установке нового сальника никогда не смазывайте его солидолом или литолом. Используйте только специальное масло для редуктора или мыльный раствор, чтобы не повредить рабочую кромку при запрессовке.</p>
+</blockquote>
+
+<p>Особое внимание уделите состоянию гребного вала. Наличие задиров или коррозии на посадочных местах под сальники приведет к быстрому выходу из строя новых уплотнений. В таких случаях требуется замена вала или восстановление посадочных мест.</p>
+
+<p>Сборка производится в обратной последовательности с обязательной смазкой всех трущихся деталей. После сборки проверьте герметичность редуктора, создав небольшое давление воздуха.</p>
+
+<h2 id="замена-поршневой-группы-и-цпг">Замена поршневой группы и ЦПГ</h2>
+
+<p>Капитальный ремонт двигателя начинается с замены цилиндро-поршневой группы (ЦПГ). Это требуется при появлении стуков, потере компрессии или задиров на зеркале цилиндра. Для моторов <em>Гусар</em> характерно использование алюминиевых цилиндров без гильзы, что требует аккуратности при ремонте.</p>
+
+<p>Перед разборкой необходимо очистить внешнюю поверхность двигателя от грязи, чтобы она не попала внутрь при вскрытии. Снятие головки цилиндра и картера требует соблюдения последовательности откручивания болтов — обычно это делается крест-накрест, чтобы не повредить плоскость прилегания.</p>
+
+<p>При установке новой поршневой группы важно правильно сориентировать поршень. <strong>Выхлопное окно</strong> должно совпадать с каналом в цилиндре. Также необходимо контролировать тепловые зазоры, которые обеспечивают нормальную работу двигателя при нагреве.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Качество сборки ЦПГ определяет ресурс мотора. Использование оригинальных или проверенных аналогов запчастей критически важно для предотвращения повторного ремонта через сезон.</p></div>
+
+<p>После сборки и установки мотора на лодку обязательна обкатка. Новые детали должны притереться друг к другу в щадящем режиме. Резкие открытия дросселя в первые часы работы недопустимы.</p>
+
+<h2 id="профилактика-и-подготовка-к-зимнему-хранению">Профилактика и подготовка к зимнему хранению</h2>
+
+<p>Долговечность лодочного мотора зависит не только от качества ремонта, но и от условий хранения. Консервация на зиму — обязательная процедура, игнорирование которой приводит к коррозии внутренних полостей и застыванию топлива в карбюраторе.</p>
+
+<p>В первую очередь необходимо выработать остатки топливной смеси из карбюратора. Для этого мотор запускают и дают ему работать до полной остановки, перекрыв подачу топлива. Затем следует заменить масло в редукторе, даже если оно менялось недавно.</p>
+
+<ul>
+<li>🛢️ Слейте старое масло из редуктора и залейте новое до появления капли в верхнем отверстии.</li>
+<li>🧼 Промойте систему охлаждения пресной водой, если мотор работал в соленой воде.</li>
+<li>🧴 Обработайте внешние металлические поверхности антикоррозийным спреем.</li>
+<li>📦 Храните мотор в вертикальном положении в сухом помещении.</li>
+</ul>
+
+<p>Смазка всех шарнирных соединений и тросов также входит в перечень работ. Это предотвратит закисание механизмов управления газом и поворотом дейдвуда. Регулярное обслуживание — залог того, что в следующем сезоне вы сразу отправитесь на воду, а не в мастерскую.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Какое масло лучше использовать для мотора Гусар?</summary>
+<p>Для двухтактных моторов <em>Гусар</em> рекомендуется использовать специальные масла с маркировкой TC-W3. Пропорция смешивания с бензином обычно составляет 1:25 для новых моторов (обкатка) и 1:50 для обкатанных. Использование автомобильных масел недопустимо, так как они образуют нагар и выводят двигатель из строя.</p>
+</details>
+
+<details>
+<summary>Почему мотор глохнет при открытии газа?</summary>
+<p>Чаще всего это свидетельствует о засорении главного жиклера карбюратора или подсосе воздуха через прокладку. Также причиной может быть вода в топливном баке. Необходимо промыть топливную систему и проверить герметичность впускного тракта.</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять сальники в дейдвуде?</summary>
+<p>Производитель рекомендует проводить замену сальников и масла в редукторе каждые 100 моточасов или раз в сезон активной эксплуатации. Однако при частых ударах о препятствия или при обнаружении эмульсии замену следует производить немедленно.</p>
+</details>
+
+<details>
+<summary>Можно ли использовать бензин АИ-95 вместо АИ-92?</summary>
+<p>Использование бензина с более высоким октановым числом (АИ-95, АИ-98) допустимо, но не всегда целесообразно. Главное требование — свежесть топлива и отсутствие спиртовых добавок, которые могут агрессивно воздействовать на резиновые уплотнители карбюратора.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#диагностика-основных-неисправностей-двигателя">Диагностика основных неисправностей двигателя</a></li><li><a href="#регулировка-и-ремонт-карбюратора">Регулировка и ремонт карбюратора</a></li><li><a href="#обслуживание-системы-зажигания-и-электрики">Обслуживание системы зажигания и электрики</a></li><li><a href="#ремонт-дейдвуда-и-замена-сальников">Ремонт дейдвуда и замена сальников</a></li><li><a href="#замена-поршневой-группы-и-цпг">Замена поршневой группы и ЦПГ</a></li><li><a href="#профилактика-и-подготовка-к-зимнему-хранению">Профилактика и подготовка к зимнему хранению</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kamera-smotret-v-tsilindr-dvigatelya.html" class="related-card">Диагностика цилиндров: как смотреть камеру двигателя</a></li><li><a href="/articles/p/pr/propala-tyaga-na-lodochnom-motore.html" class="related-card">Пропала тяга на лодочном моторе: причины и ремонт</a></li><li><a href="/articles/m/mo/mozhno-li-smeshivat-mineralnoe-i-polusinteticheskoe-motornoe-maslo-dlya-2-taktnykh-dvigatelej.html" class="related-card">Смешивание масел для 2Т двигателей: можно или нет?</a></li><li><a href="/articles/r/re/rele-regulyator-lodochnogo-motora.html" class="related-card">Реле регулятор лодочного мотора: устройство, проверка и замена</a></li><li><a href="/articles/r/re/resurs-dvigatelya-alfa.html" class="related-card">Ресурс двигателя Альфа: реальный пробег и советы по продлению</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kamera-smotret-v-tsilindr-dvigatelya.html" class="related-bottom-card"><span class="related-bottom-title">Диагностика цилиндров: как смотреть камеру двигателя</span><span class="related-bottom-desc">Профессиональная видеодефектовка мотора через свечные отверстия. Как провести осмотр цилиндров эндос</span></a><a href="/articles/p/pr/propala-tyaga-na-lodochnom-motore.html" class="related-bottom-card"><span class="related-bottom-title">Пропала тяга на лодочном моторе: причины и ремонт</span><span class="related-bottom-desc">Почему пропала тяга на лодочном моторе? Полный гид по диагностике: винт, карбюратор, компрессия. Как</span></a><a href="/articles/m/mo/mozhno-li-smeshivat-mineralnoe-i-polusinteticheskoe-motornoe-maslo-dlya-2-taktnykh-dvigatelej.html" class="related-bottom-card"><span class="related-bottom-title">Смешивание масел для 2Т двигателей: можно или нет?</span><span class="related-bottom-desc">Можно ли смешивать минералку и полусинтетику в двухтактном моторе? Разбор химии, рисков и последстви</span></a><a href="/articles/r/re/rele-regulyator-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Реле регулятор лодочного мотора: устройство, проверка и замена</span><span class="related-bottom-desc">Как работает реле регулятор лодочного мотора? Симптомы неисправности, методы проверки мультиметром и</span></a><a href="/articles/r/re/resurs-dvigatelya-alfa.html" class="related-bottom-card"><span class="related-bottom-title">Ресурс двигателя Альфа: реальный пробег и советы по продлению</span><span class="related-bottom-desc">Какой реальный ресурс у двигателя Альфа 110 и 125 кубов? Разбор мифов о пробеге до капремонта, типич</span></a><a href="/articles/u/us/ustanovka-rulevoj-tyagi-na-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Установка рулевой тяги на лодочный мотор: пошаговая инструкция</span><span class="related-bottom-desc">Подробное руководство по замене и регулировке рулевой тяги лодочного мотора. Советы по устранению лю</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

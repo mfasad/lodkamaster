@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Устройство лодочного мотора: принцип работы, узлы и схемы — ЛодкаМастер</title>
+    <meta name="description" content="Подробный разбор устройства лодочного мотора. Изучаем конструкцию дейдвуда, системы охлаждения и карбюратора для грамотной эксплуатации.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/u/us/ustrojstvo-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Устройство лодочного мотора: принцип работы, узлы и схемы">
+    <meta property="og:description" content="Подробный разбор устройства лодочного мотора. Изучаем конструкцию дейдвуда, системы охлаждения и карбюратора для грамотной эксплуатации.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Устройство лодочного мотора: принцип работы, узлы и схемы</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Устройство лодочного мотора: детальный разбор конструкции</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#общая-компоновка-и-основные-узлы">Общая компоновка и основные узлы</a></li><li><a href="#конструкция-двигателя-цилиндр-и-поршень">Конструкция двигателя: цилиндр и поршень</a></li><li><a href="#система-топливоподачи-и-карбюрация">Система топливоподачи и карбюрация</a></li><li><a href="#принцип-работы-системы-зажигания">Принцип работы системы зажигания</a></li><li><a href="#трансмиссия-редуктор-и-гребной-винт">Трансмиссия: редуктор и гребной винт</a></li><li><a href="#система-охлаждения-и-термостат">Система охлаждения и термостат</a></li><li><a href="#система-управления-и-реверс">Система управления и реверс</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Понимание того, как устроен лодочный мотор, является критически важным навыком для любого владельца плавсредства. Вдали от берега и сервисных центров именно знание конструкции позволяет быстро диагностировать неисправность и, возможно, вернуть технику к жизни. <strong>Устройство лодочного мотора</strong> кажется сложным лишь на первый взгляд, однако при детальном рассмотрении оно представляет собой логичную совокупность трех основных систем.</p>
+
+<p>В этой статье мы разберем внутреннюю архитектуру двигателя, принцип передачи крутящего момента и особенности систем, обеспечивающих его стабильную работу. Знание этих нюансов поможет вам не только избежать дорогостоящего ремонта, но и продлить ресурс агрегата на сотни моточасов.</p>
+
+<p>Независимо от того, владеете ли вы компактным двухтактником или мощным четырехтактным агрегатом, базовые принципы их строения остаются схожими. Давайте погрузимся в технические детали и рассмотрим, что именно скрыто под пластиковым кожухом.</p>
+
+<h2 id="общая-компоновка-и-основные-узлы">Общая компоновка и основные узлы</h2>
+
+<p>Конструктивно любой подвесной мотор делится на три функциональные части: верхнюю силовую головку, дейдвуд (ногу) и гребной винт с редуктором. <strong>Силовая головка</strong> содержит в себе сердце агрегата — двигатель внутреннего сгорания, а также систему управления и топливный насос. Именно здесь происходит преобразование энергии сгорающего топлива во вращательное движение.</p>
+
+<p>Ниже расположена длинная труба, именуемая дейдвудом. Внутри неё проходят валы, тяги управления и каналы системы охлаждения. Дейдвуд служит связующим звеном между мотором и водой, передавая усилие вниз. В нижней части дейдвуда находится <strong>редуктор</strong>, который изменяет направление вращения вала на 90 градусов, передавая крутящий момент на гребной винт.</p>
+
+<p>Важно отметить, что вес мотора распределен таким образом, чтобы центр тяжести находился максимально близко к транцу лодки. Это обеспечивает устойчивость плавсредства и облегчает управление. Все узлы крепятся на стальной раме, которая также служит основой для навески на транец.</p>
+
+<ul>
+<li>🔧 <strong>Двигатель:</strong> преобразует химическую энергию топлива в механическую.</li>
+<li>🌊 <strong>Система охлаждения:</strong> предотвращает перегрев трущихся деталей через забор забортной воды.</li>
+<li>⚙️ <strong>Редуктор:</strong> понижает обороты и меняет вектор вращения на винт.</li>
+<li>🎛️ <strong>Система управления:</strong> позволяет контролировать газ и переключать передачи.</li>
+</ul>
+
+<p>Каждый из этих узлов работает в экстремальных условиях: вибрация, соленая вода, перепады температур. Поэтому герметичность и качество материалов здесь играют решающую роль.</p>
+
+<h2 id="конструкция-двигателя-цилиндр-и-поршень">Конструкция двигателя: цилиндр и поршень</h2>
+
+<p>Сердцем любого подвесного мотора является блок цилиндров. В зависимости от тактности, процесс работы может отличаться, но физика остается единой. Внутри <strong>цилиндра</strong> движется поршень, который через шатун передает энергию на коленчатый вал. В двухтактных моделях этот процесс происходит за один оборот коленвала, что делает их более мощными при меньшем весе.</p>
+
+<p>Четырехтактные двигатели имеют более сложную конструкцию газораспределительного механизма (ГРМ). Здесь присутствуют клапаны, распределительный вал и масляный картер. Такая схема позволяет <em>четырехтактным моторам</em> быть более экономичными и экологичными, хотя их устройство и обслуживание требуют большей квалификации.</p>
+
+<blockquote>
+<p>⚠️ Внимание: При эксплуатации двухтактного двигателя критически важно соблюдать пропорцию смешивания масла с бензином. Работа на чистом бензине приведет к задирам поршня и клину двигателя за считанные минуты.</p>
+</blockquote>
+
+<p>Материалы, используемые для поршней, часто содержат кремний или специальные сплавы алюминия для снижения трения и веса. Коленчатый вал, в свою очередь, должен обладать высокой прочностью на скручивание, так как испытывает колоссальные нагрузки, особенно при выходе на глиссирование.</p>
+
+<p>Герметичность цилиндро-поршневой группы обеспечивается поршневыми кольцами. Их состояние напрямую влияет на компрессию и, следовательно, на мощность мотора. Износ колец — естественный процесс, требующий периодической диагностики.</p>
+
+<h2 id="система-топливоподачи-и-карбюрация">Система топливоподачи и карбюрация</h2>
+
+<p>Для эффективной работы двигателю нужна правильная смесь воздуха и топлива. В современных моделях за это отвечает электронный впрыск, но классическое <strong>устройство лодочного мотора</strong> чаще всего подразумевает использование карбюратора. Карбюратор смешивает бензин с воздухом в необходимых пропорциях перед подачей в цилиндр.</p>
+
+<p>Топливный насос, часто мембранного типа, качает бензин из бака. Он работает за счет пульсации давления в кривошипной камере (в двухтактниках) или привода от двигателя. Топливо проходит через фильтр-отстойник, где отделяется вода и крупный мусор, прежде чем попасть в поплавковую камеру.</p>
+
+<div class="poll-widget" id="poll-3834d976"><div class="poll-widget-question">📊 Какой тип двигателя установлен на вашей лодке?</div><div class="poll-widget-option" data-poll="3834d976" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">2-тактный бензиновый</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="3834d976" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">4-тактный бензиновый</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="3834d976" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Электрический мотор</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="3834d976" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Дизельный мотор</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Регулировка качества смеси производится винтами "качества" и "количества". Неправильная настройка приводит либо к перерасходу топлива и нагару на свечах, либо к перегреву и прогару поршня из-за бедной смеси.</p>
+
+<ul>
+<li>⛽ <strong>Поплавковая камера:</strong> поддерживает постоянный уровень топлива.</li>
+<li>💨 <strong>Дроссельная заслонка:</strong> регулирует количество поступающей смеси.</li>
+<li>🌪️ <strong>Жиклеры:</strong> дозированные отверстия для подачи топлива.</li>
+</ul>
+
+<p>Важно регулярно проверять состояние топливных шлангов и груши подкачки. Трещины на резиновых элементах могут привести к подсосу воздуха, что нарушит стабильность холостого хода.</p>
+
+<h2 id="принцип-работы-системы-зажигания">Принцип работы системы зажигания</h2>
+
+<p>Своевременное воспламенение топливно-воздушной смеси обеспечивает система зажигания. В старых моделях использовалось контактное зажигание, которое требовало постоянной регулировки зазора. Современные моторы оснащены <strong>электронным зажиганием</strong> (CDI или TCI), которое не имеет механических контактов и работает значительно надежнее.</p>
+
+<p>Ключевым элементом здесь является магдино — генератор переменного тока, расположенный под маховиком. При вращении маховика с магнитами в катушках наводится ток, который накапливается в коммутаторе и в нужный момент подается на свечу зажигания. Момент зажигания может регулироваться автоматически в зависимости от оборотов двигателя.</p>
+
+<p>Свеча зажигания должна иметь правильный калильное число. Слишком "горячая" свеча приведет к детонации, а "холодная" обрастет нагаром и перестанет искрить. Цвет нагара на электроде свечи — лучший диагностический признак состояния мотора.</p>
+
+<details class="faq-item"><summary>Как проверить искру без тестера?</summary><div class="faq-answer"><p>Выкрутите свечу, прижмите ее резьбовой частью к металлической части двигателя (массе). При прокрутке стартером между электродами должна проскакивать яркая синяя искра. Красная или слабая искра говорит о проблемах в катушке или коммутаторе.</p></div></details>
+
+<p>Высоковольтные провода должны быть надежно изолированы. Попадание воды на пробойные места может привести к перебоям в работе мотора или полной остановке на ходу.</p>
+
+<h2 id="трансмиссия-редуктор-и-гребной-винт">Трансмиссия: редуктор и гребной винт</h2>
+
+<p>Нижняя часть мотора, или дейдвуд, содержит редуктор, который является одним из самых нагруженных узлов. Его задача — передать вращение вертикального вала на горизонтальный вал гребного винта. Внутри редуктора находятся шестерни, работающие в масляной ванне.</p>
+
+<p><strong>Гребной винт</strong> подбирается в зависимости от веса лодки и желаемой скорости. Диаметр и шаг винта напрямую влияют на обороты двигателя. Слишком тяжелый винт не даст мотору развить максимальные обороты, что приведет к перегрузке, а слишком легкий — к "перекруту" и повышенному расходу топлива.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр винта</th>
+<th>Влияние на ход</th>
+<th>Рекомендация</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Шаг (Pitch)</td>
+<td>Определяет теоретическое продвижение за оборот</td>
+<td>Увеличивать для скорости, уменьшать для тяги</td>
+</tr>
+<tr>
+<td>Диаметр</td>
+<td>Влияет на площадь упора</td>
+<td>Подбирать строго по паспорту мотора</td>
+</tr>
+<tr>
+<td>Количество лопастей</td>
+<td>Влияет на вибрацию и кавитацию</td>
+<td>3 лопасти — стандарт, 4 — для тяжелых лодок</td>
+</tr>
+</tbody>
+</table>
+
+<p>Вал гребного винта проходит через уплотнительные сальники. Их износ — самая частая причина попадания воды в редуктор. Эмульгирование масла (превращение в "кофе с молоком") свидетельствует о нарушении герметичности.</p>
+
+<p>Важной деталью является шпонка или система защиты винта (Spline Drive). При ударе о подводное препятствие шпонка срезается, защищая дорогостоящие шестерни редуктора и коленвал от разрушения.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>После каждой вытаскивания лодки на берег проверяйте масло в редукторе. Наличие воды в масле — сигнал к немедленной замене сальников, даже если мотор работает нормально.</p></div>
+
+<h2 id="система-охлаждения-и-термостат">Система охлаждения и термостат</h2>
+
+<p>Большинство лодочных моторов используют водяное охлаждение забортной водой. Вода засасывается через водозаборное отверстие в дейдвуде при помощи крыльчатки (импеллера), расположенной в помпе. Крыльчатка изготовлена из резины и является расходным материалом.</p>
+
+<p>Вода проходит через рубашку охлаждения блока цилиндров, отбирая тепло, и выбрасывается через контрольное отверстие (писсуар) вместе с отработавшими газами. Наличие струи воды из контрольного отверстия — главный визуальный признак исправности системы охлаждения.</p>
+
+<p>В четырехтактных моторах часто устанавливается <strong>термостат</strong>. Он перекрывает циркуляцию воды до прогрева двигателя, позволяя ему быстрее выйти на рабочую температуру. Это снижает износ и расход топлива на холодном ходу.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не запускайте мотор без погружения в воду или без подключения к системе искусственного охлаждения. Сухой ход водяной помпы разрушает резиновую крыльчатку за 10-15 секунд.</p>
+</blockquote>
+
+<p>Забитые солью или песком каналы охлаждения — частая причина перегрева. Регулярная промывка пресной водой после эксплуатации в соленой среде обязательна для долгой жизни двигателя.</p>
+
+<h2 id="система-управления-и-реверс">Система управления и реверс</h2>
+
+<p>Управление мотором осуществляется через румпель или дистанционный бокс. Механические тяги внутри дейдвуда передают усилие от рукоятки газа и рычага переключения передач. В современных системах может использоваться электронное управление (Fly-by-wire), где сигналы передаются по проводам.</p>
+
+<p>Механизм реверса позволяет изменять направление вращения винта или менять вектор тяги. В большинстве моторов двигатель вращается в одну сторону постоянно, а реверс осуществляется за счет перемещения муфты в редукторе, которая переключает передачу вращения на шестерню заднего хода.</p>
+
+<div class="checklist-block"><h4>☑️ Ежегодное ТО дейдвуда</h4><label class="check-item"><input type="checkbox"><span>Смазать шлицы гребного вала</span></label><label class="check-item"><input type="checkbox"><span>Заменить масло в редукторе</span></label><label class="check-item"><input type="checkbox"><span>Проверить люфт винта</span></label><label class="check-item"><input type="checkbox"><span>Смазать тросы управления</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть дейдвуд на вмятины</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Четкость переключения передач зависит от регулировки тросов. Если рычаг ходит слишком туго или, наоборот, имеет большой люфт, необходима регулировка фрикциона и натяжения тросов.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Как часто нужно менять масло в редукторе?</summary>
+<p>Масло в редукторе рекомендуется менять раз в сезон или каждые 100 моточасов. При появлении эмульсии замену производят немедленно, предварительно устранив причину попадания воды.</p>
+</details>
+
+<details>
+<summary>Почему мотор глохнет на высоких оборотах?</summary>
+<p>Чаще всего это свидетельствует о нехватке топлива (забит фильтр, жиклеры или топливный шланг схлопывается) или о проблемах с системой зажигания (пробой катушки под нагрузкой).</p>
+</details>
+
+<details>
+<summary>Можно ли хранить лодочный мотор вертикально?</summary>
+<p>Хранить мотор строго вертикально (на винте) можно только кратковременно. Для длительного хранения его следует ставить на специальную стойку или класть на бок, чтобы масло не затекало в цилиндры и глушитель.</p>
+</details>
+
+<details>
+<summary>Что означает маркировка "Long Shaft"?</summary>
+<p>Это обозначение длины дейдвуда. Long Shaft (L) — длинная нога (обычно 508 мм), Short Shaft (S) — короткая (381 мм). Выбор зависит от высоты транца вашей лодки.</p>
+</details>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярная замена антикоррозийных анодов на дейдвуде — самый дешевый способ защитить дорогостоящие металлические детали мотора от гальванической коррозии.</p></div></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#общая-компоновка-и-основные-узлы">Общая компоновка и основные узлы</a></li><li><a href="#конструкция-двигателя-цилиндр-и-поршень">Конструкция двигателя: цилиндр и поршень</a></li><li><a href="#система-топливоподачи-и-карбюрация">Система топливоподачи и карбюрация</a></li><li><a href="#принцип-работы-системы-зажигания">Принцип работы системы зажигания</a></li><li><a href="#трансмиссия-редуктор-и-гребной-винт">Трансмиссия: редуктор и гребной винт</a></li><li><a href="#система-охлаждения-и-термостат">Система охлаждения и термостат</a></li><li><a href="#система-управления-и-реверс">Система управления и реверс</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/l/lo/lodka-s-aerodvigatelem.html" class="related-card">Лодка с аэродвигателем: обзор, устройство и особенности эксплуатации</a></li><li><a href="/articles/l/lo/lodochnyj-motor-neptun-23-kupit-novyj.html" class="related-card">Лодочный мотор Нептун 23 купить новый: цена, характеристики и отзывы</a></li><li><a href="/articles/s/sk/skorostnoj-vint-na-lodochnyj-motor-5-l-s.html" class="related-card">Скоростной винт на лодочный мотор 5 л.с.: выбор, настройка и плюсы</a></li><li><a href="/articles/s/sh/shag-vinta-lodochnogo-motora-na-chto-vliyaet.html" class="related-card">Шаг винта лодочного мотора: на что влияет и как выбрать</a></li><li><a href="/articles/l/lo/lodochnyj-motor-parsun-98.html" class="related-card">Лодочный мотор Parsun 9.8: обзор, характеристики, отзывы и тюнинг</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/l/lo/lodka-s-aerodvigatelem.html" class="related-bottom-card"><span class="related-bottom-title">Лодка с аэродвигателем: обзор, устройство и особенности эксплуатации</span><span class="related-bottom-desc">Полный гид по лодкам на воздушной тяге. Принцип работы, сравнение с винтовыми моторами, плюсы и мину</span></a><a href="/articles/l/lo/lodochnyj-motor-neptun-23-kupit-novyj.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Нептун 23 купить новый: цена, характеристики и отзывы</span><span class="related-bottom-desc">Где купить новый лодочный мотор Нептун 23? Полный обзор характеристик, преимущества модели, советы п</span></a><a href="/articles/s/sk/skorostnoj-vint-na-lodochnyj-motor-5-l-s.html" class="related-bottom-card"><span class="related-bottom-title">Скоростной винт на лодочный мотор 5 л.с.: выбор, настройка и плюсы</span><span class="related-bottom-desc">Как выбрать скоростной винт на лодочный мотор 5 л.с. Разбор шага, диаметра и материалов. Таблица соо</span></a><a href="/articles/s/sh/shag-vinta-lodochnogo-motora-na-chto-vliyaet.html" class="related-bottom-card"><span class="related-bottom-title">Шаг винта лодочного мотора: на что влияет и как выбрать</span><span class="related-bottom-desc">Узнайте, как шаг винта влияет на скорость, тягу и расход топлива лодочного мотора. Таблица соответст</span></a><a href="/articles/l/lo/lodochnyj-motor-parsun-98.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Parsun 9.8: обзор, характеристики, отзывы и тюнинг</span><span class="related-bottom-desc">Полный гид по мотору Parsun 9.8 л.с. Особенности конструкции, реальный расход топлива, настройка кар</span></a><a href="/articles/m/mo/motyul-2t-dlya-lodochnykh-motorov.html" class="related-bottom-card"><span class="related-bottom-title">Масло Motul 2T для лодочных моторов: выбор и применение</span><span class="related-bottom-desc">Полный гид по маслу Motul 2T для лодочных моторов. Разбор серий Outboard, Technosynthese, дозировок </span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

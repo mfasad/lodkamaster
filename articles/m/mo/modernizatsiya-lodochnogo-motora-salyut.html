@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Модернизация лодочного мотора Салют: тюнинг и доработки — ЛодкаМастер</title>
+    <meta name="description" content="Полный гид по модернизации мотора Салют: установка ПМЦ, доработка карбюратора, настройка зажигания. Как повысить мощность и надежность старого двигателя.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/m/mo/modernizatsiya-lodochnogo-motora-salyut.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Модернизация лодочного мотора Салют: тюнинг и доработки">
+    <meta property="og:description" content="Полный гид по модернизации мотора Салют: установка ПМЦ, доработка карбюратора, настройка зажигания. Как повысить мощность и надежность старого двигателя.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Модернизация лодочного мотора Салют: тюнинг и доработки</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Модернизация лодочного мотора Салют своими руками: от теории к практике</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#диагностика-и-подготовка-к-тюнингу">Диагностика и подготовка к тюнингу</a></li><li><a href="#увеличение-степени-сжатия-и-доработка-цпг">Увеличение степени сжатия и доработка ЦПГ</a></li><li><a href="#модернизация-системы-зажигания">Модернизация системы зажигания</a></li><li><a href="#доработка-карбюратора-и-топливной-системы">Доработка карбюратора и топливной системы</a></li><li><a href="#улучшение-дейдвуда-и-гребного-винта">Улучшение дейдвуда и гребного винта</a></li><li><a href="#настройка-и-обкатка-модернизированного-мотора">Настройка и обкатка модернизированного мотора</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Владельцы советских лодочных моторов серии <em>Салют</em> часто сталкиваются с дилеммой: выбросить «старичка» на свалку или подарить ему вторую жизнь. Несмотря на возраст, двухтактная конструкция этих агрегатов обладает колоссальным потенциалом, который при грамотном подходе позволяет значительно улучшить тяговые характеристики и экономичность. <strong>Модернизация лодочного мотора</strong> — это не просто замена свечей, а комплекс инженерных решений, направленных на устранение заводских недочетов.</p>
+
+<p>Многие энтузиасты ошибочно полагают, что эти двигатели безнадежно устарели, однако правильная настройка системы топливоподачи и улучшение герметичности картера творят чудеса. Вы сможете добиться уверенного выхода на глиссирование даже с более тяжелой лодкой, чем планировалось изначально. В этой статье мы разберем конкретные шаги по превращению стокового <em>Салют-М</em> или <em>Салют-2</em> в надежный агрегат дляных прогулок.</p>
+
+<p>Прежде чем хвататься за инструменты, необходимо провести полную дефектовку узлов. Только понимание текущего состояния деталей позволит составить правильный план работ и избежать покупки лишнего «тюнинга», который не даст эффекта на изношенном двигателе.</p>
+
+<h2 id="диагностика-и-подготовка-к-тюнингу">Диагностика и подготовка к тюнингу</h2>
+
+<p>Начало работ всегда лежит через тщательную мойку и визуальный осмотр всех систем. Нельзя просто так начать крутить винты карбюратора, если в цилиндре есть задиры, а сальники пропускают воздух. <strong>Герметичность кривошипной камеры</strong> — это фундамент, на котором строится вся работа двухтактного двигателя. Любая негерметичность приводит к обеднению смеси и перегреву поршневой группы.</p>
+
+<p>Особое внимание следует уделить состоянию дейдвуда и гребного вала. Если здесь есть люфты, то никакая мощность не поможет лодке развить скорость, так как энергия будет уходить на вибрацию и нагрев редуктора. Проверьте шлицы и состояние дейдвудной трубы на предмет коррозии.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист первичной диагностики</h4><label class="check-item"><input type="checkbox"><span>Проверить компрессию (должна быть 7-9 атм)</span></label><label class="check-item"><input type="checkbox"><span>Осмотреть состояние сальников коленвала</span></label><label class="check-item"><input type="checkbox"><span>Проверить искру на всех оборотах</span></label><label class="check-item"><input type="checkbox"><span>Оценить состояние лепесткового клапана</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<p>Для точной оценки состояния цилиндра используйте нутромер или хотя бы внимательно осмотрите зеркало через лупу при хорошем освещении. Мелкие риски допустимы, но глубокие борозды требуют расточки или замены цилиндра. Помните, что модернизация мощного мотора на изношенной поршневой приведет лишь к быстрому капитальному ремонту.</p>
+
+<blockquote>⚠️ Внимание: Перед разборкой двигателя обязательно отметьте взаимное положение картерных половин и шатуна. Ошибки при сборке могут привести к разрушению шатунно-поршневой группы на высоких оборотах.</blockquote>
+
+<h2 id="увеличение-степени-сжатия-и-доработка-цпг">Увеличение степени сжатия и доработка ЦПГ</h2>
+
+<p>Одним из самых эффективных способов поднять мощность является увеличение степени сжатия. Заводские параметры часто занижены из соображений надежности и возможности работы на низкооктановом топливе. Уменьшение объема камеры сгорания достигается путем установки более тонкой прокладки под цилиндр или проточки головки цилиндра.</p>
+
+<p>Однако слепо гнаться за высокими цифрами не стоит. Чрезмерное повышение степени сжатия на топливе АИ-92 (или смеси с маслом) может вызвать детонацию, которая разрушит поршень за считанные минуты. Оптимальным значением для форсированного <em>Салюта</em> считается степень сжатия в районе 8.5–9.0 единиц.</p>
+
+<ul>
+<li>🔧 Срезание 1.5–2 мм металла с плоскости головки цилиндра на токарном станке.</li>
+<li>🔧 Установка медной прокладки меньшей толщины вместо штатной паронитовой.</li>
+<li>🔧 Полировка днища поршня и камеры сгорания для улучшения теплоотдачи.</li>
+</ul>
+
+<p>Параллельно с этим рекомендуется провести полировку каналов продувки и выхлопа. Убирая литьевой облой и шероховатости, вы улучшаете наполнение цилиндра свежей смесью и очистку от выхлопных газов. Это особенно важно для двухтактников, где газообмен зависит от скорости потока.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Используйте бормашину с шарошками из твердого сплава для аккуратной обработки каналов. Не делайте каналы шире заводских, главное — гладкость стенок, а не их расширение.</p></div>
+
+<h2 id="модернизация-системы-зажигания">Модернизация системы зажигания</h2>
+
+<p>Штатная контактная система зажигания (магдино К-25) является одним из главных «тормозов» мотора. Контакты со временем выгорают, угол опережения зажигания сбивается, а искра становится слабой. Переход на электронное бесконтактное зажигание (БСЗ) — это <mark>самое impactful</mark> изменение, которое вы можете сделать.</p>
+
+<p>Электронные комплекты, такие как <em>МБЭ-1</em> или современные аналоги от <em>Вихрь-Электрон</em>, адаптированные под Салют, обеспечивают стабильную искру любой мощности и на любых оборотах. Это гарантирует уверенный запуск в любую погоду и ровную работу двигателя во всем диапазоне.</p>
+
+<p>Установка БСЗ требует внимательности при монтаже датчика. Зазор между статором и маховиком должен быть строго выверен, обычно он составляет 0.3–0.4 мм. Магниты на маховике должны проходить на минимальном расстоянии от катушки, но не касаться её.</p>
+
+<blockquote>⚠️ Внимание: При установке электронного зажигания обязательно проверьте полярность подключения. Ошибка в подключении проводов может мгновенно вывести коммутатор из строя.</blockquote>
+
+<p>Кроме того, стоит проверить состояние высоковольтных проводов и колпачков. Старые провода могут пробивать на массу, особенно в сырую погоду. Замена их на силиконовые с низким сопротивлением улучшит передачу энергии на свечу.</p>
+
+<h2 id="доработка-карбюратора-и-топливной-системы">Доработка карбюратора и топливной системы</h2>
+
+<p>Карбюратор <em>К-33</em> или его модификации, устанавливаемые на Салют, вполне работоспособны, но требуют точной настройки. Часто владельцы сталкиваются с провалами при резком открытии дросселя. Это решается доработкой ускорительного насоса и подбором жиклеров.</p>
+
+<p>Для форсированного мотора может потребоваться увеличение пропускной способности главного топливного жиклера. Однако делать это нужно методом подбора, начиная с увеличения на 5-10% от штатного значения. Переобогащенная смесь смоет масло со стенок цилиндра и приведет к задирам.</p>
+
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Штатное значение</th>
+<th>Оптимизированное</th>
+<th>Влияние</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Главный жиклер</td>
+<td>135-140</td>
+<td>145-150</td>
+<td>Макс. мощность</td>
+</tr>
+<tr>
+<td>Жиклер холостого хода</td>
+<td>35-40</td>
+<td>40-45</td>
+<td>Стабильность ХХ</td>
+</tr>
+<tr>
+<td>Уровень в поплавковой</td>
+<td>18-20 мм</td>
+<td>19-21 мм</td>
+<td>Динамика разгона</td>
+</tr>
+<tr>
+<td>Зазор иглы</td>
+<td>Средний</td>
+<td>Поднят на 1 деление</td>
+<td>Средние обороты</td>
+</tr>
+</tbody>
+</table>
+
+<p>Важно обеспечить качественную фильтрацию топлива. Установка дополнительного топливного фильтра-отстойника перед карбюратором спасет жиклеры от попадания мусора из бака. Чистота топлива для двухтактного мотора критична, так как масляные каналы очень узкие.</p>
+
+<div class="poll-widget" id="poll-0918bb36"><div class="poll-widget-question">📊 Какой тип зажигания у вас сейчас установлен?</div><div class="poll-widget-option" data-poll="0918bb36" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Контактное (Магдино)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="0918bb36" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Электронное (Вихрь/МБЭ)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="0918bb36" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Не знаю, нужно проверить</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="0918bb36" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Планирую менять</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="улучшение-дейдвуда-и-гребного-винта">Улучшение дейдвуда и гребного винта</h2>
+
+<p>Мощность, полученная в цилиндре, должна быть эффективно передана воде. Штатные винты на моторах Салют часто имеют большой шаг, что не позволяет двигателю раскрутиться до рабочих оборотов под нагрузкой. Замена винта на более «легкий» (с меньшим шагом) или винт с изменяемым шагом позволит мотору выйти в оптимальный режим.</p>
+
+<p>Также стоит обратить внимание на антикавитационную плиту. Если она расположена слишком высоко или имеет неправильную форму, винт будет захватывать воздух. Иногда помогает установка дополнительных плавников-стабилизаторов на дейдвуд, которые улучшают поток воды к винту.</p>
+
+<ul>
+<li>🌊 Проверка биения гребного вала (допуск не более 0.1 мм на 100 мм длины).</li>
+<li>🌊 Замена сальников гребного вала на современные манжеты с пыльниками.</li>
+<li>🌊 Полировка лопастей винта для снижения сопротивления воды.</li>
+</ul>
+
+<p>Смазка редуктора должна проводиться регулярно, а масло следует использовать специализированное, для редукторов ПЛМ. Обычное трансмиссионное масло может вспениваться и хуже работать в условиях высоких скоростей вращения шестерен.</p>
+
+<details class="faq-item"><summary>Секрет тихого хода</summary><div class="faq-answer"><p>Тихий ход часто зависит не только от мотора, но и от состояния дейдвудной трубы. Обклеивание внутренней части кожуха дейдвуда виброизоляционным материалом (типа Шумофф) снижает резонанс металла и делает работу мотора значительно тише.</p></div></details>
+
+<h2 id="настройка-и-обкатка-модернизированного-мотора">Настройка и обкатка модернизированного мотора</h2>
+
+<p>После сборки всех узлов наступает самый ответственный этап — настройка. Карбюратор необходимо регулировать на прогретом двигателе. Сначала выставляется качество смеси на холостом ходу, затем проверяется переходный режим и максимальные обороты.</p>
+
+<p>Цвет свечи зажигания расскажет о составе смеси больше, чем любые приборы. Кирпично-коричневый налет свидетельствует об оптимальной смеси. Белый налет — смесь бедная (риск перегрева), черный и бархатистый — богатая (перерасход топлива и нагар).</p>
+
+<p>Обкатка модернизированного мотора обязательна, даже если поршневая уже притерта. Новые настройки зажигания и питания меняют температурный режим. Первые 2-3 бака бензина следует отработать в щадящем режиме, не открывая дроссель более чем на 70%.</p>
+
+<blockquote>⚠️ Внимание: В процессе обкатки постоянно контролируйте температуру головки цилиндра рукой. При появлении признаков перегрева (шипение воды, потеря мощности) немедленно сбавьте газ и проверьте систему охлаждения.</blockquote>
+
+<p>Не забывайте, что любой тюнинг требует последующей корректировки. Через 5-10 моточасов протяните крепежные болты головки цилиндра и картера, так как новые прокладки могли «сесть». Регулярное ТО продлит жизнь вашему обновленному Салюту на долгие годы.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Грамотная модернизация Салюта позволяет увеличить мощность на 15-20% и снизить расход топлива, но требует точности в настройках и качественных запчастей.</p></div>
+
+<h2 id="faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</h2>
+
+<details>
+<summary>Стоит ли растачивать цилиндр Салюта под поршень от другого мотора?</summary>
+<p>Расточка под поршень от <em>Вихря</em> или <em>Москвы</em> возможна, но требует серьезной инженерной подготовки. Нужно учитывать высоту поршня, расположение бобышек и ход поршня. Проще и надежнее найти родной поршень ремонтного размера или качественный аналог.</p>
+</details>
+
+<details>
+<summary>Какой бензин лучше использовать для тюнингованного Салюта?</summary>
+<p>Для форсированного мотора с повышенной степенью сжатия рекомендуется использовать бензин АИ-95 с качественным двухтактным маслом в пропорции 1:25 или 1:30 (в зависимости от рекомендации масла). Использование АИ-92 возможно, но только при аккуратной настройке угла опережения зажигания.</p>
+</details>
+
+<details>
+<summary>Нужно ли менять систему охлаждения при модернизации?</summary>
+<p>Штатная помпа обычно справляется, если она исправна. Однако, если вы значительно подняли мощность, стоит прочистить все водяные каналы от накипи и убедиться, что резиновые патрубки не потеряли эластичности. Установка термодатчика на головку цилиндра будет отличным решением для контроля.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#диагностика-и-подготовка-к-тюнингу">Диагностика и подготовка к тюнингу</a></li><li><a href="#увеличение-степени-сжатия-и-доработка-цпг">Увеличение степени сжатия и доработка ЦПГ</a></li><li><a href="#модернизация-системы-зажигания">Модернизация системы зажигания</a></li><li><a href="#доработка-карбюратора-и-топливной-системы">Доработка карбюратора и топливной системы</a></li><li><a href="#улучшение-дейдвуда-и-гребного-винта">Улучшение дейдвуда и гребного винта</a></li><li><a href="#настройка-и-обкатка-модернизированного-мотора">Настройка и обкатка модернизированного мотора</a></li><li><a href="#faq-часто-задаваемые-вопросы">FAQ: Часто задаваемые вопросы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/4/4k/4kh-taktnyj-lodochnyj-motor-mikatsu-mf5fhs.html" class="related-card">4-х тактный лодочный мотор Mikatsu MF5FHS: Обзор, характеристики</a></li><li><a href="/articles/b/by/byudzhetnyj-lodochnyj-motor-dlya-naduvnoj-lodki.html" class="related-card">Бюджетный лодочный мотор: выбор для надувной лодки</a></li><li><a href="/articles/k/ku/kupit-lodochnyj-motor-evinrude.html" class="related-card">Купить лодочный мотор Evinrude: гид по выбору и покупке</a></li><li><a href="/articles/l/lo/lodochnyj-motor-gladiator-9-8-otzyvy-vladeltsev.html" class="related-card">Лодочный мотор Gladiator 9.8: отзывы владельцев и тесты</a></li><li><a href="/articles/m/mo/motor-3-tsilindra.html" class="related-card">Трёхцилиндровые лодочные моторы: плюсы, минусы, выбор и ремонт</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/4/4k/4kh-taktnyj-lodochnyj-motor-mikatsu-mf5fhs.html" class="related-bottom-card"><span class="related-bottom-title">4-х тактный лодочный мотор Mikatsu MF5FHS: Обзор, характеристики</span><span class="related-bottom-desc">Детальный обзор мотора Mikatsu MF5FHS. Мощность 5 л.с., 4 такта, легкий запуск и надежность. Техниче</span></a><a href="/articles/b/by/byudzhetnyj-lodochnyj-motor-dlya-naduvnoj-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Бюджетный лодочный мотор: выбор для надувной лодки</span><span class="related-bottom-desc">Обзор бюджетных лодочных моторов для надувных лодок. Как выбрать надежный двигатель, сравнение китай</span></a><a href="/articles/k/ku/kupit-lodochnyj-motor-evinrude.html" class="related-bottom-card"><span class="related-bottom-title">Купить лодочный мотор Evinrude: гид по выбору и покупке</span><span class="related-bottom-desc">Ищете где купить лодочный мотор Evinrude? Полный гид по моделям E-TEC, нюансам покупки б/у техники и</span></a><a href="/articles/l/lo/lodochnyj-motor-gladiator-9-8-otzyvy-vladeltsev.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Gladiator 9.8: отзывы владельцев и тесты</span><span class="related-bottom-desc">Честные отзывы владельцев о лодочном моторе Gladiator 9.8. Реальная мощность, расход топлива, надежн</span></a><a href="/articles/m/mo/motor-3-tsilindra.html" class="related-bottom-card"><span class="related-bottom-title">Трёхцилиндровые лодочные моторы: плюсы, минусы, выбор и ремонт</span><span class="related-bottom-desc">Разбираем особенности 3-цилиндровых подвесных моторов: сравнение с 2- и 4-цилиндровыми, топ-5 моделе</span></a><a href="/articles/l/lu/luchshie-kitajskie-lodochnye-motory-98.html" class="related-bottom-card"><span class="related-bottom-title">Лучшие китайские лодочные моторы 9.8 л.с.: рейтинг и обзоры 2026</span><span class="related-bottom-desc">Обзор топовых китайских моторов 9.8 л.с. Сравнение Hangkai, Sea Pro, Tohatsu. Плюсы, минусы, характе</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

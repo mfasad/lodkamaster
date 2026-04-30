@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Расход топлива лодочного мотора: нормы, расчеты и экономия — ЛодкаМастер</title>
+    <meta name="description" content="Полный разбор расхода топлива лодочного мотора. Как рассчитать потребление бензина, от чего зависит аппетит двигателя и способы реальной экономии на воде.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/r/ra/raskhod-topliva-lodochnogo-motora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Расход топлива лодочного мотора: нормы, расчеты и экономия">
+    <meta property="og:description" content="Полный разбор расхода топлива лодочного мотора. Как рассчитать потребление бензина, от чего зависит аппетит двигателя и способы реальной экономии на воде.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Расход топлива лодочного мотора: нормы, расчеты и экономия</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Расход топлива лодочного мотора: реальные цифры и секреты экономии</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#факторы-влияющие-на-потребление-бензина">Факторы, влияющие на потребление бензина</a></li><li><a href="#теоретический-расчет-и-паспортные-данные">Теоретический расчет и паспортные данные</a></li><li><a href="#разница-между-двухтактными-и-четырехтактными-моторами">Разница между двухтактными и четырехтактными моторами</a></li><li><a href="#влияние-винта-и-настроек-на-экономичность">Влияние винта и настроек на экономичность</a></li><li><a href="#стиль-вождения-и-условия-эксплуатации">Стиль вождения и условия эксплуатации</a></li><li><a href="#практические-советы-по-экономии-топлива">Практические советы по экономии топлива</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Планирование рыбалки или водной прогулки всегда начинается с вопроса о запасах горючего. <strong>Расход топлива лодочного мотора</strong> — это параметр, который волнует каждого владельца плавсредства, ведь от него напрямую зависит дальность хода и стоимость выхода на воду. Многие новички ошибочно полагаются исключительно на паспортные данные производителя, однако реальная эксплуатация вносит свои коррективы в теоретические выкладки.</p>
+
+<p>На практике аппетиты двигателя могут существенно отличаться от заявленных в мануале цифр. Это связано с множеством факторов: от качества топлива и настройки карбюратора до состояния винта и погодных условий. Понимание механики сгорания смеси и влияния нагрузки на коленвал позволит вам не только избежать неприятностей в виде остановки посередине водоема, но и существенно продлить ресурс силовой установки.</p>
+
+<p>В этой статье мы детально разберем, как формируются показатели потребления, рассмотрим зависимость от оборотов и научимся рассчитывать необходимый запас бензина для дальних походов. Грамотный подход к эксплуатации — это не только экономия денег, но и ваша безопасность на воде.</p>
+
+<h2 id="факторы-влияющие-на-потребление-бензина">Факторы, влияющие на потребление бензина</h2>
+
+<p>Первое, что нужно усвоить: не существует единой цифры расхода для конкретной модели мотора. <em>Лодочный мотор</em> работает в постоянно меняющейся среде, где каждый элемент системы вносит свою лепту в итоговый баланс. Основным фактором, безусловно, является нагрузка на дейдвуд и винт. Если лодка перегружена пассажирами или снаряжением, двигатель вынужден работать на более высоких оборотах для поддержания глиссирования, что резко увеличивает потребление смеси.</p>
+
+<p>Второй критический аспект — это техническое состояние агрегата. Засоренные жиклеры, неправильный угол опережения зажигания или подсос воздуха могут изменить состав смеси, делая ее слишком богатой. В таком случае часть бензина просто вылетает в выхлопную трубу, не совершая полезной работы. Регулярное <strong>техническое обслуживание</strong> и чистка карбюратора способны вернуть показатели к заводским значениям.</p>
+
+<p>Также нельзя игнорировать гидродинамику корпуса и состояние винта. Скольжение по воде должно быть идеальным. Обрастание ракушками днища, сколы на лопастях гребного винта или неправильно подобранный шаг винта создают дополнительное сопротивление. Мотору приходится «продавливать» воду с большей силой, расходуя лишние калории.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Использование бензина с октановым числом ниже рекомендованного производителем (например, АИ-92 вместо АИ-95) может вызвать детонацию. Это не только увеличит расход, но и приведет к прогару поршней и выходу мотора из строя.</p>
+</blockquote>
+
+<p>Стиль вождения также играет не последнюю роль. Резкие открытия дроссельной заслонки («газ в пол») требуют мгновенного обогащения смеси, что создает пиковые выбросы топлива. Плавная работа ручкой газа позволяет двигателю работать в оптимальном режиме сгорания.</p>
+
+<h2 id="теоретический-расчет-и-паспортные-данные">Теоретический расчет и паспортные данные</h2>
+
+<p>Производители лодочных моторов обычно указывают расход в двух режимах: на холостом ходу и на максимальной мощности. Однако эти данные часто получены в идеальных лабораторных условиях, которые трудно воспроизвести на реальном водоеме. Стандартная формула для грубого (оценки) расхода двухтактного мотора выглядит как 300–400 грамм на одну лошадиную силу в час при полной нагрузке. Для четырехтактных агрегатов этот показатель ниже и составляет примерно 200–250 грамм.</p>
+
+<p>Важно понимать разницу между режимами работы. На холостом ходу даже мощный мотор потребляет немного — обычно около 0.5–1 литра в час, независимо от лошадиных сил. Основное «поедание» бензина начинается при выходе на глиссирование. Именно здесь <strong>паспортные данные</strong> могут расходиться с реальностью на 15–20%.</p>
+
+<details class="faq-item"><summary>Почему реальный расход выше паспортного?</summary><div class="faq-answer"><p>Заводские испытания проводятся на специальной барже с идеальным винтом, в штиль и при оптимальной температуре воды. В реальности же есть ветер, волна, обрастание винта и неидеальное качество топлива, что в сумме дает повышенный аппетит мотора.</p></div></details>
+
+<p>Для точного планирования поездки лучше использовать эмпирические данные, полученные опытными водномоторниками, или закладывать запас в 20% к расчетному значению. Ниже приведена таблица с усредненными показателями для моторов разной мощности в режиме полного газа.</p>
+
+<table>
+<thead>
+<tr>
+<th>Мощность мотора (л.с.)</th>
+<th>Тип двигателя</th>
+<th>Расход (л/час) мин.</th>
+<th>Расход (л/час) макс.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 л.с.</td>
+<td>2 такта</td>
+<td>1.5</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>15 л.с.</td>
+<td>2 такта</td>
+<td>4.5</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>30 л.с.</td>
+<td>4 такта</td>
+<td>5.0</td>
+<td>8.5</td>
+</tr>
+<tr>
+<td>50 л.с.</td>
+<td>4 такта</td>
+<td>9.0</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>90 л.с.</td>
+<td>4 такта</td>
+<td>18.0</td>
+<td>28.0</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Паспортный расход — это идеальный минимум. Для реальных расчетов всегда увеличивайте заводские цифры на 15-20%.</p></div>
+
+<h2 id="разница-между-двухтактными-и-четырехтактными-моторами">Разница между двухтактными и четырехтактными моторами</h2>
+
+<p>Выбор между «двухтактником» и «четырехтактником» часто становится дилеммой при покупке. В контексте экономии топлива четырехтактные моторы (<em>4-stroke</em>) выглядят явными лидерами. Благодаря отдельной системе смазки и полному циклу сгорания, они расходуют на 20–30% меньше бензина при той же мощности. Кроме того, они не требуют приготовления маслобензиновой смеси, что упрощает эксплуатацию.</p>
+
+<p>Двухтактные моторы (<em>2-stroke</em>) конструктивно проще и легче, но часть топливной смеси в них теряется, выбрасываясь через выхлопное окно вместе с отработанными газами. Это inherentная особенность их конструкции. Однако современные модели с прямым впрыском (E-TEC, OptiMax) научились минимизировать эти потери, приблизившись по экономичности к четырехтактным аналогам, сохранив при этом легкость и резвость.</p>
+
+<p>Стоит также учитывать стоимость владения. Даже если двухтактник ест больше, он дешевле в покупке и ремонте. <strong>Экономическая эффективность</strong> складывается не только из цены литра бензина, но и из ресурса двигателя, стоимости масла и цены самого агрегата.</p>
+
+<ul>
+<li>🛥️ Четырехтактные моторы тише и экологичнее, что важно для рыбалки и охраняемых зон.</li>
+<li>⚙️ Двухтактные моторы менее чувствительны к крену лодки и могут работать в любом положении.</li>
+<li>💰 Разница в расходе окупается только при очень большом накате (более 100 моточасов в сезон).</li>
+</ul>
+
+<div class="poll-widget" id="poll-f1579387"><div class="poll-widget-question">📊 Какой мотор вы предпочитаете?</div><div class="poll-widget-option" data-poll="f1579387" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Двухтактный (легкость и цена)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="f1579387" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Четырехтактный (экономия и тишина)</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="f1579387" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Электро мотор</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="f1579387" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Мне все равно, лишь бы плыл</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="влияние-винта-и-настроек-на-экономичность">Влияние винта и настроек на экономичность</h2>
+
+<p>Гребной винт — это тот самый элемент, который превращает вращение вала в движение лодки. Неправильно подобранный винт может свести на нет все преимущества экономичного мотора. Если шаг винта слишком велик для данной лодки, мотор не сможет раскрутиться до максимальных оборотов (не войдет в отсечку), работая в режиме «недовеса». Это приводит к перегрузке и перерасходу.</p>
+
+<p>И наоборот, слишком маленький шаг заставит мотор «выть» на предельных оборотах, не развивая достаточной тяги. В этом случае вы платите за скорость вращения, а не за продвижение. Идеальная ситуация — когда при полной загрузке лодки и открытой дроссельной заслонке мотор выходит на верхнюю границу рекомендованного диапазона оборотов (WOT — Wide Open Throttle).</p>
+
+<p>Кроме шага, важен диаметр и количество лопастей. Трехлопастные винты обычно эффективнее на высоких скоростях, тогда как четырехлопастные лучше держат лодку на глиссировании при низких оборотах, что полезно для троллинга или буксировки.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Регулярно осматривайте кромки лопастей винта. Даже небольшие сколы или заусенцы нарушают поток воды, снижая КПД на 10-15% и увеличивая вибрацию, что косвенно ведет к повышенному расходу топлива.</p>
+</blockquote>
+
+<p>Настройка карбюратора также критична. Если смесь слишком богатая (много бензина, мало воздуха), двигатель будет дымить и потреблять лишнее. Если бедная — есть риск перегрева. Оптимальную настройку можно определить по цвету свечей: он должен быть кирпично-коричневым. Белый налет укажет на бедную смесь, черный нагар — на богатую.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Проведите тест с полным баком: пройдите известную дистанцию на крейсерской скорости (около 3500-4000 об/мин) и замерьте остаток. Это даст самую точную цифру расхода для вашей конкретной связки"лодка-мотор-винт".</p></div>
+
+<h2 id="стиль-вождения-и-условия-эксплуатации">Стиль вождения и условия эксплуатации</h2>
+
+<p>То, как вы управляете лодкой, напрямую влияет на кошелек. Агрессивный стиль с постоянными разгонами и торможениями не дает двигателю выйти на экономичный режим работы. Для двухтактных моторов наиболее экономичным режимом часто является не максимальная скорость, а уверенное глиссирование на 70–80% мощности.</p>
+
+<p>Условия окружающей среды также диктуют свои правила. Встречный ветер и высокая волна увеличивают сопротивление воды. Лодка начинает «рыскать», ударяться о волну, и мотор вынужден постоянно подбрасывать мощность, чтобы удержать курс. В таких условиях <strong>расход топлива</strong> может вырасти в полтора раза по сравнению со штилем.</p>
+
+<p>Температура воды и воздуха тоже имеют значение. В холодной воде плотность выше, что увеличивает сопротивление. Летом, в жаркую погоду, плотность воздуха падает, смесь становится богаче (если нет автоматической коррекции), что также может незначительно повлиять на эффективность сгорания.</p>
+
+<p>Важно правильно распределять груз в лодке. Смещение центра тяжести на нос заставит лодку «клевать», увеличивая площадь смоченной поверхности. Смещение на корму может привести к рысканию. Равномерная загрузка обеспечивает оптимальное положение дейдвуда относительно горизонта воды.</p>
+
+<h2 id="практические-советы-по-экономии-топлива">Практические советы по экономии топлива</h2>
+
+<p>Сэкономить на топливе можно не только выбирая мотор, но и соблюдая простые правила эксплуатации. Первым делом проверьте состояние дейдвуда. Если на антикавитационной плите или на винте есть наросты водорослей или ракушек, обязательно удалите их. Гладкая поверхность улучшает обтекание.</p>
+
+<p>Используйте только качественное топливо с соответствующими присадками. Старый бензин, простоявший в канистре полгода, теряет свои свойства и сгорает менее эффективно. Добавление стабилизаторов топлива при длительном хранении лодки поможет избежать проблем с карбюратором.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист экономичной эксплуатации</h4><label class="check-item"><input type="checkbox"><span>Своевременная замена свечей зажигания</span></label><label class="check-item"><input type="checkbox"><span>Очистка винта от обрастаний</span></label><label class="check-item"><input type="checkbox"><span>Использование свежего бензина</span></label><label class="check-item"><input type="checkbox"><span>Проверка давления в шинах прицепа (для доставки)</span></label><label class="check-item"><input type="checkbox"><span>Настройка угла наклона дейдвуда</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Не забывайте про угол наклона дейдвуда (trim). Правильно выставленный угол позволяет лодке быстрее выйти на глиссирование и снижает сопротивление воды. Если нос лодки слишком задран, вы плывете «на пузе», если слишком опущен — «роете воду».</p>
+
+<p>Планируйте маршрут с учетом течения и ветра. Идти по течению или по ветру всегда экономнее, чем бороться со стихией. Если есть возможность, выбирайте маршрут так, чтобы возвращаться против течения, когда лодка легче (выпито меньше топлива, пойманная рыба еще не добавила веса, хотя это и минимально).</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Сколько литров бензина нужно брать на рыбалку на 8 часов?</summary>
+<p>Для расчета умножьте часовой расход вашего мотора на 8 и добавьте 30% запаса. Например, мотор 15 л.с. ест около 5 л/час. 5 * 8 = 40 литров. Плюс запас 12 литров. Итого нужно взять около 50-55 литров. Всегда лучше иметь запас, чем встать в километре от базы.</p>
+</details>
+
+<details>
+<summary>Правда ли, что новый мотор расходует больше?</summary>
+<p>Да, в период обкатки (первые 10 часов) двигатель работает на обогащенной смеси, и расход может быть выше номинального. Также трущиеся детали еще не притерлись, что создает дополнительное сопротивление. После обкатки показатели стабилизируются.</p>
+</details>
+
+<details>
+<summary>Влияет ли использование масла для 2-тактных моторов на расход?</summary>
+<p>Качественное синтетическое масло сгорает чище и позволяет настроить карбюратор точнее. Дешевое минеральное масло может закоксовывать свечи и выхлопные окна, нарушая работу двигателя и увеличивая потребление топлива. Качественная смазка косвенно экономит бензин.</p>
+</details>
+
+<details>
+<summary>Как узнать реальный расход, если нет бортового компьютера?</summary>
+<p>Самый надежный метод — метод полного бака. Залейте бак до горловины, пройдите известное расстояние (например, 20 км) на постоянных оборотах, затем снова долейте до горловины из мерной емкости. Количество долитого топлива и есть ваш расход на эту дистанцию.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#факторы-влияющие-на-потребление-бензина">Факторы, влияющие на потребление бензина</a></li><li><a href="#теоретический-расчет-и-паспортные-данные">Теоретический расчет и паспортные данные</a></li><li><a href="#разница-между-двухтактными-и-четырехтактными-моторами">Разница между двухтактными и четырехтактными моторами</a></li><li><a href="#влияние-винта-и-настроек-на-экономичность">Влияние винта и настроек на экономичность</a></li><li><a href="#стиль-вождения-и-условия-эксплуатации">Стиль вождения и условия эксплуатации</a></li><li><a href="#практические-советы-по-экономии-топлива">Практические советы по экономии топлива</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/t/to/toyama-lodochnyj-motor-kto-proizvoditel.html" class="related-card">Tohatsu: кто производитель лодочных моторов Тойама?</a></li><li><a href="/articles/k/ka/kak-opredelit-god-vypuska-lodochnogo-motora-yamaha-po-shildiku.html" class="related-card">Как определить год выпуска лодочного мотора Yamaha по шильдику</a></li><li><a href="/articles/l/lo/lodochnyj-motor-4ls.html" class="related-card">Лодочный мотор 4 л.с.: характеристики, рейтинг и выбор</a></li><li><a href="/articles/k/ka/kak-perevozit-4-taktnyj-lodochnyj-motor.html" class="related-card">Как перевозить 4-х тактный лодочный мотор: правила</a></li><li><a href="/articles/r/ra/raskhod-topliva-lodochnogo-motora-150-l-s.html" class="related-card">Расход топлива лодочного мотора 150 л.с. — таблицы, советы, расчёты</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/t/to/toyama-lodochnyj-motor-kto-proizvoditel.html" class="related-bottom-card"><span class="related-bottom-title">Tohatsu: кто производитель лодочных моторов Тойама?</span><span class="related-bottom-desc">Узнайте правду о бренде Tohatsu. Кто реальный производитель моторов Тойама? Разбор японского качеств</span></a><a href="/articles/k/ka/kak-opredelit-god-vypuska-lodochnogo-motora-yamaha-po-shildiku.html" class="related-bottom-card"><span class="related-bottom-title">Как определить год выпуска лодочного мотора Yamaha по шильдику</span><span class="related-bottom-desc">Узнайте, как расшифровать код на шильдике Yamaha. Точная инструкция по определению года выпуска и мо</span></a><a href="/articles/l/lo/lodochnyj-motor-4ls.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор 4 л.с.: характеристики, рейтинг и выбор</span><span class="related-bottom-desc">Полный обзор моторов 4 л.с.: выбор между двухтактными и четырехтактными моделями, советы по обкатке,</span></a><a href="/articles/k/ka/kak-perevozit-4-taktnyj-lodochnyj-motor.html" class="related-bottom-card"><span class="related-bottom-title">Как перевозить 4-х тактный лодочный мотор: правила</span><span class="related-bottom-desc">Правильная транспортировка 4-тактного мотора: в каком положении везти, как слить масло, нужно ли сни</span></a><a href="/articles/r/ra/raskhod-topliva-lodochnogo-motora-150-l-s.html" class="related-bottom-card"><span class="related-bottom-title">Расход топлива лодочного мотора 150 л.с. — таблицы, советы, расчёты</span><span class="related-bottom-desc">Сколько бензина тратит подвесной мотор 150 л.с.? Реальные цифры расхода на ходовых режимах, факторы </span></a><a href="/articles/l/lo/lodochnyj-motor-gladiator-9-8.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Gladiator 9.8: Характеристики и Обзор</span><span class="related-bottom-desc">Полный обзор лодочного мотора Gladiator 9.8 л.с. Технические характеристики, особенности двухтактног</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

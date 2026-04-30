@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Почему не заводится двухтактный двигатель: причины и ремонт — ЛодкаМастер</title>
+    <meta name="description" content="Не запускается двухтактный мотор? Полный гид по причинам: топливо, искра, компрессия. Диагностика карбюратора и ЦПГ для лодочных моторов.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/p/po/pochemu-ne-zavoditsya-dvukhtaktnyj-dvigatel.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Почему не заводится двухтактный двигатель: причины и ремонт">
+    <meta property="og:description" content="Не запускается двухтактный мотор? Полный гид по причинам: топливо, искра, компрессия. Диагностика карбюратора и ЦПГ для лодочных моторов.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Почему не заводится двухтактный двигатель: причины и ремонт</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Почему не заводится двухтактный двигатель: диагностика и решение проблем</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#качество-топливной-смеси-и-состояние-бензобака">Качество топливной смеси и состояние бензобака</a></li><li><a href="#система-зажигания-свеча-катушка-и-искра">Система зажигания: свеча, катушка и искра</a></li><li><a href="#карбюратор-чистота-и-настройки">Карбюратор: чистота и настройки</a></li><li><a href="#компрессия-и-состояние-цпг">Компрессия и состояние ЦПГ</a></li><li><a href="#влияние-температуры-и-алгоритм-холодного-запуска">Влияние температуры и алгоритм холодного запуска</a></li><li><a href="#таблица-диагностики-основных-неисправностей">Таблица диагностики основных неисправностей</a></li><li><a href="#механические-повреждения-и-внешние-факторы">Механические повреждения и внешние факторы</a></li><li><a href="#профилактика-и-правильное-хранение">Профилактика и правильное хранение</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Ситуация, когда ваш лодочный мотор отказывается запускаться в самый неподходящий момент, знакома каждому водномоторнику. <strong>Двухтактный двигатель</strong> — механизм надежный, но он требует строгого соблюдения пропорций топливной смеси и правильного порядка действий при запуске. Часто проблема кроется не в серьезной поломке, а в банальном нарушении алгоритма или качестве бензина.</p>
+
+<p>Прежде чем паниковать и разбирать половину агрегата, стоит вспомнить, что для работы ДВС необходимы три компонента: <em>искра, топливо и компрессия</em>. Если хотя бы один из них отсутствует или подается неправильно, запуска не произойдет. В этой статье мы детально разберем каждую из систем, чтобы вы могли самостоятельно найти и устранить неисправность на воде или в гараже.</p>
+
+<p>Иногда причина настолько проста, что ее забывают проверить в первую очередь. Например, положение <code>рычага дросселя</code> или состояние свечи зажигания могут быть ключевыми факторами. Давайте последовательно пройдемся по всем узлам, чтобы исключить простые ошибки и перейти к сложной диагностике.</p>
+
+<h2 id="качество-топливной-смеси-и-состояние-бензобака">Качество топливной смеси и состояние бензобака</h2>
+
+<p>Самая распространенная причина, по которой <strong>двухтактный двигатель</strong> не заводится — это проблемы с подачей топлива. В отличие от четырехтактных аналогов, двухтактники работают на смеси бензина и масла, и нарушение пропорций или старение компонентов смеси приводит к потере воспламеняемости. Если бензин простоял в баке более месяца, он мог окислиться и потерять свои свойства, образовав смолистый налет.</p>
+
+<p>Особое внимание стоит уделить наличию воды в топливе. Даже небольшое количество влаги, попавшее в карбюратор, способно полностью заблокировать работу мотора. Вода тяжелее бензина, поэтому она всегда находится в нижней части бака и первой поступает в топливную систему при наклоне лодки.</p>
+
+<p>Для проверки топливной системы выполните следующие действия:</p>
+<ul>
+<li>🔍 Визуально осмотрите топливо в прозрачном отстойнике или слив его в чистую емкость на предмет воды и мусора.</li>
+<li>⛽ Проверьте соотношение масла и бензина, убедившись, что вы используете смесь правильной вязкости для текущего сезона.</li>
+<li>💨 Продуйте топливные шланги и убедитесь, что в них нет воздушных пробок, препятствующих току жидкости.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Никогда не пытайтесь завести мотор, если подозреваете наличие большого количества воды в баке. Это может привести к гидроудару и разрушению шатунно-поршневой группы.</p>
+</blockquote>
+
+<p>Если топливо старое, его необходимо полностью слить и заменить свежим. Не забывайте, что современные экологические стандарты производства бензина сокращают срок его хранения до минимума. Использование <em>стабилизаторов топлива</em> может продлить жизнь смеси, но лучше готовить свежую перед каждым сезоном.</p>
+
+<h2 id="система-зажигания-свеча-катушка-и-искра">Система зажигания: свеча, катушка и искра</h2>
+
+<p>Второй критический элемент — это система зажигания. Если искры нет или она слишком слабая, воспламенения смеси в цилиндре не произойдет. Первым делом необходимо выкрутить свечу зажигания и осмотреть ее. Цвет нагара может многое рассказать о состоянии двигателя: черный нагар указывает на богатую смесь, белый — на бедную, а красный свидетельствует о присадках в бензине.</p>
+
+<p>Проверку искры лучше всего проводить, прижав резьбу свечи к "массе" двигателя (металлической части блока). При резком дергании стартера вы должны видеть яркую синюю искру. Если искра красная, желтая или отсутствует вовсе, проблема может быть в самой свече, колпачке высоковольтного провода или катушке зажигания.</p>
+
+<p>Основные причины отсутствия искры включают:</p>
+<ul>
+<li>🔌 Пробой изоляции высоковольтного провода или трещину в керамике свечи.</li>
+<li>🧲 Ослабление магнитов маховика или сбой в работе электронного блока зажигания (CDI).</li>
+<li>💧 Попадание влаги под колпачок свечи, что особенно актуально после дождя или мойки мотора.</li>
+</ul>
+
+<p> Если <code>рычаг стоп-крана</code> (kill switch) не дожат до упора или поврежден, искра генерироваться не будет. Также проверьте целостность проводов, идущих к датчику аварийного останова.</p>
+
+<div class="poll-widget" id="poll-8b5ef23b"><div class="poll-widget-question">📊 Какая проблема с запуском у вас встречалась чаще?</div><div class="poll-widget-option" data-poll="8b5ef23b" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Нет искры</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="8b5ef23b" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Залита свеча</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="8b5ef23b" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Нет подачи топлива</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="8b5ef23b" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Слабая компрессия</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="карбюратор-чистота-и-настройки">Карбюратор: чистота и настройки</h2>
+
+<p>Карбюратор — это сердце топливной системы, где происходит смесеобразование. Если двигатель долго стоял без работы, остатки топлива испаряются, оставляя после себя липкую смолу, которая забивает жиклеры. Даже микроскопическая соринка в главном жиклере или жиклере холостого хода способна нарушить подачу топлива и сделать запуск невозможным.</p>
+
+<p>Часто владельцы забывают о необходимости закрытия <strong>заслонки обогащения смеси</strong> (подсоса) при холодном запуске. Без создания богатой смеси в момент старта двигатель не сможет схватить. Однако, если передержать подсос, можно "залить" свечу, и тогда мотор перестанет заводиться из-за переизбытка топлива.</p>
+
+<p>Процесс обслуживания карбюратора включает:</p>
+<ul>
+<li>🧼 Полную разборку и продувку всех каналов и жиклеров сжатым воздухом или специальным очистителем.</li>
+<li>⚙️ Проверку уровня топлива в поплавковой камере и регулировку иглы поплавка.</li>
+<li>🔩 Проверку герметичности впускного коллектора и отсутствие подсоса лишнего воздуха.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При чистке карбюратора категорически запрещается использовать металлическую проволоку для прочистки жиклеров. Это меняет их пропускную способность, что приведет к невозможности правильной настройки двигателя.</p>
+</blockquote>
+
+<p>Если после чистки мотор заводится, но глохнет при открытии дросселя, возможно, нарушена регулировка качества смеси. На некоторых моделях моторов эти винты запломбированы заводом, и их трогать не рекомендуется без наличия газоанализатора.</p>
+
+<h2 id="компрессия-и-состояние-цпг">Компрессия и состояние ЦПГ</h2>
+
+<p>Третий кит, на котором держится работа ДВС — компрессия. В двухтактных двигателях она критически важна не только для сжатия смеси, но и для работы системы продувки цилиндра. Если компрессия упала ниже допустимых значений (обычно менее 6-7 атмосфер), двигатель не заведется или будет работать с сильными перебоями.</p>
+
+<p>Снижение компрессии чаще всего связано с износом поршневых колец, задирами на зеркале цилиндра или повреждением сальников коленвала. В двухтактниках сальники работают в агрессивной среде и со временем теряют эластичность, начиная пропускать воздух. Это приводит к подсосу воздуха в картер и обеднению смеси.</p>
+
+<p>Признаки проблем с компрессией:</p>
+<ul>
+<li>📉 Двигатель прокручивается стартером слишком легко, без характерного сопротивления.</li>
+<li>💨 Из сапуна или глушителя при прокрутке идет сильный поток воздуха или дыма.</li>
+<li>🔊 Появление посторонних звуков (стук, звон) при попытке запуска.</li>
+</ul>
+
+<p>Для точной диагностики необходимо использовать компрессометр, вворачиваемый вместо свечи. Нормальные значения для лодочных моторов варьируются в диапазоне 9-12 атмосфер, в зависимости от модели и года выпуска. Если значения значительно ниже, потребуется дефектовка ЦПГ.</p>
+
+<details class="faq-item"><summary>Как проверить компрессию без прибора?</summary><div class="faq-answer"><p>Существует народный метод: выкрутите свечу, заткните пальцем свечное отверстие и резко дерните стартер. Если палец выбивает сильным потоком воздуха — компрессия есть. Если воздух просто проходит сквозь пальцы или сопротивление слабое — проблема серьезная. Однако этот метод субъективен и не дает точных цифр.</p></div></details>
+
+<h2 id="влияние-температуры-и-алгоритм-холодного-запуска">Влияние температуры и алгоритм холодного запуска</h2>
+
+<p>Температура окружающей среды напрямую влияет на испаряемость топлива и вязкость масла. Зимой или в межсезонье запустить <strong>двухтактный двигатель</strong> сложнее, так как топливо хуже переходит в газообразное состояние. Именно поэтому существуют специальные алгоритмы запуска для холодного и горячего мотора.</p>
+
+<p>При холодном запуске необходимо полностью закрыть воздушную заслонку (подсос) и несколько раз качнуть праймер (если он есть) или грушу ручной подкачки топлива, пока она не станет жесткой. Это создаст необходимое давление в поплавковой камере и обогатит смесь.</p>
+
+<p>Алгоритм действий при запуске:</p>
+<ol>
+<li>Установите ручку газа в положение старта (обычно это метка или минимальный угол открытия).</li>
+<li>Вытяните рукоятку подсоса до упора.</li>
+<li>Резко дерните стартер 3-5 раз.</li>
+<li>Если двигатель "схватил", но глохнет, верните подсос в среднее положение и повторите попытку.</li>
+<li>После уверенного запуска плавно открывайте подсос по мере прогрева.</li>
+</ol>
+
+<p>Если двигатель горячий (например, после кратковременной остановки), использование подсоса запрещено. Это приведет к переобогащению смеси и зальет свечу. В таком случае ручку газа ставят в среднее положение и запускают мотор без подсоса.</p>
+
+<h2 id="таблица-диагностики-основных-неисправностей">Таблица диагностики основных неисправностей</h2>
+
+<p>Для удобства систематизации проблем, с которыми сталкиваются водномоторники, мы составили сводную таблицу. Она поможет быстрее определить направление поиска неисправности, опираясь на внешние признаки.</p>
+
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Вероятная причина</th>
+<th>Действие</th>
+<th>Сложность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Мотор не заводится, свеча сухая</td>
+<td>Нет подачи топлива, забит фильтр, неисправен топливный насос</td>
+<td>Проверить шланги, продуть систему, проверить насос</td>
+<td>Низкая</td>
+</tr>
+<tr>
+<td>Свеча мокрая и черная</td>
+<td>Перелив карбюратора, забит воздушный фильтр, частые попытки запуска с подсосом</td>
+<td>Просушить цилиндр, почистить карбюратор, заменить фильтр</td>
+<td>Средняя</td>
+</tr>
+<tr>
+<td>Есть искра, но мотор молчит</td>
+<td>Нарушены фазы газораспределения, низкая компрессия, вода в цилиндре</td>
+<td>Замерить компрессию, проверить метки ГРМ</td>
+<td>Высокая</td>
+</tr>
+<tr>
+<td>Запускается и сразу глохнет</td>
+<td>Подсос воздуха через сальники, забиты жиклеры ХХ</td>
+<td>Проверить сальники коленвала, чистка карбюратора</td>
+<td>Высокая</td>
+</tr>
+</tbody>
+</table>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Если вы храните лодочный мотор зимой, обязательно сливайте весь бензин из карбюратора через дренажное отверстие. Оставшееся топливо испарится, оставив смолы, которые заклеят игольчатый клапан к следующему сезону.</p></div>
+
+<h2 id="механические-повреждения-и-внешние-факторы">Механические повреждения и внешние факторы</h2>
+
+<p>Не стоит сбрасывать со счетов механические препятствия. На лодочных моторах часто встречается проблема с дейдвудом. Если винт намоталась рыболовная леска, она могла проникнуть сквозь сальник к коленвалу, создав огромное сопротивление. В таком случае стартер будет проворачиваться с трудом или заклинит.</p>
+
+<p>Также важно состояние глушителя. В двухтактных двигателях выхлопные окна цилиндра и резонатор глушителя могут зарасти нагаром. Если выход выхлопных газов перекрыт, двигатель не сможет сделать вдох новой порции смеси. Это явление называется "закоксовка".</p>
+
+<p>Для профилактики механических проблем:</p>
+<ul>
+<li>🎣 Регулярно осматривайте дейдвуд на предмет намотки посторонних предметов.</li>
+<li>🔥 Проводите процедуру "декокеровки" (выжигания нагара) специальными присадками раз в сезон.</li>
+<li>🔧 Следите за состоянием выхлопной системы и при необходимости очищайте резонатор от маслянистых отложений.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При проверке механической части двигателя (вращение винта рукой) обязательно отсоедините высоковольтный провод от свечи, чтобы избежать случайного запуска и травматизма.</p>
+</blockquote>
+
+<p>Иногда причиной отказа служит банальное отсутствие смазки в редукторе, что приводит к заклиниванию вала винта. Проверка уровня масла в редукторе должна быть регулярной процедурой ТО.</p>
+
+<div class="checklist-block"><h4>☑️ Экспресс-диагностика перед сезоном</h4><label class="check-item"><input type="checkbox"><span>Свежая топливная смесь</span></label><label class="check-item"><input type="checkbox"><span>Чистая свеча зажигания</span></label><label class="check-item"><input type="checkbox"><span>Отсутствие воды в баке</span></label><label class="check-item"><input type="checkbox"><span>Исправность тросов управления</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 4</div></div>
+
+<h2 id="профилактика-и-правильное-хранение">Профилактика и правильное хранение</h2>
+
+<p>Чтобы вопрос "почему не заводится двухтактный двигатель" не застал вас врасплох, важно правильно консервировать технику на хранение. Основной враг — это влага и окисление. После окончания сезона мотор желательно выработать весь бензин из карбюратора, а в цилиндр через свечное отверстие залить немного консервационного масла и провернуть коленвал.</p>
+
+<p>Хранить мотор лучше в вертикальном положении, в сухом помещении. Если такой возможности нет, используйте специальный транспортировочный кронштейн, позволяющий поставить мотор "на попа". Это предотвратит затекание воды в выхлопную систему и деформацию дейдвуда.</p>
+
+<p>Ключевые правила консервации:</p>
+<ol>
+<li>Слейте или стабилизируйте топливо в баке.</li>
+<li>Обработайте внешние поверхности антикором.</li>
+<li>Смажьте тросы и шарниры.</li>
+<li>Накройте мотор дышащим чехлом.</li>
+</ol>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярное обслуживание и использование качественных компонентов топливной смеси предотвращают 90% проблем с запуском двухтактных двигателей.</p></div>
+
+<p>Соблюдение этих простых правил позволит вашему <em>лодочному мотору</em> служить верой и правдой долгие годы, радуя уверенным запуском в любую погоду.</p>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли заводить двухтактный мотор на чистом бензине?</summary>
+<p>Категорически нельзя. Двухтактный двигатель не имеет системы смазки картера маслом. Смазка узлов происходит за счет масла, добавленного в бензин. Запуск на чистом бензине приведет к сухому трению, перегреву и мгновенному заклиниванию поршня в цилиндре (проворот вкладышей или задиры).</p>
+</details>
+
+<details>
+<summary>Почему мотор заводится только с подсосом и сразу глохнет?</summary>
+<p>Это классический признак того, что двигатель не получает достаточно топлива на рабочих оборотах. Возможные причины: засорен главный жиклер карбюратора, подсос воздуха через сальники коленвала или манжету коленвала, либо неисправность топливного насоса (лепестков).</p>
+</details>
+
+<details>
+<summary>Как часто нужно менять свечу зажигания на лодочном моторе?</summary>
+<p>Ресурс свечи зависит от качества смеси и условий эксплуатации. В среднем, для активной эксплуатации рекомендуется менять свечу раз в сезон или каждые 100 моточасов. Однако, если двигатель работает ровно и свеча имеет нормальный цвет (кирпичный), ее можно использовать и дольше, просто очищая от нагара.</p>
+</details>
+
+<details>
+<summary>Что делать, если в бензобаке оказалась вода?</summary>
+<p>Необходимо полностью слить содержимое бака. Если вода попала в карбюратор, его придется снять, разобрать и тщательно просушить все каналы. Использование специальных осушителей топлива возможно только при наличии небольшого количества влаги (конденсата), но не при полном попадании воды.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#качество-топливной-смеси-и-состояние-бензобака">Качество топливной смеси и состояние бензобака</a></li><li><a href="#система-зажигания-свеча-катушка-и-искра">Система зажигания: свеча, катушка и искра</a></li><li><a href="#карбюратор-чистота-и-настройки">Карбюратор: чистота и настройки</a></li><li><a href="#компрессия-и-состояние-цпг">Компрессия и состояние ЦПГ</a></li><li><a href="#влияние-температуры-и-алгоритм-холодного-запуска">Влияние температуры и алгоритм холодного запуска</a></li><li><a href="#таблица-диагностики-основных-неисправностей">Таблица диагностики основных неисправностей</a></li><li><a href="#механические-повреждения-и-внешние-факторы">Механические повреждения и внешние факторы</a></li><li><a href="#профилактика-и-правильное-хранение">Профилактика и правильное хранение</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/a/av/avito-lodochnyj-motor-5-l-s.html" class="related-card">Авито лодочный мотор 5 л.с.: выбор, цены и риски</a></li><li><a href="/articles/e/el/elektromotor-dlya-yakhty.html" class="related-card">Электромотор для яхты: выбор, монтаж и эффективность</a></li><li><a href="/articles/m/mo/motor-mikatsu-otzyvy.html" class="related-card">Мотор Микатсу отзывы владельцев: реальный опыт и характеристики</a></li><li><a href="/articles/o/ot/otzyvy-o-lodochnykh-motorakh-khajdi.html" class="related-card">Отзывы о лодочных моторах Хайди: реальные плюсы и минусы</a></li><li><a href="/articles/l/lo/lodochnyj-motor-neptun-23-kupit-na-avito.html" class="related-card">Лодочный мотор Нептун 23 купить на Авито: гид по выбору</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/a/av/avito-lodochnyj-motor-5-l-s.html" class="related-bottom-card"><span class="related-bottom-title">Авито лодочный мотор 5 л.с.: выбор, цены и риски</span><span class="related-bottom-desc">Ищете на Авито лодочный мотор 5 л.с.? Полный гид по покупке б/у техники: как проверить, на что смотр</span></a><a href="/articles/e/el/elektromotor-dlya-yakhty.html" class="related-bottom-card"><span class="related-bottom-title">Электромотор для яхты: выбор, монтаж и эффективность</span><span class="related-bottom-desc">Полный гид по выбору электромотора для яхты. Сравнение моделей, расчет автономности, особенности уст</span></a><a href="/articles/m/mo/motor-mikatsu-otzyvy.html" class="related-bottom-card"><span class="related-bottom-title">Мотор Микатсу отзывы владельцев: реальный опыт и характеристики</span><span class="related-bottom-desc">Подробный разбор моторов Mikatsu: отзывы экспертов и рыбаков. Надежность, расход топлива, сравнение </span></a><a href="/articles/o/ot/otzyvy-o-lodochnykh-motorakh-khajdi.html" class="related-bottom-card"><span class="related-bottom-title">Отзывы о лодочных моторах Хайди: реальные плюсы и минусы</span><span class="related-bottom-desc">Подробный анализ отзывов владельцев лодочных моторов Heyday. Разбор надежности, расхода топлива и ра</span></a><a href="/articles/l/lo/lodochnyj-motor-neptun-23-kupit-na-avito.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Нептун 23 купить на Авито: гид по выбору</span><span class="related-bottom-desc">Хотите купить лодочный мотор Нептун 23 на Авито? Разберем цены, типичные неисправности, признаки кап</span></a><a href="/articles/d/de/desheveyut-li-lodochnye-motory-zimoj.html" class="related-bottom-card"><span class="related-bottom-title">Дешевеют ли лодочные моторы зимой: правда о ценах</span><span class="related-bottom-desc">Анализируем, выгодно ли покупать лодочный мотор зимой. Разбираем сезонные скидки, риски хранения и р</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

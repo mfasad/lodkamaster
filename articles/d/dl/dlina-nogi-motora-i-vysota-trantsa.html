@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Длина ноги мотора и высота транца: таблица соответствия — ЛодкаМастер</title>
+    <meta name="description" content="Как подобрать длину дейдвуда под транец лодки. Таблица соответствия размеров, влияние заглубления на КПД и риск кавитации.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/d/dl/dlina-nogi-motora-i-vysota-trantsa.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Длина ноги мотора и высота транца: таблица соответствия">
+    <meta property="og:description" content="Как подобрать длину дейдвуда под транец лодки. Таблица соответствия размеров, влияние заглубления на КПД и риск кавитации.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/lodochnye-motory/">Лодочные моторы</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Длина ноги мотора и высота транца: таблица соответствия</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Длина ноги мотора и высота транца: идеальное заглубление</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#стандарты-длины-дейдвуда-и-геометрия-транца">Стандарты длины дейдвуда и геометрия транца</a></li><li><a href="#влияние-заглубления-на-кавитацию-и-кпд-винта">Влияние заглубления на кавитацию и КПД винта</a></li><li><a href="#методика-точного-замера-высоты-транца">Методика точного замера высоты транца</a></li><li><a href="#таблица-соответствия-размеров-и-рекомендации-по-выбору">Таблица соответствия размеров и рекомендации по выбору</a></li><li><a href="#регулировка-высоты-навески-и-угла-дифферента">Регулировка высоты навески и угла дифферента</a></li><li><a href="#специфика-эксплуатации-на-мелководье-и-в-зарослях">Специфика эксплуатации на мелководье и в зарослях</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Правильное заглубление гребного винта является одним из фундаментальных факторов, влияющих на ходовые качества и ресурс силового агрегата. Многие владельцы водной техники недооценивают важность точного подбора <strong>длины дейдвуда</strong> под высоту транца, полагая, что небольшие отклонения не сыграют роли. Однако на практике даже незначительное несоответствие может привести к резкому падению скорости, перерасходу топлива или, что еще хуже, к перегреву и разрушению двигателя.</p>
+
+<p>Взаимосвязь между конструктивными особенностями лодки и геометрией подвесного мотора не терпит приблизительных решений. Если винт будет расположен слишком высоко, возникнет <em>кавитация</em>, которая буквально съест лопасти за считанные часы. Если же заглубление будет чрезмерным, возрастет сопротивление воды, а в некоторых случаях произойдет засасывание водорослей или донных отложений в систему охлаждения.</p>
+
+<p>В этой статье мы детально разберем, как правильно измерить транец, какие существуют стандарты длины ноги и как добиться идеального баланса для вашего плавсредства. Вы узнаете, почему производители выпускают моторы с разными параметрами и как не допустить ошибок при выборе навески.</p>
+
+<h2 id="стандарты-длины-дейдвуда-и-геометрия-транца">Стандарты длины дейдвуда и геометрия транца</h2>
+
+<p>Мировые производители подвесных моторов придерживаются устоявшихся стандартов, которые определяют длину дейдвуда — расстояния от посадочного места на транце до кавитационной плиты. Наиболее распространенным вариантом является <strong>короткая нога</strong> (S), составляющая 15 дюймов (около 381 мм). Этот стандарт исторически сложился для маломощных моторов и лодок с низкой посадкой.</p>
+
+<p>Для более мощных агрегатов и судов с высоким бортом предназначена <strong>длинная нога</strong> (L), равная 20 дюймов (508 мм). Увеличение длины необходимо для того, чтобы опустить винт глубже в воду, обеспечивая стабильный забор воды и эффективную работу на высоких скоростях. Существуют также экстра-длинные модификации (XL, XXL), которые могут достигать 25 дюймов и более, но они применяются в основном на крупных катерах или специализированной технике.</p>
+
+<p>Важно понимать, что высота транца — это не статичная величина для всех лодок. У надувных ПВХ-лодок она может варьироваться в зависимости от давления в баллонах и жесткости настила. Металлические и стеклопластиковые катера имеют фиксированный размер, который также может отличаться от заявленного производителем из-за особенностей конструкции или доработок владельцем.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Всегда измеряйте фактическую высоту транца своей лодки рулеткой, не полагаясь слепо на паспортные данные или маркировку производителя, так как реальность часто вносит свои коррективы.</p></div>
+
+<p>Несоответствие между длиной ноги и высотой транца приводит к нарушению угла атаки винта. Если мотор слишком короткий для высокого транца, винт будет "хватать" воздух на поворотах или при разгоне. Если мотор слишком длинный, вы получите избыточное сопротивление и риск удара о подводные препятствия.</p>
+
+<h2 id="влияние-заглубления-на-кавитацию-и-кпд-винта">Влияние заглубления на кавитацию и КПД винта</h2>
+
+<p>Кавитация — это физический процесс парообразования в жидкости, который происходит при резком падении давления. В контексте лодочных моторов это явление возникает, когда винт работает в зоне разрежения, захватывая пузырьки воздуха с поверхности воды. Основным признаком кавитации является резкое увеличение оборотов двигателя при одновременном падении скорости лодки и появлении характерного ревущего звука.</p>
+
+<p>Недостаточное заглубление винта — главная причина кавитации. Когда кавитационная плита находится слишком близко к поверхности воды, винт начинает подсасывать атмосферный воздух. Это не только снижает тягу, но и вызывает эрозию металла лопастей. Микроскопические схлопывания пузырьков пара создают ударные волны, которые вырывают частицы металла, превращая гладкую поверхность винта в пористую и шероховатую.</p>
+
+<p>С другой стороны, чрезмерное заглубление также негативно сказывается на <strong>коэффициенте полезного действия</strong> (КПД). Увеличенная площадь смачиваемой поверхности дейдвуда создает дополнительное гидродинамическое сопротивление. Лодка становится "тяжелее" на ходу, мотор работает в более напряженном режиме, расходуя больше топлива для достижения той же скорости.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Идеальное заглубление достигается тогда, когда кавитационная плита находится параллельно днищу лодки или чуть ниже, обеспечивая чистый поток воды к винту без захвата воздуха.</p></div>
+
+<p>Оптимальным считается положение, при котором верхняя кромка лопасти винта при горизонтальном движении находится ниже уровня днища примерно на 10-15% от диаметра самого винта. Это обеспечивает стабильный поток воды и минимизирует потери энергии.</p>
+
+<h2 id="методика-точного-замера-высоты-транца">Методика точного замера высоты транца</h2>
+
+<p>Для правильного подбора мотора необходимо выполнить точные замеры. Ошибка в несколько сантиметров может стоить вам производительности. Измерение производится от верхней горизонтальной плоскости транца (где мотор прилегает к лодке) до нижней точки киля или самой низкой точки днища по центру.</p>
+
+<p>Процесс замера требует внимательности и использования жесткой линейки или строительного уровня. Мягкие рулетки могут давать погрешность, если лодка имеет сложную геометрию транца. Важно учитывать, что у надувных лодок высота транца может "плавать" в зависимости от накачки баллонов, поэтому замеры лучше проводить при полностью подготовленной к выходу на воду лодке.</p>
+
+<p>Существует простой алгоритм действий:</p>
+<ul>
+<li>📏 Установите лодку на ровную горизонтальную поверхность без кренов.</li>
+<li>📐 Приложите жесткую линейку или уровень вертикально к плоскости транца.</li>
+<li>👁️ Зафиксируйте расстояние от верхнего среза транца до условной линии продолжения днища.</li>
+<li>✍️ Запишите результат с точностью до миллиметра для сравнения со стандартами мотора.</li>
+</ul>
+
+<p>Если вы планируете установку мотора с гидроподъемом или электролебедкой, необходимо учитывать конструктивные особенности крепежа, которые могут визуально изменять высоту посадки дейдвуда относительно транца.</p>
+
+<div class="poll-widget" id="poll-d4800aa9"><div class="poll-widget-question">📊 Какая у вас лодка?</div><div class="poll-widget-option" data-poll="d4800aa9" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">ПВХ с надувным дном</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="d4800aa9" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">ПВХ с пайольным дном</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="d4800aa9" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Металлическая</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="d4800aa9" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Пластиковый катер</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="d4800aa9" data-idx="4" onclick="pbPollVote(this)"><span class="poll-widget-label">Другое</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="таблица-соответствия-размеров-и-рекомендации-по-выбору">Таблица соответствия размеров и рекомендации по выбору</h2>
+
+<p>Чтобы упростить выбор, производители и опытные водномоторники используют сводные таблицы. Они позволяют быстро определить, какой мотор подойдет для вашей лодки. Однако стоит помнить, что табличные данные являются усредненными, и индивидуальные особенности судна всегда в приоритете.</p>
+
+<p>Ниже приведена таблица соответствия, которая поможет сориентироваться в основных типоразмерах:</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип мотора</th>
+<th>Стандартная длина (дюймы)</th>
+<th>Длина в мм (примерно)</th>
+<th>Рекомендуемая высота транца</th>
+<th>Применение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Short (S)</td>
+<td>15"</td>
+<td>381 мм</td>
+<td>380-400 мм</td>
+<td>Малые ПВХ лодки, мелководье</td>
+</tr>
+<tr>
+<td>Long (L)</td>
+<td>20"</td>
+<td>508 мм</td>
+<td>510-530 мм</td>
+<td>Катера, большие ПВХ, море</td>
+</tr>
+<tr>
+<td>Extra Long (XL)</td>
+<td>25"</td>
+<td>635 мм</td>
+<td>635-660 мм</td>
+<td>Крупные катера, яхты</td>
+</tr>
+<tr>
+<td>Ultra Long (XXL)</td>
+<td>30"</td>
+<td>762 мм</td>
+<td>760+ мм</td>
+<td>Специализированная техника</td>
+</tr>
+</tbody>
+</table>
+
+<p>При выборе обращайте внимание на маркировку <em>Tohatsu</em>, <em>Yamaha</em>, <em>Honda</em> или других брендов. Часто в названии модели присутствует буква, указывающая на длину: например, MFS 9.9<strong>S</strong> — короткая нога, MFS 9.9<strong>L</strong> — длинная. Покупка мотора с неподходящей длиной ноги может потребовать costly доработки транца или использования переходных плит, что не всегда безопасно.</p>
+
+<p>Если высота вашего транца находится между стандартными значениями (например, 450 мм), выбор зависит от условий эксплуатации. Для спокойной воды и рыбалки лучше взять мотор с более короткой ногой (S), чтобы избежать сопротивления. Для открытой воды и волнения предпочтительнее длинная нога (L) для надежности забора воды.</p>
+
+<h2 id="регулировка-высоты-навески-и-угла-дифферента">Регулировка высоты навески и угла дифферента</h2>
+
+<p>После того как мотор подобран, критически важна его правильная установка. Регулировка высоты навески осуществляется путем перемещения мотора по отверстиям в транце или с помощью специального крепежного механизма. Цель — добиться горизонтального положения антикавитационной плиты относительно днища при движении.</p>
+
+<p>Угол дифферента (trim) также играет роль в эффективном заглублении. Отклонение мотора от вертикали меняет глубину погружения винта. При ходе на полном газу нос лодки приподнимается, и дейдвуд может выходить из воды, если он установлен слишком высоко. Регулировка трима позволяет компенсировать этот эффект.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка установки мотора</h4><label class="check-item"><input type="checkbox"><span>Мотор закреплен по центру транца</span></label><label class="check-item"><input type="checkbox"><span>Кавитационная плита параллельна днищу</span></label><label class="check-item"><input type="checkbox"><span>Винт погружен на достаточную глубину</span></label><label class="check-item"><input type="checkbox"><span>Отсутствует люфт в крепеже</span></label><label class="check-item"><input type="checkbox"><span>Система охлаждения работает стабильно</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Существует простой тест для проверки правильности установки. Выведите лодку на глиссирование и резко поверните руль в сторону. Если при этом двигатель начинает "рычать", обороты растут, а скорость падает — значит, винт хватает воздух и высоту навески необходимо уменьшить (опустить мотор ниже). Если же лодка идет ровно, без срывов, но чувствуется излишняя нагрузка — возможно, мотор заглублен слишком сильно.</p>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> Эксплуатация мотора с постоянно возникающей кавитацией приводит к быстрому перегреву, так как в систему охлаждения вместе с воздухом попадает меньше воды. Это может вызвать заклинивание поршневой группы.</p>
+</blockquote>
+
+<h2 id="специфика-эксплуатации-на-мелководье-и-в-зарослях">Специфика эксплуатации на мелководье и в зарослях</h2>
+
+<p>Для рыболовов и охотников, часто перемещающихся по мелким рекам или заросшим протокам, стандартная длина ноги может быть избыточной. В таких условиях приоритетом становится проходимость. Использование мотора с короткой ногой на высоком транце позволяет безопасно преодолевать участки с глубиной менее 50 см.</p>
+
+<p>Однако компромисс между проходимостью и эффективностью неизбежен. На мелководье винт работает в пограничном слое, где велика вероятность захвата донного ила, песка и водной растительности. Песок действует как абразив, разрушая дейдвудную шестерню и сальники.</p>
+
+<p>Для таких условий опытные водномоторники рекомендуют:</p>
+<ul>
+<li>🌿 Использовать винты с увеличенным шагом или специальные "травяные" винты, которые меньше наматывают растительность.</li>
+<li>🛡️ Устанавливать защиту винта, если конструкция мотора это позволяет.</li>
+<li>🧹 Регулярно очищать дейдвуд от налипших водорослей во время стоянок.</li>
+</ul>
+
+<p>Некоторые владельцы самостоятельно дорабатывают транцы лодок, устанавливая дополнительные накладки для поднятия мотора выше. Это рискованный метод, который требует тщательного расчета, чтобы не нарушить центровку и остойчивость судна.</p>
+
+<details class="faq-item"><summary>Можно ли использовать переходную плиту?</summary><div class="faq-answer"><p>Использование переходной плиты для установки длинноногого мотора на низкий транец возможно, но не рекомендуется производителями. Это смещает центр тяжести вверх, ухудшает управляемость и увеличивает нагрузку на транец. Безопаснее подобрать мотор с правильной длиной ноги.</p></div></details>
+
+<blockquote>
+<p>⚠️ <strong>Внимание:</strong> При движении по заросшим участкам постоянно контролируйте температуру двигателя. Забитая травой водозаборная решетка — самая частая причина мгновенного перегрева в летний период.</p>
+</blockquote>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Что делать, если высота транца моей лодки 45 см, а стандартных моторов с такой ногой нет?</summary>
+<p>Вам придется выбирать между короткой (38 см) и длинной (51 см) ногой. Для ПВХ лодок чаще выбирают длинную ногу, устанавливая мотор на один ряд отверстий выше или используя проставку, так как это дает лучший КПД на воде. Короткая нога будет слишком высоко, и винт будет постоянно хватать воздух.</p>
+</details>
+
+<details>
+<summary>Как часто нужно проверять высоту установки мотора?</summary>
+<p>Проверять высоту и угол дифферента следует каждый сезон, а также после любого серьезного удара о препятствие или транспортировки лодки на дальние расстояния. Крепежные болты могут ослабнуть, и дейдвуд может сместиться вниз, что увеличит сопротивление.</p>
+</details>
+
+<details>
+<summary>Влияет ли вес пассажиров на необходимую глубину погружения винта?</summary>
+<p>Да, влияет. При полной загрузке лодка садится глубже, и дейдвуд погружается сильнее. Поэтому при полной загрузке риск кавитации меньше, но выше риск сопротивления. При одиночной рыбалке лодка выше, и требования к длине ноги становятся более критичными.</p>
+</details>
+
+<details>
+<summary>Можно ли спилить дейдвуд, чтобы сделать длинную ногу короткой?</summary>
+<p>Категорически нет. Внутри дейдвуда проходят валы, тяги переключения передач и газ-контроль, а также каналы системы охлаждения. Укорачивание возможно только в специализированных мастерских с полной заменой внутренних компонентов, что экономически нецелесообразно.</p>
+</details>
+
+<details>
+<summary>Почему мотор греется даже при нормальной высоте установки?</summary>
+<p>Если высота в норме, причина может быть в загрязнении контрольного отверстия, повреждении крыльчатки помпы, трещинах в дейдвуде или использовании некачественного топлива. Также проверьте, не забит ли мусором сам водозабор.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#стандарты-длины-дейдвуда-и-геометрия-транца">Стандарты длины дейдвуда и геометрия транца</a></li><li><a href="#влияние-заглубления-на-кавитацию-и-кпд-винта">Влияние заглубления на кавитацию и КПД винта</a></li><li><a href="#методика-точного-замера-высоты-транца">Методика точного замера высоты транца</a></li><li><a href="#таблица-соответствия-размеров-и-рекомендации-по-выбору">Таблица соответствия размеров и рекомендации по выбору</a></li><li><a href="#регулировка-высоты-навески-и-угла-дифферента">Регулировка высоты навески и угла дифферента</a></li><li><a href="#специфика-эксплуатации-на-мелководье-и-в-зарослях">Специфика эксплуатации на мелководье и в зарослях</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-nastroit-kitajskij-takhometr-dlya-lodochnogo-motora-2-kh-taktnyj.html" class="related-card">Настройка китайского тахометра для 2-тактного лодочного мотора: пошаговая инструкция</a></li><li><a href="/articles/l/lo/lodochnyj-motor-yamakha-70-4-kh-taktnyj.html" class="related-card">Лодочный мотор Ямаха 70 4-х тактный: характеристики и выбор</a></li><li><a href="/articles/l/lo/lodochnyj-motor-khajdi-50.html" class="related-card">Лодочный мотор Хайди 50: характеристики, обкатка и отзывы владельцев</a></li><li><a href="/articles/k/ka/kater-s-motorom-khonda.html" class="related-card">Катер с мотором Хонда: выбор, характеристики и советы по эксплуатации</a></li><li><a href="/articles/g/go/golfstream-lodochnye-motory-ofitsialnyj-sajt.html" class="related-card">Golfstream лодочные моторы: официальный сайт, каталог и цены</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kak-nastroit-kitajskij-takhometr-dlya-lodochnogo-motora-2-kh-taktnyj.html" class="related-bottom-card"><span class="related-bottom-title">Настройка китайского тахометра для 2-тактного лодочного мотора: пошаговая инструкция</span><span class="related-bottom-desc">Как правильно подключить и настроить китайский тахометр на 2-тактный лодочный мотор: схема, калибров</span></a><a href="/articles/l/lo/lodochnyj-motor-yamakha-70-4-kh-taktnyj.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Ямаха 70 4-х тактный: характеристики и выбор</span><span class="related-bottom-desc">Полный обзор двигателя Yamaha 70 4-stroke. Расход топлива, технические характеристики, преимущества,</span></a><a href="/articles/l/lo/lodochnyj-motor-khajdi-50.html" class="related-bottom-card"><span class="related-bottom-title">Лодочный мотор Хайди 50: характеристики, обкатка и отзывы владельцев</span><span class="related-bottom-desc">Полный обзор лодочного мотора Hidea HD50FWS. Реальные характеристики, расход топлива, особенности об</span></a><a href="/articles/k/ka/kater-s-motorom-khonda.html" class="related-bottom-card"><span class="related-bottom-title">Катер с мотором Хонда: выбор, характеристики и советы по эксплуатации</span><span class="related-bottom-desc">Как выбрать катер с мотором Honda? Обзор моделей, преимущества 4-тактных двигателей, расход топлива </span></a><a href="/articles/g/go/golfstream-lodochnye-motory-ofitsialnyj-sajt.html" class="related-bottom-card"><span class="related-bottom-title">Golfstream лодочные моторы: официальный сайт, каталог и цены</span><span class="related-bottom-desc">Официальный сайт Golfstream: обзор лодочных моторов, технические характеристики, выбор модели и серв</span></a><a href="/articles/n/na/nastrojka-ugla-naklona-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Настройка угла наклона лодочного мотора: пошаговая инструкция</span><span class="related-bottom-desc">Как правильно настроить угол наклона лодочного мотора? Влияние трима на скорость, расход топлива и г</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

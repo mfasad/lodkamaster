@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Проверка лодки по бортовому номеру: поиск владельца и угон — ЛодкаМастер</title>
+    <meta name="description" content="Как проверить лодку по бортовому номеру? Полная инструкция по поиску владельца, проверке на угон и расшифровке кода ГИМС.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/k/ka/kak-proverit-lodku-po-bortovomu-nomeru.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Проверка лодки по бортовому номеру: поиск владельца и угон">
+    <meta property="og:description" content="Как проверить лодку по бортовому номеру? Полная инструкция по поиску владельца, проверке на угон и расшифровке кода ГИМС.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/zakony-i-gims/">Законы и ГИМС</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Проверка лодки по бортовому номеру: поиск владельца и угон</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Как проверить лодку по бортовому номеру: поиск владельца и базы ГИМС</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#структура-и-расшифровка-бортового-номера-гимс">Структура и расшифровка бортового номера ГИМС</a></li><li><a href="#официальные-способы-проверки-через-гимс-мчс">Официальные способы проверки через ГИМС МЧС</a></li><li><a href="#использование-онлайн-сервисов-и-баз-данных">Использование онлайн-сервисов и баз данных</a></li><li><a href="#поиск-владельца-через-социальные-сети-и-объявления">Поиск владельца через социальные сети и объявления</a></li><li><a href="#проверка-на-угон-и-ограничения-регистрационных-действий">Проверка на угон и ограничения регистрационных действий</a></li><li><a href="#юридические-последствия-покупкипроблемной-лодки">Юридические последствия покупки"проблемной" лодки</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Покупка водного транспорта с рук всегда сопряжена с определенными рисками, особенно когда речь идет о подержанных плавательных средствах. <strong>Бортовой номер</strong> является главным идентификатором, который позволяет узнать историю судна, его юридический статус и даже имя предыдущего владельца. В отличие от автомобилей, где базы данных более прозрачны, в водном транспорте ситуация сложнее, но проверка необходима для безопасности сделки.</p>
+
+<p>Игнорирование этого этапа может привести к покупке краденого имущества или лодки, находящейся в залоге у банка. <em>ГИМС МЧС России</em> ведет строгий учет маломерных судов, и наличие судна в реестре накладывает на владельца определенные обязательства. В этой статье мы подробно разберем алгоритмы действий, доступные онлайн-сервисы и официальные способы получения информации.</p>
+
+<p>Понимание структуры номера и знание того, где искать информацию, сэкономит вам время и деньги. Существуют как бесплатные методы поверхностной проверки, так и платные, дающие глубокий результат. Важно действовать последовательно и не полагаться только на слова продавца.</p>
+
+<h2 id="структура-и-расшифровка-бортового-номера-гимс">Структура и расшифровка бортового номера ГИМС</h2>
+
+<p>Прежде чем приступать к поиску, необходимо правильно считать и понять, что означают символы, нанесенные на борт. <strong>Бортовой номер</strong> наносится контрастной краской на оба борта в носовой части судна. Его формат строго регламентирован и состоит из буквенно-цифровой комбинации, которая делится на несколько смысловых блоков.</p>
+
+<p>Первые четыре знака обычно являются буквенными и обозначают регион регистрации и порядковый номер в реестре. Далее следуют цифры, указывающие на год присвоения номера, и код субъекта Российской Федерации. Ошибки в чтении даже одного символа могут привести к тому, что <em>поиск по базе</em> не даст результатов.</p>
+
+<ul>
+ <li>🚤 <strong>Буквенная часть:</strong> указывает на принадлежность к конкретному инспекторскому участку ГИМС.</li>
+ <li>🔢 <strong>Цифровая часть:</strong> содержит год регистрации и уникальный код объекта.</li>
+ <li>📍 <strong>Код региона:</strong> последние цифры соответствуют автомобильным кодам областей и республик РФ.</li>
+</ul>
+
+<blockquote>
+<p>⚠️ Внимание: Если номер на лодке поврежден, закрашен или читается с трудом, это первый сигнал о возможной криминальной истории. Требуйте от продавца объяснений или откажитесь от сделки.</p>
+</blockquote>
+
+<p>Для корректной работы с базами данных вам может потребоваться ввести номер в определенном формате. Иногда система требует ввод только букв, иногда — полного кода без пробелов. <mark>Правильное считывание символов (например, отличие буквы О от цифры 0) критически важно для успешного поиска.</mark></p>
+
+<h2 id="официальные-способы-проверки-через-гимс-мчс">Официальные способы проверки через ГИМС МЧС</h2>
+
+<p>Самым надежным источником информации является государственный реестр маломерных судов. Однако просто так зайти и посмотреть данные любого человека нельзя из-за закона о персональных данных. Проверка возможна, если у вас есть веские основания или вы действуете через официальные запросы.</p>
+
+<p>Существует несколько путей получения официальной информации. Первый — это подача запроса в местное отделение <em>Государственной инспекции по маломерным судам</strong>. Это может занять время, но ответ будет юридически значимым. Второй вариант — использование порталов государственных услуг, где доступна проверка наличия судна в реестре по номеру.</p>
+
+<div class="poll-widget" id="poll-15423c96"><div class="poll-widget-question">📊 Как вы обычно проверяете технику перед покупкой?</div><div class="poll-widget-option" data-poll="15423c96" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Визуальный осмотр</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="15423c96" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Проверка документов</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="15423c96" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Поиск по базам онлайн</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="15423c96" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Обращение в ГИБДД/ГИМС</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<p>Также стоит рассмотреть возможность совместного визита в ГИМС с продавцом для сверки документов. Это исключит риск покупки"серой" лодки. В некоторых регионах доступны онлайн-сервисы проверки задолженностей по транспортному налогу, что косвенно подтверждает владение судном.</p>
+
+<ul>
+ <li>🏢 <strong>Личный визит:</strong> подача письменного заявления в отделение ГИМС по месту регистрации судна.</li>
+ <li>💻 <strong>Онлайн-сервисы:</strong> использование официальных порталов для проверки статуса регистрации.</li>
+ <li>📄 <strong>Запрос в суд:</strong> если лодка фигурирует в судебных делах, информация может быть в открытых базах судов.</li>
+</ul>
+
+<h2 id="использование-онлайн-сервисов-и-баз-данных">Использование онлайн-сервисов и баз данных</h2>
+
+<p>В эпоху цифровизации появилось множество коммерческих и открытых сервисов, позволяющих пробить лодку по номеру. Такие ресурсы агрегируют данные из различных источников: объявлений о продаже, фотофиксаций с камер, отчетов о ДТП на воде и социальных сетей.</p>
+
+<p>Один из эффективных методов — поиск по фото. Если лодка когда-либо продавалась на популярных досках объявлений (Авито, Юла), ее фотографии могли сохраниться в кэше поисковиков или в архивах сайтов. Вводя номер в поиск по картинкам, можно найти старые объявления с контактными данными продавца.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Коммерческие базы данных могут содержать устаревшую информацию. Всегда перепроверяйте полученные данные через официальные документы перед покупкой.</p>
+</blockquote>
+
+<p>Существуют специализированные сервисы проверки авто и спецтехники, которые иногда включают в себя и водный транспорт. Они платные, но предоставляют структурированный отчет. В отчете может содержаться информация о количестве владельцев, участии в ДТП и ограничениях регистрационных действий.</p>
+
+<table>
+ <thead>
+ <tr>
+ <th>Тип сервиса</th>
+ <th>Доступность данных</th>
+ <th>Стоимость</th>
+ <th>Надежность</th>
+ <th>Скорость</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Официальный запрос ГИМС</td>
+ <td>Полная</td>
+ <td>Госпошлина</td>
+ <td>100%</td>
+ <td>Низкая (до 30 дней)</td>
+ </tr>
+ <tr>
+ <td>Коммерческие агрегаторы</td>
+ <td>Частичная</td>
+ <td>Платно</td>
+ <td>Высокая</td>
+ <td>Высокая (минуты)</td>
+ </tr>
+ <tr>
+ <td>Поиск по фото (Яндекс/Google)</td>
+ <td>Случайная</td>
+ <td>Бесплатно</td>
+ <td>Средняя</td>
+ <td>Средняя</td>
+ </tr>
+ <tr>
+ <td>Социальные сети</td>
+ <td>Низкая</td>
+ <td>Бесплатно</td>
+ <td>Низкая</td>
+ <td>Низкая</td>
+ </tr>
+ </tbody>
+</table>
+
+<h2 id="поиск-владельца-через-социальные-сети-и-объявления">Поиск владельца через социальные сети и объявления</h2>
+
+<p>Социальные сети стали мощнейшим инструментом OSINT-разведки. Многие владельцы лодок состоят в тематических сообществах, где делятся фотографиями своих трофеев или ремонтом. На фотографиях часто виден <strong>бортовой номер</strong>, а в комментариях или профиле автора могут быть контакты.</p>
+
+<p>Алгоритм действий прост: введите номер в поиск по сообществам ВКонтакте, Одноклассниках или Telegram-каналах рыболовов вашего региона. Также стоит проверить архивы досок объявлений. Даже если объявление удалено, оно могло остаться в индексации поисковых систем.</p>
+
+<details class="faq-item"><summary>Как искать в Google по номеру?</summary><div class="faq-answer"><p>Используйте операторы поиска. Например:"АБ 1234 МО" или"бортовой номер АБ1234МО". Попробуйте искать номер в разных форматах: с пробелами, без пробелов, с дефисами. Также эффективно искать номер в кавычках, чтобы найти точное совпадение фразы.</p></div></details>
+
+<p>Если лодка участвовала в каких-либо соревнованиях или регатах, протоколы заплывов часто публикуются онлайн с указанием номеров участников. Это может помочь выйти на имя владельца через организаторов мероприятий.</p>
+
+<ul>
+ <li>🔍 <strong>Поиск по хештегам:</strong> используйте комбинации #лодканомер, #рыбалкарегион.</li>
+ <li>📸 <strong>Анализ геометок:</strong> фото с лодкой могли быть загружены с включенной геолокацией.</li>
+ <li>🗣 <strong>Опросы в группах:</em> в местных рыболовных сообществах могут узнать лодку по номеру.</li>
+</ul>
+
+<h2 id="проверка-на-угон-и-ограничения-регистрационных-действий">Проверка на угон и ограничения регистрационных действий</h2>
+
+<p>Самый критичный этап проверки — выяснение, не числится ли судно в угоне. Покупка краденой лодки грозит не только потерей денег, но и уголовной ответственностью за скупку краденого. Информация об угнанных маломерных судах часто транслируется в межведомственные базы.</p>
+
+<p>Проверить ограничения можно через сайт <em>Федеральной службы судебных приставов (ФССП)</em>, введя данные продавца (если они известны из паспорта или ПСМ). Если на владельце висят долги, лодка может быть арестована, и зарегистрировать ее на себя вы не сможете.</p>
+
+<div class="checklist-block"><h4>☑️ Чек-лист проверки на угон</h4><label class="check-item"><input type="checkbox"><span>Сверить номер двигателя с ПСМ</span></label><label class="check-item"><input type="checkbox"><span>Проверить номер транца и корпуса</span></label><label class="check-item"><input type="checkbox"><span>Запросить справку об отсутствии долгов</span></label><label class="check-item"><input type="checkbox"><span>Проверить лодку в базе МВД (через полицию)</span></label><label class="check-item"><input type="checkbox"><span>Убедиться в отсутствии залогов в бюро кредитных историй</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<p>Обратите внимание на соответствие номеров агрегатов. На <em>лодочном моторе</em> и на транце лодки выбиты заводские номера. Их сверка с документами — обязательная процедура. Расхождение даже в одну цифру делает регистрацию невозможной.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не передавайте деньги до момента физической сверки номеров на корпусе и моторе с документами в присутствии продавца.</p>
+</blockquote>
+
+<h2 id="юридические-последствия-покупкипроблемной-лодки">Юридические последствия покупки"проблемной" лодки</h2>
+
+<p>Покупка лодки без проверки может привести к неприятным сюрпризам. Если судно находится в залоге у банка, кредитор имеет право изъять его даже у добросовестного приобретателя. Доказывать свою правоту придется в суде, тратя время и ресурсы.</p>
+
+<p>Также существуют риски, связанные с техническим состоянием, которое скрывалось. Если лодка была восстановлена после серьезного происшествия (опрокидывания, пожара) и не прошла должную экспертизу, ее эксплуатация может быть запрещена ГИМС.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Сохраняйте все переписки с продавцом и копию договора купли-продажи минимум 3 года. Это поможет защитить ваши права в случае возникновения споров о скрытых дефектах или юридической чистоте сделки.</p></div>
+
+<p>Важно понимать разницу между правом собственности и правом пользования. Отсутствие регистрации в ГИМС не всегда означает отсутствие владельца. Поэтому проверка по базам углов и залогов является приоритетной.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Отсутствие записи в реестре ГИМС не гарантирует юридическую чистоту лодки. Всегда проверяйте историю через (многоканально): документы, онлайн-базы и визуальный осмотр.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+ <summary>Можно ли узнать ФИО владельца лодки только по бортовому номеру через интернет?</summary>
+ <p>Официально — нет. Персональные данные защищены законом. Однако косвенные методы (поиск по старым объявлениям, фото в соцсетях) могут дать эту информацию. Полные данные доступны только по запросу в правоохранительные органы при наличии оснований.</p>
+</details>
+
+<details>
+ <summary>Что делать, если номер на лодке не читается или стерт?</summary>
+ <p>Эксплуатация такого судна запрещена. Необходимо обращаться в ГИМС для проведения экспертизы и восстановления номера, что является сложной процедурой. При покупке от такой лодки лучше отказаться.</p>
+</details>
+
+<details>
+ <summary>Как проверить, не находится ли лодка в залоге у банка?</summary>
+ <p>Проверка осуществляется через реестр уведомлений о залоге движимого имущества (fedresurs.ru) по VIN-номеру лодки или номеру двигателя, если они там зарегистрированы. Также можно запросить выписку в бюро кредитных историй с согласия продавца.</p>
+</details>
+
+<details>
+ <summary>Где находится бортовой номер на лодке ПВХ?</summary>
+ <p>Обычно номер наносится на транцевой зеркале (пластина для крепления мотора) или на специальном кармане в носовой части баллона. На металлических лодках — на форштиве (носу) с обоих бортов.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#структура-и-расшифровка-бортового-номера-гимс">Структура и расшифровка бортового номера ГИМС</a></li><li><a href="#официальные-способы-проверки-через-гимс-мчс">Официальные способы проверки через ГИМС МЧС</a></li><li><a href="#использование-онлайн-сервисов-и-баз-данных">Использование онлайн-сервисов и баз данных</a></li><li><a href="#поиск-владельца-через-социальные-сети-и-объявления">Поиск владельца через социальные сети и объявления</a></li><li><a href="#проверка-на-угон-и-ограничения-регистрационных-действий">Проверка на угон и ограничения регистрационных действий</a></li><li><a href="#юридические-последствия-покупкипроблемной-лодки">Юридические последствия покупки"проблемной" лодки</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kakie-dokumenty-nuzhny-pri-zamene-dvigatelya.html" class="related-card">Какие документы нужны при замене двигателя: полный список</a></li><li><a href="/articles/k/ka/kak-vyglyadyat-prava-na-lodku-s-motorom.html" class="related-card">Права на лодку с мотором: фото, категории и правила ГИМС</a></li><li><a href="/articles/k/ka/kakie-dokumenty-nuzhny-dlya-postanovki-na-uchet-lodki.html" class="related-card">Документы для регистрации лодки в ГИМС 2026: полный список и нюансы</a></li><li><a href="/articles/k/ka/kak-proverit-registratsiyu-lodki-v-gims-po-nomeru.html" class="related-card">Как проверить регистрацию лодки в ГИМС по номеру: пошаговая инструкция</a></li><li><a href="/articles/n/nu/nuzhny-li-prava-na-naduvnuyu-lodku-s-motorom-do-10-l-s.html" class="related-card">Нужны ли права на надувную лодку с мотором до 10 л.с. в 2026 году?</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kakie-dokumenty-nuzhny-pri-zamene-dvigatelya.html" class="related-bottom-card"><span class="related-bottom-title">Какие документы нужны при замене двигателя: полный список</span><span class="related-bottom-desc">Узнайте, какие документы нужны при замене двигателя в 2026 году. Пошаговая инструкция регистрации, с</span></a><a href="/articles/k/ka/kak-vyglyadyat-prava-na-lodku-s-motorom.html" class="related-bottom-card"><span class="related-bottom-title">Права на лодку с мотором: фото, категории и правила ГИМС</span><span class="related-bottom-desc">Как выглядят права на управление маломерным судном с мотором. Образец удостоверения, расшифровка кат</span></a><a href="/articles/k/ka/kakie-dokumenty-nuzhny-dlya-postanovki-na-uchet-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Документы для регистрации лодки в ГИМС 2026: полный список и нюансы</span><span class="related-bottom-desc">Какие документы нужны для постановки лодки на учет в ГИМС? Пошаговая инструкция, сроки, стоимость и </span></a><a href="/articles/k/ka/kak-proverit-registratsiyu-lodki-v-gims-po-nomeru.html" class="related-bottom-card"><span class="related-bottom-title">Как проверить регистрацию лодки в ГИМС по номеру: пошаговая инструкция</span><span class="related-bottom-desc">Узнайте, как проверить регистрацию лодки в ГИМС по номеру онлайн. Актуальные способы проверки судово</span></a><a href="/articles/n/nu/nuzhny-li-prava-na-naduvnuyu-lodku-s-motorom-do-10-l-s.html" class="related-bottom-card"><span class="related-bottom-title">Нужны ли права на надувную лодку с мотором до 10 л.с. в 2026 году?</span><span class="related-bottom-desc">Нужны ли права на надувную лодку с мотором до 10 л.с.? Полный разбор законов ГИМС, требований к реги</span></a><a href="/articles/n/na/navigatsionnyj-ogon-dlya-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Навигационный огонь для лодки: правила выбора и установки</span><span class="related-bottom-desc">Полный гид по судовым огням. Требования ГИМС, правила МППСМ, схемы установки, подключение LED-фонаре</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>

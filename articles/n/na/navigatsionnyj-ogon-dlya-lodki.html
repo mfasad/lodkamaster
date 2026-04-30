@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🚤</text></svg>">
+    <title>Навигационный огонь для лодки: правила выбора и установки — ЛодкаМастер</title>
+    <meta name="description" content="Полный гид по судовым огням. Требования ГИМС, правила МППСМ, схемы установки, подключение LED-фонарей и советы по безопасности.">
+    <link rel="canonical" href="https://lodkamaster.vercel.app/articles/n/na/navigatsionnyj-ogon-dlya-lodki.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Навигационный огонь для лодки: правила выбора и установки">
+    <meta property="og:description" content="Полный гид по судовым огням. Требования ГИМС, правила МППСМ, схемы установки, подключение LED-фонарей и советы по безопасности.">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1777582131">
+    <style>
+    .site-footer-premium {
+        margin-top: 60px; padding: 40px 0 0; background: #1e293b; color: #94a3b8;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        padding-bottom: 32px; border-bottom: 1px solid #334155;
+    }
+    .footer-brand { font-size: 1.2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .footer-about { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+    .footer-updated { font-size: 0.8rem; color: #64748b; }
+    .footer-col h4 { color: #f1f5f9; font-size: 0.95rem; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #60a5fa; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 640px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .cookie-popup {
+        position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #fff;
+        padding: 16px; transition: transform 0.5s ease; z-index: 9999; border-top: 2px solid #2563eb;
+        transform: translateY(100%);
+    }
+    .cookie-popup.visible { transform: translateY(0); }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 0.9rem; }
+    .cookie-btn { background: #2563eb; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .cookie-btn:hover { background: #1d4ed8; }
+    @media (max-width: 640px) {
+        .cookie-inner { flex-direction: column; text-align: center; }
+    }
+</style>
+    
+    <!--#include virtual="/ssi/head.html" -->
+</head>
+<body>
+        <!--#include virtual="/ssi/body_top.html" -->
+    <style>
+    .nav-dropdown { position: relative; display: inline-block; }
+    .dropdown-toggle {
+        background: none; border: none; cursor: pointer;
+        font: inherit; color: inherit; padding: 8px 12px;
+        border-radius: 8px; transition: background 0.2s;
+    }
+    .dropdown-toggle:hover { background: rgba(0,0,0,0.05); }
+    .dropdown-menu {
+        display: none; position: absolute; right: 0; top: 100%;
+        min-width: 240px; max-height: 70vh; overflow-y: auto;
+        background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb);
+        border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        padding: 8px 0; z-index: 1000;
+    }
+    .nav-dropdown::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        top: 100%; height: 12px;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-item {
+        display: block; padding: 10px 20px; color: var(--text, #1f2937);
+        text-decoration: none; font-size: 0.95rem; transition: background 0.15s;
+        white-space: nowrap;
+    }
+    .dropdown-item:hover { background: rgba(37,99,235,0.06); color: var(--primary, #2563eb); }
+    @media (max-width: 768px) {
+        .main-nav > .nav-link { display: none; }
+        .dropdown-toggle { display: none; }
+        .dropdown-menu {
+            display: block !important; position: static;
+            box-shadow: none; border: none; border-radius: 0;
+            min-width: auto; max-height: none; padding: 0;
+            background: transparent;
+        }
+        .dropdown-item {
+            padding: 8px 0; font-size: 1rem;
+        }
+    }
+    </style>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚤</span>
+                <span>ЛодкаМастер</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню" id="menuBtn">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="/category/lodki-pvkh/" class="nav-link">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="nav-link">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="nav-link">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="nav-link">🛠️ Сделай сам</a>
+<div class="nav-dropdown">
+            <button class="nav-link dropdown-toggle">📂 Все разделы ▾</button>
+            <div class="dropdown-menu"><a href="/category/lodki-pvkh/" class="dropdown-item">🛶 Лодки ПВХ</a>
+<a href="/category/metallicheskie-lodki/" class="dropdown-item">⚓ Металлические лодки</a>
+<a href="/category/lodochnye-motory/" class="dropdown-item">⛵ Лодочные моторы</a>
+<a href="/category/sdelaj-sam/" class="dropdown-item">🛠️ Сделай сам</a>
+<a href="/category/remont-i-to/" class="dropdown-item">🔧 Ремонт и ТО</a>
+<a href="/category/tyuning-i-aksessuary/" class="dropdown-item">🎣 Тюнинг и аксессуары</a>
+<a href="/category/podvodnye-lodki/" class="dropdown-item">🌊 Подводные лодки</a>
+<a href="/category/rybalka-s-lodki/" class="dropdown-item">🐟 Рыбалка с лодки</a>
+<a href="/category/zakony-i-gims/" class="dropdown-item">📜 Законы и ГИМС</a>
+<a href="/category/drugoe/" class="dropdown-item">📁 Другое</a></div>
+        </div>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Навигация">
+        <div class="container"><a href="/">Главная</a><span class="breadcrumb-sep">›</span><a href="/category/zakony-i-gims/">Законы и ГИМС</a><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Навигационный огонь для лодки: правила выбора и установки</span></div>
+    </nav>
+
+    <main class="site-main">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-main">
+                    
+                    <h1>Навигационный огонь для лодки: выбор, установка и правила</h1>
+                    <nav class="mobile-toc"><details><summary>📋 Содержание</summary><ul><li><a href="#классификация-судовых-огней-по-правилам-мппсм">Классификация судовых огней по правилам МППСМ</a></li><li><a href="#технические-характеристики-led-против-галогена">Технические характеристики: LED против галогена</a></li><li><a href="#требования-гимс-к-установке-огней-на-маломерные-суда">Требования ГИМС к установке огней на маломерные суда</a></li><li><a href="#схема-подключения-и-защита-электропроводки">Схема подключения и защита электропроводки</a></li><li><a href="#сравнительная-таблица-типов-огней">Сравнительная таблица типов огней</a></li><li><a href="#обслуживание-и-подготовка-к-навигации">Обслуживание и подготовка к навигации</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></details></nav>
+                    <!--#include virtual="/ssi/article_before.html" -->
+                    <div class="article-body">
+
+<p>Вечерняя рыбалка или ночной переход к месту стоянки требуют от судоводителя максимальной концентрации и соблюдения строгих правил безопасности. Одним из ключевых элементов, обеспечивающих видимость вашего судна в темное время суток, является <strong>навигационный огонь для лодки</strong>. Это не просто элемент тюнинга, а обязательное требование законодательства, игнорирование которого может привести к столкновению с другим плавсредством или серьезному штрафу со стороны инспектора ГИМС.</p>
+
+<p>В условиях ограниченной видимости именно правильное световое оборудование позволяет другим капитанам определить габариты, направление движения и тип вашего судна. Современные светодиодные решения значительно упростили жизнь водномоторникам, сделав огни ярче, долговечнее и энергоэффективнее. Однако выбор подходящей модели требует понимания технических характеристик и нормативных актов.</p>
+
+<p>В этой статье мы подробно разберем, какие бывают судовые огни, как их правильно установить на лодку ПВХ или металлический катер, и на что обратить внимание при покупке. Мы также затронем вопросы электропроводки, чтобы избежать окисления контактов и потери напряжения в самый неподходящий момент.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Эксплуатация маломерного судна в темное время суток без исправных навигационных огней является прямым нарушением правил безопасности и влечет за собой административную ответственность.</p>
+</blockquote>
+
+<h2 id="классификация-судовых-огней-по-правилам-мппсм">Классификация судовых огней по правилам МППСМ</h2>
+
+<p>Для того чтобы правильно оборудовать лодку, необходимо понимать разницу между типами огней. Международные правила предупреждения столкновений судов (МППСМ) четко регламентируют, какой свет и в какой сектор горизонта должен испускать каждый огонь. <strong>Бортовые огни</strong> — это красный (левого борта) и зеленый (правого борта) сигналы, которые видны с носовой части судна до 22,5° за диаметральной плоскостью на каждый борт.</p>
+
+<p>На корме обычно устанавливается <em>топовый огонь</em> или <strong>круговой белый огонь</strong>. Для малых судов длиной менее 12 метров правила допускают комбинирование этих огней в единую мачтовую конструкцию или установку комбинированного бортового огня. Важно различать понятия: топовый огонь освещает сектор в 225 градусов в направлении носа, а круговой — виден со всех сторон (360 градусов).</p>
+
+<ul>
+<li>🔴 <strong>Красный огонь</strong> — левый борт, сектор видимости 112,5 градусов.</li>
+<li>🟢 <strong>Зеленый огонь</strong> — правый борт, сектор видимости 112,5 градусов.</li>
+<li>⚪ <strong>Белый огонь</strong> — кормовой или топовый, сектор видимости зависит от типа (135 или 360 градусов).</li>
+<li>🟡 <strong>Желтый огонь</strong> — используется для буксировки или на быстроходных судах (реже встречается на любительских лодках).</li>
+</ul>
+
+<p>Выбор конкретной конфигурации зависит от длины вашего судна. Если <mark>длина лодки превышает 7 метров</mark>, правила становятся строже относительно высоты установки и разнесения огней по вертикали. Для надувных лодок часто используются переносные варианты, которые устанавливаются на временную мачту или держатель только на время движения.</p>
+
+<div class="poll-widget" id="poll-9c8dc9c7"><div class="poll-widget-question">📊 Какой тип лодки вы используете чаще всего?</div><div class="poll-widget-option" data-poll="9c8dc9c7" data-idx="0" onclick="pbPollVote(this)"><span class="poll-widget-label">Надувная ПВХ</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="9c8dc9c7" data-idx="1" onclick="pbPollVote(this)"><span class="poll-widget-label">Алюминиевая/Металлическая</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="9c8dc9c7" data-idx="2" onclick="pbPollVote(this)"><span class="poll-widget-label">Пластиковый катер</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div><div class="poll-widget-option" data-poll="9c8dc9c7" data-idx="3" onclick="pbPollVote(this)"><span class="poll-widget-label">Другое</span><span class="poll-widget-bar"></span><span class="poll-widget-pct"></span></div></div>
+
+<h2 id="технические-характеристики-led-против-галогена">Технические характеристики: LED против галогена</h2>
+
+<p>Рынок судового оборудования предлагает два основных типа источников света: традиционные лампы накаливания и современные светодиодные (<em>LED</em>) матрицы. Галогеновые лампы постепенно уходят в прошлое из-за высокого энергопотребления и низкой надежности. Они сильно нагреваются, что опасно для пластиковых плафонов и проводки, а также чувствительны к вибрации.</p>
+
+<p>Светодиодный <strong>навигационный огонь для лодки</strong> лишен этих недостатков. Потребление энергии у LED-моделей в 5-10 раз ниже, что критически важно для автономных плаваний, когда заряд аккумулятора нужно беречь для мотора и эхолота. Срок службы светодиодов исчисляется десятками тысяч часов, что делает их практически необслуживаемыми.</p>
+
+<p>Однако при выборе LED-огней стоит обращать внимание на качество сборки и степень защиты. Дешевые китайские аналоги могут иметь неравномерный спектр свечения или недостаточную яркость, что не позволит увидеть огонь с требуемого расстояния (обычно 2 мили для судов до 12 метров). Качественные модели имеют маркировку <em>IP67</em> или <em>IP68</em>, гарантирующую полную герметичность.</p>
+
+<details class="faq-item"><summary>Почему светодиоды могут мигать?</summary><div class="faq-answer"><p>Дешевые LED-лампы без качественных драйверов могут давать эффект стробоскопа или мерцания при работе от генератора. Это связано с пульсацией напряжения в бортовой сети. Для устранения проблемы используйте стабилизаторы или качественные огни с встроенным контроллером питания.</p></div></details>
+
+<h2 id="требования-гимс-к-установке-огней-на-маломерные-суда">Требования ГИМС к установке огней на маломерные суда</h2>
+
+<p>Инспекторы ГИМС при проверке документов и оборудования в первую очередь обращают внимание на соответствие установки огней нормативам. Основное правило гласит, что огни должны быть расположены так, чтобы они не загораживались надстройками, пассажирами или грузом. Высота установки над водой также имеет значение: для судов до 12 метров она должна быть не менее 1 метра, но не менее 2,5 метров, если это позволяет конструкция.</p>
+
+<p>Для лодок с подвесным мотором часто используется схема с одним комбинированным бортовым огнем в носу и круговым белым огнем на корме. При этом белый огонь должен быть расположен выше красного и зеленого. Если используется раздельная установка бортовых огней, они должны находиться на одинаковой высоте поперек судна.</p>
+
+<p>Важным аспектом является цветопередача. Стекла плафонов должны быть строго регламентированных цветов. Использование самодельных светофильтров или покраска стекол категорически запрещено, так как это меняет спектральную характеристику сигнала. Судовой огонь должен быть сертифицирован и иметь соответствующую маркировку.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Покупайте только сертифицированные огни с маркировкой соответствия стандартам (например, CE или ГОСТ). Отсутствие маркировки может стать основанием для штрафа при проверке документов на судно.</p></div>
+
+<h2 id="схема-подключения-и-защита-электропроводки">Схема подключения и защита электропроводки</h2>
+
+<p>Морская среда агрессивна к металлам и электрическим контактам. Соль, влага и перепады температур быстро разрушают некачественную изоляцию. Поэтому для подключения навигационных огней необходимо использовать специализированный <strong>судовой кабель</strong> с многожильной медной структурой и изоляцией из сшитого полиэтилена. Обычная автомобильная проводка здесь долго не проживет.</p>
+
+<p>Все соединения должны быть выполнены с использованием термоусадочных трубок с клеевым слоем или специальных водонепроницаемых коннекторов. Скрутки и обычная изолента недопустимы. Для защиты цепи обязательно устанавливается предохранитель, номинал которого соответствует потребляемому току огней, обычно это 2-5 Ампер для LED-систем.</p>
+
+<p>Рекомендуется выводить управление огнями на отдельный щиток с тумблерами, имеющими защиту от влаги <em>IP65</em> и выше. Это позволит оперативно включать и выключать нужные сигналы, не открывая рундуки с аккумулятором. Также полезно установить вольтметр для контроля заряда батареи.</p>
+
+<div class="checklist-block"><h4>☑️ Проверка электропроводки перед сезоном</h4><label class="check-item"><input type="checkbox"><span>Визуальный осмотр изоляции на трещины</span></label><label class="check-item"><input type="checkbox"><span>Проверка надежности крепления контактов</span></label><label class="check-item"><input type="checkbox"><span>Замер напряжения на входе в фонарь</span></label><label class="check-item"><input type="checkbox"><span>Тест работы предохранителей</span></label><label class="check-item"><input type="checkbox"><span>Проверка герметичности ввода кабеля в корпус</span></label><div class="check-progress">Выполнено: <span class="check-count">0</span> / 5</div></div>
+
+<h2 id="сравнительная-таблица-типов-огней">Сравнительная таблица типов огней</h2>
+
+<p>Чтобы систематизировать информацию и упростить выбор оборудования, рассмотрим основные параметры различных типов огней в сравнительной таблице. Это поможет быстро сориентироваться при покупке комплектующих для вашего судна.</p>
+
+<table>
+<thead>
+<tr>
+<th>Тип огня</th>
+<th>Цвет</th>
+<th>Сектор видимости</th>
+<th>Мин. дальность (для < 12м)</th>
+<th>Особенности установки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Бортовой</td>
+<td>Красный/Зеленый</td>
+<td>112.5°</td>
+<td>1 миля</td>
+<td>На бортах или комбинированный в носу</td>
+</tr>
+<tr>
+<td>Топовый</td>
+<td>Белый</td>
+<td>225°</td>
+<td>2 мили</td>
+<td>На мачте, выше бортовых</td>
+</tr>
+<tr>
+<td>Круговой</td>
+<td>Белый</td>
+<td>360°</td>
+<td>2 мили</td>
+<td>На корме или мачте</td>
+</tr>
+<tr>
+<td>Кормовой</td>
+<td>Белый</td>
+<td>135°</td>
+<td>2 мили</td>
+<td>Строго в диаметральной плоскости</td>
+</tr>
+</tbody>
+</table>
+
+<p>Из таблицы видно, что для большинства маломерных судов оптимальным вариантом является использование комбинированного носового огня и отдельного кругового белого огня на корме. Такая схема проста в реализации и полностью соответствует правилам для судов длиной менее 12 метров.</p>
+
+<p>При монтаже важно учитывать материал корпуса. На металлических лодках необходимо тщательно изолировать корпус фонаря от металла, чтобы избежать электрохимической коррозии. На ПВХ-лодках используют специальные кронштейны, которые крепятся к уключинам или транцу, не повреждая баллоны.</p>
+
+<blockquote>
+<p>⚠️ Внимание: Никогда не сверлите отверстия в баллонах надувной лодки для установки стационарных огней. Используйте только съемные кронштейны с мягкими зажимами или крепление к жесткому транцу.</p>
+</blockquote>
+
+<h2 id="обслуживание-и-подготовка-к-навигации">Обслуживание и подготовка к навигации</h2>
+
+<p>Даже самое качественное оборудование требует регулярного ухода. Перед каждым выходом на воду рекомендуется протирать плафоны огней мягкой тканью, удаляя соль, грязь и следы насекомых. Загрязнения могут значительно снизить интенсивность светового сигнала, сделав ваше судно невидимым для других.</p>
+
+<p>Раз в сезон необходимо проверять состояние контактов и разъемов. Даже при наличии хорошей защиты, влага может проникать внутрь при перепадах температур. Рекомендуется смазывать резьбовые соединения и контакты специальной силиконовой смазкой для электропроводки, которая отталкивает воду и предотвращает окисление.</p>
+
+<p>Если лодка хранится зимой в неотапливаемом помещении, аккумулятор лучше снять, а сами огни желательно демонтировать или надежно закрыть от пыли и грызунов. Проверьте целостность кабелей на предмет следов укусов или пересыхания изоляции перед началом нового сезона.</p>
+
+<div class="attention-box attention-tip"><span class="attention-icon">💡</span><p>Регулярная чистка плафонов и проверка контактов — залог того, что навигационный огонь будет виден с расчетного расстояния и спасет вашу жизнь в экстренной ситуации.</p></div>
+
+<h2 id="часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</h2>
+
+<details>
+<summary>Можно ли использовать фонарик вместо навигационного огня?</summary>
+<p>Нет, использование ручного фонаря не соответствует правилам МППСМ. Навигационные огни должны иметь строго определенные углы сектора видимости и цветопередачу, что невозможно обеспечить ручным фонарем. Кроме того, инспектор ГИМС вправе выписать штраф за отсутствие штатного оборудования.</p>
+</details>
+
+<details>
+<summary>Какая минимальная дальность видимости огня для лодки длиной 4 метра?</summary>
+<p>Для судов длиной менее 7 метров (и часто до 12 метров в зависимости от трактовки региональных правил) минимальная дальность видимости бортовых и топовых огней составляет 1 милю, а кругового белого — 2 мили. Однако рекомендуется выбирать оборудование с запасом яркости.</p>
+</details>
+
+<details>
+<summary>Нужно ли регистрировать установленные огни в ГИМС?</summary>
+<p>Отдельной регистрации навигационных огней не требуется. Однако при прохождении технического освидетельствования судна инспектор проверяет их наличие, исправность и правильность установки. Отсутствие или неисправность огней станет препятствием для получения права управления.</p>
+</details>
+
+<details>
+<summary>Можно ли красить корпус судового огня в другой цвет?</summary>
+<p>Категорически не рекомендуется закрашивать сам светофильтр или плафон, так как это меняет спектр излучения. Покраска металлического корпуса возможна только термостойкими красками для судов, при условии, что краска не попадет на линзу и не ухудшит теплоотвод (для ламп накаливания).</p>
+</details>
+
+<details>
+<summary>Что делать, если LED-огонь начал тускнеть?</summary>
+<p>Потускнение светодиода может указывать на падение напряжения в сети, окисление контактов или деградацию самого кристалла. Сначала проверьте напряжение на клеммах аккумулятора при включенном огне. Если напряжение в норме, скорее всего, ресурс светодиода подходит к концу и требуется замена фонаря.</p>
+</details></div>
+                    <!--#include virtual="/ssi/article_after.html" -->
+
+                </article>
+                <aside class="article-sidebar"><!--#include virtual="/ssi/sidebar_top.html" --><nav class="sidebar-search"><div class="sidebar-search-box"><input type="text" id="globalSearchInput" placeholder="🔍 Поиск статей..." autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div></nav><!--#include virtual="/ssi/sidebar_before_toc.html" --><nav class="sidebar-toc" id="sidebarToc"><h3>Содержание</h3><ul><li><a href="#классификация-судовых-огней-по-правилам-мппсм">Классификация судовых огней по правилам МППСМ</a></li><li><a href="#технические-характеристики-led-против-галогена">Технические характеристики: LED против галогена</a></li><li><a href="#требования-гимс-к-установке-огней-на-маломерные-суда">Требования ГИМС к установке огней на маломерные суда</a></li><li><a href="#схема-подключения-и-защита-электропроводки">Схема подключения и защита электропроводки</a></li><li><a href="#сравнительная-таблица-типов-огней">Сравнительная таблица типов огней</a></li><li><a href="#обслуживание-и-подготовка-к-навигации">Обслуживание и подготовка к навигации</a></li><li><a href="#часто-задаваемые-вопросы-faq">Часто задаваемые вопросы (FAQ)</a></li></ul></nav><!--#include virtual="/ssi/sidebar_before_related.html" --><nav class="sidebar-related"><h3>Похожие статьи</h3><ul><li><a href="/articles/k/ka/kak-postavit-na-uchet-lodochnyj-motor-bez-dokumentov.html" class="related-card">Как поставить на учет лодочный мотор без документов в 2026 году</a></li><li><a href="/articles/d/do/dogovor-kupli-prodazhi-lodochnogo-pritsepa.html" class="related-card">Договор купли-продажи лодочного прицепа 2026: образец, нюансы, регистрация</a></li><li><a href="/articles/o/ob/obuchenie-na-prava-lodki-s-motorom.html" class="related-card">Обучение на права лодки с мотором: полный гайд 2026</a></li><li><a href="/articles/s/sh/shtraf-za-lodku-bez-registratsii.html" class="related-card">Штраф за лодку без регистрации: сумма, правила ГИМС, 2026</a></li><li><a href="/articles/k/ka/kakie-dokumenty-nuzhny-dlya-postanovki-na-uchet-lodki.html" class="related-card">Документы для регистрации лодки в ГИМС 2026: полный список и нюансы</a></li></ul></nav><!--#include virtual="/ssi/sidebar_after_related.html" --></aside>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/ssi/before_related_bottom.html" -->
+    <section class="related-bottom">
+        <div class="container">
+            <h2 class="related-bottom-heading">📖 Читайте также</h2>
+            <div class="related-bottom-grid"><a href="/articles/k/ka/kak-postavit-na-uchet-lodochnyj-motor-bez-dokumentov.html" class="related-bottom-card"><span class="related-bottom-title">Как поставить на учет лодочный мотор без документов в 2026 году</span><span class="related-bottom-desc">Пошаговая инструкция по легализации лодочного мотора без ПТС/договора купли-продажи. Сбор справок, о</span></a><a href="/articles/d/do/dogovor-kupli-prodazhi-lodochnogo-pritsepa.html" class="related-bottom-card"><span class="related-bottom-title">Договор купли-продажи лодочного прицепа 2026: образец, нюансы, регистрация</span><span class="related-bottom-desc">Как правильно оформить договор купли-продажи прицепа для лодки? Скачайте актуальный бланк 2026 года,</span></a><a href="/articles/o/ob/obuchenie-na-prava-lodki-s-motorom.html" class="related-bottom-card"><span class="related-bottom-title">Обучение на права лодки с мотором: полный гайд 2026</span><span class="related-bottom-desc">Нужны ли права на лодочный мотор? Где пройти обучение, сколько стоят курсы и как сдать экзамен ГИМС.</span></a><a href="/articles/s/sh/shtraf-za-lodku-bez-registratsii.html" class="related-bottom-card"><span class="related-bottom-title">Штраф за лодку без регистрации: сумма, правила ГИМС, 2026</span><span class="related-bottom-desc">Актуальные штрафы за плавание на незарегистрированной лодке без прав. Размеры наказаний по КоАП, пра</span></a><a href="/articles/k/ka/kakie-dokumenty-nuzhny-dlya-postanovki-na-uchet-lodki.html" class="related-bottom-card"><span class="related-bottom-title">Документы для регистрации лодки в ГИМС 2026: полный список и нюансы</span><span class="related-bottom-desc">Какие документы нужны для постановки лодки на учет в ГИМС? Пошаговая инструкция, сроки, стоимость и </span></a><a href="/articles/r/re/registratsiya-lodochnogo-motora.html" class="related-bottom-card"><span class="related-bottom-title">Регистрация лодочного мотора в ГИМС 2026: правила, документы</span><span class="related-bottom-desc">Нужно ли регистрировать лодочный мотор? Полный гайд по оформлению прав собственности, уплате госпошл</span></a></div>
+        </div>
+    </section>
+    <!--#include virtual="/ssi/after_related_bottom.html" -->
+
+    <footer class="site-footer-premium">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">🚤 ЛодкаМастер</div>
+                    <p class="footer-about">Энциклопедия водномоторника: обзоры лодок и моторов, советы по ремонту и рыбалке.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Разделы</h4>
+                    <ul><li><a href="/category/lodki-pvkh/">🛶 Лодки ПВХ</a></li>
+<li><a href="/category/metallicheskie-lodki/">⚓ Металлические лодки</a></li>
+<li><a href="/category/lodochnye-motory/">⛵ Лодочные моторы</a></li>
+<li><a href="/category/sdelaj-sam/">🛠️ Сделай сам</a></li>
+<li><a href="/category/remont-i-to/">🔧 Ремонт и ТО</a></li>
+<li><a href="/category/tyuning-i-aksessuary/">🎣 Тюнинг и аксессуары</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about.html">О проекте</a></li>
+                        <li><a href="/categories.html">Все разделы</a></li>
+                        <li><a href="/contact.html">Контакты</a></li>
+                        <li><a href="/privacy.html">Конфиденциальность</a></li>
+                        <li><a href="/sitemap.xml">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ЛодкаМастер. Все права защищены.</p>
+                <!--LiveInternet counter--><div style="margin-top:10px;"><a href="https://www.liveinternet.ru/click"
+                target="_blank"><img id="licnt06C4" width="88" height="15" style="border:0" 
+                title="LiveInternet: показано число посетителей за сегодня"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt=""/></a><script>(function(d,s){d.getElementById("licnt06C4").src=
+                "https://counter.yadro.ru/hit?t26.5;r"+escape(d.referrer)+
+                ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+                (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+                ";h"+escape(d.title.substring(0,150))+";"+Math.random()})(document,screen)</script></div><!--/LiveInternet-->
+            </div>
+        </div>
+    </footer>
+    <div id="cookie-consent" class="cookie-popup">
+        <div class="cookie-inner">
+            <span>🍪 Мы используем файлы cookie для улучшения работы сайта.</span>
+            <button id="cookie-accept" class="cookie-btn">Принять</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+    (function() {
+        const popup = document.getElementById('cookie-consent');
+        const btn = document.getElementById('cookie-accept');
+        if (popup && btn && !localStorage.getItem('cookie-accepted')) {
+            popup.classList.add('visible');
+            btn.onclick = () => {
+                localStorage.setItem('cookie-accepted', 'true');
+                popup.classList.remove('visible');
+            };
+        }
+    })();
+    </script>
+    <script>
+    function pbPollVote(el) {
+        var poll = el.closest('.poll-widget');
+        if (poll.classList.contains('voted')) return;
+        poll.classList.add('voted');
+        el.classList.add('selected');
+        var opts = poll.querySelectorAll('.poll-widget-option');
+        var n = opts.length;
+        var raw = [];
+        var sum = 0;
+        for (var i = 0; i < n; i++) {
+            var v = Math.random() * 50 + 5;
+            if (opts[i] === el) v += 30;
+            raw.push(v);
+            sum += v;
+        }
+        var pcts = raw.map(function(v) { return Math.round(v / sum * 100); });
+        var diff = 100 - pcts.reduce(function(a,b){ return a+b; }, 0);
+        pcts[Array.from(opts).indexOf(el)] += diff;
+        setTimeout(function() {
+            opts.forEach(function(opt, i) {
+                opt.querySelector('.poll-widget-bar').style.width = pcts[i] + '%';
+                opt.querySelector('.poll-widget-pct').textContent = pcts[i] + '%';
+            });
+        }, 50);
+    }
+    </script>
+    <!--#include virtual="/ssi/body_bottom.html" -->
+    <script src="/static/js/inject.js" defer></script>
+</body>
+</html>
