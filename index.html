@@ -33,266 +33,59 @@
     }
     </script>
     <style>
-        .hero-home {
-            background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 30%, #f8fafc 100%);
-            border-bottom: 1px solid var(--border);
-            padding: 56px 0 48px; text-align: center;
-            position: relative; overflow: hidden;
-        }
-        .hero-home::before {
-            content: ''; position: absolute; top: -80px; right: -80px;
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .hero-home .container { position: relative; z-index: 1; }
-        .hero-logo { font-size: 3.5rem; margin-bottom: 12px; display: block; }
-        .hero-home h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: 2.4rem; font-weight: 800; color: #1e293b;
-            margin-bottom: 12px; line-height: 1.2;
-        }
-        .hero-home h1 span { color: var(--primary); }
-        .hero-desc {
-            font-size: 1.1rem; color: #64748b; max-width: 620px;
-            margin: 0 auto 28px; line-height: 1.6;
-        }
-        .search-hero {
-            max-width: 520px; margin: 0 auto 32px; position: relative; z-index: 100;
-        }
-        .search-hero input {
-            width: 100%; padding: 16px 20px 16px 48px;
-            border: 2px solid var(--border); border-radius: 14px;
-            font-size: 1rem; font-family: 'Inter', sans-serif;
-            background: #fff; color: #1e293b;
-            transition: border-color 0.2s, box-shadow 0.2s; outline: none;
-        }
-        .search-hero input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
-        }
-        .search-hero input::placeholder { color: #94a3b8; }
-        .search-icon {
-            position: absolute; left: 18px; top: 50%;
-            transform: translateY(-50%); font-size: 1.2rem; color: #94a3b8;
-        }
-        .hero-search-dropdown {
-            position: absolute; top: 100%; left: 0; right: 0;
-            margin-top: 6px; background: #fff; border: 1px solid var(--border);
-            border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-            z-index: 1000; max-height: 380px; overflow-y: auto; display: none;
-        }
-        .sd-item {
-            display: flex; align-items: center; gap: 12px;
-            padding: 12px 16px; text-decoration: none; color: #1e293b;
-            transition: background 0.15s; border-bottom: 1px solid #f1f5f9;
-        }
-        .sd-item:last-child { border-bottom: none; }
-        .sd-item:hover, .sd-item.sd-active { background: #eff6ff; }
-        .sd-icon {
-            width: 36px; height: 36px; border-radius: 8px; background: #f1f5f9;
-            display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
-        }
-        .sd-info { flex: 1; min-width: 0; }
-        .sd-title {
-            font-size: 0.92rem; font-weight: 500; line-height: 1.3;
-            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-        }
-        .sd-item:hover .sd-title { color: var(--primary); }
-        .sd-slug { font-size: 0.75rem; color: #94a3b8; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .sd-empty { padding: 20px 16px; text-align: center; color: #94a3b8; font-size: 0.9rem; }
-        .tag-cloud {
-            display: flex; flex-wrap: wrap; justify-content: center;
-            gap: 8px; max-width: 700px; margin: 0 auto 32px;
-        }
-        .tag-btn {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 8px 16px; border-radius: 20px;
-            background: rgba(255,255,255,0.8); border: 1px solid var(--border);
-            color: #475569; font-size: 0.85rem; font-weight: 500;
-            text-decoration: none; transition: all 0.25s;
-        }
-        .tag-btn:hover {
-            background: var(--primary); color: #fff; border-color: var(--primary);
-            transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.25);
-        }
-        .trust-strip { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 8px; }
-        .trust-item {
-            display: flex; align-items: center; gap: 10px;
-            background: rgba(255,255,255,0.7); border: 1px solid var(--border);
-            padding: 12px 20px; border-radius: 12px; transition: all 0.2s;
-        }
-        .trust-item:hover { background: #fff; border-color: #bfdbfe; box-shadow: 0 4px 12px rgba(37,99,235,0.08); }
-        .trust-icon { font-size: 1.4rem; }
-        .trust-text { font-size: 0.85rem; font-weight: 500; color: #334155; line-height: 1.3; }
-        .trust-sub { display: block; font-size: 0.75rem; color: #94a3b8; font-weight: 400; }
-        .home-section {
-            padding: 48px 0; opacity: 0; transform: translateY(24px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .home-section.visible { opacity: 1; transform: translateY(0); }
-        .home-section-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem; font-weight: 700; color: #1e293b;
-            margin-bottom: 8px; display: flex; align-items: center; gap: 10px;
-        }
-        .home-section-title span { color: var(--primary); }
-        .home-section-subtitle { color: #64748b; font-size: 0.95rem; margin-bottom: 24px; }
-        .featured-card {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-            background: linear-gradient(135deg, #1e3a5f 0%, #1e293b 100%);
-            border-radius: 16px; overflow: hidden; text-decoration: none;
-            color: #fff; transition: transform 0.3s, box-shadow 0.3s; margin-bottom: 48px;
-        }
-        .featured-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(30,58,95,0.3); }
-        .featured-content { padding: 40px 36px; display: flex; flex-direction: column; justify-content: center; }
-        .featured-badge {
-            display: inline-flex; align-items: center; gap: 6px;
-            background: rgba(37,99,235,0.3); color: #93c5fd;
-            font-size: 0.75rem; font-weight: 600; padding: 5px 14px;
-            border-radius: 20px; text-transform: uppercase;
-            letter-spacing: 0.05em; margin-bottom: 16px; width: fit-content;
-        }
-        .featured-title { font-size: 1.5rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; }
-        .featured-desc { color: #94a3b8; line-height: 1.6; margin-bottom: 20px; }
-        .featured-cta { display: inline-flex; align-items: center; gap: 8px; color: #93c5fd; font-weight: 600; font-size: 0.95rem; }
-        .featured-cta::after { content: '→'; transition: transform 0.2s; }
-        .featured-card:hover .featured-cta::after { transform: translateX(4px); }
-        .featured-visual {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
-            display: flex; align-items: center; justify-content: center;
-            font-size: 6rem; min-height: 240px;
-        }
-        .categories-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 16px; margin-bottom: 16px;
-        }
-        .category-card {
-            background: #fff; border: 1px solid var(--border); border-radius: 12px;
-            padding: 28px 20px; text-align: center; text-decoration: none;
-            color: #1e293b; transition: all 0.25s ease; position: relative; overflow: hidden;
-        }
-        .category-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0;
-            height: 3px; background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            transform: scaleX(0); transition: transform 0.3s ease;
-        }
-        .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(37,99,235,0.1); border-color: #bfdbfe;
-        }
-        .category-card:hover::before { transform: scaleX(1); }
-        .category-icon { font-size: 2.4rem; display: block; margin-bottom: 12px; }
-        .category-name { font-weight: 600; font-size: 1rem; margin-bottom: 6px; }
-        .category-count { font-size: 0.8rem; color: #94a3b8; line-height: 1.4; }
-        .intro-block {
-            max-width: 780px; margin: 0 auto; padding: 32px 0 8px;
-            text-align: center;
-        }
-        .intro-block p {
-            font-size: 1.05rem; color: #475569; line-height: 1.7;
-        }
-        .trust-block {
-            max-width: 780px; margin: 0 auto; padding: 8px 0;
-            text-align: center;
-        }
-        .trust-block p {
-            font-size: 1rem; color: #64748b; line-height: 1.7;
-        }
-        .articles-home-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;
-        }
-        .article-home-card {
-            background: #fff; border: 1px solid var(--border); border-radius: 10px;
-            padding: 20px 24px; text-decoration: none; color: #1e293b;
-            transition: all 0.2s ease; display: flex; flex-direction: column;
-        }
-        .article-home-card:hover {
-            border-color: #bfdbfe; box-shadow: 0 4px 16px rgba(37,99,235,0.06);
-            transform: translateY(-2px);
-        }
-        .article-home-title { font-weight: 600; font-size: 1rem; line-height: 1.4; margin-bottom: 8px; }
-        .article-home-card:hover .article-home-title { color: var(--primary); }
-        .article-home-desc { font-size: 0.88rem; color: #64748b; line-height: 1.5; flex: 1; }
-        .article-home-tag {
-            display: inline-block; margin-top: 12px; font-size: 0.75rem;
-            font-weight: 500; color: var(--primary-dark); background: #eff6ff;
-            padding: 3px 10px; border-radius: 20px; align-self: flex-start;
-        }
-        .recent-scroll {
-            display: flex; gap: 16px; overflow-x: auto;
-            padding-bottom: 12px; scroll-snap-type: x mandatory;
-        }
-        .recent-scroll::-webkit-scrollbar { height: 4px; }
-        .recent-scroll::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
-        .recent-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        .recent-card {
-            flex: 0 0 280px; scroll-snap-align: start;
-            background: #fff; border: 1px solid var(--border); border-radius: 12px;
-            padding: 20px; text-decoration: none; color: #1e293b; transition: all 0.2s ease;
-        }
-        .recent-card:hover { border-color: #bfdbfe; box-shadow: 0 4px 16px rgba(37,99,235,0.06); transform: translateY(-2px); }
-        .recent-badge {
-            display: inline-block; background: #f59e0b; color: #fff;
-            font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
-            padding: 2px 6px; border-radius: 4px; margin-bottom: 8px;
-        }
-        .recent-title {
-            font-weight: 600; font-size: 0.95rem; line-height: 1.4;
-            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-        }
-        .recent-card:hover .recent-title { color: var(--primary); }
-        .recent-cat {
-            display: inline-block; margin-top: 10px; font-size: 0.72rem;
-            color: var(--primary-dark); background: #eff6ff; padding: 2px 8px; border-radius: 12px;
-        }
-        .stats-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0 0 48px; }
-        .stat-card {
-            background: #fff; border: 1px solid var(--border); border-radius: 14px;
-            padding: 24px 16px; text-align: center; transition: all 0.3s;
-        }
-        .stat-card:hover { border-color: #bfdbfe; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37,99,235,0.08); }
-        .stat-number { font-size: 2rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 6px; }
-        .stat-label { font-size: 0.82rem; color: #64748b; font-weight: 500; }
-        .cta-banner {
-            background: linear-gradient(135deg, #1e293b, #334155);
-            border-radius: 16px; padding: 40px 32px; text-align: center;
-            color: #fff; position: relative; overflow: hidden;
-        }
-        .cta-banner::before {
-            content: ''; position: absolute; top: -40px; right: -40px;
-            width: 160px; height: 160px;
-            background: radial-gradient(circle, rgba(96,165,250,0.15) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .cta-banner h2 { font-size: 1.5rem; margin-bottom: 10px; position: relative; }
-        .cta-banner p { color: #94a3b8; position: relative; font-size: 0.95rem; line-height: 1.6; }
-        .btn-outline {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 10px 24px; border-radius: 10px;
-            border: 2px solid var(--border); background: #fff;
-            color: #475569; font-size: 0.9rem; font-weight: 600;
-            cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif;
-        }
-        .btn-outline:hover { border-color: var(--primary); color: var(--primary); box-shadow: 0 4px 12px rgba(37,99,235,0.1); }
-        @media (max-width: 768px) {
-            .hero-home { padding: 36px 0 32px; }
-            .hero-home h1 { font-size: 1.6rem; }
-            .hero-desc { font-size: 1rem; }
-            .trust-strip { gap: 12px; }
-            .trust-item { padding: 10px 14px; }
-            .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .articles-home-grid { grid-template-columns: 1fr; }
-            .featured-card { grid-template-columns: 1fr; }
-            .featured-visual { min-height: 120px; font-size: 4rem; }
-            .stats-strip { grid-template-columns: repeat(2, 1fr); }
-            .tag-cloud { gap: 6px; }
-            .tag-btn { font-size: 0.8rem; padding: 6px 12px; }
-        }
+
+        .lm-home { --lm-ink:#101820; --lm-sea:#0f6f78; --lm-deep:#073642; --lm-coral:#e85d4f; --lm-sun:#f2b84b; --lm-paper:#fffaf0; --lm-mist:#e7f3f2; background:#f7fbfa; }
+        .lm-hero { position: relative; min-height: clamp(620px, 86vh, 820px); display: grid; align-items: end; overflow: hidden; color:#fff; background:#073642; }
+        .lm-hero::before { content:''; position:absolute; inset:0; background: linear-gradient(270deg, rgba(3,22,31,.76) 0%, rgba(3,22,31,.52) 42%, rgba(3,22,31,.10) 78%), linear-gradient(0deg, rgba(3,22,31,.70) 0%, rgba(3,22,31,0) 44%); z-index:1; }
+        .lm-hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; transform:scaleX(-1); }
+        .lm-hero-inner { position:relative; z-index:2; width:min(1140px, calc(100% - 40px)); margin:0 auto; padding:96px 0 52px; display:grid; grid-template-columns:minmax(320px, 1fr) minmax(0, 650px); gap:34px; align-items:end; }
+        .lm-hero-copy { grid-column:2; }
+        .lm-kicker { display:inline-flex; width:max-content; padding:7px 12px; border:1px solid rgba(255,255,255,.34); background:rgba(255,255,255,.12); border-radius:999px; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; backdrop-filter:blur(10px); }
+        .lm-hero h1 { margin:18px 0 16px; font-size:clamp(2.45rem, 5vw, 5.6rem); line-height:.95; font-weight:800; color:#fff; letter-spacing:0; max-width:790px; }
+        .lm-hero-lead { max-width:650px; font-size:clamp(1.02rem, 1.5vw, 1.22rem); line-height:1.65; color:rgba(255,255,255,.9); margin-bottom:24px; }
+        .lm-search-panel { width:min(620px, 100%); position:relative; }
+        .lm-search-panel .search-icon { position:absolute; left:18px; top:50%; transform:translateY(-50%); color:#78909a; z-index:2; }
+        .lm-search-panel input { width:100%; height:58px; border:0; border-radius:6px; padding:0 18px 0 48px; font:600 1rem var(--font-body); color:#102027; background:rgba(255,255,255,.96); outline:none; box-shadow:0 18px 45px rgba(0,0,0,.22); }
+        .hero-search-dropdown { position:absolute; top:calc(100% + 8px); left:0; right:0; background:#fff; border:1px solid rgba(7,54,66,.12); border-radius:8px; box-shadow:0 20px 50px rgba(0,0,0,.22); z-index:20; max-height:380px; overflow:auto; display:none; color:#102027; }
+        .sd-item { display:flex; gap:12px; padding:12px 16px; color:#102027; text-decoration:none; border-bottom:1px solid #edf2f2; }
+        .sd-item:hover, .sd-item.sd-active { background:#e7f3f2; color:#0f6f78; }
+        .sd-icon { width:36px; height:36px; border-radius:6px; display:grid; place-items:center; background:#f4f7f7; flex:0 0 auto; }
+        .sd-info { min-width:0; } .sd-title { font-size:.92rem; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; } .sd-slug { font-size:.75rem; color:#6b7c82; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; } .sd-empty { padding:18px; color:#6b7c82; text-align:center; }
+        .lm-hero-routes { grid-column:2; align-self:stretch; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; }
+        .lm-route { display:grid; grid-template-columns:44px 1fr; gap:12px; align-items:center; padding:14px; border-radius:8px; color:#fff; text-decoration:none; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); backdrop-filter:blur(12px); }
+        .lm-route:hover { color:#fff; background:rgba(255,255,255,.2); }
+        .lm-route b { font-size:.94rem; display:block; line-height:1.25; } .lm-route span span { color:rgba(255,255,255,.74); font-size:.8rem; line-height:1.35; }
+        .lm-route-mark { width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background:#f2b84b; color:#102027; font-weight:800; }
+        .lm-main { background:#f7fbfa; }
+        .lm-section { padding:54px 0; opacity:0; transform:translateY(22px); transition:opacity .55s ease, transform .55s ease; }
+        .lm-section.visible { opacity:1; transform:translateY(0); }
+        .lm-section-head { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:24px; }
+        .lm-section h2 { font-size:clamp(1.55rem, 3vw, 2.35rem); line-height:1.1; margin:0; color:#102027; } .lm-section-subtitle { color:#5d7078; max-width:560px; line-height:1.55; margin:8px 0 0; }
+        .lm-scenario-strip { display:grid; grid-template-columns:1.25fr .9fr .9fr; gap:16px; }
+        .lm-scenario { min-height:260px; border-radius:8px; overflow:hidden; position:relative; color:#fff; display:flex; align-items:flex-end; text-decoration:none; background:#073642; box-shadow:0 18px 45px rgba(7,54,66,.12); }
+        .lm-scenario:first-child { grid-row:span 2; min-height:536px; }
+        .lm-scenario img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .45s ease; }
+        .lm-scenario::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(3,22,31,.78), rgba(3,22,31,.03) 62%); }
+        .lm-scenario:hover img { transform:scale(1.045); } .lm-scenario-body { position:relative; z-index:1; padding:22px; } .lm-scenario small { color:#f2b84b; font-weight:800; text-transform:uppercase; font-size:.72rem; letter-spacing:.08em; } .lm-scenario strong { display:block; color:#fff; font-size:1.28rem; line-height:1.18; margin:7px 0; } .lm-scenario span { color:rgba(255,255,255,.82); font-size:.9rem; line-height:1.45; }
+        .lm-directory { display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; }
+        .lm-dir-card { min-height:176px; padding:20px; border-radius:8px; background:#fff; color:#102027; text-decoration:none; border:1px solid #d9e7e6; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 8px 24px rgba(7,54,66,.06); }
+        .lm-dir-card::before { content:attr(data-no); position:absolute; right:14px; top:8px; font-size:3.1rem; line-height:1; font-weight:800; color:rgba(15,111,120,.09); }
+        .lm-dir-card:hover { color:#102027; border-color:#7dbec0; transform:translateY(-2px); } .lm-dir-card:nth-child(3n+1) { background:#fffaf0; } .lm-dir-card:nth-child(4n+2) { background:#e7f3f2; } .lm-dir-card b { font-size:1.05rem; line-height:1.24; } .lm-dir-card span { color:#5d7078; font-size:.88rem; line-height:1.45; margin-top:10px; }
+        .lm-popular-layout { display:grid; grid-template-columns:1fr; gap:18px; align-items:start; }
+        .featured-card { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:18px; align-items:center; min-height:0; padding:18px 20px; border-radius:8px; color:#fff; text-decoration:none; background:linear-gradient(135deg, #073642, #0f6f78); box-shadow:0 16px 36px rgba(7,54,66,.14); overflow:hidden; }
+        .featured-card:hover { color:#fff; transform:translateY(-2px); } .featured-badge { color:#f2b84b; font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; margin-bottom:7px; } .featured-title { font-size:clamp(1.02rem, 1.4vw, 1.22rem); line-height:1.22; font-weight:800; margin:0; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; } .featured-desc { display:none; } .featured-cta { display:inline-flex; margin-top:10px; font-size:.88rem; font-weight:800; color:#fff; } .featured-visual { width:48px; height:48px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.12); font-size:1.65rem; }
+        .articles-home-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; }
+        .article-home-card { background:#fff; border:1px solid #d9e7e6; border-radius:8px; padding:17px 18px; text-decoration:none; color:#102027; transition:.2s ease; } .article-home-card:hover { color:#0f6f78; transform:translateY(-2px); box-shadow:0 10px 24px rgba(7,54,66,.08); } .article-home-title { font-size:.98rem; font-weight:800; line-height:1.35; } .article-home-desc { font-size:.86rem; color:#5d7078; line-height:1.45; margin-top:7px; } .article-home-tag { display:inline-flex; margin-top:12px; color:#0f6f78; background:#e7f3f2; border-radius:999px; padding:3px 9px; font-size:.76rem; font-weight:700; }
+        .recent-scroll { display:flex; gap:12px; overflow-x:auto; padding:2px 0 12px; scroll-snap-type:x mandatory; } .recent-card { flex:0 0 290px; scroll-snap-align:start; min-height:138px; padding:18px; border-radius:8px; background:#fff; border:1px solid #d9e7e6; text-decoration:none; color:#102027; } .recent-card:hover { color:#0f6f78; } .recent-badge { display:inline-flex; font-size:.7rem; font-weight:800; color:#fff; background:#e85d4f; border-radius:999px; padding:2px 8px; margin-bottom:10px; } .recent-title { font-weight:800; line-height:1.34; } .recent-cat { display:inline-flex; margin-top:10px; color:#5d7078; font-size:.78rem; }
+        .lm-note { padding:20px 22px; border-radius:8px; background:#102027; color:#dbe9e8; display:grid; grid-template-columns:1fr auto; gap:18px; align-items:center; } .lm-note b { color:#fff; } .lm-note a, .lm-note span { color:#f2b84b; font-weight:800; }
+        .btn-outline { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:42px; border-radius:6px; border:1px solid #a9c8c7; background:#fff; color:#0f6f78; padding:0 16px; font:800 .9rem var(--font-body); cursor:pointer; }
+        .btn-outline:hover { border-color:#0f6f78; }
+        @media (max-width: 900px) { .lm-hero-inner { grid-template-columns:1fr; padding-top:92px; } .lm-hero-copy, .lm-hero-routes { grid-column:1; } .lm-hero-routes { grid-template-columns:1fr 1fr; } .lm-scenario-strip { grid-template-columns:1fr 1fr; } .lm-scenario:first-child { grid-column:1/-1; min-height:380px; } .lm-directory { grid-template-columns:repeat(2,1fr); } .lm-popular-layout { grid-template-columns:1fr; } }
+        @media (max-width: 620px) { .lm-hero { min-height:720px; } .lm-hero::before { background: linear-gradient(0deg, rgba(3,22,31,.80), rgba(3,22,31,.30)); } .lm-hero-bg { object-position:42% center; } .lm-hero-inner { width:min(100% - 28px, 1140px); padding-bottom:28px; } .lm-hero h1 { font-size:2.55rem; } .lm-hero-routes { grid-template-columns:1fr; } .lm-route:nth-child(n+4) { display:none; } .lm-section { padding:38px 0; } .lm-section-head { display:block; } .lm-scenario-strip, .lm-directory, .articles-home-grid { grid-template-columns:1fr; } .lm-scenario, .lm-scenario:first-child { min-height:286px; } .lm-note { grid-template-columns:1fr; } }
     </style>
     <!--#include virtual="/ssi/head.html" -->
 </head>
-<body class="is-home">
+<body class="is-home lm-home">
         <!--#include virtual="/ssi/body_top.html" -->
     <div class="reading-progress"></div>
     <style>
@@ -363,208 +156,70 @@
         </div>
     </header>
 
-    <section class="hero-home">
-        <div class="container">
-            <span class="hero-logo">🚤</span>
-            <h1>ЛодкаМастер — <span>навигация по воде</span></h1>
-            <p class="hero-desc">Полные руководства по выбору, ремонту лодок и моторов для уверенного выхода на воду.</p>
 
-            <div class="search-hero">
-                <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" placeholder="Найти инструкцию..." autocomplete="off">
-                <div class="hero-search-dropdown" id="searchDropdown"></div>
+    <section class="lm-hero">
+        <img class="lm-hero-bg" src="/static/img/home/lm-hero-marina.jpg" alt="Прогулочный катер на озере" fetchpriority="high">
+        <div class="lm-hero-inner">
+            <div class="lm-hero-copy">
+                <span class="lm-kicker">Лодки, моторы, отдых на воде</span>
+                <h1>ЛодкаМастер — справочник для выхода на воду</h1>
+                <p class="lm-hero-lead">Понятные обзоры и инструкции для владельцев лодок: выбор корпуса и мотора, подготовка к сезону, рыбалка, оснащение и безопасность на воде.</p>
+                <div class="lm-search-panel search-hero">
+                    <span class="search-icon">⌕</span>
+                    <input type="text" id="searchInput" placeholder="Поиск по лодкам, моторам и ремонту" autocomplete="off">
+                    <div class="hero-search-dropdown" id="searchDropdown"></div>
+                </div>
             </div>
-
-            <div class="tag-cloud">
-                <a href="/category/lodki-pvkh/" class="tag-btn">🛶 Лодки ПВХ</a>
-<a href="/category/metallicheskie-lodki/" class="tag-btn">⚓ Металлические лодки</a>
-<a href="/category/lodochnye-motory/" class="tag-btn">⛵ Лодочные моторы</a>
-<a href="/category/remont-i-to/" class="tag-btn">🔧 Ремонт и ТО</a>
-<a href="/category/tyuning-i-aksessuary/" class="tag-btn">🎣 Тюнинг и аксессуары</a>
-<a href="/category/rybalka-s-lodki/" class="tag-btn">🐟 Рыбалка с лодки</a>
-<a href="/category/zakony-i-gims/" class="tag-btn">📜 Законы и ГИМС</a>
-<a href="/category/drugoe/" class="tag-btn">📁 Другое</a>
-            </div>
-
-            <div class="trust-strip">
-                <div class="trust-item">
-                    <span class="trust-icon">🔬</span>
-                    <div class="trust-text">Проверено экспертами<span class="trust-sub">Техническая редакция</span></div>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">📋</span>
-                    <div class="trust-text">Пошаговые инструкции<span class="trust-sub">С FAQ и чек-листами</span></div>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">🚫</span>
-                    <div class="trust-text">Без воды и рекламы<span class="trust-sub">Только суть и решение</span></div>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">🔄</span>
-                    <div class="trust-text">Актуальный контент<span class="trust-sub">Обновлено: май 2026</span></div>
-                </div>
+            <div class="lm-hero-routes" aria-label="Основные разделы">
+                <a class="lm-route" href="/category/lodki-pvkh/"><span class="lm-route-mark">01</span><span><b>Надувная лодка</b><span>ПВХ, пайол, НДНД, ремонт швов, подбор под мотор</span></span></a>
+                <a class="lm-route" href="/category/metallicheskie-lodki/"><span class="lm-route-mark">02</span><span><b>Катер и алюминий</b><span>Корпус, сварка, хранение и полезные доработки</span></span></a>
+                <a class="lm-route" href="/category/lodochnye-motory/"><span class="lm-route-mark">03</span><span><b>Мотор и винт</b><span>Запуск, ТО, подбор мощности и частые неисправности</span></span></a>
+                <a class="lm-route" href="/category/rybalka-s-lodki/"><span class="lm-route-mark">04</span><span><b>Рыбалка с лодки</b><span>Эхолот, якорь, снасти и безопасность на воде</span></span></a>
             </div>
         </div>
     </section>
 
-    <main class="site-main">
+    <main class="site-main lm-main">
         <div class="container">
-
-            <section class="home-section" data-animate>
-                <div class="intro-block">
-                    <p>ЛодкаМастер — это специализированная энциклопедия для владельцев водной техники, где собраны детальные обзоры плавсредств и моторов. Мы помогаем продлить жизнь вашему судну благодаря проверенным инструкциям по ремонту, тюнингу и сезонному обслуживанию.</p>
+            <section class="lm-section" data-animate>
+                <div class="lm-section-head"><div><h2>Подберите свой формат</h2><p class="lm-section-subtitle">От спокойной прогулки до рыбалки на мелководье — выберите сценарий и переходите к полезным материалам.</p></div></div>
+                <div class="lm-scenario-strip">
+                    <a class="lm-scenario" href="/category/lodochnye-motory/"><img src="/static/img/home/lm-speedboat-lake.jpg" alt="Катер на озере" loading="lazy"><span class="lm-scenario-body"><small>Прогулочный катер</small><strong>Катер для прогулок и коротких переходов</strong><span>Как подобрать мотор, винт и оснащение, чтобы лодка уверенно шла по волне.</span></span></a>
+                    <a class="lm-scenario" href="/category/rybalka-s-lodki/"><img src="/static/img/home/lm-fishing-aerial.jpg" alt="Рыбацкая лодка на спокойной воде" loading="lazy"><span class="lm-scenario-body"><small>Рыбалка</small><strong>Надувная лодка под рыбалку</strong><span>Размещение снастей, якоря, эхолота и аккумулятора без лишнего веса на борту.</span></span></a>
+                    <a class="lm-scenario" href="/category/metallicheskie-lodki/"><img src="/static/img/home/lm-marsh-sailboat.jpg" alt="Лодка у заболоченного берега" loading="lazy"><span class="lm-scenario-body"><small>Мелководье</small><strong>Аэролодки и мелководье</strong><span>На что смотреть при выборе техники для камышей, отмелей и трудного берега.</span></span></a>
+                    <a class="lm-scenario" href="/category/tyuning-i-aksessuary/"><img src="/static/img/home/lm-yacht-marina.jpg" alt="Мини-яхта в марине" loading="lazy"><span class="lm-scenario-body"><small>Комфорт</small><strong>Комфорт на мини-яхте</strong><span>Навигация, свет, хранение вещей и бортовая электрика для спокойного отдыха.</span></span></a>
+                    <a class="lm-scenario" href="/category/zakony-i-gims/"><img src="/static/img/home/lm-woman-boat.jpg" alt="Взрослая модель на лодке у воды" loading="lazy"><span class="lm-scenario-body"><small>Проверка готовности</small><strong>Все готово к спуску</strong><span>Документы, жилеты, связь, аптечка и снаряжение, которое должно быть под рукой.</span></span></a>
+                    <a class="lm-scenario" href="/category/remont-i-to/"><img src="/static/img/home/lm-sea-motorboat.jpg" alt="Моторная лодка на морской воде" loading="lazy"><span class="lm-scenario-body"><small>После морской прогулки</small><strong>Уход после морской воды</strong><span>Промывка мотора, осмотр корпуса, крепежа и электрики после соленой воды.</span></span></a>
                 </div>
             </section>
 
-            <section class="home-section" data-animate>
-                <a href="#" class="featured-card" id="popularCard">
-                    <div class="featured-content">
-                        <div class="featured-badge">🔥 Популярное</div>
-                        <div class="featured-title" id="popularTitle"></div>
-                        <div class="featured-desc" id="popularDesc"></div>
-                        <span class="featured-cta">Читать статью</span>
-                    </div>
-                    <div class="featured-visual" id="popularIcon">🚤</div>
-                </a>
-            </section>
-
-            <section class="home-section" data-animate>
-                <h2 class="home-section-title"><span>🕐</span> Недавно обновлённые</h2>
-                <div class="recent-scroll" id="recentScrollContainer">
-                    <div class="recent-card" style="color:#94a3b8;display:flex;align-items:center;justify-content:center;">⏳ Загрузка...</div>
+            <section class="lm-section" data-animate id="categories">
+                <div class="lm-section-head"><div><h2>Справочник по темам</h2><p class="lm-section-subtitle">Обзоры, инструкции и советы по эксплуатации собраны в понятных тематических разделах.</p></div></div>
+                <div class="lm-directory">
+                    <a href="/category/lodki-pvkh/" class="lm-dir-card" data-no="01"><b>Лодки ПВХ</b><span>Как выбрать лодку ПВХ, ухаживать за баллонами, полом и швами.</span></a>
+                    <a href="/category/metallicheskie-lodki/" class="lm-dir-card" data-no="02"><b>Металлические лодки</b><span>Алюминиевые корпуса, сварка, защита от коррозии и обслуживание.</span></a>
+                    <a href="/category/lodochnye-motory/" class="lm-dir-card" data-no="03"><b>Лодочные моторы</b><span>Подбор мощности, запуск, обслуживание, винты и диагностика мотора.</span></a>
+                    <a href="/category/remont-i-to/" class="lm-dir-card" data-no="04"><b>Ремонт и ТО</b><span>Сезонная подготовка, мелкий ремонт и понятные инструкции по обслуживанию.</span></a>
+                    <a href="/category/tyuning-i-aksessuary/" class="lm-dir-card" data-no="05"><b>Тюнинг и аксессуары</b><span>Свет, сиденья, держатели, крепления, электрика и полезные аксессуары.</span></a>
+                    <a href="/category/rybalka-s-lodki/" class="lm-dir-card" data-no="06"><b>Рыбалка с лодки</b><span>Эхолоты, якорение, снасти и удобная организация места в лодке.</span></a>
+                    <a href="/category/zakony-i-gims/" class="lm-dir-card" data-no="07"><b>Законы и ГИМС</b><span>Регистрация, права, нормы безопасности и требования к оснащению.</span></a>
+                    <a href="/category/drugoe/" class="lm-dir-card" data-no="08"><b>Другое</b><span>Дополнительные советы по эксплуатации, хранению и отдыху на воде.</span></a>
                 </div>
             </section>
 
-            <section class="home-section" data-animate id="categories">
-                <h2 class="home-section-title"><span>📂</span> Разделы</h2>
-                <p class="home-section-subtitle">Выберите тему — найдём решение</p>
-                <div class="categories-grid">
-                    <a href="/category/lodki-pvkh/" class="category-card">
-            <span class="category-icon">🛶</span>
-            <div class="category-name">Лодки ПВХ</div>
-            <div class="category-count">Выбор, эксплуатация и ремонт надувных лодок из ПВХ</div>
-        </a>
-<a href="/category/metallicheskie-lodki/" class="category-card">
-            <span class="category-icon">⚓</span>
-            <div class="category-name">Металлические лодки</div>
-            <div class="category-count">Обзоры алюминиевых катеров и советы сварщикам</div>
-        </a>
-<a href="/category/lodochnye-motory/" class="category-card">
-            <span class="category-icon">⛵</span>
-            <div class="category-name">Лодочные моторы</div>
-            <div class="category-count">Тесты бензиновых и электрических подвесных моторов</div>
-        </a>
-<a href="/category/remont-i-to/" class="category-card">
-            <span class="category-icon">🔧</span>
-            <div class="category-name">Ремонт и ТО</div>
-            <div class="category-count">Диагностика неисправностей и замена узлов своими руками</div>
-        </a>
-<a href="/category/tyuning-i-aksessuary/" class="category-card">
-            <span class="category-icon">🎣</span>
-            <div class="category-name">Тюнинг и аксессуары</div>
-            <div class="category-count">Улучшение комфорта и установка дополнительного оборудования</div>
-        </a>
-<a href="/category/rybalka-s-lodki/" class="category-card">
-            <span class="category-icon">🐟</span>
-            <div class="category-name">Рыбалка с лодки</div>
-            <div class="category-count">Тактика ловли, эхолоты и снаряжение рыбака</div>
-        </a>
-<a href="/category/zakony-i-gims/" class="category-card">
-            <span class="category-icon">📜</span>
-            <div class="category-name">Законы и ГИМС</div>
-            <div class="category-count">Правила регистрации, права судоводителя и нормы безопасности</div>
-        </a>
-<a href="/category/drugoe/" class="category-card">
-            <span class="category-icon">📁</span>
-            <div class="category-name">Другое</div>
-            <div class="category-count">Различные вопросы водной тематики и смежные темы</div>
-        </a>
-
+            <section class="lm-section" data-animate>
+                <div class="lm-popular-layout">
+                    <a href="#" class="featured-card" id="popularCard"><div><div class="featured-badge">Материал дня</div><div class="featured-title" id="popularTitle"></div><div class="featured-desc" id="popularDesc"></div><span class="featured-cta">Читать статью</span></div><div class="featured-visual" id="popularIcon">🚤</div></a>
+                    <div><div class="lm-section-head"><div><h2>Популярные инструкции</h2><p class="lm-section-subtitle">Статьи, которые чаще всего открывают перед покупкой, ремонтом и выходом на воду.</p></div></div><div class="articles-home-grid" id="popular-articles-container"><div class="article-home-card" style="color:#5d7078;text-align:center;grid-column:1/-1;">Загружаем подборку...</div></div><div style="text-align:right;margin-top:18px;"><button class="btn-outline" id="refreshBtn" style="transition:transform 0.5s">Показать другие материалы</button></div></div>
                 </div>
             </section>
 
-            <section class="home-section" data-animate>
-                <h2 class="home-section-title"><span>🔥</span> Популярные статьи</h2>
-                <p class="home-section-subtitle">Самые востребованные инструкции — обновляются каждые 12 часов</p>
-                <div class="articles-home-grid" id="popular-articles-container">
-                    <div class="article-home-card" style="color:#94a3b8;text-align:center;grid-column:1/-1;">⏳ Загрузка популярных материалов...</div>
-                </div>
-                <div style="text-align:center;margin-top:32px;">
-                    <button class="btn-outline" id="refreshBtn" style="transition:transform 0.5s">🔄 Обновить подборку</button>
-                </div>
+            <section class="lm-section" data-animate>
+                <div class="lm-section-head"><div><h2>Последние статьи</h2><p class="lm-section-subtitle">Свежие обзоры и инструкции по лодкам, моторам, оснащению и уходу за техникой.</p></div></div>
+                <div class="recent-scroll" id="recentScrollContainer"><div class="recent-card" style="color:#5d7078;display:flex;align-items:center;justify-content:center;">Загружаем статьи...</div></div>
             </section>
 
-            
-
-            <section class="home-section" data-animate>
-                <div class="team-section">
-            <h2><span>👥</span> Наша команда</h2>
-            <p style="margin-bottom: 2rem;">За проектом стоят увлеченные люди, для которых водная стихия — не просто хобби, а образ жизни. Познакомьтесь с экспертами, которые готовят контент для вас.</p>
-            
-            <div class="team-grid">
-                <!-- Константин Рыбаков -->
-                <div class="team-card" data-gender="male">
-                    <img class="team-avatar" src="/static/img/team/pool_c/male/male_8.png" alt="Эксперт" loading="lazy">
-                    <h3>Константин Рыбаков</h3>
-                    <span class="role">Главный редактор и эксперт по лодкам ПВХ</span>
-                    <p>Более 15 лет опыта в водном туризме. Знает о надувных лодках всё: от правильного склеивания швов до выбора пола под конкретный тип дна. Автор большинства обзоров надувного флота.</p>
-                </div>
-
-                <!-- Рената Полякова -->
-                <div class="team-card" data-gender="female">
-                    <img class="team-avatar" src="/static/img/team/pool_c/female/female_35.png" alt="Эксперт" loading="lazy">
-                    <h3>Рената Полякова</h3>
-                    <span class="role">Эксперт по навигации и безопасности</span>
-                    <p>Сертифицированный судоводитель. Отвечает за разделы, связанные с правилами поведения на воде, навигационным оборудованием и безопасностью экипажа в любых погодных условиях.</p>
-                </div>
-
-                <!-- Ренат Шестаков -->
-                <div class="team-card" data-gender="male">
-                    <img class="team-avatar" src="/static/img/team/pool_c/male/male_31.png" alt="Эксперт" loading="lazy">
-                    <h3>Ренат Шестаков</h3>
-                    <span class="role">Ведущий моторист и механик</span>
-                    <p>Инженер с золотыми руками. Специализируется на устройстве и ремонте лодочных моторов. Его гайды по ТО и устранению неисправностей спасли сотни двигателей от капитального ремонта.</p>
-                </div>
-
-                <!-- Дарина Дмитриева -->
-                <div class="team-card" data-gender="female">
-                    <img class="team-avatar" src="/static/img/team/pool_c/female/female_15.png" alt="Эксперт" loading="lazy">
-                    <h3>Дарина Дмитриева</h3>
-                    <span class="role">Специалист по рыбалке и экипировке</span>
-                    <p>Профессиональный ихтиолог и заядлый рыболов. Тестирует эхолоты, спиннинги и аксессуары для рыбалки с лодки. Знает, где клюет и какая снасть нужна для трофея.</p>
-                </div>
-
-                <!-- Герман Лисицын -->
-                <div class="team-card" data-gender="male">
-                    <img class="team-avatar" src="/static/img/team/pool_c/male/male_33.png" alt="Эксперт" loading="lazy">
-                    <h3>Герман Лисицын</h3>
-                    <span class="role">Инженер-конструктор и мастер "Сделай сам"</span>
-                    <p>Гуру кастомизации и доработок. Ведет рубрику "Гаражный тюнинг", где показывает, как улучшить штатные характеристики лодки или сделать полезный аксессуар своими руками.</p>
-                </div>
-
-                <!-- Диана Рыбакова -->
-                <div class="team-card" data-gender="female">
-                    <img class="team-avatar" src="/static/img/team/pool_c/female/female_8.png" alt="Эксперт" loading="lazy">
-                    <h3>Диана Рыбакова</h3>
-                    <span class="role">Эксперт по металлическим лодкам и сварке</span>
-                    <p>Разбирается в марках алюминия и типах сварки. курирует раздел металлических плавсредств, помогая выбрать между катером и лодкой, а также ухаживать за корпусом, чтобы он служил десятилетиями.</p>
-                </div>
-            </div>
-        </div>
-            </section>
-
-            <section class="home-section" data-animate>
-                <div class="trust-block">
-                    <p>Наша редакция состоит из практикующих водномоторников и инженеров, которые лично тестируют оборудование и проверяют каждое техническое решение. Мы гарантируем актуальность данных, опираясь на опыт реальной эксплуатации и актуальные нормативы ГИМС, чтобы вы были уверены в безопасности на воде.</p>
-                </div>
-            </section>
-
-            <section class="home-section" data-animate>
-                <div class="cta-banner">
-                    <h2>🚤 Готовьте лодку к сезону прямо сейчас</h2>
-                    <p>Получите доступ к базе знаний, которая сэкономит ваш бюджет на сервисе и поможет избежать ошибок при покупке.</p>
-                </div>
-            </section>
+            <section class="lm-section" data-animate><div class="lm-note"><b>ЛодкаМастер — независимый справочник для владельцев лодок и моторов.</b><span>Перед покупкой и выходом на воду сверяйте нормы ГИМС и данные производителя.</span></div></section>
         </div>
     </main>
 
@@ -629,10 +284,18 @@
             let pool = null;
             function seededRandom(s) { const x = Math.sin(s) * 10000; return x - Math.floor(x); }
 
+            function hasVisibleYear(value) {
+                return /(^|[^#\w])20\d{2}(?!\w)/.test(String(value || ''));
+            }
+            function isTimelessArticle(article) {
+                return article && !hasVisibleYear(article.title) && !hasVisibleYear(article.desc);
+            }
+
             function shuffleAndRender(forceSeed) {
                 if (!pool || pool.length === 0) return;
                 const seed = forceSeed || Math.floor(Date.now() / (12 * 60 * 60 * 1000));
-                let shuffled = [...pool];
+                let shuffled = pool.filter(isTimelessArticle);
+                if (shuffled.length === 0) return;
                 for (let i = shuffled.length - 1; i > 0; i--) {
                     const j = Math.floor(seededRandom(seed + i) * (i + 1));
                     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
